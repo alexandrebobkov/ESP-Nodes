@@ -1,13 +1,25 @@
-#include <Arduino.h>
-#include "config.h"
+/*
 
+ESP32 Node for reading seosors values and sending them over encrypted MQTT
+
+By: Alexander Bobkov
+Created:  July 28, 2023
+Edited:   Nov 22, 2023
+
+*/
+
+#include <Arduino.h>
+#include "config.h"                 // Set of configuration values
+
+// Include library for specific sensor depending on configuration
+// Environmental sensor BMP280: Temperature and pressure
 #ifdef BMP280
 #include <Adafruit_BMP280.h>
 #endif
+// Environmental sensor BME280: Temperature, pressure, and humidity
 #ifdef BME280
 #include <Adafruit_BME280.h>
 #endif
-
 // BME280
 #ifdef BME280
 // WaveShare BME280
@@ -23,9 +35,7 @@ Adafruit_BME280 bme;
 Adafruit_BMP280 bmp(BMP_CS);
 #endif
 
-// put function declarations here:
-int myFunction(int, int);
-
+// Struct for storing sensors values
 struct {
   float humidity = 0.0;
   float pressure = 0.0;
@@ -34,13 +44,14 @@ struct {
 
 void setup()
 {
-  Serial.begin(115200);
-  Serial.println();
+  Serial.begin(115200);   // Define serial port speed
 
-  // BMP280
+  // If BMP280 was defined in configuration file, complete setup procedure for BMP280 sensor
   #ifdef BMP280  
   unsigned status_bmp280;
+  // Initialize sensor
   status_bmp280 = bmp.begin();
+  // Repeat initialization attempt untill succeeded
   if (!status_bmp280) {
     Serial.println("Could not find BMP280");
     Serial.println(bmp.sensorID(),16);
@@ -54,6 +65,8 @@ void setup()
 }
 
 void loop() {
+
+  // Read and display sensors values depending on configuration file
   #ifdef BMP280
   Serial.println("\n==== BMP-280 =============");
   sensors_values.temperature = (float)bmp.readTemperature();
@@ -68,9 +81,4 @@ void loop() {
   Serial.println(" Pa");
   delay(1000);
 
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
 }
