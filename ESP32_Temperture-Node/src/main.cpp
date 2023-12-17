@@ -399,14 +399,16 @@ void loop() {
     Serial.println(WiFi.status());            // status() == 3 => Connected to WiFi
     Serial.println("==== BME280 Sensors Values ====");
     Serial.print("Temperature: ");
-    Serial.println(bme.readTemperature());
+    Serial.print(bme.readTemperature());
+    Serial.println("°C");
     Serial.print("Humidity: ");
     Serial.print(bme.readHumidity());
     Serial.println("%");
     Serial.print("Barometric Pressure: ");
     Serial.print(bme.readPressure() / 100.0F);
-    Serial.println(" mbar");
-    delay(1000);
+    Serial.println(" hPa");
+    Serial.println("========");
+    delay(2500);
     connection.loop();
 
     digitalWrite(PING_PIN, LOW);
