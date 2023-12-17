@@ -204,6 +204,8 @@ void setup() {
   #ifdef devkit_36pin_001
   #endif
   #ifdef devkit_30pin_001
+  #endif
+  #ifdef devkit_v4_38pin_ext_antenna 
   pinMode(LED_PIN, OUTPUT);
   pinMode(PING_PIN, OUTPUT);
   pinMode(SWITCH_1, OUTPUT);

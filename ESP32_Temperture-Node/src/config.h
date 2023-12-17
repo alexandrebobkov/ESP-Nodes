@@ -76,7 +76,7 @@ D13           28    =>  Assigned to read RPM
 ----------------------------------------------
 */
 #define PING_PIN  33  // GPIO 33 pin # of audio ping
-#define LED_PIN   33           
+#define LED_PIN   32  // GPIO 32 pin # for system status LED
 #define SWITCH_1  14  // GPIO 14
 #define SWITCH_2  12  // GPIO 12
 #define DAC_CH1   25  // GPIO 25
