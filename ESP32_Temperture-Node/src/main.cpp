@@ -332,10 +332,45 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-}
+  if (connection.connected()) {            // connected() == 1 => Connected
+    //connection.subscribe("esp32/sw1");
+    //connection.subscribe("esp32/sw2");
 
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+    digitalWrite(LED_PIN, HIGH);
+    delay(250);
+    digitalWrite(LED_PIN, LOW);
+    delay(250);
+    digitalWrite(LED_PIN, HIGH);
+    delay(250);
+    digitalWrite(LED_PIN, LOW);
+
+    connection.publish(MQTT_IOT_CHANNEL_TEMPERATURE, itoa(sensors_values.temperature, cstr, 10));
+    connection.publish(MQTT_IOT_CHANNEL_PRESSURE, itoa(sensors_values.pressure / 100.0F, cstr, 10));
+    connection.publish(MQTT_IOT_CHANNEL_HUMIDITY, itoa(sensors_values.humidity, cstr, 10));
+    connection.publish(MQTT_IOT_CHANNEL_OUTPUT_PULSE, "1");
+    connection.publish(MQTT_IOT_CHANNEL_0, "10");
+    Serial.println("test_topic: 10");
+    delay(1000);
+    connection.publish(MQTT_IOT_CHANNEL_OUTPUT_PULSE, "0");
+    connection.publish(MQTT_IOT_CHANNEL_0, "3");
+    Serial.println("test_topic: 3");
+    Serial.print("MQTT State: ");
+    Serial.println(connection.state());       // state() == 0 => Connected to MQTT
+    Serial.print("MQTT Connected: ");
+    Serial.println(connection.connected());   // connected() == 1 => Connected to MQTT
+    Serial.print("Wi-Fi Connection tatus: ");
+    Serial.println(WiFi.status());            // status() == 3 => Connected to WiFi
+    delay(1000);
+    connection.loop();
+
+    digitalWrite(PING_PIN, LOW);
+    digitalWrite(PING_PIN, HIGH);
+    delay(250);
+    digitalWrite(PING_PIN, LOW);
+  }
+  // Call function to establish connection if not connected to MQTT server.
+  else {
+    digitalWrite(LED_PIN, HIGH);
+    mosquitto_connect();
+  }
 }
