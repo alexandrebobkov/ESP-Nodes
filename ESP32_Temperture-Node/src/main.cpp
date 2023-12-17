@@ -22,6 +22,7 @@ struct {
   float pressure = 0.0;
   float temperature = 0.0;
 } sensors_values;
+char cstr[16];
 
 // Sensors modules specified in config.h file.
 // BME280
@@ -358,14 +359,14 @@ void loop() {
     Serial.println(connection.state());       // state() == 0 => Connected to MQTT
     Serial.print("MQTT Connected: ");
     Serial.println(connection.connected());   // connected() == 1 => Connected to MQTT
-    Serial.print("Wi-Fi Connection tatus: ");
+    Serial.print("Wi-Fi Connection status: ");
     Serial.println(WiFi.status());            // status() == 3 => Connected to WiFi
     delay(1000);
     connection.loop();
 
     digitalWrite(PING_PIN, LOW);
     digitalWrite(PING_PIN, HIGH);
-    delay(250);
+    delay(150);
     digitalWrite(PING_PIN, LOW);
   }
   // Call function to establish connection if not connected to MQTT server.

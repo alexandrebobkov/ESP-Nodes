@@ -37,6 +37,7 @@
 #define MQTT_IOT_CHANNEL_OUTPUT_SWITCH_1    "node1/output/sw1"
 #define MQTT_IOT_CHANNEL_OUTPUT_SWITCH_2    "node1/sw2"
 #define MQTT_IOT_CHANNEL_OUTPUT_PWM_1       "node1/pwm1"
+#define MQTT_IOT_CHANNEL_0                  "test_topic"
 
 // Uncomment corresponding board
 //#define devkit_30pin_001
@@ -75,7 +76,7 @@ D13           28    =>  Assigned to read RPM
 ----------------------------------------------
 */
 #define PING_PIN  33  // GPIO 33 pin # of audio ping
-#define LED_PIN   32           
+#define LED_PIN   33           
 #define SWITCH_1  14  // GPIO 14
 #define SWITCH_2  12  // GPIO 12
 #define DAC_CH1   25  // GPIO 25
