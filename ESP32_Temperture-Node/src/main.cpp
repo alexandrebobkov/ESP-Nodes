@@ -381,9 +381,14 @@ void loop() {
     delay(250);
     digitalWrite(LED_PIN, LOW);
 
-    connection.publish(MQTT_IOT_CHANNEL_TEMPERATURE, itoa(sensors_values.temperature, cstr, 10));
-    connection.publish(MQTT_IOT_CHANNEL_PRESSURE, itoa(sensors_values.pressure / 100.0F, cstr, 10));
-    connection.publish(MQTT_IOT_CHANNEL_HUMIDITY, itoa(sensors_values.humidity, cstr, 10));
+    //connection.publish(MQTT_IOT_CHANNEL_TEMPERATURE, itoa(sensors_values.temperature, cstr, 10));
+    //connection.publish(MQTT_IOT_CHANNEL_PRESSURE, itoa(sensors_values.pressure / 100.0F, cstr, 10));
+    //connection.publish(MQTT_IOT_CHANNEL_HUMIDITY, itoa(sensors_values.humidity, cstr, 10));
+
+    connection.publish(MQTT_IOT_CHANNEL_TEMPERATURE, itoa(bme.readTemperature(), cstr, 10));
+    connection.publish(MQTT_IOT_CHANNEL_PRESSURE, itoa(bme.readPressure() / 100.0F, cstr, 10));
+    connection.publish(MQTT_IOT_CHANNEL_HUMIDITY, itoa(bme.readHumidity(), cstr, 10));
+    
     connection.publish(MQTT_IOT_CHANNEL_OUTPUT_PULSE, "1");
     connection.publish(MQTT_IOT_CHANNEL_0, "10");
     Serial.println("test_topic: 10");
@@ -397,7 +402,7 @@ void loop() {
     Serial.println(connection.connected());   // connected() == 1 => Connected to MQTT
     Serial.print("Wi-Fi Connection status: ");
     Serial.println(WiFi.status());            // status() == 3 => Connected to WiFi
-    Serial.println("==== BME280 Sensors Values ====");
+    Serial.println("\n==== BME280 Sensors Values ====");
     Serial.print("Temperature: ");
     Serial.print(bme.readTemperature());
     Serial.println("°C");
@@ -407,7 +412,7 @@ void loop() {
     Serial.print("Barometric Pressure: ");
     Serial.print(bme.readPressure() / 100.0F);
     Serial.println(" hPa");
-    Serial.println("========");
+    Serial.println("========\n");
     delay(2500);
     connection.loop();
 
