@@ -14,12 +14,13 @@
 #include <Wire.h>
 #include <WiFiClientSecure.h>
 #include <PubSubClient.h>
+#include <Adafruit_Sensor.h>
 
 #include "secrets.h"
 #include "config.h"
 
 #ifdef BME280
-#include <Adafruit_Sensor.h>
+
 #include <Adafruit_BME280.h>
 #endif
 #ifdef BMP280
@@ -43,7 +44,7 @@ Adafruit_BME280 bme;
 // BMP280
 #ifdef BMP280
 // I2C setup
-Adafruit_BMP280 bmp();
+Adafruit_BMP280 bmp;
 // BMP280 SPI setup
 #define BMP_SCK   (18)
 #define BMP_MISO  (19)
@@ -239,10 +240,10 @@ void setup() {
   #endif  
   
   Serial.println("GPIO setup done");
-   Serial.println("Scanning I2C bus ...");
+  Serial.println("Scanning I2C bus ...");
 
-  // Scan I2C bus
-  /*byte address;
+  /*// Scan I2C bus
+  byte address;
   for (address = 1; address < 127; address++)
   {
     Serial.print("Address: ");
@@ -272,6 +273,7 @@ void setup() {
   else {
     sensors_values.humidity = bme.readHumidity();
     sensors_values.pressure = bme.readPressure()  / 100.0F;
+    sensors_values.temperature = bme.readTemperature();
   }
   #endif
 
@@ -395,6 +397,13 @@ void loop() {
     Serial.println(connection.connected());   // connected() == 1 => Connected to MQTT
     Serial.print("Wi-Fi Connection status: ");
     Serial.println(WiFi.status());            // status() == 3 => Connected to WiFi
+    Serial.println("==== BME280 Sensors Values ====");
+    Serial.print("Temperature: ");
+    Serial.println(bme.readTemperature());
+    Serial.print("Humidity: ");
+    Serial.println(bme.readHumidity());
+    Serial.print("Pressure: ");
+    Serial.println(bme.readPressure());
     delay(1000);
     connection.loop();
 
