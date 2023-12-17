@@ -370,8 +370,6 @@ void setup() {
 
 void loop() {
   if (connection.connected()) {            // connected() == 1 => Connected
-    //connection.subscribe("esp32/sw1");
-    //connection.subscribe("esp32/sw2");
 
     digitalWrite(LED_PIN, HIGH);
     delay(250);
@@ -381,16 +379,17 @@ void loop() {
     delay(250);
     digitalWrite(LED_PIN, LOW);
 
+    // Publish sensors readings to MQTT broker.
     //connection.publish(MQTT_IOT_CHANNEL_TEMPERATURE, itoa(sensors_values.temperature, cstr, 10));
     //connection.publish(MQTT_IOT_CHANNEL_PRESSURE, itoa(sensors_values.pressure / 100.0F, cstr, 10));
     //connection.publish(MQTT_IOT_CHANNEL_HUMIDITY, itoa(sensors_values.humidity, cstr, 10));
-
     connection.publish(MQTT_IOT_CHANNEL_TEMPERATURE, itoa(bme.readTemperature(), cstr, 10));
     connection.publish(MQTT_IOT_CHANNEL_PRESSURE, itoa(bme.readPressure() / 100.0F, cstr, 10));
-    connection.publish(MQTT_IOT_CHANNEL_HUMIDITY, itoa(bme.readHumidity(), cstr, 10));
-    
+    connection.publish(MQTT_IOT_CHANNEL_HUMIDITY, itoa(bme.readHumidity(), cstr, 10));    
     connection.publish(MQTT_IOT_CHANNEL_OUTPUT_PULSE, "1");
     connection.publish(MQTT_IOT_CHANNEL_0, "10");
+
+    // Print key information on Serial
     Serial.println("test_topic: 10");
     delay(1000);
     connection.publish(MQTT_IOT_CHANNEL_OUTPUT_PULSE, "0");
@@ -416,6 +415,7 @@ void loop() {
     delay(2500);
     connection.loop();
 
+    // Blink status LED when status is OK
     digitalWrite(PING_PIN, LOW);
     digitalWrite(PING_PIN, HIGH);
     delay(150);
@@ -423,6 +423,7 @@ void loop() {
   }
   // Call function to establish connection if not connected to MQTT server.
   else {
+    // Keep status LED steady if MQTT connection error
     digitalWrite(LED_PIN, HIGH);
     mosquitto_connect();
   }
