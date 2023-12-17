@@ -19,6 +19,7 @@
 #include "config.h"
 
 #ifdef BME280
+#include <Adafruit_Sensor.h>
 #include <Adafruit_BME280.h>
 #endif
 #ifdef BMP280
@@ -43,13 +44,12 @@ Adafruit_BME280 bme;
 #ifdef BMP280
 // I2C setup
 Adafruit_BMP280 bmp();
-/*
 // BMP280 SPI setup
 #define BMP_SCK   (18)
 #define BMP_MISO  (19)
 #define BMP_MOSI  (23)
 #define BMP_CS    (5)
-//Adafruit_BMP280 bmp(BMP_CS);*/
+//Adafruit_BMP280 bmp(BMP_CS);
 #endif
 
 // Mosquitto
@@ -223,6 +223,9 @@ void setup() {
   pinMode(PING_PIN, OUTPUT);
   pinMode(SWITCH_1, OUTPUT);
   pinMode(SWITCH_2, OUTPUT);
+  
+  pinMode(21, PULLUP);
+  pinMode(22, PULLUP);
 
   pinMode(FAN_RPM, INPUT);
   digitalWrite(FAN_RPM, HIGH);
@@ -239,7 +242,7 @@ void setup() {
    Serial.println("Scanning I2C bus ...");
 
   // Scan I2C bus
-  byte address;
+  /*byte address;
   for (address = 1; address < 127; address++)
   {
     Serial.print("Address: ");
@@ -252,11 +255,11 @@ void setup() {
     else if (Wire.endTransmission() == 4)
       Serial.println("I2C unknown error.");
     delay(150); //500
-  }
+  }*/
 
   // WaveShare BME280
   #ifdef BME280
-  unsigned status = bme.begin(); // 0x76
+  unsigned status = bme.begin(0x76); // 0x76
   if (!status) {
     Serial.println("Could not find a valid BME/BMP280 sensor, check wiring!");
     Serial.print("SensorID was: 0x"); Serial.println(bme.sensorID());//,16);
