@@ -17,6 +17,13 @@
 #include "secrets.h"
 #include "config.h"
 
+#ifdef BME280
+#include <Adafruit_BME280.h>
+#endif
+#ifdef BMP280
+#include <Adafruit_BMP280.h>
+#endif
+
 struct {
   float humidity = 0.0;
   float pressure = 0.0;

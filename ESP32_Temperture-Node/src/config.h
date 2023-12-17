@@ -1,7 +1,7 @@
 // Uncomment modules as required
 //#define RTC
 //#define MICRO_SD
-//#define BMP280      // Adafruit BMP280; temp & pressure
+#define BMP280      // Adafruit BMP280; temp & pressure
 //#define BME280    // Generic BME280; temp, pressure & humidity
 //#define AWSIoT
 
