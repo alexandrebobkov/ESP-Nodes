@@ -401,9 +401,11 @@ void loop() {
     Serial.print("Temperature: ");
     Serial.println(bme.readTemperature());
     Serial.print("Humidity: ");
-    Serial.println(bme.readHumidity());
-    Serial.print("Pressure: ");
-    Serial.println(bme.readPressure());
+    Serial.print(bme.readHumidity());
+    Serial.println("%");
+    Serial.print("Barometric Pressure: ");
+    Serial.print(bme.readPressure() / 100.0F);
+    Serial.println(" mbar");
     delay(1000);
     connection.loop();
 
