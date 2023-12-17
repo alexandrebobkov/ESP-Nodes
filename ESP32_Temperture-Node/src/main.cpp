@@ -10,6 +10,12 @@
 */
 
 #include <Arduino.h>
+#include <WiFi.h>
+#include <WiFiClientSecure.h>
+#include <PubSubClient.h>
+
+#include "secrets.h"
+#include "config.h"
 
 struct {
   float humidity = 0.0;
