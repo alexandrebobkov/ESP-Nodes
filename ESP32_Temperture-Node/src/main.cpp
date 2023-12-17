@@ -11,6 +11,7 @@
 
 #include <Arduino.h>
 #include <WiFi.h>
+#include <Wire.h>
 #include <WiFiClientSecure.h>
 #include <PubSubClient.h>
 
@@ -40,11 +41,15 @@ Adafruit_BME280 bme;
 #endif
 // BMP280
 #ifdef BMP280
+// I2C setup
+Adafruit_BMP280 bmp();
+/*
+// BMP280 SPI setup
 #define BMP_SCK   (18)
 #define BMP_MISO  (19)
 #define BMP_MOSI  (23)
 #define BMP_CS    (5)
-//Adafruit_BMP280 bmp(BMP_CS);
+//Adafruit_BMP280 bmp(BMP_CS);*/
 #endif
 
 // Mosquitto
@@ -203,6 +208,7 @@ void mosquitto_connect ()
 void setup() {
   Serial.begin(115200);
   Serial.println();
+  Serial.println("Running setup ...");
   sensors_values.humidity = 0.0;
   sensors_values.pressure = 0.0;
   sensors_values.temperature = 0.0;
@@ -228,13 +234,29 @@ void setup() {
   //digitalWrite(DAC_CH1, LOW);
   dacWrite(DAC1, 0);
   #endif  
+  
+  Serial.println("GPIO setup done");
+   Serial.println("Scanning I2C bus ...");
 
-  Serial.println("setup");  
-  Serial.println("setup done");
+  // Scan I2C bus
+  byte address;
+  for (address = 1; address < 127; address++)
+  {
+    Serial.print("Address: ");
+    Serial.println(address, HEX);
+    Wire.beginTransmission(address);
+    if (Wire.endTransmission() == 0) {
+      Serial.print("I2C device was found at address: ");
+      Serial.println(address, HEX);
+    }
+    else if (Wire.endTransmission() == 4)
+      Serial.println("I2C unknown error.");
+    delay(150); //500
+  }
 
   // WaveShare BME280
   #ifdef BME280
-  unsigned status = bme.begin(); 
+  unsigned status = bme.begin(); // 0x76
   if (!status) {
     Serial.println("Could not find a valid BME/BMP280 sensor, check wiring!");
     Serial.print("SensorID was: 0x"); Serial.println(bme.sensorID());//,16);
@@ -245,8 +267,8 @@ void setup() {
     while (1);
   }
   else {
-    humidity = bme.readHumidity();
-    pressure = bme.readPressure()  / 100.0F;
+    sensors_values.humidity = bme.readHumidity();
+    sensors_values.pressure = bme.readPressure()  / 100.0F;
   }
   #endif
 

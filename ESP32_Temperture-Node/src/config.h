@@ -1,8 +1,13 @@
 // Uncomment modules as required
 //#define RTC
 //#define MICRO_SD
-#define BMP280      // Adafruit BMP280; temp & pressure
+//#define BMP280      // Adafruit BMP280; temp & pressure
 //#define BME280    // Generic BME280; temp, pressure & humidity
+/*
+    BME-280
+    SCL -> GPIO 22
+    SDA -> GPIO 21
+*/
 //#define AWSIoT
 
 #define MQTT_SSL
@@ -65,8 +70,8 @@ D22           14
 D23           15        
 D34           19        Input only        
 D35           20        Input only        
-D32           21*        
-D33           22*
+D32           21*   =>  SCL I2C        
+D33           22*   =>  SDA I2C
 D25           23*   =>  Assigned to DAC
 D26           24*   =>  Assigned to DAC
 D27           25
