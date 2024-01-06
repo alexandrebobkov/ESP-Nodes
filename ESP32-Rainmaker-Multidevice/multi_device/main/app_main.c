@@ -14,7 +14,15 @@
    software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
    CONDITIONS OF ANY KIND, either express or implied.
 
-   Compiled with ESP-IDF v.5.1.2; ESP-Rainmaker 21-Nov-2022
+    NOTES:
+   
+    Compiled with ESP-IDF v.5.1.2; ESP-Rainmaker 21-Nov-2022
+    Specify chip ESP32S2 in a file settings.json
+    Ensure that SDK Configuration has setting set CONFIG_IDF_TARGET="esp32s2"
+    Ensure that log output is set to a Serial console (UART) => Channel for console output: UART0
+    Rainmaker default MQTT port 443 (i.e. unencrypted), protocol 3.1.1
+    ESP Insights enabled
+
 */
 
 #include <string.h>
@@ -36,20 +44,27 @@
 
 static const char *TAG = "app_main";
 
+// A group of devices that a part of this node
 esp_rmaker_device_t *switch_device;
 esp_rmaker_device_t *light_device;
 esp_rmaker_device_t *fan_device;
 esp_rmaker_device_t *temp_sensor_device;
+// Additional devices
+esp_rmaker_device_t *switch_1;
+esp_rmaker_device_t *switch_2;
+esp_rmaker_device_t *temp_sensor;
 
 /* Callback to handle commands received from the RainMaker cloud */
 static esp_err_t write_cb(const esp_rmaker_device_t *device, const esp_rmaker_param_t *param,
             const esp_rmaker_param_val_t val, void *priv_data, esp_rmaker_write_ctx_t *ctx)
 {
     if (ctx) {
+        // Write status update to the serial terminal.
         ESP_LOGI(TAG, "Received write request via : %s", esp_rmaker_device_cb_src_to_str(ctx->src));
     }
     const char *device_name = esp_rmaker_device_get_name(device);
     const char *param_name = esp_rmaker_param_get_name(param);
+    // Compare parameter name that made call back against initiated devices
     if (strcmp(param_name, ESP_RMAKER_DEF_POWER_NAME) == 0) {
         ESP_LOGI(TAG, "Received value = %s for %s - %s",
                 val.val.b? "true" : "false", device_name, param_name);
@@ -74,11 +89,14 @@ void app_main()
 {
     /* Initialize Application specific hardware drivers and
      * set initial state.
-     */
+    */
     app_driver_init();
     app_driver_set_state(DEFAULT_SWITCH_POWER);
 
     /* Initialize NVS. */
+    /*
+        Non-volatile storage (NVS) library is designed to store key-value pairs in flash. 
+    */
     esp_err_t err = nvs_flash_init();
     if (err == ESP_ERR_NVS_NO_FREE_PAGES || err == ESP_ERR_NVS_NEW_VERSION_FOUND) {
         ESP_ERROR_CHECK(nvs_flash_erase());
@@ -96,7 +114,7 @@ void app_main()
     esp_rmaker_config_t rainmaker_cfg = {
         .enable_time_sync = false,
     };
-    esp_rmaker_node_t *node = esp_rmaker_node_init(&rainmaker_cfg, "ESP RainMaker Multi Device", "Multi Device");
+    esp_rmaker_node_t *node = esp_rmaker_node_init(&rainmaker_cfg, "ESP32S2 RainMaker MultiDevice", "ESP32S2 Multi Device");
     if (!node) {
         ESP_LOGE(TAG, "Could not initialise node. Aborting!!!");
         vTaskDelay(5000/portTICK_PERIOD_MS);
@@ -107,6 +125,11 @@ void app_main()
     switch_device = esp_rmaker_switch_device_create("Switch", NULL, DEFAULT_SWITCH_POWER);
     esp_rmaker_device_add_cb(switch_device, write_cb, NULL);
     esp_rmaker_node_add_device(node, switch_device);
+
+    /* Create a custom Switch device for switch_1 and add the relevant parameters to it */
+    switch_1 = esp_rmaker_switch_device_create("Switch #1", NULL, DEFAULT_SWITCH_POWER);
+    esp_rmaker_device_add_cb(switch_1, write_cb, NULL);
+    esp_rmaker_node_add_device(node, switch_1);
 
     /* Create a Light device and add the relevant parameters to it */
     light_device = esp_rmaker_lightbulb_device_create("Light", NULL, DEFAULT_LIGHT_POWER);
