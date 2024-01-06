@@ -19,9 +19,10 @@
     Compiled with ESP-IDF v.5.1.2; ESP-Rainmaker 21-Nov-2022
     Specify chip ESP32S2 in a file settings.json
     Ensure that SDK Configuration has setting set CONFIG_IDF_TARGET="esp32s2"
-    Ensure that log output is set to a Serial console (UART) => Channel for console output: UART0
+    Ensure that log output is set to a Serial console (from UART to USB CDC) => Channel for console output: USB CDC
     Rainmaker default MQTT port 443 (i.e. unencrypted), protocol 3.1.1
     ESP Insights enabled
+    esp32s2 -> ESP Prog USB
 
 */
 
