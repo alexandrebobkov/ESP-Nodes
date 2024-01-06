@@ -1,5 +1,20 @@
+-- Existing sdkconfig 'C:/Users/alex/github/ESP-Nodes/ESP32-Rainmaker-Multidevice/multi_device/sdkconfig' renamed to 'C:/Users/alex/github/ESP-Nodes/ESP32-Rainmaker-Multidevice/multi_device/sdkconfig.old'.
+-- Found Git: C:/Users/alex/.espressif/tools/tools/idf-git/2.39.2/cmd/git.exe (found version "2.39.2.windows.1") 
 -- Component directory C:/Users/alex/.espressif/tools/esp-rainmaker/components/esp-insights does not contain a CMakeLists.txt file. No component will be added
--- ccache will be used for faster recompilation
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: C:/Users/alex/.espressif/tools/tools/xtensa-esp32s2-elf/esp-12.2.0_20230208/xtensa-esp32s2-elf/bin/xtensa-esp32s2-elf-gcc.exe
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Users/alex/.espressif/tools/tools/xtensa-esp32s2-elf/esp-12.2.0_20230208/xtensa-esp32s2-elf/bin/xtensa-esp32s2-elf-gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Users/alex/.espressif/tools/tools/xtensa-esp32s2-elf/esp-12.2.0_20230208/xtensa-esp32s2-elf/bin/xtensa-esp32s2-elf-g++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
 -- Building ESP-IDF components for target esp32s2
 Dependency "espressif/rmaker_common(1.4.3)" version has changed from 1.4.3 to 1.4.2, solving dependencies.
 Using component placed at C:\Users\alex\.espressif\tools\esp-rainmaker\components\esp-insights\components\rmaker_common for dependency espressif/rmaker_common(~1.4.0)(introduced by component esp_diagnostics)
@@ -40,8 +55,19 @@ Processing 4 dependencies:
 -- Project sdkconfig file C:/Users/alex/github/ESP-Nodes/ESP32-Rainmaker-Multidevice/multi_device/sdkconfig
 Loading defaults file C:/Users/alex/github/ESP-Nodes/ESP32-Rainmaker-Multidevice/multi_device/sdkconfig.defaults...
 C:/Users/alex/github/ESP-Nodes/ESP32-Rainmaker-Multidevice/multi_device/sdkconfig.defaults:29 CONFIG_ESP_RMAKER_LOCAL_CTRL_ENABLE was replaced with CONFIG_ESP_RMAKER_LOCAL_CTRL_AUTO_ENABLE
-C:\Users\alex\AppData\Local\Temp\kconfgen_tmphofqwgfu:2 line was updated to CONFIG_PARTITION_TABLE_SINGLE_APP=n
-C:\Users\alex\AppData\Local\Temp\kconfgen_tmphofqwgfu:3 line was updated to CONFIG_PARTITION_TABLE_TWO_OTA=n
+C:\Users\alex\AppData\Local\Temp\kconfgen_tmpdkp1lbng:2 line was updated to CONFIG_PARTITION_TABLE_SINGLE_APP=n
+C:\Users\alex\AppData\Local\Temp\kconfgen_tmpdkp1lbng:3 line was updated to CONFIG_PARTITION_TABLE_TWO_OTA=n
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Check size of time_t
+-- Check size of time_t - done
+-- Found Python3: c:/Users/alex/.espressif/tools/python_env/idf5.1_py3.11_env/Scripts/python.exe (found version "3.11.2") found components: Interpreter 
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS - Success
 -- App "multi_device" version: 1.0
 -- Adding linker script C:/Users/alex/github/ESP-Nodes/ESP32-Rainmaker-Multidevice/multi_device/build/esp-idf/esp_system/ld/memory.ld
 -- Adding linker script C:/Users/alex/esp/esp-idf/components/esp_system/ld/esp32s2/sections.ld.in

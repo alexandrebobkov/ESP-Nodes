@@ -23,6 +23,8 @@
     Rainmaker default MQTT port 443 (i.e. unencrypted), protocol 3.1.1
     ESP Insights enabled
     esp32s2 -> ESP Prog USB
+    Make initial flash with DFU mode selected (Device Firmware Update) [https://docs.espressif.com/projects/esp-idf/en/v4.3/esp32s2/api-guides/usb-console.html]
+    
 
 */
 
