@@ -1,4 +1,12 @@
-/* Multi-Device Example
+/*  Rainmaker Multi-Device Example
+
+    Original code source: Espressif Rainmaker example code.
+
+    Created on: Jan 6, 2024
+
+    Modified on: Jan 6, 2024
+
+    Edited by: Alexander Bobkov
 
    This example code is in the Public Domain (or CC0 licensed, at your option.)
 

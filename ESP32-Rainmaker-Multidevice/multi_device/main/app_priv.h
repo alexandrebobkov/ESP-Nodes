@@ -9,6 +9,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+// Default values
 #define DEFAULT_SWITCH_POWER        true
 #define DEFAULT_LIGHT_POWER         true
 #define DEFAULT_LIGHT_BRIGHTNESS    25
