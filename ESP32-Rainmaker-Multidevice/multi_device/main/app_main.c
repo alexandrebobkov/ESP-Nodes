@@ -5,6 +5,8 @@
    Unless required by applicable law or agreed to in writing, this
    software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
    CONDITIONS OF ANY KIND, either express or implied.
+
+   Compiled with ESP-IDF v.5.1.2; ESP-Rainmaker 21-Nov-2022
 */
 
 #include <string.h>
