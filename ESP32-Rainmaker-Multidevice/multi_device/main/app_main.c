@@ -24,7 +24,13 @@
     ESP Insights enabled
     esp32s2 -> ESP Prog USB
     Make initial flash with DFU mode selected (Device Firmware Update) [https://docs.espressif.com/projects/esp-idf/en/v4.3/esp32s2/api-guides/usb-console.html]
-    
+    Flash with UART
+    Channel for console output: USB CDC
+
+    CMakeLists.txt
+    add_definitions(
+        -DARDUINO_USB_MODE
+        -DARDUINO_USB_CDC_ON_BOOT
 
 */
 
@@ -43,6 +49,7 @@
 #include <app_wifi.h>
 #include <app_insights.h>
 
+#include "sys_status.h"
 #include "app_priv.h"
 
 static const char *TAG = "app_main";
@@ -95,6 +102,8 @@ void app_main()
     */
     app_driver_init();
     app_driver_set_state(DEFAULT_SWITCH_POWER);
+
+    //sys_status_init();
 
     /* Initialize NVS. */
     /*
