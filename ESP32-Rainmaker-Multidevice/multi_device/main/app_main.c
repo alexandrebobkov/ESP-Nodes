@@ -27,10 +27,8 @@
     Flash with UART
     Channel for console output: USB CDC
 
-    CMakeLists.txt
-    add_definitions(
-        -DARDUINO_USB_MODE
-        -DARDUINO_USB_CDC_ON_BOOT
+    Stay in bootloader after flash
+    UART1 (not UART0)
 
 */
 
