@@ -4,7 +4,8 @@
 #include <stdbool.h>
 #include <esp_err.h>
 
-#define SYS_LED 21
+//#define SYS_LED 21    // ESP32 S2 mini
+#define SYS_LED 8   // ESP32 C3 SUPER mini
 
 esp_err_t sys_status_set_gpio (const char *name, bool state) {
     gpio_set_level(SYS_LED, state);

@@ -101,7 +101,7 @@ void app_main()
     app_driver_init();
     app_driver_set_state(DEFAULT_SWITCH_POWER);
 
-    //sys_status_init();
+    sys_status_init();
 
     /* Initialize NVS. */
     /*
