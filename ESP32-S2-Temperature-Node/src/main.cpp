@@ -4,13 +4,20 @@
 #include "config.h"
 #include "secrets.h"
 
+// Define tasks
+TaskHandle_t Status_Task;
+unsigned int t = 125;
+
 // put function declarations here:
 int myFunction(int, int);
+void StatusCode (void* parameters);
 
 void setup() {
   
   Serial.begin(115200);
   Serial.println("Running setip ...");
+  t = 125;
+  xTaskCreatePinnedToCore(StatusCode, "Status LED", 1000, NULL, 2, &Status_Task, 0);
 
   WiFi.config(INADDR_NONE, INADDR_NONE, INADDR_NONE, INADDR_NONE);
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
@@ -21,6 +28,8 @@ void setup() {
     delay(500);
     Serial.print("#");
   }
+  delay(1500);
+  t = 1500;
   Serial.print("\nCONNECTED\nIP: ");  
   Serial.println(WiFi.localIP());
 
@@ -29,9 +38,16 @@ void setup() {
 }
 
 void loop() {
-  
-  
+}
 
+void StatusCode (void* parameters)
+{
+  for (;;) {
+    digitalWrite(LED_BUILTIN, HIGH);
+    vTaskDelay(t);
+    digitalWrite(LED_BUILTIN, LOW);
+    vTaskDelay(t);
+  }
 }
 
 // put function definitions here:
