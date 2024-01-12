@@ -17,6 +17,7 @@ void setup() {
   // Initialize setup
   Serial.begin(115200);
   Serial.println("Running setip ...");
+  pinMode(LED_BUILTIN, OUTPUT);
   // Set status LED blink rapidly during setup phase
   t = 125;
   // Start LED status task
@@ -38,8 +39,6 @@ void setup() {
   Serial.print("\nCONNECTED\nIP: ");  
   Serial.println(WiFi.localIP());
 
-  //pinMode(LED_BUILTIN, OUTPUT);
-  //digitalWrite(LED_BUILTIN, HIGH);
 }
 
 void loop() {
