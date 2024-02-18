@@ -12,13 +12,13 @@ void setup() {
   Serial.begin(115200);
   Serial.println("Running setup ...");
 
-  /*display.init(115200);
+  display.init(115200);
   display.fillScreen(GxEPD_WHITE);
   display.setTextColor(GxEPD_BLACK);
   display.setFont(&FreeMonoBold9pt7b);
   display.setCursor(10, 20);
   display.print("ESP32 Display Node");
-  display.update();*/
+  display.update();
 }
 
 void loop() {
