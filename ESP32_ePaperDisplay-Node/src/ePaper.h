@@ -11,20 +11,8 @@
 #include <Fonts/TomThumb.h>
 #include <GxIO/GxIO_SPI/GxIO_SPI.h>
 #include <GxIO/GxIO.h>
-#include <SPI.h>
-
-#include <GxEPD.h>
-#include <GxGDEW042Z15/GxGDEW042Z15.h>    // 4.2" b/w/r
-#include GxEPD_BitmapExamples
-// FreeFonts from Adafruit_GFX
-/*#include <Fonts/FreeMonoBold9pt7b.h>
-#include <Fonts/FreeMonoBold12pt7b.h>
-#include <Fonts/FreeMonoBold18pt7b.h>
-#include <Fonts/FreeMonoBold24pt7b.h>*/
-#include <GxIO/GxIO_SPI/GxIO_SPI.h>
-#include <GxIO/GxIO.h>
-#include <SPI.h>
 #include <SD.h>
+#include <SPI.h>
 
 #if defined(ESP8266)
 GxIO_Class io(SPI, /*CS=D8*/ SS, /*DC=D3*/ 0, /*RST=D4*/ 2); // arbitrary selection of D3(=0), D4(=2), selected for default of GxEPD_Class
