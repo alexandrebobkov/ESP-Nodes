@@ -14,15 +14,18 @@ void setup() {
 
   // Initialize ePaper display
   display.init(115200);
+  display.fillScreen(GxEPD_BLACK);
+  display.update();
   display.fillScreen(GxEPD_WHITE);
   display.setTextColor(GxEPD_BLACK);
   display.setFont(&FreeMono9pt7b);
-  display.setCursor(205, 10);
-  display.print("ESP32_DisplayNode"); // Takes 195 pixels in width
+  //display.setCursor(205, 10);
+  //display.print("ESP32_DisplayNode"); // Takes 195 pixels in width
 
   display.setCursor(5, 5);
   display.setFont(&TomThumb);
   display.print("10.100.50.105");
+  display.update();
   // Add UI elements
   // Draw axis: (x1,y1) @ 5, 100 and width-2*margin_x height-2*margin_y
   display.drawRect(5, 155, display.width()-10, display.height()-160, GxEPD_RED);
