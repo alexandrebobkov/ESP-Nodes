@@ -1,6 +1,6 @@
 #include <GxEPD.h>
-//#include <GxGDEW042Z15/GxGDEW042Z15.h>    // 4.2" b/w/r
-#include <GxGDEW029Z10/GxGDEW029Z10.h>      // 2.9" b/w/r
+#include <GxGDEW042Z15/GxGDEW042Z15.h>    // 4.2" b/w/r
+//#include <GxGDEW029Z10/GxGDEW029Z10.h>      // 2.9" b/w/r
 //#include <GxGDEW029Z10/GxGDEW029Z10.h>
 //#include <GxDEPG0290BS/DEPG0290BS.h>
 //#include <GxDEPG0290BS/GxDEPG0290BS.h>
