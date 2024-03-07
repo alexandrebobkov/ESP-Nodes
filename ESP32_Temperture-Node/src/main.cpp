@@ -5,7 +5,7 @@
   
   by: Alexander Bobkov
   Created: December 17, 2023
-  Updated:
+  Updated: March 7, 2024
   
 */
 
@@ -190,7 +190,7 @@ void mosquitto_connect ()
     connection.setServer(mqtt_server, 8883);
     connection.setKeepAlive(60);
     while (!connection.connected()) {
-      String client_id = "ESP32-WROOM-" + String(WiFi.macAddress());
+      String client_id = "ESP32-WROOM-32U_" + String(WiFi.macAddress());
       Serial.printf("Connecting to MQTT Brocker as %s ... \n", client_id.c_str());
       if (connection.connect(client_id.c_str(), mqtt_username, mqtt_password)) {
         Serial.println("Connected to MQTT Broker");
@@ -368,7 +368,7 @@ void setup() {
     connection.setServer(mqtt_server, 8883);
     connection.setKeepAlive(60);
     while (!connection.connected()) {
-      String client_id = "ESP32-WROOM-" + String(WiFi.macAddress());
+      String client_id = "ESP32-WROOM-32U_" + String(WiFi.macAddress());
       Serial.printf("Connecting to MQTT Brocker as %s ... \n", client_id.c_str());
       if (connection.connect(client_id.c_str(), mqtt_username, mqtt_password)) {
         Serial.println("Connected to MQTT Broker");
