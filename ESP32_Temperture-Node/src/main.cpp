@@ -186,6 +186,24 @@ void mosquitto_connect ()
     #endif
     #ifdef MQTT_SSL // MOSQUITTO MQTT port 8883
     Serial.println(":8883");
+    espClientSSL.setCACert(NODE_CERT_CA);
+    connection.setServer(mqtt_server, 8883);
+    connection.setKeepAlive(60);
+    while (!connection.connected()) {
+      String client_id = "ESP32-U-" + String(WiFi.macAddress());
+      Serial.printf("Connecting to MQTT Brocker as %s ... \n", client_id.c_str());
+      if (connection.connect(client_id.c_str(), mqtt_username, mqtt_password)) {
+        Serial.println("Connected to MQTT Broker");
+      }
+      else {
+        Serial.print("Failed to connect, rc=");
+        Serial.print(connection.state());
+        Serial.println(" Retrying in 5 seconds.");
+        delay(5000);
+      }
+    }
+    /* on-premises MQTT 
+    Serial.println(":8883");
     connection.setServer(mqtt_server, 8883);
     espClientSSL.setCACert(NODE_CERT_CA);
     espClientSSL.setCertificate(NODE_CERT_CRT);
@@ -200,7 +218,7 @@ void mosquitto_connect ()
       connection.subscribe(MQTT_IOT_CHANNEL_OUTPUT_PWM_1);
     }
     Serial.print("Mosquitto state: ");
-    Serial.println(connection.state());
+    Serial.println(connection.state());*/
     #endif
     delay(2000);
   }
