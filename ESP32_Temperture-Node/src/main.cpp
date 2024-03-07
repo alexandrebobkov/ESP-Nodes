@@ -242,8 +242,8 @@ void setup() {
   Serial.println("GPIO setup done");
   Serial.println("Scanning I2C bus ...");
 
-  /*// Scan I2C bus
-  byte address;
+  // Scan I2C bus
+  /*byte address;
   for (address = 1; address < 127; address++)
   {
     Serial.print("Address: ");
@@ -263,7 +263,7 @@ void setup() {
   unsigned status = bme.begin(0x76); // 0x76
   if (!status) {
     Serial.println("Could not find a valid BME/BMP280 sensor, check wiring!");
-    Serial.print("SensorID was: 0x"); Serial.println(bme.sensorID());//,16);
+    Serial.print("SensorID was: 0x"); Serial.println(bme.sensorID(),16);
     Serial.print("   ID of 0xFF probably means a bad address, a BMP 180 or BMP 085\n");
     Serial.print("   ID of 0x56-0x58 represents a BMP 280,\n");
     Serial.print("   ID of 0x60 represents a BME 280.\n");
@@ -349,7 +349,7 @@ void setup() {
   connection.setServer(mqtt_server, 8883);
   espClientSSL.setCACert(NODE_CERT_CA);
   espClientSSL.setCertificate(NODE_CERT_CRT);
-  espClientSSL.setPrivateKey(NODE_CERT_PRIVATE);
+  //espClientSSL.setPrivateKey(NODE_CERT_PRIVATE);
   //connection.setCallback(mosquito_callback);
   if(connection.connect("esp32")) {
     Serial.println("Mosquitto Connected!");
