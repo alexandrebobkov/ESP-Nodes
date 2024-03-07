@@ -190,7 +190,7 @@ void mosquitto_connect ()
     connection.setServer(mqtt_server, 8883);
     connection.setKeepAlive(60);
     while (!connection.connected()) {
-      String client_id = "ESP32-U-" + String(WiFi.macAddress());
+      String client_id = "ESP32-WROOM-" + String(WiFi.macAddress());
       Serial.printf("Connecting to MQTT Brocker as %s ... \n", client_id.c_str());
       if (connection.connect(client_id.c_str(), mqtt_username, mqtt_password)) {
         Serial.println("Connected to MQTT Broker");
@@ -364,11 +364,30 @@ void setup() {
   #endif
   #ifdef MQTT_SSL // MOSQUITTO MQTT port 8883
   Serial.println(":8883");
+    espClientSSL.setCACert(NODE_CERT_CA);
+    connection.setServer(mqtt_server, 8883);
+    connection.setKeepAlive(60);
+    while (!connection.connected()) {
+      String client_id = "ESP32-WROOM-" + String(WiFi.macAddress());
+      Serial.printf("Connecting to MQTT Brocker as %s ... \n", client_id.c_str());
+      if (connection.connect(client_id.c_str(), mqtt_username, mqtt_password)) {
+        Serial.println("Connected to MQTT Broker");
+      }
+      else {
+        Serial.print("Failed to connect, rc=");
+        Serial.print(connection.state());
+        Serial.println(" Retrying in 5 seconds.");
+        delay(5000);
+      }
+    }
+  /**
+  Serial.println(":8883");
   connection.setServer(mqtt_server, 8883);
   espClientSSL.setCACert(NODE_CERT_CA);
   espClientSSL.setCertificate(NODE_CERT_CRT);
   //espClientSSL.setPrivateKey(NODE_CERT_PRIVATE);
   //connection.setCallback(mosquito_callback);
+  **/
   if(connection.connect("esp32")) {
     Serial.println("Mosquitto Connected!");
     connection.subscribe("esp32/sw1");
@@ -430,7 +449,7 @@ void loop() {
     Serial.print(bme.readPressure() / 100.0F);
     Serial.println(" hPa");
     Serial.println("========\n");
-    delay(2500);
+    delay(5000);
     connection.loop();
 
     // Blink status LED when status is OK
