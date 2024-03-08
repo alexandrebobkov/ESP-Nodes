@@ -29,7 +29,7 @@
 // MQTT Channel specific for each node
 // [NODE]/sensors/sensor
 // IoT ID
-#define IoT_ID                             "node1"
+#define IoT_ID                              "node1"
 #define MQTT_NODE_TEMPERATURE               "/sensors/temperature"
 #define MQTT_NODE_PRESSURE                  "/sensors/pressure"
 #define MQTT_NODE_HUMIDITY                  "/sensors/humidity"
