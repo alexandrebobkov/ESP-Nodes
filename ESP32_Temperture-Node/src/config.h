@@ -1,8 +1,8 @@
 // Uncomment modules as required
 //#define RTC
 //#define MICRO_SD
-//#define BMP280      // Adafruit BMP280; temp & pressure
-#define BME280      // Generic BME280; temp, pressure & humidity
+//#define BMP280    // Adafruit BMP280; temp & pressure
+#define BME280      // Generic I2C BME280; temp, pressure & humidity
 /*
     BME-280
     SCL -> GPIO 22
@@ -29,14 +29,14 @@
 // MQTT Channel specific for each node
 // [NODE]/sensors/sensor
 // IoT ID
-#define IoT_ID                          "node1"
-#define MQTT_NODE_TEMPERATURE           "/sensors/temperature"
-#define MQTT_NODE_PRESSURE              "/sensors/pressure"
-#define MQTT_NODE_HUMIDITY              "/sensors/humidity"
-#define MQTT_NODE_PULSE                 "/pulse"
-#define MQTT_NODE_SWITCH_1              "/sw1"
-#define MQTT_NODE_SWITCH_2              "/sw2"
-#define MQTT_NODE_OUTPUT_PWM_1          "/pwm1"
+#define IoT_ID                             "node1"
+#define MQTT_NODE_TEMPERATURE               "/sensors/temperature"
+#define MQTT_NODE_PRESSURE                  "/sensors/pressure"
+#define MQTT_NODE_HUMIDITY                  "/sensors/humidity"
+#define MQTT_NODE_PULSE                     "/pulse"
+#define MQTT_NODE_SWITCH_1                  "/sw1"
+#define MQTT_NODE_SWITCH_2                  "/sw2"
+#define MQTT_NODE_OUTPUT_PWM_1              "/pwm1"
 // Standardize switches channels
 #define MQTT_IOT_CHANNEL_OUTPUT_PULSE       "node1/output/pulse"
 #define MQTT_IOT_CHANNEL_OUTPUT_SWITCH_1    "node1/output/sw1"

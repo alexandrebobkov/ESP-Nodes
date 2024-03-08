@@ -1,5 +1,6 @@
 /*
-  Written for ESP32 development board DEVKIT v1 (Espressive ESP32-WROOM-32)
+  Written for ESP32 development board DEVKIT v1 (Espressive ESP32-WROOM-32).
+  Modified for ESP32 WROOM U (external anthena).
     
   Node sending temperature and atmosphere pressure readings via MQTT.
   
@@ -19,11 +20,10 @@
 #include "secrets.h"
 #include "config.h"
 
-#ifdef BME280
-
+#ifdef BME280   // I2C temperature, pressure and humidity sensor.
 #include <Adafruit_BME280.h>
 #endif
-#ifdef BMP280
+#ifdef BMP280   // ISP temperature, pressure and humidity sensor.
 #include <Adafruit_BMP280.h>
 #endif
 
@@ -67,13 +67,11 @@ PubSubClient connection(espClientSSL); //mosquitto_ssl
 
 void mosquito_callback (char* topic, byte* message, unsigned int length)
 {
-  //mosquitto.mosquito_callback(topic, message, length);
-
   // Display topic and message received.
   Serial.print("\nMessage arrived on topic: ");
   Serial.println(topic);
   Serial.print("Message: ");
-  String messageTemp;                               // variable to temporary store message received
+  String messageTemp; // variable to temporary store message received
 
   // Convert message received in bytes into String
   for (int i=0; i < length; i++) {
@@ -185,6 +183,7 @@ void mosquitto_connect ()
     Serial.println(connection.state());
     #endif
     #ifdef MQTT_SSL // MOSQUITTO MQTT port 8883
+    // MQTX MQTT Cloud
     Serial.println(":8883");
     espClientSSL.setCACert(NODE_CERT_CA);
     connection.setServer(mqtt_server, 8883);
@@ -202,7 +201,7 @@ void mosquitto_connect ()
         delay(5000);
       }
     }
-    /* on-premises MQTT 
+    /* on-premises Mosquitto MQTT 
     Serial.println(":8883");
     connection.setServer(mqtt_server, 8883);
     espClientSSL.setCACert(NODE_CERT_CA);
@@ -348,6 +347,8 @@ void setup() {
   
   Serial.print("Connecting to Mosquitto at IP: ");
   Serial.print(mqtt_server);
+  mosquitto_connect();
+  /**
   #ifdef MQTT // MOSQUITTO MQTT port 1883
   Serial.println(":1883");
   connection.setServer(mqtt_server, 1883);
