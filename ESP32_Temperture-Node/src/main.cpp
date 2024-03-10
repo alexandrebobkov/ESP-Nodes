@@ -403,7 +403,7 @@ void setup() {
     digitalWrite(LED_PIN, LOW);
   }
   Serial.println(connection.state());
-  #endif  
+  //#endif  
 }
 
 void loop() {
