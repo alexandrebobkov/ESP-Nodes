@@ -44,7 +44,7 @@ Adafruit_BME280 bme;
 // BMP280
 #ifdef BMP280
 // I2C setup
-Adafruit_BMP280 bme;//bmp;
+Adafruit_BMP280 bmp;
 // BMP280 SPI setup
 #define BMP_SCK   (18)
 #define BMP_MISO  (19)
@@ -299,7 +299,7 @@ void setup() {
   // BMP280
   #ifdef BMP280  
   unsigned status_bmp280;
-  status_bmp280 = bmp.begin();
+  status_bmp280 = bmp.begin(0x58);
   if (!status_bmp280) {
     Serial.println("Could not find BMP280");
     Serial.println(bmp.sensorID(),16);
@@ -423,11 +423,20 @@ void loop() {
     //connection.publish(MQTT_IOT_CHANNEL_TEMPERATURE, itoa(sensors_values.temperature, cstr, 10));
     //connection.publish(MQTT_IOT_CHANNEL_PRESSURE, itoa(sensors_values.pressure / 100.0F, cstr, 10));
     //connection.publish(MQTT_IOT_CHANNEL_HUMIDITY, itoa(sensors_values.humidity, cstr, 10));
+    #ifdef BME280
     connection.publish(MQTT_IOT_CHANNEL_TEMPERATURE, itoa(bme.readTemperature(), cstr, 10));
     connection.publish(MQTT_IOT_CHANNEL_PRESSURE, itoa(bme.readPressure() / 100.0F, cstr, 10));
     connection.publish(MQTT_IOT_CHANNEL_HUMIDITY, itoa(bme.readHumidity(), cstr, 10));    
     connection.publish(MQTT_IOT_CHANNEL_OUTPUT_PULSE, "1");
     connection.publish(MQTT_IOT_CHANNEL_0, "10");
+    #endif
+    #ifdef BMP280
+    connection.publish(MQTT_IOT_CHANNEL_TEMPERATURE, itoa(bmp.readTemperature(), cstr, 10));
+    connection.publish(MQTT_IOT_CHANNEL_PRESSURE, itoa(bmp.readPressure() / 100.0F, cstr, 10));
+    connection.publish(MQTT_IOT_CHANNEL_HUMIDITY, itoa(0, cstr, 10));    
+    connection.publish(MQTT_IOT_CHANNEL_OUTPUT_PULSE, "1");
+    connection.publish(MQTT_IOT_CHANNEL_0, "10");
+    #endif
 
     // Print key information on Serial
     Serial.println("test_topic: 10");
@@ -443,6 +452,7 @@ void loop() {
     Serial.println(WiFi.status());            // status() == 3 => Connected to WiFi
     Serial.println("\n==== BME280 Sensors Values ====");
     Serial.print("Temperature: ");
+    #ifdef BME280
     Serial.print(bme.readTemperature());
     Serial.println("°C");
     Serial.print("Humidity: ");
@@ -452,6 +462,18 @@ void loop() {
     Serial.print(bme.readPressure() / 100.0F);
     Serial.println(" hPa");
     Serial.println("========\n");
+    #endif
+    #ifdef BMP280
+    Serial.print(bmp.readTemperature());
+    Serial.println("°C");
+    Serial.print("Humidity: ");
+    Serial.print("N/A");
+    Serial.println("%");
+    Serial.print("Barometric Pressure: ");
+    Serial.print(bmp.readPressure() / 100.0F);
+    Serial.println(" hPa");
+    Serial.println("========\n");
+    #endif
     delay(5000);
     connection.loop();
 
