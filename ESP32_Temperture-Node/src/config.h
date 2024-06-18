@@ -24,9 +24,9 @@
 #########################################################################
 */
 // MQTT Default Channels
-#define MQTT_IOT_CHANNEL_TEMPERATURE        "esp32/sensors/temperature"
-#define MQTT_IOT_CHANNEL_PRESSURE           "esp32/sensors/pressure"
-#define MQTT_IOT_CHANNEL_HUMIDITY           "esp32/sensors/humidity"
+#define MQTT_IOT_CHANNEL_TEMPERATURE        "nodes/outdoors/foxie1/sensors/temperature"
+#define MQTT_IOT_CHANNEL_PRESSURE           "nodes/outdoors/foxie1/sensors/pressure"
+#define MQTT_IOT_CHANNEL_HUMIDITY           "nodes/outdoors/foxie1/sensors/humidity"
 // MQTT Channel specific for each node
 // [NODE]/sensors/sensor
 // IoT ID
