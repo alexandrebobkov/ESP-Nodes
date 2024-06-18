@@ -1,10 +1,10 @@
 // Uncomment modules as required
 //#define RTC
 //#define MICRO_SD
-//#define BMP280    // Adafruit BMP280; temp & pressure
-#define BME280      // Generic I2C BME280; temp, pressure & humidity
+//#define BMP280    // Adafruit BMP280; temp & pressure (rectangular shape miniature IC)
+#define BME280      // Generic I2C BME280; temp, pressure & humidity (square shape miniature IC)
 /*
-    BME-280
+    BME-280 
     SCL -> GPIO 22
     SDA -> GPIO 21
     VIN -> 5V
