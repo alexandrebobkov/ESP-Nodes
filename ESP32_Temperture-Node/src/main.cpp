@@ -44,7 +44,7 @@ Adafruit_BME280 bme;
 // BMP280
 #ifdef BMP280
 // I2C setup
-Adafruit_BMP280 bmp;
+Adafruit_BMP280 bme;//bmp;
 // BMP280 SPI setup
 #define BMP_SCK   (18)
 #define BMP_MISO  (19)
