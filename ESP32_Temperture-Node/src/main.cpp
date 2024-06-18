@@ -278,6 +278,8 @@ void setup() {
   // WaveShare BME280
   #ifdef BME280
   unsigned status = bme.begin(0x76); // 0x76
+  //unsigned status = bme.begin(0x58); // 0x58
+
   if (!status) {
     Serial.println("Could not find a valid BME/BMP280 sensor, check wiring!");
     Serial.print("SensorID was: 0x"); Serial.println(bme.sensorID(),16);
