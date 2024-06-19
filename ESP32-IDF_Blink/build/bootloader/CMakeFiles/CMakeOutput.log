@@ -394,3 +394,35 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-IDF_Blink/build/bootloader/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_49a68 && [1/2] Building C object CMakeFiles/cmTC_49a68.dir/CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_49a68
+
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-IDF_Blink/build/bootloader/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_fb8ec && [1/2] Building C object CMakeFiles/cmTC_fb8ec.dir/CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_fb8ec
+
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-IDF_Blink/build/bootloader/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_f2351 && [1/2] Building C object CMakeFiles/cmTC_f2351.dir/CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_f2351
+
+
+
+Determining size of time_t passed with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-IDF_Blink/build/bootloader/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_5a831 && [1/2] Building C object CMakeFiles/cmTC_5a831.dir/TIME_T_SIZE.c.obj
+[2/2] Linking C executable cmTC_5a831
+
+
+

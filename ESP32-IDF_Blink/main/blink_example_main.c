@@ -91,6 +91,9 @@ static void configure_led(void)
 void app_main(void)
 {
 
+    ESP_LOGI(TAG, "[APP] Startup ...");
+    ESP_LOGI(TAG, "[APP] Free memory: %" PRIu32 " bytes ", esp_get_free_heap_size());
+    ESP_LOGI(TAG, "[APP] IDF version: %s", esp_);
     /* Configure the peripheral according to the LED type */
     configure_led();
 
