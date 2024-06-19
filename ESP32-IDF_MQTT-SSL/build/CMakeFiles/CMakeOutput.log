@@ -426,3 +426,46 @@ Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe
 
 
 
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-IDF_MQTT-SSL/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_61cc0 && [1/2] Building C object CMakeFiles/cmTC_61cc0.dir/src.c.obj
+[2/2] Linking C executable cmTC_61cc0
+C:/Users/alex/.espressif/tools/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/ld.exe: CMakeFiles/cmTC_61cc0.dir/src.c.obj:(.literal+0x18): warning: pthread_exit is not implemented and will always fail
+C:/Users/alex/.espressif/tools/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/ld.exe: CMakeFiles/cmTC_61cc0.dir/src.c.obj:(.literal+0xc): warning: pthread_cancel is not implemented and will always fail
+C:/Users/alex/.espressif/tools/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/ld.exe: CMakeFiles/cmTC_61cc0.dir/src.c.obj:(.literal+0x8): warning: pthread_detach is not implemented and will always fail
+C:/Users/alex/.espressif/tools/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/ld.exe: CMakeFiles/cmTC_61cc0.dir/src.c.obj:(.literal+0x10): warning: pthread_join is not implemented and will always fail
+C:/Users/alex/.espressif/tools/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/ld.exe: CMakeFiles/cmTC_61cc0.dir/src.c.obj:(.literal+0x4): warning: pthread_create is not implemented and will always fail
+C:/Users/alex/.espressif/tools/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/ld.exe: CMakeFiles/cmTC_61cc0.dir/src.c.obj:(.literal+0x14): warning: pthread_atfork is not implemented and will always fail
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Performing C SOURCE FILE Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS succeeded with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-IDF_MQTT-SSL/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_d239c && [1/2] Building C object CMakeFiles/cmTC_d239c.dir/src.c.obj
+[2/2] Linking C executable cmTC_d239c
+
+
+Source file was:
+int main(void) { return 0; }
