@@ -98,7 +98,9 @@ static void send_binary(esp_mqtt_client_handle_t client)
     esp_partition_mmap_handle_t out_handle;
     const void *binary_address;
     const esp_partition_t *partition = esp_ota_get_running_partition();
-    esp_partition_nmap(partition, 0, partition->size, 1024, &binary_address, &out_handle);
+    
+    esp_partition_mmap(partition, 0, partition->size, ESP_PARTITION_MMAP_DATA, &binary_address, &out_handle);
+
     int binary_size = MIN(1024, partition->size);
     int msg_id = esp_mqtt_client_publish(client, "/esp32/binary", binary_address, binary_size, 0, 0);
     ESP_LOGI(TAG, "binary sent with msg_id=%d", msg_id);
