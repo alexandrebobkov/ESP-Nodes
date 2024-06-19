@@ -7,6 +7,6 @@ cmake_minimum_required(VERSION 3.16)
 set(EXTRA_COMPONENT_DIRS $ENV{IDF_PATH}/examples/common_components/protocol_examples_common)
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
-project(ESP32-IDF-mqtt-ssl)
+project(ESP32_IDF_MQTT-SSL)
 
 target_add_binary_data(mqtt_ssl.elf "main/mqtt_eclipseprojects_io.pem" TEXT)
