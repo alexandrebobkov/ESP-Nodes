@@ -128,7 +128,6 @@ static void mqtt_app_start(void) {
         .broker = {
             .address.uri = "10.100.50.16",
             .verification.certificate = (const char *)mqtt_eclipseprojects_io_pem_start
-
         },
     };
 
