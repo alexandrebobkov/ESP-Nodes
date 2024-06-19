@@ -23,6 +23,7 @@
 #include "esp_event.h"
 #include "esp_ota_ops.h"
 #include "esp_partition.h"
+#include "esp_flash_partitions.h"
 #include "esp_netif.h"
 #include "esp_tls.h"
 #include "nvs_flash.h"
@@ -94,10 +95,10 @@ static void blink_led(void)
 
 static void send_binary(esp_mqtt_client_handle_t client)
 {
-    esp_partition_nmap_handle_t out_handle;
+    esp_partition_mmap_handle_t out_handle;
     const void *binary_address;
-    const esp_partition_t *partition - esp_ota_get_running_partition();
-    esp_partition_nmap(partition, 0, partition->size, ESP_PARTITION_NMAP_DATA, &binary_address, &out_handle);
+    const esp_partition_t *partition = esp_ota_get_running_partition();
+    esp_partition_nmapt(partition, 0, partition->size, 1024, &binary_address, &out_handle);
     int binary_size = MIN(1024, partition->size);
     int msg_id = esp_mqtt_client_publish(client, "/esp32/binary", binary_address, binary_size, 0, 0);
     ESP_LOGI(TAG, "binary sent with msg_id=%d", msg_id);
@@ -145,6 +146,7 @@ void app_main(void)
     ESP_LOGI(TAG, "[APP] Startup ...");
     ESP_LOGI(TAG, "[APP] Free memory: %" PRIu32 " bytes ", esp_get_free_heap_size());
     ESP_LOGI(TAG, "[APP] IDF version: %s", esp_get_idf_version());
+    ESP_ERROR_CHECK(nvs_flash_init());
     /* Configure the peripheral according to the LED type */
     configure_led();
 
