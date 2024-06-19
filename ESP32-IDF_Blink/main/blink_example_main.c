@@ -7,14 +7,19 @@
    CONDITIONS OF ANY KIND, either express or implied.
 */
 #include <stdio.h>
+#include <sys/param.h>
+
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "driver/gpio.h"
 #include "esp_log.h"
 #include "led_strip.h"
 #include "sdkconfig.h"
+#include "mqtt_client.h"
+#include "esp_event.h"
 
-static const char *TAG = "example";
+static const char *TAG = "ESP32 MQTT SSL node";
+static const uint8_t mqtt_eclipseprojects_io_pem_start[] = "";
 
 /* Use project configuration menu (idf.py menuconfig) to choose the GPIO to blink,
    or you can edit the following line and set a number here.
@@ -88,12 +93,34 @@ static void configure_led(void)
 #error "unsupported LED type"
 #endif
 
+static void mqtt_event_handler(void *handler_args, esp_event_base_t base, init32_t event_id, void *event_data)
+{
+    esp_mqtt_event_handle_t event = event_data;
+    esp_mqtt_client_handle_t client = event->client;
+    int msg_id;
+}
+
+static void mqtt_app_start(void) {
+    const esp_mqtt_client_config_t mqtt_cfg = {
+        .broker = {
+            .address.uri = "10.100.50.16",
+            .verification.certificate = (const char *)mqtt_eclipseprojects_io_pem_start
+
+        },
+    };
+
+    ESP_LOGI(TAG, "[APP] Free memory: %" PRIu32 " bytes", esp_get_free_heap_size());
+    esp_mqtt_client_handle_t client = esp_mqtt_client_init(&mqtt_cfg);
+    esp_mqtt_client_register_event(client, ESP_EVENT_ANY_ID, mqtt_event_handler, NULL);
+    esp_mqtt_client_start(client);
+}
+
 void app_main(void)
 {
 
     ESP_LOGI(TAG, "[APP] Startup ...");
     ESP_LOGI(TAG, "[APP] Free memory: %" PRIu32 " bytes ", esp_get_free_heap_size());
-    ESP_LOGI(TAG, "[APP] IDF version: %s", esp_);
+    ESP_LOGI(TAG, "[APP] IDF version: %s", esp_get_idf_version());
     /* Configure the peripheral according to the LED type */
     configure_led();
 
@@ -104,4 +131,5 @@ void app_main(void)
         s_led_state = !s_led_state;
         vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
     }
+    mqtt_app_start();
 }
