@@ -7,6 +7,8 @@
    CONDITIONS OF ANY KIND, either express or implied.
 */
 #include <stdio.h>
+#include <stdint.h>
+#include <stddef.h>
 #include <sys/param.h>
 
 #include "freertos/FreeRTOS.h"
@@ -15,11 +17,20 @@
 #include "esp_log.h"
 #include "led_strip.h"
 #include "sdkconfig.h"
+
 #include "mqtt_client.h"
+#include "esp_system.h"
 #include "esp_event.h"
+#include "esp_ota_ops.h"
+#include "esp_partition.h"
+#include "esp_netif.h"
+#include "esp_tls.h"
+#include "nvs_flash.h"
 
 static const char *TAG = "ESP32 MQTT SSL node";
 static const uint8_t mqtt_eclipseprojects_io_pem_start[] = "";
+extern const uint8_t mqtt_eclipseprojects_io_pem_start[] asm("_binary_mqtt_exlipseprojects_io_pem_start");
+extern const uint8_t mqtt_eclipseprojects_io_pem_end[] asm("_binary_mqtt_eclipseprojects_io_pem_end");
 
 /* Use project configuration menu (idf.py menuconfig) to choose the GPIO to blink,
    or you can edit the following line and set a number here.
@@ -81,6 +92,17 @@ static void blink_led(void)
     gpio_set_level(BLINK_GPIO, s_led_state);
 }
 
+static void send_binary(esp_mqtt_client_handle_t client)
+{
+    esp_partition_nmap_handle_t out_handle;
+    const void *binary_address;
+    const esp_partition_t *partition - esp_ota_get_running_partition();
+    esp_partition_nmap(partition, 0, partition->size, ESP_PARTITION_NMAP_DATA, &binary_address, &out_handle);
+    int binary_size = MIN(1024, partition->size);
+    int msg_id = esp_mqtt_client_publish(client, "/esp32/binary", binary_address, binary_size, 0, 0);
+    ESP_LOGI(TAG, "binary sent with msg_id=%d", msg_id);
+}
+
 static void configure_led(void)
 {
     ESP_LOGI(TAG, "Example configured to blink GPIO LED!");
@@ -113,6 +135,8 @@ static void mqtt_app_start(void) {
     esp_mqtt_client_handle_t client = esp_mqtt_client_init(&mqtt_cfg);
     esp_mqtt_client_register_event(client, ESP_EVENT_ANY_ID, mqtt_event_handler, NULL);
     esp_mqtt_client_start(client);
+
+    send_binary(client);
 }
 
 void app_main(void)
