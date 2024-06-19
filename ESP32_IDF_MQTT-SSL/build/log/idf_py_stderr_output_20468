@@ -1,9 +1,0 @@
-Compiler supported targets: xtensa-esp32-elf
-
-CMake Error at C:/Users/alex/esp/esp-idf/tools/cmake/utilities.cmake:108 (target_sources):
-  Cannot specify sources for target "mqtt_ssl.elf" which is not built by this
-  project.
-Call Stack (most recent call first):
-  CMakeLists.txt:12 (target_add_binary_data)
-
-
