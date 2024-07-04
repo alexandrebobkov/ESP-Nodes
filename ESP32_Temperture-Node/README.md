@@ -95,12 +95,9 @@ static const char NODE_CERT_PRIVATE [] PROGMEM = R"EOF(
 ```
 
 ## Issuing Self-Generated SSL Certificates & Keys
+<p>It is easier to generate SSL Certificates and Keys on Linux since it already comes with neccessary tools.</p>
 
-```text
-
-
-#################################################################
-#Certificate generator for TLS encryption
+### Certificate generator for TLS encryption
 #################################################################
 openssl req -new -x509 -days 365 -extensions v3_ca -keyout ca.key -out ca.crt -passout pass:1234 -subj '/CN=TrustedCA.net'
 #If you generating self-signed certificates the CN can be anything
