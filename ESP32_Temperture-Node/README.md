@@ -29,8 +29,10 @@ networks:
 ```
 
 <p><i>mosquitto.conf</i></p>
+
 > [!NOTE]
 > If you are using IP addresses, then issue certificates and keys to the corresponding IP address of MQTT brocker
+
 ``` text
 ## List ports listen to
 listener 1883
