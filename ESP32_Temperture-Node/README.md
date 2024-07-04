@@ -28,7 +28,7 @@ networks:
     external: true
 ```
 
-<p><i>mosquitto.conf</i></p>
+<p><i>/mosquitto/mosquitto.conf</i></p>
 
 > [!NOTE]
 > If you are using IP addresses, then issue certificates and keys to the corresponding IP address of MQTT brocker
