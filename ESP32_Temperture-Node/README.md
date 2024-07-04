@@ -68,4 +68,12 @@ connection.setServer(mqtt_server, 8883);    // mqtt_server -> 192.168.50.16
 const char* WIFI_SSID = "IoT_bots";
 const char* WIFI_PASSWORD = "212212212";
 const char* mqtt_server = "192.168.50.16";
+
+// MQTT Broker Root CA
+static const char NODE_CERT_CA[] PROGMEM = R"EOF(
+-----BEGIN CERTIFICATE-----
+< Cut&Paste content of CA certificate over here >
+-----END CERTIFICATE-----
+)EOF";
+
 ```
