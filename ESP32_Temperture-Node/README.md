@@ -96,7 +96,8 @@ static const char NODE_CERT_PRIVATE [] PROGMEM = R"EOF(
 
 ## Issuing Self-Generated SSL Certificates & Keys
 
-```C
+```text
+
 
 #################################################################
 #Certificate generator for TLS encryption
