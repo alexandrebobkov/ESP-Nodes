@@ -31,7 +31,7 @@ networks:
 <p><i>/mosquitto/mosquitto.conf</i></p>
 
 > [!WARNING]
-> If you are using IP addresses, then issue certificates and keys to the corresponding IP address of MQTT brocker
+> If you are using IP addresses, then issue certificates and keys to the corresponding IP address of MQTT broker
 
 ``` text
 ## List ports listen to
@@ -52,7 +52,7 @@ persistence_location /srv/dev-disk-by-label/docker/columes/mosquitto/data/
 <p>The two lines of code shown below are the most crucial as they are responsible for connecting ESP32 to the MQTT broker.</p>
 
 > [!NOTE]
-> A set of SSL certificates and key used by ESP32 MQTT client must correspond to ones used by MQTT brocker. Otherwise, secure connection won't be established. 
+> A set of SSL certificates and key used by ESP32 MQTT client must correspond to ones used by MQTT broker. Otherwise, secure connection won't be established. 
 
 ```C
 espClientSSL.setCACert(NODE_CERT_CA);
