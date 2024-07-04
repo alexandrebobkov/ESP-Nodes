@@ -95,3 +95,47 @@ static const char NODE_CERT_PRIVATE [] PROGMEM = R"EOF(
 ```
 
 ## Issuing Self-Generated SSL Certificates & Keys
+
+```C
+
+#################################################################
+#Certificate generator for TLS encryption
+#################################################################
+openssl req -new -x509 -days 365 -extensions v3_ca -keyout ca.key -out ca.crt -passout pass:1234 -subj '/CN=TrustedCA.net'
+#If you generating self-signed certificates the CN can be anything
+
+openssl genrsa -out mosquitto.key 2048
+openssl req -out mosquitto.csr -key mosquitto.key -new -subj '/CN=Mosquitto_borker_adress'
+openssl x509 -req -in mosquitto.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out mosquitto.crt -days 365 -passin pass:1234
+#Mostly the client verifies the adress of the mosquitto server, so its necessary to set the CN to the correct adress (eg. yourserver.com)!!!
+
+
+#################################################################
+#These certificates are only needed if the mosquitto broker requires a certificate for client autentithication (require_certificate is set to true in mosquitto config)
+#################################################################
+openssl genrsa -out esp.key 2048
+openssl req -out esp.csr -key esp.key -new -subj '/CN=localhost'
+openssl x509 -req -in esp.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out esp.crt -days 365 -passin pass:1234
+#If the server (mosquitto) identifies the clients based on CN key, its necessary to set it to the correct value, else it can be blank. See the Mosquitto config.
+
+==========================
+
+openssl req -new -x509 -days 365 -extensions v3_ca -keyout ca.key -out ca.crt -passout pass:1234 -subj '/CN=myserver.dynamic-dns.net'
+
+openssl genrsa -out mosquitto.key 2048
+openssl req -out mosquitto.csr -key mosquitto.key -new -subj '/CN=localhost'
+openssl x509 -req -in mosquitto.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out mosquitto.crt -days 365 -passin pass:1234
+
+openssl genrsa -out esp.key 2048
+openssl req -out esp.csr -key esp.key -new -subj '/CN=localhost'
+openssl x509 -req -in esp.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out esp.crt -days 365 -passin pass:1234 
+
+openssl genrsa -out esp32.key 2048
+openssl req -new -x509 -days 365 -extensions v3_ca -keyout esp32_ca.key -out esp32_ca.crt -passout pass:1234 -subj '/CN=10.100.50.16'
+openssl req -out esp32.csr -key esp32.key -new -subj '/CN=10.100.50.16'
+
+openssl genrsa -out esp_node.key 2048
+openssl req -out esp_node.csr -key esp_node.key -new -subj '/CN=localhost'
+openssl x509 -req -in esp32.csr -CA esp32_ca.crt -CAkey esp32_ca.key -CAcreateserial -out esp_node.crt -days 365 -passin pass:1234
+
+```
