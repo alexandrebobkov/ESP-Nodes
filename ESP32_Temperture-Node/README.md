@@ -76,4 +76,18 @@ static const char NODE_CERT_CA[] PROGMEM = R"EOF(
 -----END CERTIFICATE-----
 )EOF";
 
+// MQTT Client Certificate
+static const char NODE_CERT_CRT [] PROGMEM = R"EOF(
+-----BEGIN CERTIFICATE-----
+< Cut&Paste content of client certificate over here >
+-----END CERTIFICATE-----
+)EOF";
+
+// MQTT Client Key
+static const char NODE_CERT_PRIVATE [] PROGMEM = R"EOF(
+-----BEGIN CERTIFICATE-----
+< Cut&Paste content of client key over here >
+-----END CERTIFICATE-----
+)EOF";
+
 ```
