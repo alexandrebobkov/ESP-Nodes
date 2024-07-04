@@ -99,16 +99,20 @@ static const char NODE_CERT_PRIVATE [] PROGMEM = R"EOF(
 
 ### Certificate generator for TLS encryption
 ```text
-# openssl req -new -x509 -days 365 -extensions v3_ca -keyout ca.key -out ca.crt -passout pass:1234 -subj '/CN=TrustedCA.net'
+openssl req -new -x509 -days 365 -extensions v3_ca -keyout ca.key -out ca.crt -passout pass:1234 -subj '/CN=TrustedCA.net'
 ```
 
 > [!NOTE]
 > If you generating self-signed certificates the CN can be anything.
 
 ```text
-# openssl genrsa -out mosquitto.key 2048
-# openssl req -out mosquitto.csr -key mosquitto.key -new -subj '/CN=Mosquitto_borker_adress'
-# openssl x509 -req -in mosquitto.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out mosquitto.crt -days 365 -passin pass:1234
+openssl genrsa -out mosquitto.key 2048
+```
+```text
+openssl req -out mosquitto.csr -key mosquitto.key -new -subj '/CN=Mosquitto_borker_adress'
+```
+```text
+openssl x509 -req -in mosquitto.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out mosquitto.crt -days 365 -passin pass:1234
 ```
 
 > [!NOTE]
