@@ -49,9 +49,16 @@ persistence_location /srv/dev-disk-by-label/docker/columes/mosquitto/data/
 
 ## ESP32 MQTT Client
 
-<p>The two lines of code shown below are most crucial as they are responsible for connecting ESP32 to the MQTT broker.</p>
+<p>The two lines of code shown below are the most crucial as they are responsible for connecting ESP32 to the MQTT broker.</p>
+
+> [!NOTE]
+> A set of SSL certificates and key used by ESP32 MQTT client must correspond to ones used by MQTT brocker. Otherwise, secure connection won't be established. 
 
 ```C
 espClientSSL.setCACert(NODE_CERT_CA);
 connection.setServer(mqtt_server, 8883);
 ```
+
+<p><i>secrets.h</i></p>
+> [!NOTE]
+> Create file called secrets.h to store configuration information about Wi-Fi, and encryption keys, but exclude it from being pushed to GitHub
