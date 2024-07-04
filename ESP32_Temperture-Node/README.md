@@ -64,7 +64,7 @@ connection.setServer(mqtt_server, 8883);    // mqtt_server -> 192.168.50.16
 <p><i>secrets.h</i></p>
 
 > [!NOTE]
-> Create file called secrets.h to store configuration information about Wi-Fi, and encryption keys, but exclude it from being pushed to GitHub
+> Create file called secrets.h to store configuration information about Wi-Fi, and encryption keys. Add entry to .gitignore file to exclude secrets.h from being pushed to GitHub
 
 ```text
 const char* WIFI_SSID = "IoT_bots";
