@@ -56,6 +56,8 @@ persistence_location /srv/dev-disk-by-label/docker/columes/mosquitto/data/
 
 ```C
 espClientSSL.setCACert(NODE_CERT_CA);
+espClientSSL.setCertificate(NODE_CERT_CRT);
+espClientSSL.setPrivateKey(NODE_CERT_PRIVATE);
 connection.setServer(mqtt_server, 8883);    // mqtt_server -> 192.168.50.16
 ```
 
