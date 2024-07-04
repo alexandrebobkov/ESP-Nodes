@@ -27,3 +27,19 @@ networks:
   IoT:
     external: true
 ```
+
+<p><i>mosquitto.conf</i></p>
+``` text
+## List ports listen to
+listener 1883
+listener 8883
+
+## Certificates and keys issued for local domain 192.168.10.16
+cafile /mosquitto/config/certs/esp32_ca.crt
+certfile /mosquitto/config/certs/esp32.crt
+keyfile /mosquitto/config/certs/esp32.key
+
+allow_anonymous true
+persistence true
+persistence_location /srv/dev-disk-by-label/docker/columes/mosquitto/data/
+```
