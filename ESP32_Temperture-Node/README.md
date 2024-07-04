@@ -3,7 +3,7 @@
 <!-- BMP280 comes in 3.3V and 5V versions. 5V version is I2C and has 4 terminals; 3.3V version is IPS and has 6 terminals AHT10 Arduino sensor -->
 
 ## MQTT Mosquito Broker
-<p>Below is an example of Docker compose file to run Mosquitto broker</p>
+<p>Mosquitto broker can be easily deployed using Docker compose file shown below. In the example below, MQTT broker listens to the ports 1883 (unecrypted) and 8883 (encrypted SSL). </p>
 
 ```text
 version: "3.8"
