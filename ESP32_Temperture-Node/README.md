@@ -5,14 +5,17 @@
 ## MQTT Mosquito Broker
 <p>Mosquitto broker can be easily deployed using Docker compose file shown below. In the example below, MQTT broker listens to the ports 1883 (unecrypted) and 8883 (encrypted SSL). </p>
 
+> [!NOTE]
+> Compose file below declares two volumes (config and data) to persistantly store Mosquitto configuration and data.
+
 ```text
 version: "3.8"
 services:
   mosquitto-esp32:
     image: eclipse-mosquitto:latest
     volumes:
-      - /srv/dev-disk-by-uuid-12424c21-2056-486b-b61f-0fea49742808/docker/volumes/mosquitto/config:/mosquitto/config
-      - /srv/dev-disk-by-uuid-12424c21-2056-486b-b61f-0fea49742808/docker/volumes/mosquitto/data:/mosquitto/data
+      - /srv/dev-disk-by-label/docker/volumes/mosquitto/config:/mosquitto/config
+      - /srv/dev-disk-by-label/docker/volumes/mosquitto/data:/mosquitto/data
     networks:
       - IoT
     ports:
