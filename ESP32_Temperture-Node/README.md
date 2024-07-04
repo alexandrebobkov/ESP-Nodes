@@ -30,7 +30,7 @@ networks:
 
 <p><i>/mosquitto/mosquitto.conf</i></p>
 
-> [!NOTE]
+> [!WARNING]
 > If you are using IP addresses, then issue certificates and keys to the corresponding IP address of MQTT brocker
 
 ``` text
@@ -63,7 +63,7 @@ connection.setServer(mqtt_server, 8883);    // mqtt_server -> 192.168.50.16
 
 <p><i>secrets.h</i></p>
 
-> [!NOTE]
+> [!TIP]
 > Create file called secrets.h to store configuration information about Wi-Fi, and encryption keys. Add entry to .gitignore file to exclude secrets.h from being pushed to GitHub
 
 ```text
@@ -115,7 +115,7 @@ openssl req -out mosquitto.csr -key mosquitto.key -new -subj '/CN=Mosquitto_bork
 openssl x509 -req -in mosquitto.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out mosquitto.crt -days 365 -passin pass:1234
 ```
 
-> [!NOTE]
+> [!IMPORTANT]
 > Mostly, the client verifies the adress of the mosquitto server, so its necessary to set the CN to the correct adress (eg. yourserver.com)!!!
 
 <p>These certificates are only needed if the mosquitto broker requires a certificate for client autentithication (require_certificate is set to true in mosquitto config)</p>
@@ -131,7 +131,7 @@ openssl x509 -req -in esp.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out esp.
 ```
 
 > [!NOTE]
-> If the server (mosquitto) identifies the clients based on CN key, its necessary to set it to the correct value, or else it can be blank. See the Mosquitto config.
+> If MQTT Broker identifies the clients based on CN key, its necessary to set it to the correct value, or else it can be blank. See official Mosquitto config.
 
 ```text
 openssl req -new -x509 -days 365 -extensions v3_ca -keyout ca.key -out ca.crt -passout pass:1234 -subj '/CN=myserver.dynamic-dns.net'
