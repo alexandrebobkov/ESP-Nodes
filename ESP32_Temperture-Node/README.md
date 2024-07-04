@@ -46,3 +46,12 @@ allow_anonymous true
 persistence true
 persistence_location /srv/dev-disk-by-label/docker/columes/mosquitto/data/
 ```
+
+## ESP32 MQTT Client
+
+<p>The two lines of code shown below are most crucial as they are responsible for connecting ESP32 to the MQTT broker.</p>
+
+```C
+espClientSSL.setCACert(NODE_CERT_CA);
+connection.setServer(mqtt_server, 8883);
+```
