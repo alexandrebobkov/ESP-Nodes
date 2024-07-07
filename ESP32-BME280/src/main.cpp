@@ -35,7 +35,7 @@ void setup() {
       Serial.println("Unknown error at address 0x");
       Serial.println(address, HEX);
     }
-    delay(250);
+    delay(500);
   }
 
   #ifdef BME280
