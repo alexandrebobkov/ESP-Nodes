@@ -10,7 +10,7 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 - ESP32-WROOM-32D Module [^1]
 - Direct connections to all GPIOs
 - Miniature in size, only 35.7mm x 35.7mm
-- Built-in 3V3 voltage regulator and reversed voltage protection
+- Built-in 3V3 voltage regulator (15V input max) and reversed supply voltage polarity protection
 - Pre-wired strapping pins for ensuring proper booting on power-on
 - blue power-on LED
 - two programmable LEDs
