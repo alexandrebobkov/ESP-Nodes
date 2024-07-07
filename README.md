@@ -1,7 +1,7 @@
 # ESP-Nodes
 Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionalities.
 
-<p>The ESP32-Node is designed to be a low-cost solution for experimenting with embedded and IoT devices. The ESP32-Node is intended to College students taking Electronics program or advanced users who are looking for functional ESP32 embedded board with minimal size.</p>
+<p>The ESP32-Node is designed to be a low-cost, vanila, solution for experimenting with embedded and IoT devices. The ESP32-Node is intended to College students taking Electronics program or advanced users who are looking for functional ESP32 embedded board with minimal size.</p>
 
 <img alt="ESP32-Node PCB" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/ESP32-Node-001.jpg" width="50%"/>
 
@@ -23,7 +23,7 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 | Physical Pin | Descrption and Logical Pin | Extended Function |
 | --- | --- | --- |
 | `1` `15` `38` | Ground | |
-| `2` | <p style="color: red">`3V3`</p> | |
+| `2` | `3V3` | |
 | `3` | EN | |
 | `4` `5` `6` `7` | **Inputs Only** `GPIO36` `GPIO39` `GPIO34` `GPIO35` | ADC1_CH0, ADC1_CH3, ADC1_CH6, ADC1_CH7 |
 | `8` `9` | `GPIO32` `GPIO33` | TOUCH_9, TOUCH_8 |
@@ -31,7 +31,7 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 | `12` | `GPIO27` | TOUCH_7 |
 | `13` `14` | `GPIO14` `GPIO12` | `HSPI_CLK` `HSPI_MISO` TOUCH_6 TOUCH_7 |
 | `16` | `GPIO13` | `HSPI_MOSI` ADC2_CH4 |
-| `17` `18` `19` `20` `21` `22` | **Internal Use** `GPIO09` `GPIO10` `GPIO11` `GPIO08` `GPIO07` `GPIO06` |
+| `17` `18` `19` `20` `21` `22` | **Module Internal Use Only** `GPIO09` `GPIO10` `GPIO11` `GPIO08` `GPIO07` `GPIO06` |
 | `23` `24` | `GPIO02` `GPIO15` | AD2_CH3 ADC2_CH2 |
 | `25` `26` | `GPIO00` `GPIO04` | TOUCH_1 TOUCH_0 |
 | `27` `28` | `GPIO16` `GPIO17` | `UART2_RXD` `UART2_TXD` |
