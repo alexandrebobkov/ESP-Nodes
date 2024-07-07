@@ -56,6 +56,8 @@ The **Temperature Node** broadcasts the air temperature, atmospheric pressure an
 
 The sensor board has 4 pins and is 13mm by 10.5mm in size. The sensor BME280 measures relative ambient temperature, barometric pressure and relative humidity, and passes measured values via I2C protocol.
 
+The unit combines high linearity and high accuracy sensors and is perfectly feasible for low current consumption, long-term stability and high EMC robustness. The humidity sensor offers an extremely fast response time and therefore supports performance requirements for emerging applications such as context awareness, and high accuracy over a wide temperature range.[^2]
+
 <img alt="ESP32-Node Pinout" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/BME280.jpg" width="200px"/>
 
 > [!IMPORTANT]
