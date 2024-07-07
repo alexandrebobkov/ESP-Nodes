@@ -24,3 +24,4 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 | --- | --- |
 | `1` `15` `38` | Ground |
 | `3` | EN |
+| `4` `5` `6` `7` | Inputs `GPIO36` `GPIO39` `GPIO34` `GPIO35` |
