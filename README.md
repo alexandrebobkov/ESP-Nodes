@@ -10,7 +10,7 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 - Uses bare-bones ESP32-WROOM-32D Module [^1]
 - Direct connections to all GPIOs
 - Miniature in size; only 35.7mm x 35.7mm
-- Built-in 3V3 voltage regulator (V<sub>max</sub> 15V) and reversed supply voltage polarity protection
+- Built-in 3V3 voltage regulator (V<sub>max</sub>=15V) and reversed supply voltage polarity protection
 - Pre-wired strapping pins for ensuring proper booting on power-on
 - blue power-on LED
 - two programmable LEDs
@@ -46,7 +46,9 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 [^1]: https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf
 
 
-### UART
+### Programming via UART
+
+Bare-bones ESP32 module can be programmed via UART interface using USB to UART adapter.
 
 ## Temperature Node Key Elements and Components
 
