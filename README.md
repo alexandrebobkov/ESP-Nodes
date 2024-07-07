@@ -79,8 +79,7 @@ The BME280 sensor board interface uses 4 pins and is 13mm by 10.5mm in size. The
 ### Reading Values
 
 ```C
-Adafruit_BME280 bme;
-unsigned status = bme.begin(0x76);
+i2c_master_write_read_device(I2C_MASTER_NUM, 0x76, &reg_addr, 1, data, len, I2C_MASTER_TIMEOUT_MS / portTICK_PERIOD_MS);
 ```
 
 [^2]: https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280/
