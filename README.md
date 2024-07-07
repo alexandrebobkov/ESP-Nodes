@@ -17,7 +17,7 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 - programmable via [UART](https://github.com/alexandrebobkov/ESP-Nodes/tree/main?tab=readme-ov-file#uart) -> no need for serial drivers
 
 ### ESP32 Module Adapter Pinouts
-<p>The adapter allows interchangability of ESP32 modules between different nodes.</p>
+<p>The adapter allows interchangability of ESP32 modules between different nodes. The adapter contains minimal components on its PCB, just enough to ensure module's operation.</p>
 
 <img alt="ESP32-Node Pinout" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/ESP32-Node-pinout.png" width="350px"/>
 
@@ -45,4 +45,8 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 
 [^1]: https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf
 
-## UART
+
+### UART
+
+## Temperature Node
+<p>The __Temperature Node__ broadcasts air temperature, atmospheric pressure and air humidity over MQTT.</p>
