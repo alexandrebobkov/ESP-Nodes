@@ -4,7 +4,7 @@
 #include <Adafruit_BMP280.h>
 #include <WiFiClientSecure.h>
 
-#define BMP280
+#define BME280
 
 Adafruit_BME280 bme;
 Adafruit_BMP280 bmp;
@@ -26,7 +26,7 @@ void setup() {
 
   #ifdef BME280
   // BME280
-  unsigned status = bme.begin(0x76);  // I2C slave address 0x76 (SDO set to GND)
+  unsigned status = bme.begin();//0x76);  // I2C slave address 0x76 (SDO set to GND)
   if (!status) {
     Serial.println("Could not find a valid BME/BMP280 sensor, check wiring!");
     Serial.print("SensorID was: 0x"); Serial.println(bme.sensorID(), 16);
@@ -34,7 +34,7 @@ void setup() {
     Serial.print("   ID of 0x56-0x58 represents a BMP 280,\n");
     Serial.print("   ID of 0x60 represents a BME 280.\n");
     Serial.print("   ID of 0x61 represents a BME 680.\n");
-    while (1);
+    while (1) delay(10);
   }
   else {
     sensors_values.humidity = bme.readHumidity();
@@ -43,7 +43,7 @@ void setup() {
   }
   #endif
   #ifdef BMP280
-  unsigned status = bmp.begin(0x58);
+  unsigned status = bmp.begin();
   if (!status) {
     Serial.println("Could not find a valid BME/BMP280 sensor, check wiring!");
     Serial.print("SensorID was: 0x"); Serial.println(bme.sensorID(), 16);
@@ -51,7 +51,7 @@ void setup() {
     Serial.print("   ID of 0x56-0x58 represents a BMP 280,\n");
     Serial.print("   ID of 0x60 represents a BME 280.\n");
     Serial.print("   ID of 0x61 represents a BME 680.\n");
-    while (1);
+    while (1) delay(10);
   }
   else {}
   #endif
