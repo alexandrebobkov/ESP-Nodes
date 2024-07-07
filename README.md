@@ -23,3 +23,4 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 | GPIOs | Descrption |
 | --- | --- |
 | `1` `15` `38` | Ground |
+| `3` | EN |
