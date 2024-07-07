@@ -4,7 +4,7 @@
 #include <Adafruit_BMP280.h>
 #include <WiFiClientSecure.h>
 
-#define BME280
+#define BMP280
 
 Adafruit_BME280 bme;
 Adafruit_BMP280 bmp;
@@ -26,7 +26,7 @@ void setup() {
 
   #ifdef BME280
   // BME280
-  unsigned status = bme.begin();//0x76);  // I2C slave address 0x76 (SDO set to GND)
+  unsigned status = bme.begin(BME280_ADDRESS_ALTERNATE);// 0x76);  // I2C slave address 0x76 (SDO set to GND)
   if (!status) {
     Serial.println("Could not find a valid BME/BMP280 sensor, check wiring!");
     Serial.print("SensorID was: 0x"); Serial.println(bme.sensorID(), 16);
@@ -43,7 +43,7 @@ void setup() {
   }
   #endif
   #ifdef BMP280
-  unsigned status = bmp.begin();
+  unsigned status = bmp.begin(BMP280_ADDRESS);
   if (!status) {
     Serial.println("Could not find a valid BME/BMP280 sensor, check wiring!");
     Serial.print("SensorID was: 0x"); Serial.println(bme.sensorID(), 16);
