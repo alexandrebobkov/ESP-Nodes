@@ -3,16 +3,15 @@
 
 #include <WiFiClientSecure.h>
 
-#define BMP280
-//#define BME280
+//#define BMP280
+#define BME280
 
 #ifdef BME280
 #include <Adafruit_BME280.h>
 #endif
 
 #ifdef BMP280
-//#include <Adafruit_BMP280.h>
-#include <Adafruit_BME280.h>
+#include <Adafruit_BMP280.h>
 #endif
 
 struct {
@@ -52,11 +51,11 @@ void setup() {
     sensors_values.humidity = bme.readHumidity();
     sensors_values.pressure = bme.readPressure()  / 100.0F;
     sensors_values.temperature = bme.readTemperature();
+    Serial.println("All values were measured.");
   }
   #endif
   #ifdef BMP280
-  //Adafruit_BMP280 bmp;
-  Adafruit_BME280 bmp;
+  Adafruit_BMP280 bmp;
   unsigned status = bmp.begin(0x76);
   if (!status) {
     Serial.println("Could not find a valid BME/BMP280 sensor, check wiring!");
