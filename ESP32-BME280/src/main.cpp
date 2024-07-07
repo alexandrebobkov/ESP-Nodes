@@ -42,7 +42,7 @@ void setup() {
     delay(500);
   }
 
-  #ifdef BME280
+  /*#ifdef BME280
   Adafruit_BME280 bme;
   unsigned status = bme.begin(0x76);  // I2C slave address 0x76 (SDO set to GND)
   if (!status) {
@@ -73,7 +73,7 @@ void setup() {
     while (1) delay(10);
   }
   else {}
-  #endif
+  #endif*/
 }
 
 void loop() {
