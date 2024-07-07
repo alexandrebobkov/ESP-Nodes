@@ -4,10 +4,10 @@
 #include <Adafruit_BMP280.h>
 #include <WiFiClientSecure.h>
 
-#define BMP280
+#define BME280
 
-Adafruit_BME280 bme;
-Adafruit_BMP280 bmp;
+
+
 
 struct {
   float humidity = 0.0;
@@ -25,8 +25,8 @@ void setup() {
   sensors_values.temperature = 0.0;
 
   #ifdef BME280
-  // BME280
-  unsigned status = bme.begin(BME280_ADDRESS_ALTERNATE);// 0x76);  // I2C slave address 0x76 (SDO set to GND)
+  Adafruit_BME280 bme;
+  unsigned status = bme.begin(0x76);  // I2C slave address 0x76 (SDO set to GND)
   if (!status) {
     Serial.println("Could not find a valid BME/BMP280 sensor, check wiring!");
     Serial.print("SensorID was: 0x"); Serial.println(bme.sensorID(), 16);
@@ -43,7 +43,8 @@ void setup() {
   }
   #endif
   #ifdef BMP280
-  unsigned status = bmp.begin(BMP280_ADDRESS);
+  Adafruit_BMP280 bmp;
+  unsigned status = bmp.begin();
   if (!status) {
     Serial.println("Could not find a valid BME/BMP280 sensor, check wiring!");
     Serial.print("SensorID was: 0x"); Serial.println(bme.sensorID(), 16);
