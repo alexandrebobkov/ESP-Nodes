@@ -67,7 +67,7 @@ BME280 is combined temperature, humidity and pressure sensor. The unit combines 
 
 **4-pin variant**
 
-The BME280 sensor board interface uses 4 pins and is 13mm by 10.5mm in size. The four pins are `VIN`, `GND`, `SCL` and `SDA`. The measured values are sent via I2C protocol. The I2C slave address is pre-defined and can take value either 0x76 or 0x77 BME280 Datasheet, page 32 [^4].
+The BME280 sensor board interface uses 4 pins and is 13mm by 10.5mm in size. The four pins are `VIN`, `GND`, `SCL` and `SDA`. The measured values are sent via I<sup>2</sup>C protocol. The I2C slave address is pre-defined and can take value either 0x76 or 0x77 (BME280 Datasheet, page 32)[^4].
 
 ### Wiring
 
