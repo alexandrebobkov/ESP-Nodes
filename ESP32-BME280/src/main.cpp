@@ -4,10 +4,7 @@
 #include <Adafruit_BMP280.h>
 #include <WiFiClientSecure.h>
 
-#define BME280
-
-
-
+//#define BME280
 
 struct {
   float humidity = 0.0;
@@ -17,12 +14,29 @@ struct {
 
 void setup() {
   
-  Serial.begin(9600);
+  Serial.begin(115200);
   Serial.println();
   Serial.println("Running setup ...");
   sensors_values.humidity = 0.0;
   sensors_values.pressure = 0.0;
   sensors_values.temperature = 0.0;
+
+  byte error, address;
+  int dev = 0;
+  for (address = 1; address < 127; address++) {
+    Wire.beginTransmission(address);
+    error = Wire.endTransmission();
+    if (error == 0) {
+      Serial.print("I2C device found at address 0x");
+      Serial.println(address, HEX);
+      dev++;
+    }
+    else if (error == 4) {
+      Serial.println("Unknown error at address 0x");
+      Serial.println(address, HEX);
+    }
+    delay(250);
+  }
 
   #ifdef BME280
   Adafruit_BME280 bme;
