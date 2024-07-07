@@ -20,13 +20,11 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 
 <img alt="ESP32-Node Pinout" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/ESP32-Node-pinout.png" width="350px"/>
 
-<table>
-  <tr>
-    <th>GPIOs</th>
-    <th>Pinout</th>
-  </tr>
-  <tr>
-    <td>...</td>
-    <td><img alt="ESP32-Node Pinout" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/ESP32-Node-pinout.png" width="350px"/></td>
-  </tr>
-</table>
+<div>
+  <div>
+    <div>...</div>
+  </div>
+  <div>
+    <div><img alt="ESP32-Node Pinout" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/ESP32-Node-pinout.png" width="350px"/></div>
+  </div>
+</div>
