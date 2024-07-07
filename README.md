@@ -54,7 +54,7 @@ The **Temperature Node** broadcasts the air temperature, atmospheric pressure an
 
 ### I2C Air Temperature, Pressure and Humidity Sensor Board (BME280)
 
-The sensor board is 13mm by 10.5mm in size that provides the air temperature, pressure and humidity values over I2C protocol. Sensor board uses **BME280** IC.
+The sensor board has 4 pins and is 13mm by 10.5mm in size. The sensor BME280 measures relative ambient temperature, barometric pressure and relative humidity, and passes measured values via I2C protocol.
 
 <img alt="ESP32-Node Pinout" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/BME280.jpg" width="200px"/>
 
@@ -65,6 +65,11 @@ The sensor board is 13mm by 10.5mm in size that provides the air temperature, pr
 
 
 ### Wiring
+
+| Sensor Pin | ESP32 GPIO |
+| --- | --- |
+| `SCL` | |
+| `SDA ` | |
 
 [^2]: https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280/
 [^3]: https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp280/
