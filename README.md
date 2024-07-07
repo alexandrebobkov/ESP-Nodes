@@ -59,9 +59,12 @@ The sensor board is 13mm by 10.5mm in size that provides the air temperature, pr
 <img alt="ESP32-Node Pinout" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/BME280.jpg" width="200px"/>
 
 > [!IMPORTANT]
-> BM**E**280 and BM**P**280 look almost identical. However, BME280 sensor has a square form, while BMP280 has a rectangular form. In addition, the two sensor boards have different I2C addresses.
+> BM**E**280[1] and BM**P**280[2] look almost identical. However, BME280 sensor has a square form, while BMP280 has a rectangular form. In addition, the two sensor boards have different I2C addresses.
 >
 > <img alt="ESP32-Node Pinout" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/BME280-BMP280.jpg" width="100px"/>
 
 
 ### Wiring
+
+[1] https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp280/
+[2] https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp280/
