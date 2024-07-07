@@ -56,7 +56,7 @@ The **Temperature Node** broadcasts the air temperature, atmospheric pressure an
 
 BME280 is I2C Temperature, Pressure and Humidity Sensor 13mmx10.5mm in size.
 
-<img alt="ESP32-Node Pinout" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/BME280.jpg" width="150px"/>
+<img alt="ESP32-Node Pinout" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/BME280.jpg" width="200px"/>
 
 
 ### Wiring
