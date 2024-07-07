@@ -17,7 +17,7 @@ struct {
 
 void setup() {
   
-  Serial.begin(115200);
+  Serial.begin(9600);
   Serial.println();
   Serial.println("Running setup ...");
   sensors_values.humidity = 0.0;
@@ -44,7 +44,7 @@ void setup() {
   #endif
   #ifdef BMP280
   Adafruit_BMP280 bmp;
-  unsigned status = bmp.begin();
+  unsigned status = bmp.begin(0x76);
   if (!status) {
     Serial.println("Could not find a valid BME/BMP280 sensor, check wiring!");
     Serial.print("SensorID was: 0x"); Serial.println(bme.sensorID(), 16);
