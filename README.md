@@ -49,4 +49,8 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 ### UART
 
 ## Temperature Node
-<p>The __Temperature Node__ broadcasts air temperature, atmospheric pressure and air humidity over MQTT.</p>
+<p>The **Temperature Node** broadcasts air temperature, atmospheric pressure and air humidity over MQTT.</p>
+
+### Key Components
+
+<p>I2C Temperature, Pressure and Humidity Sensor</p>
