@@ -16,7 +16,8 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 - two programmable LEDs
 - programmable via [UART](https://github.com/alexandrebobkov/ESP-Nodes/tree/main?tab=readme-ov-file#uart) -> no need for serial drivers
 
-### Pinouts
+### ESP32 Module Adapter Pinouts
+<p>The adapter allows interchangability of ESP32 modules between different nodes.</p>
 
 <img alt="ESP32-Node Pinout" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/ESP32-Node-pinout.png" width="350px"/>
 
