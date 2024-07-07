@@ -23,7 +23,7 @@ void setup() {
 
   byte error, address;
   int dev = 0;
-  for (address = 1; address < 127; address++) {
+  for (address = 0x1; address < 0x127; address++) {
     Wire.beginTransmission(address);
     error = Wire.endTransmission();
     if (error == 0) {
