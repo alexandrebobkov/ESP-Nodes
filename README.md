@@ -7,10 +7,10 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 
 <p><i>ESP32-Node Features:</i></p>
 
-- ESP32-WROOM-32D Module [^1]
+- Uses bare-bones ESP32-WROOM-32D Module [^1]
 - Direct connections to all GPIOs
-- Miniature in size, only 35.7mm x 35.7mm
-- Built-in 3V3 voltage regulator (15V input max) and reversed supply voltage polarity protection
+- Miniature in size; only 35.7mm x 35.7mm
+- Built-in 3V3 voltage regulator (V<sub>max</sub> 15V) and reversed supply voltage polarity protection
 - Pre-wired strapping pins for ensuring proper booting on power-on
 - blue power-on LED
 - two programmable LEDs
@@ -65,11 +65,11 @@ The unit combines high linearity and high accuracy sensors and is perfectly feas
 
 **4-pin variant**
 
-The BME280 sensor board interface uses 4 pins and is 13mm by 10.5mm in size. The four pins are `VIN` `GND` `SCL` and `SDA`. The measured values are sent via I2C protocol.
+The BME280 sensor board interface uses 4 pins and is 13mm by 10.5mm in size. The four pins are `VIN`, `GND`, `SCL` and `SDA`. The measured values are sent via I2C protocol.
 
 ### Wiring
 
-| Sensor Pin | ESP32 GPIO |
+| Pin | ESP32 GPIO |
 | --- | --- |
 | `SCL` | `GPIO22` |
 | `SDA ` | `GPIO21` |
