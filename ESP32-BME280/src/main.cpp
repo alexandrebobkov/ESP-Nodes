@@ -1,5 +1,8 @@
 #include <Arduino.h>
 
+#include <Adafruit_BME280.h>
+#include <WiFiClientSecure.h>
+
 // put function declarations here:
 int myFunction(int, int);
 
