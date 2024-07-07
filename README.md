@@ -43,3 +43,5 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 | `37` | `GPIO23` | VSPI_MOSI | 
 
 [^1]: https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf
+
+## UART
