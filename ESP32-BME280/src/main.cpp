@@ -1,10 +1,14 @@
 #include <Arduino.h>
 
 #include <Adafruit_BME280.h>
+#include <Adafruit_BMP280.h>
 #include <WiFiClientSecure.h>
 
-// BME280
+#define BMP280
+
 Adafruit_BME280 bme;
+Adafruit_BMP280 bmp;
+
 struct {
   float humidity = 0.0;
   float pressure = 0.0;
@@ -20,11 +24,12 @@ void setup() {
   sensors_values.pressure = 0.0;
   sensors_values.temperature = 0.0;
 
-  // WaveShare BME280
+  #ifdef BME280
+  // BME280
   unsigned status = bme.begin(0x76);  // I2C slave address 0x76 (SDO set to GND)
   if (!status) {
     Serial.println("Could not find a valid BME/BMP280 sensor, check wiring!");
-    Serial.print("SensorID was: 0x"); Serial.println(bme.sensorID(),16);
+    Serial.print("SensorID was: 0x"); Serial.println(bme.sensorID(), 16);
     Serial.print("   ID of 0xFF probably means a bad address, a BMP 180 or BMP 085\n");
     Serial.print("   ID of 0x56-0x58 represents a BMP 280,\n");
     Serial.print("   ID of 0x60 represents a BME 280.\n");
@@ -36,6 +41,20 @@ void setup() {
     sensors_values.pressure = bme.readPressure()  / 100.0F;
     sensors_values.temperature = bme.readTemperature();
   }
+  #endif
+  #ifdef BMP280
+  unsigned status = bmp.begin();
+  if (!status) {
+    Serial.println("Could not find a valid BME/BMP280 sensor, check wiring!");
+    Serial.print("SensorID was: 0x"); Serial.println(bme.sensorID(), 16);
+    Serial.print("   ID of 0xFF probably means a bad address, a BMP 180 or BMP 085\n");
+    Serial.print("   ID of 0x56-0x58 represents a BMP 280,\n");
+    Serial.print("   ID of 0x60 represents a BME 280.\n");
+    Serial.print("   ID of 0x61 represents a BME 680.\n");
+    while (1);
+  }
+  else {}
+  #endif
 }
 
 void loop() {
