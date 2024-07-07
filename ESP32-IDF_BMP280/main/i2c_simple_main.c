@@ -31,9 +31,9 @@ static const char *TAG = "i2c-simple-example";
 #define I2C_MASTER_TIMEOUT_MS       1000
 
 #define MPU9250_SENSOR_ADDR                 0x76        /*!< Slave address of the MPU9250 sensor */
-#define MPU9250_WHO_AM_I_REG_ADDR           0x58        /*!< Register addresses of the "who am I" register */
+#define MPU9250_WHO_AM_I_REG_ADDR           0xD0        /*!< Register addresses of the "who am I" register */
 
-#define MPU9250_PWR_MGMT_1_REG_ADDR         0x6B        /*!< Register addresses of the power managment register */
+#define MPU9250_PWR_MGMT_1_REG_ADDR         0x88        /*!< Register addresses of the power managment register */
 #define MPU9250_RESET_BIT                   7
 
 /**
