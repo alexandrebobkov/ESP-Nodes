@@ -4,7 +4,6 @@
 #include <WiFiClientSecure.h>
 
 //#define BMP280
-
 #define BME280
 
 #ifdef BME280
@@ -12,7 +11,8 @@
 #endif
 
 #ifdef BMP280
-#include <Adafruit_BMP280.h>
+//#include <Adafruit_BMP280.h>
+#include <Adafruit_BME280.h>
 #endif
 
 struct {
@@ -55,8 +55,9 @@ void setup() {
   }
   #endif
   #ifdef BMP280
-  Adafruit_BMP280 bmp;
-  unsigned status = bmp.begin();
+  //Adafruit_BMP280 bmp;
+  Adafruit_BME280 bmp;
+  unsigned status = bmp.begin(0x58);
   if (!status) {
     Serial.println("Could not find a valid BME/BMP280 sensor, check wiring!");
     Serial.print("SensorID was: 0x"); Serial.println(bmp.sensorID(), 16);
@@ -66,7 +67,10 @@ void setup() {
     Serial.print("   ID of 0x61 represents a BME 680.\n");
     while (1) delay(10);
   }
-  else {}
+  else {
+    sensors_values.pressure = bmp.readPressure()  / 100.0F;
+    sensors_values.temperature = bmp.readTemperature();
+  }
   #endif
 }
 
