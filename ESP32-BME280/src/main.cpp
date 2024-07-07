@@ -36,7 +36,6 @@ void setup() {
     sensors_values.pressure = bme.readPressure()  / 100.0F;
     sensors_values.temperature = bme.readTemperature();
   }
-  #endif
 }
 
 void loop() {
