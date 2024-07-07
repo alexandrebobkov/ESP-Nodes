@@ -50,7 +50,7 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 
 ## Temperature Node
 
-The ** Temperature Node ** broadcasts air temperature, atmospheric pressure and air humidity over MQTT.
+The **Temperature Node** broadcasts air temperature, atmospheric pressure and air humidity over MQTT.
 
 ### Key Components
 
