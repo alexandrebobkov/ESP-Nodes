@@ -52,6 +52,15 @@ void setup() {
     sensors_values.pressure = bme.readPressure()  / 100.0F;
     sensors_values.temperature = bme.readTemperature();
     Serial.println("All values were measured.");
+    Serial.print("Temperature: ");
+    Serial.print(sensors_values.temperature);
+    Serial.println();
+    Serial.print("Pressure: ");
+    Serial.print(sensors_values.pressure);
+    Serial.println();
+    Serial.print("Humidity: ");
+    Serial.print(sensors_values.humidity);
+    Serial.println();
   }
   #endif
   #ifdef BMP280
