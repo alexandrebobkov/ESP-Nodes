@@ -14,7 +14,7 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 - Pre-wired strapping pins for ensuring proper booting on power-on
 - blue power-on LED
 - two programmable LEDs
-- programmable via UART0 -> no need for serial drivers
+- programmable via UART -> no need for serial drivers
 
 ### Pinouts
 
