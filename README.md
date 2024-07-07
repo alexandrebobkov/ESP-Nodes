@@ -15,3 +15,7 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 - blue power-on LED
 - two programmable LEDs
 - programmable via UART0 -> no need for serial drivers
+
+### Pinouts
+
+<img alt="ESP32-Node Pinout" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/ESP32-Node-pinout.png" width="250px"/>
