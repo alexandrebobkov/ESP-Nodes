@@ -23,7 +23,7 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 | Physical Pin | Descrption and Logical Pin | Extended Function |
 | --- | --- | --- |
 | `1` `15` `38` | Ground | |
-| `2` | <p class="color:red;">`3V3`</p> | |
+| `2` | <p class="text-color:red;">`3V3`</p> | |
 | `3` | EN | |
 | `4` `5` `6` `7` | **Inputs Only** `GPIO36` `GPIO39` `GPIO34` `GPIO35` | ADC1_CH0, ADC1_CH3, ADC1_CH6, ADC1_CH7 |
 | `8` `9` | `GPIO32` `GPIO33` | TOUCH_9, TOUCH_8 |
