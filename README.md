@@ -29,3 +29,6 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 | `10` `11` | `GPIO25` `GPIO26` | DAC_1, DAC_2 |
 | `12` | `GPIO27` | TOUCH_7 |
 | `13` `14` | `GPIO14` `GPIO12` | `HSPI_CLK` `HSPI_MISO` TOUCH_6 TOUCH_7 |
+| `16` | `GPIO13` | `HSPI_MOSI` ADC2_CH4 |
+| `17` `18` `19` `20` `21` `22` | **Internal Use** `GPIO09` `GPIO10` `GPIO11` `GPIO08` `GPIO07` `GPIO06` |
+| `23` `24` | `GPIO02` `GPIO15` |
