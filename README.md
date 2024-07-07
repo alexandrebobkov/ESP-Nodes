@@ -48,10 +48,10 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 
 ### UART
 
-## Temperature Node
+## Temperature Node Key Elements and Components
 
 The **Temperature Node** broadcasts the air temperature, atmospheric pressure and air humidity over secured MQTT.
 
-### Key Components
+### BME280
 
-<p>BME280: I2C Temperature, Pressure and Humidity Sensor</p>
+BME280: I2C Temperature, Pressure and Humidity Sensor
