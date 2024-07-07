@@ -48,7 +48,7 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 
 ### Programming via UART
 
-Bare-bones ESP32 module can be programmed via UART interface using USB to UART adapter.
+Bare-bones ESP32 module can be programmed via UART interface (`GPIO03` and `GPIO01`) using USB to UART adapter.
 
 ## Temperature Node Key Elements and Components
 
