@@ -56,7 +56,7 @@ The **Temperature Node** broadcasts the air temperature, atmospheric pressure an
 
 ### I2C Air Temperature, Pressure and Humidity Sensor Board (BME280)
 
-The unit combines high linearity and high accuracy sensors and is perfectly feasible for low current consumption, long-term stability and high EMC robustness. The humidity sensor offers an extremely fast response time and therefore supports performance requirements for emerging applications such as context awareness, and high accuracy over a wide temperature range.[^2]
+BME280 is combined temperature, humidity and pressure sensor. The unit combines high linearity and high accuracy sensors and is perfectly feasible for low current consumption, long-term stability and high EMC robustness. The humidity sensor offers an extremely fast response time and therefore supports performance requirements for emerging applications such as context awareness, and high accuracy over a wide temperature range.[^2]
 
 <img alt="ESP32-Node Pinout" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/BME280.jpg" width="200px"/>
 
@@ -67,7 +67,7 @@ The unit combines high linearity and high accuracy sensors and is perfectly feas
 
 **4-pin variant**
 
-The BME280 sensor board interface uses 4 pins and is 13mm by 10.5mm in size. The four pins are `VIN`, `GND`, `SCL` and `SDA`. The measured values are sent via I2C protocol.
+The BME280 sensor board interface uses 4 pins and is 13mm by 10.5mm in size. The four pins are `VIN`, `GND`, `SCL` and `SDA`. The measured values are sent via I2C protocol. The I2C slave address is pre-defined and can take value either 0x76 or 0x77 BME280 Datasheet, page 32 [^4].
 
 ### Wiring
 
@@ -78,3 +78,4 @@ The BME280 sensor board interface uses 4 pins and is 13mm by 10.5mm in size. The
 
 [^2]: https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280/
 [^3]: https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp280/
+[^4]: https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf
