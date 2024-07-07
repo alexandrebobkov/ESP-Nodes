@@ -61,13 +61,13 @@ BME280 is combined temperature, humidity and pressure sensor. The unit combines 
 <img alt="ESP32-Node Pinout" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/BME280.jpg" width="200px"/>
 
 > [!IMPORTANT]
-> BM**E**280[^2] and BM**P**280[^3] look almost identical. However, BME280 sensor has a square form, while BMP280 has a rectangular form. In addition, the two sensor boards have different I2C addresses.
+> BM**E**280[^2] and BM**P**280[^3] look almost identical. However, BME280 sensor has a square form, while BMP280 has a rectangular form. In addition, the two sensor boards can have different I<sup>2</sup>C addresses.
 >
 > <img alt="ESP32-Node Pinout" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/BME280-BMP280.jpg" width="100px"/>
 
 **4-pin variant**
 
-The BME280 sensor board interface uses 4 pins and is 13mm by 10.5mm in size. The four pins are `VIN`, `GND`, `SCL` and `SDA`. The measured values are sent via I<sup>2</sup>C protocol. The I2C slave address is pre-defined and can take value either 0x76 or 0x77 (BME280 Datasheet, page 32)[^4].
+The BME280 sensor board interface uses 4 pins and is 13mm by 10.5mm in size. The four pins are `VIN`, `GND`, `SCL` and `SDA`. The measured values are sent via I<sup>2</sup>C protocol. The I<sup>2</sup>C slave address is pre-defined and can take value either 0x76 or 0x77 (BME280 Datasheet, page 32)[^4].
 
 ### Wiring
 
