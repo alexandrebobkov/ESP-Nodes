@@ -66,5 +66,5 @@ The sensor board is 13mm by 10.5mm in size that provides the air temperature, pr
 
 ### Wiring
 
-[^2]: https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bme280/
+[^2]: https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280/
 [^3]: https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp280/
