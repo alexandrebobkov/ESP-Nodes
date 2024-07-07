@@ -3,8 +3,9 @@
 
 #include <WiFiClientSecure.h>
 
-#define BMP280
-//#define BME280
+//#define BMP280
+
+#define BME280
 
 #ifdef BME280
 #include <Adafruit_BME280.h>
@@ -25,6 +26,12 @@ void setup() {
   Serial.begin(115200);
   Serial.println();
   Serial.println("Running setup ...");
+  #ifdef BME280
+  Serial.println("BME280");
+  #endif
+  #ifdef BMP280
+  Serial.println("BMP280");
+  #endif
   sensors_values.humidity = 0.0;
   sensors_values.pressure = 0.0;
   sensors_values.temperature = 0.0;
