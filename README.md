@@ -58,5 +58,9 @@ BME280 is I2C Temperature, Pressure and Humidity Sensor 13mmx10.5mm in size.
 
 <img alt="ESP32-Node Pinout" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/BME280.jpg" width="200px"/>
 
+> [!IMPORTANT]
+> BM**E**280 and BM**P**280 look very similar. However, BME280 sensor has square form, while BMP280 has rectangular form.
+> <img alt="ESP32-Node Pinout" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/BME280-BMP280.jpg" width="200px"/>
+
 
 ### Wiring
