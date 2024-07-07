@@ -52,14 +52,14 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 
 The **Temperature Node** broadcasts the air temperature, atmospheric pressure and air humidity over secured MQTT.
 
-### BME280
+### I2C Air Temperature, Pressure and Humidity Sensor Board (BME280)
 
-BME280 is I2C Temperature, Pressure and Humidity Sensor 13mmx10.5mm in size.
+The sensor board is 13mm by 10.5mm in size that provides the air temperature, pressure and humidity values over I2C protocol. Sensor board uses BME280 IC.
 
 <img alt="ESP32-Node Pinout" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/BME280.jpg" width="200px"/>
 
 > [!IMPORTANT]
-> BM**E**280 and BM**P**280 look very similar. However, BME280 sensor has square form, while BMP280 has rectangular form.
+> BM**E**280 and BM**P**280 look very similar. However, BME280 sensor has square form, while BMP280 has rectangular form. In addition, the two sensor boards have different I2C addresses.
 >
 > <img alt="ESP32-Node Pinout" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/BME280-BMP280.jpg" width="100px"/>
 
