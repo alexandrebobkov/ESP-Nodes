@@ -1,7 +1,8 @@
 #include <Arduino.h>
+#include <Wire.h>
 
-#include <Adafruit_BME280.h>
-#include <Adafruit_BMP280.h>
+//#include <Adafruit_BME280.h>
+//#include <Adafruit_BMP280.h>
 #include <WiFiClientSecure.h>
 
 //#define BME280
@@ -21,18 +22,21 @@ void setup() {
   sensors_values.pressure = 0.0;
   sensors_values.temperature = 0.0;
 
-  byte error, address;
+  byte error;
+  uint8_t address;
   int dev = 0;
   for (address = 0x1; address < 0x127; address++) {
+    Wire.begin(address);
     Wire.beginTransmission(address);
-    error = Wire.endTransmission();
+    error = Wire.endTransmission(address);
+    Wire.end();
     if (error == 0) {
       Serial.print("I2C device found at address 0x");
       Serial.println(address, HEX);
       dev++;
     }
     else if (error == 4) {
-      Serial.println("Unknown error at address 0x");
+      Serial.print("Unknown error at address 0x");
       Serial.println(address, HEX);
     }
     delay(500);
