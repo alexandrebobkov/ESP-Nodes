@@ -42,7 +42,7 @@ void setup() {
   #endif
   #ifdef BMP280
   Adafruit_BMP280 bmp;
-  unsigned status = bmp.begin(0x58); //0x58
+  unsigned status = bmp.begin(0x58);
   if (!status) {
     Serial.println("Could not find a valid BME/BMP280 sensor, check wiring!");
     Serial.print("SensorID was: 0x"); Serial.println(bmp.sensorID(), 16);
