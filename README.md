@@ -7,7 +7,7 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 
 <p><i>ESP32-Node Features:</i></p>
 
-- ESP32-WROOM-32D Module
+- ESP32-WROOM-32D Module [^1]
 - Direct connections to all GPIOs
 - Miniature in size, only 35.7mm x 35.7mm
 - Built-in 3V3 voltage regulator and reversed voltage protection
@@ -41,3 +41,5 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 | `34` `35` | `GPIO03` `GPIO01` | UART0_RXD UART0_TXD |
 | `36` | `GPIO22` | `SCL` |
 | `37` | `GPIO23` | VSPI_MOSI | 
+
+[^1]: https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf
