@@ -34,3 +34,9 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 | `23` `24` | `GPIO02` `GPIO15` | AD2_CH3 ADC2_CH2 |
 | `25` `26` | `GPIO00` `GPIO04` | TOUCH_1 TOUCH_0 |
 | `27` `28` | `GPIO16` `GPIO17` | `UART2_RXD` `UART2_TXD` |
+| `29` `30` `31` | `GPIO05` `GPIO18` `GPIO19` | `VSPI_CS0` `VSPI_CLK` `VSPI_MISO` |
+| `32` | Not Connected |
+| `33` | `GPIO21` | `SDA` |
+| `34` `35` | `GPIO03` `GPIO01` | UART0_RXD UART0_TXD |
+| `36` | `GPIO22` | `SCL` |
+| `37` | `GPIO23` | VSPI_MOSI | 
