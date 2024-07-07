@@ -1,11 +1,17 @@
 #include <Arduino.h>
 #include <Wire.h>
 
-#include <Adafruit_BME280.h>
-#include <Adafruit_BMP280.h>
 #include <WiFiClientSecure.h>
 
 #define BMP280
+
+#ifdef BME280
+#include <Adafruit_BME280.h>
+#endif
+
+#ifdef BMP280
+#include <Adafruit_BMP280.h>
+#endif
 
 struct {
   float humidity = 0.0;
