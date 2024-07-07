@@ -5,7 +5,8 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 
 <img alt="ESP32-Node PCB" src="">
 
-<p>ESP32-Node Features:</p>
+<p><i>ESP32-Node Features:</i></p>
+
 - ESP32-WROOM-32D Module
 - 
 - Only 35.7mm by 35.7mm
