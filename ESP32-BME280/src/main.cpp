@@ -43,7 +43,7 @@ void setup() {
   }
   #endif
   #ifdef BMP280
-  unsigned status = bmp.begin();
+  unsigned status = bmp.begin(0x58);
   if (!status) {
     Serial.println("Could not find a valid BME/BMP280 sensor, check wiring!");
     Serial.print("SensorID was: 0x"); Serial.println(bme.sensorID(), 16);
