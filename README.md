@@ -76,6 +76,8 @@ The BME280 sensor board interface uses 4 pins and is 13mm by 10.5mm in size. The
 | `SCL` | `GPIO22` |
 | `SDA ` | `GPIO21` |
 
+### Reading Values
+
 [^2]: https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280/
 [^3]: https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp280/
 [^4]: https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf
