@@ -55,3 +55,5 @@ The **Temperature Node** broadcasts the air temperature, atmospheric pressure an
 ### BME280
 
 BME280: I2C Temperature, Pressure and Humidity Sensor
+
+### Wiring
