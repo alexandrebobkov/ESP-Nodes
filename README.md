@@ -16,7 +16,7 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 - two programmable LEDs
 - programmable via [UART](https://github.com/alexandrebobkov/ESP-Nodes/tree/main?tab=readme-ov-file#uart) -> no need for serial drivers
 
-### ESP32 Module Adapter Pinouts
+### ESP32-WROOM-32D Module Adapter Pinouts
 <p>The adapter allows interchangability of ESP32 modules between different nodes. The adapter contains minimal components on its PCB, just enough to ensure module's operation.</p>
 
 <img alt="ESP32-Node Pinout" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/ESP32-Node-pinout.png" width="350px"/>
@@ -50,8 +50,8 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 
 ## Temperature Node
 
-The **Temperature Node** broadcasts air temperature, atmospheric pressure and air humidity over MQTT.
+The **Temperature Node** broadcasts the air temperature, atmospheric pressure and air humidity over secured MQTT.
 
 ### Key Components
 
-<p>I2C Temperature, Pressure and Humidity Sensor</p>
+<p>BME280: I2C Temperature, Pressure and Humidity Sensor</p>
