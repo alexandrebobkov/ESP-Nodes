@@ -21,4 +21,5 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 <img alt="ESP32-Node Pinout" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/ESP32-Node-pinout.png" width="350px"/>
 
 | GPIOs | Descrption |
-| 1,15,38 | Ground |
+| --- | --- |
+| `1`,`15`,`38` | Ground |
