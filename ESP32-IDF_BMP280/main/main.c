@@ -121,12 +121,12 @@ void app_main(void)
     ESP_ERROR_CHECK(i2c_driver_delete(I2C_MASTER_NUM));
     ESP_LOGI(TAG, "I2C de-initialized successfully");
 
+    ESP_ERROR_CHECK(i2c_master_init());
+    ESP_LOGI(TAG, "I2C initialized successfully");
     read = bme280_read_raw_temperature(0x76, raw_temp);
     ESP_LOGI(TAG, "Raw Temperature: %X", raw_temp[0]);
-
     /* Demonstrate writing by reseting the MPU9250 */
     //ESP_ERROR_CHECK(mpu9250_register_write_byte(MPU9250_PWR_MGMT_1_REG_ADDR, 1 << MPU9250_RESET_BIT));
-
     ESP_ERROR_CHECK(i2c_driver_delete(I2C_MASTER_NUM));
     ESP_LOGI(TAG, "I2C de-initialized successfully");
 }
