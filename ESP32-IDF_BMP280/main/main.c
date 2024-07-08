@@ -130,7 +130,7 @@ void app_main(void)
     i2c_cmd_link_delete(command);
     i2c_driver_delete(0);
 
-    if (cmd_ret = ESP_OK)
+    if (cmd_ret == ESP_OK)
         ESP_LOGI(TAG, "I2C device found");
 
 
