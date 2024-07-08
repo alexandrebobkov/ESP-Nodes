@@ -105,6 +105,8 @@ static esp_err_t i2c_master_init(void)
 
 static esp_err_t i2c_driver_initialize(void)
 {
+    int i2c_master_port = 0;
+
     i2c_config_t conf = {
         .mode = I2C_MODE_MASTER,
         .sda_io_num = GPIO_NUM_21,
@@ -112,9 +114,10 @@ static esp_err_t i2c_driver_initialize(void)
         .scl_io_num = GPIO_NUM_22,
         .sda_pullup_en = GPIO_PULLUP_ENABLE,
         .master.clk_speed = I2C_MASTER_FREQ_HZ,
+        .clk_flags= 0,
     };
 
-    return i2c_param_config(0, &conf);
+    return i2c_param_config(i2c_master_port, &conf);
 
     /*int i2c_master_port = 0;
 
@@ -134,23 +137,23 @@ static esp_err_t i2c_driver_initialize(void)
 
 void app_main(void)
 {
-    //i2c_driver_initialize();
-    ESP_ERROR_CHECK(i2c_master_init());
+    ESP_ERROR_CHECK(i2c_driver_initialize());
+    //ESP_ERROR_CHECK(i2c_master_init());
 
     i2c_driver_install(I2C_NUM_0, I2C_MODE_MASTER, I2C_MASTER_RX_BUF_DISABLE, I2C_MASTER_TX_BUF_DISABLE, 0);
     
-    uint8_t address = 76;
+    uint8_t address = 0x76;
 
     i2c_cmd_handle_t command = i2c_cmd_link_create();
     i2c_master_start(command);
     i2c_master_write_byte(command, (address << 1) | I2C_MASTER_WRITE, 0x1);    // 0x1 -> checl ACK from slave
     i2c_master_stop(command);
-    esp_err_t cmd_ret = i2c_master_cmd_begin(I2C_NUM_0, command, 50 / portTICK_PERIOD_MS);
+    esp_err_t cmd_ret = i2c_master_cmd_begin(I2C_NUM_0, command, 1000 / portTICK_PERIOD_MS);
     i2c_cmd_link_delete(command);
     i2c_driver_delete(I2C_NUM_0);
 
     if (cmd_ret == ESP_OK)
-        ESP_LOGI(TAG, "I2C device found");
+        ESP_LOGI(TAG, "I2C device found at address %X", address);
     else
         ESP_LOGI(TAG, "error %X", cmd_ret);
 
