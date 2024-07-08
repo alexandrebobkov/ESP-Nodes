@@ -22,5 +22,8 @@
  * 0xFA-0xFC    -> Temperature  -> 16- to 20-bit resolution, unsigned
  * 0xFD-0xFE    -> Humidity     -> 16-bit resolution
  */
+#define BME280_TEMPERATURE_REGISTER         (0xFA)
+
+#endif
 
 

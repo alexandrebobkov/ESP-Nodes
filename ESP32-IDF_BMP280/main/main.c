@@ -55,19 +55,18 @@ static esp_err_t mpu9250_register_read(uint8_t reg_addr, uint8_t *data, size_t l
     //error = i2c_master_write_read_device(I2C_MASTER_NUM, MPU9250_SENSOR_ADDR, &register_address, 1, registers_data, count, I2C_MASTER_TIMEOUT_MS / portTICK_PERIOD_MS);
 }*/
 
-static esp_err_t bme280_read_raw_temperature(uint8_t device_address, uint8_t *raw_temperature_u32) {
+static esp_err_t bme280_read_raw_temperature(uint8_t device_address, uint8_t *raw_temperature) {
     // BME280_INIT_VALUE LN 136
     // BME280_TEMPERATURE_MSB_REG 0xFA
     // BME280_TEMPERATURE_DATA_LENGTH
     // BME280_TEMPERATURE_DATA_SIZE
     // I2C_MASTER_TIMEOUT_MS / portTICK_PERIOD_MS
 
-    int command_result = 0;
-    unsigned char raw_temperature[BME280_TEMPERATURE_DATA_SIZE] = {0, 0, 0};
+    esp_err_t command_result;
+    //unsigned char raw_temperature[BME280_TEMPERATURE_DATA_SIZE] = {0, 0, 0};
     //command_result = i2c_master_read_from_device(0, BME280_I2C_ADDRESS1, *raw_temperature, BME280_TEMPERATURE_DATA_SIZE, I2C_MASTER_TIMEOUT_MS / portTICK_PERIOD_MS);
-    command_result = i2c_master_write_read_device(0, BME280_I2C_ADDRESS1, *raw_temperature, BME280_TEMPERATURE_DATA_SIZE, *BME, 1, I2C_MASTER_TIMEOUT_MS / portTICK_PERIOD_MS);
-
-
+    command_result = i2c_master_write_read_device(0, BME280_I2C_ADDRESS1, *raw_temperature, BME280_TEMPERATURE_DATA_SIZE, BME280_TEMPERATURE_REGISTER, 1, I2C_MASTER_TIMEOUT_MS / portTICK_PERIOD_MS);
+    return command_result;
 }
 
 /**
@@ -107,15 +106,23 @@ static esp_err_t i2c_master_init(void)
 void app_main(void)
 {
     uint8_t data[2];
+    uint8_t raw_temp[BME280_TEMPERATURE_DATA_SIZE] = {0,0,0};
+
     ESP_ERROR_CHECK(i2c_master_init());
     ESP_LOGI(TAG, "I2C initialized successfully");
 
     /* Read the MPU9250 WHO_AM_I register, on power up the register should have the value 0x71 */
 
-    int read = i2c_master_read_from_device(0, 0x76, data, 1, I2C_MASTER_TIMEOUT_MS / portTICK_PERIOD_MS);
+    int read = 0;
+    read = i2c_master_read_from_device(0, 0x76, data, 1, I2C_MASTER_TIMEOUT_MS / portTICK_PERIOD_MS);
     //int read = i2c_master_write_read_device(0, 0x76, 0xD0, 1, data, 1024, I2C_MASTER_TIMEOUT_MS / portTICK_PERIOD_MS);
     //ESP_ERROR_CHECK(mpu9250_register_read(MPU9250_WHO_AM_I_REG_ADDR, data, 1));
     ESP_LOGI(TAG, "WHO_AM_I = %X", data[0]);
+    ESP_ERROR_CHECK(i2c_driver_delete(I2C_MASTER_NUM));
+    ESP_LOGI(TAG, "I2C de-initialized successfully");
+
+    read = bme280_read_raw_temperature(0x76, raw_temp);
+    ESP_LOGI(TAG, "Raw Temperature: %X", raw_temp[0]);
 
     /* Demonstrate writing by reseting the MPU9250 */
     //ESP_ERROR_CHECK(mpu9250_register_write_byte(MPU9250_PWR_MGMT_1_REG_ADDR, 1 << MPU9250_RESET_BIT));
