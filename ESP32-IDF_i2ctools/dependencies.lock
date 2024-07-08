@@ -1,0 +1,27 @@
+dependencies:
+  cmd_nvs:
+    component_hash: null
+    source:
+      path: C:\Users\alex\esp\v5.2.2\esp-idf\examples\system\console\advanced\components\cmd_nvs
+      type: local
+    version: '*'
+  cmd_system:
+    component_hash: null
+    source:
+      path: C:\Users\alex\esp\v5.2.2\esp-idf\examples\system\console\advanced\components\cmd_system
+      type: local
+    version: '*'
+  cmd_wifi:
+    component_hash: null
+    source:
+      path: C:\Users\alex\esp\v5.2.2\esp-idf\examples\system\console\advanced\components\cmd_wifi
+      type: local
+    version: '*'
+  idf:
+    component_hash: null
+    source:
+      type: idf
+    version: 5.2.2
+manifest_hash: 7321591c2e8b58696ae56d1cf329d3aa0f21e501f6362772fa684d70072e042f
+target: esp32
+version: 1.0.0
