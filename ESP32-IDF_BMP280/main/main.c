@@ -153,7 +153,7 @@ void app_main(void)
     i2c_driver_delete(I2C_NUM_0);
 
     if (cmd_ret == ESP_OK)
-        ESP_LOGI(TAG, "I2C device found at address %X", address);
+        ESP_LOGI(TAG, "I2C device found at address 0x%X", address);
     else
         ESP_LOGI(TAG, "error %X", cmd_ret);
 
