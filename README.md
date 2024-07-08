@@ -84,7 +84,7 @@ i2c_master_write_read_device(I2C_MASTER_NUM, 0x76, &reg_addr, 1, data, len, I2C_
 
 <p>Data readout is done by starting a burst read from 0xF7 to 0xFC (temperature and pressure) or from 0xF7 to 0xFE (temperature, pressure, and humidity). The data are rad out in an unsigned 20-bit format both for pressure and for temperature, and in an unsigned 26-bit format for humidity. After the uncompensated values for pressure, temperature, and humidity have been read, the actual humidity, pressure and temperature needs to be calculated using the compensation parameters stored in the device.</p>
 
-<img alt="BME-/BMP-280 Memory Map" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/BME280_BMP280_Registers.png" width="80%"/>
+<img alt="BME-/BMP-280 Memory Map" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/BME280_BMP280_Registers.png" width="90%"/>
 
 [^2]: https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280/
 [^3]: https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp280/
