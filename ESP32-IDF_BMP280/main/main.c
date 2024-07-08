@@ -105,7 +105,7 @@ static esp_err_t i2c_master_init(void)
 
 static esp_err_t i2c_driver_initialize(void)
 {
-    i2c_config_t conf = {
+    /*i2c_config_t conf = {
         .mode = I2C_MODE_MASTER,
         .sda_io_num = GPIO_NUM_21,
         .sda_pullup_en = GPIO_PULLUP_ENABLE,
@@ -114,7 +114,7 @@ static esp_err_t i2c_driver_initialize(void)
         .master.clk_speed = 10000,
     };
 
-    return i2c_param_config(0, &conf);
+    return i2c_param_config(0, &conf);*/
 
     int i2c_master_port = 0;
 
