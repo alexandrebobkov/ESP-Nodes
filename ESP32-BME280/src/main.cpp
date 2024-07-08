@@ -3,8 +3,8 @@
 
 #include <WiFiClientSecure.h>
 
-#define BMP280
-//#define BME280
+//#define BMP280
+#define BME280
 
 #ifdef BME280
 #include <Adafruit_BME280.h>
