@@ -44,6 +44,11 @@ static esp_err_t mpu9250_register_read(uint8_t reg_addr, uint8_t *data, size_t l
     return i2c_master_write_read_device(I2C_MASTER_NUM, MPU9250_SENSOR_ADDR, &reg_addr, 1, data, len, I2C_MASTER_TIMEOUT_MS / portTICK_PERIOD_MS);
 }
 
+static esp_err_t bme280_I2C_burst_read(uint8_t device_addr, uint8_t *data, size_t len)
+{
+    return i2c_master_write_read_device(I2C_MASTER_NUM, MPU9250_SENSOR_ADDR, &reg_addr, 1, data, len, I2C_MASTER_TIMEOUT_MS / portTICK_PERIOD_MS);
+}
+
 /**
  * @brief Write a byte to a MPU9250 sensor register
  */
