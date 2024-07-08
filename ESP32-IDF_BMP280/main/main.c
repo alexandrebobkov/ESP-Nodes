@@ -134,10 +134,11 @@ static esp_err_t i2c_driver_initialize(void)
 
 void app_main(void)
 {
+    //i2c_driver_initialize();
     ESP_ERROR_CHECK(i2c_master_init());
 
     i2c_driver_install(I2C_NUM_0, I2C_MODE_MASTER, I2C_MASTER_RX_BUF_DISABLE, I2C_MASTER_TX_BUF_DISABLE, 0);
-    i2c_driver_initialize();
+    
     uint8_t address = 76;
 
     i2c_cmd_handle_t command = i2c_cmd_link_create();
