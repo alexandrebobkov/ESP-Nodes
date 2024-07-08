@@ -105,6 +105,21 @@ static esp_err_t i2c_master_init(void)
 
 void app_main(void)
 {
+    i2c_driver_install(0, I2C_MODE_MASTER, I2C_MASTER_RX_BUF_DISABLE, I2C_MASTER_TX_BUF_DISABLE, 0);
+    i2c_driver_initialize();
+
+    i2c_cmd_handle_t command = i2c_cmd_link_create();
+    i2c_master_start(command);
+    i2c_master_write_byte(command, (76<<1) | I2C_MASTER_WRITE, 0x1);    // 0x1 -> checl ACK from slave
+    i2c_master_stop(command);
+    esp_err_t cmd_ret = i2c_master_cmd_begin(0, command, 50 / portTICK_PERIOD_MS);
+    i2c_cmd_link_delete(command);
+    i2c_driver_delete(0);
+
+    if (cmd_ret = ESP_OK)
+        ESP_LOGI(TAG, "I2C device found");
+
+
     /*uint8_t data[2];
     uint8_t raw_temp[BME280_TEMPERATURE_DATA_SIZE] = {0,0,0};
 
