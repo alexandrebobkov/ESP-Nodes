@@ -137,12 +137,13 @@ static esp_err_t i2c_driver_initialize(void)
 
 void app_main(void)
 {
+    // CONNECT TO BMP280
     ESP_ERROR_CHECK(i2c_driver_initialize());
     i2c_driver_install(I2C_NUM_0, I2C_MODE_MASTER, I2C_MASTER_RX_BUF_DISABLE, I2C_MASTER_TX_BUF_DISABLE, 0);    
     uint8_t address = 0x76;
     i2c_cmd_handle_t command = i2c_cmd_link_create();
     i2c_master_start(command);
-    i2c_master_write_byte(command, (address << 1) | I2C_MASTER_WRITE, 0x1);    // 0x1 -> checl ACK from slave
+    i2c_master_write_byte(command, (address << 1) | I2C_MASTER_WRITE, 0x1);    // 0x1 -> check ACK from slave
     i2c_master_stop(command);
     esp_err_t cmd_ret = i2c_master_cmd_begin(I2C_NUM_0, command, 1000 / portTICK_PERIOD_MS);
     i2c_cmd_link_delete(command);
