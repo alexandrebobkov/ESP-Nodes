@@ -38,9 +38,9 @@ static const char *TAG = "i2c-simple-example";
 #define I2C_MASTER_TX_BUF_DISABLE   0                          /*!< I2C master doesn't need buffer */
 #define I2C_MASTER_RX_BUF_DISABLE   0                          /*!< I2C master doesn't need buffer */
 #define I2C_MASTER_TIMEOUT_MS       1000
-
-#define DEVICE_ADDRESS                      0x76
-#define DEVICE_REGISTER_ID                  0xD0
+#define I2C_ACKS
+#define I2C_ACKM
+#define I2C_NOACKM
 
 #define MPU9250_SENSOR_ADDR                 0x76        /*!< Slave address of the MPU9250 sensor */
 #define MPU9250_WHO_AM_I_REG_ADDR           0xD0        /*!< Register addresses of the "who am I" register */
