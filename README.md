@@ -94,7 +94,7 @@ i2c_master_write_read_device(I2C_MASTER_NUM, 0x76, &reg_addr, 1, data, len, I2C_
 
 BME-/BMP-280 can communicate via I<sup>2</sup>C. The two diagrams below summarize algorithm of reading to and writting values to/from the sensor.
 
-<img alt="BME-/BMP-280 I<sup>2</sup>C Read & Write" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/bme280_i2c_read-write.png" width="100%"/>
+<img alt="BME-/BMP-280 I2C Read & Write" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/bme280_i2c_read-write.png" width="100%"/>
 
 [^2]: https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280/
 [^3]: https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp280/
