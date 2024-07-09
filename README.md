@@ -96,6 +96,9 @@ BME-/BMP-280 can communicate via I<sup>2</sup>C. The two diagrams below summariz
 
 <img alt="BME-/BMP-280 I2C Read & Write" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/bme280_i2c_read-write.png" width="100%"/>
 
+---
+REFERENCES
+
 [^2]: https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280/
 [^3]: https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp280/
 [^4]: https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf
