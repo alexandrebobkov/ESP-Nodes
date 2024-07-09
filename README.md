@@ -58,7 +58,11 @@ The **Temperature Node** broadcasts the air temperature, atmospheric pressure an
 
 BME280 is combined temperature, humidity and pressure sensor. The unit combines high linearity and high accuracy sensors and is perfectly feasible for low current consumption, long-term stability and high EMC robustness. The humidity sensor offers an extremely fast response time and therefore supports performance requirements for emerging applications such as context awareness, and high accuracy over a wide temperature range.[^2]
 
+Below is the functional diagram of BME-/BMP-280. Notable difference between the two devices, is that BME-280 is capable of measuring relative humidity. BME-280 has square shape, while BMP-280 has rectangular shape.
+
 <img alt="ESP32-Node Pinout" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/bme280_functional-diagram.png" width="400px"/>
+
+BME-280 can come in a ready-to-use PCB ...
 
 <img alt="ESP32-Node Pinout" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/BME280.jpg" width="200px"/>
 
@@ -87,6 +91,8 @@ i2c_master_write_read_device(I2C_MASTER_NUM, 0x76, &reg_addr, 1, data, len, I2C_
 <p>Data readout is done by starting a burst read from 0xF7 to 0xFC (temperature and pressure) or from 0xF7 to 0xFE (temperature, pressure, and humidity). The data are rad out in an unsigned 20-bit format both for pressure and for temperature, and in an unsigned 26-bit format for humidity. After the uncompensated values for pressure, temperature, and humidity have been read, the actual humidity, pressure and temperature needs to be calculated using the compensation parameters stored in the device.</p>
 
 <img alt="BME-/BMP-280 Memory Map" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/BME280_BMP280_Registers.png" width="90%"/>
+
+BME-/BMP-280 can communicate via I<sup>2</sup>C. The two diagrams below summarize algorithm of reading to and writting values to/from the sensor.
 
 <img alt="BME-/BMP-280 I<sup>2</sup>C Read & Write" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/bme280_i2c_read-write.png" width="100%"/>
 
