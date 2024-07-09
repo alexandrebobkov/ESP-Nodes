@@ -157,7 +157,7 @@ void app_main(void)
     int len = 1; // 1 byte
     uint8_t *data = malloc(len);
     //uint8_t address = 0x76;
-    //uint8_t register_address = 0xD0;
+    uint8_t register_address = 0xD0;
     command = i2c_cmd_link_create();
     i2c_master_start(command);
     i2c_master_write_byte(command, address << 1 | I2C_MASTER_WRITE, 0x1);
