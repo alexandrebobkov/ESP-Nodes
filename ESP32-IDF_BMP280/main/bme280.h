@@ -1,9 +1,11 @@
 #ifndef __BME280_H__
 #define __BME280_H__
 
-#define BME280_CHIP_ID                      (0x60)
+#define BME280_CHIP_ID                      (0xD0)
 #define BME280_I2C_ADDRESS1                 (0x76)      // BME280 Data sheet p. 32
 #define BME280_I2C_ADDRESS2                 (0x77)
+#define BME280_TEMPERATURE_REGISTER         (0xFA)
+
 #define BME280_TEMPERATURE_DATA_SIZE        (3)
 #define BME280_TEMPERATURE_DATA_LENGTH      (3)
 #define BME280_PRESSURE_DATA_SIZE           (3)
@@ -22,7 +24,7 @@
  * 0xFA-0xFC    -> Temperature  -> 16- to 20-bit resolution, unsigned
  * 0xFD-0xFE    -> Humidity     -> 16-bit resolution
  */
-#define BME280_TEMPERATURE_REGISTER         (0xFA)
+
 
 #endif
 
