@@ -31,6 +31,9 @@ static const char *TAG = "i2c-simple-example";
 #define I2C_MASTER_RX_BUF_DISABLE   0                          /*!< I2C master doesn't need buffer */
 #define I2C_MASTER_TIMEOUT_MS       1000
 
+#define DEVICE_ADDRESS                      0x76
+#define DEVICE_REGISTER_ID                  0xD0
+
 #define MPU9250_SENSOR_ADDR                 0x76        /*!< Slave address of the MPU9250 sensor */
 #define MPU9250_WHO_AM_I_REG_ADDR           0xD0        /*!< Register addresses of the "who am I" register */
 
@@ -84,7 +87,7 @@ static esp_err_t mpu9250_register_write_byte(uint8_t reg_addr, uint8_t data)
 
 /**
  * @brief i2c master initialization
- */
+ 
 static esp_err_t i2c_master_init(void)
 {
     int i2c_master_port = I2C_MASTER_NUM;
@@ -101,8 +104,11 @@ static esp_err_t i2c_master_init(void)
     i2c_param_config(i2c_master_port, &conf);
 
     return i2c_driver_install(i2c_master_port, conf.mode, I2C_MASTER_RX_BUF_DISABLE, I2C_MASTER_TX_BUF_DISABLE, 0);
-}
+}*/
 
+/**
+ * @brief Initialize ESP32 as an I2C master device
+ */
 static esp_err_t i2c_driver_initialize(void)
 {
     int i2c_master_port = 0;
@@ -118,21 +124,6 @@ static esp_err_t i2c_driver_initialize(void)
     };
 
     return i2c_param_config(i2c_master_port, &conf);
-
-    /*int i2c_master_port = 0;
-
-    i2c_config_t conf = {
-        .mode = I2C_MODE_MASTER,
-        .sda_io_num = GPIO_NUM_21,
-        .scl_io_num = GPIO_NUM_22,
-        .sda_pullup_en = GPIO_PULLUP_ENABLE,
-        .scl_pullup_en = GPIO_PULLUP_ENABLE,
-        .master.clk_speed = I2C_MASTER_FREQ_HZ,
-    };
-
-    i2c_param_config(i2c_master_port, &conf);
-
-    return i2c_driver_install(i2c_master_port, conf.mode, I2C_MASTER_RX_BUF_DISABLE, I2C_MASTER_TX_BUF_DISABLE, 0);*/
 }
 
 void app_main(void)
