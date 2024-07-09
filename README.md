@@ -50,7 +50,7 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 
 Bare-bones ESP32 module can be programmed via UART interface (`GPIO03` and `GPIO01`) using USB to UART adapter.
 
-## Temperature Node Key Elements and Components
+## Temperature Node. The Key Elements and Components
 
 The **Temperature Node** broadcasts the air temperature, atmospheric pressure and air humidity over secured MQTT.
 
