@@ -138,6 +138,7 @@ static esp_err_t i2c_driver_initialize(void)
 void app_main(void)
 {
     // CONNECT TO BMP280
+    // 
     ESP_ERROR_CHECK(i2c_driver_initialize());
     i2c_driver_install(I2C_NUM_0, I2C_MODE_MASTER, I2C_MASTER_RX_BUF_DISABLE, I2C_MASTER_TX_BUF_DISABLE, 0);    
     uint8_t address = 0x76;
