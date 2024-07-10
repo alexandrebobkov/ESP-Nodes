@@ -18,6 +18,7 @@
 #define HOST_ID SPI2_HOST // If i2c is selected
 #endif
 
+
 #define SPI_COMMAND_MODE 0
 #define SPI_DATA_MODE 1
 #define SPI_DEFAULT_FREQUENCY 1000000; // 1MHz

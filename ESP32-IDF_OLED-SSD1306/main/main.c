@@ -24,7 +24,7 @@ static const char *TAG = "ESP32-NODE-Display";
 #define I2C_RED_BIT                 I2C_MASTER_READ
 #define I2C_ADDRESS                 0x3C
 
-void i2c_master_init(SSD1306_t * dev, int16_t sda, int16_t scl, int16_t reset)
+/*void i2c_master_init(SSD1306_t * dev, int16_t sda, int16_t scl, int16_t reset)
 {
 	ESP_LOGI(TAG, "Legacy i2c driver is used");
 	i2c_config_t i2c_config = {
@@ -49,7 +49,7 @@ void i2c_master_init(SSD1306_t * dev, int16_t sda, int16_t scl, int16_t reset)
 	dev->_address = I2C_ADDRESS;
 	dev->_flip = false;
 
-}
+}*/
 void app_main(void)
 {
 	SSD1306_t dev;
@@ -58,6 +58,6 @@ void app_main(void)
 	ssd1306_init(&dev, 128, 32);
 	ssd1306_clear_screen(&dev, false);
 	ssd1306_contrast(&dev, 0xff);
-	ssd1306_display_text_x3(&dev, 0, "Hello", 5, false);
+	ssd1306_display_text_x3(&dev, 0, ".", 5, false);
 	vTaskDelay(3000 / portTICK_PERIOD_MS);
 }
