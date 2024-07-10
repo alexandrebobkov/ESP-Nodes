@@ -54,6 +54,12 @@ Bare-bones ESP32 module can be programmed via UART interface (`GPIO03` and `GPIO
 
 The **Temperature Node** broadcasts the air temperature, atmospheric pressure and air humidity over secured MQTT.
 
+### I2C Air Temperature Thermostat (LM75A)
+
+```text
+address: 0x4B
+```
+
 ### I2C Air Temperature, Pressure and Humidity Sensor Board (BME280)
 
 BME280 is combined temperature, humidity and pressure sensor. The unit combines high linearity and high accuracy sensors and is perfectly feasible for low current consumption, long-term stability and high EMC robustness. The humidity sensor offers an extremely fast response time and therefore supports performance requirements for emerging applications such as context awareness, and high accuracy over a wide temperature range.[^2]
@@ -96,7 +102,7 @@ BME-/BMP-280 can communicate via I<sup>2</sup>C. The two diagrams below summariz
 
 <img alt="BME-/BMP-280 I2C Read & Write" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/bme280_i2c_read-write.png" width="100%"/>
 
-## Display Node.
+## Display Node
 
 ```text
 OLED address = 0x3C
