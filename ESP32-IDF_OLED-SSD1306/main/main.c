@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "esp_log.h"
 #include "driver/i2c.h"
+#include "ssd1306.h"
 
 static const char *TAG = "ESP32-NODE-Display";
 
