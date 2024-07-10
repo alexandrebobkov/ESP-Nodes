@@ -38,9 +38,9 @@ static const char *TAG = "i2c-simple-example";
 #define I2C_MASTER_TX_BUF_DISABLE   0                          /*!< I2C master doesn't need buffer */
 #define I2C_MASTER_RX_BUF_DISABLE   0                          /*!< I2C master doesn't need buffer */
 #define I2C_MASTER_TIMEOUT_MS       1000
-#define I2C_ACKS
-#define I2C_ACKM
-#define I2C_NOACKM
+#define I2C_ACKS                    0x1
+#define I2C_ACKM                    0x0
+#define I2C_NOACKM                  0x1                         // I2C NACK value
 
 #define MPU9250_SENSOR_ADDR                 0x76        /*!< Slave address of the MPU9250 sensor */
 #define MPU9250_WHO_AM_I_REG_ADDR           0xD0        /*!< Register addresses of the "who am I" register */
@@ -142,9 +142,9 @@ void app_main(void)
     uint8_t address = 0x76;
     i2c_cmd_handle_t command = i2c_cmd_link_create();
     i2c_master_start(command);
-    i2c_master_write_byte(command, (address << 1) | I2C_MASTER_WRITE, 0x1);    // 0x1 -> check ACK from slave
+    i2c_master_write_byte(command, (address << 1) | I2C_MASTER_WRITE, I2C_ACKS);// 0x1);    // 0x1 -> check ACK from slave
     i2c_master_stop(command);
-    esp_err_t cmd_ret = i2c_master_cmd_begin(I2C_NUM_0, command, 1000 / portTICK_PERIOD_MS);
+    esp_err_t cmd_ret = i2c_master_cmd_begin(I2C_NUM_0, command, I2C_MASTER_TIMEOUT_MS / portTICK_PERIOD_MS);
     i2c_cmd_link_delete(command);
     i2c_driver_delete(I2C_NUM_0);
     if (cmd_ret == ESP_OK)
@@ -182,9 +182,14 @@ void app_main(void)
     i2c_cmd_link_delete(command);
     if (cmd_ret == ESP_OK) {
         ESP_LOGI(TAG, "Register read success");
-        for (int i = 0; i < len; i++) {
-            ESP_LOGI(TAG, "Device ID is: 0x%X", data[i]);
+        for (int i = 0; i < len; i++) {            
             //printf("0x%02x ", data[i]);
+            if (data[i] == 0x60)
+                ESP_LOGI(TAG, "Device ID is 0x%X (BME-280)", data[i]);
+            else if (data[i] == 0x58)
+                ESP_LOGI(TAG, "Device ID is 0x%X (BMP-280)", data[i]);
+            else 
+                ESP_LOGI(TAG, "Device ID is 0x%X", data[i]);
         }        
     } else if (cmd_ret == ESP_ERR_TIMEOUT) {
         ESP_LOGW(TAG, "Bus is busy");
