@@ -182,13 +182,14 @@ void app_main(void)
     i2c_cmd_link_delete(command);
     if (cmd_ret == ESP_OK) {
         ESP_LOGI(TAG, "Register read success");
-        for (int i = 0; i < len; i++) {
-            ESP_LOGI(TAG, "Device ID is: 0x%X", data[i]);
+        for (int i = 0; i < len; i++) {            
             //printf("0x%02x ", data[i]);
             if (data[i] == 0x60)
-                ESP_LOGI(TAG, "BME-280");
-            if (data[i] == 0x58)
-                ESP_LOGI(TAG, "BMP-280");
+                ESP_LOGI(TAG, "Device ID is 0x%X (BME-280)", data[i]);
+            else if (data[i] == 0x58)
+                ESP_LOGI(TAG, "Device ID is 0x%X (BMP-280)", data[i]);
+            else 
+                ESP_LOGI(TAG, "Device ID is 0x%X", data[i]);
         }        
     } else if (cmd_ret == ESP_ERR_TIMEOUT) {
         ESP_LOGW(TAG, "Bus is busy");
