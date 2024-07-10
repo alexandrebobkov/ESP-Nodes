@@ -56,8 +56,15 @@ The **Temperature Node** broadcasts the air temperature, atmospheric pressure an
 
 ### I2C Air Temperature Thermostat (LM75A)
 
+The LM75A is an industry-standard digital temperature sensor. The LM75A provides 9-bit digital temperature readings with an accuracy of ±2°C from –25°C to 100°C
+and ±3°C over –55°C to 125°C. The LM75A operates with a single supply from +2.7 V to +5.5 V. Communication is accomplished over a 2-wire interface which operates up to 400kHz.
+The LM75A has three address pins, allowing up to eight LM75A devices to operate on the same 2-wire bus. The LM75A has a dedicated over-temperature output (O.S.) with
+programmable limit and hysteresis. This output has programmable fault tolerance, which allows the user to
+define the number of consecutive error conditions that must occur before O.S. is activated.
+
+
 ```text
-address: 0x4B
+address: 0x49
 ```
 
 ### I2C Air Temperature, Pressure and Humidity Sensor Board (BME280)
