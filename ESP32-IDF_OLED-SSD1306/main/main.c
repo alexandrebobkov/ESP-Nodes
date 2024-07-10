@@ -2,11 +2,12 @@
 #include "esp_log.h"
 #include "driver/i2c.h"
 #include "ssd1306.h"
+#include "font8x8_basic.h"
 
 static const char *TAG = "ESP32-NODE-Display";
 
 #define I2C_MASTER_SCL_IO           (22)      /*!< GPIO number used for I2C master clock */
-#define I2C_MASTER_SDA_IO           (21))      /*!< GPIO number used for I2C master data  */
+#define I2C_MASTER_SDA_IO           (21)      /*!< GPIO number used for I2C master data  */
 #define I2C_MASTER_NUM              I2C_NUM_0                          /*!< I2C master i2c port number, the number of i2c peripheral interfaces available will depend on the chip */
 #define I2C_MASTER_FREQ_HZ          400000                     /*!< I2C master clock frequency */
 #define I2C_MASTER_TX_BUF_DISABLE   0                          /*!< I2C master doesn't need buffer */
@@ -47,5 +48,12 @@ void i2c_master_init(SSD1306_t * dev, int16_t sda, int16_t scl, int16_t reset)
 }
 void app_main(void)
 {
+	SSD1306_t dev;
 
+	i2c_master_init(&dev, I2C_MASTER_SDA_IO, I2C_MASTER_SCL_IO, 4);
+	ssd1306_init(&dev, 128, 32);
+	ssd1306_clear_screen(&dev, false);
+	ssd1306_contrast(&dev, 0xff);
+	ssd1306_display_text_x3(&dev, 0, "Hello", 5, false);
+	vTaskDelay(3000 / portTICK_PERIOD_MS);
 }
