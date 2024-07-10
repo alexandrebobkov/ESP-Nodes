@@ -113,6 +113,7 @@ BME-/BMP-280 can communicate via I<sup>2</sup>C. The two diagrams below summariz
 
 ```text
 OLED address = 0x3C
+0.91" 128x32
 ```
 
 ---
