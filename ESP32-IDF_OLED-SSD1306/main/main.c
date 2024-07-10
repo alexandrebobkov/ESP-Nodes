@@ -58,6 +58,6 @@ void app_main(void)
 	ssd1306_init(&dev, 128, 32);
 	ssd1306_clear_screen(&dev, false);
 	ssd1306_contrast(&dev, 0xff);
-	ssd1306_display_text_x3(&dev, 0, ".", 1, false);
+	ssd1306_display_text_x3(&dev, 0, "hello", 5, false);
 	vTaskDelay(3000 / portTICK_PERIOD_MS);
 }
