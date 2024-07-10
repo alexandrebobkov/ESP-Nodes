@@ -79,9 +79,9 @@ void ssd1306_get_buffer(SSD1306_t * dev, uint8_t * buffer)
 void ssd1306_display_image(SSD1306_t * dev, int page, int seg, uint8_t * images, int width)
 {
 	if (dev->_address == SPI_ADDRESS) {
-		spi_display_image(dev, page, seg, images, width);
+		//spi_display_image(dev, page, seg, images, width);
 	} else {
-		i2c_display_image(dev, page, seg, images, width);
+		//i2c_display_image(dev, page, seg, images, width);
 	}
 	// Set to internal buffer
 	memcpy(&dev->_page[page]._segs[seg], images, width);
@@ -155,9 +155,9 @@ ssd1306_display_text_x3(SSD1306_t * dev, int page, char * text, int text_len, bo
 			if (invert) ssd1306_invert(image, 24);
 			if (dev->_flip) ssd1306_flip(image, 24);
 			if (dev->_address == SPI_ADDRESS) {
-				spi_display_image(dev, page+yy, seg, image, 24);
+				//spi_display_image(dev, page+yy, seg, image, 24);
 			} else {
-				i2c_display_image(dev, page+yy, seg, image, 24);
+				//i2c_display_image(dev, page+yy, seg, image, 24);
 			}
 			memcpy(&dev->_page[page+yy]._segs[seg], image, 24);
 		}
@@ -184,9 +184,9 @@ void ssd1306_clear_line(SSD1306_t * dev, int page, bool invert)
 void ssd1306_contrast(SSD1306_t * dev, int contrast)
 {
 	if (dev->_address == SPI_ADDRESS) {
-		spi_contrast(dev, contrast);
+		//spi_contrast(dev, contrast);
 	} else {
-		i2c_contrast(dev, contrast);
+		//i2c_contrast(dev, contrast);
 	}
 }
 
