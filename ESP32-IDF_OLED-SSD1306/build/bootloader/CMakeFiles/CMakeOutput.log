@@ -394,3 +394,35 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-IDF_OLED-SSD1306/build/bootloader/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_4afe9 && [1/2] Building C object CMakeFiles/cmTC_4afe9.dir/CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_4afe9
+
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-IDF_OLED-SSD1306/build/bootloader/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_d7d6d && [1/2] Building C object CMakeFiles/cmTC_d7d6d.dir/CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_d7d6d
+
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-IDF_OLED-SSD1306/build/bootloader/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_111ef && [1/2] Building C object CMakeFiles/cmTC_111ef.dir/CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_111ef
+
+
+
+Determining size of time_t passed with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-IDF_OLED-SSD1306/build/bootloader/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_40c40 && [1/2] Building C object CMakeFiles/cmTC_40c40.dir/TIME_T_SIZE.c.obj
+[2/2] Linking C executable cmTC_40c40
+
+
+

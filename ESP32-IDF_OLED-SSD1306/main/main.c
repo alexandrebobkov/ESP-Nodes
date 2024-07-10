@@ -54,7 +54,7 @@ void app_main(void)
 {
 	SSD1306_t dev;
 
-	i2c_master_init(&dev, I2C_MASTER_SDA_IO, I2C_MASTER_SCL_IO, 4);
+	i2c_master_init(&dev, I2C_MASTER_SDA_IO, I2C_MASTER_SCL_IO, 18);
 	ssd1306_init(&dev, 128, 32);
 	ssd1306_clear_screen(&dev, false);
 	ssd1306_contrast(&dev, 0xff);
