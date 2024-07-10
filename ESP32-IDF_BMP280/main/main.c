@@ -185,6 +185,10 @@ void app_main(void)
         for (int i = 0; i < len; i++) {
             ESP_LOGI(TAG, "Device ID is: 0x%X", data[i]);
             //printf("0x%02x ", data[i]);
+            if (data[i] == 0x60)
+                ESP_LOGI(TAG, "BME-280");
+            if (data[i] == 0x58)
+                ESP_LOGI(TAG, "BMP-280");
         }        
     } else if (cmd_ret == ESP_ERR_TIMEOUT) {
         ESP_LOGW(TAG, "Bus is busy");
