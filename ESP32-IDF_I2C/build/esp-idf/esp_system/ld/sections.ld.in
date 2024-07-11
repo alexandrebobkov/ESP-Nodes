@@ -27,9 +27,14 @@ SECTIONS
   */
   .rtc.text :
   {
+    _rtc_text_start = ABSOLUTE(.);
     . = ALIGN(4);
+    _rtc_code_start = .;
     mapping[rtc_text]
     *rtc_wake_stub*.*(.literal .text .literal.* .text.*)
+    _rtc_code_end = .;
+    /* possibly align + add 16B for CPU dummy speculative instr. fetch */
+    . = ((_rtc_code_end - _rtc_code_start) == 0) ? ALIGN(0) : ALIGN(4) + 16;
     _rtc_text_end = ABSOLUTE(.);
   } > rtc_iram_seg
   /*
@@ -72,7 +77,7 @@ SECTIONS
 
      The memory location of the data is dependent on
 
-     CONFIG_ESP32_RTCDATA_IN_FAST_MEM option.
+     CONFIG_ESP32S2_RTCDATA_IN_FAST_MEM option.
 
   */
   .rtc.data :
@@ -99,9 +104,9 @@ SECTIONS
 
      into this section. See the file "esp_attr.h" for more information.
 
-	 The memory location of the data is dependent on
+     The memory location of the data is dependent on
 
-     CONFIG_ESP32_RTCDATA_IN_FAST_MEM option.
+     CONFIG_ESP32S2_RTCDATA_IN_FAST_MEM option.
 
   */
   .rtc_noinit (NOLOAD):
@@ -129,49 +134,27 @@ SECTIONS
   } > rtc_slow_seg
   /**
 
-   * This section holds RTC FAST data that should have fixed addresses.
+   * This section holds RTC data that should have fixed addresses.
 
    * The data are not initialized at power-up and are retained during deep sleep.
 
    */
-  .rtc_fast_reserved (NOLOAD):
+  .rtc_reserved (NOLOAD):
   {
     . = ALIGN(4);
-    _rtc_fast_reserved_start = ABSOLUTE(.);
-    /* New data can only be added here to ensure existing data are not moved.
-
-       Because data have adhered to the end of the segment and code is relied on it.
-
-       >> put new data here << */
-    KEEP(*(.bootloader_data_rtc_mem .bootloader_data_rtc_mem.*))
-    _rtc_fast_reserved_end = ABSOLUTE(.);
-  } > rtc_fast_reserved_seg
-  _rtc_fast_reserved_length = _rtc_fast_reserved_end - _rtc_fast_reserved_start;
-  ASSERT((_rtc_fast_reserved_length <= LENGTH(rtc_fast_reserved_seg)),
-          "RTC FAST reserved segment data does not fit.")
-  /**
-
-   * This section holds RTC SLOW data that should have fixed addresses.
-
-   * The data are not initialized at power-up and are retained during deep sleep.
-
-   */
-  .rtc_slow_reserved (NOLOAD):
-  {
-    . = ALIGN(4);
-    _rtc_slow_reserved_start = ABSOLUTE(.);
+    _rtc_reserved_start = ABSOLUTE(.);
     /* New data can only be added here to ensure existing data are not moved.
 
        Because data have adhered to the end of the segment and code is relied on it.
 
        >> put new data here << */
     *(.rtc_timer_data_in_rtc_mem .rtc_timer_data_in_rtc_mem.*)
-    _rtc_slow_reserved_end = ABSOLUTE(.);
-  } > rtc_slow_reserved_seg
-  _rtc_slow_reserved_length = _rtc_slow_reserved_end - _rtc_slow_reserved_start;
-  _rtc_reserved_length = _rtc_slow_reserved_length;
-  ASSERT((_rtc_slow_reserved_length <= LENGTH(rtc_slow_reserved_seg)),
-          "RTC SLOW reserved segment data does not fit.")
+    KEEP(*(.bootloader_data_rtc_mem .bootloader_data_rtc_mem.*))
+    _rtc_reserved_end = ABSOLUTE(.);
+  } > rtc_reserved_seg
+  _rtc_reserved_length = _rtc_reserved_end - _rtc_reserved_start;
+  ASSERT((_rtc_reserved_length <= LENGTH(rtc_reserved_seg)),
+          "RTC reserved segment data does not fit.")
   /* Get size of rtc slow data based on rtc_data_location alias */
   _rtc_slow_length = (ORIGIN(rtc_slow_seg) == ORIGIN(rtc_data_location))
                         ? (_rtc_force_slow_end - _rtc_data_start)
@@ -226,7 +209,21 @@ SECTIONS
     /* Code marked as runnning out of IRAM */
     _iram_text_start = ABSOLUTE(.);
     mapping[iram0_text]
+    /* Added to maintain compability, there are no iram0 data section to put
+
+     * sections:iram_coredump entry defined in espcoredump's linker.lf file */
+    _coredump_iram_start = 0;
+    _coredump_iram_end = 0;
+    /* align + add 16B for CPU dummy speculative instr. fetch */
+    . = ALIGN(_esp_memprot_align_size) + _esp_memprot_prefetch_pad_size;
+    /* iram_end_test section exists for use by memprot unit tests only */
+    *(.iram_end_test)
+    _iram_text_end = ABSOLUTE(.);
   } > iram0_0_seg
+  .dram0_reserved_for_iram (NOLOAD):
+  {
+    . = ORIGIN(dram0_0_seg) + _iram_end - _iram_start;
+  } > dram0_0_seg
   .dram0.data :
   {
     _data_start = ABSOLUTE(.);
@@ -241,20 +238,6 @@ SECTIONS
     _data_end = ABSOLUTE(.);
     . = ALIGN(4);
   } > dram0_0_seg
-  /**
-
-   * This section holds data that won't be initialised when startup.
-
-   * This section locates in External RAM region.
-
-   */
-  .ext_ram_noinit (NOLOAD) :
-  {
-    _ext_ram_noinit_start = ABSOLUTE(.);
-    *(.ext_ram_noinit*)
-    . = ALIGN(4);
-    _ext_ram_noinit_end = ABSOLUTE(.);
-  } > extern_ram_seg
   /*This section holds data that should not be initialized at power up.
 
     The section located in Internal SRAM memory region. The macro _NOINIT
@@ -286,11 +269,20 @@ SECTIONS
     . = ALIGN (8);
     _bss_start = ABSOLUTE(.);
     mapping[dram0_bss]
+    *(.dynsbss)
+    *(.sbss)
+    *(.sbss.*)
+    *(.gnu.linkonce.sb.*)
+    *(.scommon)
+    *(.sbss2)
+    *(.sbss2.*)
+    *(.gnu.linkonce.sb2.*)
+    *(.dynbss)
+    *(.share.mem)
+    *(.gnu.linkonce.b.*)
     . = ALIGN (8);
     _bss_end = ABSOLUTE(.);
   } > dram0_0_seg
-  ASSERT(((_bss_end - ORIGIN(dram0_0_seg)) <= LENGTH(dram0_0_seg)),
-          "DRAM segment data does not fit.")
   .flash.appdesc : ALIGN(0x10)
   {
     _rodata_reserved_start = ABSOLUTE(.); /* This is a symbol marking the flash.rodata start, this can be used for mmu driver to maintain virtual address */
@@ -423,24 +415,8 @@ SECTIONS
   .iram0.text_end (NOLOAD) :
   {
     . = ALIGN (4);
-    _iram_text_end = ABSOLUTE(.);
-  } > iram0_0_seg
-  .iram0.data :
-  {
-    . = ALIGN(4);
-    _iram_data_start = ABSOLUTE(.);
-    mapping[iram0_data]
-    _iram_data_end = ABSOLUTE(.);
-  } > iram0_0_seg
-  .iram0.bss (NOLOAD) :
-  {
-    . = ALIGN(4);
-    _iram_bss_start = ABSOLUTE(.);
-    mapping[iram0_bss]
-    _iram_bss_end = ABSOLUTE(.);
-    . = ALIGN(4);
     _iram_end = ABSOLUTE(.);
-   } > iram0_0_seg
+  } > iram0_0_seg
   /* Marks the end of data, bss and possibly rodata  */
   .dram0.heap_start (NOLOAD) :
   {
@@ -479,7 +455,7 @@ SECTIONS
    *(.eh_frame)
   }
 }
-ASSERT(((_iram_end - ORIGIN(iram0_0_seg)) <= LENGTH(iram0_0_seg)),
+ASSERT(((_iram_text_end - ORIGIN(iram0_0_seg)) <= LENGTH(iram0_0_seg)),
           "IRAM0 segment data does not fit.")
-ASSERT(((_heap_low_start - ORIGIN(dram0_0_seg)) <= LENGTH(dram0_0_seg)),
+ASSERT(((_heap_low_start - _data_start) <= LENGTH(dram0_0_seg)),
           "DRAM segment data does not fit.")
