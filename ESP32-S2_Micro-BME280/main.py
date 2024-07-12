@@ -1,5 +1,5 @@
 from machine import Pin, I2C
-import machine
+#import machine
 import time
 import bosch_bme280
 
@@ -7,10 +7,8 @@ import bosch_bme280
 ## MAIN LOOP SECTION
 
 led = Pin(15, Pin.OUT)
-scl = machine.Pin(22)
-sda = Pin(21)
 
-i2c = I2C(scl, sda, freq=10000)
+i2c = I2C(1, scl=Pin(9), sda=Pin(8), freq=10000)
 
 while True:
     bme = bosch_bme280.BME280(i2c=i2c)
@@ -18,6 +16,7 @@ while True:
     hum = bme.humidity
     pres = bme.pressure
     
+    print('\n')
     print('Temperature: ', temp)
     print('Humidity: ', hum)
     print('Pressure: ', pres)
@@ -31,4 +30,5 @@ while True:
     time.sleep(0.25)
     led.value(0)
     time.sleep(1)
+
 

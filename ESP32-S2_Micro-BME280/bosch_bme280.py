@@ -284,3 +284,4 @@ class BME280:
     hd = h * 100 // 1024 - hi * 100
     return "{}.{:02d}%".format(hi, hd)
 
+
