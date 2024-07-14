@@ -16,7 +16,7 @@ void setup() {
 
   Serial.println("GPIO setup done");
 
-  Serial.println("Setting up BME280 sensor");
+  /*Serial.println("Setting up BME280 sensor");
   unsigned status = bme.begin(0x76); // 0x76
   if (!status) {
     Serial.println("Could not find a valid BME/BMP280 sensor, check wiring!");
@@ -26,7 +26,7 @@ void setup() {
     Serial.print("   ID of 0x60 represents a BME 280.\n");
     Serial.print("   ID of 0x61 represents a BME 680.\n");
     while (1);
-  }
+  }*/
 }
 
 void loop() {
