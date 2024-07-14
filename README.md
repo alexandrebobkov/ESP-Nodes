@@ -53,6 +53,8 @@ ESP32-C3 is a cost-effective, RISC-V-based MCU with Wi-Fi and Bluetooth 5 (LE) c
 <p>These modules have a rich set of peripherals and high performance make the two modules an ideal choice for smart homes, industrial automation, health care, consumer electronics, etc</p>
 <p>ESP32-C3 has 32-bit RISC-V-based MCU single-core processor with 400KB of SRAM, which is capable of running at 160MHz. t has integrated 2.4 GHz Wi-Fi and Bluetooth 5 (LE) with a long-range support. It has 22 programmable GPIOs with support for ADC, SPI, UART, I2C, I2S, RMT, TWAI, and PWM.</p>
 
+<img alt="ESP32-C3 Block Diagram" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/bme280_functional-diagram.png" width="400px"/>
+
 ### Programming via UART
 
 Bare-bones ESP32 module can be programmed via UART interface (`GPIO03` and `GPIO01`) using USB to UART adapter.
