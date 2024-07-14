@@ -25,10 +25,23 @@
 
 
 //#elif defined(ESP32)
-GxIO_Class io(SPI, /*CS=5*/ SS, /*DC=*/ 17, /*RST=*/ 16); // arbitrary selection of 17, 16
-GxEPD_Class display(io, /*RST=*/ 16, /*BUSY=*/ 4); // arbitrary selection of (16), 4
+//GxIO_Class io(SPI, /*CS=5*/ SS, /*DC=*/ 17, /*RST=*/ 16); // arbitrary selection of 17, 16
+//GxEPD_Class display(io, /*RST=*/ 16, /*BUSY=*/ 4); // arbitrary selection of (16), 4
 //GxIO_Class io(SPI, SS, 22, 21);
 //GxEPD_Class display(io, 16, 4);
+
+GxIO_Class io(SPI, SS, 2, 3);
+GxEPD_Class display(io, 3, 4);
+
+/*
+#elif defined(ESP32) && (CONFIG_IDF_TARGET_ESP32C3)
+#define DF_GFX_SCK 4
+#define DF_GFX_MOSI 6
+#define DF_GFX_MISO GFX_NOT_DEFINED
+#define DF_GFX_CS 7
+#define DF_GFX_DC 2
+#define DF_GFX_RST 1
+#define DF_GFX_BL 3*/
 
 //#elif defined(ARDUINO_ARCH_SAMD)
 //GxIO_Class io(SPI, /*CS=*/ 4, /*DC=*/ 7, /*RST=*/ 6);
