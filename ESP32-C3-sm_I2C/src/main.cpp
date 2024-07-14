@@ -18,7 +18,8 @@ void setup() {
   Serial.println("GPIO setup done");
 
   Serial.println("Setting up BME280 sensor");
-  unsigned status = bme.begin(0x76); // 0x76
+  Wire.setPins(SDA_PIN, SCL_PIN);
+  /*unsigned status = bme.begin(0x76); // 0x76
   if (!status) {
     Serial.println("Could not find a valid BME/BMP280 sensor, check wiring!");
     Serial.print("SensorID was: 0x"); Serial.println(bme.sensorID(),16);
@@ -32,7 +33,7 @@ void setup() {
       digitalWrite(LED_PIN, HIGH);
       delay(250);
     }
-  }
+  }*/
 }
 
 void loop() {
