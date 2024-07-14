@@ -50,9 +50,7 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 ### ESP32-C3 Module Adapter Pinouts
 <p>ESP32-C3 is a cost-effective, RISC-V-based MCU with Wi-Fi and Bluetooth 5 (LE) connectivity for secure IoT applications. ESP32-C3 Module offfers a cost-effective RISC-V MCU with Wi-Fi and Bluetooth 5 (LE) connectivity for secure IoT applications.[^5]</p>
 <p>These modules have a rich set of peripherals and high performance make the two modules an ideal choice for smart homes, industrial automation, health care, consumer electronics, etc</p>
-<p>ESP32-C3 has 32-bit RISC-V-based MCU single-core processor with 400KB of SRAM, which is capable of running at 160MHz. It integrates a rich set of peripherals, ranging from UART, I2C, I2S, remote control peripheral, LED PWM controller, general DMA controller, TWAI® controller, USB Serial/JTAG controller, temperature sensor, ADC, etc. It also includes SPI, Dual SPI and Quad SPI interfaces.
-</p>
-ESP32-C3 is a single-core, 32-bit, RISC-V-based MCU . It has integrated 2.4 GHz Wi-Fi and Bluetooth 5 (LE) with a long-range support. It has 22 programmable GPIOs with support for ADC, SPI, UART, I2C, I2S, RMT, TWAI, and PWM.
+<p>ESP32-C3 has 32-bit RISC-V-based MCU single-core processor with 400KB of SRAM, which is capable of running at 160MHz. t has integrated 2.4 GHz Wi-Fi and Bluetooth 5 (LE) with a long-range support. It has 22 programmable GPIOs with support for ADC, SPI, UART, I2C, I2S, RMT, TWAI, and PWM.</p>
 
 ### Programming via UART
 
