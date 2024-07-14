@@ -15,19 +15,18 @@ TaskHandle_t TaskStatusLED, TaskSensorValues;
 
 // Dummy task blinking built-in LED
 void TaskStatusLEDCode (void* parameters) {
-    Serial.print("Task 0 running on core # ");
-    Serial.println(xPortGetCoreID());
+  Serial.print("Task 0 running on core # ");
+  Serial.println(xPortGetCoreID());
 
-    for (;;) {
-      digitalWrite(SYS_LED_PIN, LOW);
-      vTaskDelay(250);
-      digitalWrite(SYS_LED_PIN, HIGH);
-      vTaskDelay(250);
-      digitalWrite(SYS_LED_PIN, LOW);
-      vTaskDelay(250);
-      digitalWrite(SYS_LED_PIN, HIGH);
-      vTaskDelay(750);                
-    }
+  digitalWrite(SYS_LED_PIN, LOW);
+  vTaskDelay(250 / portTICK_RATE_MS);
+  digitalWrite(SYS_LED_PIN, HIGH);
+  vTaskDelay(250 / portTICK_RATE_MS);
+  digitalWrite(SYS_LED_PIN, LOW);
+  vTaskDelay(250 / portTICK_RATE_MS);
+  digitalWrite(SYS_LED_PIN, HIGH);
+  vTaskDelay(750 / portTICK_RATE_MS);                
+  //vTaskDelete( NULL );
 }
 void TaskSensorValuesCode (void* parameters) {
   Serial.println("BME-280 Sensors Readings ...");
@@ -41,7 +40,8 @@ void TaskSensorValuesCode (void* parameters) {
   Serial.print(bme.readPressure() / 100.0F);
   Serial.println(" kPa");
   Serial.println("");
-  vTaskDelay(2000);
+  vTaskDelay(2000 / portTICK_RATE_MS);
+  //vTaskDelete( NULL );
 }
 
 void setup() {
