@@ -26,7 +26,7 @@ void TaskStatusLEDCode (void* parameters) {
       digitalWrite(SYS_LED_PIN, LOW);
       vTaskDelay(250);
       digitalWrite(SYS_LED_PIN, HIGH);
-      vTaskDelay(1500);                
+      vTaskDelay(750);                
     }
 }
 void TaskSensorValuesCode (void* parameters) {
@@ -41,6 +41,7 @@ void TaskSensorValuesCode (void* parameters) {
   Serial.print(bme.readPressure() / 100.0F);
   Serial.println(" kPa");
   Serial.println("");
+  vTaskDelay(2000);
 }
 
 void setup() {
@@ -50,8 +51,7 @@ void setup() {
 
   pinMode(LED_PIN, OUTPUT);
 
-  Serial.println("GPIO setup done");
-  xTaskCreatePinnedToCore(TaskStatusLEDCode, "Status LED Task", 4096, NULL, 10, &TaskStatusLED, 1);
+  Serial.println("GPIO setup done");  
 
   Serial.println("Setting up BME280 sensor");
   Wire.setPins(SDA_PIN, SCL_PIN);
@@ -74,6 +74,7 @@ void setup() {
   }
   else {
     Serial.println("Sensor was found.");
+    xTaskCreatePinnedToCore(TaskStatusLEDCode, "Status LED Task", 4096, NULL, 10, &TaskStatusLED, 1);
     xTaskCreatePinnedToCore(TaskSensorValuesCode, "Status LED Task", 4096, NULL, 10, &TaskSensorValues, 1);
   }
 }
