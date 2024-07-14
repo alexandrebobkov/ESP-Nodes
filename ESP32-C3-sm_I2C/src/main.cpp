@@ -28,8 +28,8 @@ void TaskStatusLEDCode (void* parameters) {
     digitalWrite(SYS_LED_PIN, HIGH);
     vTaskDelay(750 / portTICK_RATE_MS);
   }                
-  //vTaskDelete( NULL );
 }
+
 void TaskSensorValuesCode (void* parameters) {
 
   for (;;) {
@@ -44,9 +44,8 @@ void TaskSensorValuesCode (void* parameters) {
     Serial.print(bme.readPressure() / 100.0F);
     Serial.println(" kPa");
     Serial.println("");
-    vTaskDelay(2000 / portTICK_RATE_MS);
+    vTaskDelay(5000 / portTICK_RATE_MS);
   }
-  //vTaskDelete( NULL );
 }
 
 void setup() {
