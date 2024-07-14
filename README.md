@@ -68,6 +68,17 @@ ESP Nodes performing specific operations can use different ESP32 Modules for opt
 #define WIFI_NAME   "IoT_bots"
 #define WIFI_PASSWORD "405405405"
 
+/* ESP32-WROOM Module */
+#define SCL_PIN
+#define SDA_PIN
+
+/* ESP32-3C Module */
+
+/* ESP32-C3 Super Mini */
+#define SCL_PIN
+#define SDA_PIN
+#define SYS_LED_PIN (8)
+
 ```
 
 Bare-bones ESP32 module can be programmed via UART interface (`GPIO03` and `GPIO01`) using USB to UART adapter.
