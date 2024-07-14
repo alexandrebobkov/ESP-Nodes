@@ -3,6 +3,8 @@
 #include <WiFiClientSecure.h>
 #include <Wire.h>
 #include <Adafruit_BME280.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
 
 #include "config.h"
 
