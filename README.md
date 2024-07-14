@@ -48,6 +48,10 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 [^1]: https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf
 
 ### ESP32-C3 Module Adapter Pinouts
+<p>ESP32-C3 Module offfers a cost-effective RISC-V MCU with Wi-Fi and Bluetooth 5 (LE) connectivity for secure IoT applications.</p>
+<p>These modules have a rich set of peripherals and high performance make the two modules an ideal choice for smart homes, industrial automation, health care, consumer electronics, etc</p>
+<p>ESP32-C3 has a 32-bit RISC-V single-core processor. It integrates a rich set of peripherals, ranging from UART, I2C, I2S, remote control peripheral, LED PWM controller, general DMA controller, TWAI® controller, USB Serial/JTAG controller, temperature sensor, ADC, etc. It also includes SPI, Dual SPI and Quad SPI interfaces.
+</p>
 
 ### Programming via UART
 
