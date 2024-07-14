@@ -175,6 +175,20 @@ OLED address = 0x3C
 0.91" 128x32
 ```
 
+### e-Paper
+#### ESP32-WROOM
+
+| ESP32-WROOM | e-Paper |
+| --- | --- |
+| `GPIO4` | `BUSY` |
+| `GPIO5` | `CS`|
+| `GPIO16` | `RST` |
+| `GPIO17` | `DC` |
+| `GPIO18` | `CLK` |
+| `GPIO23` | `DIN` |
+
+#### ESP32-C3
+
 ---
 ## REFERENCES
 
