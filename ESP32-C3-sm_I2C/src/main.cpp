@@ -18,29 +18,34 @@ void TaskStatusLEDCode (void* parameters) {
   Serial.print("Task 0 running on core # ");
   Serial.println(xPortGetCoreID());
 
-  digitalWrite(SYS_LED_PIN, LOW);
-  vTaskDelay(250 / portTICK_RATE_MS);
-  digitalWrite(SYS_LED_PIN, HIGH);
-  vTaskDelay(250 / portTICK_RATE_MS);
-  digitalWrite(SYS_LED_PIN, LOW);
-  vTaskDelay(250 / portTICK_RATE_MS);
-  digitalWrite(SYS_LED_PIN, HIGH);
-  vTaskDelay(750 / portTICK_RATE_MS);                
+  for (;;) {
+    digitalWrite(SYS_LED_PIN, LOW);
+    vTaskDelay(250 / portTICK_RATE_MS);
+    digitalWrite(SYS_LED_PIN, HIGH);
+    vTaskDelay(250 / portTICK_RATE_MS);
+    digitalWrite(SYS_LED_PIN, LOW);
+    vTaskDelay(250 / portTICK_RATE_MS);
+    digitalWrite(SYS_LED_PIN, HIGH);
+    vTaskDelay(750 / portTICK_RATE_MS);
+  }                
   //vTaskDelete( NULL );
 }
 void TaskSensorValuesCode (void* parameters) {
-  Serial.println("BME-280 Sensors Readings ...");
-  Serial.print("Temperature: ");
-  Serial.print(bme.readTemperature());
-  Serial.println("°C");
-  Serial.print("Humidity: ");
-  Serial.print(bme.readHumidity());
-  Serial.println("%");
-  Serial.print("Barometric Pressure: ");
-  Serial.print(bme.readPressure() / 100.0F);
-  Serial.println(" kPa");
-  Serial.println("");
-  vTaskDelay(2000 / portTICK_RATE_MS);
+
+  for (;;) {
+    Serial.println("BME-280 Sensors Readings ...");
+    Serial.print("Temperature: ");
+    Serial.print(bme.readTemperature());
+    Serial.println("°C");
+    Serial.print("Humidity: ");
+    Serial.print(bme.readHumidity());
+    Serial.println("%");
+    Serial.print("Barometric Pressure: ");
+    Serial.print(bme.readPressure() / 100.0F);
+    Serial.println(" kPa");
+    Serial.println("");
+    vTaskDelay(2000 / portTICK_RATE_MS);
+  }
   //vTaskDelete( NULL );
 }
 
@@ -74,8 +79,8 @@ void setup() {
   }
   else {
     Serial.println("Sensor was found.");
-    xTaskCreatePinnedToCore(TaskStatusLEDCode, "Status LED Task", 4096, NULL, 10, &TaskStatusLED, 1);
-    xTaskCreatePinnedToCore(TaskSensorValuesCode, "Status LED Task", 4096, NULL, 10, &TaskSensorValues, 1);
+    xTaskCreate(TaskStatusLEDCode, "Status LED Task", 4096, NULL, 10, &TaskStatusLED);
+    xTaskCreate(TaskSensorValuesCode, "Status LED Task", 4096, NULL, 5, &TaskSensorValues);
   }
 }
 
