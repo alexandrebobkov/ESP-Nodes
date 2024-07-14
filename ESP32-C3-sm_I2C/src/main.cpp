@@ -34,13 +34,13 @@ void TaskSensorValuesCode (void* parameters) {
 
   for (;;) {
     Serial.println("BME-280 Sensors Readings ...");
-    Serial.print("Temperature: ");
+    Serial.print("Temperature:\t\t");
     Serial.print(bme.readTemperature());
     Serial.println("°C");
-    Serial.print("Humidity: ");
+    Serial.print("Humidity:\t\t");
     Serial.print(bme.readHumidity());
     Serial.println("%");
-    Serial.print("Barometric Pressure: ");
+    Serial.print("Barometric Pressure:\t\t");
     Serial.print(bme.readPressure() / 100.0F);
     Serial.println(" kPa");
     Serial.println("");
