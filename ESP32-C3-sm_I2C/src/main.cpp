@@ -20,8 +20,8 @@ void setup() {
   Serial.println("Setting up BME280 sensor");
   Wire.setPins(SDA_PIN, SCL_PIN);
   Wire.begin();
-  /*unsigned status = bme.begin(0x76); // 0x76
-  if (!status) {
+  //unsigned status = bme.begin(0x76); // 0x76
+  if (!bme.begin(0x76)) {
     Serial.println("Could not find a valid BME/BMP280 sensor, check wiring!");
     Serial.print("SensorID was: 0x"); Serial.println(bme.sensorID(),16);
     Serial.print("   ID of 0xFF probably means a bad address, a BMP 180 or BMP 085\n");
@@ -34,7 +34,7 @@ void setup() {
       digitalWrite(LED_PIN, HIGH);
       delay(250);
     }
-  }*/
+  }
 }
 
 void loop() {
