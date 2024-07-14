@@ -51,6 +51,7 @@ void setup() {
   pinMode(LED_PIN, OUTPUT);
 
   Serial.println("GPIO setup done");
+  xTaskCreatePinnedToCore(TaskStatusLEDCode, "Status LED Task", 4096, NULL, 10, &TaskStatusLED, 1);
 
   Serial.println("Setting up BME280 sensor");
   Wire.setPins(SDA_PIN, SCL_PIN);
@@ -70,6 +71,10 @@ void setup() {
       delay(150);
       Serial.println("Could not find a valid BME/BMP280 sensor, check wiring!");
     }
+  }
+  else {
+    Serial.println("Sensor was found.");
+    xTaskCreatePinnedToCore(TaskSensorValuesCode, "Status LED Task", 4096, NULL, 10, &TaskSensorValues, 1);
   }
 }
 
