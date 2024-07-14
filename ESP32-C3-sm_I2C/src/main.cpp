@@ -80,7 +80,7 @@ void setup() {
 
 void loop() {
   
-  digitalWrite(LED_PIN, LOW);
+  /*digitalWrite(LED_PIN, LOW);
   delay(250);
   digitalWrite(LED_PIN, HIGH);
   delay(250);
@@ -98,5 +98,5 @@ void loop() {
   Serial.print("Barometric Pressure: ");
   Serial.print(bme.readPressure() / 100.0F);
   Serial.println(" kPa");
-  Serial.println("");
+  Serial.println("");*/
 }
