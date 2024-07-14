@@ -93,11 +93,22 @@ const *char WIFI_PASSWORD = "405405405";
     A2      -> GPIO4
     A1      -> GPIO3
     A0      -> GPIO2
-    
+
 */
-#define SCL_PIN     (7)
-#define SDA_PIN     (6)
-#define SYS_LED_PIN (8)
+#define SCL_PIN         (7)
+#define SDA_PIN         (6)
+#define SYS_LED_PIN     (8)
+#define SCK_PIN         (8)
+#define MISO_PIN        (9)
+#define MOSI_PIN        (10)
+#define UART_RX_PIN     (20)
+#define UART_TX_PIN     (21)
+#define ADC1_PIN        (1)
+#define ADC2_PIN        (0)
+#define A0_PIN          (2)
+#define A1_PIN          (3)
+#define A2_PIN          (4)
+#define A3_PIN          (5)
 
 ```
 
