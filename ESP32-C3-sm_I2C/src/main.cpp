@@ -30,9 +30,10 @@ void setup() {
     Serial.print("   ID of 0x61 represents a BME 680.\n");
     while (1) {
       digitalWrite(LED_PIN, LOW);
-      delay(250);
+      delay(150);
       digitalWrite(LED_PIN, HIGH);
-      delay(250);
+      delay(150);
+      Serial.println("Could not find a valid BME/BMP280 sensor, check wiring!");
     }
   }
 }
@@ -48,4 +49,10 @@ void loop() {
   digitalWrite(LED_PIN, HIGH);
   delay(750);
   Serial.println("Main loop");
+  Serial.print("Temperature: ");
+  Serial.print(bme.readTemperature());
+  Serial.println("°C");
+  
+  Serial.println("Main loop");
+
 }
