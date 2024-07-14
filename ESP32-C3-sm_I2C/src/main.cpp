@@ -8,6 +8,26 @@
 
 Adafruit_BME280 bme;
 
+// Define tasks.
+TaskHandle_t TaskStatusLED, TaskSensorValues;
+
+// Dummy task blinking built-in LED
+void TaskStatusLEDCode (void * parameters) {
+    Serial.print("Task 0 running on core # ");
+    Serial.println(xPortGetCoreID());
+
+    for (;;) {
+      digitalWrite(SYS_LED_PIN, LOW);
+      vTaskDelay(250);
+      digitalWrite(SYS_LED_PIN, HIGH);
+      vTaskDelay(250);
+      digitalWrite(SYS_LED_PIN, LOW);
+      vTaskDelay(250);
+      digitalWrite(SYS_LED_PIN, HIGH);
+      vTaskDelay(1500);                
+    }
+}
+
 void setup() {
   Serial.begin(9600);
   Serial.println();
@@ -52,7 +72,11 @@ void loop() {
   Serial.print("Temperature: ");
   Serial.print(bme.readTemperature());
   Serial.println("°C");
-  
-  Serial.println("Main loop");
-
+  Serial.print("Humidity: ");
+  Serial.print(bme.readHumidity());
+  Serial.println("%");
+  Serial.print("Barometric Pressure: ");
+  Serial.print(bme.readPressure() / 100.0F);
+  Serial.println(" kPa");
+  Serial.println("");
 }
