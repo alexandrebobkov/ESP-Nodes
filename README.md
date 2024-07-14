@@ -17,6 +17,8 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 - programmable via [UART](https://github.com/alexandrebobkov/ESP-Nodes/tree/main?tab=readme-ov-file#uart) -> no need for serial drivers
 
 ### ESP32-WROOM-32D Module Adapter Pinouts
+<p>ESP32-WROOM-32D modules are well suited for Wi-Fi and Bluetooth/Bluetooth LE-based connectivity applications and provide a solid dual-core performance. These modules target a wide variety of applications, ranging from low-power sensor networks to the most demanding tasks, such as voice encoding, music streaming and MP3 decoding.
+</p>
 <p>The adapter allows interchangability of ESP32 modules between different nodes. The adapter contains minimal components on its PCB, just enough to ensure module's operation. (ESP32 8-N-1)</p>
 
 <img alt="ESP32-Node Pinout" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/ESP32-Node-pinout.png" width="350px"/>
@@ -45,6 +47,7 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 
 [^1]: https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf
 
+### ESP32-C3 Module Adapter Pinouts
 
 ### Programming via UART
 
