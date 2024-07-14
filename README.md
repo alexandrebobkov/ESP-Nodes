@@ -65,8 +65,8 @@ ESP Nodes performing specific operations can use different ESP32 Modules for opt
 > Remember to add entry for congif.h inside .gitignore file to prevent Git from pushing security sensitive data to the repository.
 
 ```C
-#define WIFI_NAME   "IoT_bots"
-#define WIFI_PASSWORD "405405405"
+const *char WIFI_SSID = "IoT_bots";
+const *char WIFI_PASSWORD = "405405405";
 
 /* ESP32-WROOM Module */
 #define SCL_PIN
@@ -74,9 +74,29 @@ ESP Nodes performing specific operations can use different ESP32 Modules for opt
 
 /* ESP32-3C Module */
 
-/* ESP32-C3 Super Mini */
-#define SCL_PIN
-#define SDA_PIN
+/* ESP32-C3 Super Mini
+    
+    SDA     -> GPIO6
+    SCL     -> GPIO7
+
+    SCK     -> GPIO8
+    MISO    -> GPIO9
+    MOSI    -> GPIO10
+
+    RX      -> GPIO20
+    TX      -> GPIO21
+
+    ADC1    -> GPIO1
+    ADC2    -> GPIO0
+
+    A3      -> GPIO5
+    A2      -> GPIO4
+    A1      -> GPIO3
+    A0      -> GPIO2
+    
+*/
+#define SCL_PIN     (7)
+#define SDA_PIN     (6)
 #define SYS_LED_PIN (8)
 
 ```
