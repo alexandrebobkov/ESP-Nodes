@@ -7,6 +7,7 @@
 #include "freertos/task.h"
 
 #include "config.h"
+#include "epaper.h"
 
 Adafruit_BME280 bme;
 
