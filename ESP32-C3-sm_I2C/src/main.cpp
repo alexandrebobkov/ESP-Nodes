@@ -19,6 +19,7 @@ void setup() {
 
   Serial.println("Setting up BME280 sensor");
   Wire.setPins(SDA_PIN, SCL_PIN);
+  Wire.begin();
   /*unsigned status = bme.begin(0x76); // 0x76
   if (!status) {
     Serial.println("Could not find a valid BME/BMP280 sensor, check wiring!");
