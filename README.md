@@ -176,7 +176,9 @@ OLED address = 0x3C
 ```
 
 ### e-Paper
-#### ESP32-WROOM
+#### ESP32-WROOM Module
+
+Wiring table
 
 | ESP32-WROOM | e-Paper |
 | --- | --- |
@@ -188,6 +190,15 @@ OLED address = 0x3C
 | `GPIO23` | `DIN` |
 
 #### ESP32-C3
+
+| ESP32-C3 | e-Paper |
+| --- | --- |
+| `GPIO` | `BUSY` |
+| `GPIO` | `CS`|
+| `GPIO` | `RST` |
+| `GPIO` | `DC` |
+| `GPIO` | `CLK` |
+| `GPIO` | `DIN` |
 
 ---
 ## REFERENCES
