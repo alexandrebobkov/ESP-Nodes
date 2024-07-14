@@ -69,12 +69,17 @@ const *char WIFI_SSID = "IoT_bots";
 const *char WIFI_PASSWORD = "405405405";
 
 /* ESP32-WROOM Module */
-#define SCL_PIN
-#define SDA_PIN
+#ifdef ESP32-WROOM
+#define SCL_PIN         (22)
+#define SDA_PIN         (21)
+#endif
 
-/* ESP32-3C Module */
+/* ESP32-C3 Module */
+
+/* ESP32-S3 Module */
 
 /* ESP32-C3 Super Mini */
+#ifdef ESP32-C3-SuperMini
 #define SCL_PIN         (7)
 #define SDA_PIN         (6)
 #define SYS_LED_PIN     (8)
@@ -89,6 +94,16 @@ const *char WIFI_PASSWORD = "405405405";
 #define A1_PIN          (3)
 #define A2_PIN          (4)
 #define A3_PIN          (5)
+#endif
+
+/* BME-280 */
+#ifdef BME280
+#define I2C_ADDRESS_BME280  0x76
+#endif
+/* BMP-280 */
+#ifdef BME280
+#define I2C_ADDRESS_BMP280  0x76
+#endif
 
 ```
 
