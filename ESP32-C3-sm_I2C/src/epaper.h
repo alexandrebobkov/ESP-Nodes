@@ -1,4 +1,5 @@
 #include <GxEPD.h>
+//#include <GxEPD_3C.h>
 #include <GxGDEW042Z15/GxGDEW042Z15.h>    // 4.2" b/w/r
 //#include <GxGDEW029Z10/GxGDEW029Z10.h>      // 2.9" b/w/r
 //#include <GxGDEW029Z10/GxGDEW029Z10.h>
@@ -30,8 +31,8 @@
 //GxIO_Class io(SPI, SS, 22, 21);
 //GxEPD_Class display(io, 16, 4);
 
-GxIO_Class io(SPI, /* CS=SS=7 */ SS, /* DC=1 */ 2, /* RST=2 */ 2);
-GxEPD_Class display(io, /* RST=2 */ 2, /* BUSY=3 */ 3);
+GxIO_Class io(SPI, /* CS=SS=7 */ SS, /* DC=1 */ 1, /* RST=2 */ 9);
+GxEPD_Class display(io, /* RST=2;9 */ 8, /* BUSY=3;7 */ 6);
 
 /*
 #elif defined(ESP32) && (CONFIG_IDF_TARGET_ESP32C3)
