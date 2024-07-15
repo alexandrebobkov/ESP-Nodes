@@ -182,12 +182,12 @@ Wiring table
 
 | ESP32-WROOM | e-Paper |
 | --- | --- |
-| `GPIO4` | `BUSY` |
-| `GPIO5` | `CS`|
-| `GPIO16` | `RST` |
-| `GPIO17` | `DC` |
-| `GPIO18` | `CLK` |
-| `GPIO23` | `DIN` |
+| `GPIO4` (hSPI HD) | `BUSY` |
+| `GPIO5` (vSPI CS) | `CS`|
+| `GPIO16` (RxD) | `RST` |
+| `GPIO17` (TxD) | `DC` |
+| `GPIO18` (vSPI CLK) | `CLK` |
+| `GPIO23` (vSPI D) | `DIN` |
 
 #### ESP32-C3
 
@@ -198,7 +198,7 @@ Wiring table
 | `GPIO` | `RST` |
 | `GPIO` | `DC` |
 | `GPIO` | `CLK` |
-| `GPIO` | `DIN` |
+| `GPIO` () | `DIN` |
 
 ---
 ## REFERENCES
