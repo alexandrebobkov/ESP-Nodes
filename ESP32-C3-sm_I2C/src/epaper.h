@@ -31,8 +31,8 @@
 //GxIO_Class io(SPI, SS, 22, 21);
 //GxEPD_Class display(io, 16, 4);
 
-GxIO_Class io(SPI, /* CS=SS=7 */ SS, /* DC=1 */ 1, /* RST=2 */ 9);
-GxEPD_Class display(io, /* RST=2;9 */ 8, /* BUSY=3;7 */ 6);
+GxIO_Class io(SPI, /* CS=SS=3 */ SS, /* DC=1 */ 5, /* RST=2 */ 2);
+GxEPD_Class display(io, /* RST=2;9 */ 2, /* BUSY=3;7 */ 7);
 
 /*
 #elif defined(ESP32) && (CONFIG_IDF_TARGET_ESP32C3)
