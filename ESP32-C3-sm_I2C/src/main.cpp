@@ -50,8 +50,8 @@ void TaskSensorValuesCode (void* parameters) {
 }
 
 void setup() {
-  Serial.println("Please wait 5 seconds ...");
-  delay(5000);
+  Serial.println("Please wait 2 seconds ...");
+  delay(2000);
   Serial.begin(9600);
   Serial.println();
   
