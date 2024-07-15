@@ -53,7 +53,7 @@ void setup() {
   sleep(2);
   Serial.begin(115200);
   Serial.println();
-  /*
+  
   Serial.println("Setting up GPIOs ...");
 
   pinMode(LED_PIN, OUTPUT);
@@ -86,9 +86,8 @@ void setup() {
     xTaskCreate(TaskStatusLEDCode, "Status LED Task", 4096, NULL, 10, &TaskStatusLED);
     xTaskCreate(TaskSensorValuesCode, "Status LED Task", 4096, NULL, 5, &TaskSensorValues);
   }
-  */
 
-  // Initialize ePaper display
+  /*// Initialize ePaper display
   display.init(115200);
   display.fillScreen(GxEPD_BLACK);
   display.update();
@@ -101,12 +100,12 @@ void setup() {
   display.setCursor(5, 5);
   display.setFont(&TomThumb);
   display.print("10.100.50.xxx");
-  display.update();
+  display.update();*/
 }
 
 void loop() {
 
-  Serial.println("Loop");
+  /*Serial.println("Loop");
   Serial.print("SS = ");
   Serial.println(SS);
   Serial.print("MOSI = ");
@@ -117,7 +116,7 @@ void loop() {
   Serial.println(SCK);
   Serial.print("BUSY = ");
   Serial.println(BUSY_PIN);
-  sleep(1);
+  sleep(1);*/
 
 }
 
