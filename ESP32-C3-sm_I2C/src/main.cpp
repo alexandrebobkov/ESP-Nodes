@@ -108,7 +108,6 @@ void loop() {
   Serial.println("Loop");
   Serial.print("SS = ");
   Serial.println(SS);
-  Serial.println(SPI);
   sleep(1);
 
 }
