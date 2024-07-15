@@ -44,13 +44,17 @@ void TaskSensorValuesCode (void* parameters) {
     Serial.print("Barometric Pressure:\t");
     Serial.print(bme.readPressure() / 100.0F);
     Serial.println("\tkPa");
+    // ADC GPIO1
+    light_sensor_reading = analogRead(ADC1);
+    Serial.print("Light:\t\t");
+    Serial.println(light_sensor_reading);
     Serial.println("");
     vTaskDelay(pdMS_TO_TICKS(5000));
-  }
+  }  
 }
 
 void setup() {
-  Serial.println("Please wait 2 seconds ...");
+  Serial.println("Please wait 2   seconds ...");
   delay(2000);
   Serial.begin(9600);
   Serial.println();
