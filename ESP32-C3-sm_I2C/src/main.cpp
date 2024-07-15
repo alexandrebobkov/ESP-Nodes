@@ -7,7 +7,7 @@
 #include "freertos/task.h"
 
 #include "config.h"
-#include "epaper.h"
+//#include "epaper.h"
 
 Adafruit_BME280 bme;
 
@@ -50,7 +50,8 @@ void TaskSensorValuesCode (void* parameters) {
 }
 
 void setup() {
-  sleep(2);
+  Serial.println("Please wait 5 seconds ...");
+  delay(5000);
   Serial.begin(9600);
   Serial.println();
   
@@ -77,7 +78,7 @@ void setup() {
       delay(150);
       digitalWrite(LED_PIN, HIGH);
       delay(150);
-      Serial.println("Could not find a valid BME/BMP280 sensor, check wiring!");
+      Serial.println("Could not find a valid BME/BMP280 sensor!");
       n--;
     }
   }
