@@ -50,6 +50,7 @@ void TaskSensorValuesCode (void* parameters) {
 }
 
 void setup() {
+  sleep(2);
   Serial.begin(115200);
   Serial.println();
   /*
@@ -108,6 +109,14 @@ void loop() {
   Serial.println("Loop");
   Serial.print("SS = ");
   Serial.println(SS);
+  Serial.print("MOSI = ");
+  Serial.println(MOSI);
+  Serial.print("MISO = ");
+  Serial.println(MISO);
+  Serial.print("SCK = ");
+  Serial.println(SCK);
+  Serial.print("BUSY = ");
+  Serial.println(BUSY_PIN);
   sleep(1);
 
 }

@@ -42,8 +42,8 @@
 #define SCL_PIN        4
 #define SDA_PIN        6
 
-GxIO_Class io(SPI, /* CS=SS=5 */ SS, /* DC=1 */ 3, /* RST=2 */ 2);
-GxEPD_Class display(io, 2, 7);//, CS_PIN, DC_PIN, RST_PIN, BUSY_PIN);
+GxIO_Class io(SPI, /* CS=SS=5 */ SS, /* DC=1 */ 21, /* RST=2 */ 9);
+GxEPD_Class display(io, /*RST */ 9, /* BUSY */ 7);//, CS_PIN, DC_PIN, RST_PIN, BUSY_PIN);
 
 
 /*
