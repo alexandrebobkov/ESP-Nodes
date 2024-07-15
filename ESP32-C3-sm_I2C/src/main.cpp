@@ -99,7 +99,7 @@ void setup() {
 
   display.setCursor(5, 5);
   display.setFont(&TomThumb);
-  display.print("10.100.50.105");
+  display.print("10.100.50.xxx");
   display.update();
 }
 
