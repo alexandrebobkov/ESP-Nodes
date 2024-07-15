@@ -51,7 +51,7 @@ void TaskSensorValuesCode (void* parameters) {
 
 void setup() {
   sleep(2);
-  Serial.begin(115200);
+  Serial.begin(9600);
   Serial.println();
   
   Serial.println("Setting up GPIOs ...");
