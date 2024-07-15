@@ -13,7 +13,7 @@ const char* WIFI_PASSWORD = "208208208";
     RX      -> GPIO20
     TX      -> GPIO21
 
-    ADC1    -> GPIO1
+    ADC1    -> GPIO1    Used for light sensor
     ADC2    -> GPIO0
 
     A3      -> GPIO5
