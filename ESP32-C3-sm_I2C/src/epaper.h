@@ -31,7 +31,7 @@
 //GxIO_Class io(SPI, SS, 22, 21);
 //GxEPD_Class display(io, 16, 4);
 
-GxIO_Class io(SPI, /* CS=SS=3 */ SS, /* DC=1 */ 5, /* RST=2 */ 2);
+GxIO_Class io(SPI, /* CS=SS=3 */ 3, /* DC=1 */ 5, /* RST=2 */ 2);
 GxEPD_Class display(io, /* RST=2;9 */ 2, /* BUSY=3;7 */ 7);
 
 /*
