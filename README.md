@@ -195,8 +195,8 @@ Wiring table
 | --- | --- |
 | `GPIO7` (fSPI D) | `DIN` (Blue) |
 | `GPIO10` (fSPI CS) | `CS` (Orange) |
-| `RXD` `GPIO` (RxD) | `RST` (White) |
-| `TXD` `GPIO` (TxD) | `DC` (Green) |
+| `RXD` `GPIO20` (RxD) | `RST` (White) |
+| `TXD` `GPIO21` (TxD) | `DC` (Green) |
 | `GPIO6` (fSPI CLK) | `CLK` (Yellow) |
 | `GPIO4` (fSPI HD) | `BUSY` (Purple) |
 
