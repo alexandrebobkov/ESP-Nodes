@@ -52,6 +52,7 @@ void TaskSensorValuesCode (void* parameters) {
 void setup() {
   Serial.begin(9600);
   Serial.println();
+  /*
   Serial.println("Setting up GPIOs ...");
 
   pinMode(LED_PIN, OUTPUT);
@@ -69,12 +70,14 @@ void setup() {
     Serial.print("   ID of 0x56-0x58 represents a BMP 280,\n");
     Serial.print("   ID of 0x60 represents a BME 280.\n");
     Serial.print("   ID of 0x61 represents a BME 680.\n");
-    while (1) {
+    int n = 10;
+    while (1) { //n > 0) {
       digitalWrite(LED_PIN, LOW);
       delay(150);
       digitalWrite(LED_PIN, HIGH);
       delay(150);
       Serial.println("Could not find a valid BME/BMP280 sensor, check wiring!");
+      n--;
     }
   }
   else {
@@ -82,6 +85,7 @@ void setup() {
     xTaskCreate(TaskStatusLEDCode, "Status LED Task", 4096, NULL, 10, &TaskStatusLED);
     xTaskCreate(TaskSensorValuesCode, "Status LED Task", 4096, NULL, 5, &TaskSensorValues);
   }
+  */
 
   // Initialize ePaper display
   display.init(115200);
@@ -100,6 +104,12 @@ void setup() {
 }
 
 void loop() {
+
+  Serial.println("Loop");
+  Serial.print("SS = ");
+  Serial.println(SS);
+  sleep(1);
+
 }
 
 /*
