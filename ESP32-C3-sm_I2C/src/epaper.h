@@ -19,6 +19,7 @@
 #include <GxIO/GxIO.h>
 #include <SD.h>
 #include <SPI.h>
+#include <Adafruit_GFX.h>    // Core graphics library
 
 //#if defined(ESP8266)
 //GxIO_Class io(SPI, /*CS=D8*/ SS, /*DC=D3*/ 0, /*RST=D4*/ 2); // arbitrary selection of D3(=0), D4(=2), selected for default of GxEPD_Class
@@ -31,8 +32,19 @@
 //GxIO_Class io(SPI, SS, 22, 21);
 //GxEPD_Class display(io, 16, 4);
 
-GxIO_Class io(SPI, /* CS=SS=5 */ 7, /* DC=1 */ 6, /* RST=2 */ 5);
-GxEPD_Class display(io, /* RST=2;9 */ 5, /* BUSY=3;7 */ 4);
+//GxIO_Class io(SPI, /* CS=SS=5 */ SS, /* DC=1 */ 6, /* RST=2 */ 7);
+//GxEPD_Class display(io, /* RST=2;9 */ 7, /* BUSY=3;7 */ 4);
+
+#define BUSY_PIN       7
+#define RST_PIN        9
+#define DC_PIN         6
+#define CS_PIN         5
+#define SCL_PIN        4
+#define SDA_PIN        6
+
+GxIO_Class io(SPI, /* CS=SS=5 */ SS, /* DC=1 */ 6, /* RST=2 */ 7);
+GxEPD_Class display(io);//, CS_PIN, DC_PIN, RST_PIN, BUSY_PIN);
+
 
 /*
 #elif defined(ESP32) && (CONFIG_IDF_TARGET_ESP32C3)
