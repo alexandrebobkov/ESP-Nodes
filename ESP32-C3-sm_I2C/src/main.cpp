@@ -34,6 +34,7 @@ void TaskStatusLEDCode (void* parameters) {
 void TaskSensorValuesCode (void* parameters) {
 
   for (;;) {
+    lighting_percentage = map(analogRead(ADC1), 0.0f, 4095.0f, 0, 100);
     Serial.println("BME-280 Sensors Readings ...");
     Serial.print("Temperature:\t\t");
     Serial.print(bme.readTemperature());
