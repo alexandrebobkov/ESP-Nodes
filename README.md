@@ -193,12 +193,12 @@ Wiring table
 
 | ESP32-C3 | e-Paper |
 | --- | --- |
-| `GPIO` | `BUSY` |
-| `GPIO` | `CS`|
-| `GPIO` | `RST` |
-| `GPIO` | `DC` |
-| `GPIO` | `CLK` |
-| `GPIO` () | `DIN` |
+| `GPIO7` (fSPI D) | `DIN` |
+| `GPIO10` (fSPI CS) | `CS`|
+| `RXD` `GPIO` (RxD) | `RST` |
+| `TXD` `GPIO` (TxD) | `DC` |
+| `GPIO6` (fSPI CLK) | `CLK` |
+| `GPIO4` (fSPI HD) | `BUSY` |
 
 ---
 ## REFERENCES
