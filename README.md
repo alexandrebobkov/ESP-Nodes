@@ -182,23 +182,23 @@ Wiring table
 
 | ESP32-WROOM | e-Paper |
 | --- | --- |
-| `GPIO4` (hSPI HD) | `BUSY` |
-| `GPIO5` (vSPI CS) | `CS`|
-| `GPIO16` (RxD) | `RST` |
-| `GPIO17` (TxD) | `DC` |
-| `GPIO18` (vSPI CLK) | `CLK` |
-| `GPIO23` (vSPI D) | `DIN` |
+| `GPIO4` (hSPI HD) | `BUSY` (Purple) |
+| `GPIO5` (vSPI CS) | `CS` (Orange) |
+| `GPIO16` (RxD) | `RST` (White) |
+| `GPIO17` (TxD) | `DC` (Green) |
+| `GPIO18` (vSPI CLK) | `CLK` (Yellow) |
+| `GPIO23` (vSPI D) | `DIN` (Blue) |
 
 #### ESP32-C3
 
 | ESP32-C3 | e-Paper |
 | --- | --- |
-| `GPIO7` (fSPI D) | `DIN` |
-| `GPIO10` (fSPI CS) | `CS`|
-| `RXD` `GPIO` (RxD) | `RST` |
-| `TXD` `GPIO` (TxD) | `DC` |
-| `GPIO6` (fSPI CLK) | `CLK` |
-| `GPIO4` (fSPI HD) | `BUSY` |
+| `GPIO7` (fSPI D) | `DIN` (Blue) |
+| `GPIO10` (fSPI CS) | `CS` (Orange) |
+| `RXD` `GPIO` (RxD) | `RST` (White) |
+| `TXD` `GPIO` (TxD) | `DC` (Green) |
+| `GPIO6` (fSPI CLK) | `CLK` (Yellow) |
+| `GPIO4` (fSPI HD) | `BUSY` (Purple) |
 
 ---
 ## REFERENCES
