@@ -27,6 +27,7 @@ const char* WIFI_PASSWORD = "208208208";
 #define LED_PIN         (8)
 #define SYS_LED_PIN     (8)
 #define ADC1            (1)
+#define LIGHTS_LED      (10)
 
 int light_sensor_reading = 0;
 float lighting_percentage = 0.00;
