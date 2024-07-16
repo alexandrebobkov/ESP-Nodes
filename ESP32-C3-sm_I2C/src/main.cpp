@@ -12,7 +12,7 @@
 Adafruit_BME280 bme;
 
 // Define tasks.
-TaskHandle_t TaskStatusLED, TaskSensorValues;
+TaskHandle_t TaskStatusLED, TaskSensorValues, TaskLightsAuto;
 
 // Dummy task blinking built-in LED
 void TaskStatusLEDCode (void* parameters) {
@@ -29,6 +29,10 @@ void TaskStatusLEDCode (void* parameters) {
     digitalWrite(SYS_LED_PIN, HIGH);
     vTaskDelay(pdMS_TO_TICKS(1000));
   }                
+}
+
+void TaskLightsAutoCode(void* parameters) {
+  vTaskDelay(pdMS_TO_TICKS(5000));
 }
 
 void TaskSensorValuesCode (void* parameters) {
