@@ -48,8 +48,9 @@ void TaskSensorValuesCode (void* parameters) {
     // ADC GPIO1
     light_sensor_reading = analogRead(ADC1);
     Serial.print("Light:\t\t\t");
-    Serial.println(light_sensor_reading);
-    Serial.println("");
+    Serial.print(light_sensor_reading);
+    Serial.print("\t");
+    Serial.println(lighting_percentage);
     vTaskDelay(pdMS_TO_TICKS(5000));
   }  
 }
