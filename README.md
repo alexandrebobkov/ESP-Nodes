@@ -58,7 +58,7 @@ ESP32-C3 is a cost-effective, RISC-V-based MCU with Wi-Fi and Bluetooth 5 (LE) c
 ### Strapping & Control Pins
 | Pin | Default | Description |
 | --- | --- | --- |
-| `EN` | - | H -> enables chip <br/> L -> disables chip |
+| `EN` | - | H: enables chip <br/> L: disables chip |
 | `GPIO2` | n/a | 1 -> Download boot |
 | `GPIO8` | n/a | 1 -> Download boot |
 
@@ -73,7 +73,7 @@ ESP32-C3 is a cost-effective, RISC-V-based MCU with Wi-Fi and Bluetooth 5 (LE) c
 | V<sub>OH</sub> | High-level Output voltage | 0.8xV<sub>DD</sub> | - | - | V |
 | V<sub>OL/sub> | Low-level Output voltage | - | - | 0.1xV<sub>DD</sub> | V |
 | I<sub>OH</sub> | High-level Source current | - | 40 | - | mA |
-| I<sub>OL</sub> | High-level SouSincrce current | - | 28 | - | mA |
+| I<sub>OL</sub> | High-level Source current | - | 28 | - | mA |
 | R<sub>PU</sub> | Pull-up resistor | - | 45 | - | kOm |
 | R<sub>PD</sub> | Pull-down resistor | - | 45 | - | kOm |
 | V<sub>IH_nRST</sub> | Chip reset release voltage | 0.75xV<sub>DD</sub> | - | V<sub>DD</sub> + 0.3 | V |
