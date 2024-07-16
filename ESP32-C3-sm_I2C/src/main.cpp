@@ -32,7 +32,13 @@ void TaskStatusLEDCode (void* parameters) {
 }
 
 void TaskLightsAutoCode(void* parameters) {
-  vTaskDelay(pdMS_TO_TICKS(5000));
+  for (;;) {
+    if (light_sensor_reading > 1000)
+      digitalWrite(LIGHTS_PIN, HIGH);
+    else
+      digitalWrite(LIGHTS_PIN, LOW);
+    vTaskDelay(pdMS_TO_TICKS(5000));
+  }
 }
 
 void TaskSensorValuesCode (void* parameters) {
@@ -69,8 +75,8 @@ void setup() {
   Serial.println("Setting up GPIOs ...");
 
   pinMode(LED_PIN, OUTPUT);
-  pinMode(LIGHTS_LED, OUTPUT);
-  digitalWrite(LIGHTS_LED, LOW);
+  pinMode(LIGHTS_PIN, OUTPUT);
+  digitalWrite(LIGHTS_PIN, LOW);
 
   Serial.println("GPIO setup done"); 
 
