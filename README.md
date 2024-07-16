@@ -55,6 +55,8 @@ ESP32-C3 is a cost-effective, RISC-V-based MCU with Wi-Fi and Bluetooth 5 (LE) c
 
 <img alt="ESP32-C3 Block Diagram" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/ESP32-C3-diagram.png" width="400px"/>
 
+#### DC Characteristics
+
 ### Programming via UART
 
 ## Unified Configuration Framework
