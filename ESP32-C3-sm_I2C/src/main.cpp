@@ -72,7 +72,9 @@ void setup() {
   pinMode(LIGHTS_LED, OUTPUT);
   digitalWrite(LIGHTS_LED, LOW);
 
-  Serial.println("GPIO setup done");  
+  Serial.println("GPIO setup done"); 
+
+  xTaskCreate(TaskLightsAutoCode, "Lights auto", 4096, NULL, 4, &TaskLightsAuto); 
 
   Serial.println("Setting up BME280 sensor");
   Wire.setPins(SDA_PIN, SCL_PIN);
