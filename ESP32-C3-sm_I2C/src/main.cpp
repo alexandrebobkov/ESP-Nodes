@@ -41,7 +41,7 @@ void TaskLightsAutoCode(void* parameters) {
     // If lights are bright, then turn lights OFF and decrease delay interval
     else {
       digitalWrite(LIGHTS_PIN, LOW);
-      vTaskDelay(pdMS_TO_TICKS(5000));
+      vTaskDelay(pdMS_TO_TICKS(1000));
     }    
   }
 }
