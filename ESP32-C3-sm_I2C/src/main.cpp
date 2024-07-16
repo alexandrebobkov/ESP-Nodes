@@ -33,12 +33,12 @@ void TaskStatusLEDCode (void* parameters) {
 
 void TaskLightsAutoCode(void* parameters) {
   for (;;) {
-    // If lights are dark, then turn lights ON and increase delay interval
-    if (light_sensor_reading > 1000) {
+    // If lighting is dark, then turn lights ON and increase delay interval
+    if (light_sensor_reading > 1500) {
       digitalWrite(LIGHTS_PIN, HIGH);
       vTaskDelay(pdMS_TO_TICKS(10000));
     }
-    // If lights are bright, then turn lights OFF and decrease delay interval
+    // If lighting is bright, then turn lights OFF and decrease delay interval
     else {
       digitalWrite(LIGHTS_PIN, LOW);
       vTaskDelay(pdMS_TO_TICKS(1000));
