@@ -55,7 +55,10 @@ ESP32-C3 is a cost-effective, RISC-V-based MCU with Wi-Fi and Bluetooth 5 (LE) c
 
 <img alt="ESP32-C3 Block Diagram" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/ESP32-C3-diagram.png" width="400px"/>
 
-#### DC Characteristics
+### DC Characteristics
+| Variable | Parameter | min | Typ | max | Unit |
+| --- | --- | --- | --- | --- | --- |
+| V<sub>IH</sub> | High-level Input voltage | 0.75xV<sub>DD</sub> | - | V<sub>DD</sub> + 0.3 | V |
 
 ### Programming via UART
 
