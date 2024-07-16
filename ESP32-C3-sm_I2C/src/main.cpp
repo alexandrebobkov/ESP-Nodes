@@ -32,12 +32,11 @@ void TaskStatusLEDCode (void* parameters) {
 }
 
 void TaskLightsAutoCode(void* parameters) {
-  TickType_t delay = pdMS_TO_TICKS(1000); // Variable for storing delay interval.
   for (;;) {
     // If lights are dark, then turn lights ON and increase delay interval
     if (light_sensor_reading > 1000) {
       digitalWrite(LIGHTS_PIN, HIGH);
-      delay = pdMS_TO_TICKS(10000);
+      vTaskDelay(pdMS_TO_TICKS(10000));
     }
     // If lights are bright, then turn lights OFF and decrease delay interval
     else {
