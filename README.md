@@ -67,8 +67,9 @@ ESP32-C3 is a cost-effective, RISC-V-based MCU with Wi-Fi and Bluetooth 5 (LE) c
 | Variable | Parameter | min | Typ | max | Unit |
 | --- | --- | --- | --- | --- | --- |
 | V<sub>IH</sub> | High-level Input voltage | 0.75xV<sub>DD</sub> | - | V<sub>DD</sub> + 0.3 | V |
-| V<sub>IL/sub> | Low-level Input voltage | -0.3 | - | 0.25xV<sub>DD</sub> | V |
 | I<sub>IH</sub> | High-level Input current | - | - | 50 | nA |
+| V<sub>IL/sub> | Low-level Input voltage | -0.3 | - | 0.25xV<sub>DD</sub> | V |
+|||||||
 | I<sub>IL</sub> | Low-level Input current | - | - | 50 | nA |
 | V<sub>OH</sub> | High-level Output voltage | 0.8xV<sub>DD</sub> | - | - | V |
 | V<sub>OL/sub> | Low-level Output voltage | - | - | 0.1xV<sub>DD</sub> | V |
