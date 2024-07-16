@@ -113,46 +113,7 @@ void setup() {
     xTaskCreate(TaskStatusLEDCode, "Status LED Task", 4096, NULL, 10, &TaskStatusLED);
     xTaskCreate(TaskSensorValuesCode, "Status LED Task", 4096, NULL, 5, &TaskSensorValues);
   }
-
-  /*// Initialize ePaper display
-  display.init(115200);
-  display.fillScreen(GxEPD_BLACK);
-  display.update();
-  display.fillScreen(GxEPD_WHITE);
-  display.setTextColor(GxEPD_BLACK);
-  display.setFont(&FreeMono9pt7b);
-  //display.setCursor(205, 10);
-  //display.print("ESP32_DisplayNode"); // Takes 195 pixels in width
-
-  display.setCursor(5, 5);
-  display.setFont(&TomThumb);
-  display.print("10.100.50.xxx");
-  display.update();*/
 }
 
 void loop() {
-
-  /*Serial.println("Loop");
-  Serial.print("SS = ");
-  Serial.println(SS);
-  Serial.print("MOSI = ");
-  Serial.println(MOSI);
-  Serial.print("MISO = ");
-  Serial.println(MISO);
-  Serial.print("SCK = ");
-  Serial.println(SCK);
-  Serial.print("BUSY = ");
-  Serial.println(BUSY_PIN);
-  sleep(1);*/
-
 }
-
-/*
-#elif defined(ESP32) && (CONFIG_IDF_TARGET_ESP32C3)
-#define DF_GFX_SCK 4
-#define DF_GFX_MOSI 6
-#define DF_GFX_MISO GFX_NOT_DEFINED
-#define DF_GFX_CS 7
-#define DF_GFX_DC 2
-#define DF_GFX_RST 1
-#define DF_GFX_BL 3*/
