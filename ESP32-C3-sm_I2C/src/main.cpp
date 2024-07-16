@@ -65,6 +65,8 @@ void setup() {
   Serial.println("Setting up GPIOs ...");
 
   pinMode(LED_PIN, OUTPUT);
+  pinMode(LIGHTS_LED, OUTPUT);
+  digitalWrite(LIGHTS_LED, LOW);
 
   Serial.println("GPIO setup done");  
 
