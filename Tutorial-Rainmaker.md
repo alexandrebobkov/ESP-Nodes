@@ -53,9 +53,11 @@ Building the project can take some time.
 
 <img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_007.png" width="70%"/>
 
+<img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_008.png" width="70%"/>
+
 ### Adding RainMaker Device
 
-<img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_008.png" width="70%"/>
+Once project is successfully built, and ESP32-WROOM module is flashed, reboot your device and open Serial Monitor in order to access provisioning QR code. At this point you can start adding your device to your RainMaker dashboard. On your smartphone, launch the _ESP RainMaker_ app and click _Add device_. You'll be asked to scan the QR code. If provisioning is successful, _ESP RainMaker_ app will take you to the nest steps.
 
 <img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_009.png" width="70%"/>
 
