@@ -12,3 +12,11 @@ This tutorial walks you through the most important steps neccessary to provision
 ### ESP-IDF: Create a New Project
 
 <img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_001.png" width="70%"/>
+
+<img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_002.png" width="70%"/>
+
+<img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_003.png" width="70%"/>
+
+<img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_004.png" width="70%"/>
+
+<img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_005.png" width="70%"/>
