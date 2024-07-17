@@ -19,7 +19,11 @@ Specify project name, directory path and ESP32 module (ESP32-WROOM or ESP32-C3).
 
 <img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_002.png" width="70%"/>
 
+On the next screen, specify ESP Rainmaker extention and select example code to start with. For this tutorial, an example code for //Switch// was selected. Click "Create project using template switch".
+
 <img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_003.png" width="70%"/>
+
+### Modify Template Code
 
 <img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_004.png" width="70%"/>
 
