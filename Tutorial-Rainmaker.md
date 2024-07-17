@@ -65,7 +65,10 @@ Once project is successfully built, and ESP32-WROOM module is flashed, reboot yo
 
 <img alt="Alexa Account Linking to RainMaker" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Screenshot_20240716-213521~2.png" width="70%"/>
 
-<img alt="" src="" width="70%"/>
-<img alt="" src="" width="70%"/>
-<img alt="" src="" width="70%"/>
-<img alt="" src="" width="70%"/>
+<img alt="RainMaker Provisioning. Adding Wi-Fi" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Screenshot_20240716-223344~2.png" width="70%"/>
+
+<img alt="RainMaker Provisioning" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Screenshot_20240716-223358~2.png" width="70%"/>
+
+<img alt="RainMaker. ESP32 Node Switch Setting" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Screenshot_20240716-230310~2.png" width="70%"/>
+
+<img alt="RainMaker. ESP32 Node Switch" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Screenshot_20240716-230318~2.png" width="70%"/>
