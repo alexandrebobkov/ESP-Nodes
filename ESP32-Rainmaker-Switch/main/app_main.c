@@ -1,6 +1,10 @@
-/* Switch Example
+/* ESP32-Node LED Switch
 
-   This example code is in the Public Domain (or CC0 licensed, at your option.)
+   Modified and Adopted by: Alexander Bobkov
+
+   Description: ESP32-WROOM Module to control LED lights from Rainmaked & Alexa apps.
+
+   This code is in the Public Domain (or CC0 licensed, at your option.)
 
    Unless required by applicable law or agreed to in writing, this
    software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
@@ -31,7 +35,9 @@
 
 #include "app_priv.h"
 
+// Define the name of app for logs.
 static const char *TAG = "ESP32-Nodes Rainmaker Switch";
+// Define RainMaker device (switch)
 esp_rmaker_device_t *switch_device;
 
 /* Callback to handle commands received from the RainMaker cloud */
@@ -153,7 +159,9 @@ void app_main()
      * set initial state.
      */
     esp_rmaker_console_init();
+    // Initialize Switch
     app_driver_init();
+    // Set default switch state
     app_driver_set_state(DEFAULT_POWER);
 
     /* Initialize NVS. */
@@ -180,6 +188,7 @@ void app_main()
     esp_rmaker_config_t rainmaker_cfg = {
         .enable_time_sync = false,
     };
+    // Define device name and description as they should appear in logs
     esp_rmaker_node_t *node = esp_rmaker_node_init(&rainmaker_cfg, "ESP RainMaker Device", "Switch");
     if (!node) {
         ESP_LOGE(TAG, "Could not initialise node. Aborting!!!");
@@ -191,6 +200,7 @@ void app_main()
      * You can optionally use the helper API esp_rmaker_switch_device_create() to
      * avoid writing code for adding the name and power parameters.
      */
+    // Define device name and description as they should appear in RainMaker UI app
     switch_device = esp_rmaker_device_create("Foxie Switch", ESP_RMAKER_DEVICE_SWITCH, NULL);
 
     /* Add the write callback for the device. We aren't registering any read callback yet as
