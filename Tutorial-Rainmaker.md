@@ -15,7 +15,7 @@ Launch ESP-IDF extention on VS Code
 
 <img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_001.png" width="70%"/>
 
-Specify project name, directory path and ESP32 module (ESP32-WROOM or ESP32-C3)
+Specify project name, directory path and ESP32 module (ESP32-WROOM or ESP32-C3). In addition, you may state the Serial port where ESP32 Module is connected to; this setting can be changed latter, if neccessary.
 
 <img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_002.png" width="70%"/>
 
