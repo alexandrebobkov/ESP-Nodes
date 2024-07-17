@@ -428,3 +428,39 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-Rainmaker-Switch/build/bootloader/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_0d287 && [1/2] Building C object CMakeFiles/cmTC_0d287.dir/CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_0d287
+C:/Users/alex/.espressif/tools/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/13.2.0/../../../../riscv32-esp-elf/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 00010074
+
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-Rainmaker-Switch/build/bootloader/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_f5e4f && [1/2] Building C object CMakeFiles/cmTC_f5e4f.dir/CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_f5e4f
+C:/Users/alex/.espressif/tools/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/13.2.0/../../../../riscv32-esp-elf/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 00010074
+
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-Rainmaker-Switch/build/bootloader/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_a3315 && [1/2] Building C object CMakeFiles/cmTC_a3315.dir/CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_a3315
+C:/Users/alex/.espressif/tools/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/13.2.0/../../../../riscv32-esp-elf/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 00010074
+
+
+
+Determining size of time_t passed with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-Rainmaker-Switch/build/bootloader/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_5c043 && [1/2] Building C object CMakeFiles/cmTC_5c043.dir/TIME_T_SIZE.c.obj
+[2/2] Linking C executable cmTC_5c043
+C:/Users/alex/.espressif/tools/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/13.2.0/../../../../riscv32-esp-elf/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 00010094
+
+
+
