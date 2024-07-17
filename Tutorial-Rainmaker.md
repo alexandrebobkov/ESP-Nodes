@@ -35,9 +35,21 @@ static const char *TAG = "ESP32-Nodes app main";
 
 <img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_004.png" width="70%"/>
 
+### Modify Configuration
+
+Navigate to the ESP-IDF: SDK Configuration Editor (menuconfig). Some of the default values provided by RainMaker Switch template need to be changed in order to match GPIO used to turn LED Lights on or off.
+
+Click on Example Configuration section, and change **Output GPIO** value to _ _4_ _, which corresponds to the GPIO connected to the LED lights control pin.
+
+Set **Claiming Type** to _ _Assisted_ _, and **Provisioning Transport Method** to _ _BLE_ _.
+
 <img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_005.png" width="70%"/>
 
+Click _ _Save_ _ and then build the project by running the command_ _ESP-IDF: Build Project_ _. This step can take some time.
+
 <img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_006.png" width="70%"/>
+
+### Adding RainMaker Device
 
 <img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_007.png" width="70%"/>
 
