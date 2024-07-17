@@ -29,7 +29,7 @@ static esp_err_t bme280_get_id(i2c_cmd_handle_t command, uint8_t device_address)
     // Step 8. STOP
     i2c_master_stop(command);
     // Step 7. Read one byte of data from register
-    cmd_ret = i2c_master_cmd_begin(I2C_NUM_0, command, 1000 / portTICK_PERIOD_MS);
+    esp_err_t cmd_ret = i2c_master_cmd_begin(I2C_NUM_0, command, 1000 / portTICK_PERIOD_MS);
     i2c_cmd_link_delete(command);
     return cmd_ret;
 
