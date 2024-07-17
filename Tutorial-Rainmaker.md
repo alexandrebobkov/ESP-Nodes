@@ -11,7 +11,11 @@ This tutorial walks you through the most important steps neccessary to provision
 
 ### ESP-IDF: Create a New Project
 
+Launch ESP-IDF extention on VS Code
+
 <img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_001.png" width="70%"/>
+
+Specify project name, directory path and ESP32 module (ESP32-WROOM or ESP32-C3)
 
 <img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_002.png" width="70%"/>
 
