@@ -33,6 +33,14 @@ Change the TAG variable as follows:
 static const char *TAG = "ESP32-Nodes app main";
 ```
 
+```C++
+esp_rmaker_node_t *node = esp_rmaker_node_init(&rainmaker_cfg, "ESP RainMaker Device", "Switch");
+```
+
+```C++
+switch_device = esp_rmaker_device_create("ESP32-Nodes Switch", ESP_RMAKER_DEVICE_SWITCH, NULL);
+```
+
 <img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_004.png" width="70%"/>
 
 ### Modify Configuration
