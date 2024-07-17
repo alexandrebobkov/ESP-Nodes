@@ -240,7 +240,7 @@ Espressif offers a complete solution that includes private deployment of IoT clo
 
 Matter [^9] [^10] is an industry-unifying standard that provides reliable and secure connectivity for smart-home devices. It is an IP-based connectivity protocol that works on Wi-Fi, Ethernet, and Thread (over 802.15.4 radio) transports with Bluetooth LE being used for commissioning. The Matter standard is defined by the Connectivity Standards Alliance in association with all the industry leaders.
 
-[![ESP Rainmaker Tutorial]](https://github.com/alexandrebobkov/ESP-Nodes/blob/main/Tutorial-Rainmaker.md)
+[ESP Rainmaker Tutorial](https://github.com/alexandrebobkov/ESP-Nodes/blob/main/Tutorial-Rainmaker.md)
 
 Standard set of IoTs types include: [^8] [^11]
 
