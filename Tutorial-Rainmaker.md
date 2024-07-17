@@ -62,3 +62,10 @@ Once project is successfully built, and ESP32-WROOM module is flashed, reboot yo
 <img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_009.png" width="70%"/>
 
 <img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_010.png" width="70%"/>
+
+<img alt="Alexa Account Linking to RainMaker" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Screenshot_20240716-213521~2.png" width="70%"/>
+
+<img alt="" src="" width="70%"/>
+<img alt="" src="" width="70%"/>
+<img alt="" src="" width="70%"/>
+<img alt="" src="" width="70%"/>
