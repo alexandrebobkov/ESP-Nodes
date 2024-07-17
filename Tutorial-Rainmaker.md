@@ -5,7 +5,6 @@ This tutorial walks you through the steps neccessary to provision ESP32-WROOM de
 > [!TIP]
 > **WHAT'S REQUIRED:**
 >
-> ESP32-WROOM, either a Module or DevKit</br>>
-> Wi-Fi Access Point, preferrably with dedicated vLAN for IoT devices
->
+> ESP32-WROOM, either a Module or DevKit</br>
+> Wi-Fi Access Point, preferrably with dedicated vLAN for IoT devices</br>
 > Smart phone with RainMaker installed
