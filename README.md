@@ -236,6 +236,15 @@ Wiring table
 
 ESP RainMaker is a complete, yet light-weight, AIoT solution that enables private Cloud deployment for your business in a simple, cost-effective and efficient manner. ESP RainMaker is a light-weight AIoT Cloud software, fully integrated into the AWS serverless architecture, which allows customers to build, develop and deploy customized AIoT solutions with a minimum amount of code and maximum security. [^7]
 
+Espressif offers a complete solution that includes private deployment of IoT cloud, mobile apps, voice assistant skills, and product solution support. This allows customers to build their very own brand of an IoT business in as efficient, affordable and speedy as possible a way.
+
+Standard set of IoTs include: [^8]
+
+- Lightbulb
+- Plug
+- Socket
+- 
+
 
 ---
 ## REFERENCES
@@ -246,3 +255,4 @@ ESP RainMaker is a complete, yet light-weight, AIoT solution that enables privat
 [^5]: https://www.espressif.com/en/news/ESP32_C3
 [^6]: https://dashboard.rainmaker.espressif.com/login
 [^7]: https://rainmaker.espressif.com/
+[^8]: https://rainmaker.espressif.com/docs/get-started/
