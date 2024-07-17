@@ -230,6 +230,7 @@ Wiring table
 | `GPIO6` (fSPI CLK) | `CLK` (Yellow) |
 | `GPIO4` (fSPI HD) | `BUSY` (Purple) |
 
+# Espressif RainMaker Provisioning
 ---
 ## REFERENCES
 
