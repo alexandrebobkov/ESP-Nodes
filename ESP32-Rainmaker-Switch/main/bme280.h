@@ -1,6 +1,8 @@
 #ifndef __BME280_H__
 #define __BME280_H__
 
+#include "driver/i2c.h"
+
 #define BME280_CHIP_ID                      (0xD0)
 #define BME280_I2C_ADDRESS1                 (0x76)      // BME280 Data sheet p. 32
 #define BME280_I2C_ADDRESS2                 (0x77)
@@ -24,6 +26,8 @@
  * 0xFA-0xFC    -> Temperature  -> 16- to 20-bit resolution, unsigned
  * 0xFD-0xFE    -> Humidity     -> 16-bit resolution
  */
+
+static esp_err_t bme280_read_raw_temperature(uint8_t device_address, uint8_t *raw_temperature);
 
 
 #endif
