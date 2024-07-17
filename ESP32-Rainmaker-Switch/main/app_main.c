@@ -191,7 +191,7 @@ void app_main()
      * You can optionally use the helper API esp_rmaker_switch_device_create() to
      * avoid writing code for adding the name and power parameters.
      */
-    switch_device = esp_rmaker_device_create("Switch", ESP_RMAKER_DEVICE_SWITCH, NULL);
+    switch_device = esp_rmaker_device_create("Foxie Switch", ESP_RMAKER_DEVICE_SWITCH, NULL);
 
     /* Add the write callback for the device. We aren't registering any read callback yet as
      * it is for future use.
