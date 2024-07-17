@@ -232,11 +232,13 @@ Wiring table
 | `GPIO6` (fSPI CLK) | `CLK` (Yellow) |
 | `GPIO4` (fSPI HD) | `BUSY` (Purple) |
 
-# Espressif ESP RainMaker Provisioning
+# Espressif ESP RainMaker and Matter Provisioning
 
 ESP RainMaker is a complete, yet light-weight, AIoT solution that enables private Cloud deployment for your business in a simple, cost-effective and efficient manner. ESP RainMaker is a light-weight AIoT Cloud software, fully integrated into the AWS serverless architecture, which allows customers to build, develop and deploy customized AIoT solutions with a minimum amount of code and maximum security. [^7]
 
 Espressif offers a complete solution that includes private deployment of IoT cloud, mobile apps, voice assistant skills, and product solution support. This allows customers to build their very own brand of an IoT business in as efficient, affordable and speedy as possible a way.
+
+Matter [^8] is an industry-unifying standard that provides reliable and secure connectivity for smart-home devices. It is an IP-based connectivity protocol that works on Wi-Fi, Ethernet, and Thread (over 802.15.4 radio) transports with Bluetooth LE being used for commissioning. The Matter standard is defined by the Connectivity Standards Alliance in association with all the industry leaders.
 
 Standard set of IoTs include: [^8]
 
@@ -256,3 +258,4 @@ Standard set of IoTs include: [^8]
 [^6]: https://dashboard.rainmaker.espressif.com/login
 [^7]: https://rainmaker.espressif.com/
 [^8]: https://rainmaker.espressif.com/docs/get-started/
+[^9]: https://www.espressif.com/en/solutions/device-connectivity/esp-matter-solution
