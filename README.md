@@ -238,14 +238,33 @@ ESP RainMaker is a complete, yet light-weight, AIoT solution that enables privat
 
 Espressif offers a complete solution that includes private deployment of IoT cloud, mobile apps, voice assistant skills, and product solution support. This allows customers to build their very own brand of an IoT business in as efficient, affordable and speedy as possible a way.
 
-Matter [^8] is an industry-unifying standard that provides reliable and secure connectivity for smart-home devices. It is an IP-based connectivity protocol that works on Wi-Fi, Ethernet, and Thread (over 802.15.4 radio) transports with Bluetooth LE being used for commissioning. The Matter standard is defined by the Connectivity Standards Alliance in association with all the industry leaders.
+Matter [^9] [^10] is an industry-unifying standard that provides reliable and secure connectivity for smart-home devices. It is an IP-based connectivity protocol that works on Wi-Fi, Ethernet, and Thread (over 802.15.4 radio) transports with Bluetooth LE being used for commissioning. The Matter standard is defined by the Connectivity Standards Alliance in association with all the industry leaders.
 
-Standard set of IoTs include: [^8]
+Standard set of IoTs types include: [^8] [^11]
 
 - Lightbulb
+- Switch
+- Light
+- Fan
+- Temperature Sensor
+- Outlet
 - Plug
 - Socket
-- 
+- Lock
+- Internal Blinds
+- External Blinds
+- Garage Door
+- Speaker
+- Air Conditioner
+- Thermostat
+- TV
+- Washer
+- Contact Sensor
+- Motion Sensor
+- Door Bell
+- Security Panel
+- Water Heater
+- Other
 
 
 ---
@@ -259,3 +278,5 @@ Standard set of IoTs include: [^8]
 [^7]: https://rainmaker.espressif.com/
 [^8]: https://rainmaker.espressif.com/docs/get-started/
 [^9]: https://www.espressif.com/en/solutions/device-connectivity/esp-matter-solution
+[^10]: https://github.com/project-chip/connectedhomeip
+[^11]: https://rainmaker.espressif.com/docs/standard-types
