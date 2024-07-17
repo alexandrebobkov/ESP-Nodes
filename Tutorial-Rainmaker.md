@@ -45,13 +45,15 @@ Set **Claiming Type** to _Assisted_, and **Provisioning Transport Method** to _B
 
 <img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_005.png" width="70%"/>
 
-Click _Save_ and then build the project by running the command _ESP-IDF: Build Project_. This step can take some time.
+Click _Save_ and then build the project by running the command _ESP-IDF: Build Project_.
 
 <img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_006.png" width="70%"/>
 
-### Adding RainMaker Device
+Building the project can take some time.
 
 <img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_007.png" width="70%"/>
+
+### Adding RainMaker Device
 
 <img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_008.png" width="70%"/>
 
