@@ -3,7 +3,7 @@
 This tutorial walks you through the most important steps neccessary to provision ESP32-WROOM device.
 
 > [!TIP]
-> **WHAT'S REQUIRED:**
+> _WHAT'S REQUIRED:_
 >
 > ESP32-WROOM, either a Module or DevKit</br>
 > Wi-Fi Access Point, preferrably with dedicated vLAN for IoT devices</br>
@@ -39,13 +39,13 @@ static const char *TAG = "ESP32-Nodes app main";
 
 Navigate to the ESP-IDF: SDK Configuration Editor (menuconfig). Some of the default values provided by RainMaker Switch template need to be changed in order to match GPIO used to turn LED Lights on or off.
 
-Click on Example Configuration section, and change **Output GPIO** value to _ _4_ _, which corresponds to the GPIO connected to the LED lights control pin.
+Click on Example Configuration section, and change **Output GPIO** value to _4_, which corresponds to the GPIO connected to the LED lights control pin.
 
-Set **Claiming Type** to _ _Assisted_ _, and **Provisioning Transport Method** to _ _BLE_ _.
+Set **Claiming Type** to _Assisted_, and **Provisioning Transport Method** to _BLE_.
 
 <img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_005.png" width="70%"/>
 
-Click _ _Save_ _ and then build the project by running the command_ _ESP-IDF: Build Project_ _. This step can take some time.
+Click _Save_ and then build the project by running the command _ESP-IDF: Build Project_. This step can take some time.
 
 <img alt="ESP-IDF. Create a New Project" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/Espressif-Rainmaker_006.png" width="70%"/>
 
