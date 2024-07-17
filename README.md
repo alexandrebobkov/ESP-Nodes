@@ -240,3 +240,4 @@ Wiring table
 [^3]: https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp280/
 [^4]: https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf
 [^5]: https://www.espressif.com/en/news/ESP32_C3
+[^6]: https://dashboard.rainmaker.espressif.com/login
