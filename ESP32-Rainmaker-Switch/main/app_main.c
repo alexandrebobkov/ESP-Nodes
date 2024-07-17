@@ -34,6 +34,8 @@
 #include <app_insights.h>
 
 #include "app_priv.h"
+#include "bme280.h" // Library for BME-/BMP-280 i2c environment sensor
+#include "driver/i2c.h"
 
 // Define the name of app for logs.
 static const char *TAG = "ESP32-Nodes Rainmaker Switch";
