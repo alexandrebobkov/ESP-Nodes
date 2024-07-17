@@ -232,7 +232,11 @@ Wiring table
 | `GPIO6` (fSPI CLK) | `CLK` (Yellow) |
 | `GPIO4` (fSPI HD) | `BUSY` (Purple) |
 
-# Espressif RainMaker Provisioning
+# Espressif ESP RainMaker Provisioning
+
+ESP RainMaker is a complete, yet light-weight, AIoT solution that enables private Cloud deployment for your business in a simple, cost-effective and efficient manner. ESP RainMaker is a light-weight AIoT Cloud software, fully integrated into the AWS serverless architecture, which allows customers to build, develop and deploy customized AIoT solutions with a minimum amount of code and maximum security. [^7]
+
+
 ---
 ## REFERENCES
 
@@ -241,3 +245,4 @@ Wiring table
 [^4]: https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf
 [^5]: https://www.espressif.com/en/news/ESP32_C3
 [^6]: https://dashboard.rainmaker.espressif.com/login
+[^7]: https://rainmaker.espressif.com/
