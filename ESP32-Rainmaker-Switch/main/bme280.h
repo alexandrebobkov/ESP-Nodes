@@ -2,6 +2,7 @@
 #define __BME280_H__
 
 #include "driver/i2c.h"
+#include "esp_log.h"
 
 #define BME280_CHIP_ID                      (0xD0)
 #define BME280_I2C_ADDRESS1                 (0x76)      // BME280 Data sheet p. 32
@@ -14,6 +15,10 @@
 #define BME280_PRESSURE_DATA_LENGTH         (3)
 #define BME280_HUMIDITY_DATA_SIZE           (2)
 #define BME280_HUMIDITY_DATA_LENGTH         (2)
+
+#define I2C_MASTER_TX_BUF_DISABLE           (0)                          /*!< I2C master doesn't need buffer */
+#define I2C_MASTER_RX_BUF_DISABLE           (0)                          /*!< I2C master doesn't need buffer */
+
 
 
 /** GLOBAL MEMORY MAN AND REGISTERS
