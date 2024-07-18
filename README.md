@@ -21,6 +21,8 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 </p>
 <p>The adapter allows interchangability of ESP32 modules between different nodes. The adapter contains minimal components on its PCB, just enough to ensure module's operation. (ESP32 8-N-1)</p>
 
+[ESP32-WROOM Schematic Checklist](https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32/schematic-checklist.html)
+
 <img alt="ESP32-Node Pinout" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/ESP32-Node-pinout.png" width="350px"/>
 
 | Physical Pin | Descrption and Logical Pin | Extended Function |
@@ -52,6 +54,8 @@ ESP32-C3 is a cost-effective, RISC-V-based MCU with Wi-Fi and Bluetooth 5 (LE) c
 
 <p>These modules have a rich set of peripherals and high performance make the two modules an ideal choice for smart homes, industrial automation, health care, consumer electronics, etc</p>
 <p>ESP32-C3 has 32-bit RISC-V-based MCU single-core processor with 400KB of SRAM, which is capable of running at 160MHz. t has integrated 2.4 GHz Wi-Fi and Bluetooth 5 (LE) with a long-range support. It has 22 programmable GPIOs with support for ADC, SPI, UART, I2C, I2S, RMT, TWAI, and PWM.</p>
+
+[ESP32-C3 Schematics Checklist](https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32c3/schematic-checklist.html)
 
 <img alt="ESP32-C3 Block Diagram" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/ESP32-C3-diagram.png" width="400px"/>
 

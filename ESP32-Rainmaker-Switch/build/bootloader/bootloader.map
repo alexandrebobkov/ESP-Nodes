@@ -4506,7 +4506,7 @@ OUTPUT(bootloader.elf elf32-littleriscv)
  .debug_frame   0x000013d8      0x11c esp-idf/hal/libhal.a(mmu_hal.c.obj)
  .debug_frame   0x000014f4      0x120 esp-idf/hal/libhal.a(cache_hal.c.obj)
 
-.debug_loc      0x00000000     0x882c
+.debug_loc      0x00000000     0x882d
  .debug_loc     0x00000000       0xc8 esp-idf/bootloader_support/libbootloader_support.a(bootloader_panic.c.obj)
  .debug_loc     0x000000c8       0xc7 esp-idf/main/libmain.a(bootloader_start.c.obj)
  .debug_loc     0x0000018f     0x131f esp-idf/bootloader_support/libbootloader_support.a(bootloader_utility.c.obj)
@@ -4521,15 +4521,15 @@ OUTPUT(bootloader.elf elf32-littleriscv)
  .debug_loc     0x0000412c     0x1170 esp-idf/bootloader_support/libbootloader_support.a(bootloader_flash.c.obj)
  .debug_loc     0x0000529c      0x2d1 esp-idf/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32c3.c.obj)
  .debug_loc     0x0000556d       0xd2 esp-idf/bootloader_support/libbootloader_support.a(bootloader_init.c.obj)
- .debug_loc     0x0000563f       0x86 esp-idf/bootloader_support/libbootloader_support.a(bootloader_console.c.obj)
- .debug_loc     0x000056c5       0xf2 esp-idf/esp_hw_support/libesp_hw_support.a(rtc_clk_init.c.obj)
- .debug_loc     0x000057b7      0xcaf esp-idf/esp_hw_support/libesp_hw_support.a(rtc_clk.c.obj)
- .debug_loc     0x00006466       0x97 esp-idf/esp_rom/libesp_rom.a(esp_rom_sys.c.obj)
- .debug_loc     0x000064fd       0x9a esp-idf/esp_rom/libesp_rom.a(esp_rom_uart.c.obj)
- .debug_loc     0x00006597      0x1a0 esp-idf/hal/libhal.a(efuse_hal.c.obj)
- .debug_loc     0x00006737      0xac7 esp-idf/hal/libhal.a(wdt_hal_iram.c.obj)
- .debug_loc     0x000071fe      0xc52 esp-idf/hal/libhal.a(mmu_hal.c.obj)
- .debug_loc     0x00007e50      0x9dc esp-idf/hal/libhal.a(cache_hal.c.obj)
+ .debug_loc     0x0000563f       0x87 esp-idf/bootloader_support/libbootloader_support.a(bootloader_console.c.obj)
+ .debug_loc     0x000056c6       0xf2 esp-idf/esp_hw_support/libesp_hw_support.a(rtc_clk_init.c.obj)
+ .debug_loc     0x000057b8      0xcaf esp-idf/esp_hw_support/libesp_hw_support.a(rtc_clk.c.obj)
+ .debug_loc     0x00006467       0x97 esp-idf/esp_rom/libesp_rom.a(esp_rom_sys.c.obj)
+ .debug_loc     0x000064fe       0x9a esp-idf/esp_rom/libesp_rom.a(esp_rom_uart.c.obj)
+ .debug_loc     0x00006598      0x1a0 esp-idf/hal/libhal.a(efuse_hal.c.obj)
+ .debug_loc     0x00006738      0xac7 esp-idf/hal/libhal.a(wdt_hal_iram.c.obj)
+ .debug_loc     0x000071ff      0xc52 esp-idf/hal/libhal.a(mmu_hal.c.obj)
+ .debug_loc     0x00007e51      0x9dc esp-idf/hal/libhal.a(cache_hal.c.obj)
 
 Cross Reference Table
 
