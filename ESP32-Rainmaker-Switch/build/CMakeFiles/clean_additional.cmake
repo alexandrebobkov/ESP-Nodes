@@ -19,7 +19,7 @@ if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "")
   "https_server.crt.S"
   "ldgen_libraries"
   "ldgen_libraries.in"
-  "project_elf_src_esp32c3.c"
+  "project_elf_src_esp32.c"
   "rmaker_claim_service_server.crt.S"
   "rmaker_mqtt_server.crt.S"
   "rmaker_ota_server.crt.S"

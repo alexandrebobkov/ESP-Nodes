@@ -87,6 +87,9 @@ ESP32-C3 is a cost-effective, RISC-V-based MCU with Wi-Fi and Bluetooth 5 (LE) c
 
 ESP32 modules can be programmed using USB-UART adapter connected to the corresponding UART pins on the ESP32 module. This approach allows to save space on PCB boards, which is very helpful when PCB dimentions have constraints.
 
+> [!IMPORTANT]
+> Remember to swap Tx and Rx between receiver and sender (i.e. Rx on a sender side becomes Tx on a receiver side).
+
 <img alt="ESP32 Programming via UART" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/UART.jpg" width="400px"/>
 
 ## Unified Configuration Framework
