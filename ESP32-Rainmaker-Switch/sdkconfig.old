@@ -427,12 +427,14 @@ CONFIG_PARTITION_TABLE_MD5=y
 # end of Partition Table
 
 #
-# Example Configuration
+# Rainmaker ESP32C3 Switch
 #
 CONFIG_EXAMPLE_BOARD_BUTTON_GPIO=9
 # CONFIG_EXAMPLE_ENABLE_TEST_NOTIFICATIONS is not set
-CONFIG_EXAMPLE_OUTPUT_GPIO=19
-# end of Example Configuration
+CONFIG_EXAMPLE_OUTPUT_GPIO=12
+CONFIG_SWITCH_LED_1=12
+CONFIG_SWITCH_LED_2=13
+# end of Rainmaker ESP32C3 Switch
 
 #
 # ESP RainMaker Config

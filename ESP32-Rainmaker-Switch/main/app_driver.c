@@ -84,7 +84,8 @@ static void push_btn_cb(void *arg)
 
 static void set_power_state(bool target)
 {
-    gpio_set_level(OUTPUT_GPIO, target);
+    //gpio_set_level(OUTPUT_GPIO, target);
+    gpio_set_level(SYS_LED_1, target);
     app_indicator_set(target);
 }
 
@@ -103,7 +104,7 @@ void app_driver_init()
         .mode = GPIO_MODE_OUTPUT,
         .pull_up_en = 1,
     };
-    io_conf.pin_bit_mask = ((uint64_t)1 << OUTPUT_GPIO);
+    io_conf.pin_bit_mask = ((uint64_t)1 << SYS_LED_1);//OUTPUT_GPIO);
     /* Configure the GPIO */
     gpio_config(&io_conf);
     app_indicator_init();
