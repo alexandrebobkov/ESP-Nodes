@@ -33,6 +33,8 @@ static bool g_power_state = DEFAULT_POWER;
 #define WIFI_RESET_BUTTON_TIMEOUT       3
 #define FACTORY_RESET_BUTTON_TIMEOUT    10
 
+static void light_sensor_init(void) {}
+
 static void app_indicator_set(bool state)
 {
     if (state) {
