@@ -164,7 +164,7 @@ void app_main()
     // Initialize Switch
     app_driver_init();
     // Initialize temperature sensor
-    app_bme280_init();
+    //app_bme280_init();
     // Set default switch state
     app_driver_set_state(DEFAULT_POWER);
 
