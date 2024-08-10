@@ -394,3 +394,78 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-Rainmaker-Switch/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_e5ff4 && [1/2] Building C object CMakeFiles/cmTC_e5ff4.dir/CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_e5ff4
+
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-Rainmaker-Switch/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_33b7f && [1/2] Building C object CMakeFiles/cmTC_33b7f.dir/CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_33b7f
+
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-Rainmaker-Switch/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_719de && [1/2] Building C object CMakeFiles/cmTC_719de.dir/CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_719de
+
+
+
+Determining size of time_t passed with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-Rainmaker-Switch/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_167fc && [1/2] Building C object CMakeFiles/cmTC_167fc.dir/TIME_T_SIZE.c.obj
+[2/2] Linking C executable cmTC_167fc
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-Rainmaker-Switch/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_be603 && [1/2] Building C object CMakeFiles/cmTC_be603.dir/src.c.obj
+[2/2] Linking C executable cmTC_be603
+C:/Users/alex/.espressif/tools/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/ld.exe: CMakeFiles/cmTC_be603.dir/src.c.obj:(.literal+0x18): warning: pthread_exit is not implemented and will always fail
+C:/Users/alex/.espressif/tools/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/ld.exe: CMakeFiles/cmTC_be603.dir/src.c.obj:(.literal+0xc): warning: pthread_cancel is not implemented and will always fail
+C:/Users/alex/.espressif/tools/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/ld.exe: CMakeFiles/cmTC_be603.dir/src.c.obj:(.literal+0x8): warning: pthread_detach is not implemented and will always fail
+C:/Users/alex/.espressif/tools/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/ld.exe: CMakeFiles/cmTC_be603.dir/src.c.obj:(.literal+0x10): warning: pthread_join is not implemented and will always fail
+C:/Users/alex/.espressif/tools/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/ld.exe: CMakeFiles/cmTC_be603.dir/src.c.obj:(.literal+0x4): warning: pthread_create is not implemented and will always fail
+C:/Users/alex/.espressif/tools/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/ld.exe: CMakeFiles/cmTC_be603.dir/src.c.obj:(.literal+0x14): warning: pthread_atfork is not implemented and will always fail
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Performing C SOURCE FILE Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS succeeded with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-Rainmaker-Switch/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_9c3f2 && [1/2] Building C object CMakeFiles/cmTC_9c3f2.dir/src.c.obj
+[2/2] Linking C executable cmTC_9c3f2
+
+
+Source file was:
+int main(void) { return 0; }
