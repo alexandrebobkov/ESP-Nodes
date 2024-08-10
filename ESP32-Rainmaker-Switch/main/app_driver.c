@@ -24,8 +24,8 @@
 /* This is the GPIO on which the power will be set */
 #define OUTPUT_GPIO    CONFIG_EXAMPLE_OUTPUT_GPIO
 
-#define SYS_LED_1           CONFIG_SWITCH
-#define SYS_LED_2           
+#define SYS_LED_1           CONFIG_SYS_LED_1
+#define SYS_LED_2           CONFIG_SYS_LED_2
 
 static bool g_power_state = DEFAULT_POWER;
 

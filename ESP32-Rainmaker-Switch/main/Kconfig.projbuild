@@ -24,10 +24,17 @@ menu "Rainmaker ESP32C3 Switch"
             If the power changes, this GPIO output level will also change.
 
     config SWITCH_LED_1
-        int "Output GPIO"
-        default 19
+        int "SYS_LED_1"
+        default 12
         help
-            This is an output GPIO that will be connected to a relay or other driver circuit in most cases.
+            This is an output GPIO that is connected to an on-board LED located on the right side of the board
+            If the power changes, this GPIO output level will also change.
+
+    config SWITCH_LED_2
+        int "SYS_LED_2"
+        default 13
+        help
+            This is an output GPIO that is connected to an on-board LED located on the right side of the board
             If the power changes, this GPIO output level will also change.
 
 endmenu
