@@ -35,6 +35,8 @@ static bool g_power_state = DEFAULT_POWER;
 
 static void light_sensor_init(void) {}
 
+static void app_bme280_init(void) {}
+
 static void app_indicator_set(bool state)
 {
     if (state) {
