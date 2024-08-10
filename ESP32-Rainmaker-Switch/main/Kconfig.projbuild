@@ -1,4 +1,4 @@
-menu "Rainmaker ESP32C3 Smart Switch"
+menu "Rainmaker ESP32C3 Switch"
 
     config EXAMPLE_BOARD_BUTTON_GPIO
         int "Boot Button GPIO"
@@ -16,18 +16,18 @@ menu "Rainmaker ESP32C3 Smart Switch"
             push button will trigger a parameter notification {"Switch":{"Power":true}} and turning off will
             trigger an alert "Switch was turned off".
 
-    config LED_RIGHT_GPIO
+    config EXAMPLE_OUTPUT_GPIO
         int "Output GPIO"
-        default 12
+        default 19
         help
-            This is an output GPIO that is connected to an on-board LED located on a right side to the USB-C port.
+            This is an output GPIO that will be connected to a relay or other driver circuit in most cases.
             If the power changes, this GPIO output level will also change.
-    
-    config LED_LEFT_GPIO
+
+    config SWITCH_LED_1
         int "Output GPIO"
-        default 13
+        default 19
         help
-            This is an output GPIO that is connected to an on-board LED located on a right side to the USB-C port.
+            This is an output GPIO that will be connected to a relay or other driver circuit in most cases.
             If the power changes, this GPIO output level will also change.
 
 endmenu
