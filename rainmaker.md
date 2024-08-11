@@ -75,6 +75,8 @@ Once project is successfully built, and ESP32-WROOM module is flashed, a device 
 
 ### V. Connecting Rainmaker Device to Alexa
 
+Once device is successfully provisioned, it can be linked to your Alexa account. In order to accomplish this, click on _Link to Alexa_ from Rainmaker app.
+
 <img alt="Alexa Account Linking to RainMaker" src="https://alexandrebobkov.github.io/ESP-Nodes/assets/Screenshot_20240716-213521~2.png" width="70%"/>
 
 <img alt="RainMaker Provisioning. Adding Wi-Fi" src="https://alexandrebobkov.github.io/ESP-Nodes/assets/Screenshot_20240716-223344~2.png" width="70%"/>
