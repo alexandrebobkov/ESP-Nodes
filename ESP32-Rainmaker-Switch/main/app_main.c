@@ -240,7 +240,7 @@ void app_main()
     // esp.device.temperature-sensor
     // Use pre-defined function
     // temp_sensor_device = esp_rmaker_temp_sensor_device_create("Temperature Sensor", NULL, app_get_current_temperature());
-    temp_sensor_device = esp_rmaker_device_create("Node ESP32C3 Temperature", ESP_RMAKER_DEVICE_TEMP_SENSOR, app_get_current_temperature());
+    temp_sensor_device = esp_rmaker_device_create("Node ESP32C3 Temperature", ESP_RMAKER_DEVICE_TEMP_SENSOR, NULL);
     esp_rmaker_device_add_param(temp_sensor_device, esp_rmaker_name_param_create(ESP_RMAKER_DEF_NAME_PARAM, "Node ESP32C3"));
     esp_rmaker_param_t *temp_param_primary = esp_rmaker_temperature_param_create(ESP_RMAKER_DEF_TEMPERATURE_NAME, app_get_current_temperature());
     esp_rmaker_device_add_param(temp_sensor_device, temp_param_primary);
