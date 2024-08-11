@@ -7,7 +7,10 @@ theme: jekyll-theme-architect
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-#  - jekyll-titles-from-headings
+  - jekyll-titles-from-headings
+
+kramdown:
+  syntax_highlighter: coderay
 
 header_pages:
   - about.md
