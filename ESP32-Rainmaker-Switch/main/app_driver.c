@@ -26,6 +26,7 @@
 
 #define SYS_LED_1           CONFIG_SWITCH_LED_1
 #define SYS_LED_2           CONFIG_SWITCH_LED_2
+#define LIGHT_SENSOR        CONFIG_LIGHT_SENSOR
 
 static bool g_power_state = DEFAULT_POWER;
 
@@ -116,6 +117,8 @@ void app_driver_init()
         .mode = GPIO_MODE_INPUT,
         .pull_up_en = 0,
     };
+    sensor_io_conf.pin_bit_mask = (uint64_t)1 << LIGHT_SENSOR;
+    gpio_config(&sensor_io_conf);
     light_sensor_init();
 }
 

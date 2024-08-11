@@ -37,4 +37,10 @@ menu "Rainmaker ESP32C3 Switch"
             This is an output GPIO that is connected to an on-board LED located on the right side of the board
             If the power changes, this GPIO output level will also change.
 
+    config LIGHT_SENSOR
+        int "Light Sensor GPIO"
+        default 1
+        help
+            This is an input GPIO that is connected to the ambient light sensor.
+
 endmenu
