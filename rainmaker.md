@@ -65,13 +65,15 @@ Building the project can take some time.
 
 <img alt="ESP-IDF. Create a New Project" src="https://alexandrebobkov.github.io/ESP-Nodes/assets/Espressif-Rainmaker_008.png" width="70%"/>
 
-### Adding RainMaker Device
+### IV. Provisioning RainMaker Device
 
-Once project is successfully built, and ESP32-WROOM module is flashed, reboot your device and open Serial Monitor in order to access provisioning QR code. At this point you can start adding your device to your RainMaker dashboard. On your smartphone, launch the _ESP RainMaker_ app and click _Add device_. You'll be asked to scan the QR code. If provisioning is successful, _ESP RainMaker_ app will take you to the nest steps.
+Once project is successfully built, and ESP32-WROOM module is flashed, a device needs to be connected to the Rainmaker cloud service. To do so, reboot your device and open Serial Monitor in order to access _provisioning QR Code_. At this point you can start adding your device to your RainMaker dashboard. On your smartphone, launch the _ESP RainMaker_ app and click _Add device_. You'll be asked to scan the QR code. If provisioning is successful, _ESP RainMaker_ app will take you to the nest steps.
 
 <img alt="ESP-IDF. Create a New Project" src="https://alexandrebobkov.github.io/ESP-Nodes/assets/Espressif-Rainmaker_009.png" width="70%"/>
 
 <img alt="ESP-IDF. Create a New Project" src="https://alexandrebobkov.github.io/ESP-Nodes/assets/Espressif-Rainmaker_010.png" width="70%"/>
+
+### V. Connecting Rainmaker Device to Alexa
 
 <img alt="Alexa Account Linking to RainMaker" src="https://alexandrebobkov.github.io/ESP-Nodes/assets/Screenshot_20240716-213521~2.png" width="70%"/>
 
