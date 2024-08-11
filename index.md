@@ -20,6 +20,9 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 - two programmable LEDs
 - programmable via [UART](https://github.com/alexandrebobkov/ESP-Nodes/tree/main?tab=readme-ov-file#uart) -> no need for serial drivers
 
+# Rainmaker
+[Rainmaker Tutorial](./rainmaker.html).
+
 ----
 ## REFERENCES
 [^1]: https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf
