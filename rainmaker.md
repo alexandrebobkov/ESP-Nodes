@@ -6,7 +6,7 @@ layout: tutorial
 
 This tutorial walks you through the most important steps required for provisioning device powered by ESP32-WROOM, ESP32-S2 or ESP32-C3 module.
 
-__ Minimum requirements: __
+__Minimum requirements:__ </br>
 ESP32-WROOM, either a Module or DevKit</br>
 Wi-Fi Access Point, preferrably with dedicated vLAN for IoT devices</br>
 Smart phone with RainMaker installed
