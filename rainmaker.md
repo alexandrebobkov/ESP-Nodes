@@ -2,11 +2,9 @@
 layout: tutorial
 ---
 
-# Tutorial: Creating Rainmaker Device
-
 # ESP RAINMAKER TUTORIAL
 
-This tutorial walks you through the most important steps neccessary to provision ESP32-WROOM device.
+This tutorial walks you through the most important steps required for provisioning device powered by ESP32-WROOM, ESP32-S2 or ESP32-C3 module.
 
 > [!TIP]
 > _WHAT'S REQUIRED:_
