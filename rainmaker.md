@@ -2,4 +2,4 @@
 layout: tutorial
 ---
 
-# Rainmaker
+# Tutorial: Creating Rainmaker Device
