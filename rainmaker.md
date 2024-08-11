@@ -17,11 +17,11 @@ The first step is to create a new project with ESP-IDF Rainmaker extention using
 
 <img alt="ESP-IDF. Create a New Project" src="https://alexandrebobkov.github.io/ESP-Nodes/assets/Espressif-Rainmaker_001.png" width="70%"/>
 
-Specify project name, directory path and ESP32 module (ESP32-WROOM or ESP32-C3). In addition, you may state the Serial port where ESP32 Module is connected to; this setting can be changed latter, if neccessary.
+Specify the project name, directory path and ESP32 module that will be used (i.e. ESP32-WROOM, ESP32-S2 or ESP32-C3). In addition, you may specify the Serial port where ESP32 Module is connected to; the serial port can be changed latter, if neccessary.
 
 <img alt="ESP-IDF. Create a New Project" src="https://alexandrebobkov.github.io/ESP-Nodes/assets/Espressif-Rainmaker_002.png" width="70%"/>
 
-On the next screen, specify ESP Rainmaker extention and select example code to start with. For this tutorial, an example code for _ _Switch_ _ was selected. Click "Create project using template switch".
+On the next screen, select the ESP Rainmaker extention and choose the example code to start with. For this tutorial, an example code for __Switch__ was selected. Click "Create project using template switch".
 
 <img alt="ESP-IDF. Create a New Project" src="https://alexandrebobkov.github.io/ESP-Nodes/assets/Espressif-Rainmaker_003.png" width="70%"/>
 
