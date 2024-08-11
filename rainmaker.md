@@ -11,7 +11,7 @@ ESP32-WROOM, either a Module or DevKit</br>
 Wi-Fi Access Point, preferrably with dedicated vLAN for IoT devices</br>
 Smart phone with RainMaker installed
 
-### ESP-IDF: Create a New Project
+### I. ESP-IDF: Create a New Project
 
 The first step is to create a new project with ESP-IDF Rainmaker extention using Visual Studio Code.
 
@@ -25,11 +25,11 @@ On the next screen, select the ESP Rainmaker extention and choose the example co
 
 <img alt="ESP-IDF. Create a New Project" src="https://alexandrebobkov.github.io/ESP-Nodes/assets/Espressif-Rainmaker_003.png" width="70%"/>
 
-### Modify Template Code
+### II. Modify the Template Code
 
-Make the following changes to app_main.cpp source file.
+Once project is created, make the following changes to the **app_main.cpp** source file.
 
-Change the TAG variable as follows:
+Change the TAG variable to reflect your device name as follows:
 
 ```C++
 static const char *TAG = "ESP32-Nodes app main";
@@ -45,11 +45,11 @@ switch_device = esp_rmaker_device_create("ESP32-Nodes Switch", ESP_RMAKER_DEVICE
 
 <img alt="ESP-IDF. Create a New Project" src="https://alexandrebobkov.github.io/ESP-Nodes/assets/Espressif-Rainmaker_004.png" width="70%"/>
 
-### Modify Configuration
+### III. Modify Configuration
 
-Navigate to the ESP-IDF: SDK Configuration Editor (menuconfig). Some of the default values provided by RainMaker Switch template need to be changed in order to match GPIO used to turn LED Lights on or off.
+ESP-IDF **menuconfig** contains settings that define hardware configuration. For example, GPIO used to control power relay, etc. To set configuration values, navigate to the ESP-IDF: SDK Configuration Editor (menuconfig). Some of the default values are pre-defined by the RainMaker Switch template; however, the specific number of GPIO used to turn LED Lights on or off needs to be entered.
 
-Click on Example Configuration section, and change **Output GPIO** value to _4_, which corresponds to the GPIO connected to the LED lights control pin.
+To do so, click on Example Configuration section, and change **Output GPIO** value to _4_, which corresponds to the GPIO connected to the LED lights control pin.
 
 Set **Claiming Type** to _Assisted_, and **Provisioning Transport Method** to _BLE_.
 
