@@ -1,3 +1,7 @@
+---
+layout: tutorial
+---
+
 # ESP RAINMAKER TUTORIAL
 
 This tutorial walks you through the most important steps neccessary to provision ESP32-WROOM device.
