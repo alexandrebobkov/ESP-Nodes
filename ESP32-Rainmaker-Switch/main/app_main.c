@@ -167,6 +167,10 @@ void app_main()
     esp_rmaker_console_init();
     // Initialize Switch
     app_driver_init();
+
+    // Initialize sensor
+    // app_sensor_init();
+
     // Initialize temperature sensor
     //app_bme280_init();
     // Set default switch state
