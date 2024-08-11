@@ -76,6 +76,10 @@ void app_sensor_init(void) {
     //return ESP_FAIL;
 }
 
+float app_get_current_temperature() {
+    return a_light;
+}
+
 //static void app_bme280_init() {}
 
 static void app_indicator_set(bool state)
