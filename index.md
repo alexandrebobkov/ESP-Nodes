@@ -18,7 +18,7 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 
 ----
 ## REFERENCES
-
+[^1]: https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf
 [^2]: https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280/
 [^3]: https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp280/
 [^4]: https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf
