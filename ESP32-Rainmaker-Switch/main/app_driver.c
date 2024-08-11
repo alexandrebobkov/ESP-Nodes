@@ -112,6 +112,10 @@ void app_driver_init()
     app_indicator_init();
 
     // Configure ambient light sensor GPIO
+    gpio_config_t sensor_io_conf = {
+        .mode = GPIO_MODE_INPUT,
+        .pull_up_en = 0,
+    };
     light_sensor_init();
 }
 
