@@ -15,3 +15,17 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 - blue power-on LED
 - two programmable LEDs
 - programmable via [UART](https://github.com/alexandrebobkov/ESP-Nodes/tree/main?tab=readme-ov-file#uart) -> no need for serial drivers
+
+----
+## REFERENCES
+
+[^2]: https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280/
+[^3]: https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp280/
+[^4]: https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf
+[^5]: https://www.espressif.com/en/news/ESP32_C3
+[^6]: https://dashboard.rainmaker.espressif.com/login
+[^7]: https://rainmaker.espressif.com/
+[^8]: https://rainmaker.espressif.com/docs/get-started/
+[^9]: https://www.espressif.com/en/solutions/device-connectivity/esp-matter-solution
+[^10]: https://github.com/project-chip/connectedhomeip
+[^11]: https://rainmaker.espressif.com/docs/standard-types
