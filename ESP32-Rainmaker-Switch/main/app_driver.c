@@ -39,7 +39,7 @@ static bool g_power_state = DEFAULT_POWER;
 
 static void light_sensor_init(void) {}
 
-void app_bme280_init() {}
+static void app_bme280_init() {}
 
 static void app_indicator_set(bool state)
 {
@@ -110,6 +110,9 @@ void app_driver_init()
     /* Configure the GPIO */
     gpio_config(&io_conf);
     app_indicator_init();
+
+    // Configure ambient light sensor GPIO
+    light_sensor_init();
 }
 
 int IRAM_ATTR app_driver_set_state(bool state)
