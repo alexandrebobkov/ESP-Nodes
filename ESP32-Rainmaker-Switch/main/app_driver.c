@@ -38,7 +38,12 @@ static bool g_power_state = DEFAULT_POWER;
 #define WIFI_RESET_BUTTON_TIMEOUT       3
 #define FACTORY_RESET_BUTTON_TIMEOUT    10
 
-static void light_sensor_init(void) {}
+// Define the name of app for logs.
+static const char *TAG = "ESP32-Nodes Rainmaker Switch";
+
+static void light_sensor_init(void) {
+    ESP_LOGI(TAG, "Initializing sensor ...");
+}
 
 static void app_bme280_init() {}
 
