@@ -50,10 +50,10 @@ static TimerHandle_t sensor_timer;
 
 /*
 * AMBIENT LIGHT SENSOR FUNCTIONS
-*/
+
 static void light_sensor_init(void) {
     ESP_LOGI(TAG, "Initializing sensor ...");
-}
+}*/
 
 static void light_sensor_update(TimerHandle_t handle) {
     static float delta = 0.25;
@@ -75,7 +75,7 @@ esp_err_t app_sensor_init(void) {
     return ESP_FAIL;
 }
 
-static void app_bme280_init() {}
+//static void app_bme280_init() {}
 
 static void app_indicator_set(bool state)
 {
@@ -154,9 +154,8 @@ void app_driver_init()
     };
     sensor_io_conf.pin_bit_mask = (uint64_t)1 << LIGHT_SENSOR;
     gpio_config(&sensor_io_conf);
-    light_sensor_init();
-
-    app_sensor_init();
+    
+    //app_sensor_init();
 }
 
 int IRAM_ATTR app_driver_set_state(bool state)
