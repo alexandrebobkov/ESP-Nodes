@@ -3,7 +3,7 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 
 <p>The ESP32-Node is designed to be a low-cost, vanila solution for experimenting with embedded and IoT devices. The ESP32-Node is intended to College students taking Electronics program or advanced users who are looking for functional ESP32 embedded board with minimal size.</p>
 
-<img alt="ESP32-Node PCB" src="{{ site.url }}/assets/ESP32-Node-001.jpg" width="50%"/>
+<img alt="ESP32-Node PCB" src="https://alexandrebobkov.github.io/ESP-Nodes/assets/ESP32-Node-001.jpg" width="50%"/>
 
 <p><i>ESP32-Node Features:</i></p>
 
