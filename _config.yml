@@ -4,6 +4,9 @@ show_downloads: true
 google_analytics:
 theme: jekyll-theme-architect
 
+plugins:
+  - jekyll-titles-from-headings
+
 readme_index:
   enabled:          true
   remove_originals: false
