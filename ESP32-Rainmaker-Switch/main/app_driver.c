@@ -63,7 +63,7 @@ static void light_sensor_update(TimerHandle_t handle) {
         esp_rmaker_device_get_param_by_type(switch_device, ESP_RMAKER_PARAM_TEMPERATURE),
         esp_rmaker_float(a_light));
 }
-static void app_sensor_init(void) {
+void app_sensor_init(void) {
 //esp_err_t app_sensor_init(void) {
     a_light = 15.0;
     sensor_timer = xTimerCreate("ambient_light_sensor_update_timer", (REPORTING_PERIOD*1000) / portTICK_PERIOD_MS,
@@ -156,7 +156,7 @@ void app_driver_init()
     sensor_io_conf.pin_bit_mask = (uint64_t)1 << LIGHT_SENSOR;
     gpio_config(&sensor_io_conf);
     
-    //app_sensor_init();
+    app_sensor_init();
 }
 
 int IRAM_ATTR app_driver_set_state(bool state)

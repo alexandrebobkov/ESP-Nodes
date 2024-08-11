@@ -169,7 +169,7 @@ void app_main()
     app_driver_init();
 
     // Initialize sensor
-    // app_sensor_init();
+    //app_sensor_init();
 
     // Initialize temperature sensor
     //app_bme280_init();

@@ -20,6 +20,7 @@ extern esp_rmaker_device_t *light_gauge_device;
 extern esp_rmaker_device_t *temp_sensor_device;
 
 void app_driver_init(void);
+void app_sensor_init(void);
 int app_driver_set_state(bool state);
 bool app_driver_get_state(void);
 
