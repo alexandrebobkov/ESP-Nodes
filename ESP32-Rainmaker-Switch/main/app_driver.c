@@ -8,9 +8,13 @@
 */
 
 #include <sdkconfig.h>
+#include <freertos/FreeRTOS.h>
+#include <freertos/timers.h>
+
 
 #include <iot_button.h>
 #include <esp_rmaker_core.h>
+#include <esp_rmaker_standard_types.h> 
 #include <esp_rmaker_standard_params.h> 
 #include <esp_log.h>
 
@@ -41,9 +45,20 @@ static bool g_power_state = DEFAULT_POWER;
 
 // Define the name of app for logs.
 static const char *TAG = "ESP32-Nodes Rainmaker Switch";
+static float a_light;
+static TimerHandle_t sensor_timer;
 
 static void light_sensor_init(void) {
     ESP_LOGI(TAG, "Initializing sensor ...");
+}
+
+static void light_sensor_update(TimerHandle_t handle) {
+    static float delta = 0.25;
+
+    a_light += delta;
+    esp_rmaker_param_update_and_report(
+        esp_rmaker_device_get_param_by_type(switch_device, ESP_RMAKER_PARAM_TEMPERATURE),
+        esp_rmaker_float(a_light));
 }
 
 static void app_bme280_init() {}
