@@ -39,8 +39,11 @@
 
 // Define the name of app for logs.
 static const char *TAG = "ESP32-Nodes Rainmaker Switch";
-// Define RainMaker device (switch)
+// Define RainMaker device: switch
 esp_rmaker_device_t *switch_device;
+// Define RainMaker device: temperature gauge
+esp_rmaker_device_t *light_gauge_device;
+esp_rmaker_device_t *temp_sensor_device;
 
 /* Callback to handle commands received from the RainMaker cloud */
 static esp_err_t write_cb(const esp_rmaker_device_t *device, const esp_rmaker_param_t *param,
@@ -200,10 +203,11 @@ void app_main()
         abort();
     }
 
-    /* Create a Switch device.
-     * You can optionally use the helper API esp_rmaker_switch_device_create() to
-     * avoid writing code for adding the name and power parameters.
-     */
+    /* CREATE SWITCH DEVICE.
+    * You can optionally use the helper API esp_rmaker_switch_device_create() to
+    * avoid writing code for adding the name and power parameters.
+    */
+
     // Define device name and description as they should appear in RainMaker UI app
     switch_device = esp_rmaker_device_create("Switch ESP32C3 LuatOS", ESP_RMAKER_DEVICE_SWITCH, NULL);
 
@@ -231,6 +235,12 @@ void app_main()
 
     /* Add this switch device to the node */
     esp_rmaker_node_add_device(node, switch_device);
+
+    /* CREATE TEMPERATURE SENSOR DEVICE*/
+    temp_sensor_device = esp_rmaker_temp_sensor_device_create("Temperature Sensor", NULL, app_get_current_temperature());
+    esp_rmaker_node_add_device(node, temp_sensor_device);
+
+    /* CREATE AMBIENT LIGHT SENSOR DEVICE*/
 
     /* Enable OTA */
     esp_rmaker_ota_enable_default();
