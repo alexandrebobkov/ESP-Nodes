@@ -196,7 +196,7 @@ void app_main()
         .enable_time_sync = false,
     };
     // Define device name and description as they should appear in logs
-    esp_rmaker_node_t *node = esp_rmaker_node_init(&rainmaker_cfg, "ESP RainMaker Device", "Switch ESP32C3 LuatOS");
+    esp_rmaker_node_t *node = esp_rmaker_node_init(&rainmaker_cfg, "ESP RainMaker Device", "Node ESP32C3 LuatOS");
     if (!node) {
         ESP_LOGE(TAG, "Could not initialise node. Aborting!!!");
         vTaskDelay(5000/portTICK_PERIOD_MS);
@@ -209,7 +209,7 @@ void app_main()
     */
 
     // Define device name and description as they should appear in RainMaker UI app
-    switch_device = esp_rmaker_device_create("Switch ESP32C3 LuatOS", ESP_RMAKER_DEVICE_SWITCH, NULL);
+    switch_device = esp_rmaker_device_create("Node ESP32C3 LuatOS", ESP_RMAKER_DEVICE_SWITCH, NULL);
 
     /* Add the write callback for the device. We aren't registering any read callback yet as
      * it is for future use.
@@ -220,7 +220,7 @@ void app_main()
      * user friendly custom name from the phone apps. All devices are recommended to have this
      * parameter.
      */
-    esp_rmaker_device_add_param(switch_device, esp_rmaker_name_param_create(ESP_RMAKER_DEF_NAME_PARAM, "Switch ESP32C3 LuatOS"));
+    esp_rmaker_device_add_param(switch_device, esp_rmaker_name_param_create(ESP_RMAKER_DEF_NAME_PARAM, "Node ESP32C3 LuatOS"));
 
     /* Add the standard power parameter (type: esp.param.power), which adds a boolean param
      * with a toggle switch ui-type.
@@ -237,6 +237,7 @@ void app_main()
     esp_rmaker_node_add_device(node, switch_device);
 
     /* CREATE TEMPERATURE SENSOR DEVICE*/
+    // esp.device.temperature-sensor
     temp_sensor_device = esp_rmaker_temp_sensor_device_create("Temperature Sensor", NULL, app_get_current_temperature());
     esp_rmaker_node_add_device(node, temp_sensor_device);
 
