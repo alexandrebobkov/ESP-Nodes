@@ -94,7 +94,7 @@ ESP32 modules can be programmed using USB-UART adapter connected to the correspo
 > [!IMPORTANT]
 > Remember to swap Tx and Rx between receiver and sender (i.e. Rx on a sender side becomes Tx on a receiver side).
 
-Connect Tx and Rx to their sorresponding pins (`GPIO03` and `GPIO01`) on ESP32 adapter node.
+Connect Tx and Rx to their sorresponding pins: GPIOs `GPIO03` and `GPIO01` on ESP32-Module; or pins `34` and `35` on ESP32 adapter board.
 
 <img alt="ESP32 Programming via UART" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/UART.jpg" width="400px"/>
 
