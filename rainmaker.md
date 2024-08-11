@@ -49,9 +49,9 @@ switch_device = esp_rmaker_device_create("ESP32-Nodes Switch", ESP_RMAKER_DEVICE
 
 ESP-IDF **menuconfig** contains settings that define hardware configuration. For example, GPIO used to control power relay, etc. To set configuration values, navigate to the ESP-IDF: SDK Configuration Editor (menuconfig). Some of the default values are pre-defined by the RainMaker Switch template; however, the specific number of GPIO used to turn LED Lights on or off needs to be entered.
 
-To do so, click on Example Configuration section, and change **Output GPIO** value to _4_, which corresponds to the GPIO connected to the LED lights control pin.
+To do so, click on Example Configuration section, and change _Output GPIO_ value to __4__, which corresponds to the GPIO connected to the LED lights control pin.
 
-Set **Claiming Type** to _Assisted_, and **Provisioning Transport Method** to _BLE_.
+Set _Claiming Type_ to __Assisted__, and _Provisioning Transport Method_ to __BLE__.
 
 <img alt="ESP-IDF. Create a New Project" src="https://alexandrebobkov.github.io/ESP-Nodes/assets/Espressif-Rainmaker_005.png" width="70%"/>
 
