@@ -6,14 +6,14 @@ layout: tutorial
 
 This tutorial walks you through the most important steps required for provisioning device powered by ESP32-WROOM, ESP32-S2 or ESP32-C3 module.
 
-__Minimum requirements:__ </br>
+__Minimum Requirements:__ </br>
 ESP32-WROOM, either a Module or DevKit</br>
 Wi-Fi Access Point, preferrably with dedicated vLAN for IoT devices</br>
 Smart phone with RainMaker installed
 
 ### ESP-IDF: Create a New Project
 
-Launch ESP-IDF extention on VS Code
+The first step is to create a new project with ESP-IDF Rainmaker extention using Visual Studio Code.
 
 <img alt="ESP-IDF. Create a New Project" src="https://alexandrebobkov.github.io/ESP-Nodes/assets/Espressif-Rainmaker_001.png" width="70%"/>
 
