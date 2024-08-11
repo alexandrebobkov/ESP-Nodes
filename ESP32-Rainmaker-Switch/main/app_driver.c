@@ -12,6 +12,7 @@
 #include <iot_button.h>
 #include <esp_rmaker_core.h>
 #include <esp_rmaker_standard_params.h> 
+#include <esp_log.h>
 
 #include <app_reset.h>
 #include <ws2812_led.h>
