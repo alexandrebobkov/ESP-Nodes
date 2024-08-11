@@ -6,7 +6,8 @@ theme: minima
 #jekyll-theme-architect
 
 plugins:
-  - minima
+  - jekyll-feed
+  - jekyll-seo-tag
 
 header_pages:
   - about.md
