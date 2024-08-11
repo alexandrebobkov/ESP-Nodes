@@ -16,3 +16,4 @@ extern esp_rmaker_device_t *switch_device;
 void app_driver_init(void);
 int app_driver_set_state(bool state);
 bool app_driver_get_state(void);
+float app_get_current_temperature();
