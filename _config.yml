@@ -3,6 +3,8 @@ description: ESP32 IoT gadgets
 show_downloads: true
 google_analytics:
 theme: jekyll-theme-architect
+baseurl: "/ESP-Nodes" # the subpath of your site, e.g. /blog
+url: "https://alexandrebobkov.github.io/" # the base hostname & protocol for your site
 
 plugins:
   - jekyll-feed
