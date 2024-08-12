@@ -50,10 +50,11 @@ static bool g_power_state = DEFAULT_POWER;
 // Define the name of app for logs.
 static const char *TAG = "ESP32-Nodes Rainmaker Switch";
 static float a_light;
+static float tsens_value;
 static int a_light_raw;
 static TimerHandle_t sensor_timer;
 static temperature_sensor_handle_t temp_sensor = NULL;
-static temperature_sensor_config_t temp_sensor_config = TEMPERATURE_SENSOR_CONFIG_DEFAULT;
+static temperature_sensor_config_t temp_sensor_config = TEMPERATURE_SENSOR_CONFIG_DEFAULT(10, 50);
 esp_adc_cal_characteristics_t adc1_chars;
 
 /*
@@ -76,6 +77,8 @@ static void light_sensor_update(TimerHandle_t handle) {
         esp_rmaker_float((float)a_light_raw));
     
     ESP_LOGI(TAG, "\nSensor value: %i", a_light_raw);    
+    ESP_ERROR_CHECK(temperature_sensor_get_celsius(temp_sensor, &tsens_value));
+    ESP_LOGI(TAG, "Temperature sensor: %0.2f", tsens_value);
 }
 void app_sensor_init(void) {
 //esp_err_t app_sensor_init(void) {
@@ -184,6 +187,9 @@ void app_driver_init()
     gpio_config(&sensor_io_conf);*/
     
     app_sensor_init();
+
+    ESP_ERROR_CHECK(temperature_sensor_install(&temp_sensor_config, &temp_sensor));
+    ESP_ERROR_CHECK(temperature_sensor_enable(temp_sensor));
 }
 
 int IRAM_ATTR app_driver_set_state(bool state)
