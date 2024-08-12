@@ -18,6 +18,9 @@
 #include <esp_rmaker_standard_params.h> 
 #include <esp_log.h>
 
+#include "driver/adc.h"
+#include "esp_adc_cal.h"
+
 #include <app_reset.h>
 #include <ws2812_led.h>
 #include "app_priv.h"
