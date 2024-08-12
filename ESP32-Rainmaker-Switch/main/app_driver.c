@@ -62,6 +62,8 @@ static void light_sensor_update(TimerHandle_t handle) {
     esp_rmaker_param_update_and_report(
         esp_rmaker_device_get_param_by_type(switch_device, ESP_RMAKER_PARAM_TEMPERATURE),
         esp_rmaker_float(a_light));
+    ESP_LOGI(TAG, "\nSensor value: ");
+    ESP_LOGI(TAG, "%i", gpio_get_level(LIGHT_SENSOR));
 }
 void app_sensor_init(void) {
 //esp_err_t app_sensor_init(void) {
