@@ -76,9 +76,9 @@ static void light_sensor_update(TimerHandle_t handle) {
         esp_rmaker_device_get_param_by_type(temp_sensor_device, ESP_RMAKER_PARAM_TEMPERATURE),
         esp_rmaker_float((float)a_light_raw));
     
-    ESP_LOGI(TAG, "\nSensor value: %i", a_light_raw);    
+    ESP_LOGI(TAG, "\nAmbient light sensor value: %i", a_light_raw);    
     ESP_ERROR_CHECK(temperature_sensor_get_celsius(temp_sensor, &tsens_value));
-    ESP_LOGI(TAG, "Temperature sensor: %0.2f", tsens_value);
+    ESP_LOGI(TAG, "\nESP32-C3 Module temperature: %0.2f", tsens_value);
 }
 void app_sensor_init(void) {
 //esp_err_t app_sensor_init(void) {
