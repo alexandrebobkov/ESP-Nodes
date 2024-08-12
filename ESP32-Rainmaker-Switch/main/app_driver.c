@@ -19,6 +19,7 @@
 #include <esp_log.h>
 
 #include "driver/adc.h"
+#include "driver/temperature_sensor.h"
 #include "esp_adc_cal.h"
 
 #include <app_reset.h>
@@ -51,6 +52,8 @@ static const char *TAG = "ESP32-Nodes Rainmaker Switch";
 static float a_light;
 static int a_light_raw;
 static TimerHandle_t sensor_timer;
+static temperature_sensor_handle_t temp_sensor = NULL;
+static temperature_sensor_config_t temp_sensor_config = TEMPERATURE_SENSOR_CONFIG_DEFAULT;
 esp_adc_cal_characteristics_t adc1_chars;
 
 /*
