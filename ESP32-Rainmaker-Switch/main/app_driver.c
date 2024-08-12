@@ -66,14 +66,13 @@ static void light_sensor_update(TimerHandle_t handle) {
     esp_rmaker_param_update_and_report(
         esp_rmaker_device_get_param_by_type(switch_device, ESP_RMAKER_PARAM_TEMPERATURE),
         esp_rmaker_float(a_light));
-    ESP_LOGI(TAG, "\nSensor value: ");
-    int adc_value = adc1_get_raw(ADC1_CHANNEL_0);
-    ESP_LOGI(TAG, "%i", adc_value);
+    int adc_value = adc1_get_raw(ADC1_CHANNEL_1);
+    ESP_LOGI(TAG, "\nSensor value: %i", adc_value);    
 }
 void app_sensor_init(void) {
 //esp_err_t app_sensor_init(void) {
     a_light = 15.0;
-    sensor_timer = xTimerCreate("ambient_light_sensor_update_timer", (REPORTING_PERIOD*1000) / portTICK_PERIOD_MS,
+    sensor_timer = xTimerCreate("ambient_light_sensor_update_timer", (REPORTING_PERIOD*250) / portTICK_PERIOD_MS,
         pdTRUE, NULL, light_sensor_update);
     
     if (sensor_timer) {
