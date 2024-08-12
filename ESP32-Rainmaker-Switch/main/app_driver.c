@@ -61,12 +61,15 @@ static void light_sensor_init(void) {
 
 static void light_sensor_update(TimerHandle_t handle) {
     static float delta = 0.25;
-
     a_light += delta;
+
+    int adc_value = adc1_get_raw(ADC1_CHANNEL_1);
+
     esp_rmaker_param_update_and_report(
         esp_rmaker_device_get_param_by_type(switch_device, ESP_RMAKER_PARAM_TEMPERATURE),
-        esp_rmaker_float(a_light));
-    int adc_value = adc1_get_raw(ADC1_CHANNEL_1);
+        //esp_rmaker_float(a_light));
+        esp_rmaker_int(adc_value));
+    
     ESP_LOGI(TAG, "\nSensor value: %i", adc_value);    
 }
 void app_sensor_init(void) {
