@@ -50,6 +50,7 @@ static bool g_power_state = DEFAULT_POWER;
 static const char *TAG = "ESP32-Nodes Rainmaker Switch";
 static float a_light;
 static TimerHandle_t sensor_timer;
+esp_adc_cal_characteristics_t adc1_chars;
 
 /*
 * AMBIENT LIGHT SENSOR FUNCTIONS
@@ -66,7 +67,8 @@ static void light_sensor_update(TimerHandle_t handle) {
         esp_rmaker_device_get_param_by_type(switch_device, ESP_RMAKER_PARAM_TEMPERATURE),
         esp_rmaker_float(a_light));
     ESP_LOGI(TAG, "\nSensor value: ");
-    ESP_LOGI(TAG, "%i", gpio_get_level(LIGHT_SENSOR));
+    int adc_value = adc1_get_raw(ADC1_CHANNEL_0);
+    ESP_LOGI(TAG, "%i", adc_value);
 }
 void app_sensor_init(void) {
 //esp_err_t app_sensor_init(void) {
@@ -158,12 +160,16 @@ void app_driver_init()
     app_indicator_init();
 
     // Configure ambient light sensor GPIO
-    gpio_config_t sensor_io_conf = {
+    adc1_config_channel_atten(ADC_UNIT_2, ADC_ATTEN_DB_11);
+    esp_adc_cal_characterize(ADC_UNIT_2, ADC_ATTEN_DB_11, ADC_WIDTH_BIT_DEFAULT, 0, &adc1_chars);
+    adc1_config_width(ADC_WIDTH_BIT_DEFAULT);
+
+    /*gpio_config_t sensor_io_conf = {
         .mode = GPIO_MODE_INPUT,
         .pull_up_en = 0,
     };
     sensor_io_conf.pin_bit_mask = (uint64_t)1 << LIGHT_SENSOR;
-    gpio_config(&sensor_io_conf);
+    gpio_config(&sensor_io_conf);*/
     
     app_sensor_init();
 }
