@@ -251,6 +251,7 @@ void app_main()
 
     /* Enable OTA */
     esp_rmaker_ota_enable_default();
+    //esp_rmaker_ota_enable(&)
 
     /* Enable timezone service which will be require for setting appropriate timezone
      * from the phone apps for scheduling to work correctly.
