@@ -49,6 +49,7 @@ static bool g_power_state = DEFAULT_POWER;
 // Define the name of app for logs.
 static const char *TAG = "ESP32-Nodes Rainmaker Switch";
 static float a_light;
+static int a_light_raw;
 static TimerHandle_t sensor_timer;
 esp_adc_cal_characteristics_t adc1_chars;
 
@@ -63,18 +64,20 @@ static void light_sensor_update(TimerHandle_t handle) {
     static float delta = 0.25;
     a_light += delta;
 
-    int adc_value = adc1_get_raw(ADC1_CHANNEL_1);
+    // Obtain raw ADC value from the ambient light sensor connected to GPIO 1
+    a_light_raw = adc1_get_raw(ADC1_CHANNEL_1);
 
+    // switch_device
     esp_rmaker_param_update_and_report(
-        esp_rmaker_device_get_param_by_type(switch_device, ESP_RMAKER_PARAM_TEMPERATURE),
-        //esp_rmaker_float(a_light));
-        esp_rmaker_int(adc_value));
+        esp_rmaker_device_get_param_by_type(temp_sensor_device, ESP_RMAKER_PARAM_TEMPERATURE),
+        esp_rmaker_float((float)a_light_raw));
     
-    ESP_LOGI(TAG, "\nSensor value: %i", adc_value);    
+    ESP_LOGI(TAG, "\nSensor value: %i", a_light_raw);    
 }
 void app_sensor_init(void) {
 //esp_err_t app_sensor_init(void) {
     a_light = 15.0;
+    a_light_raw = 0;
     sensor_timer = xTimerCreate("ambient_light_sensor_update_timer", (REPORTING_PERIOD*250) / portTICK_PERIOD_MS,
         pdTRUE, NULL, light_sensor_update);
     
@@ -86,7 +89,8 @@ void app_sensor_init(void) {
 }
 
 float app_get_current_temperature() {
-    return a_light;
+    //return a_light;
+    return a_light_raw;
 }
 
 //static void app_bme280_init() {}
@@ -161,9 +165,12 @@ void app_driver_init()
     gpio_config(&io_conf);
     app_indicator_init();
 
-    // Configure ambient light sensor GPIO
-    adc1_config_channel_atten(ADC_UNIT_2, ADC_ATTEN_DB_11);
-    esp_adc_cal_characterize(ADC_UNIT_2, ADC_ATTEN_DB_11, ADC_WIDTH_BIT_DEFAULT, 0, &adc1_chars);
+    /* Configure ambient light sensor ADC GPIO */
+    // Set the attenuation parameter of ADC; GPIO 1 to 12db
+    adc1_config_channel_atten(ADC_UNIT_2, ADC_ATTEN_DB_12);
+    // Calibrate ADC
+    esp_adc_cal_characterize(ADC_UNIT_2, ADC_ATTEN_DB_12, ADC_WIDTH_BIT_DEFAULT, 0, &adc1_chars);
+    // Set ADC bit width (resolution)
     adc1_config_width(ADC_WIDTH_BIT_DEFAULT);
 
     /*gpio_config_t sensor_io_conf = {
