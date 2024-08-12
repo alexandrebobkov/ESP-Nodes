@@ -12,6 +12,6 @@ endif(DEFINED ENV{RMAKER_PATH})
 set(EXTRA_COMPONENT_DIRS ${RMAKER_PATH}/components/esp-insights/components ${RMAKER_PATH}/components ${RMAKER_PATH}/examples/common)
 
 # Increase project version in order for OTA to work
-set(PROJECT_VER "2.6")
+set(PROJECT_VER "2.6.2")
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 project(ESP32-Rainmaker-Switch)
