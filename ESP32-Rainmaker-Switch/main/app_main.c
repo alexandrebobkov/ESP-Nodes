@@ -247,7 +247,11 @@ void app_main()
     temp_sensor_device = esp_rmaker_temp_sensor_device_create("Server Temp", NULL, app_get_current_temperature());
     esp_rmaker_node_add_device(node, temp_sensor_device);
 
-    /* CREATE AMBIENT LIGHT SENSOR DEVICE*/
+    /* CREATE AMBIENT LIGHT SENSOR DEVICE */
+
+    /* CREATE INTERNAL TEMPERATURE DEVICE */
+    chip_sensor_device = esp_rmaker_temp_sensor_device_create("Chip Temperature", NULL, app_get_internal_temperature());
+    esp_rmaker_node_add_device(node, chip_sensor_device);
 
     /* Enable OTA */
     esp_rmaker_ota_enable_default();

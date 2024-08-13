@@ -18,6 +18,7 @@ extern esp_rmaker_device_t *switch_device;
 // Define RainMaker device: temperature gauge
 extern esp_rmaker_device_t *light_gauge_device;
 extern esp_rmaker_device_t *temp_sensor_device;
+extern esp_rmaker_device_t *chip_sensor_device; // internal temperature sensor
 
 void app_driver_init(void);
 void app_sensor_init(void);
