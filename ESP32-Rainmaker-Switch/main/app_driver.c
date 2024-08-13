@@ -49,10 +49,10 @@ static bool g_power_state = DEFAULT_POWER;
 
 // Define the name of app for logs.
 static const char *TAG = "ESP32-Nodes Rainmaker Switch";
-static float a_light;
+static float a_light, internal_temp;
 static float tsens_value;
 static int a_light_raw;
-static TimerHandle_t sensor_timer;
+static TimerHandle_t sensor_timer, internal_sensor_timer;
 static temperature_sensor_handle_t temp_sensor = NULL;
 static temperature_sensor_config_t temp_sensor_config = TEMPERATURE_SENSOR_CONFIG_DEFAULT(10, 50);
 esp_adc_cal_characteristics_t adc1_chars;
@@ -93,10 +93,41 @@ void app_sensor_init(void) {
     }
     //return ESP_FAIL;
 }
-
 float app_get_current_temperature() {
     //return a_light;
     return a_light_raw;
+}
+
+static void internal_temperature_sensor_update(TimerHandle_t handle) {
+    static float delta = 0.25;
+    a_light += delta;
+
+    // Obtain raw ADC value from the ambient light sensor connected to GPIO 1
+    a_light_raw = adc1_get_raw(ADC1_CHANNEL_1);
+
+    // switch_device
+    esp_rmaker_param_update_and_report(
+        esp_rmaker_device_get_param_by_type(chip_sensor_device, ESP_RMAKER_PARAM_TEMPERATURE),
+        esp_rmaker_float((float)));
+    
+    ESP_LOGI(TAG, "\nInternal temperature: %i", internal_temp);    
+    ESP_ERROR_CHECK(temperature_sensor_get_celsius(temp_sensor, &tsens_value));
+    ESP_LOGI(TAG, "\nESP32-C3 Module temperature: %0.2f", tsens_value);
+}
+void app_internal_temp_sensor_init(void) {
+//esp_err_t app_sensor_init(void) {
+    internal_temp = 0;
+    internal_sensor_timer = xTimerCreate("ambient_light_sensor_update_timer", (REPORTING_PERIOD*250) / portTICK_PERIOD_MS,
+        pdTRUE, NULL, light_sensor_update);
+    
+    if (sensor_timer) {
+        xTimerStart(sensor_timer, 0);
+        //return ESP_OK;
+    }
+    //return ESP_FAIL;
+}
+float app_get_internal_temperature() {
+    return internal_temp;
 }
 
 //static void app_bme280_init() {}
