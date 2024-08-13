@@ -76,13 +76,15 @@ static void light_sensor_update(TimerHandle_t handle) {
         esp_rmaker_device_get_param_by_type(temp_sensor_device, ESP_RMAKER_PARAM_TEMPERATURE),
         esp_rmaker_float((float)a_light_raw));
     
-    ESP_LOGI(TAG, "\nAmbient light sensor value: %i", a_light_raw);    
+    ESP_LOGI(TAG, "\nAmbient light sensor value: %i", (int)a_light_raw);
+    // Internal temperature    
     ESP_ERROR_CHECK(temperature_sensor_get_celsius(temp_sensor, &tsens_value));
     ESP_LOGI(TAG, "\nESP32-C3 Module temperature: %0.2f", tsens_value);
 }
 void app_sensor_init(void) {
 //esp_err_t app_sensor_init(void) {
     a_light = 15.0;
+    tsens_value = 0.0;
     a_light_raw = 0;
     sensor_timer = xTimerCreate("ambient_light_sensor_update_timer", (REPORTING_PERIOD*250) / portTICK_PERIOD_MS,
         pdTRUE, NULL, light_sensor_update);
@@ -98,7 +100,7 @@ float app_get_current_temperature() {
     return a_light_raw;
 }
 
-static void internal_temperature_sensor_update(TimerHandle_t handle) {
+/*static void internal_temperature_sensor_update(TimerHandle_t handle) {
     static float delta = 0.25;
     a_light += delta;
 
@@ -108,13 +110,13 @@ static void internal_temperature_sensor_update(TimerHandle_t handle) {
     // switch_device
     esp_rmaker_param_update_and_report(
         esp_rmaker_device_get_param_by_type(chip_sensor_device, ESP_RMAKER_PARAM_TEMPERATURE),
-        esp_rmaker_float((float)));
+        esp_rmaker_float((float)a_light_raw));
     
-    ESP_LOGI(TAG, "\nInternal temperature: %i", internal_temp);    
+    ESP_LOGI(TAG, "\nInternal temperature: %i", (int)a_light_raw);    
     ESP_ERROR_CHECK(temperature_sensor_get_celsius(temp_sensor, &tsens_value));
     ESP_LOGI(TAG, "\nESP32-C3 Module temperature: %0.2f", tsens_value);
-}
-void app_internal_temp_sensor_init(void) {
+}*/
+/*void app_internal_temp_sensor_init(void) {
 //esp_err_t app_sensor_init(void) {
     internal_temp = 0;
     internal_sensor_timer = xTimerCreate("ambient_light_sensor_update_timer", (REPORTING_PERIOD*250) / portTICK_PERIOD_MS,
@@ -125,7 +127,7 @@ void app_internal_temp_sensor_init(void) {
         //return ESP_OK;
     }
     //return ESP_FAIL;
-}
+}*/
 float app_get_internal_temperature() {
     return tsens_value;
 }
