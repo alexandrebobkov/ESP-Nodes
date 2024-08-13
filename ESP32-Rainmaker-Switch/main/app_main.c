@@ -45,6 +45,7 @@ esp_rmaker_device_t *switch_device;
 // Define RainMaker device: temperature gauge
 esp_rmaker_device_t *light_gauge_device;
 esp_rmaker_device_t *temp_sensor_device;
+esp_rmaker_device_t *chip_sensor_device;
 
 /* Callback to handle commands received from the RainMaker cloud */
 static esp_err_t write_cb(const esp_rmaker_device_t *device, const esp_rmaker_param_t *param,
