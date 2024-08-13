@@ -26,3 +26,4 @@ int app_driver_set_state(bool state);
 bool app_driver_get_state(void);
 
 float app_get_current_temperature();
+float app_get_internal_temperature();

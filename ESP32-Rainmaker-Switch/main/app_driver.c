@@ -127,7 +127,7 @@ void app_internal_temp_sensor_init(void) {
     //return ESP_FAIL;
 }
 float app_get_internal_temperature() {
-    return internal_temp;
+    return tsens_value;
 }
 
 //static void app_bme280_init() {}
