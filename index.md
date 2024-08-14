@@ -22,7 +22,11 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 
 # ESP32-C3 DevBoard Power Supply Combo
 
-ESP32-C3 DevBoard & Power Supply Combo frees up bredboard space for your IoT project. Board is powered by USB-C, which also is used to flash firmware to the ESP32-C3 module.  
+ESP32-C3 DevBoard & Power Supply Combo frees up bredboard space for your IoT project. Board is powered by USB-C, which also is used to flash firmware to the ESP32-C3 module. 
+
+<img alt="ESP32-Node PCB" src="https://alexandrebobkov.github.io/ESP-Nodes/assets/ESP32-C3-BreadBoardAdapter-001.jpg" width="80%"/>
+
+<img alt="ESP32-Node PCB" src="https://alexandrebobkov.github.io/ESP-Nodes/assets/ESP32-C3-BreadBoardAdapter-002.jpg" width="80%"/>
 
 <img alt="ESP32-Node PCB" src="https://alexandrebobkov.github.io/ESP-Nodes/assets/20240813_214109.jpg" width="80%"/>
 
