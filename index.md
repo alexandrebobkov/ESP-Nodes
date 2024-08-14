@@ -20,6 +20,8 @@ Eco-system of ESP32s Nodes and ATtiny85 peripherals with different functionaliti
 - two programmable LEDs
 - programmable via [UART](https://github.com/alexandrebobkov/ESP-Nodes/tree/main?tab=readme-ov-file#uart) -> no need for serial drivers
 
+# ESP32-C3 DevBoard Power Supply Combo
+
 # Rainmaker
 [Rainmaker Tutorial](./rainmaker.html).
 
