@@ -243,7 +243,7 @@ Wiring table
 
 # ESP32-C3 Module and Breadboard Power Supply Combo
 
-_ _ESP32-C3 Module and breadboard power supply combo board saves precious space on a breadboard giving you more room for placing components. _ _
+_ _ ESP32-C3 Module and breadboard power supply combo board saves precious space on a breadboard giving you more room for placing components. _ _
 
 <img alt="BME-/BMP-280 I2C Read & Write" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/ESP32-C3-BreadBoardAdapter-001.jpg" width="100%"/>
 
