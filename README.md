@@ -246,7 +246,7 @@ Wiring table
 _ESP32-C3 Module and breadboard power supply combo board saves precious space on a breadboard giving you more room for placing components._
 
 > [!IMPORTANT]
-> Combo board can provide 3.3V when powered by USB-C port. In order for the combo board to supply 5V, connect external power supply to the coressponding power pins.
+> Combo board can supply 3.3V when powered by USB-C port. In order for the combo board to supply 5V, connect external power supply to the coressponding power pins.
 
 <img alt="BME-/BMP-280 I2C Read & Write" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/ESP32-C3-BreadBoardAdapter-001.jpg" width="100%"/>
 
