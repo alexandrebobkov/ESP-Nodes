@@ -242,6 +242,9 @@ Wiring table
 | `GPIO4` (fSPI HD) | `BUSY` (Purple) |
 
 # ESP32-C3 Module and Breadboard Power Supply Combo
+
+_ _italic_ _
+
 <img alt="BME-/BMP-280 I2C Read & Write" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/ESP32-C3-BreadBoardAdapter-001.jpg" width="100%"/>
 
 # Espressif ESP RainMaker and Matter Provisioning
