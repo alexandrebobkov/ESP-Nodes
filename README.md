@@ -241,6 +241,9 @@ Wiring table
 | `GPIO6` (fSPI CLK) | `CLK` (Yellow) |
 | `GPIO4` (fSPI HD) | `BUSY` (Purple) |
 
+# ESP32-C3 Module and Breadboard Power Supply Combo
+<img alt="BME-/BMP-280 I2C Read & Write" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/ESP32-C3-BreadBoardAdapter-001.jpg" width="100%"/>
+
 # Espressif ESP RainMaker and Matter Provisioning
 
 ESP RainMaker is a complete, yet light-weight, AIoT solution that enables private Cloud deployment for your business in a simple, cost-effective and efficient manner. ESP RainMaker is a light-weight AIoT Cloud software, fully integrated into the AWS serverless architecture, which allows customers to build, develop and deploy customized AIoT solutions with a minimum amount of code and maximum security. [^7]
