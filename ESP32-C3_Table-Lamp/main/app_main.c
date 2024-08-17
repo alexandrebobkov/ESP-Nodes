@@ -1,6 +1,7 @@
-/* Table Night Ambient Lights
+/*
+    Table Night Ambient Lights
 
-    Controlled by Rainmaker
+    Controlled by Rainmaker Cloud
 
     by: Alexander Bobkov
 

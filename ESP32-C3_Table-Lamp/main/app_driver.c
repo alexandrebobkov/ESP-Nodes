@@ -1,10 +1,6 @@
-/* Switch demo implementation using button and RGB LED
-   
-   This example code is in the Public Domain (or CC0 licensed, at your option.)
-
-   Unless required by applicable law or agreed to in writing, this
-   software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-   CONDITIONS OF ANY KIND, either express or implied.
+/* 
+    Table Night Ambient Lights
+    Hardware
 */
 
 #include <sdkconfig.h>
@@ -76,7 +72,11 @@ static void push_btn_cb(void *arg)
 
 static void set_power_state(bool target)
 {
-    gpio_set_level(OUTPUT_GPIO, target);
+    //gpio_set_level(OUTPUT_GPIO, target);
+    if (target)
+        gpio_set_level(OUTPUT_GPIO, 1);
+    else
+        gpio_set_level(OUTPUT_GPIO, 0);
     app_indicator_set(target);
 }
 
