@@ -1,0 +1,16 @@
+CMake Error at C:/Users/alex/esp/v5.3/esp-idf/tools/cmake/build.cmake:552 (message):
+  WARNING: Component "espressif/cbor" not found
+
+  ERROR: Because no versions of espressif/esp_insights match >1.0.1,<1.1.0
+
+   and espressif/esp_insights (1.0.1) depends on espressif/cbor (~0.6), espressif/esp_insights (>=1.0.1,<1.1.0) requires espressif/cbor (~0.6).
+
+  So, because no versions of espressif/cbor match ~0.6
+
+   and project depends on espressif/esp_insights (~1.0.1), version solving failed.
+
+Call Stack (most recent call first):
+  C:/Users/alex/esp/v5.3/esp-idf/tools/cmake/project.cmake:710 (idf_build_process)
+  CMakeLists.txt:16 (project)
+
+
