@@ -150,7 +150,7 @@ const *char WIFI_PASSWORD = "405405405";
 
 Bare-bones ESP32 module can be programmed via UART interface (`GPIO03` and `GPIO01`) using USB to UART adapter.
 
-### ESP-IDF Framework
+## ESP-IDF Framework
 
 _Configuration menu custom variables_
 
@@ -189,6 +189,17 @@ menu "Example Configuration"
             This is the description of IoT Node; appears on ESP RainMaker dashboard device detail.
 endmenu
 ```
+
+### Frequently Used Commands
+
+_To write firmware to the ESP's flash chip:_
+`esptool.py --port COM_ --chip esp32 write_flash 0x1000 firmware-name.bin`
+
+_To read firmware from the ESP's flash chip:_
+`esptool.py --port COM_ -b --chip esp32 460800 read_flash 0 ALL flash-contents.bin`
+
+_To erase ESP32 flash chip:_
+`esptool.py --port COM_ --chip esp32 erase_flash`
 
 In order for OTA to push new firmware, update version number saved in the `PROJECT_VER` filed in _CMakeList.txt_ file.
 
