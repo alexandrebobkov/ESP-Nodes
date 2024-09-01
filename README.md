@@ -195,6 +195,9 @@ endmenu
 _To write firmware to the ESP's flash chip:_
 `esptool.py --port COM_ --chip esp32 write_flash 0x1000 firmware-name.bin`
 
+_To verify firmware:_
+`esptool.py verify_flash --diff yes firmware-name.bin`
+
 _To read firmware from the ESP's flash chip:_
 `esptool.py --port COM_ -b --chip esp32 460800 read_flash 0 ALL flash-contents.bin`
 
@@ -206,6 +209,15 @@ _To read built-in MAC address:_
 
 _To convert ELF to binary:_
 `esptool.py --chip esp32 elf2image firmware.elf`
+
+_To output .bin image details:_
+`esptool.py image_info --version 2 firmware-name.bin`
+
+_To read RAM:_
+`esptool.py read_mem 0x400C0000`
+
+_To read flash chip registers:_
+`esptool.py read_flash_status --bytes 2`
 
 In order for OTA to push new firmware, update version number saved in the `PROJECT_VER` filed in _CMakeList.txt_ file.
 
