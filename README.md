@@ -193,7 +193,7 @@ endmenu
 ### Frequently Used Commands
 
 _To write firmware to the ESP's flash chip:_
-`esptool.py --port COM_ --chip esp32 write_flash 0x1000 firmware-name.bin`
+```esptool.py --port COM_ --chip esp32 write_flash 0x1000 firmware-name.bin```
 
 _To verify firmware:_
 `esptool.py verify_flash --diff yes firmware-name.bin`
