@@ -150,6 +150,9 @@ const *char WIFI_PASSWORD = "405405405";
 
 Bare-bones ESP32 module can be programmed via UART interface (`GPIO03` and `GPIO01`) using USB to UART adapter.
 
+### ESP-IDF Framework
+
+
 ## Temperature Node. The Key Elements and Components
 
 The **Temperature Node** broadcasts the air temperature, atmospheric pressure and air humidity over secured MQTT.
