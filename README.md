@@ -252,6 +252,8 @@ _ESP32-C3 Module and breadboard power supply combo board saves precious space on
 
 # ESP32-C3 Temperature Sensor Relay Board
 
+<img alt="BME-/BMP-280 I2C Read & Write" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/ESP32-C3-WROOM-Node-Temperature.png" width="100%"/>
+
 _ESP32-C3 SuperMini + Temperature I<sup>2</sup>C Sensor + Power Relay_
 
 # Espressif ESP RainMaker and Matter Provisioning
