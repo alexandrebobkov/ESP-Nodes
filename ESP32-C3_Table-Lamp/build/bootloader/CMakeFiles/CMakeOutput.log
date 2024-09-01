@@ -428,3 +428,39 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-C3_Table-Lamp/build/bootloader/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_0b65c && [1/2] Building C object CMakeFiles/cmTC_0b65c.dir/CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_0b65c
+C:/Users/alex/.espressif/tools/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/13.2.0/../../../../riscv32-esp-elf/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 00010074
+
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-C3_Table-Lamp/build/bootloader/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_aea41 && [1/2] Building C object CMakeFiles/cmTC_aea41.dir/CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_aea41
+C:/Users/alex/.espressif/tools/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/13.2.0/../../../../riscv32-esp-elf/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 00010074
+
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-C3_Table-Lamp/build/bootloader/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_2c543 && [1/2] Building C object CMakeFiles/cmTC_2c543.dir/CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_2c543
+C:/Users/alex/.espressif/tools/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/13.2.0/../../../../riscv32-esp-elf/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 00010074
+
+
+
+Determining size of time_t passed with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-C3_Table-Lamp/build/bootloader/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_e3732 && [1/2] Building C object CMakeFiles/cmTC_e3732.dir/TIME_T_SIZE.c.obj
+[2/2] Linking C executable cmTC_e3732
+C:/Users/alex/.espressif/tools/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/13.2.0/../../../../riscv32-esp-elf/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 00010094
+
+
+
