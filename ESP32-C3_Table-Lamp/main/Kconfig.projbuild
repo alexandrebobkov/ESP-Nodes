@@ -23,10 +23,15 @@ menu "Example Configuration"
             This is an output GPIO that will be connected to a relay or other driver circuit in most cases.
             If the power changes, this GPIO output level will also change.
 
-    config EXAMPLE_DEVICE_DESCRIPTION
-        int "IoT Node description"
+    config EXAMPLE_DEVICE_TYPE
+        string "IoT Node type"
         default "Lamp"
         help
-            This is the description of IoT Node; appears on ESP RainMaker dashboard device detail.
+            This is the type of IoT Node; appears on ESP RainMaker dashboard device detail. Choices: Lamp, Plug
 
+    config EXAMPLE_DEVICE_NAME
+        string "IoT Node name"
+        default "ESP RainMaker Table Lamp"
+        help
+            This is the description of IoT Node; appears on ESP RainMaker dashboard device detail.
 endmenu

@@ -9,8 +9,9 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#define DEFAULT_POWER  true
-#define DEVICE_DESCRIPTION    CONFIG_DEVICE_DESCRIPTION
+#define DEFAULT_POWER   true
+#define DEVICE_NAME     CONFIG_EXAMPLE_DEVICE_NAME
+#define DEVICE_TYPE     CONFIG_EXAMPLE_DEVICE_TYPE
 
 extern esp_rmaker_device_t *switch_device;
 void app_driver_init(void);
