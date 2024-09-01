@@ -152,6 +152,8 @@ Bare-bones ESP32 module can be programmed via UART interface (`GPIO03` and `GPIO
 
 ### ESP-IDF Framework
 
+_Configuration menu custom variables
+
 
 ## Temperature Node. The Key Elements and Components
 
