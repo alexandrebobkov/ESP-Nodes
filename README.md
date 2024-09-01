@@ -154,7 +154,7 @@ Bare-bones ESP32 module can be programmed via UART interface (`GPIO03` and `GPIO
 
 _Configuration menu custom variables_
 
-_Kconfig.projbuild_ file contains custom menu configuration for setting user-defined variables such as button GPIO, device description, etc._
+_Kconfig.projbuild_ file contains custom menu configuration for setting user-defined variables such as button GPIO, device description, etc.
 
 ``` text
 menu "Example Configuration"
@@ -182,6 +182,11 @@ menu "Example Configuration"
             This is an output GPIO that will be connected to a relay or other driver circuit in most cases.
             If the power changes, this GPIO output level will also change.
 
+    config EXAMPLE_DEVICE_DESCRIPTION
+        int "IoT Node description"
+        default "Lamp"
+        help
+            This is the description of IoT Node; appears on ESP RainMaker dashboard device detail.
 endmenu
 ```
 
