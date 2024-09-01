@@ -10,7 +10,8 @@
 #include <stdbool.h>
 
 #define DEFAULT_POWER  true
-#define DEVICE_DESCRIPTION "Lamp"
+#define DEVICE_DESCRIPTION    CONFIG_DEVICE_DESCRIPTION
+
 extern esp_rmaker_device_t *switch_device;
 void app_driver_init(void);
 int app_driver_set_state(bool state);
