@@ -250,6 +250,10 @@ _ESP32-C3 Module and breadboard power supply combo board saves precious space on
 
 <img alt="BME-/BMP-280 I2C Read & Write" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/ESP32-C3-BreadBoardAdapter-001.jpg" width="100%"/>
 
+# ESP32-C3 Temperature Sensor Relay Board
+
+_ESP32-C3 SuperMini + Temperature I<sup>2</sup>C Sensor + Power Relay_
+
 # Espressif ESP RainMaker and Matter Provisioning
 
 ESP RainMaker is a complete, yet light-weight, AIoT solution that enables private Cloud deployment for your business in a simple, cost-effective and efficient manner. ESP RainMaker is a light-weight AIoT Cloud software, fully integrated into the AWS serverless architecture, which allows customers to build, develop and deploy customized AIoT solutions with a minimum amount of code and maximum security. [^7]
