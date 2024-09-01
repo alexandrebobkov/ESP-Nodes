@@ -201,6 +201,12 @@ _To read firmware from the ESP's flash chip:_
 _To erase ESP32 flash chip:_
 `esptool.py --port COM_ --chip esp32 erase_flash`
 
+_To read built-in MAC address:_
+`esptool.py --port COM_ --chip esp32 read_mac`
+
+_To convert ELF to binary:_
+`esptool.py --chip esp32 elf2image firmware.elf`
+
 In order for OTA to push new firmware, update version number saved in the `PROJECT_VER` filed in _CMakeList.txt_ file.
 
 ```text
