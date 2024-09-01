@@ -428,3 +428,85 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-C3_Table-Lamp/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_9145d && [1/2] Building C object CMakeFiles/cmTC_9145d.dir/CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_9145d
+C:/Users/alex/.espressif/tools/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/13.2.0/../../../../riscv32-esp-elf/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 00010074
+
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-C3_Table-Lamp/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_46c63 && [1/2] Building C object CMakeFiles/cmTC_46c63.dir/CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_46c63
+C:/Users/alex/.espressif/tools/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/13.2.0/../../../../riscv32-esp-elf/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 00010074
+
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-C3_Table-Lamp/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_a0120 && [1/2] Building C object CMakeFiles/cmTC_a0120.dir/CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_a0120
+C:/Users/alex/.espressif/tools/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/13.2.0/../../../../riscv32-esp-elf/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 00010074
+
+
+
+Determining size of time_t passed with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-C3_Table-Lamp/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_af156 && [1/2] Building C object CMakeFiles/cmTC_af156.dir/TIME_T_SIZE.c.obj
+[2/2] Linking C executable cmTC_af156
+C:/Users/alex/.espressif/tools/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/13.2.0/../../../../riscv32-esp-elf/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 00010094
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-C3_Table-Lamp/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_fa8a7 && [1/2] Building C object CMakeFiles/cmTC_fa8a7.dir/src.c.obj
+[2/2] Linking C executable cmTC_fa8a7
+C:/Users/alex/.espressif/tools/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/13.2.0/../../../../riscv32-esp-elf/bin/ld.exe: CMakeFiles/cmTC_fa8a7.dir/src.c.obj: in function `main':
+src.c:(.text+0x6a): warning: pthread_atfork is not implemented and will always fail
+C:/Users/alex/.espressif/tools/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/13.2.0/../../../../riscv32-esp-elf/bin/ld.exe: src.c:(.text+0x4c): warning: pthread_cancel is not implemented and will always fail
+C:/Users/alex/.espressif/tools/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/13.2.0/../../../../riscv32-esp-elf/bin/ld.exe: src.c:(.text+0x30): warning: pthread_create is not implemented and will always fail
+C:/Users/alex/.espressif/tools/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/13.2.0/../../../../riscv32-esp-elf/bin/ld.exe: src.c:(.text+0x3e): warning: pthread_detach is not implemented and will always fail
+C:/Users/alex/.espressif/tools/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/13.2.0/../../../../riscv32-esp-elf/bin/ld.exe: src.c:(.text+0x74): warning: pthread_exit is not implemented and will always fail
+C:/Users/alex/.espressif/tools/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/13.2.0/../../../../riscv32-esp-elf/bin/ld.exe: src.c:(.text+0x5c): warning: pthread_join is not implemented and will always fail
+C:/Users/alex/.espressif/tools/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/13.2.0/../../../../riscv32-esp-elf/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 00010074
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Performing C SOURCE FILE Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS succeeded with the following output:
+Change Dir: C:/Users/alex/github/ESP-Nodes/ESP32-C3_Table-Lamp/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/alex/.espressif/tools/tools/ninja/1.11.1/ninja.exe cmTC_cba9d && [1/2] Building C object CMakeFiles/cmTC_cba9d.dir/src.c.obj
+[2/2] Linking C executable cmTC_cba9d
+C:/Users/alex/.espressif/tools/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/13.2.0/../../../../riscv32-esp-elf/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 00010074
+
+
+Source file was:
+int main(void) { return 0; }
