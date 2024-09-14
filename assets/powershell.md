@@ -92,20 +92,23 @@ Get-Process -Id 10500 | Stop-Process
 
 ## Get-WmiObject
 
-Get-WmiObject has a parameter called -Class this allows you to specify the
-WMI object you wish to access. The command below will get a list of WMI
-classes,
-Get-WmiObject -List -Class Win32*
-Once you know the name of the WMI class, you can execute Get-WmiObject
-to return useful information from a local or remote computer. Below is a list
+__Get-WmiObject__ has a parameter called -Class this allows you to specify the WMI object you wish to access. The command below will get a list of WMI
+classes, Get-WmiObject -List -Class Win32*
+
+
+Once you know the name of the WMI class, you can execute __Get-WmiObject__ to return useful information from a local or remote computer. Below is a list
 of the most important WMI classes you may need:
-Win32_PhysicalMemory - information about available memory
-Win32_Processor - Processor information
-Win32_LogicalDisk - Logical disk drive information
-Win32_DiskDrive - Physical disk information
-Win32_OperatingSystem - Information about the operating system
+- Win32_PhysicalMemory - information about available memory
+- Win32_Processor - Processor information
+- Win32_LogicalDisk - Logical disk drive information
+- Win32_DiskDrive - Physical disk information
+- Win32_OperatingSystem - Information about the operating system
+
 To get information about the operating system, run the command below:
+
+```
 Get-WmiObject -Class Win32_OperatingSystem
+```
 
 
 
