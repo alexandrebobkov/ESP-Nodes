@@ -123,22 +123,22 @@ Get-WmiObject -Class Win32_OperatingSystem
 ## Get-CimInstance
 
 ```
-Get-CimInstance -ClassName CIM_Processor | Where-Object {$_.'DeviceID' -eq 'CPU0'} | ft -hide
+Get-CimInstance -ClassName CIM_Processor | Where-Object {$_.'DeviceID' -eq 'CPU0'} | ft -HideTableHeaders
 ```
 
 ### To extract CPU information only
 ```
-Get-CimInstance -ClassName CIM_Processor | Select Caption | ft -hide
+Get-CimInstance -ClassName CIM_Processor | Select Caption | ft -HideTableHeaders
 ```
 
 ### To extract CPU name only
 ```
-Get-CimInstance -ClassName CIM_Processor | Select Name | ft -hide
+Get-CimInstance -ClassName CIM_Processor | Select Name | ft -HideTableHeaders
 ```
 
 ### To extract CPU manufacturer only
 ```
-Get-CimInstance -ClassName CIM_Processor | Select Manufacturer | ft -hide
+Get-CimInstance -ClassName CIM_Processor | Select Manufacturer | ft -HideTableHeaders
 ```
 
 ### Cim-Class List
