@@ -1,6 +1,6 @@
-# Get-Help
+## Get-Help
 
-# Get-Children
+## Get-Children
 
 Gets items in a specified location. To list the folders in my drive C, I will run
 the command below:
@@ -9,7 +9,7 @@ the command below:
 
 This will list all the top-level folders. To list all files, folders include sub-folders use the `-Recurse` parameter.
 
-# Copy-Item and Move-Item
+## Copy-Item and Move-Item
 
 You could use the __Get-ChildItem__ Cmdlet to list items in a folder, then pipe
 the result to __Copy-Item__ Cmdlet to copy the items to a new location. The
@@ -27,9 +27,9 @@ command as shown below:
 While the __Copy-Item__ Cmdlet copies items from one location to another the
 __Move-Item__ Cmdlet moves the item.
 
-# RemoveItem
+## RemoveItem
 
-# NewItem
+## NewItem
 
 __New-Item__ can be used to create files, folders and registry keys and entries. The command below creates a text
 file called weekly_file.txt in c:\logfiles folder:
