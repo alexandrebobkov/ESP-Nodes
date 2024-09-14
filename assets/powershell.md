@@ -1,3 +1,5 @@
+# Working with Files and Folders
+
 ## Get-Help
 
 ## Get-Children
@@ -66,6 +68,46 @@ Get-Command -Verb Export
 Get-Command -Verb Export | Select-Object CommandType, Name, Version, Source | Export-Csv -
 NoTypeInformation -Path C:\NewFolder\ExportCommands.CSV
 ```
+
+# Managing Processes
+
+## Get-Process
+
+This PowerShell Cmdlet lists all the processes running on a local computer. If
+you use the ComputerName parameter, you can display the processes on a
+remote computer.
+
+### Start-Process and Stop-Process
+
+The __Start-Process__ Cmdlet can start a stopped process while the __Stop-Process__ Cmdlet
+can stop a running process.
+To start a process, pipe the output of __Get-Process__ command to the __Start-Process__ command.
+As an example, to stop a process with ID 10500, use the command below.
+
+```
+Get-Process -Id 10500 | Stop-Process
+```
+
+# Getting Computer Information
+
+## Get-WmiObject
+
+Get-WmiObject has a parameter called -Class this allows you to specify the
+WMI object you wish to access. The command below will get a list of WMI
+classes,
+Get-WmiObject -List -Class Win32*
+Once you know the name of the WMI class, you can execute Get-WmiObject
+to return useful information from a local or remote computer. Below is a list
+of the most important WMI classes you may need:
+Win32_PhysicalMemory - information about available memory
+Win32_Processor - Processor information
+Win32_LogicalDisk - Logical disk drive information
+Win32_DiskDrive - Physical disk information
+Win32_OperatingSystem - Information about the operating system
+To get information about the operating system, run the command below:
+Get-WmiObject -Class Win32_OperatingSystem
+
+
 
 
 
