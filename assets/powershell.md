@@ -118,6 +118,14 @@ __SYSTEMINFO__ displays operating system configuration information for a local o
 SYSTEMINFO /FO LIST
 ```
 
+## DRIVEQUERY
+
+__ DRIVERQUERY__ displayS a list of installed device drivers on a local or remote computer.
+
+```
+DRIVEQUERY /FO TABLE
+```
+
 
 
 
