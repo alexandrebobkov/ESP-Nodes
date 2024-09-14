@@ -48,7 +48,9 @@ weekly_file.txt to monthly_file.txt
 __Export-Csv__ converts a set of string into CSV and saves in a file. This Cmdlet
 is very important in reporting.
 
-```Get-Command -Verb Export```
+```
+Get-Command -Verb Export
+```
 
 `Get-Command -Verb Export | Select-Object CommandType, Name, Version, Source | Export-Csv -
 NoTypeInformation -Path C:\NewFolder\ExportCommands.CSV`
