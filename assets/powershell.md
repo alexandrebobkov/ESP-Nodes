@@ -110,6 +110,14 @@ To get information about the operating system, run the command below:
 Get-WmiObject -Class Win32_OperatingSystem
 ```
 
+## SYSTEMINFO
+
+__SYSTEMINFO__ displays operating system configuration information for a local or remote computer.
+
+```
+SYSTEMINFO /FO LIST
+```
+
 
 
 
