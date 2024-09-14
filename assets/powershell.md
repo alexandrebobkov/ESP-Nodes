@@ -90,11 +90,21 @@ Get-Process -Id 10500 | Stop-Process
 
 # Getting Computer Information
 
+## Get-ComputerInfo
+
 ## Get-WmiObject
 
 __Get-WmiObject__ has a parameter called -Class this allows you to specify the WMI object you wish to access. The command below will get a list of WMI
 classes, Get-WmiObject -List -Class Win32*
 
+### Class List
+
+- Win32_SystemBIOS
+- Win32_Processor
+- Win32_OperatingSystem
+- Win32_Fan
+- Win32_BIOS
+- Win32_Account
 
 Once you know the name of the WMI class, you can execute __Get-WmiObject__ to return useful information from a local or remote computer. Below is a list
 of the most important WMI classes you may need:
@@ -108,6 +118,12 @@ To get information about the operating system, run the command below:
 
 ```
 Get-WmiObject -Class Win32_OperatingSystem
+```
+
+## Get-CimInstance
+
+```
+Get-CimInstance -ClassName CIM_Processor | Where-Object {$_.'DeviceID' -eq 'CPU0'} | ft -hide
 ```
 
 ## SYSTEMINFO
