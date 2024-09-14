@@ -35,6 +35,26 @@ __New-Item__ can be used to create files, folders and registry keys and entries.
 file called weekly_file.txt in c:\logfiles folder:
 `New-Item -Path c:\logfiles -Name weekly_file.tx`
 
+## RenameItem
+
+__Rename-Item__ Cmdlet is used to rename things in Windows. This Cmdlet can
+rename files, folders and registry keys. This command will rename
+weekly_file.txt to monthly_file.txt
+
+`Rename-Item -Path C:\logfiles\weekly_file.txt -NewName monthly_file.txt`
+
+## Export-Csv
+
+__Export-Csv__ converts a set of string into CSV and saves in a file. This Cmdlet
+is very important in reporting.
+
+`Get-Command -Verb Export`
+`Get-Command -Verb Export | Select-Object CommandType, Name, Version, Source | Export-Csv -
+NoTypeInformation -Path C:\NewFolder\ExportCommands.CSV`
+
+
+
+
 
 
 
