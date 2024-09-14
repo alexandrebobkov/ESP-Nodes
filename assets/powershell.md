@@ -126,6 +126,15 @@ Get-WmiObject -Class Win32_OperatingSystem
 Get-CimInstance -ClassName CIM_Processor | Where-Object {$_.'DeviceID' -eq 'CPU0'} | ft -hide
 ```
 
+### Cim-Class List
+
+To get full list of CimClass, run `Get-CimClass`
+
+- Win32_SystemBIOS
+- Win32_DiskPartition
+- Win32_Processor
+- CIM_Processor (DeviceID, Name, Caption, MaxClockSpeed, Manufacturer)
+
 ## SYSTEMINFO
 
 __SYSTEMINFO__ displays operating system configuration information for a local or remote computer.
