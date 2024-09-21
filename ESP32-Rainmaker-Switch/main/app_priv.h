@@ -10,7 +10,7 @@
 #include <stdbool.h>
 
 #define DEFAULT_POWER  true
-#define REPORTING_PERIOD 60
+#define REPORTING_PERIOD 300 //60
 
 extern esp_rmaker_device_t *switch_device;
 // Define RainMaker device: switch
