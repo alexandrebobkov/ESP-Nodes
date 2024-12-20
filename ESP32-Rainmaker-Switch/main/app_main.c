@@ -1,4 +1,4 @@
-/* ESP32-Node LED Switch
+/* ESP32-(C3) Node LED Switch & Server Temperature Node
 
    Modified and Adopted by: Alexander Bobkov
 
@@ -9,6 +9,9 @@
    Unless required by applicable law or agreed to in writing, this
    software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
    CONDITIONS OF ANY KIND, either express or implied.
+
+   Update: code modyfied for ESP32-C3 devboard; reading values from I2C BME280 sensor and passing them to Rainmaker gauge is work-in-progress
+   
 */
 
 #include <string.h>
