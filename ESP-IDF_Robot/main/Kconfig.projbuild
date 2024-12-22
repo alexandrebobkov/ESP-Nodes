@@ -68,4 +68,18 @@ menu "EET ROBOT Configuration"
         help
             GPIO number (IOxx) of front-right motor.
 
+    choice MOTOR_CONTROL
+        prompt "ON-OFF"
+        default MOTOR_CTRL_PWR
+        help
+            Select the motor control method. ON-OFF or PWM.
+
+        config MOTOR_CTRL_PWR
+            bool "GPIO"
+        config MOTOR_CTRL_PWM
+            bool "LED strip"
+
+        
+    endchoice
+
 endmenu
