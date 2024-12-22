@@ -121,9 +121,12 @@ void app_main(void)
 
     // Initialize the config structure.
     gpio_config_t io_conf = {};
-    
+
     /* Configure the peripheral according to the LED type */
     configure_led();
+
+    io_conf.intr_type = GPIO_INTR_DISABLE;
+    io_conf.mode = GPIO_MODE_OUTPUT;
     configure_button();
 
     while (1) {
