@@ -136,7 +136,7 @@ static void ledc_init (void) {
         .speed_mode =       LEDC_MODE,//MODE,
         .duty_resolution =  LEDC_TIMER_10_BIT,//,
         .timer_num =        LEDC_TIMER,
-        .freq_hz =          1000,//LEDC_FREQUENCY,
+        .freq_hz =          LEDC_FREQUENCY,
         .clk_cfg =          LEDC_AUTO_CLK
     };
     ESP_ERROR_CHECK(ledc_timer_config(&ledc_timer));
@@ -147,7 +147,7 @@ static void ledc_init (void) {
         .timer_sel =        LEDC_TIMER,
         .intr_type =        LEDC_INTR_DISABLE,
         .gpio_num =         LEDC_OUTPUT_IO,
-        .duty =             10,
+        .duty =             0,
         .hpoint =           0
     };
     ESP_ERROR_CHECK(ledc_channel_config(&ledc_channel));
