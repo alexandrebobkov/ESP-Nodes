@@ -141,6 +141,7 @@ void app_main(void)
     // Set pin interrupt
     gpio_set_intr_type(PUSH_BTN_GPIO, GPIO_INTR_ANYEDGE);
     gpio_evt_queue = xQueueCreate(10, sizeof(unit32_t));
+    xTaskCreate(gpio_task, "GPIO task", 2048, NULL, 10, NULL);
 
     configure_button();
 
