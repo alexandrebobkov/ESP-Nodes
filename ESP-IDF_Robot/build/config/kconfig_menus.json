@@ -5365,6 +5365,36 @@
                 "range": null,
                 "title": "GPIO of front-right motor.",
                 "type": "int"
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "depends_on": "<choice MOTOR_CONTROL>",
+                        "help": null,
+                        "id": "MOTOR_CTRL_PWR",
+                        "name": "MOTOR_CTRL_PWR",
+                        "range": null,
+                        "title": "PWR",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "<choice MOTOR_CONTROL>",
+                        "help": null,
+                        "id": "MOTOR_CTRL_PWM",
+                        "name": "MOTOR_CTRL_PWM",
+                        "range": null,
+                        "title": "PWM",
+                        "type": "bool"
+                    }
+                ],
+                "depends_on": null,
+                "help": "Select the motor control method. ON-OFF or PWM.",
+                "id": "eet-robot-configuration-on-off",
+                "name": "MOTOR_CONTROL",
+                "title": "ON-OFF",
+                "type": "choice"
             }
         ],
         "depends_on": null,
