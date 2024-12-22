@@ -19,6 +19,7 @@ static const char *TAG = "ESP IDF Robot";
 
 #define PUSH_BTN_GPIO   3   // GPIO of on-board push-button
 #define GPIO_OUTPUT_PIN_SEL ((1ULL<<PUSH_BTN_GPIO))
+#define ESP_INTR_FLAG_DEFAULT 0
 
 /* Use project configuration menu (idf.py menuconfig) to choose the GPIO to blink,
    or you can edit the following line and set a number here.
