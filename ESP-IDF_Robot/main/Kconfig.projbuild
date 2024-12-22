@@ -75,11 +75,9 @@ menu "EET ROBOT Configuration"
             Select the motor control method. ON-OFF or PWM.
 
         config MOTOR_CTRL_PWR
-            bool "GPIO"
+            bool "PWR"
         config MOTOR_CTRL_PWM
-            bool "LED strip"
-
-        
+            bool "PWM"        
     endchoice
 
 endmenu
