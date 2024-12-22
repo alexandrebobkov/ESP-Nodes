@@ -178,6 +178,11 @@ static void ledc_init (void) {
     //ESP_ERROR_CHECK(ledc_update_duty(LEDC_MODE, LEDC_CHANNEL));
 }
 
+static void dac_init (void) {
+    dac_output_enable(DAC_CHANNEL_1);
+    dac_output_voltage(DAC_CHANNEL_1, 124);
+}
+
 void app_main(void)
 {
     // Initialize LED
