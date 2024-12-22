@@ -69,7 +69,7 @@ menu "EET ROBOT Configuration"
             GPIO number (IOxx) of front-right motor.
 
     choice MOTOR_CONTROL
-        prompt "ON-OFF"
+        prompt "Motor rotation control method."
         default MOTOR_CTRL_PWR
         help
             Select the motor control method. ON-OFF or PWM.
