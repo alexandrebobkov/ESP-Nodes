@@ -89,6 +89,8 @@ static void configure_led(void)
 
 static void configure_button (void) {
     ESP_LOGI(TAG, "Configured on-board push button");
+    gpio_reset_pin(PUSH_BTN_GPIO);
+    gpio_set_direction(PUSH_BTN_GPIO, GPIO_MODE_INPUT);
 }
 
 #else
