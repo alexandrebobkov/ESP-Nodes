@@ -38,7 +38,7 @@ static const char *TAG = "ESP IDF Robot";
 // Retrieve values from configuration menu
 #define BLINK_GPIO      CONFIG_BLINK_GPIO       // 10 GPIO of on-board LED
 #define PUSH_BTN_GPIO   CONFIG_BUTTON_GPIO      // 3 GPIO of on-board push-button
-#define MTR_FL_GPIO     CONFIG_MOTOR_FRONT_LEFT_GPIO
+#define MTR_FL_GPIO     0 //CONFIG_MOTOR_FRONT_LEFT_GPIO
 
 #define ESP_INTR_FLAG_DEFAULT 0
 
