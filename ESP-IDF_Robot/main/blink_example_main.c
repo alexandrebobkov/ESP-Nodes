@@ -29,7 +29,7 @@ static const char *TAG = "ESP IDF Robot";
 #define LEDC_CHANNEL            LEDC_CHANNEL_0
 #define LEDC_DUTY_RES           LEDC_TIMER_13_BIT // Set duty resolution to 13 bits
 #define LEDC_DUTY               (1024) // Set duty to 50%. (2 ** 13) * 50% = 4096 1024
-#define LEDC_FREQUENCY          (500) // For LED the freuqncy of 500Hz seemed to be sufficient. // Frequency in Hertz. For DC motor, set frequency at 5 kHz
+#define LEDC_FREQUENCY          (4000) // For LED the freuqncy of 500Hz seemed to be sufficient. // Frequency in Hertz. For DC motor, set frequency at 5 kHz
 
 /* Use project configuration menu (idf.py menuconfig) to choose the GPIO to blink,
    or you can edit the following line and set a number here.
