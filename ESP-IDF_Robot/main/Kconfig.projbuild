@@ -56,4 +56,16 @@ menu "EET ROBOT Configuration"
         help
             GPIO number (IOxx) of on-board push button.
 
+    config MOTOR_FRONT_LEFT_GPIO
+        int "GPIO of front-left motor."
+        default 0
+        help
+            GPIO number (IOxx) of front-left motor.
+            
+    config MOTOR_FRONT_LEFT_GPIO
+        int "GPIO of front-right motor."
+        default 0
+        help
+            GPIO number (IOxx) of front-right motor.
+
 endmenu
