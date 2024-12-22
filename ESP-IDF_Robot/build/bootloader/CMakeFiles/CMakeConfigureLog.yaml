@@ -529,3 +529,116 @@ events:
         implicit fwks: []
       
       
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.30/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "/usr/share/cmake-3.30/Modules/CheckTypeSize.cmake:251 (check_include_file)"
+      - "/home/abobkov/esp/esp-idf/CMakeLists.txt:276 (check_type_size)"
+    checks:
+      - "Looking for sys/types.h"
+    directories:
+      source: "/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_Robot/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-fAsPL2"
+      binary: "/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_Robot/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-fAsPL2"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-march=rv32imc_zicsr_zifencei "
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-nostartfiles -march=rv32imc_zicsr_zifencei --specs=nosys.specs "
+      CMAKE_MODULE_PATH: "/home/abobkov/esp/esp-idf/tools/cmake;/home/abobkov/esp/esp-idf/tools/cmake/third_party"
+    buildResult:
+      variable: "HAVE_SYS_TYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_Robot/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-fAsPL2'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_dee84
+        [1/2] /home/abobkov/.espressif/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/riscv32-esp-elf-gcc   -march=rv32imc_zicsr_zifencei -o CMakeFiles/cmTC_dee84.dir/CheckIncludeFile.c.obj -c /home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_Robot/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-fAsPL2/CheckIncludeFile.c
+        [2/2] : && /home/abobkov/.espressif/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/riscv32-esp-elf-gcc -march=rv32imc_zicsr_zifencei -nostartfiles -march=rv32imc_zicsr_zifencei --specs=nosys.specs CMakeFiles/cmTC_dee84.dir/CheckIncludeFile.c.obj -o cmTC_dee84   && :
+        /home/abobkov/.espressif/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/13.2.0/../../../../riscv32-esp-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 00010074
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.30/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "/usr/share/cmake-3.30/Modules/CheckTypeSize.cmake:252 (check_include_file)"
+      - "/home/abobkov/esp/esp-idf/CMakeLists.txt:276 (check_type_size)"
+    checks:
+      - "Looking for stdint.h"
+    directories:
+      source: "/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_Robot/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-D32DVK"
+      binary: "/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_Robot/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-D32DVK"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-march=rv32imc_zicsr_zifencei "
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-nostartfiles -march=rv32imc_zicsr_zifencei --specs=nosys.specs "
+      CMAKE_MODULE_PATH: "/home/abobkov/esp/esp-idf/tools/cmake;/home/abobkov/esp/esp-idf/tools/cmake/third_party"
+    buildResult:
+      variable: "HAVE_STDINT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_Robot/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-D32DVK'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_06592
+        [1/2] /home/abobkov/.espressif/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/riscv32-esp-elf-gcc   -march=rv32imc_zicsr_zifencei -o CMakeFiles/cmTC_06592.dir/CheckIncludeFile.c.obj -c /home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_Robot/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-D32DVK/CheckIncludeFile.c
+        [2/2] : && /home/abobkov/.espressif/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/riscv32-esp-elf-gcc -march=rv32imc_zicsr_zifencei -nostartfiles -march=rv32imc_zicsr_zifencei --specs=nosys.specs CMakeFiles/cmTC_06592.dir/CheckIncludeFile.c.obj -o cmTC_06592   && :
+        /home/abobkov/.espressif/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/13.2.0/../../../../riscv32-esp-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 00010074
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.30/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "/usr/share/cmake-3.30/Modules/CheckTypeSize.cmake:253 (check_include_file)"
+      - "/home/abobkov/esp/esp-idf/CMakeLists.txt:276 (check_type_size)"
+    checks:
+      - "Looking for stddef.h"
+    directories:
+      source: "/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_Robot/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-YDOs36"
+      binary: "/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_Robot/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-YDOs36"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-march=rv32imc_zicsr_zifencei "
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-nostartfiles -march=rv32imc_zicsr_zifencei --specs=nosys.specs "
+      CMAKE_MODULE_PATH: "/home/abobkov/esp/esp-idf/tools/cmake;/home/abobkov/esp/esp-idf/tools/cmake/third_party"
+    buildResult:
+      variable: "HAVE_STDDEF_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_Robot/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-YDOs36'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_61250
+        [1/2] /home/abobkov/.espressif/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/riscv32-esp-elf-gcc   -march=rv32imc_zicsr_zifencei -o CMakeFiles/cmTC_61250.dir/CheckIncludeFile.c.obj -c /home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_Robot/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-YDOs36/CheckIncludeFile.c
+        [2/2] : && /home/abobkov/.espressif/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/riscv32-esp-elf-gcc -march=rv32imc_zicsr_zifencei -nostartfiles -march=rv32imc_zicsr_zifencei --specs=nosys.specs CMakeFiles/cmTC_61250.dir/CheckIncludeFile.c.obj -o cmTC_61250   && :
+        /home/abobkov/.espressif/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/13.2.0/../../../../riscv32-esp-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 00010074
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.30/Modules/CheckTypeSize.cmake:147 (try_compile)"
+      - "/usr/share/cmake-3.30/Modules/CheckTypeSize.cmake:272 (__check_type_size_impl)"
+      - "/home/abobkov/esp/esp-idf/CMakeLists.txt:276 (check_type_size)"
+    checks:
+      - "Check size of time_t"
+    directories:
+      source: "/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_Robot/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-u1kqZv"
+      binary: "/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_Robot/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-u1kqZv"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-march=rv32imc_zicsr_zifencei "
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-nostartfiles -march=rv32imc_zicsr_zifencei --specs=nosys.specs "
+      CMAKE_MODULE_PATH: "/home/abobkov/esp/esp-idf/tools/cmake;/home/abobkov/esp/esp-idf/tools/cmake/third_party"
+    buildResult:
+      variable: "HAVE_TIME_T_SIZE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_Robot/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-u1kqZv'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_81123
+        [1/2] /home/abobkov/.espressif/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/riscv32-esp-elf-gcc   -march=rv32imc_zicsr_zifencei -o CMakeFiles/cmTC_81123.dir/TIME_T_SIZE.c.obj -c /home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_Robot/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-u1kqZv/TIME_T_SIZE.c
+        [2/2] : && /home/abobkov/.espressif/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/riscv32-esp-elf-gcc -march=rv32imc_zicsr_zifencei -nostartfiles -march=rv32imc_zicsr_zifencei --specs=nosys.specs CMakeFiles/cmTC_81123.dir/TIME_T_SIZE.c.obj -o cmTC_81123   && :
+        /home/abobkov/.espressif/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/13.2.0/../../../../riscv32-esp-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 00010094
+        
+      exitCode: 0
+...
