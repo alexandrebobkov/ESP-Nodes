@@ -27,7 +27,7 @@ static const char *TAG = "ESP IDF Robot";
 #define LEDC_MODE               LEDC_LOW_SPEED_MODE // LEDC_LOW_SPEED_MODE
 #define LEDC_OUTPUT_IO          (5) // Define the output GPIO
 #define LEDC_CHANNEL            LEDC_CHANNEL_0
-#define LEDC_DUTY_RES           LEDC_TIMER_10_BIT // 2**10
+#define LEDC_DUTY_RES           LEDC_TIMER_10_BIT //
 /*
 TIMER RESOLUTION    MAX VALUE   HALF-DUTY
 10                  1024            512
