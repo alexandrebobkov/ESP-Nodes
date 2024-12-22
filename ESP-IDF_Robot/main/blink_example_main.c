@@ -179,9 +179,9 @@ static void ledc_init (void) {
 }
 
 static void dac_init (void) {
-    // GPIO 2
-    dac_output_enable(DAC_CHANNEL_2);
-    dac_output_voltage(DAC_CHANNEL_2, 64);
+    // GPIO ??
+    dac_output_enable(DAC_CHANNEL_1);
+    dac_output_voltage(DAC_CHANNEL_1, 64);
 }
 
 void app_main(void)
