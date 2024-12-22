@@ -38,7 +38,7 @@ menu "Example Configuration"
         default 5 if IDF_TARGET_ESP32
         default 18 if IDF_TARGET_ESP32S2
         default 48 if IDF_TARGET_ESP32S3
-        default 8
+        default 10
         help
             GPIO number (IOxx) to blink on and off the LED.
             Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to blink.
@@ -46,8 +46,14 @@ menu "Example Configuration"
     config BLINK_PERIOD
         int "Blink period in ms"
         range 10 3600000
-        default 1000
+        default 750
         help
             Define the blinking period in milliseconds.
+
+    config BUTTON_GPIO
+        int "On-board push button GPIO number"
+        default 3
+        help
+            GPIO number (IOxx) of on-board push button.
 
 endmenu
