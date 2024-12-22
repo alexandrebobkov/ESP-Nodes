@@ -1,6 +1,12 @@
 /* Robot Controls
     Generate PWM signals to control motors.
-    
+
+    By: Alexander Bobkov
+    Date: Dec 21, 2024
+
+    built-in LED GPIO:
+
+    build-in push button GPIO:
 */
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
