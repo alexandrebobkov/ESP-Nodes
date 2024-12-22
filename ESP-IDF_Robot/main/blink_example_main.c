@@ -168,7 +168,7 @@ static void ledc_init (void) {
         .hpoint =           0,
     };
     ESP_ERROR_CHECK(ledc_channel_config(&ledc_channel));
-    //ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, LEDC_DUTY));
+    ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, LEDC_DUTY));
     ESP_ERROR_CHECK(ledc_update_duty(LEDC_MODE, LEDC_CHANNEL));
 }
 
