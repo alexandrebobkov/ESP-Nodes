@@ -87,7 +87,7 @@ static void blink_led(void)
 
 static void IRAM_ATTR gpio_isr_handler (void* arg) {
     uint32_t gpio_num = (uint32_t) arg;
-    xQueueSendFromISR(dpio_evt_queue, &gpio_num, NULL);
+    xQueueSendFromISR(gpio_evt_queue, &gpio_num, NULL);
 }
 static void configure_led(void)
 {
