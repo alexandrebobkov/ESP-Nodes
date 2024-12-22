@@ -15,7 +15,6 @@
 #include "freertos/queue.h"
 #include "driver/gpio.h"
 #include "driver/ledc.h"
-#include "driver/dac.h"
 //#include "driver/mcpwm.h"
 #include "esp_log.h"
 #include "led_strip.h"
@@ -178,12 +177,6 @@ static void ledc_init (void) {
     //ESP_ERROR_CHECK(ledc_update_duty(LEDC_MODE, LEDC_CHANNEL));
 }
 
-static void dac_init (void) {
-    // GPIO ??
-    dac_output_enable(DAC_CHAN_0);
-    dac_output_voltage(DAC_CHAN_0, 64);
-}
-
 void app_main(void)
 {
     // Initialize LED
@@ -219,8 +212,6 @@ void app_main(void)
     configure_button();
     //configure_dc_mc();
     printf("Added button interrupt");
-
-    dac_init();
 
     while (1) {
         ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");
