@@ -138,6 +138,9 @@ void app_main(void)
     io_conf.pull_up_en = 1;
     gpio_config(&io_conf);
 
+    // Set pin interrupt
+    gpio_set_intr_type(PUSH_BTN_GPIO, GPIO_INTR_ANYEDGE);
+
     configure_button();
 
     while (1) {
