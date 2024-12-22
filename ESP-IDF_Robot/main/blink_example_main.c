@@ -81,10 +81,14 @@ static void blink_led(void)
 
 static void configure_led(void)
 {
-    ESP_LOGI(TAG, "Example configured to blink GPIO LED!");
+    ESP_LOGI(TAG, "Configured to blink GPIO LED!");
     gpio_reset_pin(BLINK_GPIO);
     /* Set the GPIO as a push/pull output */
     gpio_set_direction(BLINK_GPIO, GPIO_MODE_OUTPUT);
+}
+
+static void configure_button (void) {
+    ESP_LOGI(TAG, "Configured on-board push button");
 }
 
 #else
