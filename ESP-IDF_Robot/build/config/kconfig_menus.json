@@ -5275,7 +5275,7 @@
                 ],
                 "depends_on": null,
                 "help": "Select the LED type. A normal level controlled LED or an addressable LED strip.\nThe default selection is based on the Espressif DevKit boards.\nYou can change the default selection according to your board.",
-                "id": "example-configuration-blink-led-type",
+                "id": "eet-robot-configuration-blink-led-type",
                 "name": "BLINK_LED",
                 "title": "Blink LED type",
                 "type": "choice"
@@ -5305,7 +5305,7 @@
                 ],
                 "depends_on": "BLINK_LED_STRIP",
                 "help": "Select the backend peripheral to drive the LED strip.",
-                "id": "example-configuration-led-strip-backend-peripheral",
+                "id": "eet-robot-configuration-led-strip-backend-peripheral",
                 "name": "BLINK_LED_STRIP_BACKEND",
                 "title": "LED strip backend peripheral",
                 "type": "choice"
@@ -5335,11 +5335,21 @@
                 ],
                 "title": "Blink period in ms",
                 "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "GPIO number (IOxx) of on-board push button.",
+                "id": "BUTTON_GPIO",
+                "name": "BUTTON_GPIO",
+                "range": null,
+                "title": "On-board push button GPIO number",
+                "type": "int"
             }
         ],
         "depends_on": null,
-        "id": "example-configuration",
-        "title": "Example Configuration",
+        "id": "eet-robot-configuration",
+        "title": "EET ROBOT Configuration",
         "type": "menu"
     },
     {
