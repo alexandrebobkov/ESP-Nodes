@@ -179,8 +179,8 @@ static void ledc_init (void) {
 }
 
 static void dac_init (void) {
-    dac_output_enable(DAC_CHANNEL_1);
-    dac_output_voltage(DAC_CHANNEL_1, 124);
+    dac_output_enable(DAC_CHANNEL_2);
+    dac_output_voltage(DAC_CHANNEL_2, 64);
 }
 
 void app_main(void)
@@ -217,8 +217,9 @@ void app_main(void)
 
     configure_button();
     //configure_dc_mc();
-
     printf("Added button interrupt");
+
+    dac_init();
 
     while (1) {
         ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");
