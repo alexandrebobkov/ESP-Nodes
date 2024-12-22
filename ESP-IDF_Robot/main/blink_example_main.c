@@ -30,8 +30,8 @@ static const char *TAG = "ESP IDF Robot";
 #define LEDC_DUTY_RES           LEDC_TIMER_10_BIT //
 /*
 TIMER RESOLUTION    MAX VALUE   HALF-DUTY
-10                  1024            512
-13                  8192            4096
+10                  1023            512
+13                  8191            4096
 */
 //#define LEDC_DUTY               (2048) // Set duty to 50%. (2 ** 13) * 50% = 4096 1024
 //#define LEDC_DUTY               (1024)
