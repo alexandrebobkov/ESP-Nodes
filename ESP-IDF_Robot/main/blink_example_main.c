@@ -35,8 +35,6 @@ static const char *TAG = "ESP IDF Robot";
 
 static QueueHandle_t gpio_evt_queue = NULL;
 
-
-
 static uint8_t s_led_state = 0;
 
 #ifdef CONFIG_BLINK_LED_STRIP
