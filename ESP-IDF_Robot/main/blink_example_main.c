@@ -140,7 +140,7 @@ void app_main(void)
 
     // Set pin interrupt
     gpio_set_intr_type(PUSH_BTN_GPIO, GPIO_INTR_ANYEDGE);
-    gpio_evt_queue = xQueueCreate(10, sizeof(unit32_t));
+    gpio_evt_queue = xQueueCreate(10, sizeof(uint32_t));
     xTaskCreate(gpio_task, "GPIO task", 2048, NULL, 10, NULL);
     gpio_install_isr_service(ESP_INTR_FLAG_DEFAULT);
     gpio_isr_handler_add(PUSH_BTN_GPIO, gpio_isr_handler, (void*) PUSH_BTN_GPIO);
