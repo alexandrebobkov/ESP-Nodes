@@ -137,7 +137,7 @@ void app_main(void)
     io_conf.pull_up_en = 0;
     gpio_config(&io_conf);
 
-    io_conf.intr_type = GPIO_INTR_NEGEDGE;
+    io_conf.intr_type = GPIO_INTR_POSEDGE;
     io_conf.pin_bit_mask = GPIO_INPUT_PIN_SEL;
     io_conf.mode = GPIO_MODE_INPUT;
     io_conf.pull_up_en = 1;
