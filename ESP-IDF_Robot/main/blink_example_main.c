@@ -128,6 +128,10 @@ static void configure_button (void) {
     //gpio_set_direction(PUSH_BTN_GPIO, GPIO_MODE_INPUT);
 }
 
+static void configure_mcpwm (void) {
+    mcpwm_config_t mcpwm_config;
+}
+
 #else
 #error "unsupported LED type"
 #endif
