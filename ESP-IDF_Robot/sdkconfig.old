@@ -428,7 +428,7 @@ CONFIG_PARTITION_TABLE_MD5=y
 # end of Partition Table
 
 #
-# Example Configuration
+# EET ROBOT Configuration
 #
 CONFIG_ENV_GPIO_RANGE_MIN=0
 CONFIG_ENV_GPIO_RANGE_MAX=19
@@ -437,8 +437,9 @@ CONFIG_ENV_GPIO_OUT_RANGE_MAX=19
 CONFIG_BLINK_LED_GPIO=y
 # CONFIG_BLINK_LED_STRIP is not set
 CONFIG_BLINK_GPIO=10
-CONFIG_BLINK_PERIOD=250
-# end of Example Configuration
+CONFIG_BLINK_PERIOD=750
+CONFIG_BUTTON_GPIO=3
+# end of EET ROBOT Configuration
 
 #
 # Compiler options
