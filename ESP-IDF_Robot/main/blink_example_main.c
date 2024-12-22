@@ -17,6 +17,8 @@
 
 static const char *TAG = "ESP IDF Robot";
 
+#define PUSH_BTN_GPIO   3
+
 /* Use project configuration menu (idf.py menuconfig) to choose the GPIO to blink,
    or you can edit the following line and set a number here.
 */
