@@ -147,6 +147,8 @@ void app_main(void)
 
     configure_button();
 
+    printf("Added button interrupt");
+
     while (1) {
         ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");
         blink_led();
