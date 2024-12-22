@@ -139,6 +139,7 @@ static void ledc_init (void) {
         .freq_hz =          LEDC_FREQUENCY,
         .clk_cfg =          LED_SUTO_CLK
     };
+    ESP_ERROR_CHECK(ledc_timer_config(&ledc_timer));
 }
 
 void app_main(void)
