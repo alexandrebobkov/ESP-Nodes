@@ -4,9 +4,8 @@
     By: Alexander Bobkov
     Date: Dec 21, 2024
 
-    built-in LED GPIO:
-
-    build-in push button GPIO:
+    built-in LED GPIO: 10
+    build-in push button GPIO: 3
 */
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
