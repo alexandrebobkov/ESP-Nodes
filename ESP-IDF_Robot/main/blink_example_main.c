@@ -34,7 +34,7 @@ TIMER RESOLUTION    MAX VALUE   HALF-DUTY
 13                  8191            4095
 */
 #define LEDC_DUTY               (7820) // 8068, 7944, 7820, 7696, 7572, *7680*, 7424, 7168, 6144, 512, 768
-#define LEDC_FREQUENCY          (5000) // For LED the freuqncy of 500Hz seems to be sufficient. // Frequency in Hertz. For DC motor, set frequency at 5 kHz
+#define LEDC_FREQUENCY          (2500) // For LED the freuqncy of 500Hz seems to be sufficient. // Frequency in Hertz. For DC motor, set frequency at 5 kHz
 
 /* Use project configuration menu (idf.py menuconfig) to choose the GPIO to blink,
    or you can edit the following line and set a number here.
