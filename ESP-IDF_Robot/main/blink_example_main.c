@@ -205,7 +205,7 @@ void app_main(void)
     gpio_isr_handler_add(PUSH_BTN_GPIO, gpio_isr_handler, (void*) PUSH_BTN_GPIO);
 
     configure_button();
-    configure_dc_mc();
+    //configure_dc_mc();
 
     printf("Added button interrupt");
 
