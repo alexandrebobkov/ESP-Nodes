@@ -129,7 +129,7 @@ static void configure_button (void) {
     //gpio_set_direction(PUSH_BTN_GPIO, GPIO_MODE_INPUT);
 }
 
-static void configure_mcpwm (void) {
+static void configure_dc_mc (void) {
 
     mcpwm_gpio_init(MCPWM_UNIT_0, MCPWM0A, MTR_FL_GPIO);
 
@@ -206,7 +206,7 @@ void app_main(void)
     gpio_isr_handler_add(PUSH_BTN_GPIO, gpio_isr_handler, (void*) PUSH_BTN_GPIO);
 
     configure_button();
-    configure_mcpwm();
+    configure_dc_mc();
 
     printf("Added button interrupt");
 
