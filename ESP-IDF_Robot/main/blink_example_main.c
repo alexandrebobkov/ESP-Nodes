@@ -89,6 +89,15 @@ static void IRAM_ATTR gpio_isr_handler (void* arg) {
     uint32_t gpio_num = (uint32_t) arg;
     xQueueSendFromISR(gpio_evt_queue, &gpio_num, NULL);
 }
+
+static void gpio_task (void* arg) {
+    uint32_t io_num;
+    for (;;) {
+        if (xQueueReceive(gpio_evt_queue, &io_num, portMAX_DELAY)) {
+            printf("GPIO[%"PRIu32"] intr, val: %d\n", io_num, gpio_get_level(io_num));
+        }
+    }
+}
 static void configure_led(void)
 {
     ESP_LOGI(TAG, "Configured to blink GPIO LED!");
