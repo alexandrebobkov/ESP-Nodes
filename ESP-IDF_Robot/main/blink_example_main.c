@@ -134,7 +134,7 @@ static void configure_button (void) {
 static void ledc_init (void) {
     ledc_timer_config_t ledc_timer = {
         .speed_mode =       LEDC_MODE,//MODE,
-        .duty_resolution =  LEDC_TIMER_10_BIT,//,
+        .duty_resolution =  LEDC_TIMER_14_BIT,//,
         .timer_num =        LEDC_TIMER,
         .freq_hz =          LEDC_FREQUENCY,
         .clk_cfg =          LEDC_AUTO_CLK
