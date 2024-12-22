@@ -20,15 +20,20 @@
 
 static const char *TAG = "ESP IDF Robot";
 
-#define PUSH_BTN_GPIO   3   // GPIO of on-board push-button
-#define GPIO_INPUT_PIN_SEL ((1ULL<<PUSH_BTN_GPIO))
-#define ESP_INTR_FLAG_DEFAULT 0
-static QueueHandle_t gpio_evt_queue = NULL;
-
 /* Use project configuration menu (idf.py menuconfig) to choose the GPIO to blink,
    or you can edit the following line and set a number here.
 */
 #define BLINK_GPIO CONFIG_BLINK_GPIO
+
+#define PUSH_BTN_GPIO   3   // GPIO of on-board push-button
+#define ESP_INTR_FLAG_DEFAULT 0
+
+#define GPIO_INPUT_PIN_SEL ((1ULL<<PUSH_BTN_GPIO))
+#define GPIO_OUTPUT_PIN_SEL ((1ULL<<BLINK_GPIO))
+
+static QueueHandle_t gpio_evt_queue = NULL;
+
+
 
 static uint8_t s_led_state = 0;
 
@@ -123,14 +128,14 @@ void app_main(void)
     gpio_config_t io_conf = {};
 
     /* Configure the peripheral according to the LED type */
-    configure_led();
+    //configure_led();
 
-    //io_conf.intr_type = GPIO_INTR_DISABLE;
-    //io_conf.mode = GPIO_MODE_OUTPUT;
-    //io_conf.pin_bit_mask = GPIO_OUTPUT_PIN_SEL;
-    //io_conf.pull_down_en = 0;
-    //io_conf.pull_up_en = 1;
-    //gpio_config(&io_conf);
+    io_conf.intr_type = GPIO_INTR_DISABLE;
+    io_conf.mode = GPIO_MODE_OUTPUT;
+    io_conf.pin_bit_mask = GPIO_OUTPUT_PIN_SEL;
+    io_conf.pull_down_en = 0;
+    io_conf.pull_up_en = 0;
+    gpio_config(&io_conf);
 
     io_conf.intr_type = GPIO_INTR_NEGEDGE;
     io_conf.pin_bit_mask = GPIO_INPUT_PIN_SEL;
