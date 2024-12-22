@@ -82,6 +82,10 @@ static void blink_led(void)
     gpio_set_level(BLINK_GPIO, s_led_state);
 }
 
+static void IRAM_ATTR gpio_isr_handler (void* arg) {
+    uint32_t gpio_num = (uint32_t) arg;
+    xQueueSendFromISR(dpio_evt_queue, &gpio_num, NULL);
+}
 static void configure_led(void)
 {
     ESP_LOGI(TAG, "Configured to blink GPIO LED!");
