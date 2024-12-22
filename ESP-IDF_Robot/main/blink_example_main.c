@@ -129,7 +129,7 @@ static void configure_button (void) {
     //gpio_set_direction(PUSH_BTN_GPIO, GPIO_MODE_INPUT);
 }
 
-static void configure_dc_mc (void) {
+/*static void configure_dc_mc (void) {
 
     mcpwm_gpio_init(MCPWM_UNIT_0, MCPWM0A, MTR_FL_GPIO);
 
@@ -142,7 +142,7 @@ static void configure_dc_mc (void) {
     ESP_ERROR_CHECK(mcpwm_init(MCPWM_UNIT_0, MCPWM_TIMER_0, &mcpwm_config));
     ESP_ERROR_CHECK(mcpwm_set_duty_type(MCPWM_UNIT_0, MCPWM_TIMER_0, MCPWM_OPR_A, MCPWM_DUTY_MODE_0));
     ESP_ERROR_CHECK(mcpwm_set_duty(MCPWM_UNIT_0, MCPWM_TIMER_0, MCPWM_OPR_A, 50));
-}
+}*/
 
 #else
 #error "unsupported LED type"
