@@ -119,6 +119,9 @@ static void configure_button (void) {
 void app_main(void)
 {
 
+    // Initialize the config structure.
+    gpio_config_t io_conf = {};
+    
     /* Configure the peripheral according to the LED type */
     configure_led();
     configure_button();
