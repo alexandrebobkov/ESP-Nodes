@@ -144,7 +144,7 @@ void app_main(void)
     gpio_config(&io_conf);
 
     // Set pin interrupt
-    gpio_set_intr_type(PUSH_BTN_GPIO, GPIO_INTR_ANYEDGE);
+    gpio_set_intr_type(PUSH_BTN_GPIO, GPIO_INTR_NEGEDGE);//ANYEDGE);
     gpio_evt_queue = xQueueCreate(10, sizeof(uint32_t));
     xTaskCreate(gpio_task, "GPIO task", 2048, NULL, 10, NULL);
     gpio_install_isr_service(ESP_INTR_FLAG_DEFAULT);
