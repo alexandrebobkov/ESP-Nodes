@@ -149,7 +149,7 @@ static void ledc_init (void) {
         .intr_type =        LEDC_INTR_DISABLE,
         .gpio_num =         LEDC_OUTPUT_IO,
         .duty =             LEDC_DUTY,//0,
-        .hpoint =           0
+        .hpoint =           1,
     };
     ESP_ERROR_CHECK(ledc_channel_config(&ledc_channel));
 }
