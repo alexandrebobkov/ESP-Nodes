@@ -5345,6 +5345,26 @@
                 "range": null,
                 "title": "On-board push button GPIO number",
                 "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "GPIO number (IOxx) of front-left motor.",
+                "id": "MOTOR_FRONT_LEFT_GPIO",
+                "name": "MOTOR_FRONT_LEFT_GPIO",
+                "range": null,
+                "title": "GPIO of front-left motor.",
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "GPIO number (IOxx) of front-right motor.",
+                "id": "MOTOR_FRONT_LEFT_GPIO",
+                "name": "MOTOR_FRONT_LEFT_GPIO",
+                "range": null,
+                "title": "GPIO of front-right motor.",
+                "type": "int"
             }
         ],
         "depends_on": null,
