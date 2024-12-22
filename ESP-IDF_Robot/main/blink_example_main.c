@@ -136,6 +136,9 @@ static void configure_mcpwm (void) {
     mcpwm_config.counter_mode = MCPWM_UP_COUNTER;
     mcpwm_config.duty_mode = MCPWM_DUTY_MODE_0;
     mcpwm_init(MCPWM_UNIT_0, MCPWM_TIMER_0, &mcpwm_config);
+
+    mcpwm_set_duty_type(MCPWM_UNIT_0, MCPWM_TIMER_0, MCPWM_OPR_A, MCPWM_DUTY_MODE_0);
+    mcpwm_set_duty(MCPWM_UNIT_0, MCPWM_TIMER_0, MCPWM_OPR_A,50);
 }
 
 #else
