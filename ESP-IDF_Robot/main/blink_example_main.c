@@ -131,6 +131,16 @@ static void configure_button (void) {
 #error "unsupported LED type"
 #endif
 
+static void ledc_init (void) {
+    ledc_timer_config_t ledc_timer = {
+        .speed_mode =       LEDC_MODE,
+        .duty_resolution =  LEDC_DUTY_RES,
+        .timer_num =        LEDC_TIMER,
+        .freq_hz =          LEDC_FREQUENCY,
+        .clk_cfg =          LED_SUTO_CLK
+    };
+}
+
 void app_main(void)
 {
     // Initialize the config structure.
