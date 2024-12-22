@@ -14,11 +14,21 @@
 #include "freertos/task.h"
 #include "freertos/queue.h"
 #include "driver/gpio.h"
+#include "driver/ledc.h"
 #include "esp_log.h"
 #include "led_strip.h"
 #include "sdkconfig.h"
 
 static const char *TAG = "ESP IDF Robot";
+
+// LED
+#define LEDC_TIMER              LEDC_TIMER_0
+#define LEDC_MODE               LEDC_LOW_SPEED_MODE
+#define LEDC_OUTPUT_IO          (3) // Define the output GPIO
+#define LEDC_CHANNEL            LEDC_CHANNEL_0
+#define LEDC_DUTY_RES           LEDC_TIMER_13_BIT // Set duty resolution to 13 bits
+#define LEDC_DUTY               (4096) // Set duty to 50%. (2 ** 13) * 50% = 4096
+#define LEDC_FREQUENCY          (4000) // Frequency in Hertz. Set frequency at 4 kHz
 
 /* Use project configuration menu (idf.py menuconfig) to choose the GPIO to blink,
    or you can edit the following line and set a number here.
