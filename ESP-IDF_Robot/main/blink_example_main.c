@@ -21,7 +21,7 @@
 static const char *TAG = "ESP IDF Robot";
 
 #define PUSH_BTN_GPIO   3   // GPIO of on-board push-button
-#define GPIO_OUTPUT_PIN_SEL ((1ULL<<PUSH_BTN_GPIO))
+#define GPIO_INPUT_PIN_SEL ((1ULL<<PUSH_BTN_GPIO))
 #define ESP_INTR_FLAG_DEFAULT 0
 static QueueHandle_t gpio_evt_queue = NULL;
 
@@ -131,6 +131,9 @@ void app_main(void)
     io_conf.pull_down_en = 0;
     io_conf.pull_up_en = 1;
     gpio_config(&io_conf);
+
+    io_conf.intr_type = GPIO_INTR_NEGEDGE;
+    io_conf.pin_bit_mask = GPIO_INPUT_PIN_SEL;
 
     configure_button();
 
