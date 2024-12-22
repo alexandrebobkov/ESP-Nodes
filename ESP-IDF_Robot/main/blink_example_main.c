@@ -130,6 +130,12 @@ static void configure_button (void) {
 
 static void configure_mcpwm (void) {
     mcpwm_config_t mcpwm_config;
+
+    mcpwm_config.frequency = 4000;    //frequency = 110Hz
+    mcpwm_config.cmpr_a = 50;       //duty cycle of PWMxA = 60.0%
+    mcpwm_config.counter_mode = MCPWM_UP_COUNTER;
+    mcpwm_config.duty_mode = MCPWM_DUTY_MODE_0;
+    mcpwm_init(MCPWM_UNIT_0, MCPWM_TIMER_0, &mcpwm_config);
 }
 
 #else
