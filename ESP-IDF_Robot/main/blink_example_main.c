@@ -147,7 +147,7 @@ static void ledc_init (void) {
         .timer_sel =        LEDC_TIMER,
         .intr_type =        LEDC_INTR_DISABLE,
         .gpio_num =         LEDC_OUTPUT_IO,
-        .duty =             0,
+        .duty =             50,
         .hpoint =           0
     };
     ESP_ERROR_CHECK(ledc_channel_config(&ledc_channel));
