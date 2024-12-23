@@ -155,11 +155,11 @@ static void configure_button (void) {
 
 static void ledc_init (void) {
     ledc_timer_config_t ledc_timer = {
-        .speed_mode =       LEDC_MODE,//MODE,
+        .speed_mode =       LEDC_MODE,
         .duty_resolution =  LEDC_DUTY_RES,
         .timer_num =        LEDC_TIMER,
         .freq_hz =          LEDC_FREQUENCY,
-        .clk_cfg =          LEDC_APB_CLK// LEDC_AUTO_CLK
+        .clk_cfg =          LEDC_APB_CLK
     };
     ESP_ERROR_CHECK(ledc_timer_config(&ledc_timer));
 
