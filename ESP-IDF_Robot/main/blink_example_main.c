@@ -396,7 +396,7 @@ static void espnow_task (void *pvParameter) {
                         esp_now_peer_info_t *peer = malloc(sizeof(esp_now_peer_info_t));
                         if (peer == NULL) {
                             ESP_LOGE(TAG, "Malloc peer information fail");
-                            example_espnow_deinit(send_param);
+                            espnow_deinit(send_param);
                             vTaskDelete(NULL);
                         }
                         memset(peer, 0, sizeof(esp_now_peer_info_t));
@@ -432,7 +432,7 @@ static void espnow_task (void *pvParameter) {
                             espnow_data_prepare(send_param);
                             if (esp_now_send(send_param->dest_mac, send_param->buffer, send_param->len) != ESP_OK) {
                                 ESP_LOGE(TAG, "Send error");
-                                example_espnow_deinit(send_param);
+                                espnow_deinit(send_param);
                                 vTaskDelete(NULL);
                             }
                             else {
