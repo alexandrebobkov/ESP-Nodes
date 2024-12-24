@@ -234,6 +234,7 @@ static void espnow_task (void *pvParameter) {}
 
 static esp_err_t espnow_init(void) {
     espnow_send_param_t *send_param;
+    return ESP_OK;
 }
 
 void app_main(void)
