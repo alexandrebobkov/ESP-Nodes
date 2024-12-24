@@ -234,6 +234,12 @@ static void espnow_task (void *pvParameter) {}
 
 static esp_err_t espnow_init(void) {
     espnow_send_param_t *send_param;
+
+    espnow_queue = xQueueCreate(ESPNOW_QUEUE_SIZE, sizeof(espnow_event_t));
+    if (espnow_queue == NULL) {
+        ESP_LOGE(TAG, "Create ESP-NOW mutex failed.");
+        return ESP_FAIL;
+    }
     return ESP_OK;
 }
 
