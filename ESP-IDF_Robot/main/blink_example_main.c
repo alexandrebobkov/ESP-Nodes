@@ -26,6 +26,7 @@
 //#include "espnow_utils.h"
 #include "esp_wifi.h"
 #include "esp_system.h"
+#include "espnow_config.h"
 
 static const char *TAG = "ESP IDF Robot";
 
