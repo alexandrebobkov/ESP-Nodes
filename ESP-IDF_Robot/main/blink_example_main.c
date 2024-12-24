@@ -73,6 +73,8 @@ static uint8_t s_led_state = 0;
 /* ESP NOW*/
 #define ESPNOW_MAXDELAY 512
 static QueueHandle_t espnow_queue;
+static uint8_t broadcast_mac[ESP_NOW_ETH_ALEN] = {};
+static uint8_t espnow_seq[ESPNOW_DATA_MAX] = {0, 0};
 static uint8_t espnow_broadcast_mac[ESP_NOW_ETH_ALEN] = {};
 typedef struct struct_message {
     char node[32];
@@ -221,7 +223,7 @@ static void wifi_init()
     ESP_ERROR_CHECK( esp_wifi_set_channel(CONFIG_ESPNOW_CHANNEL, WIFI_SECOND_CHAN_NONE));
 }
 static void espnow_send_cb (const uint8_t *mac_addr, esp_now_send_status_t status) {
-    
+
 }
 static void espnow_receive_cb (const esp_now_recv_info_t *recv_info, const uint8_t *data, int len) {
     espnow_event_t evt;

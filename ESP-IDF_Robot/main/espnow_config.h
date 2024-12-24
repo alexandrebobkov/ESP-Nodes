@@ -42,9 +42,9 @@ typedef struct {
 } espnow_event_t;
 
 enum {
-    EXAMPLE_ESPNOW_DATA_BROADCAST,
-    EXAMPLE_ESPNOW_DATA_UNICAST,
-    EXAMPLE_ESPNOW_DATA_MAX,
+    ESPNOW_DATA_BROADCAST,
+    ESPNOW_DATA_UNICAST,
+    ESPNOW_DATA_MAX,
 };
 
 #endif
