@@ -9,11 +9,14 @@
     },
     "idf.espIdfPathWin": "C:\\Users\\alex\\esp\\v5.2.2\\esp-idf",
     "idf.openOcdConfigs": [
-        "board/esp32s2-kaluga-1.cfg"
+        "board/esp32c3-builtin.cfg"
     ],
     "idf.portWin": "COM5",
     "idf.pythonBinPathWin": "c:\\Users\\alex\\.espressif\\tools\\python_env\\idf5.2_py3.11_env\\Scripts\\python.exe",
     "idf.toolsPathWin": "c:\\Users\\alex\\.espressif\\tools",
     "idf.gitPathWin": "c:\\Users\\alex\\.espressif\\tools\\tools\\idf-git\\2.39.2\\cmd\\git.exe",
-    "idf.flashType": "UART"
+    "idf.flashType": "UART",
+    "idf.port": "/dev/ttyACM1",
+    "idf.espIdfPath": "/home/alex/esp/v5.3.2/esp-idf",
+    "idf.toolsPath": "/home/alex/.espressif"
 }
