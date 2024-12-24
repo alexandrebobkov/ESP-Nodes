@@ -5438,6 +5438,26 @@
                 ],
                 "title": "Channel",
                 "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "ESPNOW primary master for the example to use. The length of ESPNOW primary master must be 16 bytes.",
+                "id": "ESPNOW_PMK",
+                "name": "ESPNOW_PMK",
+                "range": null,
+                "title": "ESPNOW primary master key",
+                "type": "string"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "ESPNOW local master for the example to use. The length of ESPNOW local master must be 16 bytes.",
+                "id": "ESPNOW_LMK",
+                "name": "ESPNOW_LMK",
+                "range": null,
+                "title": "ESPNOW local master key",
+                "type": "string"
             }
         ],
         "depends_on": null,
