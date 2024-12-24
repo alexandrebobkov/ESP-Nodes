@@ -338,7 +338,7 @@ static void espnow_task (void *pvParameter) {
     espnow_send_param_t *send_param = (espnow_send_param_t *)pvParameter;
     if (esp_now_send(send_param->dest_mac, send_param->buffer, send_param->len) != ESP_OK) {
         ESP_LOGE(TAG, "Send error");
-        example_espnow_deinit(send_param);
+        espnow_deinit(send_param);
         vTaskDelete(NULL);
     }
     while (xQueueReceive(espnow_queue, &evt, portMAX_DELAY) == pdTRUE) {
