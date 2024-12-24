@@ -250,7 +250,7 @@ static esp_err_t espnow_init(void) {
     ESP_ERROR_CHECK( esp_now_set_wake_window(CONFIG_ESPNOW_WAKE_WINDOW) );
     ESP_ERROR_CHECK( esp_wifi_connectionless_module_set_wake_interval(CONFIG_ESPNOW_WAKE_INTERVAL) );
 #endif
-    /* Set primary master key. */
+    /* Set primary master key in menuconfig. */
     ESP_ERROR_CHECK( esp_now_set_pmk((uint8_t *)CONFIG_ESPNOW_PMK) );
 
     /* Add broadcast peer information to peer list. */
