@@ -529,6 +529,14 @@ static esp_err_t espnow_init(void) {
     return ESP_OK;
 }
 
+static void espnow_deinit(espnow_send_param_t *send_param)
+{
+    free(send_param->buffer);
+    free(send_param);
+    vSemaphoreDelete(espnow_queue);
+    esp_now_deinit();
+}
+
 void app_main(void)
 {
     // Initialize LED
