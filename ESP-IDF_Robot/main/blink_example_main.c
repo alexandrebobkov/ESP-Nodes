@@ -351,7 +351,7 @@ static void espnow_task (void *pvParameter) {
     }
     while (xQueueReceive(espnow_queue, &evt, portMAX_DELAY) == pdTRUE) {
         switch (evt.id) {
-            case EXAMPLE_ESPNOW_SEND_CB:
+            case ESPNOW_SEND_CB:
             {
                 espnow_event_send_cb_t *send_cb = &evt.info.send_cb;
                 is_broadcast = IS_BROADCAST_ADDR(send_cb->mac_addr);
@@ -389,7 +389,7 @@ static void espnow_task (void *pvParameter) {
                 }
                 break;
             }
-            case EXAMPLE_ESPNOW_RECV_CB:
+            case ESPNOW_RECV_CB:
             {
                 espnow_event_recv_cb_t *recv_cb = &evt.info.recv_cb;
 
