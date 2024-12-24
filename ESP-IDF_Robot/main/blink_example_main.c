@@ -233,7 +233,20 @@ static void wifi_init()
     ESP_ERROR_CHECK( esp_wifi_set_channel(CONFIG_ESPNOW_CHANNEL, WIFI_SECOND_CHAN_NONE));
 }
 static void espnow_send_cb (const uint8_t *mac_addr, esp_now_send_status_t status) {
+    espnow_event_t evt;
+    espnow_event_send_cb_t *send_cb = &evt.info.send_cb;
 
+    if (mac_addr == NULL) {
+        ESP_LOGE(TAG, "Send cb arg error");
+        return;
+    }
+
+    evt.id = EXAMPLE_ESPNOW_SEND_CB;
+    memcpy(send_cb->mac_addr, mac_addr, ESP_NOW_ETH_ALEN);
+    send_cb->status = status;
+    if (xQueueSend(espnow_queue, &evt, ESPNOW_MAXDELAY) != pdTRUE) {
+        ESP_LOGW(TAG, "Send send queue fail");
+    }
 }
 static void espnow_recv_cb (const esp_now_recv_info_t *recv_info, const uint8_t *data, int len) {
     espnow_event_t evt;
