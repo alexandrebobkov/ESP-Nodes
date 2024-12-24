@@ -209,7 +209,7 @@ static void ledc_init (void) {
 
 /* ESP-NOW */
 // Wi-Fi should start before using ESP-NOW
-static void app_wifi_init()
+static void wifi_init()
 {
     ESP_ERROR_CHECK(esp_netif_init());
     ESP_ERROR_CHECK(esp_event_loop_create_default());
@@ -261,7 +261,8 @@ void app_main(void)
     //configure_dc_mc();
     printf("Added button interrupt");
 
-    //app_wifi_init();
+    // ESP-NOW
+    wifi_init();
     //esp_now_init();
     //esp_now_add_peer(&peerInfo);
 
