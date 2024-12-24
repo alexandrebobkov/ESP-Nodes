@@ -277,7 +277,7 @@ static void espnow_recv_cb (const esp_now_recv_info_t *recv_info, const uint8_t 
     else {
         ESP_LOGD(TAG, "Receive unicast ESPNOW data");
     }
-    evt.id = EXAMPLE_ESPNOW_RECV_CB;
+    evt.id = ESPNOW_RECV_CB;
     memcpy(recv_cb->mac_addr, mac_addr, ESP_NOW_ETH_ALEN);
     recv_cb->data = malloc(len);
     if (recv_cb->data == NULL) {
