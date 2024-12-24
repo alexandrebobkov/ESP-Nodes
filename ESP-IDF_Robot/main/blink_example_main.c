@@ -236,7 +236,46 @@ static void espnow_recv_cb (const esp_now_recv_info_t *recv_info, const uint8_t 
     espnow_event_t evt;
     espnow_event_recv_cb_t *recv_cb = &evt.info.recv_cb;
 }
-void espnow_data_prepare(espnow_send_param_t *send_param) {}
+/* Parse received ESPNOW data. */
+int example_espnow_data_parse(uint8_t *data, uint16_t data_len, uint8_t *state, uint16_t *seq, uint32_t *magic)
+{
+    example_espnow_data_t *buf = (example_espnow_data_t *)data;
+    uint16_t crc, crc_cal = 0;
+
+    if (data_len < sizeof(example_espnow_data_t)) {
+        ESP_LOGE(TAG, "Receive ESPNOW data too short, len:%d", data_len);
+        return -1;
+    }
+
+    *state = buf->state;
+    *seq = buf->seq_num;
+    *magic = buf->magic;
+    crc = buf->crc;
+    buf->crc = 0;
+    crc_cal = esp_crc16_le(UINT16_MAX, (uint8_t const *)buf, data_len);
+
+    if (crc_cal == crc) {
+        return buf->type;
+    }
+
+    return -1;
+}
+
+void espnow_data_prepare(espnow_send_param_t *send_param) {
+    espnow_data_t *buf = (espnow_data_t *)send_param->buffer;
+
+    assert(send_param->len >= sizeof(example_espnow_data_t));
+
+    buf->type = IS_BROADCAST_ADDR(send_param->dest_mac) ? ESPNOW_DATA_BROADCAST : ESPNOW_DATA_UNICAST;
+    buf->state = send_param->state;
+    buf->seq_num = espnow_seq[buf->type]++;
+    buf->crc = 0;
+    buf->magic = send_param->magic;
+    /* Fill all remaining bytes after the data with random values */
+    esp_fill_random(buf->payload, send_param->len - sizeof(example_espnow_data_t));
+    buf->crc = esp_crc16_le(UINT16_MAX, (uint8_t const *)buf, send_param->len);
+}
+
 static void espnow_task (void *pvParameter) {}
 
 static esp_err_t espnow_init(void) {
