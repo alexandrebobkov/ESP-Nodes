@@ -72,6 +72,7 @@ static uint8_t s_led_state = 0;
 /* ESP NOW*/
 #define ESPNOW_MAXDELAY 512
 static QueueHandle_t espnow_queue;
+static uint8_t espnow_broadcast_mac[ESP_NOW_ETH_ALEN] = {};
 typedef struct struct_message {
     char node[32];
     uint8_t motor_a_pwm;
