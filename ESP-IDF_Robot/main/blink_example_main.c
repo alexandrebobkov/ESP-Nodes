@@ -526,7 +526,7 @@ static esp_err_t espnow_init(void) {
     send_param->count = CONFIG_ESPNOW_SEND_COUNT;
     send_param->delay = CONFIG_ESPNOW_SEND_DELAY;
     send_param->len = CONFIG_ESPNOW_SEND_LEN;
-    send_param->buffer = malloc(message); // malloc(CONFIG_ESPNOW_SEND_LEN);    // Data to be sent?
+    send_param->buffer = malloc(sizeof(message)); // malloc(CONFIG_ESPNOW_SEND_LEN);    // Data to be sent?
     if (send_param->buffer == NULL) {
         ESP_LOGE(TAG, "Malloc send buffer fail");
         free(send_param);
