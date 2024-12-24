@@ -20,7 +20,9 @@
 #include "led_strip.h"
 #include "sdkconfig.h"
 
+/* ESP-NOW */
 #include "esp_now.h"
+#include "esp_mac.h"
 //#include "espnow_utils.h"
 #include "esp_wifi.h"
 #include "esp_system.h"
