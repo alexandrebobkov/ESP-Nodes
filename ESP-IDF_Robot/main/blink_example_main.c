@@ -371,7 +371,7 @@ static void espnow_task (void *pvParameter) {
                 ESP_LOGI(TAG, "send data to "MACSTR"", MAC2STR(send_cb->mac_addr));
 
                 memcpy(send_param->dest_mac, send_cb->mac_addr, ESP_NOW_ETH_ALEN);
-                example_espnow_data_prepare(send_param);
+                espnow_data_prepare(send_param);
 
                 /* Send the next data after the previous data is sent. */
                 if (esp_now_send(send_param->dest_mac, send_param->buffer, send_param->len) != ESP_OK) {
