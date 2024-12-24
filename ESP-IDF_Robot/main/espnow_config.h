@@ -35,10 +35,6 @@ typedef union {
     espnow_event_send_cb_t send_cb;
     espnow_event_recv_cb_t recv_cb;
 } espnow_event_info_t;
-typedef union {
-    espnow_event_send_cb_t send_cb;
-    espnow_event_recv_cb_t recv_cb;
-} espnow_event_info_t;
 /* When ESPNOW sending or receiving callback function is called, post event to ESPNOW task. */
 typedef struct {
     espnow_event_id_t id;
