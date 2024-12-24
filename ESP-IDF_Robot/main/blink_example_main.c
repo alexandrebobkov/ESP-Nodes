@@ -70,6 +70,7 @@ static QueueHandle_t gpio_evt_queue = NULL;
 static uint8_t s_led_state = 0;
 
 /* ESP NOW*/
+#define ESPNOW_MAXDELAY 512
 typedef struct struct_message {
     char node[32];
     uint8_t motor_a_pwm;
