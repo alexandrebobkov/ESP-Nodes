@@ -206,6 +206,7 @@ static void ledc_init (void) {
     //ESP_ERROR_CHECK(ledc_update_duty(LEDC_MODE, LEDC_CHANNEL));
 }
 
+// Wi-Fi should start before using ESP-NOW
 static void app_wifi_init()
 {
     ESP_ERROR_CHECK(esp_netif_init());
