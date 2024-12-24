@@ -20,6 +20,8 @@
 #include "led_strip.h"
 #include "sdkconfig.h"
 
+#include "esp_now.h"
+
 static const char *TAG = "ESP IDF Robot";
 
 // LED
@@ -51,8 +53,13 @@ TIMER RESOLUTION    MAX VALUE   HALF-DUTY
 #define GPIO_OUTPUT_PIN_SEL ((1ULL<<BLINK_GPIO))
 
 static QueueHandle_t gpio_evt_queue = NULL;
-
 static uint8_t s_led_state = 0;
+uint8_t broadcastAddress[] = {};
+
+typedef struct struct_message {
+    char node[32];
+    uint8_t motor_a_pwm;
+} struct_message;
 
 #ifdef CONFIG_BLINK_LED_STRIP
 
