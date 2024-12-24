@@ -206,6 +206,7 @@ static void ledc_init (void) {
     //ESP_ERROR_CHECK(ledc_update_duty(LEDC_MODE, LEDC_CHANNEL));
 }
 
+/* ESP-NOW */
 // Wi-Fi should start before using ESP-NOW
 static void app_wifi_init()
 {
@@ -217,6 +218,10 @@ static void app_wifi_init()
     ESP_ERROR_CHECK( esp_wifi_set_mode(ESPNOW_WIFI_MODE) );
     ESP_ERROR_CHECK( esp_wifi_start());
     ESP_ERROR_CHECK( esp_wifi_set_channel(CONFIG_ESPNOW_CHANNEL, WIFI_SECOND_CHAN_NONE));
+}
+static void espnow_receive_cb (const esp_now_recv_info_t *recv_info, const uint8_t *data, int len) {
+    espnow_event_t evt;
+    espnow_event_recv_cb_t *recv_cb = &evt.info.recv_cb;
 }
 
 void app_main(void)
