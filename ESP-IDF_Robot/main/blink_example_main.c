@@ -220,7 +220,9 @@ static void wifi_init()
     ESP_ERROR_CHECK( esp_wifi_start());
     ESP_ERROR_CHECK( esp_wifi_set_channel(CONFIG_ESPNOW_CHANNEL, WIFI_SECOND_CHAN_NONE));
 }
-
+static void espnow_send_cb (const uint8_t *mac_addr, esp_now_send_status_t status) {
+    
+}
 static void espnow_receive_cb (const esp_now_recv_info_t *recv_info, const uint8_t *data, int len) {
     espnow_event_t evt;
     espnow_event_recv_cb_t *recv_cb = &evt.info.recv_cb;
