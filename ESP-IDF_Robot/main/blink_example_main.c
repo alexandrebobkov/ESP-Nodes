@@ -84,7 +84,7 @@ static uint8_t s_led_state = 0;
             ESP NOW
     ============================
 
-    ESP32-C3 Blue board MAC 54:32:04:46:71:00
+    ESP32-C3 Blue board MAC 54:32:04:46:71:80
 */
 #define ESPNOW_MAXDELAY 512
 static QueueHandle_t espnow_queue;
