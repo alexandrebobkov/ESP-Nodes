@@ -60,6 +60,7 @@ typedef struct struct_message {
     char node[32];
     uint8_t motor_a_pwm;
 } struct_message;
+struct_message controlData;
 
 #ifdef CONFIG_BLINK_LED_STRIP
 
