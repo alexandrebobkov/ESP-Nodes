@@ -242,10 +242,10 @@ static void espnow_recv_cb (const esp_now_recv_info_t *recv_info, const uint8_t 
 /* Parse received ESPNOW data. */
 int example_espnow_data_parse(uint8_t *data, uint16_t data_len, uint8_t *state, uint16_t *seq, uint32_t *magic)
 {
-    example_espnow_data_t *buf = (example_espnow_data_t *)data;
+    espnow_data_t *buf = (espnow_data_t *)data;
     uint16_t crc, crc_cal = 0;
 
-    if (data_len < sizeof(example_espnow_data_t)) {
+    if (data_len < sizeof(espnow_data_t)) {
         ESP_LOGE(TAG, "Receive ESPNOW data too short, len:%d", data_len);
         return -1;
     }
