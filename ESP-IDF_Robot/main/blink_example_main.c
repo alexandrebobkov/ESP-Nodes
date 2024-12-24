@@ -220,6 +220,7 @@ static void wifi_init()
     ESP_ERROR_CHECK( esp_wifi_start());
     ESP_ERROR_CHECK( esp_wifi_set_channel(CONFIG_ESPNOW_CHANNEL, WIFI_SECOND_CHAN_NONE));
 }
+void espnow_data_prepare(espnow_send_param_t *send_param) {}
 static void espnow_task (void *pvParameter) {}
 
 static esp_err_t espnow_init(void) {
