@@ -93,6 +93,7 @@ typedef struct struct_message {
 uint8_t broadcastAddress[] = {};
 struct_message controlData;
 esp_now_peer_info_t peerInfo;
+static void espnow_deinit(espnow_send_param_t *send_param);
 
 #ifdef CONFIG_BLINK_LED_STRIP
 
@@ -358,7 +359,7 @@ static void espnow_task (void *pvParameter) {
                     send_param->count--;
                     if (send_param->count == 0) {
                         ESP_LOGI(TAG, "Send done");
-                        example_espnow_deinit(send_param);
+                        espnow_deinit(send_param);
                         vTaskDelete(NULL);
                     }
                 }
@@ -376,7 +377,7 @@ static void espnow_task (void *pvParameter) {
                 /* Send the next data after the previous data is sent. */
                 if (esp_now_send(send_param->dest_mac, send_param->buffer, send_param->len) != ESP_OK) {
                     ESP_LOGE(TAG, "Send error");
-                    example_espnow_deinit(send_param);
+                    espnow_deinit(send_param);
                     vTaskDelete(NULL);
                 }
                 break;
