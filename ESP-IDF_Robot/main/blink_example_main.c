@@ -264,7 +264,7 @@ int example_espnow_data_parse(uint8_t *data, uint16_t data_len, uint8_t *state, 
 void espnow_data_prepare(espnow_send_param_t *send_param) {
     espnow_data_t *buf = (espnow_data_t *)send_param->buffer;
 
-    assert(send_param->len >= sizeof(example_espnow_data_t));
+    assert(send_param->len >= sizeof(espnow_data_t));
 
     buf->type = IS_BROADCAST_ADDR(send_param->dest_mac) ? ESPNOW_DATA_BROADCAST : ESPNOW_DATA_UNICAST;
     buf->state = send_param->state;
