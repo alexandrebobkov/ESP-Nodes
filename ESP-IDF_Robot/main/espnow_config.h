@@ -16,8 +16,8 @@
 
 
 typedef enum {
-    EXAMPLE_ESPNOW_SEND_CB,
-    EXAMPLE_ESPNOW_RECV_CB,
+    ESPNOW_SEND_CB,
+    ESPNOW_RECV_CB,
 } espnow_event_id_t;
 
 typedef struct {
