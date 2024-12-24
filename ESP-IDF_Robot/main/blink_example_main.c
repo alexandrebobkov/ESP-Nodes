@@ -80,7 +80,12 @@ TIMER RESOLUTION    MAX VALUE   HALF-DUTY
 static QueueHandle_t gpio_evt_queue = NULL;
 static uint8_t s_led_state = 0;
 
-/* ESP NOW*/
+/*  ============================
+            ESP NOW
+    ============================
+
+    ESP32-C3 Blue board MAC 54:32:04:46:71:00
+*/
 #define ESPNOW_MAXDELAY 512
 static QueueHandle_t espnow_queue;
 static uint8_t broadcast_mac[ESP_NOW_ETH_ALEN] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
