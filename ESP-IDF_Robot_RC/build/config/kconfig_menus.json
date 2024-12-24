@@ -1043,6 +1043,16 @@
         "children": [],
         "depends_on": null,
         "help": null,
+        "id": "SOC_GPIO_SUPPORT_HOLD_IO_IN_DSLP",
+        "name": "SOC_GPIO_SUPPORT_HOLD_IO_IN_DSLP",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
         "id": "SOC_DEDIC_GPIO_OUT_CHANNELS_NUM",
         "name": "SOC_DEDIC_GPIO_OUT_CHANNELS_NUM",
         "range": null,
@@ -3444,7 +3454,17 @@
                     },
                     {
                         "children": [],
-                        "depends_on": "BOOTLOADER_FLASH_NEEDS_32BIT_FEAT && IDF_TARGET_ESP32S3 && IDF_EXPERIMENTAL_FEATURES",
+                        "depends_on": null,
+                        "help": "This is a helper config for 32bits address quad flash. Invisible for users.",
+                        "id": "BOOTLOADER_FLASH_NEEDS_32BIT_ADDR_QUAD_FLASH",
+                        "name": "BOOTLOADER_FLASH_NEEDS_32BIT_ADDR_QUAD_FLASH",
+                        "range": null,
+                        "title": null,
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "BOOTLOADER_FLASH_NEEDS_32BIT_ADDR_QUAD_FLASH && IDF_EXPERIMENTAL_FEATURES",
                         "help": "Enabling this option allows the CPU to access 32-bit-address flash beyond 16M range.\n1. This option only valid for 4-line flash. Octal flash doesn't need this.\n2. This option is experimental, which means it can\u2019t use on all flash chips stable, for more\ninformation, please contact Espressif Business support.",
                         "id": "BOOTLOADER_CACHE_32BIT_ADDR_QUAD_FLASH",
                         "name": "BOOTLOADER_CACHE_32BIT_ADDR_QUAD_FLASH",
@@ -5836,6 +5856,16 @@
             },
             {
                 "children": [],
+                "depends_on": "IDF_TOOLCHAIN_GCC",
+                "help": "Disable merging identical constants (string/floating-point) across compilation units.\nThis helps in better size analysis of the application binary as the rodata section\ndistribution is more uniform across libraries. On downside, it may increase\nthe binary size and hence should be used during development phase only.",
+                "id": "COMPILER_NO_MERGE_CONSTANTS",
+                "name": "COMPILER_NO_MERGE_CONSTANTS",
+                "range": null,
+                "title": "Disable merging const sections",
+                "type": "bool"
+            },
+            {
+                "children": [],
                 "depends_on": null,
                 "help": "Adds -Wwrite-strings flag for the C/C++ compilers.\n\nFor C, this gives string constants the type ``const char[]`` so that\ncopying the address of one into a non-const ``char *`` pointer\nproduces a warning. This warning helps to find at compile time code\nthat tries to write into a string constant.\n\nFor C++, this warns about the deprecated conversion from string\nliterals to ``char *``.",
                 "id": "COMPILER_WARN_WRITE_STRINGS",
@@ -5939,7 +5969,7 @@
                     {
                         "children": [],
                         "depends_on": "<choice COMPILER_ORPHAN_SECTIONS>",
-                        "help": "Places orphan sections without a warning message.",
+                        "help": "Places orphan sections with a warning message.",
                         "id": "COMPILER_ORPHAN_SECTIONS_WARNING",
                         "name": "COMPILER_ORPHAN_SECTIONS_WARNING",
                         "range": null,
@@ -9032,7 +9062,7 @@
                                 "id": "BT_MULTI_CONNECTION_ENBALE",
                                 "name": "BT_MULTI_CONNECTION_ENBALE",
                                 "range": null,
-                                "title": "Enable BLE multi-conections",
+                                "title": "Enable BLE multi-connections",
                                 "type": "bool"
                             },
                             {
@@ -9193,6 +9223,16 @@
                                 "name": "BT_BLE_HIGH_DUTY_ADV_INTERVAL",
                                 "range": null,
                                 "title": "Enable BLE high duty advertising interval feature",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "BT_BLUEDROID_ENABLED && BT_BLUEDROID_ENABLED",
+                                "help": "This enables abort when memory allocation fails",
+                                "id": "BT_ABORT_WHEN_ALLOCATION_FAILS",
+                                "name": "BT_ABORT_WHEN_ALLOCATION_FAILS",
+                                "range": null,
+                                "title": "Abort when memory allocation fails in BT/BLE stack",
                                 "type": "bool"
                             }
                         ],
@@ -9953,7 +9993,7 @@
                                 "children": [
                                     {
                                         "children": [],
-                                        "depends_on": "BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_ENABLED",
+                                        "depends_on": "BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_ENABLED",
                                         "help": "Enable 2M-PHY",
                                         "id": "BT_NIMBLE_LL_CFG_FEAT_LE_2M_PHY",
                                         "name": "BT_NIMBLE_LL_CFG_FEAT_LE_2M_PHY",
@@ -9963,7 +10003,7 @@
                                     },
                                     {
                                         "children": [],
-                                        "depends_on": "BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_ENABLED",
+                                        "depends_on": "BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_ENABLED",
                                         "help": "Enable coded-PHY",
                                         "id": "BT_NIMBLE_LL_CFG_FEAT_LE_CODED_PHY",
                                         "name": "BT_NIMBLE_LL_CFG_FEAT_LE_CODED_PHY",
@@ -9975,7 +10015,7 @@
                                         "children": [
                                             {
                                                 "children": [],
-                                                "depends_on": "BT_NIMBLE_EXT_ADV && BT_NIMBLE_EXT_ADV && BT_NIMBLE_ENABLED",
+                                                "depends_on": "BT_NIMBLE_EXT_ADV && BT_NIMBLE_EXT_ADV && BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_ENABLED",
                                                 "help": "Change this option to set maximum number of extended advertising\ninstances. Minimum there is always one instance of\nadvertising. Enter how many more advertising instances you\nwant.\nFor ESP32C2, ESP32C6 and ESP32H2, each extended advertising instance\nwill take about 0.5k DRAM.",
                                                 "id": "BT_NIMBLE_MAX_EXT_ADV_INSTANCES",
                                                 "name": "BT_NIMBLE_MAX_EXT_ADV_INSTANCES",
@@ -9985,7 +10025,7 @@
                                             },
                                             {
                                                 "children": [],
-                                                "depends_on": "BT_NIMBLE_EXT_ADV && BT_NIMBLE_EXT_ADV && BT_NIMBLE_ENABLED",
+                                                "depends_on": "BT_NIMBLE_EXT_ADV && BT_NIMBLE_EXT_ADV && BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_ENABLED",
                                                 "help": "Defines the length of the extended adv data. The value should not\nexceed 1650.",
                                                 "id": "BT_NIMBLE_EXT_ADV_MAX_SIZE",
                                                 "name": "BT_NIMBLE_EXT_ADV_MAX_SIZE",
@@ -9997,7 +10037,17 @@
                                                 "children": [
                                                     {
                                                         "children": [],
-                                                        "depends_on": "BT_NIMBLE_ENABLE_PERIODIC_ADV && BT_NIMBLE_EXT_ADV && BT_NIMBLE_ENABLED",
+                                                        "depends_on": "BT_NIMBLE_ENABLE_PERIODIC_ADV && SOC_BLE_PERIODIC_ADV_ENH_SUPPORTED && BT_NIMBLE_EXT_ADV && BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_ENABLED",
+                                                        "help": "Enable the periodic advertising enhancements",
+                                                        "id": "BT_NIMBLE_PERIODIC_ADV_ENH",
+                                                        "name": "BT_NIMBLE_PERIODIC_ADV_ENH",
+                                                        "range": null,
+                                                        "title": "Periodic adv enhancements(adi support)",
+                                                        "type": "bool"
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "depends_on": "BT_NIMBLE_ENABLE_PERIODIC_ADV && BT_NIMBLE_EXT_ADV && BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_ENABLED",
                                                         "help": "This enables controller transfer periodic sync events to host",
                                                         "id": "BT_NIMBLE_PERIODIC_ADV_SYNC_TRANSFER",
                                                         "name": "BT_NIMBLE_PERIODIC_ADV_SYNC_TRANSFER",
@@ -10006,7 +10056,7 @@
                                                         "type": "bool"
                                                     }
                                                 ],
-                                                "depends_on": "BT_NIMBLE_EXT_ADV && BT_NIMBLE_EXT_ADV && BT_NIMBLE_ENABLED",
+                                                "depends_on": "BT_NIMBLE_EXT_ADV && BT_NIMBLE_EXT_ADV && BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_ENABLED",
                                                 "help": "Enable this option to start periodic advertisement.",
                                                 "id": "BT_NIMBLE_ENABLE_PERIODIC_ADV",
                                                 "name": "BT_NIMBLE_ENABLE_PERIODIC_ADV",
@@ -10015,7 +10065,7 @@
                                                 "type": "bool"
                                             }
                                         ],
-                                        "depends_on": "BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_ENABLED",
+                                        "depends_on": "BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_ENABLED",
                                         "help": "Enable this option to do extended advertising. Extended advertising\nwill be supported from BLE 5.0 onwards.",
                                         "id": "BT_NIMBLE_EXT_ADV",
                                         "name": "BT_NIMBLE_EXT_ADV",
@@ -10024,28 +10074,50 @@
                                         "type": "bool"
                                     },
                                     {
-                                        "children": [],
-                                        "depends_on": "BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_ENABLED",
-                                        "help": "Set this option to set the upper limit for number of periodic sync\nconnections. This should be less than maximum connections allowed by\ncontroller.",
-                                        "id": "BT_NIMBLE_MAX_PERIODIC_SYNCS",
-                                        "name": "BT_NIMBLE_MAX_PERIODIC_SYNCS",
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "depends_on": "BT_NIMBLE_ENABLE_PERIODIC_SYNC && BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_ENABLED",
+                                                        "help": "Set this option to set the upper limit for number of periodic sync\nconnections. This should be less than maximum connections allowed by\ncontroller.",
+                                                        "id": "BT_NIMBLE_MAX_PERIODIC_SYNCS",
+                                                        "name": "BT_NIMBLE_MAX_PERIODIC_SYNCS",
+                                                        "range": null,
+                                                        "title": "Maximum number of periodic advertising syncs",
+                                                        "type": "int"
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "depends_on": "SOC_ESP_NIMBLE_CONTROLLER && BT_NIMBLE_ENABLE_PERIODIC_SYNC && BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_ENABLED",
+                                                        "help": "Set this option to set the upper limit for number of periodic advertiser list.",
+                                                        "id": "BT_NIMBLE_MAX_PERIODIC_ADVERTISER_LIST",
+                                                        "name": "BT_NIMBLE_MAX_PERIODIC_ADVERTISER_LIST",
+                                                        "range": null,
+                                                        "title": "Maximum number of periodic advertiser list",
+                                                        "type": "int"
+                                                    }
+                                                ],
+                                                "depends_on": "BT_NIMBLE_EXT_SCAN && BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_ENABLED",
+                                                "help": "Enable this option to receive periodic advertisement.",
+                                                "id": "BT_NIMBLE_ENABLE_PERIODIC_SYNC",
+                                                "name": "BT_NIMBLE_ENABLE_PERIODIC_SYNC",
+                                                "range": null,
+                                                "title": "Enable periodic sync",
+                                                "type": "bool"
+                                            }
+                                        ],
+                                        "depends_on": "BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_ROLE_OBSERVER && BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_ENABLED",
+                                        "help": "Enable this option to do extended scanning.",
+                                        "id": "BT_NIMBLE_EXT_SCAN",
+                                        "name": "BT_NIMBLE_EXT_SCAN",
                                         "range": null,
-                                        "title": "Maximum number of periodic advertising syncs",
-                                        "type": "int"
+                                        "title": "Enable extended scanning",
+                                        "type": "bool"
                                     },
                                     {
                                         "children": [],
-                                        "depends_on": "BT_NIMBLE_50_FEATURE_SUPPORT && SOC_ESP_NIMBLE_CONTROLLER && BT_NIMBLE_ENABLED",
-                                        "help": "Set this option to set the upper limit for number of periodic advertiser list.",
-                                        "id": "BT_NIMBLE_MAX_PERIODIC_ADVERTISER_LIST",
-                                        "name": "BT_NIMBLE_MAX_PERIODIC_ADVERTISER_LIST",
-                                        "range": null,
-                                        "title": "Maximum number of periodic advertiser list",
-                                        "type": "int"
-                                    },
-                                    {
-                                        "children": [],
-                                        "depends_on": "BT_NIMBLE_50_FEATURE_SUPPORT && SOC_BLE_POWER_CONTROL_SUPPORTED && BT_NIMBLE_ENABLED",
+                                        "depends_on": "BT_NIMBLE_50_FEATURE_SUPPORT && SOC_BLE_POWER_CONTROL_SUPPORTED && BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_ENABLED",
                                         "help": "Set this option to enable the Power Control feature",
                                         "id": "BT_NIMBLE_BLE_POWER_CONTROL",
                                         "name": "BT_NIMBLE_BLE_POWER_CONTROL",
@@ -10055,19 +10127,19 @@
                                     },
                                     {
                                         "children": [],
-                                        "depends_on": "BT_NIMBLE_ENABLE_PERIODIC_ADV && BT_NIMBLE_50_FEATURE_SUPPORT && SOC_BLE_PERIODIC_ADV_ENH_SUPPORTED && BT_NIMBLE_ENABLED",
-                                        "help": "Enable the periodic advertising enhancements",
-                                        "id": "BT_NIMBLE_PERIODIC_ADV_ENH",
-                                        "name": "BT_NIMBLE_PERIODIC_ADV_ENH",
+                                        "depends_on": "BT_NIMBLE_50_FEATURE_SUPPORT && (BT_CONTROLLER_DISABLED || SOC_BLE_CTE_SUPPORTED) && BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_ENABLED",
+                                        "help": "Enable support for Connectionless and Connection Oriented Direction Finding",
+                                        "id": "BT_NIMBLE_AOA_AOD",
+                                        "name": "BT_NIMBLE_AOA_AOD",
                                         "range": null,
-                                        "title": "Periodic adv enhancements(adi support)",
+                                        "title": "Direction Finding",
                                         "type": "bool"
                                     },
                                     {
                                         "children": [
                                             {
                                                 "children": [],
-                                                "depends_on": "BT_NIMBLE_GATT_CACHING && BT_NIMBLE_ENABLED",
+                                                "depends_on": "BT_NIMBLE_GATT_CACHING && BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_ENABLED",
                                                 "help": "Set this option to set the upper limit on number of connections to be cached.",
                                                 "id": "BT_NIMBLE_GATT_CACHING_MAX_CONNS",
                                                 "name": "BT_NIMBLE_GATT_CACHING_MAX_CONNS",
@@ -10077,7 +10149,7 @@
                                             },
                                             {
                                                 "children": [],
-                                                "depends_on": "BT_NIMBLE_GATT_CACHING && BT_NIMBLE_ENABLED",
+                                                "depends_on": "BT_NIMBLE_GATT_CACHING && BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_ENABLED",
                                                 "help": "Set this option to set the upper limit on number of services per connection to be cached.",
                                                 "id": "BT_NIMBLE_GATT_CACHING_MAX_SVCS",
                                                 "name": "BT_NIMBLE_GATT_CACHING_MAX_SVCS",
@@ -10087,7 +10159,7 @@
                                             },
                                             {
                                                 "children": [],
-                                                "depends_on": "BT_NIMBLE_GATT_CACHING && BT_NIMBLE_ENABLED",
+                                                "depends_on": "BT_NIMBLE_GATT_CACHING && BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_ENABLED",
                                                 "help": "Set this option to set the upper limit on number of characteristics per connection to be cached.",
                                                 "id": "BT_NIMBLE_GATT_CACHING_MAX_CHRS",
                                                 "name": "BT_NIMBLE_GATT_CACHING_MAX_CHRS",
@@ -10097,7 +10169,7 @@
                                             },
                                             {
                                                 "children": [],
-                                                "depends_on": "BT_NIMBLE_GATT_CACHING && BT_NIMBLE_ENABLED",
+                                                "depends_on": "BT_NIMBLE_GATT_CACHING && BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_ENABLED",
                                                 "help": "Set this option to set the upper limit on number of descriptors per connection to be cached.",
                                                 "id": "BT_NIMBLE_GATT_CACHING_MAX_DSCS",
                                                 "name": "BT_NIMBLE_GATT_CACHING_MAX_DSCS",
@@ -10106,7 +10178,7 @@
                                                 "type": "int"
                                             }
                                         ],
-                                        "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_ENABLED",
+                                        "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_50_FEATURE_SUPPORT && BT_NIMBLE_ENABLED",
                                         "help": "Enable GATT caching",
                                         "id": "BT_NIMBLE_GATT_CACHING",
                                         "is_menuconfig": true,
@@ -10550,6 +10622,16 @@
                                 "name": "BT_NIMBLE_HIGH_DUTY_ADV_ITVL",
                                 "range": null,
                                 "title": "Enable BLE high duty advertising interval feature",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
+                                "help": "This enables support for user to initiate a new connection with scan in progress",
+                                "id": "BT_NIMBLE_HOST_ALLOW_CONNECT_WITH_SCAN",
+                                "name": "BT_NIMBLE_HOST_ALLOW_CONNECT_WITH_SCAN",
+                                "range": null,
+                                "title": "Allow Connections with scanning in progress",
                                 "type": "bool"
                             },
                             {
@@ -11295,10 +11377,10 @@
                                         "children": [],
                                         "depends_on": "<choice BT_CTRL_DFT_TX_POWER_LEVEL>",
                                         "help": null,
-                                        "id": "BT_CTRL_DFT_TX_POWER_LEVEL_P21",
-                                        "name": "BT_CTRL_DFT_TX_POWER_LEVEL_P21",
+                                        "id": "BT_CTRL_DFT_TX_POWER_LEVEL_P20",
+                                        "name": "BT_CTRL_DFT_TX_POWER_LEVEL_P20",
                                         "range": null,
-                                        "title": "+21dBm",
+                                        "title": "+20dBm",
                                         "type": "bool"
                                     }
                                 ],
@@ -11342,7 +11424,7 @@
                                         "type": "int"
                                     }
                                 ],
-                                "depends_on": "BT_CONTROLLER_ENABLED",
+                                "depends_on": "(!BT_CTRL_RUN_IN_FLASH_ONLY || (BT_CTRL_RUN_IN_FLASH_ONLY && BT_CTRL_BLE_SCAN)) && BT_CONTROLLER_ENABLED",
                                 "help": "The function is mainly used to enable flow control for advertising reports. When it is enabled,\nadvertising reports will be discarded by the controller if the number of unprocessed advertising\nreports exceeds the size of BLE adv report flow control.",
                                 "id": "BT_CTRL_BLE_ADV_REPORT_FLOW_CTRL_SUPP",
                                 "name": "BT_CTRL_BLE_ADV_REPORT_FLOW_CTRL_SUPP",
@@ -11512,12 +11594,12 @@
                                                             },
                                                             {
                                                                 "children": [],
-                                                                "depends_on": "RTC_CLK_SRC_EXT_CRYS && <choice BT_CTRL_LOW_POWER_CLOCK>",
-                                                                "help": "External 32kHz crystal has a nominal frequency of 32.768kHz and provides good frequency\nstability. If used as Bluetooth low power clock, External 32kHz can support Bluetooth\nmodem sleep to be used with both DFS and light sleep.",
+                                                                "depends_on": "(RTC_CLK_SRC_EXT_CRYS || RTC_CLK_SRC_EXT_OSC) && <choice BT_CTRL_LOW_POWER_CLOCK>",
+                                                                "help": "External 32kHz crystal/oscillator has a nominal frequency of 32.768kHz and provides good frequency\nstability. If used as Bluetooth low power clock, External 32kHz can support Bluetooth\nmodem sleep to be used with both DFS and light sleep.",
                                                                 "id": "BT_CTRL_LPCLK_SEL_EXT_32K_XTAL",
                                                                 "name": "BT_CTRL_LPCLK_SEL_EXT_32K_XTAL",
                                                                 "range": null,
-                                                                "title": "External 32kHz crystal",
+                                                                "title": "External 32kHz crystal/oscillator",
                                                                 "type": "bool"
                                                             },
                                                             {
@@ -11662,6 +11744,105 @@
                                 "range": null,
                                 "title": "Enable LE Ping procedure",
                                 "type": "bool"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_CONTROLLER_ENABLED",
+                                        "help": "If this option is enabled, Controller will terminate the connection\nwhen instant passed during connection update procedure.",
+                                        "id": "BT_CTRL_BLE_LLCP_CONN_UPDATE",
+                                        "name": "BT_CTRL_BLE_LLCP_CONN_UPDATE",
+                                        "range": null,
+                                        "title": "BLE ACL connection update procedure",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_CONTROLLER_ENABLED",
+                                        "help": "If this option is enabled, Controller will terminate the connection\nwhen instant passed in channel map update procedure.",
+                                        "id": "BT_CTRL_BLE_LLCP_CHAN_MAP_UPDATE",
+                                        "name": "BT_CTRL_BLE_LLCP_CHAN_MAP_UPDATE",
+                                        "range": null,
+                                        "title": "BLE ACL channel map update procedure",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_CONTROLLER_ENABLED",
+                                        "help": "If this option is enabled, Controller will terminate the connection\nwhen instant passed in PHY update procedure.",
+                                        "id": "BT_CTRL_BLE_LLCP_PHY_UPDATE",
+                                        "name": "BT_CTRL_BLE_LLCP_PHY_UPDATE",
+                                        "range": null,
+                                        "title": "BLE ACL PHY update procedure",
+                                        "type": "bool"
+                                    }
+                                ],
+                                "depends_on": "BT_CONTROLLER_ENABLED",
+                                "id": "component-config-bluetooth-controller-options-ble-disconnect-when-instant-passed",
+                                "title": "BLE disconnect when instant passed",
+                                "type": "menu"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_CTRL_RUN_IN_FLASH_ONLY && BT_CONTROLLER_ENABLED",
+                                        "help": null,
+                                        "id": "BT_CTRL_DTM_ENABLE",
+                                        "name": "BT_CTRL_DTM_ENABLE",
+                                        "range": null,
+                                        "title": "Enable direct test mode feature",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_CTRL_RUN_IN_FLASH_ONLY && BT_CONTROLLER_ENABLED",
+                                        "help": null,
+                                        "id": "BT_CTRL_BLE_MASTER",
+                                        "name": "BT_CTRL_BLE_MASTER",
+                                        "range": null,
+                                        "title": "Enable BLE master role feature",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_CTRL_RUN_IN_FLASH_ONLY && BT_CONTROLLER_ENABLED",
+                                        "help": null,
+                                        "id": "BT_CTRL_BLE_TEST",
+                                        "name": "BT_CTRL_BLE_TEST",
+                                        "range": null,
+                                        "title": "Enable BLE QA test feature",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_CTRL_RUN_IN_FLASH_ONLY && BT_CONTROLLER_ENABLED",
+                                        "help": null,
+                                        "id": "BT_CTRL_BLE_SCAN",
+                                        "name": "BT_CTRL_BLE_SCAN",
+                                        "range": null,
+                                        "title": "Enable BLE scan feature",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "BT_CTRL_RUN_IN_FLASH_ONLY && BT_CONTROLLER_ONLY && BT_CONTROLLER_ENABLED",
+                                        "help": null,
+                                        "id": "BT_CTRL_BLE_SECURITY_ENABLE",
+                                        "name": "BT_CTRL_BLE_SECURITY_ENABLE",
+                                        "range": null,
+                                        "title": "Enable BLE security feature",
+                                        "type": "bool"
+                                    }
+                                ],
+                                "depends_on": "BT_CONTROLLER_ENABLED",
+                                "help": "If this option is enabled, all code for the Bluetooth controller will be moved from ROM and IRAM\nto flash, saving over 20K bytes of memory. However, it will require more flash resources and the\nperformance of Bluetooth will decrease If this option is enabled, Bluetooth may not work properly\nduring erasing flash. It is recommended to turn on the auto suspend function of flash. After auto\nsuspend is turned on, Bluetooth interrupts can be executed normally during erasing flash, with less\nimpact on Bluetooth performance.",
+                                "id": "BT_CTRL_RUN_IN_FLASH_ONLY",
+                                "name": "BT_CTRL_RUN_IN_FLASH_ONLY",
+                                "range": null,
+                                "title": "Put all BLE Controller code in flash",
+                                "type": "bool"
                             }
                         ],
                         "depends_on": "BT_CONTROLLER_ENABLED",
@@ -11749,6 +11930,16 @@
                     {
                         "children": [],
                         "depends_on": "BLE_MESH",
+                        "help": "Support BLE Mesh v1.1 features",
+                        "id": "BLE_MESH_V11_SUPPORT",
+                        "name": "BLE_MESH_V11_SUPPORT",
+                        "range": null,
+                        "title": "Support ESP BLE Mesh v1.1 features (Preview)",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "BLE_MESH",
                         "help": "Enable this option to allow using random advertising interval\nfor mesh packets. And this could help avoid collision of\nadvertising packets.",
                         "id": "BLE_MESH_RANDOM_ADV_INTERVAL",
                         "name": "BLE_MESH_RANDOM_ADV_INTERVAL",
@@ -11768,7 +11959,7 @@
                     },
                     {
                         "children": [],
-                        "depends_on": "BLE_MESH",
+                        "depends_on": "BLE_MESH_V11_SUPPORT && BLE_MESH",
                         "help": "Enable this option to allow using BLE Active Scan for BLE Mesh.",
                         "id": "BLE_MESH_ACTIVE_SCAN",
                         "name": "BLE_MESH_ACTIVE_SCAN",
@@ -12032,7 +12223,7 @@
                         "children": [
                             {
                                 "children": [],
-                                "depends_on": "BLE_MESH_PROV && BLE_MESH",
+                                "depends_on": "BLE_MESH_PROV && BLE_MESH_V11_SUPPORT && BLE_MESH",
                                 "help": "Enable this option to support BLE Mesh enhanced provisioning authentication\nfunctionality. This option can increase the security level of provisioning.\nIt is recommended to enable this option.",
                                 "id": "BLE_MESH_PROV_EPA",
                                 "name": "BLE_MESH_PROV_EPA",
@@ -12053,7 +12244,7 @@
                                         "type": "int"
                                     }
                                 ],
-                                "depends_on": "BLE_MESH_PROV && BLE_MESH",
+                                "depends_on": "BLE_MESH_PROV && BLE_MESH_V11_SUPPORT && BLE_MESH",
                                 "help": "Enable this option to support BLE Mesh Certificate-Based Provisioning.",
                                 "id": "BLE_MESH_CERT_BASED_PROV",
                                 "name": "BLE_MESH_CERT_BASED_PROV",
@@ -12156,7 +12347,7 @@
                                         "type": "int"
                                     }
                                 ],
-                                "depends_on": "BLE_MESH_GATT_PROXY_SERVER && BLE_MESH",
+                                "depends_on": "BLE_MESH_GATT_PROXY_SERVER && BLE_MESH_V11_SUPPORT && BLE_MESH",
                                 "help": "Enable this option to support receiving Proxy Solicitation PDU.",
                                 "id": "BLE_MESH_PROXY_SOLIC_PDU_RX",
                                 "name": "BLE_MESH_PROXY_SOLIC_PDU_RX",
@@ -12188,7 +12379,7 @@
                                         "type": "int"
                                     }
                                 ],
-                                "depends_on": "BLE_MESH_GATT_PROXY_CLIENT && BLE_MESH",
+                                "depends_on": "BLE_MESH_GATT_PROXY_CLIENT && BLE_MESH_V11_SUPPORT && BLE_MESH",
                                 "help": "Enable this option to support sending Proxy Solicitation PDU.",
                                 "id": "BLE_MESH_PROXY_SOLIC_PDU_TX",
                                 "name": "BLE_MESH_PROXY_SOLIC_PDU_TX",
@@ -12420,7 +12611,7 @@
                     },
                     {
                         "children": [],
-                        "depends_on": "BLE_MESH",
+                        "depends_on": "BLE_MESH_V11_SUPPORT && BLE_MESH",
                         "help": "Enable this option to use the enhanced segmentation and reassembly\nmechanism introduced in Bluetooth Mesh Protocol 1.1.",
                         "id": "BLE_MESH_SAR_ENHANCEMENT",
                         "name": "BLE_MESH_SAR_ENHANCEMENT",
@@ -12933,7 +13124,7 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "BLE_MESH",
+                                "depends_on": "BLE_MESH_V11_SUPPORT && BLE_MESH",
                                 "help": "Enable support for Bridge Configuration Client model.",
                                 "id": "BLE_MESH_BRC_CLI",
                                 "name": "BLE_MESH_BRC_CLI",
@@ -12945,7 +13136,7 @@
                                 "children": [
                                     {
                                         "children": [],
-                                        "depends_on": "BLE_MESH_BRC_SRV && BLE_MESH",
+                                        "depends_on": "BLE_MESH_BRC_SRV && BLE_MESH_V11_SUPPORT && BLE_MESH",
                                         "help": "Maximum number of Bridging Table entries that the Bridge Configuration Server can support.",
                                         "id": "BLE_MESH_MAX_BRIDGING_TABLE_ENTRY_COUNT",
                                         "name": "BLE_MESH_MAX_BRIDGING_TABLE_ENTRY_COUNT",
@@ -12955,7 +13146,7 @@
                                     },
                                     {
                                         "children": [],
-                                        "depends_on": "BLE_MESH_BRC_SRV && BLE_MESH",
+                                        "depends_on": "BLE_MESH_BRC_SRV && BLE_MESH_V11_SUPPORT && BLE_MESH",
                                         "help": "This option specifies the maximum capacity of the bridge replay\nprotection list. The bridge replay protection list is used to\nprevent a bridged subnet from replay attack, which will store the\nsource address and sequence number of the received bridge messages.",
                                         "id": "BLE_MESH_BRIDGE_CRPL",
                                         "name": "BLE_MESH_BRIDGE_CRPL",
@@ -12964,7 +13155,7 @@
                                         "type": "int"
                                     }
                                 ],
-                                "depends_on": "BLE_MESH",
+                                "depends_on": "BLE_MESH_V11_SUPPORT && BLE_MESH",
                                 "help": "Enable support for Bridge Configuration Server model.",
                                 "id": "BLE_MESH_BRC_SRV",
                                 "name": "BLE_MESH_BRC_SRV",
@@ -12974,7 +13165,7 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "BLE_MESH",
+                                "depends_on": "BLE_MESH_V11_SUPPORT && BLE_MESH",
                                 "help": "Enable support for Mesh Private Beacon Client model.",
                                 "id": "BLE_MESH_PRB_CLI",
                                 "name": "BLE_MESH_PRB_CLI",
@@ -12984,7 +13175,7 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "BLE_MESH",
+                                "depends_on": "BLE_MESH_V11_SUPPORT && BLE_MESH",
                                 "help": "Enable support for Mesh Private Beacon Server model.",
                                 "id": "BLE_MESH_PRB_SRV",
                                 "name": "BLE_MESH_PRB_SRV",
@@ -12994,7 +13185,7 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "BLE_MESH",
+                                "depends_on": "BLE_MESH_V11_SUPPORT && BLE_MESH",
                                 "help": "Enable support for On-Demand Private Proxy Client model.",
                                 "id": "BLE_MESH_ODP_CLI",
                                 "name": "BLE_MESH_ODP_CLI",
@@ -13004,7 +13195,7 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "BLE_MESH_PROXY_SOLIC_PDU_RX && BLE_MESH",
+                                "depends_on": "BLE_MESH_PROXY_SOLIC_PDU_RX && BLE_MESH_V11_SUPPORT && BLE_MESH",
                                 "help": "Enable support for On-Demand Private Proxy Server model.",
                                 "id": "BLE_MESH_ODP_SRV",
                                 "name": "BLE_MESH_ODP_SRV",
@@ -13014,7 +13205,7 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "BLE_MESH",
+                                "depends_on": "BLE_MESH_V11_SUPPORT && BLE_MESH",
                                 "help": "Enable support for Solicitation PDU RPL Configuration Client model.",
                                 "id": "BLE_MESH_SRPL_CLI",
                                 "name": "BLE_MESH_SRPL_CLI",
@@ -13024,7 +13215,7 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "BLE_MESH_PROXY_SOLIC_PDU_RX && BLE_MESH",
+                                "depends_on": "BLE_MESH_PROXY_SOLIC_PDU_RX && BLE_MESH_V11_SUPPORT && BLE_MESH",
                                 "help": "Enable support for Solicitation PDU RPL Configuration Server model.\nNote:\nThis option depends on the functionality of receiving Solicitation\nPDU. If the device doesn't support receiving Solicitation PDU, then\nthere is no need to enable this server model.",
                                 "id": "BLE_MESH_SRPL_SRV",
                                 "name": "BLE_MESH_SRPL_SRV",
@@ -13034,7 +13225,7 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "BLE_MESH",
+                                "depends_on": "BLE_MESH_V11_SUPPORT && BLE_MESH",
                                 "help": "Enable support for Opcodes Aggregator Client model.",
                                 "id": "BLE_MESH_AGG_CLI",
                                 "name": "BLE_MESH_AGG_CLI",
@@ -13044,7 +13235,7 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "BLE_MESH",
+                                "depends_on": "BLE_MESH_V11_SUPPORT && BLE_MESH",
                                 "help": "Enable support for Opcodes Aggregator Server model.",
                                 "id": "BLE_MESH_AGG_SRV",
                                 "name": "BLE_MESH_AGG_SRV",
@@ -13054,7 +13245,7 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "BLE_MESH",
+                                "depends_on": "BLE_MESH_V11_SUPPORT && BLE_MESH",
                                 "help": "Enable support for SAR Configuration Client model.",
                                 "id": "BLE_MESH_SAR_CLI",
                                 "name": "BLE_MESH_SAR_CLI",
@@ -13064,7 +13255,7 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "BLE_MESH",
+                                "depends_on": "BLE_MESH_V11_SUPPORT && BLE_MESH",
                                 "help": "Enable support for SAR Configuration Server model.",
                                 "id": "BLE_MESH_SAR_SRV",
                                 "name": "BLE_MESH_SAR_SRV",
@@ -13074,7 +13265,7 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "BLE_MESH",
+                                "depends_on": "BLE_MESH_V11_SUPPORT && BLE_MESH",
                                 "help": "Composition Data Page 1 contains information about the relationships\namong models.\nEach model either can be a root model or can extend other models.",
                                 "id": "BLE_MESH_COMP_DATA_1",
                                 "name": "BLE_MESH_COMP_DATA_1",
@@ -13084,7 +13275,7 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "BLE_MESH",
+                                "depends_on": "BLE_MESH_V11_SUPPORT && BLE_MESH",
                                 "help": "Composition Data Page 128 is used to indicate the structure of\nelements, features, and models of a node after the successful\nexecution of the Node Address Refresh procedure or the Node\nComposition Refresh procedure, or after the execution of the\nNode Removal procedure followed by the provisioning process.\nComposition Data Page 128 shall be present if the node supports\nthe Remote Provisioning Server model; otherwise it is optional.",
                                 "id": "BLE_MESH_COMP_DATA_128",
                                 "name": "BLE_MESH_COMP_DATA_128",
@@ -13096,7 +13287,7 @@
                                 "children": [
                                     {
                                         "children": [],
-                                        "depends_on": "BLE_MESH_MODELS_METADATA_0 && BLE_MESH",
+                                        "depends_on": "BLE_MESH_MODELS_METADATA_0 && BLE_MESH_V11_SUPPORT && BLE_MESH",
                                         "help": "The Models Metadata state contains metadata of a node\u2019s models.\nThe Models Metadata state is composed of a number of pages of\ninformation.\nModels Metadata Page 128 contains metadata for the node\u2019s models\nafter the successful execution of the Node Address Refresh\nprocedure or the Node Composition Refresh procedure, or after\nthe execution of the Node Removal procedure followed by the\nprovisioning process.\nModels Metadata Page 128 shall be present if the node supports\nthe Remote Provisioning Server model and the node supports the\nLarge Composition Data Server model.",
                                         "id": "BLE_MESH_MODELS_METADATA_128",
                                         "name": "BLE_MESH_MODELS_METADATA_128",
@@ -13105,7 +13296,7 @@
                                         "type": "bool"
                                     }
                                 ],
-                                "depends_on": "BLE_MESH",
+                                "depends_on": "BLE_MESH_V11_SUPPORT && BLE_MESH",
                                 "help": "The Models Metadata state contains metadata of a node\u2019s models.\nThe Models Metadata state is composed of a number of pages of\ninformation.\nModels Metadata Page 0 shall be present if the node supports\nthe Large Composition Data Server model.",
                                 "id": "BLE_MESH_MODELS_METADATA_0",
                                 "name": "BLE_MESH_MODELS_METADATA_0",
@@ -13115,7 +13306,7 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "BLE_MESH",
+                                "depends_on": "BLE_MESH_V11_SUPPORT && BLE_MESH",
                                 "help": "Enable support for Large Composition Data Client model.",
                                 "id": "BLE_MESH_LCD_CLI",
                                 "name": "BLE_MESH_LCD_CLI",
@@ -13125,7 +13316,7 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "BLE_MESH",
+                                "depends_on": "BLE_MESH_V11_SUPPORT && BLE_MESH",
                                 "help": "Enable support for Large Composition Data Server model.",
                                 "id": "BLE_MESH_LCD_SRV",
                                 "name": "BLE_MESH_LCD_SRV",
@@ -13137,7 +13328,7 @@
                                 "children": [
                                     {
                                         "children": [],
-                                        "depends_on": "BLE_MESH_RPR_CLI && BLE_MESH",
+                                        "depends_on": "BLE_MESH_RPR_CLI && BLE_MESH_V11_SUPPORT && BLE_MESH",
                                         "help": "This option specifies how many devices can be provisioned at the same time\nusing PB-REMOTE. For example, if the value is 2, it means a Provisioner can\nprovision two unprovisioned devices with PB-REMOTE at the same time.",
                                         "id": "BLE_MESH_RPR_CLI_PROV_SAME_TIME",
                                         "name": "BLE_MESH_RPR_CLI_PROV_SAME_TIME",
@@ -13146,7 +13337,7 @@
                                         "type": "int"
                                     }
                                 ],
-                                "depends_on": "BLE_MESH_PROVISIONER && BLE_MESH",
+                                "depends_on": "BLE_MESH_PROVISIONER && BLE_MESH_V11_SUPPORT && BLE_MESH",
                                 "help": "Enable support for Remote Provisioning Client model",
                                 "id": "BLE_MESH_RPR_CLI",
                                 "name": "BLE_MESH_RPR_CLI",
@@ -13158,7 +13349,7 @@
                                 "children": [
                                     {
                                         "children": [],
-                                        "depends_on": "BLE_MESH_RPR_SRV && BLE_MESH",
+                                        "depends_on": "BLE_MESH_RPR_SRV && BLE_MESH_V11_SUPPORT && BLE_MESH",
                                         "help": "This option specifies how many device information can a Remote\nProvisioning Server store each time while scanning.",
                                         "id": "BLE_MESH_RPR_SRV_MAX_SCANNED_ITEMS",
                                         "name": "BLE_MESH_RPR_SRV_MAX_SCANNED_ITEMS",
@@ -13168,7 +13359,7 @@
                                     },
                                     {
                                         "children": [],
-                                        "depends_on": "BLE_MESH_RPR_SRV && BLE_MESH",
+                                        "depends_on": "BLE_MESH_RPR_SRV && BLE_MESH_V11_SUPPORT && BLE_MESH",
                                         "help": "Enable this option to support Active Scan for remote provisioning.",
                                         "id": "BLE_MESH_RPR_SRV_ACTIVE_SCAN",
                                         "name": "BLE_MESH_RPR_SRV_ACTIVE_SCAN",
@@ -13178,7 +13369,7 @@
                                     },
                                     {
                                         "children": [],
-                                        "depends_on": "BLE_MESH_RPR_SRV && BLE_MESH",
+                                        "depends_on": "BLE_MESH_RPR_SRV && BLE_MESH_V11_SUPPORT && BLE_MESH",
                                         "help": "This option specifies how many extended scan procedures can be\nstarted by the Remote Provisioning Server.",
                                         "id": "BLE_MESH_RPR_SRV_MAX_EXT_SCAN",
                                         "name": "BLE_MESH_RPR_SRV_MAX_EXT_SCAN",
@@ -13187,7 +13378,7 @@
                                         "type": "int"
                                     }
                                 ],
-                                "depends_on": "BLE_MESH_NODE && BLE_MESH",
+                                "depends_on": "BLE_MESH_NODE && BLE_MESH_V11_SUPPORT && BLE_MESH",
                                 "help": "Enable support for Remote Provisioning Server model",
                                 "id": "BLE_MESH_RPR_SRV",
                                 "name": "BLE_MESH_RPR_SRV",
@@ -13197,7 +13388,7 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "BLE_MESH",
+                                "depends_on": "BLE_MESH_V11_SUPPORT && BLE_MESH",
                                 "help": "Enable support for Directed Forwarding Configuration Client model.",
                                 "id": "BLE_MESH_DF_CLI",
                                 "name": "BLE_MESH_DF_CLI",
@@ -13209,7 +13400,7 @@
                                 "children": [
                                     {
                                         "children": [],
-                                        "depends_on": "BLE_MESH_DF_SRV && BLE_MESH",
+                                        "depends_on": "BLE_MESH_DF_SRV && BLE_MESH_V11_SUPPORT && BLE_MESH",
                                         "help": "Maximum number of Discovery Table entries supported by the node in a given subnet.",
                                         "id": "BLE_MESH_MAX_DISC_TABLE_ENTRY_COUNT",
                                         "name": "BLE_MESH_MAX_DISC_TABLE_ENTRY_COUNT",
@@ -13219,7 +13410,7 @@
                                     },
                                     {
                                         "children": [],
-                                        "depends_on": "BLE_MESH_DF_SRV && BLE_MESH",
+                                        "depends_on": "BLE_MESH_DF_SRV && BLE_MESH_V11_SUPPORT && BLE_MESH",
                                         "help": "Maximum number of Forward Table entries supported by the node in a given subnet.",
                                         "id": "BLE_MESH_MAX_FORWARD_TABLE_ENTRY_COUNT",
                                         "name": "BLE_MESH_MAX_FORWARD_TABLE_ENTRY_COUNT",
@@ -13229,7 +13420,7 @@
                                     },
                                     {
                                         "children": [],
-                                        "depends_on": "BLE_MESH_DF_SRV && BLE_MESH",
+                                        "depends_on": "BLE_MESH_DF_SRV && BLE_MESH_V11_SUPPORT && BLE_MESH",
                                         "help": "Maximum size of dependent nodes list supported by each forward table entry.",
                                         "id": "BLE_MESH_MAX_DEPS_NODES_PER_PATH",
                                         "name": "BLE_MESH_MAX_DEPS_NODES_PER_PATH",
@@ -13239,7 +13430,7 @@
                                     },
                                     {
                                         "children": [],
-                                        "depends_on": "BLE_MESH_DF_SRV && BLE_MESH",
+                                        "depends_on": "BLE_MESH_DF_SRV && BLE_MESH_V11_SUPPORT && BLE_MESH",
                                         "help": "The option only removes the Path Use timer; all other behavior of the\ndevice is not changed.\nIf Path Monitoring test mode is going to be used, this option should\nbe enabled.",
                                         "id": "BLE_MESH_PATH_MONITOR_TEST",
                                         "name": "BLE_MESH_PATH_MONITOR_TEST",
@@ -13249,7 +13440,7 @@
                                     },
                                     {
                                         "children": [],
-                                        "depends_on": "BLE_MESH_GATT_PROXY_SERVER && BLE_MESH_DF_SRV && BLE_MESH",
+                                        "depends_on": "BLE_MESH_GATT_PROXY_SERVER && BLE_MESH_DF_SRV && BLE_MESH_V11_SUPPORT && BLE_MESH",
                                         "help": "Support Directed Proxy functionality.",
                                         "id": "BLE_MESH_SUPPORT_DIRECTED_PROXY",
                                         "name": "BLE_MESH_SUPPORT_DIRECTED_PROXY",
@@ -13258,7 +13449,7 @@
                                         "type": "bool"
                                     }
                                 ],
-                                "depends_on": "BLE_MESH",
+                                "depends_on": "BLE_MESH_V11_SUPPORT && BLE_MESH",
                                 "help": "Enable support for Directed Forwarding Configuration Server model.",
                                 "id": "BLE_MESH_DF_SRV",
                                 "name": "BLE_MESH_DF_SRV",
@@ -13497,7 +13688,7 @@
                                         "type": "int"
                                     }
                                 ],
-                                "depends_on": "BLE_MESH",
+                                "depends_on": "BLE_MESH_V11_SUPPORT && BLE_MESH",
                                 "help": "Enable support for BLOB Transfer Client model.",
                                 "id": "BLE_MESH_MBT_CLI",
                                 "name": "BLE_MESH_MBT_CLI",
@@ -13507,7 +13698,7 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "BLE_MESH",
+                                "depends_on": "BLE_MESH_V11_SUPPORT && BLE_MESH",
                                 "help": "Enable support for BLOB Transfer Server model.",
                                 "id": "BLE_MESH_MBT_SRV",
                                 "name": "BLE_MESH_MBT_SRV",
@@ -14482,6 +14673,177 @@
                         "range": null,
                         "title": "Support power management under coexistence",
                         "type": "bool"
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice ESP_COEX_GPIO_DEBUG_DIAG>",
+                                        "help": null,
+                                        "id": "ESP_COEX_GPIO_DEBUG_DIAG_GENERAL",
+                                        "name": "ESP_COEX_GPIO_DEBUG_DIAG_GENERAL",
+                                        "range": null,
+                                        "title": "General",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice ESP_COEX_GPIO_DEBUG_DIAG>",
+                                        "help": null,
+                                        "id": "ESP_COEX_GPIO_DEBUG_DIAG_WIFI",
+                                        "name": "ESP_COEX_GPIO_DEBUG_DIAG_WIFI",
+                                        "range": null,
+                                        "title": "Wi-Fi",
+                                        "type": "bool"
+                                    }
+                                ],
+                                "depends_on": "ESP_COEX_GPIO_DEBUG",
+                                "help": "Select type of debugging diagram",
+                                "id": "component-config-wireless-coexistence-gpio-debugging-for-coexistence-debugging-diagram",
+                                "name": "ESP_COEX_GPIO_DEBUG_DIAG",
+                                "title": "Debugging Diagram",
+                                "type": "choice"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "ESP_COEX_GPIO_DEBUG",
+                                "help": null,
+                                "id": "ESP_COEX_GPIO_DEBUG_IO_COUNT",
+                                "name": "ESP_COEX_GPIO_DEBUG_IO_COUNT",
+                                "range": null,
+                                "title": "Max number of debugging GPIOs",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "ESP_COEX_GPIO_DEBUG_IO_COUNT > 0 && ESP_COEX_GPIO_DEBUG",
+                                "help": null,
+                                "id": "ESP_COEX_GPIO_DEBUG_IO_IDX0",
+                                "name": "ESP_COEX_GPIO_DEBUG_IO_IDX0",
+                                "range": null,
+                                "title": "Actual IO num for Debug IO ID0",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "ESP_COEX_GPIO_DEBUG_IO_COUNT > 1 && ESP_COEX_GPIO_DEBUG",
+                                "help": null,
+                                "id": "ESP_COEX_GPIO_DEBUG_IO_IDX1",
+                                "name": "ESP_COEX_GPIO_DEBUG_IO_IDX1",
+                                "range": null,
+                                "title": "Actual IO num for Debug IO ID1",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "ESP_COEX_GPIO_DEBUG_IO_COUNT > 2 && ESP_COEX_GPIO_DEBUG",
+                                "help": null,
+                                "id": "ESP_COEX_GPIO_DEBUG_IO_IDX2",
+                                "name": "ESP_COEX_GPIO_DEBUG_IO_IDX2",
+                                "range": null,
+                                "title": "Actual IO num for Debug IO ID2",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "ESP_COEX_GPIO_DEBUG_IO_COUNT > 3 && ESP_COEX_GPIO_DEBUG",
+                                "help": null,
+                                "id": "ESP_COEX_GPIO_DEBUG_IO_IDX3",
+                                "name": "ESP_COEX_GPIO_DEBUG_IO_IDX3",
+                                "range": null,
+                                "title": "Actual IO num for Debug IO ID3",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "ESP_COEX_GPIO_DEBUG_IO_COUNT > 4 && ESP_COEX_GPIO_DEBUG",
+                                "help": null,
+                                "id": "ESP_COEX_GPIO_DEBUG_IO_IDX4",
+                                "name": "ESP_COEX_GPIO_DEBUG_IO_IDX4",
+                                "range": null,
+                                "title": "Actual IO num for Debug IO ID4",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "ESP_COEX_GPIO_DEBUG_IO_COUNT > 5 && ESP_COEX_GPIO_DEBUG",
+                                "help": null,
+                                "id": "ESP_COEX_GPIO_DEBUG_IO_IDX5",
+                                "name": "ESP_COEX_GPIO_DEBUG_IO_IDX5",
+                                "range": null,
+                                "title": "Actual IO num for Debug IO ID5",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "ESP_COEX_GPIO_DEBUG_IO_COUNT > 6 && ESP_COEX_GPIO_DEBUG",
+                                "help": null,
+                                "id": "ESP_COEX_GPIO_DEBUG_IO_IDX6",
+                                "name": "ESP_COEX_GPIO_DEBUG_IO_IDX6",
+                                "range": null,
+                                "title": "Actual IO num for Debug IO ID6",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "ESP_COEX_GPIO_DEBUG_IO_COUNT > 7 && ESP_COEX_GPIO_DEBUG",
+                                "help": null,
+                                "id": "ESP_COEX_GPIO_DEBUG_IO_IDX7",
+                                "name": "ESP_COEX_GPIO_DEBUG_IO_IDX7",
+                                "range": null,
+                                "title": "Actual IO num for Debug IO ID7",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "ESP_COEX_GPIO_DEBUG_IO_COUNT > 8 && ESP_COEX_GPIO_DEBUG",
+                                "help": null,
+                                "id": "ESP_COEX_GPIO_DEBUG_IO_IDX8",
+                                "name": "ESP_COEX_GPIO_DEBUG_IO_IDX8",
+                                "range": null,
+                                "title": "Actual IO num for Debug IO ID8",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "ESP_COEX_GPIO_DEBUG_IO_COUNT > 9 && ESP_COEX_GPIO_DEBUG",
+                                "help": null,
+                                "id": "ESP_COEX_GPIO_DEBUG_IO_IDX9",
+                                "name": "ESP_COEX_GPIO_DEBUG_IO_IDX9",
+                                "range": null,
+                                "title": "Actual IO num for Debug IO ID9",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "ESP_COEX_GPIO_DEBUG_IO_COUNT > 10 && ESP_COEX_GPIO_DEBUG",
+                                "help": null,
+                                "id": "ESP_COEX_GPIO_DEBUG_IO_IDX10",
+                                "name": "ESP_COEX_GPIO_DEBUG_IO_IDX10",
+                                "range": null,
+                                "title": "Actual IO num for Debug IO ID10",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "ESP_COEX_GPIO_DEBUG_IO_COUNT > 11 && ESP_COEX_GPIO_DEBUG",
+                                "help": null,
+                                "id": "ESP_COEX_GPIO_DEBUG_IO_IDX11",
+                                "name": "ESP_COEX_GPIO_DEBUG_IO_IDX11",
+                                "range": null,
+                                "title": "Actual IO num for Debug IO ID11",
+                                "type": "int"
+                            }
+                        ],
+                        "depends_on": "!PM_SLP_DISABLE_GPIO && !PM_POWER_DOWN_PERIPHERAL_IN_LIGHT_SLEEP",
+                        "help": "Support coexistence GPIO debugging",
+                        "id": "ESP_COEX_GPIO_DEBUG",
+                        "name": "ESP_COEX_GPIO_DEBUG",
+                        "range": null,
+                        "title": "GPIO debugging for coexistence",
+                        "type": "bool"
                     }
                 ],
                 "depends_on": null,
@@ -15235,7 +15597,7 @@
                             {
                                 "children": [],
                                 "depends_on": "IDF_TARGET_ESP32 && ETH_RMII_CLK_OUTPUT && ETH_USE_ESP32_EMAC",
-                                "help": "GPIO0 can be set to output a pre-divided PLL clock (test only!).\nEnabling this option will configure GPIO0 to output a 50MHz clock.\nIn fact this clock doesn't have directly relationship with EMAC peripheral.\nSometimes this clock won't work well with your PHY chip. You might need to\nadd some extra devices after GPIO0 (e.g. inverter).\nNote that outputting RMII clock on GPIO0 is an experimental practice.\nIf you want the Ethernet to work with WiFi, don't select GPIO0 output mode for stability.",
+                                "help": "GPIO0 can be set to output a pre-divided PLL clock. Enabling this option will configure\nGPIO0 to output a 50MHz clock. In fact this clock doesn't have directly relationship with\nEMAC peripheral. Sometimes this clock may not work well with your PHY chip.\nWARNING: If you want the Ethernet to work with WiFi, don\u2019t select ESP32 as RMII CLK output\nas it would result in clock instability!",
                                 "id": "ETH_RMII_CLK_OUTPUT_GPIO0",
                                 "name": "ETH_RMII_CLK_OUTPUT_GPIO0",
                                 "range": null,
@@ -15245,7 +15607,7 @@
                             {
                                 "children": [],
                                 "depends_on": "IDF_TARGET_ESP32 && !ETH_RMII_CLK_OUTPUT_GPIO0 && ETH_RMII_CLK_OUTPUT && ETH_USE_ESP32_EMAC",
-                                "help": "Set the GPIO number to output RMII Clock.",
+                                "help": "Set the GPIO number to output RMII Clock.\nWARNING: If you want the Ethernet to work with WiFi, don\u2019t select ESP32 as RMII CLK output\nas it would result in clock instability!",
                                 "id": "ETH_RMII_CLK_OUT_GPIO",
                                 "name": "ETH_RMII_CLK_OUT_GPIO",
                                 "range": null,
@@ -15778,6 +16140,26 @@
                             },
                             {
                                 "children": [],
+                                "depends_on": null,
+                                "help": "Required minimum eFuse Block revision. ESP-IDF will check it at the 2nd bootloader stage\nwhether the current image can work correctly for this eFuse Block revision.\nSo that to avoid running an incompatible image on a SoC that contains breaking change in the eFuse Block.\nIf you want to update this value to run the image that not compatible with the current eFuse Block revision,\nplease contact to Espressif's business team for details:\nhttps://www.espressif.com.cn/en/contact-us/sales-questions",
+                                "id": "ESP_EFUSE_BLOCK_REV_MIN_FULL",
+                                "name": "ESP_EFUSE_BLOCK_REV_MIN_FULL",
+                                "range": null,
+                                "title": "Minimum Supported ESP32-C3 eFuse Block Revision",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": null,
+                                "id": "ESP_EFUSE_BLOCK_REV_MAX_FULL",
+                                "name": "ESP_EFUSE_BLOCK_REV_MAX_FULL",
+                                "range": null,
+                                "title": null,
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
                                 "depends_on": "IDF_CI_BUILD",
                                 "help": "For internal chip testing, a small number of new versions chips didn't\nupdate the version field in eFuse, you can enable this option to force the\nsoftware recognize the chip version based on the rev selected in menuconfig.",
                                 "id": "ESP_REV_NEW_CHIP_TEST",
@@ -15954,12 +16336,12 @@
                         "children": [
                             {
                                 "children": [],
-                                "depends_on": "!SPIRAM",
+                                "depends_on": "(!SPIRAM || ESP_LDO_RESERVE_PSRAM) && !(IDF_TARGET_ESP32P4 && ESP32P4_REV_MIN_FULL < 100)",
                                 "help": "If enabled, chip will try to power down flash as part of esp_light_sleep_start(), which costs\nmore time when chip wakes up. Can only be enabled if there is no SPIRAM configured.\n\nThis option will power down flash under a strict but relatively safe condition. Also, it is possible to\npower down flash under a relaxed condition by using esp_sleep_pd_config() to set ESP_PD_DOMAIN_VDDSDIO\nto ESP_PD_OPTION_OFF. It should be noted that there is a risk in powering down flash, you can refer\n`ESP-IDF Programming Guide/API Reference/System API/Sleep Modes/Power-down of Flash` for more details.",
                                 "id": "ESP_SLEEP_POWER_DOWN_FLASH",
                                 "name": "ESP_SLEEP_POWER_DOWN_FLASH",
                                 "range": null,
-                                "title": "Power down flash in light sleep when there is no SPIRAM",
+                                "title": "Power down flash in light sleep when there is no SPIRAM or SPIRAM has independent power supply",
                                 "type": "bool"
                             },
                             {
@@ -16261,6 +16643,16 @@
                             {
                                 "children": [],
                                 "depends_on": "SOC_DW_GDMA_SUPPORTED",
+                                "help": "This will ensure the DW_GDMA object is DRAM-Safe, allow to avoid external memory\ncache misses, and also be accessible whilst the cache is disabled.",
+                                "id": "DW_GDMA_OBJ_DRAM_SAFE",
+                                "name": "DW_GDMA_OBJ_DRAM_SAFE",
+                                "range": null,
+                                "title": null,
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "SOC_DW_GDMA_SUPPORTED",
                                 "help": "Whether to enable the debug log message for DW_GDMA driver.\nNote that, this option only controls the DW_GDMA driver log, won't affect other drivers.",
                                 "id": "DW_GDMA_ENABLE_DEBUG_LOG",
                                 "name": "DW_GDMA_ENABLE_DEBUG_LOG",
@@ -16511,16 +16903,6 @@
                         "children": [
                             {
                                 "children": [],
-                                "depends_on": "SOC_LCD_I80_SUPPORTED",
-                                "help": "LCD driver allocates an internal buffer to transform the data into a proper format, because of\nthe endian order mismatch. This option is to set the size of the buffer, in bytes.",
-                                "id": "LCD_PANEL_IO_FORMAT_BUF_SIZE",
-                                "name": "LCD_PANEL_IO_FORMAT_BUF_SIZE",
-                                "range": null,
-                                "title": "LCD panel io format buffer size",
-                                "type": "int"
-                            },
-                            {
-                                "children": [],
                                 "depends_on": null,
                                 "help": "whether to enable the debug log message for LCD driver.\nNote that, this option only controls the LCD driver log, won't affect other drivers.",
                                 "id": "LCD_ENABLE_DEBUG_LOG",
@@ -16576,7 +16958,7 @@
                     {
                         "children": [],
                         "depends_on": null,
-                        "help": "The value of 0 indicates the IP lost timer is disabled, otherwise the timer is enabled.\n\nThe IP address may be lost because of some reasons, e.g. when the station disconnects\nfrom soft-AP, or when DHCP IP renew fails etc. If the IP lost timer is enabled, it will\nbe started everytime the IP is lost. Event SYSTEM_EVENT_STA_LOST_IP will be raised if\nthe timer expires. The IP lost timer is stopped if the station get the IP again before\nthe timer expires.",
+                        "help": "The value of 0 indicates the IP lost timer is disabled, otherwise the timer is enabled.\n\nThe IP address may be lost because of some reasons, e.g. when the station disconnects\nfrom soft-AP, or when DHCP IP renew fails etc. If the IP lost timer is enabled, it will\nbe started every time the IP is lost. Event SYSTEM_EVENT_STA_LOST_IP will be raised if\nthe timer expires. The IP lost timer is stopped if the station get the IP again before\nthe timer expires.",
                         "id": "ESP_NETIF_IP_LOST_TIMER_INTERVAL",
                         "name": "ESP_NETIF_IP_LOST_TIMER_INTERVAL",
                         "range": [
@@ -16670,11 +17052,21 @@
                     {
                         "children": [],
                         "depends_on": "ESP_NETIF_TCPIP_LWIP",
-                        "help": "Enable LwIP IEEE 802.1D bridge support in ESP-NETIF. Note that \"Number of clients store data in netif\"\n(LWIP_NUM_NETIF_CLIENT_DATA) option needs to be properly configured to be LwIP bridge avaiable!",
+                        "help": "Enable LwIP IEEE 802.1D bridge support in ESP-NETIF. Note that \"Number of clients store data in netif\"\n(LWIP_NUM_NETIF_CLIENT_DATA) option needs to be properly configured to be LwIP bridge available!",
                         "id": "ESP_NETIF_BRIDGE_EN",
                         "name": "ESP_NETIF_BRIDGE_EN",
                         "range": null,
                         "title": "Enable LwIP IEEE 802.1D bridge",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "Enable this option to use the DNS server which belongs to the selected default network interface.\nThis feature collects DNS server and netif information from LWIP core modules.\nWhenever a new default netif is selected, global DNS servers in LWIP are updated with the netif\nrelated servers.",
+                        "id": "ESP_NETIF_SET_DNS_PER_DEFAULT_NETIF",
+                        "name": "ESP_NETIF_SET_DNS_PER_DEFAULT_NETIF",
+                        "range": null,
+                        "title": "Enable DNS server per interface",
                         "type": "bool"
                     }
                 ],
@@ -16831,7 +17223,7 @@
                     },
                     {
                         "children": [],
-                        "depends_on": "(IDF_TARGET_ESP32C3 || IDF_TARGET_ESP32S3) && ESP_PHY_ENABLED",
+                        "depends_on": "ESP_PHY_ENABLED",
                         "help": "If enabled, you can use RF certification test APIs.",
                         "id": "ESP_PHY_ENABLE_CERT_TEST",
                         "name": "ESP_PHY_ENABLE_CERT_TEST",
@@ -16960,7 +17352,7 @@
                     },
                     {
                         "children": [],
-                        "depends_on": "FREERTOS_USE_TICKLESS_IDLE",
+                        "depends_on": "SOC_LIGHT_SLEEP_SUPPORTED",
                         "help": "If enabled, about 2.1KB of lightsleep related source code would be in IRAM and chip would sleep\nlonger for 310us at 160MHz CPU frequency most each time.\nThis feature is intended to be used when lower power consumption is needed\nwhile there is enough place in IRAM to place source code.",
                         "id": "PM_SLP_IRAM_OPT",
                         "name": "PM_SLP_IRAM_OPT",
@@ -18547,7 +18939,7 @@
                     {
                         "children": [],
                         "depends_on": "ESP_WIFI_ENABLED || ESP_HOST_WIFI_ENABLED",
-                        "help": "Set the number of WiFi management short buffer.",
+                        "help": "Set the maximum number of Wi-Fi management short buffers. These buffers are dynamically allocated,\nwith their size determined by the length of the management packet to be sent. When a management\npacket is less than 64 bytes, the Wi-Fi driver classifies it as a short management packet and\nassigns it to one of these buffers.",
                         "id": "ESP_WIFI_MGMT_SBUF_NUM",
                         "name": "ESP_WIFI_MGMT_SBUF_NUM",
                         "range": [
@@ -20992,6 +21384,16 @@
                         "range": null,
                         "title": null,
                         "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "Enable this option to apply the countermeasure for ECDSA signature operation\nThis countermeasure masks the real ECDSA sign operation\nunder dummy sign operations to add randomness in the generated power signature.",
+                        "id": "HAL_ECDSA_GEN_SIG_CM",
+                        "name": "HAL_ECDSA_GEN_SIG_CM",
+                        "range": null,
+                        "title": "Enable countermeasure for ECDSA signature generation",
+                        "type": "bool"
                     }
                 ],
                 "depends_on": null,
@@ -21811,12 +22213,12 @@
                     {
                         "children": [],
                         "depends_on": null,
-                        "help": "Sockets take up a certain amount of memory, and allowing fewer\nsockets to be open at the same time conserves memory. Specify\nthe maximum amount of sockets here. The valid value is from 1\nto 16.",
+                        "help": "The practical maximum limit is\ndetermined by available heap memory at runtime.\n\nSockets take up a certain amount of memory, and allowing fewer\nsockets to be open at the same time conserves memory. Specify\nthe maximum amount of sockets here. The valid value is from 1\nto 253. If using value above 61, update CMakeLists defining\nFD_SETSIZE to the number of sockets used plus the\nexpected open files (minimum of +3 for stdout, stderr and stdin).",
                         "id": "LWIP_MAX_SOCKETS",
                         "name": "LWIP_MAX_SOCKETS",
                         "range": [
                             1,
-                            16
+                            253
                         ],
                         "title": "Max number of open sockets",
                         "type": "int"
@@ -22463,7 +22865,7 @@
                             {
                                 "children": [],
                                 "depends_on": null,
-                                "help": "Set TCP receive mail box size. Generally bigger value means higher throughput\nbut more memory. The recommended value is: LWIP_TCP_WND_DEFAULT/TCP_MSS + 2, e.g. if\nLWIP_TCP_WND_DEFAULT=14360, TCP_MSS=1436, then the recommended receive mail box size is\n(14360/1436 + 2) = 12.\n\nTCP receive mail box is a per socket mail box, when the application receives packets\nfrom TCP socket, LWIP core firstly posts the packets to TCP receive mail box and the\napplication then fetches the packets from mail box. It means LWIP can caches maximum\nLWIP_TCP_RECCVMBOX_SIZE packets for each TCP socket, so the maximum possible cached TCP packets\nfor all TCP sockets is LWIP_TCP_RECCVMBOX_SIZE multiples the maximum TCP socket number. In other\nwords, the bigger LWIP_TCP_RECVMBOX_SIZE means more memory.\nOn the other hand, if the receiv mail box is too small, the mail box may be full. If the\nmail box is full, the LWIP drops the packets. So generally we need to make sure the TCP\nreceive mail box is big enough to avoid packet drop between LWIP core and application.",
+                                "help": "Set TCP receive mail box size. Generally bigger value means higher throughput\nbut more memory. The recommended value is: LWIP_TCP_WND_DEFAULT/TCP_MSS + 2, e.g. if\nLWIP_TCP_WND_DEFAULT=14360, TCP_MSS=1436, then the recommended receive mail box size is\n(14360/1436 + 2) = 12.\n\nTCP receive mail box is a per socket mail box, when the application receives packets\nfrom TCP socket, LWIP core firstly posts the packets to TCP receive mail box and the\napplication then fetches the packets from mail box. It means LWIP can caches maximum\nLWIP_TCP_RECCVMBOX_SIZE packets for each TCP socket, so the maximum possible cached TCP packets\nfor all TCP sockets is LWIP_TCP_RECCVMBOX_SIZE multiples the maximum TCP socket number. In other\nwords, the bigger LWIP_TCP_RECVMBOX_SIZE means more memory.\nOn the other hand, if the receive mail box is too small, the mail box may be full. If the\nmail box is full, the LWIP drops the packets. So generally we need to make sure the TCP\nreceive mail box is big enough to avoid packet drop between LWIP core and application.",
                                 "id": "LWIP_TCP_RECVMBOX_SIZE",
                                 "name": "LWIP_TCP_RECVMBOX_SIZE",
                                 "range": [
@@ -22628,7 +23030,7 @@
                             {
                                 "children": [],
                                 "depends_on": null,
-                                "help": "Set UDP receive mail box size. The recommended value is 6.\n\nUDP receive mail box is a per socket mail box, when the application receives packets\nfrom UDP socket, LWIP core firstly posts the packets to UDP receive mail box and the\napplication then fetches the packets from mail box. It means LWIP can caches maximum\nUDP_RECCVMBOX_SIZE packets for each UDP socket, so the maximum possible cached UDP packets\nfor all UDP sockets is UDP_RECCVMBOX_SIZE multiples the maximum UDP socket number. In other\nwords, the bigger UDP_RECVMBOX_SIZE means more memory.\nOn the other hand, if the receiv mail box is too small, the mail box may be full. If the\nmail box is full, the LWIP drops the packets. So generally we need to make sure the UDP\nreceive mail box is big enough to avoid packet drop between LWIP core and application.",
+                                "help": "Set UDP receive mail box size. The recommended value is 6.\n\nUDP receive mail box is a per socket mail box, when the application receives packets\nfrom UDP socket, LWIP core firstly posts the packets to UDP receive mail box and the\napplication then fetches the packets from mail box. It means LWIP can caches maximum\nUDP_RECCVMBOX_SIZE packets for each UDP socket, so the maximum possible cached UDP packets\nfor all UDP sockets is UDP_RECCVMBOX_SIZE multiples the maximum UDP socket number. In other\nwords, the bigger UDP_RECVMBOX_SIZE means more memory.\nOn the other hand, if the receive mail box is too small, the mail box may be full. If the\nmail box is full, the LWIP drops the packets. So generally we need to make sure the UDP\nreceive mail box is big enough to avoid packet drop between LWIP core and application.",
                                 "id": "LWIP_UDP_RECVMBOX_SIZE",
                                 "name": "LWIP_UDP_RECVMBOX_SIZE",
                                 "range": [
@@ -22744,6 +23146,36 @@
                         "range": null,
                         "title": null,
                         "type": "hex"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "LWIP_IPV6",
+                        "help": "Maximum number of entries in IPv6 on-link prefixes cache",
+                        "id": "LWIP_IPV6_ND6_NUM_PREFIXES",
+                        "name": "LWIP_IPV6_ND6_NUM_PREFIXES",
+                        "range": null,
+                        "title": "Max number of entries in IPv6 on-link prefixes cache",
+                        "type": "int"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "LWIP_IPV6",
+                        "help": "Maximum number of entries in IPv6 default routers cache",
+                        "id": "LWIP_IPV6_ND6_NUM_ROUTERS",
+                        "name": "LWIP_IPV6_ND6_NUM_ROUTERS",
+                        "range": null,
+                        "title": "Max number of entries in IPv6 default routers cache",
+                        "type": "int"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "LWIP_IPV6",
+                        "help": "Maximum number of entries in IPv6 destinations cache",
+                        "id": "LWIP_IPV6_ND6_NUM_DESTINATIONS",
+                        "name": "LWIP_IPV6_ND6_NUM_DESTINATIONS",
+                        "range": null,
+                        "title": "Max number of entries in IPv6 destinations cache",
+                        "type": "int"
                     },
                     {
                         "children": [
@@ -22905,6 +23337,16 @@
                         "type": "bool"
                     },
                     {
+                        "children": [],
+                        "depends_on": "LWIP_PPP_SUPPORT && !LWIP_PPP_MPPE_SUPPORT && !LWIP_PPP_MSCHAP_SUPPORT",
+                        "help": "This option uses mbedTLS crypto functions (instead of internal PolarSSL\nimplementation) for PPP authentication modes (PAP, CHAP, etc.).\nYou can use this option to address symbol duplication issues, since\nthe internal functions are not namespaced (e.g. md5_init()).",
+                        "id": "LWIP_USE_EXTERNAL_MBEDTLS",
+                        "name": "LWIP_USE_EXTERNAL_MBEDTLS",
+                        "range": null,
+                        "title": "Use mbedTLS instead of internal polarSSL",
+                        "type": "bool"
+                    },
+                    {
                         "children": [
                             {
                                 "children": [],
@@ -23005,11 +23447,11 @@
                                     {
                                         "children": [],
                                         "depends_on": "LWIP_DHCP_GET_NTP_SRV",
-                                        "help": "Set maximum number of NTP servers aquired via DHCP-offer.\nShould be less or equal to \"Maximum number of NTP servers\", any extra servers would be just ignored.",
+                                        "help": "Set maximum number of NTP servers acquired via DHCP-offer.\nShould be less or equal to \"Maximum number of NTP servers\", any extra servers would be just ignored.",
                                         "id": "LWIP_DHCP_MAX_NTP_SERVERS",
                                         "name": "LWIP_DHCP_MAX_NTP_SERVERS",
                                         "range": null,
-                                        "title": "Maximum number of NTP servers aquired via DHCP",
+                                        "title": "Maximum number of NTP servers acquired via DHCP",
                                         "type": "int"
                                     }
                                 ],
@@ -23069,6 +23511,16 @@
                             {
                                 "children": [],
                                 "depends_on": null,
+                                "help": "Maximum number of IP addresses that can be returned by DNS queries for a single host.",
+                                "id": "LWIP_DNS_MAX_HOST_IP",
+                                "name": "LWIP_DNS_MAX_HOST_IP",
+                                "range": null,
+                                "title": "Maximum number of IP addresses per host",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
                                 "help": "Set maximum number of DNS servers.\nIf fallback DNS servers are supported,\nthe number of DNS servers needs to be greater than or equal to 3.",
                                 "id": "LWIP_DNS_MAX_SERVERS",
                                 "name": "LWIP_DNS_MAX_SERVERS",
@@ -23098,6 +23550,16 @@
                                 "name": "LWIP_FALLBACK_DNS_SERVER_SUPPORT",
                                 "range": null,
                                 "title": "Enable DNS fallback server support",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": "This option allows collecting DNS server settings per netif using\nconfigurable callback function.\nIt's typically used with CONFIG_ESP_NETIF_SET_DNS_PER_DEFAULT_NETIF\nwhich configures a callback to collect the DNS info on esp_netif layer.",
+                                "id": "LWIP_DNS_SETSERVER_WITH_NETIF",
+                                "name": "LWIP_DNS_SETSERVER_WITH_NETIF",
+                                "range": null,
+                                "title": "Enable DNS server settings with netif",
                                 "type": "bool"
                             }
                         ],
@@ -23325,10 +23787,50 @@
                                     }
                                 ],
                                 "depends_on": null,
-                                "help": "Enables custom DNS resolve hook.\nSetting this to \"default\" provides weak implementation\nstub that could be overwritten in application code.\nSetting this to \"custom\" provides hook's declaration\nonly and expects the application to implement it.",
+                                "help": "Enables custom DNS resolve hook (without callback).\nSetting this to \"default\" provides weak implementation\nstub that could be overwritten in application code.\nSetting this to \"custom\" provides hook's declaration\nonly and expects the application to implement it.",
                                 "id": "component-config-lwip-hooks-netconn-external-resolve-hook",
                                 "name": "LWIP_HOOK_NETCONN_EXTERNAL_RESOLVE",
                                 "title": "Netconn external resolve Hook",
+                                "type": "choice"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": "This hidden option helps configure the DNS external resolve\nhook for external components like OpenThread. It ensures that\n`LWIP_HOOK_DNS_EXT_RESOLVE_CUSTOM` is selected without directly\nadding a dependency in the choice construct.",
+                                "id": "LWIP_HOOK_DNS_EXTERNAL_RESOLVE_SELECT_CUSTOM",
+                                "name": "LWIP_HOOK_DNS_EXTERNAL_RESOLVE_SELECT_CUSTOM",
+                                "range": null,
+                                "title": null,
+                                "type": "bool"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice LWIP_HOOK_DNS_EXTERNAL_RESOLVE>",
+                                        "help": null,
+                                        "id": "LWIP_HOOK_DNS_EXT_RESOLVE_NONE",
+                                        "name": "LWIP_HOOK_DNS_EXT_RESOLVE_NONE",
+                                        "range": null,
+                                        "title": "No hook declared",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice LWIP_HOOK_DNS_EXTERNAL_RESOLVE>",
+                                        "help": null,
+                                        "id": "LWIP_HOOK_DNS_EXT_RESOLVE_CUSTOM",
+                                        "name": "LWIP_HOOK_DNS_EXT_RESOLVE_CUSTOM",
+                                        "range": null,
+                                        "title": "Custom implementation",
+                                        "type": "bool"
+                                    }
+                                ],
+                                "depends_on": null,
+                                "help": "Enables custom DNS resolve hook (with callback).\nSetting this to \"custom\" provides hook's declaration\nonly and expects the application to implement it.",
+                                "id": "component-config-lwip-hooks-dns-external-resolve-hook",
+                                "name": "LWIP_HOOK_DNS_EXTERNAL_RESOLVE",
+                                "title": "DNS external resolve Hook",
                                 "type": "choice"
                             },
                             {
@@ -23365,7 +23867,7 @@
                                     }
                                 ],
                                 "depends_on": "LWIP_IPV6",
-                                "help": "Enables custom IPv6 packet input.\nSetting this to \"default\" provides weak implementation\nstub that could be overwritten in application code.\nSetting this to \"custom\" provides hook's declaration\nonly and expects the application to implement it.",
+                                "help": "Enables custom IPv6 packet input.\nSetting this to \"default\" provides weak IDF implementation,\nwhich drops all incoming IPv6 traffic if the interface has no link local address.\n(this default implementation is \"weak\" and could be still overwritten\nin the application if some additional IPv6 input packet filtering is needed)\nSetting this to \"none\" removes this default filter and conforms to the lwIP\nimplementation (which accepts multicasts even if the interface has no link local address)\nSetting this to \"custom\" provides hook's declaration\nonly and expects the application to implement it.",
                                 "id": "component-config-lwip-hooks-ipv6-packet-input",
                                 "name": "LWIP_HOOK_IP6_INPUT",
                                 "title": "IPv6 packet input",
@@ -24255,7 +24757,36 @@
                         "type": "bool"
                     },
                     {
-                        "children": [],
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depends_on": "MBEDTLS_HARDWARE_ECDSA_SIGN && IDF_TARGET_ESP32H2",
+                                        "help": "The ECDSA peripheral before ECO5 does not offer constant time ECDSA sign operation.\nThis time can be observed through power profiling of the device,\nmaking the ECDSA private key vulnerable to side-channel timing attacks.\nThis countermeasure masks the real ECDSA sign operation\nunder dummy sign operations to add randomness in the generated power signature.\nIt is highly recommended to also enable Secure Boot for the device in addition to this countermeasure\nso that only trusted software can execute on the device.",
+                                        "id": "MBEDTLS_HARDWARE_ECDSA_SIGN_MASKING_CM",
+                                        "name": "MBEDTLS_HARDWARE_ECDSA_SIGN_MASKING_CM",
+                                        "range": null,
+                                        "title": "Mask original ECDSA sign operation under dummy sign operations",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "MBEDTLS_HARDWARE_ECDSA_SIGN && IDF_TARGET_ESP32H2",
+                                        "help": "This option adds a delay after the actual ECDSA signature operation\nso that the entire operation appears to be constant time for the software.\nThis fix helps in protecting the device only in case of remote timing attack on the ECDSA private key.\nFor e.g., When an interface is exposed by the device to perform ECDSA signature\nof an arbitrary message.\nThe signature time would appear to be constant to the external entity after enabling\nthis option.",
+                                        "id": "MBEDTLS_HARDWARE_ECDSA_SIGN_CONSTANT_TIME_CM",
+                                        "name": "MBEDTLS_HARDWARE_ECDSA_SIGN_CONSTANT_TIME_CM",
+                                        "range": null,
+                                        "title": "Make ECDSA signature operation pseudo constant time for software",
+                                        "type": "bool"
+                                    }
+                                ],
+                                "depends_on": "MBEDTLS_HARDWARE_ECDSA_SIGN && IDF_TARGET_ESP32H2",
+                                "id": "component-config-mbedtls-enable-ecdsa-signing-using-on-chip-ecdsa-peripheral-enable-software-countermeasure-for-ecdsa-signing-using-on-chip-ecdsa-peripheral",
+                                "title": "Enable Software Countermeasure for ECDSA signing using on-chip ECDSA peripheral",
+                                "type": "menu"
+                            }
+                        ],
                         "depends_on": "SOC_ECDSA_SUPPORTED",
                         "help": "Enable hardware accelerated ECDSA peripheral to sign data\non curve SECP192R1 and SECP256R1 in mbedTLS.\n\nNote that for signing, the private key has to be burnt in an efuse key block\nwith key purpose set to ECDSA_KEY.\nIf no key is burnt, it will report an error\n\nThe key should be burnt in little endian format. espefuse.py utility handles it internally\nbut care needs to be taken while burning using esp_efuse APIs",
                         "id": "MBEDTLS_HARDWARE_ECDSA_SIGN",
@@ -24343,6 +24874,16 @@
                         "name": "MBEDTLS_SHA512_C",
                         "range": null,
                         "title": "Enable the SHA-384 and SHA-512 cryptographic hash algorithms",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "Enabling MBEDTLS_SHA3_C adds support for SHA3.\nEnabling this configuration option increases the flash footprint\nby almost 4KB.",
+                        "id": "MBEDTLS_SHA3_C",
+                        "name": "MBEDTLS_SHA3_C",
+                        "range": null,
+                        "title": "Enable the SHA3 cryptographic hash algorithm",
                         "type": "bool"
                     },
                     {
@@ -24966,7 +25507,7 @@
                     {
                         "children": [],
                         "depends_on": "MBEDTLS_ECP_C",
-                        "help": "This configuration option enables optimizations to speedup (about 3 ~ 4 times) the ECP\nfixed point multiplication using pre-computed tables in the flash memory.\nDisabling this configuration option saves flash footprint (about 29KB if all Elliptic Curve selected)\nin the application binary.\n\n# end of Elliptic Curve options",
+                        "help": "This configuration option enables optimizations to speedup (about 3 ~ 4 times) the ECP\nfixed point multiplication using pre-computed tables in the flash memory.\nEnabling this configuration option increases the flash footprint\n(about 29KB if all Elliptic Curve selected) in the application binary.\n\n# end of Elliptic Curve options",
                         "id": "MBEDTLS_ECP_FIXED_POINT_OPTIM",
                         "name": "MBEDTLS_ECP_FIXED_POINT_OPTIM",
                         "range": null,
@@ -25057,12 +25598,22 @@
                     },
                     {
                         "children": [],
-                        "depends_on": "ESP_ROM_HAS_MBEDTLS_CRYPTO_LIB && IDF_EXPERIMENTAL_FEATURES",
-                        "help": "Enable this flag to use mbedtls crypto algorithm from ROM instead of ESP-IDF.\n\nThis configuration option saves flash footprint in the application binary.\nNote that the version of mbedtls crypto algorithm library in ROM is v2.16.12.\nWe have done the security analysis of the mbedtls revision in ROM (v2.16.12)\nand ensured that affected symbols have been patched (removed). If in the future\nmbedtls revisions there are security issues that also affects the version in\nROM (v2.16.12) then we shall patch the relevant symbols. This would increase\nthe flash footprint and hence care must be taken to keep some reserved space\nfor the application binary in flash layout.",
+                        "depends_on": "ESP_ROM_HAS_MBEDTLS_CRYPTO_LIB",
+                        "help": "Enable this flag to use mbedtls crypto algorithm from ROM instead of ESP-IDF.\n\nThis configuration option saves flash footprint in the application binary.\nNote that the version of mbedtls crypto algorithm library in ROM(ECO1~ECO3) is v2.16.12,\nand the version of mbedtls crypto algorithm library in ROM(ECO4) is v3.6.0.\nWe have done the security analysis of the mbedtls revision in ROM (ECO1~ECO4)\nand ensured that affected symbols have been patched (removed). If in the future\nmbedtls revisions there are security issues that also affects the version in\nROM (ECO1~ECO4) then we shall patch the relevant symbols. This would increase\nthe flash footprint and hence care must be taken to keep some reserved space\nfor the application binary in flash layout.",
                         "id": "MBEDTLS_USE_CRYPTO_ROM_IMPL",
                         "name": "MBEDTLS_USE_CRYPTO_ROM_IMPL",
                         "range": null,
                         "title": "Use ROM implementation of the crypto algorithm",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "(VFS_SUPPORT_IO && VFS_SUPPORT_DIR) || IDF_TARGET_LINUX",
+                        "help": "This option enables functions in mbedTLS that use the filesystem.\nIt uses the default filesystem support for the target,\nwhich is added through vfs component for ESP32 based targets or by\nthe host system when the target is Linux.",
+                        "id": "MBEDTLS_FS_IO",
+                        "name": "MBEDTLS_FS_IO",
+                        "range": null,
+                        "title": "Enable functions that use the filesystem",
                         "type": "bool"
                     }
                 ],
@@ -25844,14 +26395,45 @@
                                 "range": null,
                                 "title": "Connect via SPI",
                                 "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "<choice OPENTHREAD_RADIO_TYPE>",
+                                "help": "Select this to disable the Thread radio based on 15.4 link.",
+                                "id": "OPENTHREAD_RADIO_154_NONE",
+                                "name": "OPENTHREAD_RADIO_154_NONE",
+                                "range": null,
+                                "title": "Disable the Thread radio based on 15.4 link",
+                                "type": "bool"
                             }
                         ],
                         "depends_on": "OPENTHREAD_ENABLED",
                         "help": "Configure how OpenThread connects to the 15.4 radio",
-                        "id": "component-config-openthread-config-the-thread-radio-type",
+                        "id": "component-config-openthread-config-the-thread-radio-type-with-15-4-link",
                         "name": "OPENTHREAD_RADIO_TYPE",
-                        "title": "Config the Thread radio type",
+                        "title": "Config the Thread radio type with 15.4 link",
                         "type": "choice"
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depends_on": "OPENTHREAD_RADIO_TREL",
+                                "help": "Configure the port number of TREL service.",
+                                "id": "OPENTHREAD_TREL_PORT",
+                                "name": "OPENTHREAD_TREL_PORT",
+                                "range": null,
+                                "title": "The port of openthread trel service",
+                                "type": "int"
+                            }
+                        ],
+                        "depends_on": "EXAMPLE_CONNECT_WIFI || EXAMPLE_CONNECT_ETHERNET",
+                        "help": "Select this option to enable Thread Radio Encapsulation Link.",
+                        "id": "OPENTHREAD_RADIO_TREL",
+                        "name": "OPENTHREAD_RADIO_TREL",
+                        "range": null,
+                        "title": "Enable Thread Radio Encapsulation Link (TREL)",
+                        "type": "bool"
                     },
                     {
                         "children": [
@@ -26054,14 +26636,32 @@
                         "type": "bool"
                     },
                     {
-                        "children": [],
+                        "children": [
+                            {
+                                "children": [],
+                                "depends_on": "OPENTHREAD_ENABLED && (SPIRAM_USE_CAPS_ALLOC || SPIRAM_USE_MALLOC)",
+                                "help": "Select this option to allocate buffer from PSRAM for Thread",
+                                "id": "OPENTHREAD_MEM_ALLOC_EXTERNAL",
+                                "name": "OPENTHREAD_MEM_ALLOC_EXTERNAL",
+                                "range": null,
+                                "title": "Allocate memory from PSRAM",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "OPENTHREAD_ENABLED && (SPIRAM_USE_CAPS_ALLOC || SPIRAM_USE_MALLOC)",
+                                "help": "If enabled, the message pool is managed by platform defined logic.",
+                                "id": "OPENTHREAD_PLATFORM_MSGPOOL_MANAGEMENT",
+                                "name": "OPENTHREAD_PLATFORM_MSGPOOL_MANAGEMENT",
+                                "range": null,
+                                "title": "Allocate message pool buffer from PSRAM",
+                                "type": "bool"
+                            }
+                        ],
                         "depends_on": "OPENTHREAD_ENABLED && (SPIRAM_USE_CAPS_ALLOC || SPIRAM_USE_MALLOC)",
-                        "help": "If enabled, the message pool is managed by platform defined logic.",
-                        "id": "OPENTHREAD_PLATFORM_MSGPOOL_MANAGEMENT",
-                        "name": "OPENTHREAD_PLATFORM_MSGPOOL_MANAGEMENT",
-                        "range": null,
-                        "title": "Allocate message pool buffer from PSRAM",
-                        "type": "bool"
+                        "id": "component-config-openthread-thread-memory-allocation-config",
+                        "title": "Thread Memory Allocation Config",
+                        "type": "menu"
                     },
                     {
                         "children": [],
@@ -26609,7 +27209,7 @@
                                     }
                                 ],
                                 "depends_on": "IDF_TARGET_ESP32S3 && !ESPTOOLPY_OCT_FLASH && !APP_BUILD_TYPE_PURE_RAM_APP",
-                                "help": "Whether the High Performance Mode of Flash is enabled. As an optional feature, user needs to manually\nenable this option as a confirmation. To be back-compatible with earlier IDF versionn, this option is\nautomatically enabled with warning when Flash running > 80Mhz.",
+                                "help": "Whether the High Performance Mode of Flash is enabled. As an optional feature, user needs to manually\nenable this option as a confirmation. To be back-compatible with earlier IDF version, this option is\nautomatically enabled with warning when Flash running > 80Mhz.",
                                 "id": "component-config-main-flash-configuration-optional-and-experimental-features-read-docs-first--high-performance-mode-read-docs-first-80mhz-",
                                 "name": "SPI_FLASH_HPM",
                                 "title": "High Performance Mode (READ DOCS FIRST, > 80MHz)",
@@ -26697,6 +27297,16 @@
                                 ],
                                 "title": "SPI flash tSUS value (refer to chapter AC CHARACTERISTICS)",
                                 "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "!APP_BUILD_TYPE_PURE_RAM_APP",
+                                "help": "XMC-C series is regarded as not qualified for the Suspend feature, since its specification\nhas a tRS >= 1ms restriction. We strongly do not suggest using it for the Suspend feature.\nHowever, if your product in field has enabled this feature, you may still enable this\nconfig option to keep the legacy behavior.\n\nFor new users, DO NOT enable this config.",
+                                "id": "SPI_FLASH_FORCE_ENABLE_XMC_C_SUSPEND",
+                                "name": "SPI_FLASH_FORCE_ENABLE_XMC_C_SUSPEND",
+                                "range": null,
+                                "title": "Enable XMC-C series flash chip suspend feature anyway",
+                                "type": "bool"
                             }
                         ],
                         "depends_on": "!APP_BUILD_TYPE_PURE_RAM_APP",
@@ -26857,7 +27467,7 @@
                             }
                         ],
                         "depends_on": "!APP_BUILD_TYPE_PURE_RAM_APP",
-                        "help": "This allows to yield the CPUs between erase commands.\nPrevents starvation of other tasks.\nPlease use this configuration together with ``SPI_FLASH_ERASE_YIELD_DURATION_MS`` and\n``SPI_FLASH_ERASE_YIELD_TICKS`` after carefully checking flash datasheet to avoid a\nwatchdog timeout.\nFor more information, please check `SPI Flash API` reference documenation\nunder section `OS Function`.",
+                        "help": "This allows to yield the CPUs between erase commands.\nPrevents starvation of other tasks.\nPlease use this configuration together with ``SPI_FLASH_ERASE_YIELD_DURATION_MS`` and\n``SPI_FLASH_ERASE_YIELD_TICKS`` after carefully checking flash datasheet to avoid a\nwatchdog timeout.\nFor more information, please check `SPI Flash API` reference documentation\nunder section `OS Function`.",
                         "id": "SPI_FLASH_YIELD_DURING_ERASE",
                         "name": "SPI_FLASH_YIELD_DURING_ERASE",
                         "range": null,
@@ -27654,69 +28264,147 @@
                     {
                         "children": [
                             {
-                                "children": [],
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depends_on": "SOC_USB_OTG_SUPPORTED",
+                                        "help": "On connection of a USB device, the USB 2.0 specification requires\na \"debounce interval with a minimum duration of 100ms\" to allow the connection to stabilize\n(see USB 2.0 chapter 7.1.7.3 for more details).\nDuring the debounce interval, no new connection/disconnection events are registered.\n\nThe default value is set to 250 ms to be safe.",
+                                        "id": "USB_HOST_DEBOUNCE_DELAY_MS",
+                                        "name": "USB_HOST_DEBOUNCE_DELAY_MS",
+                                        "range": null,
+                                        "title": "Debounce delay in ms",
+                                        "type": "int"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "SOC_USB_OTG_SUPPORTED",
+                                        "help": "The reset signaling can be generated on any Hub or Host Controller port by request from\nthe USB System Software. The USB 2.0 specification requires that \"the reset signaling must\nbe driven for a minimum of 10ms\" (see USB 2.0 chapter 7.1.7.5 for more details).\nAfter the reset, the hub port will transition to the Enabled state (refer to Section 11.5).\n\nThe default value is set to 30 ms to be safe.",
+                                        "id": "USB_HOST_RESET_HOLD_MS",
+                                        "name": "USB_HOST_RESET_HOLD_MS",
+                                        "range": null,
+                                        "title": "Reset hold in ms",
+                                        "type": "int"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "SOC_USB_OTG_SUPPORTED",
+                                        "help": "After a port stops driving the reset signal, the USB 2.0 specification requires that\nthe \"USB System Software guarantees a minimum of 10 ms for reset recovery\" before the\nattached device is expected to respond to data transfers (see USB 2.0 chapter 7.1.7.3 for\nmore details).\nThe device may ignore any data transfers during the recovery interval.\n\nThe default value is set to 30 ms to be safe.",
+                                        "id": "USB_HOST_RESET_RECOVERY_MS",
+                                        "name": "USB_HOST_RESET_RECOVERY_MS",
+                                        "range": null,
+                                        "title": "Reset recovery delay in ms",
+                                        "type": "int"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "SOC_USB_OTG_SUPPORTED",
+                                        "help": "\"After successful completion of the Status stage, the device is allowed a SetAddress()\nrecovery interval of 2 ms. At the end of this interval, the device must be able to accept\nSetup packets addressed to the new address. Also, at the end of the recovery interval, the\ndevice must not respond to tokens sent to the old address (unless, of course, the old and new\naddress is the same).\" See USB 2.0 chapter 9.2.6.3 for more details.\n\nThe default value is set to 10 ms to be safe.",
+                                        "id": "USB_HOST_SET_ADDR_RECOVERY_MS",
+                                        "name": "USB_HOST_SET_ADDR_RECOVERY_MS",
+                                        "range": null,
+                                        "title": "SetAddress() recovery time in ms",
+                                        "type": "int"
+                                    }
+                                ],
                                 "depends_on": "SOC_USB_OTG_SUPPORTED",
-                                "help": "On connection of a USB device, the USB 2.0 specification requires a \"debounce interval with a minimum\nduration of 100ms\" to allow the connection to stabilize (see USB 2.0 chapter 7.1.7.3 for more details).\nDuring the debounce interval, no new connection/disconnection events are registered.\n\nThe default value is set to 250 ms to be safe.",
-                                "id": "USB_HOST_DEBOUNCE_DELAY_MS",
-                                "name": "USB_HOST_DEBOUNCE_DELAY_MS",
-                                "range": null,
-                                "title": "Debounce delay in ms",
-                                "type": "int"
+                                "id": "component-config-usb-otg-hub-driver-configuration-root-port-configuration",
+                                "title": "Root Port configuration",
+                                "type": "menu"
                             },
                             {
-                                "children": [],
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depends_on": "USB_HOST_HUBS_SUPPORTED && SOC_USB_OTG_SUPPORTED",
+                                        "help": "Enables support for connecting multiple Hubs simultaneously.",
+                                        "id": "USB_HOST_HUB_MULTI_LEVEL",
+                                        "name": "USB_HOST_HUB_MULTI_LEVEL",
+                                        "range": null,
+                                        "title": "Support multiple Hubs",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "depends_on": "IDF_EXPERIMENTAL_FEATURES && USB_HOST_HUBS_SUPPORTED && SOC_USB_OTG_SUPPORTED",
+                                                "help": "Enables support of Low-speed devices, connected through the external Hub.",
+                                                "id": "USB_HOST_EXT_PORT_SUPPORT_LS",
+                                                "name": "USB_HOST_EXT_PORT_SUPPORT_LS",
+                                                "range": null,
+                                                "title": "Support LS",
+                                                "type": "bool"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "IDF_EXPERIMENTAL_FEATURES && USB_HOST_HUBS_SUPPORTED && SOC_USB_OTG_SUPPORTED",
+                                                "help": "Amount of attempts to reset the device.\n\nThe default value is 1.",
+                                                "id": "USB_HOST_EXT_PORT_RESET_ATTEMPTS",
+                                                "name": "USB_HOST_EXT_PORT_RESET_ATTEMPTS",
+                                                "range": null,
+                                                "title": null,
+                                                "type": "int"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "USB_HOST_HUBS_SUPPORTED && SOC_USB_OTG_SUPPORTED",
+                                                "help": "After a port stops driving the reset signal, the USB 2.0 specification requires that\nthe \"USB System Software guarantees a minimum of 10 ms for reset recovery\" before the\nattached device is expected to respond to data transfers (see USB 2.0 chapter 7.1.7.3 for\nmore details).\nThe device may ignore any data transfers during the recovery interval.\n\nThe default value is set to 30 ms to be safe.",
+                                                "id": "USB_HOST_EXT_PORT_RESET_RECOVERY_DELAY_MS",
+                                                "name": "USB_HOST_EXT_PORT_RESET_RECOVERY_DELAY_MS",
+                                                "range": null,
+                                                "title": "Reset recovery delay in ms",
+                                                "type": "int"
+                                            },
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "depends_on": "USB_HOST_EXT_PORT_CUSTOM_POWER_ON_DELAY_ENABLE && USB_HOST_HUBS_SUPPORTED && SOC_USB_OTG_SUPPORTED",
+                                                        "help": "Custom value of delay from the time the power-on sequence begins on a port\nuntil power is good on that port.\nValue 0 is used for a hub with no power switches.\n\nThe default value is 100 ms.",
+                                                        "id": "USB_HOST_EXT_PORT_CUSTOM_POWER_ON_DELAY_MS",
+                                                        "name": "USB_HOST_EXT_PORT_CUSTOM_POWER_ON_DELAY_MS",
+                                                        "range": null,
+                                                        "title": "PwrOn2PwrGood delay in ms",
+                                                        "type": "int"
+                                                    }
+                                                ],
+                                                "depends_on": "USB_HOST_HUBS_SUPPORTED && SOC_USB_OTG_SUPPORTED",
+                                                "help": "Enables the possibility to configure custom time for the power-on sequence on a port\nuntil power is good on that port.\n\nWhen enabled, applies the custom PwrOn2PwrGood delay.\nWhen disabled, applies the PwrOn2PwrGood value from the Hub Descriptor.",
+                                                "id": "USB_HOST_EXT_PORT_CUSTOM_POWER_ON_DELAY_ENABLE",
+                                                "name": "USB_HOST_EXT_PORT_CUSTOM_POWER_ON_DELAY_ENABLE",
+                                                "range": null,
+                                                "title": "Custom bPwrOn2PwrGood value",
+                                                "type": "bool"
+                                            }
+                                        ],
+                                        "depends_on": "USB_HOST_HUBS_SUPPORTED && SOC_USB_OTG_SUPPORTED",
+                                        "id": "component-config-usb-otg-hub-driver-configuration-support-hubs-downstream-port-configuration",
+                                        "title": "Downstream Port configuration",
+                                        "type": "menu"
+                                    }
+                                ],
                                 "depends_on": "SOC_USB_OTG_SUPPORTED",
-                                "help": "The reset signaling can be generated on any Hub or Host Controller port by request from the USB System\nSoftware. The USB 2.0 specification requires that \"the reset signaling must be driven for a minimum of\n10ms\" (see USB 2.0 chapter 7.1.7.5 for more details).  After the reset, the hub port will transition to\nthe Enabled state (refer to Section 11.5).\n\nThe default value is set to 30 ms to be safe.",
-                                "id": "USB_HOST_RESET_HOLD_MS",
-                                "name": "USB_HOST_RESET_HOLD_MS",
+                                "help": "Enables support of external Hubs.",
+                                "id": "USB_HOST_HUBS_SUPPORTED",
+                                "name": "USB_HOST_HUBS_SUPPORTED",
                                 "range": null,
-                                "title": "Reset hold in ms",
-                                "type": "int"
-                            },
-                            {
-                                "children": [],
-                                "depends_on": "SOC_USB_OTG_SUPPORTED",
-                                "help": "After a port stops driving the reset signal, the USB 2.0 specification requires that the \"USB System\nSoftware guarantees a minimum of 10 ms for reset recovery\" before the attached device is expected to\nrespond to data transfers (see USB 2.0 chapter 7.1.7.3 for more details). The device may ignore any\ndata transfers during the recovery interval.\n\nThe default value is set to 30 ms to be safe.",
-                                "id": "USB_HOST_RESET_RECOVERY_MS",
-                                "name": "USB_HOST_RESET_RECOVERY_MS",
-                                "range": null,
-                                "title": "Reset recovery delay in ms",
-                                "type": "int"
-                            },
-                            {
-                                "children": [],
-                                "depends_on": "SOC_USB_OTG_SUPPORTED",
-                                "help": "\"After successful completion of the Status stage, the device is allowed a SetAddress() recovery\ninterval of 2 ms. At the end of this interval, the device must be able to accept Setup packets\naddressed to the new address. Also, at the end of the recovery interval, the device must not respond to\ntokens sent to the old address (unless, of course, the old and new address is the same).\" See USB 2.0\nchapter 9.2.6.3 for more details.\n\nThe default value is set to 10 ms to be safe.",
-                                "id": "USB_HOST_SET_ADDR_RECOVERY_MS",
-                                "name": "USB_HOST_SET_ADDR_RECOVERY_MS",
-                                "range": null,
-                                "title": "SetAddress() recovery time in ms",
-                                "type": "int"
+                                "title": "Support Hubs",
+                                "type": "bool"
                             }
                         ],
                         "depends_on": "SOC_USB_OTG_SUPPORTED",
-                        "id": "component-config-usb-otg-root-hub-configuration",
-                        "title": "Root Hub configuration",
+                        "id": "component-config-usb-otg-hub-driver-configuration",
+                        "title": "Hub Driver Configuration",
                         "type": "menu"
                     },
                     {
                         "children": [],
                         "depends_on": "SOC_USB_OTG_SUPPORTED",
-                        "help": "The enumeration filter callback is called before enumeration of each newly attached device. This callback\nallows users to control whether a device should be enumerated, and what configuration number to use when\nenumerating a device.\n\nIf enabled, the enumeration filter callback can be set via 'usb_host_config_t' when calling\n'usb_host_install()'.",
+                        "help": "The enumeration filter callback is called before enumeration of each newly attached device.\nThis callback allows users to control whether a device should be enumerated, and what configuration\nnumber to use when enumerating a device.\n\nIf enabled, the enumeration filter callback can be set via 'usb_host_config_t' when calling\n'usb_host_install()'.",
                         "id": "USB_HOST_ENABLE_ENUM_FILTER_CALLBACK",
                         "name": "USB_HOST_ENABLE_ENUM_FILTER_CALLBACK",
                         "range": null,
                         "title": "Enable enumeration filter callback",
-                        "type": "bool"
-                    },
-                    {
-                        "children": [],
-                        "depends_on": "IDF_EXPERIMENTAL_FEATURES && SOC_USB_OTG_SUPPORTED",
-                        "help": "Feature is under development.",
-                        "id": "USB_HOST_EXT_HUB_SUPPORT",
-                        "name": "USB_HOST_EXT_HUB_SUPPORT",
-                        "range": null,
-                        "title": "Support USB HUB (Experimental)",
                         "type": "bool"
                     },
                     {
@@ -27974,12 +28662,22 @@
                     },
                     {
                         "children": [],
-                        "depends_on": null,
+                        "depends_on": "BT_ENABLED",
                         "help": "Used to enforce link encryption when attempting to read / write characteristic",
                         "id": "WIFI_PROV_BLE_FORCE_ENCRYPTION",
                         "name": "WIFI_PROV_BLE_FORCE_ENCRYPTION",
                         "range": null,
                         "title": "Force Link Encryption during characteristic Read / Write",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "BT_ENABLED",
+                        "help": "Used to enable support Notification in BLE descriptors of prov* characteristics",
+                        "id": "WIFI_PROV_BLE_NOTIFY",
+                        "name": "WIFI_PROV_BLE_NOTIFY",
+                        "range": null,
+                        "title": "Add support for Notification for provisioning BLE descriptors",
                         "type": "bool"
                     },
                     {
@@ -28048,7 +28746,7 @@
     {
         "children": [],
         "depends_on": null,
-        "help": "By enabling this option, ESP-IDF experimental feature options will be visible.\n\nNote you should still enable a certain experimental feature option to use it, and you\nshould read the corresponding risk warning and known issue list carefully.\n\nCurrent experimental feature list:\n\n- CONFIG_ESPTOOLPY_FLASHFREQ_120M && CONFIG_ESPTOOLPY_FLASH_SAMPLE_MODE_DTR\n- CONFIG_SPIRAM_SPEED_120M && CONFIG_SPIRAM_MODE_OCT\n- CONFIG_BOOTLOADER_CACHE_32BIT_ADDR_QUAD_FLASH\n- CONFIG_MBEDTLS_USE_CRYPTO_ROM_IMPL\n- CONFIG_ESP_WIFI_EAP_TLS1_3\n- CONFIG_ESP_WIFI_ENABLE_ROAMING_APP",
+        "help": "By enabling this option, ESP-IDF experimental feature options will be visible.\n\nNote you should still enable a certain experimental feature option to use it, and you\nshould read the corresponding risk warning and known issue list carefully.\n\nCurrent experimental feature list:\n\n- CONFIG_ESPTOOLPY_FLASHFREQ_120M && CONFIG_ESPTOOLPY_FLASH_SAMPLE_MODE_DTR\n- CONFIG_SPIRAM_SPEED_120M && CONFIG_SPIRAM_MODE_OCT\n- CONFIG_BOOTLOADER_CACHE_32BIT_ADDR_QUAD_FLASH\n- CONFIG_ESP_WIFI_EAP_TLS1_3\n- CONFIG_ESP_WIFI_ENABLE_ROAMING_APP\n- CONFIG_USB_HOST_EXT_PORT_SUPPORT_LS\n- CONFIG_USB_HOST_EXT_PORT_RESET_ATTEMPTS",
         "id": "IDF_EXPERIMENTAL_FEATURES",
         "name": "IDF_EXPERIMENTAL_FEATURES",
         "range": null,
