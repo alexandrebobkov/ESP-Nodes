@@ -302,7 +302,7 @@ static esp_err_t espnow_init(void) {
         return ESP_FAIL;
     }
     memcpy(send_param->dest_mac, broadcast_mac, ESP_NOW_ETH_ALEN);
-    example_espnow_data_prepare(send_param);
+    espnow_data_prepare(send_param);
 
     xTaskCreate(espnow_task, "example_espnow_task", 2048, send_param, 4, NULL);
 
