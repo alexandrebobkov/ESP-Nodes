@@ -341,11 +341,11 @@ static void espnow_task (void *pvParameter) {
         example_espnow_deinit(send_param);
         vTaskDelete(NULL);
     }
-    while (xQueueReceive(s_example_espnow_queue, &evt, portMAX_DELAY) == pdTRUE) {
+    while (xQueueReceive(espnow_queue, &evt, portMAX_DELAY) == pdTRUE) {
         switch (evt.id) {
             case EXAMPLE_ESPNOW_SEND_CB:
             {
-                example_espnow_event_send_cb_t *send_cb = &evt.info.send_cb;
+                espnow_event_send_cb_t *send_cb = &evt.info.send_cb;
                 is_broadcast = IS_BROADCAST_ADDR(send_cb->mac_addr);
 
                 ESP_LOGD(TAG, "Send data to "MACSTR", status1: %d", MAC2STR(send_cb->mac_addr), send_cb->status);
@@ -383,11 +383,11 @@ static void espnow_task (void *pvParameter) {
             }
             case EXAMPLE_ESPNOW_RECV_CB:
             {
-                example_espnow_event_recv_cb_t *recv_cb = &evt.info.recv_cb;
+                espnow_event_recv_cb_t *recv_cb = &evt.info.recv_cb;
 
                 ret = example_espnow_data_parse(recv_cb->data, recv_cb->data_len, &recv_state, &recv_seq, &recv_magic);
                 free(recv_cb->data);
-                if (ret == EXAMPLE_ESPNOW_DATA_BROADCAST) {
+                if (ret == ESPNOW_DATA_BROADCAST) {
                     ESP_LOGI(TAG, "Receive %dth broadcast data from: "MACSTR", len: %d", recv_seq, MAC2STR(recv_cb->mac_addr), recv_cb->data_len);
 
                     /* If MAC address does not exist in peer list, add it to peer list. */
@@ -441,7 +441,7 @@ static void espnow_task (void *pvParameter) {
                         }
                     }
                 }
-                else if (ret == EXAMPLE_ESPNOW_DATA_UNICAST) {
+                else if (ret == ESPNOW_DATA_UNICAST) {
                     ESP_LOGI(TAG, "Receive %dth unicast data from: "MACSTR", len: %d", recv_seq, MAC2STR(recv_cb->mac_addr), recv_cb->data_len);
 
                     /* If receive unicast ESPNOW data, also stop sending broadcast ESPNOW data. */
