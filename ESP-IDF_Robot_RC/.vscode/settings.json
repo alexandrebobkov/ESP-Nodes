@@ -5,5 +5,6 @@
         "board/esp32c3-builtin.cfg"
     ],
     "idf.port": "/dev/ttyACM1",
-    "idf.toolsPath": "/home/alex/.espressif"
+    "idf.toolsPath": "/home/alex/.espressif",
+    "idf.flashType": "UART"
 }
