@@ -80,4 +80,23 @@ menu "EET ROBOT Configuration"
             bool "PWM"        
     endchoice
 
+    choice ESPNOW_WIFI_MODE
+        prompt "WiFi mode"
+        default ESPNOW_WIFI_MODE_STATION
+        help
+            WiFi mode(station or softap).
+
+        config ESPNOW_WIFI_MODE_STATION
+            bool "Station"
+        config ESPNOW_WIFI_MODE_STATION_SOFTAP
+            bool "Softap"
+    endchoice
+
+    config ESPNOW_CHANNEL
+        int "Channel"
+        default 1
+        range 0 14
+        help
+            The channel on which sending and receiving ESPNOW data.
+
 endmenu

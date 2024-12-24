@@ -55,15 +55,24 @@ TIMER RESOLUTION    MAX VALUE   HALF-DUTY
 #define GPIO_INPUT_PIN_SEL ((1ULL<<PUSH_BTN_GPIO))
 #define GPIO_OUTPUT_PIN_SEL ((1ULL<<BLINK_GPIO))
 
+/* ESPNOW can work in both station and softap mode. It is configured in menuconfig. */
+#if CONFIG_ESPNOW_WIFI_MODE_STATION
+#define ESPNOW_WIFI_MODE WIFI_MODE_STA
+#define ESPNOW_WIFI_IF   ESP_IF_WIFI_STA
+#else
+#define ESPNOW_WIFI_MODE WIFI_MODE_AP
+#define ESPNOW_WIFI_IF   ESP_IF_WIFI_AP
+#endif
+
 static QueueHandle_t gpio_evt_queue = NULL;
 static uint8_t s_led_state = 0;
-uint8_t broadcastAddress[] = {};
 
 /* ESP NOW*/
 typedef struct struct_message {
     char node[32];
     uint8_t motor_a_pwm;
 } struct_message;
+uint8_t broadcastAddress[] = {};
 struct_message controlData;
 esp_now_peer_info_t peerInfo;
 
@@ -120,6 +129,10 @@ static void blink_led(void)
     gpio_set_level(BLINK_GPIO, s_led_state);
 }
 
+#else
+#error "unsupported LED type"
+#endif
+
 static void IRAM_ATTR gpio_isr_handler (void* arg) {
     uint32_t gpio_num = (uint32_t) arg;
     xQueueSendFromISR(gpio_evt_queue, &gpio_num, NULL);
@@ -133,13 +146,13 @@ static void gpio_task (void* arg) {
         }
     }
 }
-static void configure_led(void)
+/*static void configure_led(void)
 {
     ESP_LOGI(TAG, "Configured to blink GPIO LED!");
     gpio_reset_pin(BLINK_GPIO);
-    /* Set the GPIO as a push/pull output */
+    // Set the GPIO as a push/pull output 
     gpio_set_direction(BLINK_GPIO, GPIO_MODE_OUTPUT);
-}
+}*/
 
 static void configure_button (void) {
     ESP_LOGI(TAG, "Configured on-board push button");
@@ -162,9 +175,7 @@ static void configure_button (void) {
     ESP_ERROR_CHECK(mcpwm_set_duty(MCPWM_UNIT_0, MCPWM_TIMER_0, MCPWM_OPR_A, 50));
 }*/
 
-#else
-#error "unsupported LED type"
-#endif
+
 
 static void ledc_init (void) {
     ledc_timer_config_t ledc_timer = {
@@ -192,15 +203,14 @@ static void ledc_init (void) {
 
 static void app_wifi_init()
 {
-    esp_event_loop_create_default();
-
+    ESP_ERROR_CHECK(esp_netif_init());
+    ESP_ERROR_CHECK(esp_event_loop_create_default());
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
-
-    ESP_ERROR_CHECK(esp_wifi_init(&cfg));
-    ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
-    ESP_ERROR_CHECK(esp_wifi_set_storage(WIFI_STORAGE_RAM));
-    ESP_ERROR_CHECK(esp_wifi_set_ps(WIFI_PS_NONE));
-    ESP_ERROR_CHECK(esp_wifi_start());
+    ESP_ERROR_CHECK( esp_wifi_init(&cfg) );
+    ESP_ERROR_CHECK( esp_wifi_set_storage(WIFI_STORAGE_RAM) );
+    ESP_ERROR_CHECK( esp_wifi_set_mode(ESPNOW_WIFI_MODE) );
+    ESP_ERROR_CHECK( esp_wifi_start());
+    ESP_ERROR_CHECK( esp_wifi_set_channel(CONFIG_ESPNOW_CHANNEL, WIFI_SECOND_CHAN_NONE));
 }
 
 void app_main(void)
@@ -239,10 +249,9 @@ void app_main(void)
     //configure_dc_mc();
     printf("Added button interrupt");
 
-    espnow_storage_init();
-    app_wifi_init();
-    espnow_config_t espnow_config = ESPNOW_INIT_CONFIG_DEFAULT();
-    espnow_init(&espnow_config);
+    //app_wifi_init();
+    //esp_now_init();
+    //esp_now_add_peer(&peerInfo);
 
     while (1) {
         ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");

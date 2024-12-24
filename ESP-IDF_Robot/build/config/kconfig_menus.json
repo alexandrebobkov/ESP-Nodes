@@ -5395,6 +5395,49 @@
                 "name": "MOTOR_CONTROL",
                 "title": "Motor rotation control method.",
                 "type": "choice"
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "depends_on": "<choice ESPNOW_WIFI_MODE>",
+                        "help": null,
+                        "id": "ESPNOW_WIFI_MODE_STATION",
+                        "name": "ESPNOW_WIFI_MODE_STATION",
+                        "range": null,
+                        "title": "Station",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "<choice ESPNOW_WIFI_MODE>",
+                        "help": null,
+                        "id": "ESPNOW_WIFI_MODE_STATION_SOFTAP",
+                        "name": "ESPNOW_WIFI_MODE_STATION_SOFTAP",
+                        "range": null,
+                        "title": "Softap",
+                        "type": "bool"
+                    }
+                ],
+                "depends_on": null,
+                "help": "WiFi mode(station or softap).",
+                "id": "eet-robot-configuration-wifi-mode",
+                "name": "ESPNOW_WIFI_MODE",
+                "title": "WiFi mode",
+                "type": "choice"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "The channel on which sending and receiving ESPNOW data.",
+                "id": "ESPNOW_CHANNEL",
+                "name": "ESPNOW_CHANNEL",
+                "range": [
+                    0,
+                    14
+                ],
+                "title": "Channel",
+                "type": "int"
             }
         ],
         "depends_on": null,
