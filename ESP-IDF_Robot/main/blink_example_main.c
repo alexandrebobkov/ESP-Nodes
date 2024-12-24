@@ -97,6 +97,7 @@ typedef struct struct_message {
     char node[32];
     uint8_t motor_a_pwm;
 } struct_message;
+static espnow_msg_t *message;
 uint8_t broadcastAddress[] = {};
 struct_message controlData;
 esp_now_peer_info_t peerInfo;
@@ -469,6 +470,9 @@ static void espnow_task (void *pvParameter) {
 
 static esp_err_t espnow_init(void) {
     espnow_send_param_t *send_param;
+    
+    message->mtr_a_pwm = 0x10;
+    message->mtr_b_pwm = 0x512;
 
     espnow_queue = xQueueCreate(ESPNOW_QUEUE_SIZE, sizeof(espnow_event_t));
     // Confirm that queue exists, and continue if so.
@@ -521,7 +525,7 @@ static esp_err_t espnow_init(void) {
     send_param->count = CONFIG_ESPNOW_SEND_COUNT;
     send_param->delay = CONFIG_ESPNOW_SEND_DELAY;
     send_param->len = CONFIG_ESPNOW_SEND_LEN;
-    send_param->buffer = malloc(CONFIG_ESPNOW_SEND_LEN);
+    send_param->buffer = malloc(CONFIG_ESPNOW_SEND_LEN);    // Data to be sent?
     if (send_param->buffer == NULL) {
         ESP_LOGE(TAG, "Malloc send buffer fail");
         free(send_param);
