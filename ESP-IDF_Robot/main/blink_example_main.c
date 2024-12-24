@@ -470,7 +470,8 @@ static void espnow_task (void *pvParameter) {
 
 static esp_err_t espnow_init(void) {
     espnow_send_param_t *send_param;
-    
+
+    // Define message to be sent.
     message->mtr_a_pwm = 0x10;
     message->mtr_b_pwm = 0x512;
 
