@@ -810,6 +810,9 @@ void app_main(void)
 
 
         // ADC
+        // Display GPIOs used
+        ESP_LOGI(TAG, "ADC1_CH0: %d", ADC1_CHANNEL_0);
+        ESP_LOGI(TAG, "ADC1_CH1: %d", ADC1_CHANNEL_1);
         adc_ret = adc_continuous_read(handle, result, READ_LEN, &ret_num, 0);
         if (ret == ESP_OK) {
             ESP_LOGI("TASK", "ret is %x, ret_num is %"PRIu32" bytes", ret, ret_num);
@@ -820,8 +823,6 @@ void app_main(void)
                /* Check the channel number validation, the data is invalid if the channel num exceed the maximum channel */
                 if (chan_num < SOC_ADC_CHANNEL_NUM(ADC_UNIT)) {
                     ESP_LOGI(TAG, "Unit: %s, Channel: %"PRIu32", Value: %"PRIx32, unit, chan_num, data);
-                    ESP_LOGI(TAG, "ADC1_CH0: %d", ADC1_CHANNEL_0);
-                    ESP_LOGI(TAG, "ADC1_CH1: %d", ADC1_CHANNEL_1);
                 } else {
                     ESP_LOGW(TAG, "Invalid data [%s_%"PRIu32"_%"PRIx32"]", unit, chan_num, data);
                 }
