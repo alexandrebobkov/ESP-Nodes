@@ -350,6 +350,7 @@ static void espnow_task (void *pvParameter) {
     uint32_t recv_magic = 0;
     bool is_broadcast = false;
     int ret;
+    esp_err_t task_status;
 
     vTaskDelay(5000 / portTICK_PERIOD_MS);
     ESP_LOGI(TAG, "Start sending broadcast data");
