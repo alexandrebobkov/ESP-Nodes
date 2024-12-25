@@ -1,7 +1,8 @@
 #ifndef RC_H
 #define RC_H
 
-#define ADC_CHNL ADC_CHANNEL_1
+#define ADC_CHNL            ADC_CHANNEL_1
+#define ADC_ATTEN      ADC_ATTEN_DB_11
 
 #include "esp_adc/adc_oneshot.h"
 
@@ -15,7 +16,24 @@ static esp_err_t rc_adc_init (void) {
     adc_oneshot_unit_init_cfg_t init_config1 = {
         .unit_id = ADC_CHNL,
     };
-    return adc_oneshot_new_unit(&init_config1, &adc1_handle);
+
+    ESP_ERROR_CHECK( adc_oneshot_new_unit(&init_config1, &adc1_handle));
+
+    adc_oneshot_chan_cfg_t config = {
+        .bitwidth = ADC_BITWIDTH_DEFAULT,
+        .atten = ADC_ATTEN,
+    };
+    ESP_ERROR_CHECK(adc_oneshot_config_channel(adc1_handle, EXAMPLE_ADC1_CHAN0, &config));
+    ESP_ERROR_CHECK(adc_oneshot_config_channel(adc1_handle, EXAMPLE_ADC1_CHAN1, &config));
+
+    //-------------ADC1 Calibration Init---------------//
+    adc_cali_handle_t adc1_cali_chan0_handle = NULL;
+    adc_cali_handle_t adc1_cali_chan1_handle = NULL;
+    bool do_calibration1_chan0 = example_adc_calibration_init(ADC_UNIT_1, EXAMPLE_ADC1_CHAN0, EXAMPLE_ADC_ATTEN, &adc1_cali_chan0_handle);
+    bool do_calibration1_chan1 = example_adc_calibration_init(ADC_UNIT_1, EXAMPLE_ADC1_CHAN1, EXAMPLE_ADC_ATTEN, &adc1_cali_chan1_handle);
+
+
+    return ESP_OK;
 }
 
 #endif
