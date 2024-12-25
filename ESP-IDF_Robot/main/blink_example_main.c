@@ -707,7 +707,6 @@ void app_main(void)
     gpio_install_isr_service(ESP_INTR_FLAG_DEFAULT);
     gpio_isr_handler_add(NAV_BTN, gpio_isr_handler, (void*) NAV_BTN);
 
-
     configure_button();
     //configure_dc_mc();
     printf("Added button interrupt");
