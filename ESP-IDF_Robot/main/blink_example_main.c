@@ -315,7 +315,7 @@ int example_espnow_data_parse(uint8_t *data, uint16_t data_len, uint8_t *state, 
     // Display received data.
     ESP_LOGW(TAG, "Received data size: %d", data_len);
     ESP_LOGW(TAG, "Saved value: %x", (uint8_t)buf->payload);
-    ESP_LOGW(TAG, "payload[0] = %x", buf->payload[0]);
+    ESP_LOGW(TAG, "payload[0] = %x", buf.payload[0]);
 
     if (crc_cal == crc) {
         return buf->type;
