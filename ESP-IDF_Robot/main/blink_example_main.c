@@ -281,7 +281,7 @@ static void espnow_recv_cb (const esp_now_recv_info_t *recv_info, const uint8_t 
     evt.id = ESPNOW_RECV_CB;
     memcpy(recv_cb->mac_addr, mac_addr, ESP_NOW_ETH_ALEN);
     recv_cb->data = malloc(len);
-    ESP_LOGW(TAG, "Received payload: %u8", data);
+    ESP_LOGW(TAG, "Received payload: %u", data);
     if (recv_cb->data == NULL) {
         ESP_LOGE(TAG, "Malloc receive data fail");
         return;
