@@ -687,6 +687,12 @@ void app_main(void)
     io_conf.mode = GPIO_MODE_INPUT;
     io_conf.pull_up_en = 1;
     gpio_config(&io_conf);
+    // Set push button interrupt
+    gpio_set_intr_type(PUSH_BTN_GPIO, GPIO_INTR_NEGEDGE);//ANYEDGE);
+    gpio_evt_queue = xQueueCreate(10, sizeof(uint32_t));
+    xTaskCreate(gpio_task, "GPIO task", 2048, NULL, 10, NULL);
+    gpio_install_isr_service(ESP_INTR_FLAG_DEFAULT);
+    gpio_isr_handler_add(PUSH_BTN_GPIO, gpio_isr_handler, (void*) PUSH_BTN_GPIO);
 
     // Configure navigation button
     io_conf.intr_type = GPIO_INTR_NEGEDGE;
@@ -694,13 +700,13 @@ void app_main(void)
     io_conf.mode = GPIO_MODE_INPUT;
     io_conf.pull_up_en = 1;
     gpio_config(&io_conf);
-
-    // Set push button interrupt
-    gpio_set_intr_type(PUSH_BTN_GPIO, GPIO_INTR_NEGEDGE);//ANYEDGE);
+    // Set navigation button interrupt
+    gpio_set_intr_type(NAV_BTN, GPIO_INTR_NEGEDGE);//ANYEDGE);
     gpio_evt_queue = xQueueCreate(10, sizeof(uint32_t));
     xTaskCreate(gpio_task, "GPIO task", 2048, NULL, 10, NULL);
     gpio_install_isr_service(ESP_INTR_FLAG_DEFAULT);
-    gpio_isr_handler_add(PUSH_BTN_GPIO, gpio_isr_handler, (void*) PUSH_BTN_GPIO);
+    gpio_isr_handler_add(NAV_BTN, gpio_isr_handler, (void*) NAV_BTN);
+
 
     configure_button();
     //configure_dc_mc();
