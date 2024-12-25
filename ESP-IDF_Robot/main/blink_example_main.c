@@ -833,13 +833,13 @@ void app_main(void)
                  * usually you don't need this delay (as this task will block for a while).
                  */
             //vTaskDelay(1);
-            //vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
+            vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
         } else if (ret == ESP_ERR_TIMEOUT) {
                 //We try to read `EXAMPLE_READ_LEN` until API returns timeout, which means there's no available data
                 break;
         }
 
-        vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
+        //vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
     }
 
     ESP_ERROR_CHECK(adc_continuous_stop(handle));
