@@ -160,7 +160,7 @@ void example_espnow_data_prepare(example_espnow_send_param_t *send_param)
     //memcpy(buf->payload, (uint8_t)16, send_param->len - sizeof(example_espnow_data_t));
     //memcpy(buf->payload[0], (uint8_t)12, send_param->len - sizeof(example_espnow_data_t));
     //memcpy(buf->payload[0], 12, send_param->len - sizeof(example_espnow_data_t));
-    buf->payload[0] = 12;
+    buf->payload[0] = 5;
     ESP_LOGW(TAG, "Saved value: %x", buf->payload[0]);
     buf->crc = esp_crc16_le(UINT16_MAX, (uint8_t const *)buf, send_param->len);
 }
