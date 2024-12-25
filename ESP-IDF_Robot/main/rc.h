@@ -13,7 +13,7 @@
 #define ADC1_CHAN0          ADC1_CHANNEL_0
 #define ADC1_CHAN1          ADC1_CHANNEL_1
 
-static const char *TAG = "ESP IDF Robot";
+//static const char *TAG = "ESP IDF Robot";
 
 static int adc_raw[2][10];
 static int voltage[2][10];
@@ -48,17 +48,17 @@ static esp_err_t rc_adc_init (void) {
 
 static void rc_get_raw_data() {
     ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, ADC1_CHAN0, &adc_raw[0][0]));
-    ESP_LOGI(TAG, "ADC%d Channel[%d] Raw Data: %d", ADC_UNIT_1 + 1, ADC1_CHAN0, adc_raw[0][0]);
+    ESP_LOGI("ESP IDF Robot", "ADC%d Channel[%d] Raw Data: %d", ADC_UNIT_1 + 1, ADC1_CHAN0, adc_raw[0][0]);
 }
 
 static void example_adc_calibration_deinit(adc_cali_handle_t handle)
 {
 #if ADC_CALI_SCHEME_CURVE_FITTING_SUPPORTED
-    ESP_LOGI(TAG, "deregister %s calibration scheme", "Curve Fitting");
+    ESP_LOGI("ESP IDF Robot", "deregister %s calibration scheme", "Curve Fitting");
     ESP_ERROR_CHECK(adc_cali_delete_scheme_curve_fitting(handle));
 
 #elif ADC_CALI_SCHEME_LINE_FITTING_SUPPORTED
-    ESP_LOGI(TAG, "deregister %s calibration scheme", "Line Fitting");
+    ESP_LOGI("ESP IDF Robot", "deregister %s calibration scheme", "Line Fitting");
     ESP_ERROR_CHECK(adc_cali_delete_scheme_line_fitting(handle));
 #endif
 }
