@@ -20,8 +20,10 @@ static int voltage[2][10];
 static bool example_adc_calibration_init(adc_unit_t unit, adc_channel_t channel, adc_atten_t atten, adc_cali_handle_t *out_handle);
 static void example_adc_calibration_deinit(adc_cali_handle_t handle);
 
+adc_oneshot_unit_handle_t adc1_handle;
+
 static esp_err_t rc_adc_init (void) {
-    adc_oneshot_unit_handle_t adc1_handle;
+    
     adc_oneshot_unit_init_cfg_t init_config1 = {
         .unit_id = ADC_UNIT_1,
     };
@@ -42,6 +44,11 @@ static esp_err_t rc_adc_init (void) {
     bool do_calibration1_chan1 = example_adc_calibration_init(ADC_UNIT_1, ADC1_CHAN1, ADC_ATTEN, &adc1_cali_chan1_handle);
 
     return ESP_OK;
+}
+
+static void adc_get_raw_data() {
+    ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, ADC1_CHAN0, &adc_raw[0][0]));
+    ESP_LOGI(TAG, "ADC%d Channel[%d] Raw Data: %d", ADC_UNIT_1 + 1, ADC1_CHAN0, adc_raw[0][0]);
 }
 
 #endif
