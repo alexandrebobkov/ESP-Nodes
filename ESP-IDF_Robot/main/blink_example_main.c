@@ -789,7 +789,7 @@ void app_main(void)
         ADC
     */
    rc_adc_init();
-   rc_get_raw_data();
+   
    /*
     esp_err_t adc_ret;
     uint32_t ret_num = 0;
@@ -840,6 +840,8 @@ void app_main(void)
                 //We try to read `EXAMPLE_READ_LEN` until API returns timeout, which means there's no available data
                 break;
         }*/
+
+       rc_get_raw_data();
 
         vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
     }
