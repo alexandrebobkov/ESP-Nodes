@@ -67,7 +67,7 @@ typedef struct {
     uint16_t delay;                       //Delay between sending two ESPNOW data, unit: ms.
     int len;                              //Length of ESPNOW data to be sent, unit: byte.
     uint8_t *buffer;                      //Buffer pointing to ESPNOW data.
-    uint8_t dest_mac[ESP_NOW_ETH_ALEN];   //MAC address of destination device.
+    uint8_t dest_mac[ESP_NOW_ETH_ALEN];   //MAC address of destination device. 
 } espnow_send_param_t;
 
 /* ESPNOW message to be sent. */
