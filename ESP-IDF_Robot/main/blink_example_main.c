@@ -83,7 +83,7 @@ TIMER RESOLUTION    MAX VALUE   HALF-DUTY
 #define NAV_BTN         (8)                     // 8 GPIO joystick button
 #define _ADC_UNIT_STR(unit)         #unit
 #define ADC_UNIT_STR(unit)          _ADC_UNIT_STR(unit)
-uint8_t x_avg = 0, y_avg = 0;
+uint32_t x_avg = 0, y_avg = 0;
 static TaskHandle_t s_task_handle;
 //static adc_channel_t channel[2] = {ADC_CHANNEL_2, ADC_CHANNEL_3};
 static adc_channel_t channel[2] = {ADC_CHANNEL_0, ADC_CHANNEL_1};
