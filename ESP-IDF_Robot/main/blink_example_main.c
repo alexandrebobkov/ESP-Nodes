@@ -478,6 +478,10 @@ static void espnow_task (void *pvParameter) {
                         }
                     }
                 }
+                /*      
+                ========    UNICAST   ========
+                */
+                // If data was sent to the specific device (unicast)
                 else if (ret == ESPNOW_DATA_UNICAST) {
                     ESP_LOGI(TAG, "Receive %dth unicast data from: "MACSTR", len: %d", recv_seq, MAC2STR(recv_cb->mac_addr), recv_cb->data_len);
 
