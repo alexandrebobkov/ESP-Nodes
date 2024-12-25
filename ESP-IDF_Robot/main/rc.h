@@ -62,10 +62,10 @@ static void rc_get_raw_data() {
     //Tear Down
     ESP_ERROR_CHECK(adc_oneshot_del_unit(adc1_handle));
     if (do_calibration1_chan0) {
-        example_adc_calibration_deinit(adc1_cali_chan0_handle);
+        adc_calibration_deinit(adc1_cali_chan0_handle);
     }
     if (do_calibration1_chan1) {
-        example_adc_calibration_deinit(adc1_cali_chan1_handle);
+        adc_calibration_deinit(adc1_cali_chan1_handle);
     }
 }
 
