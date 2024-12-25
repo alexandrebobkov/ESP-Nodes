@@ -330,7 +330,7 @@ void espnow_data_prepare(espnow_send_param_t *send_param) {
     buf->magic = send_param->magic;
     /* Fill all remaining bytes after the data with random values */
     esp_fill_random(buf->payload, send_param->len - sizeof(espnow_data_t));
-    ESP_LOGI(TAG, "Filled payload array.");
+    ESP_LOGW(TAG, "Filled payload array.");
     buf->crc = esp_crc16_le(UINT16_MAX, (uint8_t const *)buf, send_param->len);
 }
 
