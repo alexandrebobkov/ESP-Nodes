@@ -37,7 +37,8 @@ static const char *TAG = "espnow_example";
 static QueueHandle_t s_example_espnow_queue;
 
 // Broadcast address
-static uint8_t s_example_broadcast_mac[ESP_NOW_ETH_ALEN] = { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
+//static uint8_t s_example_broadcast_mac[ESP_NOW_ETH_ALEN] = { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
+static uint8_t s_example_broadcast_mac[ESP_NOW_ETH_ALEN] = { 0x34, 0xB7, 0xDA, 0xF9, 0x33, 0x8D };
 static uint16_t s_example_espnow_seq[EXAMPLE_ESPNOW_DATA_MAX] = { 0, 0 };
 
 static void example_espnow_deinit(example_espnow_send_param_t *send_param);
