@@ -318,6 +318,7 @@ int example_espnow_data_parse(uint8_t *data, uint16_t data_len, uint8_t *state, 
 }
 
 void espnow_data_prepare(espnow_send_param_t *send_param) {
+    // Struct data
     espnow_data_t *buf = (espnow_data_t *)send_param->buffer;
 
     assert(send_param->len >= sizeof(espnow_data_t));
