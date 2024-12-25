@@ -819,6 +819,7 @@ void app_main(void)
                /* Check the channel number validation, the data is invalid if the channel num exceed the maximum channel */
                 if (chan_num < SOC_ADC_CHANNEL_NUM(ADC_UNIT)) {
                     ESP_LOGI(TAG, "Unit: %s, Channel: %"PRIu32", Value: %"PRIx32, unit, chan_num, data);
+                    ESP_LOGI(TAG, "ADC1_CH0: %d", ADC1_CHANNEL_0_GPIO_NUM);
                 } else {
                     ESP_LOGW(TAG, "Invalid data [%s_%"PRIu32"_%"PRIx32"]", unit, chan_num, data);
                 }
