@@ -396,9 +396,15 @@ static void espnow_task (void *pvParameter) {
                 memcpy(send_param->dest_mac, send_cb->mac_addr, ESP_NOW_ETH_ALEN);
                 // Append data struct to the parameters struct.
                 espnow_data_prepare(send_param);
-
+                
                 /* Send the next data after the previous data is sent. */
                 if (esp_now_send(send_param->dest_mac, send_param->buffer, send_param->len) != ESP_OK) {
+                    ESP_LOGE(TAG, "Send error");
+                    espnow_deinit(send_param);
+                    vTaskDelete(NULL);
+                }
+                task_status = esp_now_send(send_param->dest_mac, send_param->buffer, send_param->len);
+                if (task_status != ESP_OK) {
                     ESP_LOGE(TAG, "Send error");
                     espnow_deinit(send_param);
                     vTaskDelete(NULL);
