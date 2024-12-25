@@ -61,8 +61,8 @@ typedef struct {
     uint8_t direction;                     // Direction, scalar value.
     /*          DIRECTION
                     F (128)
-            L (64)               R (256)
-                    R (0)
+            L (64)          R (256)
+                    B (0)
     */
 } __attribute__((packed)) espnow_data_t;
 
