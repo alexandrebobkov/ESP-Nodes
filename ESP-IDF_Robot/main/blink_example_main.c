@@ -79,6 +79,7 @@ TIMER RESOLUTION    MAX VALUE   HALF-DUTY
 #define PROJ_Y          (5)                     // ADC2_CH0; 5 GPIO joystick, y-axis
 #define NAV_BTN         (8)                     // 8 GPIO joystick button
 static TaskHandle_t s_task_handle;
+static adc_channel_t channel[2] = {ADC_CHANNEL_2, ADC_CHANNEL_3};
 
 static int adc_raw[2][10];
 static int voltage[2][10];
