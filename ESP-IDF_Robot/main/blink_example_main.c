@@ -21,11 +21,11 @@
 #include "sdkconfig.h"
 /* ADC */
 #include "rc.h"
-#include "driver/adc.h"
-#include "esp_adc_cal.h"
+//#include "driver/adc.h"
+//#include "esp_adc_cal.h"
 //#include "esp_adc/adc_oneshot.h"
-#include "esp_adc/adc_cali.h"
-#include "esp_adc/adc_cali_scheme.h"
+//#include "esp_adc/adc_cali.h"
+//#include "esp_adc/adc_cali_scheme.h"
 #include "esp_adc/adc_continuous.h"
 
 /* ESP-NOW */
@@ -815,10 +815,10 @@ void app_main(void)
 
         // ADC
         // Display GPIOs used
-        /*
-        ESP_LOGI(TAG, "ADC1_CH0: %d", ADC1_CHANNEL_0);
-        ESP_LOGI(TAG, "ADC1_CH1: %d", ADC1_CHANNEL_1);
-        adc_ret = adc_continuous_read(handle, result, READ_LEN, &ret_num, 0);
+        
+        //ESP_LOGI(TAG, "ADC1_CH0: %d", ADC1_CHANNEL_0);
+        //ESP_LOGI(TAG, "ADC1_CH1: %d", ADC1_CHANNEL_1);
+        /*adc_ret = adc_continuous_read(handle, result, READ_LEN, &ret_num, 0);
         if (ret == ESP_OK) {
             ESP_LOGI("TASK", "ret is %x, ret_num is %"PRIu32" bytes", ret, ret_num);
             for (int i = 0; i < ret_num; i += SOC_ADC_DIGI_RESULT_BYTES) {

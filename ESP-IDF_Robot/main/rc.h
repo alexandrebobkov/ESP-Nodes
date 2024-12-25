@@ -2,7 +2,11 @@
 #define RC_H
 
 #include "driver/adc.h"
+#include "esp_adc_cal.h"
 #include "esp_adc/adc_oneshot.h"
+#include "esp_adc/adc_continuous.h"
+#include "esp_adc/adc_cali.h"
+#include "esp_adc/adc_cali_scheme.h"
 
 #define ADC_CHNL            ADC_CHANNEL_1
 #define ADC_ATTEN           ADC_ATTEN_DB_11
