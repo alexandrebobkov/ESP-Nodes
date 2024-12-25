@@ -58,7 +58,7 @@ typedef struct {
     uint8_t mtr_a_pwm;
     uint8_t mtr_b_pwm;
     bool lights;                            // Lights ON/OFF
-    uint32_t direction;                     // Direction, scalar value.
+    uint8_t direction;                     // Direction, scalar value.
 } __attribute__((packed)) espnow_data_t;
 
 /* Parameters of sending ESPNOW data. */
