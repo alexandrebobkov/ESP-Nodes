@@ -58,7 +58,8 @@ typedef struct {
     uint8_t mtr_a_pwm;
     uint8_t mtr_b_pwm;
     bool lights;                            // Lights ON/OFF
-    uint8_t direction;                     // Direction, scalar value.
+    uint8_t direction;                      // Direction, scalar value.
+    uint8_t velocity;
     /*          DIRECTION
                     F (128)
             L (64)          R (256)
