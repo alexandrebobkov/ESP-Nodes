@@ -78,8 +78,8 @@ TIMER RESOLUTION    MAX VALUE   HALF-DUTY
 #define READ_LEN        256
 #define ADC_GET_CHANNEL(p_data)     ((p_data)->type2.channel)
 #define ADC_GET_DATA(p_data)        ((p_data)->type2.data)
-#define PROJ_X          (4)                     // ADC1_CH4; 4 GPIO joystick, x-axis
-#define PROJ_Y          (5)                     // ADC2_CH0; 5 GPIO joystick, y-axis
+#define PROJ_X          (0)                     // ADC1_CH4; 4 GPIO joystick, x-axis
+#define PROJ_Y          (1)                     // ADC2_CH0; 5 GPIO joystick, y-axis
 #define NAV_BTN         (8)                     // 8 GPIO joystick button
 #define _ADC_UNIT_STR(unit)         #unit
 #define ADC_UNIT_STR(unit)          _ADC_UNIT_STR(unit)
