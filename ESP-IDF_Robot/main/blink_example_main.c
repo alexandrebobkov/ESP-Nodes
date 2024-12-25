@@ -788,6 +788,8 @@ void app_main(void)
     /*
         ADC
     */
+   rc_adc_init();
+   rc_get_raw_data();
    /*
     esp_err_t adc_ret;
     uint32_t ret_num = 0;

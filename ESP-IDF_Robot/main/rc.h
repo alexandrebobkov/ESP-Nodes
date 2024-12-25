@@ -46,7 +46,7 @@ static esp_err_t rc_adc_init (void) {
     return ESP_OK;
 }
 
-static void adc_get_raw_data() {
+static void rc_get_raw_data() {
     ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, ADC1_CHAN0, &adc_raw[0][0]));
     ESP_LOGI(TAG, "ADC%d Channel[%d] Raw Data: %d", ADC_UNIT_1 + 1, ADC1_CHAN0, adc_raw[0][0]);
 }
