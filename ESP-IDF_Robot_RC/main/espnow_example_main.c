@@ -157,7 +157,10 @@ void example_espnow_data_prepare(example_espnow_send_param_t *send_param)
     /* Fill all remaining bytes after the data with random values */
     //esp_fill_random(buf->payload, send_param->len - sizeof(example_espnow_data_t));
     //memcpy(buf->payload, (uint8_t)16, send_param->len - sizeof(example_espnow_data_t));
-    memcpy(buf->payload, (uint8_t)1, send_param->len - sizeof(example_espnow_data_t));
+    //memcpy(buf->payload[0], (uint8_t)12, send_param->len - sizeof(example_espnow_data_t));
+    //memcpy(buf->payload[0], 12, send_param->len - sizeof(example_espnow_data_t));
+    buf->payload[0] = 12;
+    ESP_LOGW(TAG, "Saved value: %x", buf->payload[0]);
     buf->crc = esp_crc16_le(UINT16_MAX, (uint8_t const *)buf, send_param->len);
 }
 
@@ -349,7 +352,7 @@ static esp_err_t example_espnow_init(void)
     send_param->broadcast = true;
     send_param->state = 0;
     //esp_random();
-    send_param->magic = (uint32_t)50;//esp_random();
+    send_param->magic = esp_random(); //(uint32_t)50;//esp_random();
     send_param->count = CONFIG_ESPNOW_SEND_COUNT;
     send_param->delay = CONFIG_ESPNOW_SEND_DELAY;
     send_param->len = CONFIG_ESPNOW_SEND_LEN;
