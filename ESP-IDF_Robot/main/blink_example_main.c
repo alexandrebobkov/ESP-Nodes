@@ -602,7 +602,7 @@ static void espnow_deinit(espnow_send_param_t *send_param)
 /*---------------------------------------------------------------
         ADC Calibration
 ---------------------------------------------------------------*/
-static bool adc_calibration_init(adc_unit_t unit, adc_channel_t channel, adc_atten_t atten, adc_cali_handle_t *out_handle)
+/*static bool adc_calibration_init(adc_unit_t unit, adc_channel_t channel, adc_atten_t atten, adc_cali_handle_t *out_handle)
 {
     adc_cali_handle_t handle = NULL;
     esp_err_t ret = ESP_FAIL;
@@ -661,7 +661,7 @@ static void adc_calibration_deinit(adc_cali_handle_t handle)
     ESP_LOGI(TAG, "deregister %s calibration scheme", "Line Fitting");
     ESP_ERROR_CHECK(adc_cali_delete_scheme_line_fitting(handle));
 #endif
-}
+}*/
 
 void app_main(void)
 {
