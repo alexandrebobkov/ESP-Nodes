@@ -531,6 +531,8 @@ static esp_err_t espnow_init(void) {
     send_param->unicast = false;
     send_param->broadcast = true;
     send_param->state = 0;
+    // The higher the magic number is, the lower the priority of the device is
+    // higher number -> receiver
     send_param->magic = 55;//esp_random();   // Arbitrary number that determines which device is sender/receiver.
     send_param->count = CONFIG_ESPNOW_SEND_COUNT;
     send_param->delay = CONFIG_ESPNOW_SEND_DELAY;
