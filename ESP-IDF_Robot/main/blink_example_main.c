@@ -413,6 +413,7 @@ static void espnow_task (void *pvParameter) {
                 }*/
                 break;
             }
+            // Receive callback.
             case ESPNOW_RECV_CB:
             {
                 espnow_event_recv_cb_t *recv_cb = &evt.info.recv_cb;
