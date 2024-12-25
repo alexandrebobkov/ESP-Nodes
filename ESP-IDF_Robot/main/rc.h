@@ -31,8 +31,8 @@ static esp_err_t rc_adc_init (void) {
     //-------------ADC1 Calibration Init---------------//
     adc_cali_handle_t adc1_cali_chan0_handle = NULL;
     adc_cali_handle_t adc1_cali_chan1_handle = NULL;
-    bool do_calibration1_chan0 = example_adc_calibration_init(ADC_UNIT_1, EXAMPLE_ADC1_CHAN0, EXAMPLE_ADC_ATTEN, &adc1_cali_chan0_handle);
-    bool do_calibration1_chan1 = example_adc_calibration_init(ADC_UNIT_1, EXAMPLE_ADC1_CHAN1, EXAMPLE_ADC_ATTEN, &adc1_cali_chan1_handle);
+    bool do_calibration1_chan0 = example_adc_calibration_init(ADC_UNIT_1, ADC1_CHAN0, ADC_ATTEN, &adc1_cali_chan0_handle);
+    bool do_calibration1_chan1 = example_adc_calibration_init(ADC_UNIT_1, ADC1_CHAN1, ADC_ATTEN, &adc1_cali_chan1_handle);
 
 
     return ESP_OK;
