@@ -472,8 +472,8 @@ static esp_err_t espnow_init(void) {
     espnow_send_param_t *send_param;
 
     // Define message to be sent.
-    message->mtr_a_pwm = 0x10;
-    message->mtr_b_pwm = 0x512;
+    message.mtr_a_pwm = 0x010;
+    message.mtr_b_pwm = 0x512;
 
     espnow_queue = xQueueCreate(ESPNOW_QUEUE_SIZE, sizeof(espnow_event_t));
     // Confirm that queue exists, and continue if so.
