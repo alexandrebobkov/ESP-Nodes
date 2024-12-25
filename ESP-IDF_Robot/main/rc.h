@@ -1,6 +1,8 @@
 #ifndef RC_H
 #define RC_H
 
+#define ADC_CHNL ADC_CHANNEL_1
+
 #include "esp_adc/adc_oneshot.h"
 
 static int adc_raw[2][10];
