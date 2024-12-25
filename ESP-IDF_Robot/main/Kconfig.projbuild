@@ -127,8 +127,8 @@ menu "EET ROBOT Configuration"
         
     config ESPNOW_SEND_LEN
         int "Send len"
-        range 10 250
-        default 10
+        range 128 250
+        default 128
         help
             Length of ESPNOW data to be sent, unit: byte.
         
