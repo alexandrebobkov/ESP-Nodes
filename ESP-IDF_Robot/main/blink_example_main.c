@@ -836,4 +836,7 @@ void app_main(void)
 
         vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
     }
+
+    ESP_ERROR_CHECK(adc_continuous_stop(handle));
+    ESP_ERROR_CHECK(adc_continuous_deinit(handle));
 }
