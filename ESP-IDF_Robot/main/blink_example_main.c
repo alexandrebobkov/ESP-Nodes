@@ -20,6 +20,7 @@
 #include "led_strip.h"
 #include "sdkconfig.h"
 /* ADC */
+#include "rc.h"
 #include "driver/adc.h"
 #include "esp_adc_cal.h"
 //#include "esp_adc/adc_oneshot.h"
