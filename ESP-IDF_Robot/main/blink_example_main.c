@@ -78,6 +78,8 @@ TIMER RESOLUTION    MAX VALUE   HALF-DUTY
 #define PROJ_X          (4)                     // ADC1_CH4; 4 GPIO joystick, x-axis
 #define PROJ_Y          (5)                     // ADC2_CH0; 5 GPIO joystick, y-axis
 #define NAV_BTN         (8)                     // 8 GPIO joystick button
+#define _ADC_UNIT_STR(unit)         #unit
+#define ADC_UNIT_STR(unit)          _ADC_UNIT_STR(unit)
 static TaskHandle_t s_task_handle;
 static adc_channel_t channel[2] = {ADC_CHANNEL_2, ADC_CHANNEL_3};
 
@@ -783,17 +785,16 @@ void app_main(void)
     uint32_t ret_num = 0;
     uint8_t result[READ_LEN] = {0};
     memset(result, 0xcc, READ_LEN);
-
     s_task_handle = xTaskGetCurrentTaskHandle();
-
     adc_continuous_handle_t handle = NULL;
     continuous_adc_init(channel, sizeof(channel) / sizeof(adc_channel_t), &handle);
-
     adc_continuous_evt_cbs_t cbs = {
         .on_conv_done = s_conv_done_cb,
     };
     ESP_ERROR_CHECK(adc_continuous_register_event_callbacks(handle, &cbs, NULL));
     ESP_ERROR_CHECK(adc_continuous_start(handle));
+    ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+    char unit[] = ADC_UNIT_STR(ADC_UNIT);
 
     while (1) {
         ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");
