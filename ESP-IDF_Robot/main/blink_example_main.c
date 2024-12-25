@@ -311,6 +311,8 @@ int example_espnow_data_parse(uint8_t *data, uint16_t data_len, uint8_t *state, 
     crc = buf->crc;
     buf->crc = 0;
     crc_cal = esp_crc16_le(UINT16_MAX, (uint8_t const *)buf, data_len);
+    // Display received data.
+    ESP_LOGW(TAG, "Received payload data is: %x", buf->payload[0]);
 
     if (crc_cal == crc) {
         return buf->type;
@@ -524,7 +526,7 @@ static esp_err_t espnow_init(void) {
     send_param->unicast = false;
     send_param->broadcast = true;
     send_param->state = 0;
-    send_param->magic = esp_random();   // Arbitrary number that determines which device is sender/receiver.
+    send_param->magic = 5;//esp_random();   // Arbitrary number that determines which device is sender/receiver.
     send_param->count = CONFIG_ESPNOW_SEND_COUNT;
     send_param->delay = CONFIG_ESPNOW_SEND_DELAY;
     send_param->len = CONFIG_ESPNOW_SEND_LEN;
