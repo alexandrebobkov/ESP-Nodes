@@ -313,7 +313,7 @@ int example_espnow_data_parse(uint8_t *data, uint16_t data_len, uint8_t *state, 
     crc_cal = esp_crc16_le(UINT16_MAX, (uint8_t const *)buf, data_len);
     // Display received data.
     ESP_LOGW(TAG, "Received data size: %d", data_len);
-    ESP_LOGW(TAG, "Received payload data is: %x", buf->payload[0]);
+    ESP_LOGW(TAG, "Received payload data is: %x", buf->payload);
 
     if (crc_cal == crc) {
         return buf->type;
