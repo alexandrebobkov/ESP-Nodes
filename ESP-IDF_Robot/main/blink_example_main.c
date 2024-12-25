@@ -403,12 +403,13 @@ static void espnow_task (void *pvParameter) {
                     espnow_deinit(send_param);
                     vTaskDelete(NULL);
                 }
+                /*
                 task_status = esp_now_send(send_param->dest_mac, send_param->buffer, send_param->len);
                 if (task_status != ESP_OK) {
                     ESP_LOGE(TAG, "Send error");
                     espnow_deinit(send_param);
                     vTaskDelete(NULL);
-                }
+                }*/
                 break;
             }
             case ESPNOW_RECV_CB:
