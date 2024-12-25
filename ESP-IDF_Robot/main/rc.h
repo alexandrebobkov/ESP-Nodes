@@ -13,7 +13,7 @@
 #define ADC1_CHAN0          ADC1_CHANNEL_0
 #define ADC1_CHAN1          ADC1_CHANNEL_1
 
-
+static const char *TAG = "ESP IDF Robot";
 
 static int adc_raw[2][10];
 static int voltage[2][10];
