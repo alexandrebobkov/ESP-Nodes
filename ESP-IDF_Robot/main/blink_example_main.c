@@ -829,7 +829,7 @@ void app_main(void)
                     ESP_LOGW(TAG, "Invalid data [%s_%"PRIu32"_%"PRIx32"]", unit, chan_num, data);
                 }
             }
-            ESP_LOGI(TAG, "x: %"PTIu32);
+            ESP_LOGI(TAG, "x: %"PTIu32, x_avg);
                 /**
                  * Because printing is slow, so every time you call `ulTaskNotifyTake`, it will immediately return.
                  * To avoid a task watchdog timeout, add a delay here. When you replace the way you process the data,
