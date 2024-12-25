@@ -156,7 +156,7 @@ void example_espnow_data_prepare(example_espnow_send_param_t *send_param)
     buf->magic = send_param->magic;
     /* Fill all remaining bytes after the data with random values */
     //esp_fill_random(buf->payload, send_param->len - sizeof(example_espnow_data_t));
-    buf->payload = 0x16;
+    buf->payload = 16;
     buf->crc = esp_crc16_le(UINT16_MAX, (uint8_t const *)buf, send_param->len);
 }
 
