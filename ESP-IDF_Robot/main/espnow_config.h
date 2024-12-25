@@ -47,7 +47,7 @@ enum {
     ESPNOW_DATA_MAX,
 };
 
-/* User defined field of ESPNOW data in this example. */
+/* User defined fields of ESPNOW data struct. */
 typedef struct {
     uint8_t type;                         //Broadcast or unicast ESPNOW data.
     uint8_t state;                        //Indicate that if has received broadcast ESPNOW data or not.
@@ -55,6 +55,8 @@ typedef struct {
     uint16_t crc;                         //CRC16 value of ESPNOW data.
     uint32_t magic;                       //Magic number which is used to determine which device to send unicast ESPNOW data.
     uint8_t payload[2];                   //Real payload of ESPNOW data.
+    uint8_t mtr_a_pwm;
+    uint8_t mtr_b_pwm;
 } __attribute__((packed)) espnow_data_t;
 
 /* Parameters of sending ESPNOW data. */
@@ -67,7 +69,7 @@ typedef struct {
     uint16_t count;                       //Total count of unicast ESPNOW data to be sent.
     uint16_t delay;                       //Delay between sending two ESPNOW data, unit: ms.
     int len;                              //Length of ESPNOW data to be sent, unit: byte.
-    uint8_t *buffer;                      //Buffer pointing to ESPNOW data.
+    uint8_t *buffer;                      //Buffer pointing to ESPNOW data struct.
     uint8_t dest_mac[ESP_NOW_ETH_ALEN];   //MAC address of destination device. 
 } espnow_send_param_t;
 
