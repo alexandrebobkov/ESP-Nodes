@@ -75,7 +75,7 @@ TIMER RESOLUTION    MAX VALUE   HALF-DUTY
 #define ADC_UNIT        ADC_UNIT_1
 #define ADC_CONV_MODE   ADC_CONV_SINGLE_UNIT_1
 #define ADC_OUTPUT_TYPE ADC_DIGI_OUTPUT_FORMAT_TYPE2    // ESP32C3
-#define READ_LEN        128//256
+#define READ_LEN        256
 #define ADC_GET_CHANNEL(p_data)     ((p_data)->type2.channel)
 #define ADC_GET_DATA(p_data)        ((p_data)->type2.data)
 #define PROJ_X          (0)                     // ADC1_CH0; 0 GPIO joystick, x-axis
