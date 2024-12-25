@@ -70,7 +70,7 @@ TIMER RESOLUTION    MAX VALUE   HALF-DUTY
 #define PUSH_BTN_GPIO   CONFIG_BUTTON_GPIO      // 3 GPIO of on-board push-button
 #define MTR_FL_GPIO     0 //CONFIG_MOTOR_FRONT_LEFT_GPIO
 // ADC
-#define ADC_ATTEN       ADC_ATTEN_DB_12
+#define ADC_ATTEN       ADC_ATTEN_DB_6
 #define ADC_BIT_WIDTH   SOC_ADC_DIGI_MAX_BITWIDTH
 #define ADC_UNIT        ADC_UNIT_1
 #define ADC_CONV_MODE   ADC_CONV_SINGLE_UNIT_1
@@ -78,8 +78,8 @@ TIMER RESOLUTION    MAX VALUE   HALF-DUTY
 #define READ_LEN        256
 #define ADC_GET_CHANNEL(p_data)     ((p_data)->type2.channel)
 #define ADC_GET_DATA(p_data)        ((p_data)->type2.data)
-#define PROJ_X          (0)                     // ADC1_CH4; 4 GPIO joystick, x-axis
-#define PROJ_Y          (1)                     // ADC2_CH0; 5 GPIO joystick, y-axis
+#define PROJ_X          (0)                     // ADC1_CH0; 0 GPIO joystick, x-axis
+#define PROJ_Y          (1)                     // ADC1_CH1; 1 GPIO joystick, y-axis
 #define NAV_BTN         (8)                     // 8 GPIO joystick button
 #define _ADC_UNIT_STR(unit)         #unit
 #define ADC_UNIT_STR(unit)          _ADC_UNIT_STR(unit)
