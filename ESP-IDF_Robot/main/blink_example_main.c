@@ -209,6 +209,14 @@ static void gpio_task (void* arg) {
         }
     }
 }
+static void nav_key_task (void* arg) {
+    uint32_t io_num;
+    for (;;) {
+        if (xQueueReceive(gpio_evt_queue, &io_num, portMAX_DELAY)) {
+            printf("GPIO[%"PRIu32"] intr, val: %d\n", io_num, gpio_get_level(io_num));
+        }
+    }
+}
 /*static void configure_led(void)
 {
     ESP_LOGI(TAG, "Configured to blink GPIO LED!");
@@ -765,7 +773,7 @@ void app_main(void)
     // Set navigation button interrupt
     gpio_set_intr_type(NAV_BTN, GPIO_INTR_NEGEDGE);//ANYEDGE);
     gpio_evt_queue = xQueueCreate(10, sizeof(uint32_t));
-    xTaskCreate(gpio_task, "NAV Keys task", 2048, NULL, 10, NULL);
+    xTaskCreate(nav_key_task, "NAV Keys task", 2048, NULL, 10, NULL);
     //gpio_install_isr_service(ESP_INTR_FLAG_DEFAULT);
     gpio_isr_handler_add(NAV_BTN, gpio_isr_handler, (void*) NAV_BTN);
 
