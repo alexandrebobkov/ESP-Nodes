@@ -60,8 +60,8 @@ typedef struct {
     bool lights;                            // Lights ON/OFF
     uint8_t direction;                     // Direction, scalar value.
     /*          DIRECTION
-                    F
-            L               R (255)
+                    F (128)
+            L (64)               R (256)
                     R (0)
     */
 } __attribute__((packed)) espnow_data_t;
