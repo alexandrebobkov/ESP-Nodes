@@ -331,7 +331,6 @@ void espnow_data_prepare(espnow_send_param_t *send_param) {
 
     assert(send_param->len >= sizeof(espnow_data_t));
 
-    // Override mannualy 
     buf->type = IS_BROADCAST_ADDR(send_param->dest_mac) ? ESPNOW_DATA_BROADCAST : ESPNOW_DATA_UNICAST;
     buf->state = send_param->state;
     buf->seq_num = espnow_seq[buf->type]++;
