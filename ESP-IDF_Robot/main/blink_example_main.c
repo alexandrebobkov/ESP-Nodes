@@ -64,6 +64,7 @@ TIMER RESOLUTION    MAX VALUE   HALF-DUTY
 #define MTR_FL_GPIO     0 //CONFIG_MOTOR_FRONT_LEFT_GPIO
 #define PROJ_X          (4)                     // 4 GPIO joystick, x-axis
 #define PROJ_Y          (6)                     // 6 GPIO joystick, y-axis
+#define NAV_BTN         ()                      // GPIO joystick button
 
 #define ESP_INTR_FLAG_DEFAULT 0
 
