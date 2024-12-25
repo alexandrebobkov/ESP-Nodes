@@ -90,7 +90,8 @@ static uint8_t s_led_state = 0;
 */
 #define ESPNOW_MAXDELAY 512
 static QueueHandle_t espnow_queue;
-static uint8_t broadcast_mac[ESP_NOW_ETH_ALEN] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+//static uint8_t broadcast_mac[ESP_NOW_ETH_ALEN] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+static uint8_t broadcast_mac[ESP_NOW_ETH_ALEN] = {0x54, 0x32, 0x04, 0x46, 0x71, 0x80};
 static uint8_t espnow_seq[ESPNOW_DATA_MAX] = {0, 0};
 static uint8_t espnow_broadcast_mac[ESP_NOW_ETH_ALEN] = {};
 typedef struct struct_message {
