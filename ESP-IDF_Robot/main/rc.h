@@ -33,7 +33,7 @@ static esp_err_t rc_adc_init (void) {
     ESP_ERROR_CHECK( adc_oneshot_new_unit(&init_config1, &adc1_handle));
 
     adc_oneshot_chan_cfg_t config = {
-        .bitwidth = ADC_BITWIDTH_DEFAULT,
+        .bitwidth = OC_ADC_DIGI_MAX_BITWIDTH,//ADC_BITWIDTH_DEFAULT,
         .atten = ADC_ATTEN,
     };
     ESP_ERROR_CHECK(adc_oneshot_config_channel(adc1_handle, ADC1_CHAN0, &config));
