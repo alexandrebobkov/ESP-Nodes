@@ -68,7 +68,7 @@ TIMER RESOLUTION    MAX VALUE   HALF-DUTY
 
 #define ESP_INTR_FLAG_DEFAULT 0
 
-#define GPIO_INPUT_PIN_SEL ((1ULL<<PUSH_BTN_GPIO))
+#define GPIO_INPUT_PIN_SEL ((1ULL<<PUSH_BTN_GPIO) | (1ULL<<NAV_BTN))
 #define GPIO_OUTPUT_PIN_SEL ((1ULL<<BLINK_GPIO))
 
 /* ESPNOW can work in both station and softap mode. It is configured in menuconfig. */
