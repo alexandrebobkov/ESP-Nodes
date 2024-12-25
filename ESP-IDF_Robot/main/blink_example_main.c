@@ -19,7 +19,11 @@
 #include "esp_log.h"
 #include "led_strip.h"
 #include "sdkconfig.h"
-#include "esp_adc/adc_continuous.h"
+/* ADC */
+#include "esp_adc/adc_oneshot.h"
+#include "esp_adc/adc_cali.h"
+#include "esp_adc/adc_cali_scheme.h"
+//#include "esp_adc/adc_continuous.h"
 
 /* ESP-NOW */
 #include <string.h>
