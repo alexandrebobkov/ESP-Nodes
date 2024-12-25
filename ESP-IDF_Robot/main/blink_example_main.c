@@ -346,6 +346,7 @@ static void espnow_task (void *pvParameter) {
     /* Start sending broadcast ESPNOW data. */
     // Retrieve send parameters passed as reference.
     espnow_send_param_t *send_param = (espnow_send_param_t *)pvParameter;
+    // Send data to the destination MAC address.
     if (esp_now_send(send_param->dest_mac, send_param->buffer, send_param->len) != ESP_OK) {
         ESP_LOGE(TAG, "Send error");
         espnow_deinit(send_param);
