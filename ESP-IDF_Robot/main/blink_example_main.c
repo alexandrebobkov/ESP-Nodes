@@ -841,7 +841,7 @@ void app_main(void)
                 break;
         }*/
 
-       rc_get_raw_data();
+        rc_get_raw_data();
 
         vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
     }
