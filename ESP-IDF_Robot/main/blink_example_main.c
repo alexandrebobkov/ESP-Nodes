@@ -282,7 +282,7 @@ static void espnow_recv_cb (const esp_now_recv_info_t *recv_info, const uint8_t 
     memcpy(recv_cb->mac_addr, mac_addr, ESP_NOW_ETH_ALEN);
     recv_cb->data = malloc(len);
     // Display payload received.
-    ESP_LOGW(TAG, "Received payload: %u", (unsigned int)recv_cb->data);
+    ESP_LOGW(TAG, "Received payload: %x", (unsigned int)recv_cb->data);
     if (recv_cb->data == NULL) {
         ESP_LOGE(TAG, "Malloc receive data fail");
         return;
