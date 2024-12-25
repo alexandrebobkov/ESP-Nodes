@@ -71,6 +71,10 @@ TIMER RESOLUTION    MAX VALUE   HALF-DUTY
 #define PROJ_X          (4)                     // ADC1_CH4; 4 GPIO joystick, x-axis
 #define PROJ_Y          (5)                     // ADC2_CH0; 5 GPIO joystick, y-axis
 #define NAV_BTN         (8)                     // 8 GPIO joystick button
+static int adc_raw[2][10];
+static int voltage[2][10];
+static bool example_adc_calibration_init(adc_unit_t unit, adc_channel_t channel, adc_atten_t atten, adc_cali_handle_t *out_handle);
+static void example_adc_calibration_deinit(adc_cali_handle_t handle);
 
 #define ESP_INTR_FLAG_DEFAULT 0
 
