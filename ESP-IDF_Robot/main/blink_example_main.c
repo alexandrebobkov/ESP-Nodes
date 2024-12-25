@@ -87,10 +87,10 @@ static TaskHandle_t s_task_handle;
 //static adc_channel_t channel[2] = {ADC_CHANNEL_2, ADC_CHANNEL_3};
 static adc_channel_t channel[2] = {ADC_CHANNEL_0, ADC_CHANNEL_1};
 
-static int adc_raw[2][10];
-static int voltage[2][10];
-static bool adc_calibration_init(adc_unit_t unit, adc_channel_t channel, adc_atten_t atten, adc_cali_handle_t *out_handle);
-static void adc_calibration_deinit(adc_cali_handle_t handle);
+//static int adc_raw[2][10];
+//static int voltage[2][10];
+//static bool adc_calibration_init(adc_unit_t unit, adc_channel_t channel, adc_atten_t atten, adc_cali_handle_t *out_handle);
+//static void adc_calibration_deinit(adc_cali_handle_t handle);
 
 #define ESP_INTR_FLAG_DEFAULT 0
 
