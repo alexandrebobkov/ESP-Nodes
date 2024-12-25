@@ -391,8 +391,9 @@ static void espnow_task (void *pvParameter) {
                 }
 
                 ESP_LOGI(TAG, "send data to "MACSTR"", MAC2STR(send_cb->mac_addr));
-
+                // Copy destination MAC address to the parameters struct.
                 memcpy(send_param->dest_mac, send_cb->mac_addr, ESP_NOW_ETH_ALEN);
+                // Append data struct to the parameters struct.
                 espnow_data_prepare(send_param);
 
                 /* Send the next data after the previous data is sent. */
