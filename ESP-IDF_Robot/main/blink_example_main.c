@@ -97,7 +97,7 @@ typedef struct struct_message {
     char node[32];
     uint8_t motor_a_pwm;
 } struct_message;
-static espnow_msg_t *message;
+static espnow_msg_t message;
 uint8_t broadcastAddress[] = {};
 struct_message controlData;
 esp_now_peer_info_t peerInfo;
