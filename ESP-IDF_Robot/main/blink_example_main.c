@@ -70,6 +70,7 @@ TIMER RESOLUTION    MAX VALUE   HALF-DUTY
 #define MTR_FL_GPIO     0 //CONFIG_MOTOR_FRONT_LEFT_GPIO
 // ADC
 #define ADC_UNIT    ADC_UNIT_1
+#define READ_LEN    256
 #define PROJ_X          (4)                     // ADC1_CH4; 4 GPIO joystick, x-axis
 #define PROJ_Y          (5)                     // ADC2_CH0; 5 GPIO joystick, y-axis
 #define NAV_BTN         (8)                     // 8 GPIO joystick button
@@ -732,7 +733,7 @@ void app_main(void)
     esp_err_t ret;
     uint32_t ret_num = 0;
     uint8_t result[READ_LEN] = {0};
-    memset(result, 0xcc, EXAMPLE_READ_LEN);
+    memset(result, 0xcc, READ_LEN);
 
     s_task_handle = xTaskGetCurrentTaskHandle();
 
