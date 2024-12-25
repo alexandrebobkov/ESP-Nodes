@@ -84,7 +84,7 @@ TIMER RESOLUTION    MAX VALUE   HALF-DUTY
 #define ADC_UNIT_STR(unit)          _ADC_UNIT_STR(unit)
 static TaskHandle_t s_task_handle;
 //static adc_channel_t channel[2] = {ADC_CHANNEL_2, ADC_CHANNEL_3};
-static adc_channel_t channel[2] = {ADC_CHANNEL_1, ADC_CHANNEL_2};
+static adc_channel_t channel[2] = {ADC_CHANNEL_1, ADC_CHANNEL_3};
 
 static int adc_raw[2][10];
 static int voltage[2][10];
