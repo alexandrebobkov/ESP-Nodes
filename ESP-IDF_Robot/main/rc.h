@@ -1,12 +1,15 @@
 #ifndef RC_H
 #define RC_H
 
+#include "driver/adc.h"
+#include "esp_adc/adc_oneshot.h"
+
 #define ADC_CHNL            ADC_CHANNEL_1
 #define ADC_ATTEN           ADC_ATTEN_DB_11
 #define ADC1_CHAN0          ADC1_CHANNEL_0
 #define ADC1_CHAN1          ADC1_CHANNEL_1
 
-#include "esp_adc/adc_oneshot.h"
+
 
 static int adc_raw[2][10];
 static int voltage[2][10];
