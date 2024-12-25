@@ -821,7 +821,6 @@ void app_main(void)
                 adc_digi_output_data_t *p = (adc_digi_output_data_t*)&result[i];
                 uint32_t chan_num = ADC_GET_CHANNEL(p);
                 uint32_t data = ADC_GET_DATA(p);
-                x_avg += data;
                /* Check the channel number validation, the data is invalid if the channel num exceed the maximum channel */
                 if (chan_num < SOC_ADC_CHANNEL_NUM(ADC_UNIT)) {
                     ESP_LOGI(TAG, "Unit: %s, Channel: %"PRIu32", Value: %"PRIx32, unit, chan_num, data);
@@ -829,7 +828,6 @@ void app_main(void)
                     ESP_LOGW(TAG, "Invalid data [%s_%"PRIu32"_%"PRIx32"]", unit, chan_num, data);
                 }
             }
-            ESP_LOGI(TAG, "x: %"PRIu32, x_avg/1024);
                 /**
                  * Because printing is slow, so every time you call `ulTaskNotifyTake`, it will immediately return.
                  * To avoid a task watchdog timeout, add a delay here. When you replace the way you process the data,
