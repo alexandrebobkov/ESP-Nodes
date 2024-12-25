@@ -688,6 +688,13 @@ void app_main(void)
     io_conf.pull_up_en = 1;
     gpio_config(&io_conf);
 
+    // Configure navigation button
+    io_conf.intr_type = GPIO_INTR_NEGEDGE;
+    io_conf.pin_bit_mask = GPIO_INPUT_PIN_SEL;
+    io_conf.mode = GPIO_MODE_INPUT;
+    io_conf.pull_up_en = 1;
+    gpio_config(&io_conf);
+
     // Set push button interrupt
     gpio_set_intr_type(PUSH_BTN_GPIO, GPIO_INTR_NEGEDGE);//ANYEDGE);
     gpio_evt_queue = xQueueCreate(10, sizeof(uint32_t));
