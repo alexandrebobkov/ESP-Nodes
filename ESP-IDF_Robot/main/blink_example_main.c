@@ -781,7 +781,7 @@ void app_main(void)
     /*
         ADC
     */
-    esp_err_t ret;
+    esp_err_t adc_ret;
     uint32_t ret_num = 0;
     uint8_t result[READ_LEN] = {0};
     memset(result, 0xcc, READ_LEN);
