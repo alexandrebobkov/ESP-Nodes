@@ -786,6 +786,7 @@ void app_main(void)
     /*
         ADC
     */
+   /*
     esp_err_t adc_ret;
     uint32_t ret_num = 0;
     uint8_t result[READ_LEN] = {0};
@@ -799,7 +800,7 @@ void app_main(void)
     ESP_ERROR_CHECK(adc_continuous_register_event_callbacks(handle, &cbs, NULL));
     ESP_ERROR_CHECK(adc_continuous_start(handle));
     ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
-    char unit[] = ADC_UNIT_STR(ADC_UNIT);
+    char unit[] = ADC_UNIT_STR(ADC_UNIT);*/
 
     while (1) {
         ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");
