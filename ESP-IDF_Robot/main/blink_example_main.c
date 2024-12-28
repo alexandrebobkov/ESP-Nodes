@@ -858,8 +858,8 @@ void app_main(void)
 
         vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
 
-        if (var >= 256)
-            var -= 256;
+        if (var >= 2048)
+            var -= 124;
         else
             var = 8091;
         //update_pwm(var);
