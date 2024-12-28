@@ -271,6 +271,9 @@ static void ledc_init (void) {
     //ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, LEDC_DUTY));
     //ESP_ERROR_CHECK(ledc_update_duty(LEDC_MODE, LEDC_CHANNEL));
 }
+static void update_pwm (uint8_t pwm) {
+    ESP_ERROR_CHECK(ledc_set_duty_and_update(LEDC_MODE, LEDC_CHANNEL, pwm, 0));
+}
 
 /* ESP-NOW */
 // Wi-Fi should start before using ESP-NOW
@@ -736,7 +739,9 @@ static void continuous_adc_init(adc_channel_t *channel, uint8_t channel_num, adc
 void app_main(void)
 {
     // Initialize LED
+    // Used to control the DC motor
     ledc_init();
+    int var = 8191;
     // Initialize the config structure.
     gpio_config_t io_conf = {};
 
@@ -852,6 +857,15 @@ void app_main(void)
         rc_get_raw_data();
 
         vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
+
+        if (var >= 256)
+            var -= 256;
+        else
+            var = 8091;
+        //update_pwm(var);
+        ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, var);
+        ledc_update_duty(LEDC_MODE, LEDC_CHANNEL);
+        ESP_LOGI(TAG, "Duty cycle: %d", var);
     }
 
     //ESP_ERROR_CHECK(adc_continuous_stop(handle));
