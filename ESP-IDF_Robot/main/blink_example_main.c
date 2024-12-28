@@ -858,6 +858,7 @@ void app_main(void)
 
         vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
 
+        // Gradually reduce DC motor rotation speed.
         if (var >= 2048)
             var -= 124;
         else
