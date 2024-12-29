@@ -23,6 +23,8 @@
 #include "rc.h"
 /* Motors Controls */
 #include "motor_controls.h"
+/* System-wide controls */
+#include "controls.h"
 //#include "driver/adc.h"
 //#include "esp_adc_cal.h"
 //#include "esp_adc/adc_oneshot.h"
