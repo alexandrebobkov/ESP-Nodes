@@ -285,7 +285,7 @@ static void ledc_init (void) {
         .speed_mode =       MTR_MODE,// LEDC_MODE,
         .duty_resolution =  MTR_DUTY_RES,// LEDC_DUTY_RES,
         .timer_num =        MTR_FRONT_RIGHT_TMR,// LEDC_TIMER,
-        .freq_hz =          LEDC_FREQUENCY,
+        .freq_hz =          MTR_FREQUENCY,// LEDC_FREQUENCY,
         .clk_cfg =          LEDC_APB_CLK
     };
     ESP_ERROR_CHECK(ledc_timer_config(&ledc_timer_1));
