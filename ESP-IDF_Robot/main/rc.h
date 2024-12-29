@@ -16,7 +16,7 @@
 #define ADC1_CHAN1          ADC1_CHANNEL_1
 
 //static const char *TAG = "ESP IDF Robot"
-//motors_rpm *m;
+motors_rpm *m;
 
 
 static int adc_raw[2][10];
