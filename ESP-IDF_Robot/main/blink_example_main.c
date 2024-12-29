@@ -321,6 +321,48 @@ static void ledc_init (void) {
     ESP_ERROR_CHECK(ledc_channel_config(&ledc_channel_2));
     //ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, LEDC_DUTY));
     //ESP_ERROR_CHECK(ledc_update_duty(LEDC_MODE, LEDC_CHANNEL));
+
+    /*// MOTOR FRONT RIGHT
+    ledc_timer_config_t ledc_timer_1 = {
+        .speed_mode =       LEDC_MODE,
+        .duty_resolution =  LEDC_DUTY_RES,
+        .timer_num =        MTR_FRONT_RIGHT_TMR,// LEDC_TIMER,
+        .freq_hz =          LEDC_FREQUENCY,
+        .clk_cfg =          LEDC_APB_CLK
+    };
+    ESP_ERROR_CHECK(ledc_timer_config(&ledc_timer_1));
+    ledc_channel_config_t ledc_channel_1 = {
+        .speed_mode =       LEDC_MODE,
+        .channel =          MTR_FRONT_RIGHT,// LEDC_CHANNEL_0,// MTR_FRONT_RIGHT,
+        .timer_sel =        MTR_FRONT_RIGHT_TMR,// LEDC_TIMER,
+        .intr_type =        LEDC_INTR_DISABLE,
+        .gpio_num =         LEDC_OUTPUT_IO,
+        .duty =             LEDC_DUTY,
+        .hpoint =           0,
+    };
+    ESP_ERROR_CHECK(ledc_channel_config(&ledc_channel_1));
+
+    // MOTOR FRONT LEFT
+    ledc_timer_config_t ledc_timer_2 = {
+        .speed_mode =       LEDC_MODE,
+        .duty_resolution =  LEDC_DUTY_RES,
+        .timer_num =        LEDC_TIMER,
+        .freq_hz =          LEDC_FREQUENCY,
+        .clk_cfg =          LEDC_APB_CLK
+    };
+    ESP_ERROR_CHECK(ledc_timer_config(&ledc_timer_2));
+    ledc_channel_config_t ledc_channel_2 = {
+        .speed_mode =       LEDC_MODE,
+        .channel =          MTR_FRONT_LEFT,
+        .timer_sel =        LEDC_TIMER,
+        .intr_type =        LEDC_INTR_DISABLE,
+        .gpio_num =         LEDC_OUTPUT_IO,
+        .duty =             LEDC_DUTY,
+        .hpoint =           0,
+    };
+    ESP_ERROR_CHECK(ledc_channel_config(&ledc_channel_2));
+    //ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, LEDC_DUTY));
+    //ESP_ERROR_CHECK(ledc_update_duty(LEDC_MODE, LEDC_CHANNEL));*/
 }
 static void update_pwm (uint8_t pwm) {
     ESP_ERROR_CHECK(ledc_set_duty_and_update(LEDC_MODE, LEDC_CHANNEL, pwm, 0));
