@@ -62,7 +62,7 @@ static const char *TAG = "ESP IDF Robot";
 #define MTR_FRONT_RIGHT_IO      (5)
 #define MTR_FRONT_RIGHT_TMR     LEDC_TIMER_1
 #define MTR_FRONT_RIGHT         LEDC_CHANNEL_0
-#define MTR_FRONT_right_DUTY     (3361)
+#define MTR_FRONT_right_DUTY    (3361)
 
 
 // LED
@@ -71,8 +71,6 @@ static const char *TAG = "ESP IDF Robot";
 #define LEDC_OUTPUT_IO          (5) // Define the output GPIO
 
 #define LEDC_CHANNEL            LEDC_CHANNEL_0          // Right side motors
-#define MTR_REAR_LEFT           0
-#define MTR_REAR_RIGHT          0
 #define MTR_CHANNEL_L           LEDC_CHANNEL_1          // Left side motors
 #define LEDC_DUTY_RES           LEDC_TIMER_13_BIT //
 /*
