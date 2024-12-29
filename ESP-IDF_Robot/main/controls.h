@@ -14,7 +14,7 @@ Struct that holds PCM for RPMs for each of 4 motors.
 Positive PCM values for clock-wise rotation, and negative values for counter-vise rotation.
 
 */
-extern struct motors_rpm {
+struct motors_rpm {
     int* motor1_rpm_pcm;
     int* motor1_gpio;
     int* motor2_rpm_pcm;
