@@ -282,7 +282,7 @@ static void ledc_init (void) {
     ESP_ERROR_CHECK(ledc_timer_config(&ledc_timer_1));
     ledc_channel_config_t ledc_channel_1 = {
         .speed_mode =       LEDC_MODE,
-        .channel =          MTR_FRONT_RIGHT,
+        .channel =          LEDC_CHANNEL_0,// MTR_FRONT_RIGHT,
         .timer_sel =        LEDC_TIMER,
         .intr_type =        LEDC_INTR_DISABLE,
         .gpio_num =         LEDC_OUTPUT_IO,
