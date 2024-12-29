@@ -25,8 +25,6 @@ struct motors_rpm {
     int motor4_gpio;
 } Motors;
 
-static void motors_init (void);
-
 extern Motors *motors;
 
 #endif
