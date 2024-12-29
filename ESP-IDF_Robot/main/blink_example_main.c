@@ -253,7 +253,12 @@ static void configure_button (void) {
     ESP_ERROR_CHECK(mcpwm_set_duty(MCPWM_UNIT_0, MCPWM_TIMER_0, MCPWM_OPR_A, 50));
 }*/
 
-
+static void motors_init (void) {
+    motors.motor1_rpm_pcm = 0;
+    motors.motor2_rpm_pcm = 0;
+    motors.motor3_rpm_pcm = 0;
+    motors.motor4_rpm_pcm = 0;
+}
 
 static void ledc_init (void) {
     ledc_timer_config_t ledc_timer = {
