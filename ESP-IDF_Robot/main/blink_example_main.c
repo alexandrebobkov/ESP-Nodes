@@ -270,12 +270,12 @@ static void configure_button (void) {
 }*/
 
 static void motors_init (void) {
-/*
+
     motors.motor1_rpm_pcm = 0;
     motors.motor2_rpm_pcm = 0;
     motors.motor3_rpm_pcm = 0;
     motors.motor4_rpm_pcm = 0;
-*/
+
 }
 
 static void ledc_init (void) {
