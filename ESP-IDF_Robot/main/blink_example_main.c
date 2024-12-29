@@ -53,7 +53,8 @@
 static const char *TAG = "ESP IDF Robot";
 
 // MOTORS
-#define mtr_frequency           (5000)
+#define MTR_FREQUENCY           (5000)
+#define MTR_MODE                LEDC_LOW_SPEED_MODE
 #define MTR_FRONT_LEFT_IO       (6)
 #define MTR_FRONT_LEFT_TMR      LEDC_TIMER_0
 #define MTR_FRONT_LEFT          LEDC_CHANNEL_1
