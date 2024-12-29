@@ -271,10 +271,10 @@ static void configure_button (void) {
 
 static void motors_init (void) {
 
-    motors.motor1_rpm_pcm = 0;
-    motors.motor2_rpm_pcm = 0;
-    motors.motor3_rpm_pcm = 0;
-    motors.motor4_rpm_pcm = 0;
+    m.motor1_rpm_pcm = 0;
+    m.motor2_rpm_pcm = 0;
+    m.motor3_rpm_pcm = 0;
+    m.motor4_rpm_pcm = 0;
 
 }
 
