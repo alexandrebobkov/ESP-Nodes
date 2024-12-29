@@ -5,7 +5,7 @@
 /*
 
     8191    4095
-            0
+    4095        0
     0       -4095
 */
 static int interpolate_raw_measure (int min, int max, int raw) {
