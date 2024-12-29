@@ -21,4 +21,12 @@ struct motors_rpm {
     int motor4_rpm_pcm;
 };
 
+static void motors_rpm_init (struct motors_rpm) {
+    motors_rpm.motor1_rpm_pcm = 0;
+    motors_rpm.motor2_rpm_pcm = 0;
+    motors_rpm.motor3_rpm_pcm = 0;
+    motors_rpm.motor4_rpm_pcm = 0;
+
+}
+
 #endif
