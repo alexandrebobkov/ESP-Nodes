@@ -12,7 +12,7 @@
 static int interpolate_raw_val (int raw) {
     int x;
 
-    x = 4096 - raw;
+    x = raw/2048;
 
     return x;
 }
