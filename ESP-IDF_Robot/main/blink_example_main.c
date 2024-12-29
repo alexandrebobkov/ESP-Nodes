@@ -887,7 +887,7 @@ void app_main(void)
         ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, var);
         ledc_update_duty(LEDC_MODE, LEDC_CHANNEL);
 
-        ledc_set_duty();
+        ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, m.motor2_rpm_pcm);
         ESP_LOGW(TAG, "Duty cycle: %d", var);
         ESP_LOGW(TAG, "Interpolated value: %d", interpolate_raw_val(var));
     }
