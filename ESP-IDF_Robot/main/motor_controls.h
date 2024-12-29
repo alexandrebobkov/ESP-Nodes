@@ -8,7 +8,7 @@
     4095        0
     0       -4095
 */
-static int interpolate_raw_val (int raw) {
+int interpolate_raw_val (int raw) {
     int x;
 
     x = raw - 4096;
