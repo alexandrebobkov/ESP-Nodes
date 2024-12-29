@@ -18,10 +18,9 @@ static int interpolate_raw_val (int raw) {
 }
 // Function that converts raw value from joystick scale (0 to 4096) to PCM scale (-8192 to 8192).
 static int rescale_raw_val (int raw) {
+
     int s;
-
     s = 4*raw - 8940;
-
     return s;
 }
 
