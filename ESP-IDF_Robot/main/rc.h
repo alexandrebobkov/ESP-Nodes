@@ -71,7 +71,9 @@ static void rc_get_raw_data() {
         m.motor2_rpm_pcm = rescale_raw_val(adc_raw[0][0]);
     if (rescale_raw_val(adc_raw[0][1]) >= 4000)
         m.motor2_rpm_pcm = rescale_raw_val(adc_raw[0][1]);
-    else
+    if (rescale_raw_val(adc_raw[0][0]) < 4000)
+        m.motor1_rpm_pcm = 0;
+    if (rescale_raw_val(adc_raw[0][1]) < 4000)
         m.motor2_rpm_pcm = 0;
     /*
     if (rescale_raw_val(adc_raw[0][0]) >= 4000)
