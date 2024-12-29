@@ -5,6 +5,7 @@
 /*
 
     Joystick scale:     4096    2048   0
+    PWM scale:          8191           0
 */
 static int interpolate_raw_val (int raw) {
     int x;
