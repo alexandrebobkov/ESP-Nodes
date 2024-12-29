@@ -25,6 +25,8 @@ typedef struct motors_rpm {
     int* motor4_gpio;
 } Motors;
 
+void motors_init (void) {}
+
 extern Motors *motors;
 
 #endif
