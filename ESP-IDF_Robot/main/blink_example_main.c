@@ -879,16 +879,16 @@ void app_main(void)
         vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
 
         // Gradually reduce DC motor rotation speed.
-        if (var >= 2048)
+        /*if (var >= 2048)
             var -= 124;
         else
             var = 8091;
         //update_pwm(var);
-        ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, var);
-        ledc_update_duty(LEDC_MODE, LEDC_CHANNEL);
+        //ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, var);
+        //ledc_update_duty(LEDC_MODE, LEDC_CHANNEL);*/
 
-        //ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, m.motor2_rpm_pcm);
-        //ledc_update_duty(LEDC_MODE, LEDC_CHANNEL);
+        ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, m.motor2_rpm_pcm);
+        ledc_update_duty(LEDC_MODE, LEDC_CHANNEL);
         ESP_LOGW(TAG, "Duty cycle: %d", var);
         ESP_LOGW(TAG, "Interpolated value: %d", m.motor2_rpm_pcm);
     }
