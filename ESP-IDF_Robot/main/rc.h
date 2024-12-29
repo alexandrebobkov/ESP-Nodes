@@ -8,13 +8,15 @@
 #include "esp_adc/adc_cali.h"
 #include "esp_adc/adc_cali_scheme.h"
 
+#include "controls.h"
+
 #define ADC_CHNL            ADC_CHANNEL_1
 #define ADC_ATTEN           ADC_ATTEN_DB_11
 #define ADC1_CHAN0          ADC1_CHANNEL_0
 #define ADC1_CHAN1          ADC1_CHANNEL_1
 
 //static const char *TAG = "ESP IDF Robot"
-motors_rpm *m;
+//motors_rpm *m;
 
 
 static int adc_raw[2][10];
@@ -60,7 +62,7 @@ static void rc_get_raw_data() {
     ESP_LOGI("ESP IDF Robot", "ADC%d Channel[%d] Raw Data: %d", ADC_UNIT_1 + 1, ADC1_CHAN1, adc_raw[0][1]);
     ESP_LOGI("Joystick", "Position: %d", interpolate_raw_val(adc_raw[0][0]));
     ESP_LOGI("Joystick", "Position: %d", interpolate_raw_val(adc_raw[0][1]));
-    m.motor1_rpm_pcm = interpolate_raw_val(adc_raw[0][1]);
+    //m.motor1_rpm_pcm = interpolate_raw_val(adc_raw[0][1]);
 
     if (do_calibration1_chan0) {
         ESP_ERROR_CHECK(adc_cali_raw_to_voltage(adc1_cali_chan0_handle, adc_raw[0][0], &voltage[0][0]));
