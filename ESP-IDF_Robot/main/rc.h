@@ -61,7 +61,7 @@ static void rc_get_raw_data() {
     ESP_LOGI("ESP IDF Robot", "ADC%d Channel[%d] Raw Data: %d", ADC_UNIT_1 + 1, ADC1_CHAN1, adc_raw[0][1]);
     ESP_LOGI("Joystick", "Position: %d", interpolate_raw_val(adc_raw[0][0]));
     ESP_LOGI("Joystick", "Position: %d", interpolate_raw_val(adc_raw[0][1]));
-    //motors.motor1_rpm_pcm = interpolate_raw_val(adc_raw[0][1]);
+    motors.motor1_rpm_pcm = interpolate_raw_val(adc_raw[0][1]);
 
     if (do_calibration1_chan0) {
         ESP_ERROR_CHECK(adc_cali_raw_to_voltage(adc1_cali_chan0_handle, adc_raw[0][0], &voltage[0][0]));
