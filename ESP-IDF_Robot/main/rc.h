@@ -8,6 +8,8 @@
 #include "esp_adc/adc_cali.h"
 #include "esp_adc/adc_cali_scheme.h"
 
+#include "controls.h"
+
 #define ADC_CHNL            ADC_CHANNEL_1
 #define ADC_ATTEN           ADC_ATTEN_DB_11
 #define ADC1_CHAN0          ADC1_CHANNEL_0
