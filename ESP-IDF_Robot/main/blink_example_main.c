@@ -814,6 +814,12 @@ void app_main(void)
         ADC
     */
    rc_adc_init();
+
+   /*
+        MOTORS
+    */
+
+   motors_init();
    
    /*
     esp_err_t adc_ret;
