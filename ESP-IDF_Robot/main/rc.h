@@ -61,8 +61,8 @@ static void rc_get_raw_data() {
     ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, ADC1_CHAN1, &adc_raw[0][1]));
     ESP_LOGI("ESP IDF Robot", "ADC%d Channel[%d] Raw Data: %d", ADC_UNIT_1 + 1, ADC1_CHAN0, adc_raw[0][0]);
     ESP_LOGI("ESP IDF Robot", "ADC%d Channel[%d] Raw Data: %d", ADC_UNIT_1 + 1, ADC1_CHAN1, adc_raw[0][1]);
-    ESP_LOGI("Joystick", "Position: %d", rescale_raw_val(adc_raw[0][0]));
-    ESP_LOGI("Joystick", "Position: %d", rescale_raw_val(adc_raw[0][1]));
+    ESP_LOGI("Joystick L/R", "Position: %d", rescale_raw_val(adc_raw[0][0]));
+    ESP_LOGI("Joystick F", "Position: %d", rescale_raw_val(adc_raw[0][1]));
     
     // Cut-off readings less than 4000
     // FORWARD
