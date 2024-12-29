@@ -24,6 +24,8 @@ adc_cali_handle_t adc1_cali_chan0_handle, adc1_cali_chan1_handle;
 adc_oneshot_unit_handle_t adc1_handle;
 bool do_calibration1_chan0, do_calibration1_chan1;
 
+static int interpolate_raw_val (int raw);
+
 static esp_err_t rc_adc_init (void) {
     
     adc_oneshot_unit_init_cfg_t init_config1 = {
