@@ -884,8 +884,8 @@ void app_main(void)
         else
             var = 8091;
         //update_pwm(var);
-        //ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, var);
-        //ledc_update_duty(LEDC_MODE, LEDC_CHANNEL);*/
+        ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, var);
+        ledc_update_duty(LEDC_MODE, LEDC_CHANNEL);*/
 
         ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, m.motor2_rpm_pcm);
         ledc_update_duty(LEDC_MODE, LEDC_CHANNEL);
