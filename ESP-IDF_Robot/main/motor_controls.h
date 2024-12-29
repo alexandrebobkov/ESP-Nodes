@@ -4,7 +4,7 @@
 // Interpolate value (x) based on raw reading, min/max limits.
 /*
 
-    8191    4095
+    8191     4095
     4095        0
     0       -4095
 */
