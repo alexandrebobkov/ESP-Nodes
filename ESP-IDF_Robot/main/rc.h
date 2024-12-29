@@ -64,15 +64,15 @@ static void rc_get_raw_data() {
     ESP_LOGI("Joystick", "Position: %d", rescale_raw_val(adc_raw[0][0]));
     ESP_LOGI("Joystick", "Position: %d", rescale_raw_val(adc_raw[0][1]));
     
-    if (rescale_raw_val(adc_raw[0][0]) >= 0)
+    if (rescale_raw_val(adc_raw[0][0]) >= 4000)
         m.motor1_rpm_pcm = rescale_raw_val(adc_raw[0][0]);
     else
         m.motor1_rpm_pcm = 0;
-    if (rescale_raw_val(adc_raw[0][1]) >= 0)
+    if (rescale_raw_val(adc_raw[0][1]) >= 4000)
         m.motor2_rpm_pcm = rescale_raw_val(adc_raw[0][1]);
     else
         m.motor2_rpm_pcm = 0;
-        
+
     ESP_LOGI("PWM", "Motor 1 PWM: %d", m.motor1_rpm_pcm);
     ESP_LOGI("PWM", "Motor 2 PWM: %d", m.motor2_rpm_pcm);
 
