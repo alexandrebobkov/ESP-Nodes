@@ -23,6 +23,6 @@ extern struct motors_rpm {
     int* motor3_gpio;
     int* motor4_rpm_pcm;
     int* motor4_gpio;
-};
+} motors;
 
 #endif
