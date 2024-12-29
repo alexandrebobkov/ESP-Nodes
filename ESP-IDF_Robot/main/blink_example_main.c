@@ -279,7 +279,7 @@ static void ledc_init (void) {
 
     ledc_channel_config_t ledc_channel_1 = {
         .speed_mode =       LEDC_MODE,
-        .channel =          LEDC_CHANNEL,
+        .channel =          MTR_FRONT_RIGHT,
         .timer_sel =        LEDC_TIMER,
         .intr_type =        LEDC_INTR_DISABLE,
         .gpio_num =         LEDC_OUTPUT_IO,
@@ -299,7 +299,7 @@ static void ledc_init (void) {
 
     ledc_channel_config_t ledc_channel_1 = {
         .speed_mode =       LEDC_MODE,
-        .channel =          LEDC_CHANNEL_,
+        .channel =          MTR_FRONT_LEFT,
         .timer_sel =        LEDC_TIMER,
         .intr_type =        LEDC_INTR_DISABLE,
         .gpio_num =         LEDC_OUTPUT_IO,
