@@ -11,7 +11,7 @@
 static int interpolate_raw_val (int raw) {
     int x;
 
-    x = raw - 8191;
+    x = raw - 4096;
 
     return x;
 }
