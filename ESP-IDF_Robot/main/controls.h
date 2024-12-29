@@ -27,6 +27,6 @@ typedef struct motors_rpm {
 
 void motors_init (void);
 
-extern Motors *motors_rpm;
+extern Motors *motors;
 
 #endif
