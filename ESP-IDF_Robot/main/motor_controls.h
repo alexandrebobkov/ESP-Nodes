@@ -8,7 +8,7 @@
     4095        0
     0       -4095
 */
-static int interpolate_raw_measure (int min, int max, int raw) {
+static int interpolate_raw_val (int min, int max, int raw) {
     int x;
 
     x = raw - 8191;

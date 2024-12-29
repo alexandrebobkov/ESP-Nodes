@@ -868,7 +868,8 @@ void app_main(void)
         //update_pwm(var);
         ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, var);
         ledc_update_duty(LEDC_MODE, LEDC_CHANNEL);
-        ESP_LOGI(TAG, "Duty cycle: %d", var);
+        ESP_LOGW(TAG, "Duty cycle: %d", var);
+        
     }
 
     //ESP_ERROR_CHECK(adc_continuous_stop(handle));
