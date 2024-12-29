@@ -278,7 +278,6 @@ static void ledc_init (void) {
         .clk_cfg =          LEDC_APB_CLK
     };
     ESP_ERROR_CHECK(ledc_timer_config(&ledc_timer_1));
-
     ledc_channel_config_t ledc_channel_1 = {
         .speed_mode =       LEDC_MODE,
         .channel =          MTR_FRONT_RIGHT,
@@ -299,8 +298,7 @@ static void ledc_init (void) {
         .clk_cfg =          LEDC_APB_CLK
     };
     ESP_ERROR_CHECK(ledc_timer_config(&ledc_timer_2));
-
-    ledc_channel_config_t ledc_channel_1 = {
+    ledc_channel_config_t ledc_channel_2 = {
         .speed_mode =       LEDC_MODE,
         .channel =          MTR_FRONT_LEFT,
         .timer_sel =        LEDC_TIMER,
