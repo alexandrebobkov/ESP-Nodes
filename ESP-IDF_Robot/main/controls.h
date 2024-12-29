@@ -21,6 +21,4 @@ struct motors_rpm {
     int* motor4_rpm_pcm;
 };
 
-static void motors_rpm_init (motors_rpm m);
-
 #endif
