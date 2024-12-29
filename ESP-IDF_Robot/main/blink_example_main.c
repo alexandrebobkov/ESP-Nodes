@@ -290,12 +290,12 @@ static void ledc_init (void) {
     };
     ESP_ERROR_CHECK(ledc_timer_config(&ledc_timer_1));
     ledc_channel_config_t ledc_channel_1 = {
-        .speed_mode =       LEDC_MODE,
+        .speed_mode =       MTR_MODE,
         .channel =          MTR_FRONT_RIGHT,// LEDC_CHANNEL_0,// MTR_FRONT_RIGHT,
         .timer_sel =        MTR_FRONT_RIGHT_TMR,// LEDC_TIMER,
         .intr_type =        LEDC_INTR_DISABLE,
-        .gpio_num =         LEDC_OUTPUT_IO,
-        .duty =             LEDC_DUTY,
+        .gpio_num =         MTR_FRONT_RIGHT_IO,
+        .duty =             MTR_FRONT_RIGHT_DUTY,
         .hpoint =           0,
     };
     ESP_ERROR_CHECK(ledc_channel_config(&ledc_channel_1));
