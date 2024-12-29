@@ -15,12 +15,12 @@ Positive PCM values for clock-wise rotation, and negative values for counter-vis
 
 */
 struct motors_rpm {
-    int motor1_rpm_pcm;
-    int motor2_rpm_pcm;
-    int motor3_rpm_pcm;
-    int motor4_rpm_pcm;
+    int* motor1_rpm_pcm;
+    int* motor2_rpm_pcm;
+    int* motor3_rpm_pcm;
+    int* motor4_rpm_pcm;
 };
 
-static void motors_rpm_init (motors_rpm motors`);
+static void motors_rpm_init (void);
 
 #endif
