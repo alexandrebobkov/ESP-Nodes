@@ -57,6 +57,7 @@ static const char *TAG = "ESP IDF Robot";
 #define MTR_FRONT_LEFT_TMR      LEDC_TIMER_0
 
 #define MTR_FRONT_RIGHT_IO      (5)
+#define MTR_FRONT_RIGHT_TMR      LEDC_TIMER_1
 
 
 // LED
