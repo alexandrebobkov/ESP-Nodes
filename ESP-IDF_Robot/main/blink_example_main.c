@@ -53,13 +53,16 @@
 static const char *TAG = "ESP IDF Robot";
 
 // MOTORS
+#define mtr_frequency           (5000)
 #define MTR_FRONT_LEFT_IO       (6)
 #define MTR_FRONT_LEFT_TMR      LEDC_TIMER_0
 #define MTR_FRONT_LEFT          LEDC_CHANNEL_1
+#define MTR_FRONT_LEFT_DUTY     (3361)
 
 #define MTR_FRONT_RIGHT_IO      (5)
 #define MTR_FRONT_RIGHT_TMR     LEDC_TIMER_1
 #define MTR_FRONT_RIGHT         LEDC_CHANNEL_0
+#define MTR_FRONT_right_DUTY     (3361)
 
 
 // LED
@@ -68,8 +71,6 @@ static const char *TAG = "ESP IDF Robot";
 #define LEDC_OUTPUT_IO          (5) // Define the output GPIO
 
 #define LEDC_CHANNEL            LEDC_CHANNEL_0          // Right side motors
-
-
 #define MTR_REAR_LEFT           0
 #define MTR_REAR_RIGHT          0
 #define MTR_CHANNEL_L           LEDC_CHANNEL_1          // Left side motors
@@ -283,15 +284,15 @@ static void ledc_init (void) {
     ledc_timer_config_t ledc_timer_1 = {
         .speed_mode =       LEDC_MODE,
         .duty_resolution =  LEDC_DUTY_RES,
-        .timer_num =        LEDC_TIMER,
+        .timer_num =        MTR_FRONT_RIGHT_TMR,// LEDC_TIMER,
         .freq_hz =          LEDC_FREQUENCY,
         .clk_cfg =          LEDC_APB_CLK
     };
     ESP_ERROR_CHECK(ledc_timer_config(&ledc_timer_1));
     ledc_channel_config_t ledc_channel_1 = {
         .speed_mode =       LEDC_MODE,
-        .channel =          LEDC_CHANNEL_0,// MTR_FRONT_RIGHT,
-        .timer_sel =        LEDC_TIMER,
+        .channel =          MTR_FRONT_RIGHT,// LEDC_CHANNEL_0,// MTR_FRONT_RIGHT,
+        .timer_sel =        MTR_FRONT_RIGHT_TMR,// LEDC_TIMER,
         .intr_type =        LEDC_INTR_DISABLE,
         .gpio_num =         LEDC_OUTPUT_IO,
         .duty =             LEDC_DUTY,
