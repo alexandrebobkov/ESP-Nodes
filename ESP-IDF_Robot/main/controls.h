@@ -8,6 +8,10 @@ struct motors_rpm {
     int motor4_rpm;
 };
 
-struct motor {};
+struct motor {
+    int pcm;
+    bool rotation;
+
+};
 
 #endif
