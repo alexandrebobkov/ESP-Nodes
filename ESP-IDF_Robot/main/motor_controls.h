@@ -11,6 +11,8 @@
 static int interpolate_raw_measure (int min, int max, int raw) {
     int x;
 
+    x = raw - 8191;
+
     return x;
 }
 
