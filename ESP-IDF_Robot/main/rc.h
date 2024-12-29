@@ -15,7 +15,7 @@
 
 //static const char *TAG = "ESP IDF Robot";
 
-//Motors *motors;
+Motors *motors;
 
 
 static int adc_raw[2][10];
