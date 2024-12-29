@@ -66,9 +66,10 @@ static void rc_get_raw_data() {
     
     // Cut-off readings less than 4000
     // FORWARD
-    if (rescale_raw_val(adc_raw[0][0]) >= 4000)
+    if (rescale_raw_val(adc_raw[0][0]) >= 4000) {
         m.motor1_rpm_pcm = rescale_raw_val(adc_raw[0][0]);
         m.motor2_rpm_pcm = rescale_raw_val(adc_raw[0][0]);
+    }
     if (rescale_raw_val(adc_raw[0][1]) >= 4000)
         m.motor2_rpm_pcm = rescale_raw_val(adc_raw[0][1]);
     
