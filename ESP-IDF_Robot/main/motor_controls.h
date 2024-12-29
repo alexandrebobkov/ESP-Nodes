@@ -4,9 +4,7 @@
 // Interpolate value (x) based on raw reading, min/max limits.
 /*
 
-    8191     4095
-    4095        0
-    0       -4095
+    Joystick scale:     4096    2048   0
 */
 static int interpolate_raw_val (int raw) {
     int x;
