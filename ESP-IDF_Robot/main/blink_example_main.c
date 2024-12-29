@@ -113,6 +113,9 @@ static adc_channel_t channel[2] = {ADC_CHANNEL_0, ADC_CHANNEL_1};
 #define ESPNOW_WIFI_IF   ESP_IF_WIFI_AP
 #endif
 
+// Declare struct to hold motors RPMs
+motors_rpm motors;
+
 static QueueHandle_t gpio_evt_queue = NULL;
 static uint8_t s_led_state = 0;
 
