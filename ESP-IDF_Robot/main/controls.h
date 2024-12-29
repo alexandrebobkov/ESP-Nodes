@@ -8,10 +8,10 @@ we define one struct tha tholds RPMs for four motors, as opposed to defining arr
 
 */ 
 struct motors_rpm {
-    int8_t motor1_rpm;
-    int8_t motor2_rpm;
-    int8_t motor3_rpm;
-    int8_t motor4_rpm;
+    int motor1_rpm;
+    int motor2_rpm;
+    int motor3_rpm;
+    int motor4_rpm;
 };
 
 #endif
