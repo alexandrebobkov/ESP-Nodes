@@ -21,6 +21,8 @@ static int rescale_raw_val (int raw) {
 
     int s;
     s = 4*raw - 8940;
+    if (s < 0)
+        s = 0;
     return s;
 }
 
