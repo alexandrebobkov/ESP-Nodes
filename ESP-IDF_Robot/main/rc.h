@@ -74,6 +74,8 @@ static void rc_get_raw_data() {
         ESP_LOGW("RC", "LEFT");
     else if ((y < 0 && y > -200) && (x > 1000))
         ESP_LOGW("RC", "RIGHT");
+    else
+        ESP_LOGW("RC", "STAND STILL");
     
     /*// Cut-off readings that have values less than 700, i.e. when joystick is centered
     if (rescale_raw_val(adc_raw[0][1]) < -500 && rescale_raw_val(adc_raw[0][0]) < 500) {
