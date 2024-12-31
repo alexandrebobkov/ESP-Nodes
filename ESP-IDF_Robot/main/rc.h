@@ -68,6 +68,8 @@ static void rc_get_raw_data() {
     int y = rescale_raw_val(adc_raw[0][1]);
     if ((x > 0 && x < 500) && (y > 500))
         ESP_LOGW("RC", "FORWARD");
+    else if ((x > 0 && x < 500) && (y < -500))
+        ESP_LOGW("RC", "REVERSE");
     
     /*// Cut-off readings that have values less than 700, i.e. when joystick is centered
     if (rescale_raw_val(adc_raw[0][1]) < -500 && rescale_raw_val(adc_raw[0][0]) < 500) {
