@@ -11,8 +11,10 @@ __The table below lists GPIOs/Pins programmed to delivery specific operating fun
 | 0 | 16 | Joystick x-axis | ADC1_CH0 |
 | 1 | 15 | Joysticj y-axis | ADC1_CH1 |
 | 8 | 5 | Joystick push button | |
-| 6 | 4 | GPIO controlling PWM for the front left motor | LEDC_CHANNEL_1 |
-| 5 | 3 | GPIO controlling PWM for the front right motor | LEDC_CHANNEL_0 |
+| 6 | 4 | GPIO controlling clockwise rotation PWM of left motors | LEDC_CHANNEL_1 |
+| 5 | 3 | GPIO controlling clockwise rotation PWM of right motors | LEDC_CHANNEL_0 |
+| 4 | 2 | GPIO controlling __counter__ clockwise rotation PWM of left motors | LEDC_CHANNEL_2 |
+| 7 | 6 | GPIO controlling __counter__ clockwise rotation PWM of right motors | LEDC_CHANNEL_3 |
 
 ## Variables
 
