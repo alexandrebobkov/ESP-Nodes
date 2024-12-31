@@ -53,20 +53,19 @@
 static const char *TAG = "ESP IDF Robot";
 
 // MOTORS PWM CONFIG
-#define MTR_FREQUENCY           (5000)
-#define MTR_MODE                LEDC_LOW_SPEED_MODE
-#define MTR_DUTY_RES            LEDC_TIMER_13_BIT
+#define MTR_FREQUENCY               (5000)
+#define MTR_MODE                    LEDC_LOW_SPEED_MODE
+#define MTR_DUTY_RES                LEDC_TIMER_13_BIT
 // LEFT SIDE MOTORS, FORWARD
-#define MTR_FRONT_LEFT_IO       (6)
-#define MTR_FRONT_LEFT_TMR      LEDC_TIMER_0
-#define MTR_FRONT_LEFT          LEDC_CHANNEL_1
-#define MTR_FRONT_LEFT_DUTY     (3361)
+#define MTR_FRONT_LEFT_IO           (6)
+#define MTR_FRONT_LEFT_TMR          LEDC_TIMER_0
+#define MTR_FRONT_LEFT              LEDC_CHANNEL_1
+#define MTR_FRONT_LEFT_DUTY         (3361)
 // RIGHT SIDE MOTORS, FORWARD
-#define MTR_FRONT_RIGHT_IO      (5)
-#define MTR_FRONT_RIGHT_TMR     LEDC_TIMER_1
-#define MTR_FRONT_RIGHT         LEDC_CHANNEL_0
-#define MTR_FRONT_RIGHT_DUTY    (3361)
-
+#define MTR_FRONT_RIGHT_IO          (5)
+#define MTR_FRONT_RIGHT_TMR         LEDC_TIMER_1
+#define MTR_FRONT_RIGHT             LEDC_CHANNEL_0
+#define MTR_FRONT_RIGHT_DUTY        (3361)
 // LEFT SIDE MOTORS, REVERSE
 #define MTR_FRONT_LEFT_REV_IO       (4)
 #define MTR_FRONT_LEFT_REV_TMR      LEDC_TIMER_2
@@ -92,29 +91,29 @@ TIMER RESOLUTION    MAX VALUE   HALF-DUTY
 10                  1023            511
 13                  8191            4095
 */
-#define LEDC_DUTY               (3361)//7820) // 8068, 7944, 7820, 7696, 7572, *7680*, 7424, 7168, 6144, 512, 768
-#define LEDC_FREQUENCY          (5000)//8192)//4000) // For LED the freuqncy of 500Hz seems to be sufficient. // Frequency in Hertz. For DC motor, set frequency at 5 kHz
+#define LEDC_DUTY                   (3361)//7820) // 8068, 7944, 7820, 7696, 7572, *7680*, 7424, 7168, 6144, 512, 768
+#define LEDC_FREQUENCY              (5000)//8192)//4000) // For LED the freuqncy of 500Hz seems to be sufficient. // Frequency in Hertz. For DC motor, set frequency at 5 kHz
 
 /* Use project configuration menu (idf.py menuconfig) to choose the GPIO to blink,
    or you can edit the following line and set a number here.
 */
 
 // Retrieve values from configuration menu
-#define BLINK_GPIO      CONFIG_BLINK_GPIO       // 10 GPIO of on-board LED
-#define PUSH_BTN_GPIO   CONFIG_BUTTON_GPIO      // 3 GPIO of on-board push-button
-#define MTR_FL_GPIO     0 //CONFIG_MOTOR_FRONT_LEFT_GPIO
+#define BLINK_GPIO                  CONFIG_BLINK_GPIO       // 10 GPIO of on-board LED
+#define PUSH_BTN_GPIO               CONFIG_BUTTON_GPIO      // 3 GPIO of on-board push-button
+#define MTR_FL_GPIO                 0 //CONFIG_MOTOR_FRONT_LEFT_GPIO
 // ADC
-#define ADC_ATTEN       ADC_ATTEN_DB_11
-#define ADC_BIT_WIDTH   SOC_ADC_DIGI_MAX_BITWIDTH
-#define ADC_UNIT        ADC_UNIT_1
-#define ADC_CONV_MODE   ADC_CONV_BOTH_UNIT// ADC_CONV_SINGLE_UNIT_1
-#define ADC_OUTPUT_TYPE ADC_DIGI_OUTPUT_FORMAT_TYPE2    // ESP32C3
-#define READ_LEN        1024//256
+#define ADC_ATTEN                   ADC_ATTEN_DB_11
+#define ADC_BIT_WIDTH               SOC_ADC_DIGI_MAX_BITWIDTH
+#define ADC_UNIT                    ADC_UNIT_1
+#define ADC_CONV_MODE               ADC_CONV_BOTH_UNIT// ADC_CONV_SINGLE_UNIT_1
+#define ADC_OUTPUT_TYPE             ADC_DIGI_OUTPUT_FORMAT_TYPE2    // ESP32C3
+#define READ_LEN                    1024//256
 #define ADC_GET_CHANNEL(p_data)     ((p_data)->type2.channel)
 #define ADC_GET_DATA(p_data)        ((p_data)->type2.data)
-#define PROJ_X          (1)                     // ADC1_CH1; 0 GPIO joystick, x-axis
-#define PROJ_Y          (0)                     // ADC1_CH0; 1 GPIO joystick, y-axis
-#define NAV_BTN         (8)                     // 8 GPIO joystick button
+#define PROJ_X                      (1)                     // ADC1_CH1; 0 GPIO joystick, x-axis
+#define PROJ_Y                      (0)                     // ADC1_CH0; 1 GPIO joystick, y-axis
+#define NAV_BTN                     (8)                     // 8 GPIO joystick button
 #define _ADC_UNIT_STR(unit)         #unit
 #define ADC_UNIT_STR(unit)          _ADC_UNIT_STR(unit)
 uint32_t x_avg = 0, y_avg = 0;
