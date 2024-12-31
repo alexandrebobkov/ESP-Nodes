@@ -1035,9 +1035,8 @@ void app_main(void)
         ESP_LOGW(TAG, "Motor 1 PWM: %d", m.motor1_rpm_pcm);
         //ESP_LOGW(TAG, "Motor 2 PWM: %d", var);
         ESP_LOGW(TAG, "Motor 2 PWM: %d", m.motor2_rpm_pcm);
-        ESP_LOGW(TAG, "Motor 1 PWM: %d", m.motor1_rpm_pcm);
-        //ESP_LOGW(TAG, "Motor 2 PWM: %d", var);
-        ESP_LOGW(TAG, "Motor 2 PWM: %d", m.motor2_rpm_pcm);
+        ESP_LOGW(TAG, "Motor 1 PWM: %d", m.motor3_rpm_pcm);
+        ESP_LOGW(TAG, "Motor 2 PWM: %d", m.motor4_rpm_pcm);
     }
 
     //ESP_ERROR_CHECK(adc_continuous_stop(handle));
