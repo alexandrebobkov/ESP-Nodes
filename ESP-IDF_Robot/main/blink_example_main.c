@@ -1031,9 +1031,7 @@ void app_main(void)
         ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT_REV, m.motor4_rpm_pcm);
         ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT_REV);
 
-        //ESP_LOGW(TAG, "Motor 1 PWM: %d", var);
         ESP_LOGW(TAG, "Motor 1 PWM: %d", m.motor1_rpm_pcm);
-        //ESP_LOGW(TAG, "Motor 2 PWM: %d", var);
         ESP_LOGW(TAG, "Motor 2 PWM: %d", m.motor2_rpm_pcm);
         ESP_LOGW(TAG, "Motor 3 PWM: %d", m.motor3_rpm_pcm);
         ESP_LOGW(TAG, "Motor 4 PWM: %d", m.motor4_rpm_pcm);
