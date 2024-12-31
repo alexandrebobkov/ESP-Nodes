@@ -365,9 +365,9 @@ static void ledc_init (void) {
     //ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, LEDC_DUTY));
     //ESP_ERROR_CHECK(ledc_update_duty(LEDC_MODE, LEDC_CHANNEL));*/
 }
-static void update_pwm (uint8_t pwm) {
+/*static void update_pwm (uint8_t pwm) {
     ESP_ERROR_CHECK(ledc_set_duty_and_update(LEDC_MODE, LEDC_CHANNEL, pwm, 0));
-}
+}*/
 
 /* ESP-NOW */
 // Wi-Fi should start before using ESP-NOW
