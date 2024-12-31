@@ -70,7 +70,7 @@ static void rc_get_raw_data() {
         ESP_LOGW("RC", "FORWARD");
     else if ((x > 0 && x < 500) && (y < -200))
         ESP_LOGW("RC", "REVERSE");
-    else if ((y < 0 && y > -200) && (y < -1000))
+    else if ((y < 0 && y > -200) && (x < -1000))
         ESP_LOGW("RC", "LEFT");
     
     /*// Cut-off readings that have values less than 700, i.e. when joystick is centered
