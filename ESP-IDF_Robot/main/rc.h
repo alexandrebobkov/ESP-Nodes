@@ -70,26 +70,36 @@ static void rc_get_raw_data() {
         ESP_LOGW("RC", "FORWARD");
         m.motor1_rpm_pcm = y;
         m.motor2_rpm_pcm = y;
+        m.motor3_rpm_pcm = 0;
+        m.motor4_rpm_pcm = 0;
     }
     else if ((x > 0 && x < 500) && (y < -200)) {
         ESP_LOGW("RC", "REVERSE");
         m.motor1_rpm_pcm = 0;
         m.motor2_rpm_pcm = 0;
+        m.motor3_rpm_pcm = 0;
+        m.motor4_rpm_pcm = 0;
     }
     else if ((y < 0 && y > -200) && (x < -1000)) {
         ESP_LOGW("RC", "LEFT");
         m.motor1_rpm_pcm = 0;
         m.motor2_rpm_pcm = 0;
+        m.motor3_rpm_pcm = 0;
+        m.motor4_rpm_pcm = 0;
     }
     else if ((y < 0 && y > -200) && (x > 1000)) {
         ESP_LOGW("RC", "RIGHT");
         m.motor1_rpm_pcm = 0;
         m.motor2_rpm_pcm = 0;
+        m.motor3_rpm_pcm = 0;
+        m.motor4_rpm_pcm = 0;
     }
     else {
         ESP_LOGW("RC", "STAND STILL");
         m.motor1_rpm_pcm = 0;
         m.motor2_rpm_pcm = 0;
+        m.motor3_rpm_pcm = 0;
+        m.motor4_rpm_pcm = 0;
     }
     
     /*// Cut-off readings that have values less than 700, i.e. when joystick is centered
