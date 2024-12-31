@@ -824,33 +824,11 @@ void app_main(void)
         gpio_set_level(BLINK_GPIO, s_led_state);
         s_led_state = !s_led_state;
 
-
-
         // ADC
         // Display GPIOs used
         
         //ESP_LOGI(TAG, "ADC1_CH0: %d", ADC1_CHANNEL_0);
         //ESP_LOGI(TAG, "ADC1_CH1: %d", ADC1_CHANNEL_1);
-        /*adc_ret = adc_continuous_read(handle, result, READ_LEN, &ret_num, 0);
-        if (ret == ESP_OK) {
-            ESP_LOGI("TASK", "ret is %x, ret_num is %"PRIu32" bytes", ret, ret_num);
-            for (int i = 0; i < ret_num; i += SOC_ADC_DIGI_RESULT_BYTES) {
-                adc_digi_output_data_t *p = (adc_digi_output_data_t*)&result[i];
-                uint32_t chan_num = ADC_GET_CHANNEL(p);
-                uint32_t data = ADC_GET_DATA(p);
-               // Check the channel number validation, the data is invalid if the channel num exceed the maximum channel 
-                if (chan_num < SOC_ADC_CHANNEL_NUM(ADC_UNIT)) {
-                    ESP_LOGI(TAG, "Unit: %s, Channel: %"PRIu32", Value: %"PRIx32, unit, chan_num, data);
-                } else {
-                    ESP_LOGW(TAG, "Invalid data [%s_%"PRIu32"_%"PRIx32"]", unit, chan_num, data);
-                }
-            }
-            //vTaskDelay(1);
-            vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
-        } else if (ret == ESP_ERR_TIMEOUT) {
-                //We try to read `EXAMPLE_READ_LEN` until API returns timeout, which means there's no available data
-                break;
-        }*/
 
         rc_get_raw_data();
 
@@ -865,10 +843,6 @@ void app_main(void)
         ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, var);
         ledc_update_duty(LEDC_MODE, LEDC_CHANNEL);*/
 
-        /*ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, m.motor1_rpm_pcm);
-        ledc_update_duty(LEDC_MODE, MTR_FRONT_LEFT);
-        ledc_set_duty(LEDC_MODE, MTR_FRONT_RIGHT, m.motor2_rpm_pcm);
-        ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT);*/
         ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, m.motor1_rpm_pcm);
         ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT);
         ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT, m.motor2_rpm_pcm);
@@ -884,7 +858,4 @@ void app_main(void)
         ESP_LOGW(TAG, "Motor 3 PWM: %d", m.motor3_rpm_pcm);
         ESP_LOGW(TAG, "Motor 4 PWM: %d", m.motor4_rpm_pcm);
     }
-
-    //ESP_ERROR_CHECK(adc_continuous_stop(handle));
-    //ESP_ERROR_CHECK(adc_continuous_deinit(handle));
 }
