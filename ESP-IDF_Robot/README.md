@@ -7,3 +7,5 @@
 | GPIO | Pin | Assigned Functionality |
 | --- | --- | --- |
 
+
+## Variables
