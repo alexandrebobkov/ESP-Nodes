@@ -69,7 +69,7 @@ static void rc_get_raw_data() {
     if ((x > 0 && x < 500) && (y > 500)) {
         ESP_LOGW("RC", "FORWARD");
         m.motor1_rpm_pcm = y;
-        m.motor2_rpm_pcm = 0;
+        m.motor2_rpm_pcm = y;
     }
     else if ((x > 0 && x < 500) && (y < -200)) {
         ESP_LOGW("RC", "REVERSE");
