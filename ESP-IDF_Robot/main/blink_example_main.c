@@ -56,6 +56,7 @@ static const char *TAG = "ESP IDF Robot";
 #define MTR_FREQUENCY           (5000)
 #define MTR_MODE                LEDC_LOW_SPEED_MODE
 #define MTR_DUTY_RES            LEDC_TIMER_13_BIT
+
 #define MTR_FRONT_LEFT_IO       (6)
 #define MTR_FRONT_LEFT_TMR      LEDC_TIMER_0
 #define MTR_FRONT_LEFT          LEDC_CHANNEL_1
@@ -966,9 +967,13 @@ void app_main(void)
         ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, var);
         ledc_update_duty(LEDC_MODE, LEDC_CHANNEL);*/
 
-        ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, m.motor1_rpm_pcm);
+        /*ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, m.motor1_rpm_pcm);
         ledc_update_duty(LEDC_MODE, MTR_FRONT_LEFT);
         ledc_set_duty(LEDC_MODE, MTR_FRONT_RIGHT, m.motor2_rpm_pcm);
+        ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT);*/
+        ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, m.motor1_rpm_pcm);
+        ledc_update_duty(LEDC_MODE, MTR_FRONT_LEFT);
+        ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT, m.motor2_rpm_pcm);
         ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT);
         //ESP_LOGW(TAG, "Motor 1 PWM: %d", var);
         ESP_LOGW(TAG, "Motor 1 PWM: %d", m.motor1_rpm_pcm);
