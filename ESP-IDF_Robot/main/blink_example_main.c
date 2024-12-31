@@ -292,7 +292,7 @@ static void motors_init (void) {
 
 static void ledc_init (void) {
 
-    // MOTOR FRONT RIGHT
+    // MOTOR FRONT RIGHT, FORWARD
     ledc_timer_config_t ledc_timer_1 = {
         .speed_mode =       MTR_MODE,// LEDC_MODE,
         .duty_resolution =  MTR_DUTY_RES,// LEDC_DUTY_RES,
@@ -311,8 +311,7 @@ static void ledc_init (void) {
         .hpoint =           0,
     };
     ESP_ERROR_CHECK(ledc_channel_config(&ledc_channel_1));
-
-    // MOTOR FRONT LEFT
+    // MOTOR FRONT LEFT, FORWARD
     ledc_timer_config_t ledc_timer_2 = {
         .speed_mode =       MTR_MODE,
         .duty_resolution =  MTR_DUTY_RES,
