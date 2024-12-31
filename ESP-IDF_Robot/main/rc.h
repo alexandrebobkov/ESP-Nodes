@@ -77,8 +77,8 @@ static void rc_get_raw_data() {
         ESP_LOGW("RC", "REVERSE");
         m.motor1_rpm_pcm = 0;
         m.motor2_rpm_pcm = 0;
-        m.motor3_rpm_pcm = 0;
-        m.motor4_rpm_pcm = 0;
+        m.motor3_rpm_pcm = -y;
+        m.motor4_rpm_pcm = -y;
     }
     else if ((y < 0 && y > -200) && (x < -1000)) {
         ESP_LOGW("RC", "LEFT");
