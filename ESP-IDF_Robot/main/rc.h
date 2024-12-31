@@ -82,7 +82,7 @@ static void rc_get_raw_data() {
     }
     else if ((y < 0 && y > -200) && (x < -1000)) {
         ESP_LOGW("RC", "LEFT");
-        m.motor1_rpm_pcm = y;
+        m.motor1_rpm_pcm = -x;
         m.motor2_rpm_pcm = 0;
         m.motor3_rpm_pcm = 0;
         m.motor4_rpm_pcm = 0;
