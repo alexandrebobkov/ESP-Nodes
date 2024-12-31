@@ -66,8 +66,10 @@ static void rc_get_raw_data() {
 
     int x = rescale_raw_val(adc_raw[0][0]);
     int y = rescale_raw_val(adc_raw[0][1]);
-    if ((x > 0 && x < 500) && (y > 500))
+    if ((x > 0 && x < 500) && (y > 500)) {
         ESP_LOGW("RC", "FORWARD");
+        m.motor1_rpm_pcm = rescale_raw_val(adc_raw(y));
+    }
     else if ((x > 0 && x < 500) && (y < -200))
         ESP_LOGW("RC", "REVERSE");
     else if ((y < 0 && y > -200) && (x < -1000))
