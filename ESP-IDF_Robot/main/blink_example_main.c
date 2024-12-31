@@ -78,19 +78,6 @@ static const char *TAG = "ESP IDF Robot";
 #define MTR_FRONT_RIGHT_REV_DUTY    (3361)
 
 
-// LED
-/*#define LEDC_TIMER              LEDC_TIMER_0
-#define LEDC_MODE               LEDC_LOW_SPEED_MODE // LEDC_LOW_SPEED_MODE
-#define LEDC_OUTPUT_IO          (5) // Define the output GPIO
-
-#define LEDC_CHANNEL            LEDC_CHANNEL_0          // Right side motors
-#define MTR_CHANNEL_L           LEDC_CHANNEL_1          // Left side motors
-#define LEDC_DUTY_RES           LEDC_TIMER_13_BIT //*/
-/*
-TIMER RESOLUTION    MAX VALUE   HALF-DUTY
-10                  1023            511
-13                  8191            4095
-*/
 #define LEDC_DUTY                   (3361)//7820) // 8068, 7944, 7820, 7696, 7572, *7680*, 7424, 7168, 6144, 512, 768
 #define LEDC_FREQUENCY              (5000)//8192)//4000) // For LED the freuqncy of 500Hz seems to be sufficient. // Frequency in Hertz. For DC motor, set frequency at 5 kHz
 
@@ -121,10 +108,6 @@ static TaskHandle_t s_task_handle;
 //static adc_channel_t channel[2] = {ADC_CHANNEL_2, ADC_CHANNEL_3};
 static adc_channel_t channel[2] = {ADC_CHANNEL_0, ADC_CHANNEL_1};
 
-//static int adc_raw[2][10];
-//static int voltage[2][10];
-//static bool adc_calibration_init(adc_unit_t unit, adc_channel_t channel, adc_atten_t atten, adc_cali_handle_t *out_handle);
-//static void adc_calibration_deinit(adc_cali_handle_t handle);
 
 #define ESP_INTR_FLAG_DEFAULT 0
 
@@ -251,34 +234,12 @@ static void nav_key_task (void* arg) {
         }
     }
 }
-/*static void configure_led(void)
-{
-    ESP_LOGI(TAG, "Configured to blink GPIO LED!");
-    gpio_reset_pin(BLINK_GPIO);
-    // Set the GPIO as a push/pull output 
-    gpio_set_direction(BLINK_GPIO, GPIO_MODE_OUTPUT);
-}*/
 
 static void configure_button (void) {
     ESP_LOGI(TAG, "Configured on-board push button");
     //gpio_reset_pin(PUSH_BTN_GPIO);
     //gpio_set_direction(PUSH_BTN_GPIO, GPIO_MODE_INPUT);
 }
-
-/*static void configure_dc_mc (void) {
-
-    mcpwm_gpio_init(MCPWM_UNIT_0, MCPWM0A, MTR_FL_GPIO);
-
-    mcpwm_config_t mcpwm_config;
-
-    mcpwm_config.frequency = 4000;
-    mcpwm_config.cmpr_a = 50;     
-    mcpwm_config.counter_mode = MCPWM_UP_COUNTER;
-    mcpwm_config.duty_mode = MCPWM_DUTY_MODE_0;
-    ESP_ERROR_CHECK(mcpwm_init(MCPWM_UNIT_0, MCPWM_TIMER_0, &mcpwm_config));
-    ESP_ERROR_CHECK(mcpwm_set_duty_type(MCPWM_UNIT_0, MCPWM_TIMER_0, MCPWM_OPR_A, MCPWM_DUTY_MODE_0));
-    ESP_ERROR_CHECK(mcpwm_set_duty(MCPWM_UNIT_0, MCPWM_TIMER_0, MCPWM_OPR_A, 50));
-}*/
 
 static void motors_init (void) {
 
@@ -368,55 +329,7 @@ static void ledc_init (void) {
         .hpoint =           0,
     };
     ESP_ERROR_CHECK(ledc_channel_config(&ledc_channel_4));
-
-    //ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, LEDC_DUTY));
-    //ESP_ERROR_CHECK(ledc_update_duty(LEDC_MODE, LEDC_CHANNEL));
-
-    /*// MOTOR FRONT RIGHT
-    ledc_timer_config_t ledc_timer_1 = {
-        .speed_mode =       LEDC_MODE,
-        .duty_resolution =  LEDC_DUTY_RES,
-        .timer_num =        MTR_FRONT_RIGHT_TMR,// LEDC_TIMER,
-        .freq_hz =          LEDC_FREQUENCY,
-        .clk_cfg =          LEDC_APB_CLK
-    };
-    ESP_ERROR_CHECK(ledc_timer_config(&ledc_timer_1));
-    ledc_channel_config_t ledc_channel_1 = {
-        .speed_mode =       LEDC_MODE,
-        .channel =          MTR_FRONT_RIGHT,// LEDC_CHANNEL_0,// MTR_FRONT_RIGHT,
-        .timer_sel =        MTR_FRONT_RIGHT_TMR,// LEDC_TIMER,
-        .intr_type =        LEDC_INTR_DISABLE,
-        .gpio_num =         LEDC_OUTPUT_IO,
-        .duty =             LEDC_DUTY,
-        .hpoint =           0,
-    };
-    ESP_ERROR_CHECK(ledc_channel_config(&ledc_channel_1));
-
-    // MOTOR FRONT LEFT
-    ledc_timer_config_t ledc_timer_2 = {
-        .speed_mode =       LEDC_MODE,
-        .duty_resolution =  LEDC_DUTY_RES,
-        .timer_num =        LEDC_TIMER,
-        .freq_hz =          LEDC_FREQUENCY,
-        .clk_cfg =          LEDC_APB_CLK
-    };
-    ESP_ERROR_CHECK(ledc_timer_config(&ledc_timer_2));
-    ledc_channel_config_t ledc_channel_2 = {
-        .speed_mode =       LEDC_MODE,
-        .channel =          MTR_FRONT_LEFT,
-        .timer_sel =        LEDC_TIMER,
-        .intr_type =        LEDC_INTR_DISABLE,
-        .gpio_num =         LEDC_OUTPUT_IO,
-        .duty =             LEDC_DUTY,
-        .hpoint =           0,
-    };
-    ESP_ERROR_CHECK(ledc_channel_config(&ledc_channel_2));
-    //ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, LEDC_DUTY));
-    //ESP_ERROR_CHECK(ledc_update_duty(LEDC_MODE, LEDC_CHANNEL));*/
 }
-/*static void update_pwm (uint8_t pwm) {
-    ESP_ERROR_CHECK(ledc_set_duty_and_update(LEDC_MODE, LEDC_CHANNEL, pwm, 0));
-}*/
 
 /* ESP-NOW */
 // Wi-Fi should start before using ESP-NOW
