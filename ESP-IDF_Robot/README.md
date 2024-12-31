@@ -7,5 +7,6 @@
 | GPIO | Pin | Assigned Functionality |
 | --- | --- | --- |
 | 6 |  | GPIO controlling PWM for the front left motor |
+| 5 |  | GPIO controlling PWM for the front right motor |
 
 ## Variables
