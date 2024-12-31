@@ -71,12 +71,21 @@ static void rc_get_raw_data() {
         m.motor1_rpm_pcm = rescale_raw_val(y);
         m.motor2_rpm_pcm = 0;
     }
-    else if ((x > 0 && x < 500) && (y < -200))
+    else if ((x > 0 && x < 500) && (y < -200)) {
         ESP_LOGW("RC", "REVERSE");
-    else if ((y < 0 && y > -200) && (x < -1000))
+        m.motor1_rpm_pcm = 0;
+        m.motor2_rpm_pcm = 0;
+    }
+    else if ((y < 0 && y > -200) && (x < -1000)) {
         ESP_LOGW("RC", "LEFT");
-    else if ((y < 0 && y > -200) && (x > 1000))
+        m.motor1_rpm_pcm = 0;
+        m.motor2_rpm_pcm = 0;
+    }
+    else if ((y < 0 && y > -200) && (x > 1000)) {
         ESP_LOGW("RC", "RIGHT");
+        m.motor1_rpm_pcm = 0;
+        m.motor2_rpm_pcm = 0;
+    }
     else {
         ESP_LOGW("RC", "STAND STILL");
         m.motor1_rpm_pcm = 0;
