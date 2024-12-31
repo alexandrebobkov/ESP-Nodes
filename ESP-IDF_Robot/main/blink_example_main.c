@@ -972,7 +972,7 @@ void app_main(void)
         ledc_set_duty(LEDC_MODE, MTR_FRONT_RIGHT, m.motor2_rpm_pcm);
         ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT);*/
         ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, m.motor1_rpm_pcm);
-        ledc_update_duty(LEDC_MODE, MTR_FRONT_LEFT);
+        ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT);
         ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT, m.motor2_rpm_pcm);
         ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT);
         //ESP_LOGW(TAG, "Motor 1 PWM: %d", var);
