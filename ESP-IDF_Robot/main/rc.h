@@ -56,9 +56,11 @@ static esp_err_t rc_adc_init (void) {
     return ESP_OK;
 }
 
-static void set_motor_pcm(int *motors_rpm, int duty) {
-    if (duty < 8191)
-        &motors_rpm = duty;
+static void set_motor_pcm(int* motor , int duty) {
+    if (duty >= 8191)
+        &motor = 8191;
+    else
+        &motor = duty;
 }
 
 static void rc_get_raw_data() {
