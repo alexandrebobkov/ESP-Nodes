@@ -76,6 +76,12 @@ static void rc_get_raw_data() {
         ESP_LOGW("RC", "FORWARD");
         //m.motor2_rpm_pcm = rescale_raw_val(adc_raw[0][1]);
     }
+    // REVERSE
+    else if (rescale_raw_val(adc_raw[0][0]) >= 700 && rescale_raw_val(adc_raw[0][1]) < 700) {
+        m.motor1_rpm_pcm = rescale_raw_val(adc_raw[0][1]);
+        ESP_LOGW("RC", "FORWARD");
+        //m.motor2_rpm_pcm = rescale_raw_val(adc_raw[0][1]);
+    }
     else {
         m.motor1_rpm_pcm = 0;
         m.motor2_rpm_pcm = 0;
