@@ -56,12 +56,12 @@ static const char *TAG = "ESP IDF Robot";
 #define MTR_FREQUENCY           (5000)
 #define MTR_MODE                LEDC_LOW_SPEED_MODE
 #define MTR_DUTY_RES            LEDC_TIMER_13_BIT
-#define MTR_FRONT_LEFT_IO       (5)
+#define MTR_FRONT_LEFT_IO       (6)
 #define MTR_FRONT_LEFT_TMR      LEDC_TIMER_0
 #define MTR_FRONT_LEFT          LEDC_CHANNEL_1
 #define MTR_FRONT_LEFT_DUTY     (3361)
 
-#define MTR_FRONT_RIGHT_IO      (6)
+#define MTR_FRONT_RIGHT_IO      (5)
 #define MTR_FRONT_RIGHT_TMR     LEDC_TIMER_1
 #define MTR_FRONT_RIGHT         LEDC_CHANNEL_0
 #define MTR_FRONT_RIGHT_DUTY    (3361)
@@ -100,8 +100,8 @@ TIMER RESOLUTION    MAX VALUE   HALF-DUTY
 #define READ_LEN        1024//256
 #define ADC_GET_CHANNEL(p_data)     ((p_data)->type2.channel)
 #define ADC_GET_DATA(p_data)        ((p_data)->type2.data)
-#define PROJ_X          (0)                     // ADC1_CH0; 0 GPIO joystick, x-axis
-#define PROJ_Y          (1)                     // ADC1_CH1; 1 GPIO joystick, y-axis
+#define PROJ_X          (1)                     // ADC1_CH0; 0 GPIO joystick, x-axis
+#define PROJ_Y          (0)                     // ADC1_CH1; 1 GPIO joystick, y-axis
 #define NAV_BTN         (8)                     // 8 GPIO joystick button
 #define _ADC_UNIT_STR(unit)         #unit
 #define ADC_UNIT_STR(unit)          _ADC_UNIT_STR(unit)
