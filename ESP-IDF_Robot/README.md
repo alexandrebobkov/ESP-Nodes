@@ -5,3 +5,5 @@
 ## Designated Pins & GPIOs
 
 | GPIO | Pin | Assigned Functionality |
+| --- | --- | --- |
+
