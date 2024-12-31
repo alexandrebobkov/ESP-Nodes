@@ -4,10 +4,13 @@
 
 ## Designated Pins & GPIOs
 
-| GPIO | Pin | Assigned Functionality |
+| GPIO | Pin | Assigned Functionality | Notes |
 | --- | --- | --- |
-| 6 |  | GPIO controlling PWM for the front left motor |
-| 5 |  | GPIO controlling PWM for the front right motor |
+| 0 |  | Joystick x-axis | ADC1_CH0 |
+| 1 |  | Joysticj y-axis | ADC1_CH1 |
+| 8 |  | Joystick push button | |
+| 6 |  | GPIO controlling PWM for the front left motor | |
+| 5 |  | GPIO controlling PWM for the front right motor | |
 
 ## Variables
 
