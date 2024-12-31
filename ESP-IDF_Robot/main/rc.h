@@ -101,51 +101,6 @@ static void rc_get_raw_data() {
         m.motor3_rpm_pcm = 0;
         m.motor4_rpm_pcm = 0;
     }
-    
-    /*// Cut-off readings that have values less than 700, i.e. when joystick is centered
-    if (rescale_raw_val(adc_raw[0][1]) < -500 && rescale_raw_val(adc_raw[0][0]) < 500) {
-            ESP_LOGW("RC", "REVERSE");
-    }
-    // FORWARD
-    else if (rescale_raw_val(adc_raw[0][1]) >= 500 && rescale_raw_val(adc_raw[0][0]) < 500) {
-        m.motor1_rpm_pcm = rescale_raw_val(adc_raw[0][1]);
-        ESP_LOGW("RC", "FORWARD");
-        //m.motor2_rpm_pcm = rescale_raw_val(adc_raw[0][1]);
-    }
-    else {
-        m.motor1_rpm_pcm = 0;
-        m.motor2_rpm_pcm = 0;
-        ESP_LOGW("RC", "STAD STILL");
-    }
-    */
-    // LEFT or RIGHT
-    // RIGHT
-    /*if (rescale_raw_val(adc_raw[0][0]) >= 4000) {
-        m.motor1_rpm_pcm = rescale_raw_val(adc_raw[0][0]);
-    }
-    // LEFT
-    else if (rescale_raw_val(adc_raw[0][0]) < 0) {
-        m.motor2_rpm_pcm = -rescale_raw_val(adc_raw[0][0]);
-    }
-    else {
-        m.motor1_rpm_pcm = 0;
-    }*/
-    
-    // Cut-off power if joystick is nearly center
-    /*if (rescale_raw_val(adc_raw[0][0]) < 4000)
-        m.motor1_rpm_pcm = 0;
-    if (rescale_raw_val(adc_raw[0][1]) < 4000)
-        m.motor2_rpm_pcm = 0;*/
-    /*
-    if (rescale_raw_val(adc_raw[0][0]) >= 4000)
-        m.motor1_rpm_pcm = rescale_raw_val(adc_raw[0][0]);
-    else
-        m.motor1_rpm_pcm = 0;
-    if (rescale_raw_val(adc_raw[0][1]) >= 4000)
-        m.motor2_rpm_pcm = rescale_raw_val(adc_raw[0][1]);
-    else
-        m.motor2_rpm_pcm = 0;
-    */
 
     ESP_LOGI("PWM", "Motor 1 PWM: %d", m.motor1_rpm_pcm);
     ESP_LOGI("PWM", "Motor 2 PWM: %d", m.motor2_rpm_pcm);
