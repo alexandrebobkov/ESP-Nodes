@@ -65,15 +65,8 @@ static void rc_get_raw_data() {
     ESP_LOGI("Joystick F", "Position: %d", rescale_raw_val(adc_raw[0][1]));
     
     // Cut-off readings that have values less than 700, i.e. when joystick is centered
-    if (rescale_raw_val(adc_raw[0][0]) < 500 && rescale_raw_val(adc_raw[0][1]) < 500) {
-        // REVERSE
-        if (rescale_raw_val(adc_raw[0][1] < -1400))
-            ESP_LOGW("RC", "REVERSE");
-        else {
-            m.motor1_rpm_pcm = 0;
-            m.motor2_rpm_pcm = 0;
-            ESP_LOGW("RC", "STAD STILL");
-        }
+    if (rescale_raw_val(adc_raw[0][0]) < -500 && rescale_raw_val(adc_raw[0][1]) < 500) {
+        ESP_LOGW("RC", "REVERSE");
     }
     // FORWARD
     else if (rescale_raw_val(adc_raw[0][1]) >= 500 && rescale_raw_val(adc_raw[0][0]) < 500) {
@@ -84,6 +77,7 @@ static void rc_get_raw_data() {
     else {
         m.motor1_rpm_pcm = 0;
         m.motor2_rpm_pcm = 0;
+        ESP_LOGW("RC", "STAD STILL");
     }
     // LEFT or RIGHT
     // RIGHT
