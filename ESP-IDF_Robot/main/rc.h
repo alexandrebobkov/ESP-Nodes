@@ -64,7 +64,7 @@ static void rc_get_raw_data() {
     ESP_LOGI("Joystick L/R", "Position: %d", rescale_raw_val(adc_raw[0][0]));
     ESP_LOGI("Joystick F", "Position: %d", rescale_raw_val(adc_raw[0][1]));
     
-    // Cut-off readings less than 700
+    // Cut-off readings that have values less than 700, i.e. when joystick is centered
     if (rescale_raw_val(adc_raw[0][0]) < 700 || rescale_raw_val(adc_raw[0][1]) < 700) {
         m.motor1_rpm_pcm = 0;
         m.motor2_rpm_pcm = 0;
