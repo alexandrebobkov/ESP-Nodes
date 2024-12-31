@@ -350,6 +350,26 @@ static void ledc_init (void) {
         .hpoint =           0,
     };
     ESP_ERROR_CHECK(ledc_channel_config(&ledc_channel_3));
+    // MOTOR FRONT LEFT, REVERSE
+    ledc_timer_config_t ledc_timer_2 = {
+        .speed_mode =       MTR_MODE,
+        .duty_resolution =  MTR_DUTY_RES,
+        .timer_num =        MTR_FRONT_LEFT_REV_TMR,
+        .freq_hz =          MTR_FREQUENCY,
+        .clk_cfg =          LEDC_APB_CLK
+    };
+    ESP_ERROR_CHECK(ledc_timer_config(&ledc_timer_2));
+    ledc_channel_config_t ledc_channel_2 = {
+        .speed_mode =       MTR_MODE,
+        .channel =          MTR_FRONT_LEFT_REV,
+        .timer_sel =        MTR_FRONT_LEFT_REV_TMR,
+        .intr_type =        LEDC_INTR_DISABLE,
+        .gpio_num =         MTR_FRONT_LEFT_REV_IO,
+        .duty =             MTR_FRONT_LEFT_REV_DUTY,
+        .hpoint =           0,
+    };
+    ESP_ERROR_CHECK(ledc_channel_config(&ledc_channel_2));
+
     //ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, LEDC_DUTY));
     //ESP_ERROR_CHECK(ledc_update_duty(LEDC_MODE, LEDC_CHANNEL));
 
