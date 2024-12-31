@@ -4,8 +4,10 @@
 
 ## Designated Pins & GPIOs
 
+__The table below lists GPIOs/Pins programmed to delivery specific operating functions.__
+
 | GPIO | Pin | Assigned Functionality | Notes |
-| --- | --- | --- |
+| --- | --- | --- | --- |
 | 0 | 16 | Joystick x-axis | ADC1_CH0 |
 | 1 | 15 | Joysticj y-axis | ADC1_CH1 |
 | 8 | 5 | Joystick push button | |
