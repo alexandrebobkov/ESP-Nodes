@@ -10,3 +10,6 @@
 | 5 |  | GPIO controlling PWM for the front right motor |
 
 ## Variables
+
+| Variable | Value | Description |
+| MTR_FREQUENCY | 5000 | Default PWM frequency. |
