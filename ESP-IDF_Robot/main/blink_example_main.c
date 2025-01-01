@@ -802,27 +802,11 @@ void app_main(void)
     */
     rc_adc_init();
 
-   /*
+    /*
         MOTORS
     */
     motors_init();
     xTaskCreate(motors_task, "PWM task", 2048, NULL, 10, NULL);
-   
-   /*
-    esp_err_t adc_ret;
-    uint32_t ret_num = 0;
-    uint8_t result[READ_LEN] = {0};
-    memset(result, 0xcc, READ_LEN);
-    s_task_handle = xTaskGetCurrentTaskHandle();
-    adc_continuous_handle_t handle = NULL;
-    continuous_adc_init(channel, sizeof(channel) / sizeof(adc_channel_t), &handle);
-    adc_continuous_evt_cbs_t cbs = {
-        .on_conv_done = s_conv_done_cb,
-    };
-    ESP_ERROR_CHECK(adc_continuous_register_event_callbacks(handle, &cbs, NULL));
-    ESP_ERROR_CHECK(adc_continuous_start(handle));
-    ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
-    char unit[] = ADC_UNIT_STR(ADC_UNIT);*/
 
     while (1) {
         ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");
