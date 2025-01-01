@@ -790,20 +790,19 @@ void app_main(void)
         ret = nvs_flash_init();
     }
     ESP_ERROR_CHECK( ret );
-    wifi_init();
+    wifi_init();        // is it required when using ESP-NOW?
     espnow_init();
     //esp_now_add_peer(&peerInfo);
 
     /*
         ADC
     */
-   rc_adc_init();
+    rc_adc_init();
 
    /*
         MOTORS
     */
-
-   motors_init();
+    motors_init();
    
    /*
     esp_err_t adc_ret;
