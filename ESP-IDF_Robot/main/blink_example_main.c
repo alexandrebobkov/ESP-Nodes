@@ -729,6 +729,8 @@ static void continuous_adc_init(adc_channel_t *channel, uint8_t channel_num, adc
     *out_handle = handle;
 }
 
+static void motors_task (void *pvParameter) {}
+
 void app_main(void)
 {
     // Initialize LED
@@ -804,6 +806,7 @@ void app_main(void)
         MOTORS
     */
     motors_init();
+    xTaskCreate(motors_task, "NAV Keys task", 2048, NULL, 10, NULL);
    
    /*
     esp_err_t adc_ret;
