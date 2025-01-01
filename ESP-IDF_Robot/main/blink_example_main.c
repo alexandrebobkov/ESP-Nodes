@@ -806,7 +806,7 @@ void app_main(void)
         MOTORS
     */
     motors_init();
-    xTaskCreate(motors_task, "NAV Keys task", 2048, NULL, 10, NULL);
+    xTaskCreate(motors_task, "PWM task", 2048, NULL, 10, NULL);
    
    /*
     esp_err_t adc_ret;
