@@ -826,16 +826,9 @@ void app_main(void)
 
     while (1) {
         ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");
-        //blink_led();
-        /* 
-            Toggle the LED state 
-        */
-        //gpio_set_level(BLINK_GPIO, s_led_state);
-        //s_led_state = !s_led_state;
 
         // ADC
-        // Display GPIOs used
-        
+        // Display GPIOs used        
         //ESP_LOGI(TAG, "ADC1_CH0: %d", ADC1_CHANNEL_0);
         //ESP_LOGI(TAG, "ADC1_CH1: %d", ADC1_CHANNEL_1);
 
