@@ -105,6 +105,7 @@ static const char *TAG = "ESP IDF Robot";
 #define ADC_UNIT_STR(unit)          _ADC_UNIT_STR(unit)
 uint32_t x_avg = 0, y_avg = 0;
 static TaskHandle_t s_task_handle;
+static TaskHandle_t motors_handle;
 //static adc_channel_t channel[2] = {ADC_CHANNEL_2, ADC_CHANNEL_3};
 static adc_channel_t channel[2] = {ADC_CHANNEL_0, ADC_CHANNEL_1};
 
