@@ -80,7 +80,7 @@ static void rc_get_raw_data() {
 
     if ((x > 0 && x < 500) && (y > 500)) {
         ESP_LOGW("RC", "FORWARD");
-        //set_motor_pcm(&m.motor1_rpm_pcm, y);
+        // Both sides rotate in forward direction.
         m.motor1_rpm_pcm = y;   // left, forward
         m.motor2_rpm_pcm = y;   // right, forward
         m.motor3_rpm_pcm = 0;
@@ -105,7 +105,7 @@ static void rc_get_raw_data() {
         m.motor1_rpm_pcm = 0;
         m.motor2_rpm_pcm = x;   // right, forward
         m.motor3_rpm_pcm = 0;
-        m.motor4_rpm_pcm = x; // -x ?
+        m.motor4_rpm_pcm = x;   // left, reverse
     }
     else {
         ESP_LOGW("RC", "STAND STILL");
