@@ -758,6 +758,22 @@ static void temp_sensor_task (void *arg) {
 static void rc_task (void *arg) {
     while (true) {
         rc_get_raw_data();
+
+        ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, m.motor1_rpm_pcm);
+        ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT);
+        ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT, m.motor2_rpm_pcm);
+        ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT);
+
+        ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT_REV, m.motor3_rpm_pcm);
+        ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT_REV);
+        ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT_REV, m.motor4_rpm_pcm);
+        ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT_REV);
+
+        ESP_LOGW(TAG, "Motor 1 PWM: %d", m.motor1_rpm_pcm);
+        ESP_LOGW(TAG, "Motor 2 PWM: %d", m.motor2_rpm_pcm);
+        ESP_LOGW(TAG, "Motor 3 PWM: %d", m.motor3_rpm_pcm);
+        ESP_LOGW(TAG, "Motor 4 PWM: %d", m.motor4_rpm_pcm);
+        
         vTaskDelay (250 / portTICK_PERIOD_MS);        
     }
 }
