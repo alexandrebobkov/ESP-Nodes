@@ -755,6 +755,11 @@ static void temp_sensor_task (void *arg) {
         vTaskDelay(5000 / portTICK_PERIOD_MS);
     }
 }
+static void rc_task (void *arg) {
+    while (true) {
+        
+    }
+}
 
 /*
     EXP32-C3 Chip built-in temprature sensor
