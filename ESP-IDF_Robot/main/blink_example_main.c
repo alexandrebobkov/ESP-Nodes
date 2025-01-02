@@ -793,7 +793,7 @@ void app_main(void)
     gpio_reset_pin(BLINK_GPIO);
     gpio_set_direction(BLINK_GPIO, GPIO_MODE_OUTPUT);
     //xTaskCreate(led_task, "LED task", 1024, NULL, 5, NULL);
-    xTaskCreate(led_task, "LED", 1024, NULL, 15, NULL);
+    xTaskCreate(led_task, "LED", 2048, NULL, 15, NULL);
 
     // Configure on-board push button
     io_conf.intr_type = GPIO_INTR_POSEDGE;
