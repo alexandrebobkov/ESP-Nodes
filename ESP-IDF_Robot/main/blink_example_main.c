@@ -15,6 +15,7 @@
 #include "freertos/queue.h"
 #include "driver/gpio.h"
 #include "driver/ledc.h"
+#include "driver/temperature_sensor.h"
 //#include "driver/mcpwm.h"
 #include "esp_log.h"
 #include "led_strip.h"
