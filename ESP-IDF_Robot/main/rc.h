@@ -57,8 +57,8 @@ static esp_err_t rc_adc_init (void) {
 }
 
 static int set_motor_pcm(int duty) {
-    if (abs(duty) >= 8191)
-        return (int)8191;
+    if (abs(duty) > 8100)
+        return (int)8100;
     else
         return (int)abs(duty);
 }
