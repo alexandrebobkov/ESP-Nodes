@@ -739,6 +739,7 @@ static void motors_task (void *pvParameter) {}
 static void led_task (void *pyParameter) {
     while(1)
 	{
+        ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");
 	    gpio_set_level(BLINK_GPIO, s_led_state);
 	    vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
 	}
@@ -781,14 +782,12 @@ void app_main(void)
     /* 
         Configure on-board LED
     */
-    /*
     io_conf.intr_type = GPIO_INTR_DISABLE;
     io_conf.mode = GPIO_MODE_OUTPUT;
     io_conf.pin_bit_mask = GPIO_OUTPUT_PIN_SEL;
     io_conf.pull_down_en = 0;
     io_conf.pull_up_en = 0;
     gpio_config(&io_conf);
-    */
 
     // Configure on-board push button
     io_conf.intr_type = GPIO_INTR_POSEDGE;
