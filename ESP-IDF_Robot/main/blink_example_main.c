@@ -757,7 +757,8 @@ static void temp_sensor_task (void *arg) {
 }
 static void rc_task (void *arg) {
     while (true) {
-        
+        rc_get_raw_data();
+        vTaskDelay (250 / portTICK_PERIOD_MS);        
     }
 }
 
