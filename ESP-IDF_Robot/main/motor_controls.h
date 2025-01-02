@@ -20,7 +20,7 @@ static int interpolate_raw_val (int raw) {
 static int rescale_raw_val (int raw) {
 
     int s;
-    s = 2*raw - 5000; //8940;
+    s = raw*raw - 5000; //8940;
     return s;
 }
 
