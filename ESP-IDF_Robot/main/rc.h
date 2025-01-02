@@ -69,6 +69,7 @@ static int check_motor_pcm(int x) {
 
 static void rc_get_raw_data() {
     int sample = 0;
+    int x = 0, y = 0;
 
     ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, ADC1_CHAN0, &adc_raw[0][0]));
     ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, ADC1_CHAN1, &adc_raw[0][1]));
@@ -80,8 +81,8 @@ static void rc_get_raw_data() {
     if (sample < 10)
         sample ++;
     else if (sample == 10) {
-        int x = check_motor_pcm(rescale_raw_val(adc_raw[0][0]));
-        int y = check_motor_pcm(rescale_raw_val(adc_raw[0][1]));
+        x = check_motor_pcm(rescale_raw_val(adc_raw[0][0]));
+        y = check_motor_pcm(rescale_raw_val(adc_raw[0][1]));
     }
     else {
         sample = 0;
