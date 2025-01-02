@@ -131,6 +131,7 @@ static adc_channel_t channel[2] = {ADC_CHANNEL_0, ADC_CHANNEL_1};
 
 static temperature_sensor_handle_t temp_sensor;
 static temperature_sensor_config_t temp_sensor_config;
+static float tsens_value;
 
 static QueueHandle_t gpio_evt_queue = NULL;
 static uint8_t s_led_state = 1;
@@ -768,7 +769,6 @@ static void chip_sensor_init () {
 }
 static void display_chip_temperature () {
     ESP_LOGI("ESP32-C3", "Reading sensor temperature");
-    float tsens_value;
     ESP_ERROR_CHECK(temperature_sensor_get_celsius(temp_sensor, &tsens_value));
     ESP_LOGW("ESP32-C3", "Temperature value %.02f ℃", tsens_value);
 }
