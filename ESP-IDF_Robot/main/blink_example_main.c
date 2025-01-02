@@ -739,7 +739,7 @@ static void motors_task (void *pvParameter) {}
 static void led_task (void *pyParameter) {
     while(1)
 	{
-	    printf("Hello world!\n");
+	    gpio_set_level(BLINK_GPIO, s_led_state);
 	    vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
 	}
 }
