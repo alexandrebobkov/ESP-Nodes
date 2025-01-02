@@ -733,6 +733,15 @@ static void continuous_adc_init(adc_channel_t *channel, uint8_t channel_num, adc
 
 static void motors_task (void *pvParameter) {}
 
+static void chip_sensor_init () {
+    temperature_sensor_handle_t temp_sensor = NULL;
+    temperature_sensor_config_t temp_sensor_config = TEMPERATURE_SENSOR_CONFIG_DEFAULT(10, 50);
+    ESP_ERROR_CHECK(temperature_sensor_install(&temp_sensor_config, &temp_sensor));
+
+    ESP_LOGI(TAG, "Enable temperature sensor");
+    ESP_ERROR_CHECK(temperature_sensor_enable(temp_sensor));
+}
+
 void app_main(void)
 {
     // Initialize LED
