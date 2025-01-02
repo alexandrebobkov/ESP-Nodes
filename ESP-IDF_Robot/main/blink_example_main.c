@@ -752,7 +752,7 @@ static void display_chip_temperature () {
 
     float tsens_value;
     ESP_ERROR_CHECK(temperature_sensor_get_celsius(temp_sensor, &tsens_value));
-    ESP_LOGI("ESP32-C3", "Temperature value %.02f ℃", tsens_value);
+    ESP_LOGW("ESP32-C3", "Temperature value %.02f ℃", tsens_value);
 }
 
 void app_main(void)
@@ -837,7 +837,7 @@ void app_main(void)
 
     while (1) {
         display_chip_temperature();
-        
+
         ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");
 
         // ADC
