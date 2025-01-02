@@ -744,6 +744,9 @@ static void chip_sensor_init () {
 
 void app_main(void)
 {
+    // Initialize internal temperature sensor
+    chip_sensor_init();
+    
     // Initialize LED
     // Used to control the DC motor
     ledc_init();
