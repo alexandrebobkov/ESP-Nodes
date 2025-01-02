@@ -129,6 +129,9 @@ static void rc_get_raw_data() {
         m.motor3_rpm_pcm = 0;
         m.motor4_rpm_pcm = 0;
     }
+    sample++;
+    }
+    else {
         x_sum = 0;
         y_sum = 0;
         sample = 0;
