@@ -741,12 +741,22 @@ static void chip_sensor_init () {
     ESP_LOGI(TAG, "Enable temperature sensor");
     ESP_ERROR_CHECK(temperature_sensor_enable(temp_sensor));
 }
+static void display_chip_temperature () {
+    ESP_LOGI(TAG, "Read temperature");
+    int cnt = 20;
+    float tsens_value;
+    while (cnt--) {
+        ESP_ERROR_CHECK(temperature_sensor_get_celsius(temp_sensor, &tsens_value));
+        ESP_LOGI(TAG, "Temperature value %.02f ℃", tsens_value);
+        vTaskDelay(pdMS_TO_TICKS(1000));
+    }
+}
 
 void app_main(void)
 {
     // Initialize internal temperature sensor
     chip_sensor_init();
-    
+
     // Initialize LED
     // Used to control the DC motor
     ledc_init();
