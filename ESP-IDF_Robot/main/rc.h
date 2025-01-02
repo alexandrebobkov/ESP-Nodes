@@ -85,8 +85,10 @@ static void rc_get_raw_data() {
         sample ++;
     }
     else if (sample == 10) {
-        x = check_motor_pcm(rescale_raw_val(adc_raw[0][0]));
-        y = check_motor_pcm(rescale_raw_val(adc_raw[0][1]));
+        //x = check_motor_pcm(rescale_raw_val(adc_raw[0][0]));
+        //y = check_motor_pcm(rescale_raw_val(adc_raw[0][1]));
+        x = x_sum / 10;
+        y = y_sum / 10;
     }
     else {
         sample = 0;
