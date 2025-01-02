@@ -56,13 +56,13 @@ static esp_err_t rc_adc_init (void) {
     return ESP_OK;
 }
 
-static int check_motor_pcm(int duty) {
-    if (duty > 8100)
-        return (int)8100;
-    else if (duty < 8100)
+static int check_motor_pcm(int x) {
+    if (x > 8100)
+        return (int) 8100;
+    else if (x < 8100)
         return (int)-8100;
     else
-        return (int)duty;
+        return (int)x;
 }
 
 
@@ -71,8 +71,8 @@ static void rc_get_raw_data() {
     ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, ADC1_CHAN1, &adc_raw[0][1]));
     ESP_LOGI("ESP IDF Robot", "ADC%d Channel[%d] Raw Data: %d", ADC_UNIT_1 + 1, ADC1_CHAN0, adc_raw[0][0]);
     ESP_LOGI("ESP IDF Robot", "ADC%d Channel[%d] Raw Data: %d", ADC_UNIT_1 + 1, ADC1_CHAN1, adc_raw[0][1]);
-    ESP_LOGI("Joystick L/R", "Position: %d", rescale_raw_val(adc_raw[0][0]));
-    ESP_LOGI("Joystick F", "Position: %d", rescale_raw_val(adc_raw[0][1]));
+    ESP_LOGI("Joystick L/R", "Position: %d", check_motor_pcm(rescale_raw_val(adc_raw[0][0])));
+    ESP_LOGI("Joystick F", "Position: %d", check_motor_pcm(rescale_raw_val(adc_raw[0][1])));
 
     int x = rescale_raw_val(adc_raw[0][0]);
     int y = rescale_raw_val(adc_raw[0][1]);
