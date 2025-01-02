@@ -89,9 +89,7 @@ static void rc_get_raw_data() {
         //y = check_motor_pcm(rescale_raw_val(adc_raw[0][1]));
         x = x_sum / 10;
         y = y_sum / 10;
-    }
-    else {
-        sample = 0;
+    
 
     if ((x > 0 && x < 500) && (y > 500)) {
         ESP_LOGW("RC", "FORWARD");
@@ -132,6 +130,11 @@ static void rc_get_raw_data() {
         m.motor3_rpm_pcm = 0;
         m.motor4_rpm_pcm = 0;
     }
+    }
+    else {
+        x_sum = 0;
+        y_sum = 0;
+        sample = 0;
     }
 
     ESP_LOGI("PWM", "Motor 1 PWM: %d", m.motor1_rpm_pcm);
