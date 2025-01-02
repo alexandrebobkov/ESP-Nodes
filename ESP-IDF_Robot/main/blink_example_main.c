@@ -857,7 +857,7 @@ void app_main(void)
     //xTaskCreate(motors_task, "PWM task", 2048, NULL, 10, NULL);
 
     while (1) {
-        display_chip_temperature();
+        //display_chip_temperature();
 
         //ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");
 
