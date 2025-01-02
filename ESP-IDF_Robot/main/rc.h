@@ -56,7 +56,7 @@ static esp_err_t rc_adc_init (void) {
     return ESP_OK;
 }
 
-static int set_motor_pcm(int duty) {
+static int check_motor_pcm(int duty) {
     if (abs(duty) > 8100)
         return (int)8100;
     else
@@ -72,8 +72,8 @@ static void rc_get_raw_data() {
     ESP_LOGI("Joystick L/R", "Position: %d", rescale_raw_val(adc_raw[0][0]));
     ESP_LOGI("Joystick F", "Position: %d", rescale_raw_val(adc_raw[0][1]));
 
-    int x = rescale_raw_val(adc_raw[0][0]);
-    int y = rescale_raw_val(adc_raw[0][1]);
+    int x = check_motor_pcm(rescale_raw_val(adc_raw[0][0]));
+    int y = check_motor_pcm(rescale_raw_val(adc_raw[0][1]));
 
     if ((x > 0 && x < 500) && (y > 500)) {
         ESP_LOGW("RC", "FORWARD");
