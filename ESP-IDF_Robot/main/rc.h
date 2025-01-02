@@ -56,12 +56,13 @@ static esp_err_t rc_adc_init (void) {
     return ESP_OK;
 }
 
-static void set_motor_pcm(int* motor , int duty) {
+static int set_motor_pcm(int duty) {
     if (abs(duty) >= 8191)
-        *motor = 8191;
+        return (int)8191;
     else
-        *motor = abs(duty);
+        return (int)abs(duty);
 }
+
 
 static void rc_get_raw_data() {
     ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, ADC1_CHAN0, &adc_raw[0][0]));
@@ -73,6 +74,7 @@ static void rc_get_raw_data() {
 
     int x = rescale_raw_val(adc_raw[0][0]);
     int y = rescale_raw_val(adc_raw[0][1]);
+
     if ((x > 0 && x < 500) && (y > 500)) {
         ESP_LOGW("RC", "FORWARD");
         //set_motor_pcm(&m.motor1_rpm_pcm, y);
