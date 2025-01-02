@@ -745,6 +745,11 @@ static void led_task (void *arg) {
         s_led_state = !s_led_state;
 	}
 }
+static void temp_sensor_task (void *arg) {
+    while (true) {
+        
+    }
+}
 
 /*
     EXP32-C3 Chip built-in temprature sensor
