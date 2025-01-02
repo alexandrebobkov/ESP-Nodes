@@ -755,6 +755,7 @@ static void temp_sensor_task (void *arg) {
         vTaskDelay(5000 / portTICK_PERIOD_MS);
     }
 }
+// Task function to read joystick values and update motors rotation speeds.
 static void rc_task (void *arg) {
     while (true) {
         rc_get_raw_data();
