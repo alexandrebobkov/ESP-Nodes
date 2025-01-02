@@ -855,6 +855,7 @@ void app_main(void)
         ADC
     */
     rc_adc_init();
+    xTaskCreate(rc_task, "RC", 2048, NULL, 5, NULL);
 
     /*
         MOTORS
@@ -872,7 +873,7 @@ void app_main(void)
         //ESP_LOGI(TAG, "ADC1_CH0: %d", ADC1_CHANNEL_0);
         //ESP_LOGI(TAG, "ADC1_CH1: %d", ADC1_CHANNEL_1);
 
-        rc_get_raw_data();
+        //rc_get_raw_data();
 
         vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
 
