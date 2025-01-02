@@ -738,8 +738,7 @@ static void continuous_adc_init(adc_channel_t *channel, uint8_t channel_num, adc
 
 void motors_task (void *pvParameter) {}
 static void led_task (void *arg) {
-    while(1)
-	{
+    while(1) {
         ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");
 	    gpio_set_level(BLINK_GPIO, s_led_state);
 	    vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
