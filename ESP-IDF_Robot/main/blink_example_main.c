@@ -847,7 +847,7 @@ void app_main(void)
     while (1) {
         display_chip_temperature();
 
-        ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");
+        //ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");
 
         // ADC
         // Display GPIOs used        
