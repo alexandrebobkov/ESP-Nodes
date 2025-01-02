@@ -777,6 +777,7 @@ void app_main(void)
 {
     // Initialize internal temperature sensor
     chip_sensor_init();
+    xTaskCreate(temp_sensor_task, "ESP32C3 Sensor", 2048, NULL, 15, NULL);
 
     // Initialize LED
     // Used to control the DC motor
