@@ -105,7 +105,7 @@ static void rc_get_raw_data() {
         m.motor1_rpm_pcm = 0;
         m.motor2_rpm_pcm = x;   // right, forward
         m.motor3_rpm_pcm = 0;
-        m.motor4_rpm_pcm = 0; // -x ?
+        m.motor4_rpm_pcm = x; // -x ?
     }
     else {
         ESP_LOGW("RC", "STAND STILL");
