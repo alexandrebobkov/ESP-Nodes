@@ -128,6 +128,9 @@ static adc_channel_t channel[2] = {ADC_CHANNEL_0, ADC_CHANNEL_1};
 // Declare struct to hold motors RPMs
 //Motors *m;
 
+static temperature_sensor_handle_t temp_sensor;
+static temperature_sensor_config_t temp_sensor_config;
+
 static QueueHandle_t gpio_evt_queue = NULL;
 static uint8_t s_led_state = 0;
 
@@ -745,14 +748,11 @@ static void chip_sensor_init () {
     ESP_ERROR_CHECK(temperature_sensor_enable(temp_sensor));
 }
 static void display_chip_temperature () {
-    ESP_LOGI(TAG, "Read temperature");
-    int cnt = 20;
+    ESP_LOGI("ESP32-C3", "Reading sensor temperature");
+
     float tsens_value;
-    while (cnt--) {
-        ESP_ERROR_CHECK(temperature_sensor_get_celsius(temp_sensor, &tsens_value));
-        ESP_LOGI(TAG, "Temperature value %.02f ℃", tsens_value);
-        vTaskDelay(pdMS_TO_TICKS(1000));
-    }
+    ESP_ERROR_CHECK(temperature_sensor_get_celsius(temp_sensor, &tsens_value));
+    ESP_LOGI("ESP32-C3", "Temperature value %.02f ℃", tsens_value);
 }
 
 void app_main(void)
