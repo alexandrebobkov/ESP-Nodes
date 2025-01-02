@@ -342,7 +342,6 @@ static void wifi_init()
     ESP_ERROR_CHECK( esp_wifi_init(&cfg) );
     ESP_ERROR_CHECK( esp_wifi_set_storage(WIFI_STORAGE_RAM) );
     ESP_ERROR_CHECK( esp_wifi_set_mode(ESPNOW_WIFI_MODE) );
-    //ESP_ERROR_CHECK( esp_wifi_set_mode(CONFIG_ESPNOW_WIFI_MODE_STATION_SOFTAP) ); 
     ESP_ERROR_CHECK( esp_wifi_start());
     ESP_ERROR_CHECK( esp_wifi_set_channel(CONFIG_ESPNOW_CHANNEL, WIFI_SECOND_CHAN_NONE));
 }
@@ -741,6 +740,9 @@ void app_main(void)
     // Initialize the config structure.
     gpio_config_t io_conf = {};
 
+    /* Configure the peripheral according to the LED type */
+    //configure_led();
+
     /* 
         Configure on-board LED
     */
@@ -804,7 +806,7 @@ void app_main(void)
         MOTORS
     */
     motors_init();
-    xTaskCreate(motors_task, "PWM task", 2048, NULL, 10, NULL);
+    //xTaskCreate(motors_task, "PWM task", 2048, NULL, 10, NULL);
 
     while (1) {
         ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");
