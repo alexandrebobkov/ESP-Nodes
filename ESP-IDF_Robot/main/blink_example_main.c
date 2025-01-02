@@ -747,7 +747,11 @@ static void led_task (void *arg) {
 }
 static void temp_sensor_task (void *arg) {
     while (true) {
-        
+        ESP_LOGI("ESP32-C3", "Reading sensor temperature");
+        float tsens_value;
+        ESP_ERROR_CHECK(temperature_sensor_get_celsius(temp_sensor, &tsens_value));
+        ESP_LOGW("ESP32-C3", "Temperature value %.02f ℃", tsens_value);
+        vTaskDelay(5000 / portTICK_PERIOD_MS);
     }
 }
 
@@ -764,7 +768,6 @@ static void chip_sensor_init () {
 }
 static void display_chip_temperature () {
     ESP_LOGI("ESP32-C3", "Reading sensor temperature");
-
     float tsens_value;
     ESP_ERROR_CHECK(temperature_sensor_get_celsius(temp_sensor, &tsens_value));
     ESP_LOGW("ESP32-C3", "Temperature value %.02f ℃", tsens_value);
