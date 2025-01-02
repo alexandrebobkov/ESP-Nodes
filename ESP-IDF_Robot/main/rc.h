@@ -79,8 +79,9 @@ static void rc_get_raw_data() {
     ESP_LOGI("Joystick L/R", "Position: %d (%d)", rescale_raw_val(adc_raw[0][0]),  check_motor_pcm(rescale_raw_val(adc_raw[0][0])));
     ESP_LOGI("Joystick F", "Position: %d (%d)", rescale_raw_val(adc_raw[0][1]), check_motor_pcm(rescale_raw_val(adc_raw[0][1])));
 
-    if (sample < 10)
+    if (sample < 10) {
         sample ++;
+    }
     else if (sample == 10) {
         x = check_motor_pcm(rescale_raw_val(adc_raw[0][0]));
         y = check_motor_pcm(rescale_raw_val(adc_raw[0][1]));
