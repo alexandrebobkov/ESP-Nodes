@@ -76,7 +76,7 @@ static void rc_get_raw_data() {
     ESP_LOGI("ESP IDF Robot", "ADC%d Channel[%d] Raw Data: %d", ADC_UNIT_1 + 1, ADC1_CHAN1, adc_raw[0][1]);
     ESP_LOGI("Joystick L/R", "Position: %d (%d)", rescale_raw_val(adc_raw[0][0]),  check_motor_pcm(rescale_raw_val(adc_raw[0][0])));
     ESP_LOGI("Joystick F", "Position: %d (%d)", rescale_raw_val(adc_raw[0][1]), check_motor_pcm(rescale_raw_val(adc_raw[0][1])));
-    ESP_LOGW("Joystick", " sample %d, (x,y): (%d, %d)", sample, x_sum, y_sum);
+    ESP_LOGW("Joystick", " sample %d, (x,y): (%d, %d)", sample, x, y);
 
     if (sample < 10) {
         x_sum += check_motor_pcm(rescale_raw_val(adc_raw[0][0]));
