@@ -57,12 +57,13 @@ static esp_err_t rc_adc_init (void) {
 }
 
 static int check_motor_pcm(int x) {
-    if (x > 8100)
-        return (int) 8100;
-    else if (x < -8100)
-        return (int)-8100;
+    int lim = 7440;
+    if (x > lim)
+        return lim;
+    else if (x < -lim)
+        return -lim;
     else
-        return (int)x;
+        return x;
 }
 
 
