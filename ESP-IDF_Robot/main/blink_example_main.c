@@ -790,7 +790,7 @@ void app_main(void)
     io_conf.pull_down_en = 0;
     io_conf.pull_up_en = 0;
     gpio_config(&io_conf);
-    xTaskCreate(led_task, "LED task", 512, NULL, 5, NULL);
+    xTaskCreate(led_task, "LED task", 1024, NULL, 5, NULL);
 
     // Configure on-board push button
     io_conf.intr_type = GPIO_INTR_POSEDGE;
