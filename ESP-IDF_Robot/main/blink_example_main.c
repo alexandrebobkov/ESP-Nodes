@@ -736,7 +736,7 @@ static void continuous_adc_init(adc_channel_t *channel, uint8_t channel_num, adc
     *out_handle = handle;
 }
 
-static void motors_task (void *pvParameter) {}
+void motors_task (void *pvParameter) {}
 void led_task (void *pyParameter) {
     while(1)
 	{
