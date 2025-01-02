@@ -134,6 +134,7 @@ static temperature_sensor_config_t temp_sensor_config;
 
 static QueueHandle_t gpio_evt_queue = NULL;
 static uint8_t s_led_state = 1;
+static bool s_led_state = true;
 
 /*  ============================
             ESP NOW
