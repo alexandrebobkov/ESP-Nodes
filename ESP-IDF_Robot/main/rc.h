@@ -70,6 +70,7 @@ static int check_motor_pcm(int x) {
 static void rc_get_raw_data() {
     int sample = 0;
     int x = 0, y = 0;
+    int x_sum = 0, y_sum = 0;
 
     ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, ADC1_CHAN0, &adc_raw[0][0]));
     ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, ADC1_CHAN1, &adc_raw[0][1]));
