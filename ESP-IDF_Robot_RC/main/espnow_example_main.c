@@ -436,7 +436,7 @@ void deletePeer (void) {
 /* Prepare ESPNOW data to be sent. */
 void sensors_data_prepare(espnow_data_packet_t *send_param)
 {
-    example_espnow_data_t *buf = (example_espnow_data_t *)send_param->buffer;
+    sensors_data_t *buffer = (example_espnow_data_t *)send_param->buffer;
 
     assert(send_param->len >= sizeof(example_espnow_data_t));
 
