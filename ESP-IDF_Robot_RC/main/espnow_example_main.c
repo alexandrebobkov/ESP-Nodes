@@ -516,7 +516,7 @@ void app_main(void)
     }
     ESP_ERROR_CHECK( ret );
 
-    wifi_init();
+    /*wifi_init();
     esp_now_init();
     memcpy (peerInfo.peer_addr, receiver_mac, 6);
     esp_now_add_peer(&peerInfo);
@@ -526,7 +526,9 @@ void app_main(void)
     }
     else
         ESP_LOGE("ESP-NOW", "Receiver does not exists.");
-    xTaskCreate (rc_send_data_task, "RC", 2048, NULL, 15, NULL);
+    xTaskCreate (rc_send_data_task, "RC", 2048, NULL, 15, NULL);*/
+
+    rc_espnow_init();
 
     /*
     // Initialize NVS
