@@ -30,9 +30,9 @@
 #include "esp_crc.h"
 #include "espnow_example.h"
 
-//#include "rc.h"
-//#include "motor_controls.h"
-//#include "controls.h"
+#include "rc.h"
+#include "motor_controls.h"
+#include "controls.h"
 
 #define PROJ_X                      (1)                     // ADC1_CH1; 0 GPIO joystick, x-axis
 #define PROJ_Y                      (0)                     // ADC1_CH0; 1 GPIO joystick, y-axis
@@ -435,13 +435,18 @@ void sendData (void) {
         ESP_LOGE("ESP-NOW", "Error sending data!");
         deletePeer();
     }
+    else
+        ESP_LOGW("ESP-NOW", "Data was sent.");
 }
 static void rc_send_data_task (void *arg) {
-    flagToSend = !flagToSend;
-    if (esp_now_is_peer_exist(receiver_mac)) {
-        sendData();
+
+    while (true) {
+        flagToSend = !flagToSend;
+        if (esp_now_is_peer_exist(receiver_mac)) {
+            sendData();
+        }
+        vTaskDelay (1000 / portTICK_PERIOD_MS);
     }
-    vTaskDelay (1000 / portTICK_PERIOD_MS); 
 }
 
 void app_main(void)
@@ -460,13 +465,17 @@ void app_main(void)
     }
     ESP_ERROR_CHECK( ret );
 
-   wifi_init();
-   esp_now_init();
-   peerInfo.channel = 1;
-   peerInfo.encrypt = false;
-   memcpy (peerInfo.peer_addr, receiver_mac, 6);
-   esp_now_add_peer(&peerInfo);
-   xTaskCreate (rc_send_data_task, "RC", 2048, NULL, 15, NULL);
+    wifi_init();
+    esp_now_init();
+    memcpy (peerInfo.peer_addr, receiver_mac, 6);
+    esp_now_add_peer(&peerInfo);
+    if (esp_now_is_peer_exist(receiver_mac)) {
+        ESP_LOGI("ESP-NOW", "Receiver exists.");
+        sendData();
+    }
+    else
+        ESP_LOGE("ESP-NOW", "Receiver does not exists.");
+   //xTaskCreate (rc_send_data_task, "RC", 2048, NULL, 15, NULL);
 
     /*
     // Initialize NVS
