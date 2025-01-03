@@ -57,6 +57,7 @@ static uint8_t broadcast_mac[ESP_NOW_ETH_ALEN]  = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
 static uint8_t robot_mac[ESP_NOW_ETH_ALEN]      = {0xE4, 0xB0, 0x63, 0x17, 0x9E, 0x45};     // MAC address of Robot
 static uint8_t rc_mac[ESP_NOW_ETH_ALEN]         = {0x34, 0xB7, 0xDA, 0xF9, 0x33, 0x8D};     // MAC address of Remote Control
 static sensors_data_t *buf;
+static sensors_data_t *buffer;
 
 static void rc_send_data_task2 (void *pvParameter);
 
@@ -462,7 +463,7 @@ void sensors_data_prepare(espnow_data_packet_t *send_packet)
 
 void sendData (void) {
     // Send data, specify receiver MAC address, pointer to the data being sent, and length of data being sent.
-    sensors_data_t *buffer;
+    //sensors_data_t *buffer;
     buffer = malloc(sizeof(sensors_data_t));
     buffer->type = 1;
     buffer->crc = 0;
