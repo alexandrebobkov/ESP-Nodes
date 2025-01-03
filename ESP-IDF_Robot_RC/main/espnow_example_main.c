@@ -56,6 +56,8 @@ static uint8_t broadcast_mac[ESP_NOW_ETH_ALEN]  = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
 static uint8_t robot_mac[ESP_NOW_ETH_ALEN]      = {0xE4, 0xB0, 0x63, 0x17, 0x9E, 0x45};     // MAC address of Robot
 static uint8_t rc_mac[ESP_NOW_ETH_ALEN]         = {0x34, 0xB7, 0xDA, 0xF9, 0x33, 0x8D};     // MAC address of Remote Control
 
+static void rc_send_data_task2 (void *pvParameter);
+
 #define ESPNOW_MAXDELAY 512
 
 static const char *TAG = "Remote Controller";
@@ -500,7 +502,6 @@ static void rc_send_data_task2 (void *pvParameter) {
         memcpy(send_packet->dest_mac, receiver_mac, ESP_NOW_ETH_ALEN);
         if (esp_now_send(send_packet->dest_mac, send_packet->buffer, send_packet->len) != ESP_OK) {
             ESP_LOGE(TAG, "Send error");
-            example_espnow_deinit(send_packet);
             vTaskDelete(NULL);
         }
         vTaskDelay(5000 / portTICK_PERIOD_MS);
