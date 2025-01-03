@@ -806,7 +806,7 @@ void onDataReceived (uint8_t *mac_addr, uint8_t *data, uint8_t data_len) {
     ESP_LOGI(TAG, "y-axis: 0x%04X", buf->y_axis);
     ESP_LOGI(TAG, "PCM 1: 0x%04X", buf->motor1_rpm_pcm);*/
 
-    ESP_LOGW(TAG, "Data was received (%i bytes)", len);
+    ESP_LOGW(TAG, "Data was received (%i bytes)", data_len);
     ESP_LOGI(TAG, "x-axis: 0x%04X", buf.x_axis);
     ESP_LOGI(TAG, "y-axis: 0x%04X", buf.y_axis);
     ESP_LOGI(TAG, "PCM 1: 0x%04X", buf.motor1_rpm_pcm);
