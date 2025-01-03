@@ -478,7 +478,7 @@ static esp_err_t rc_espnow_init () {
 }
 static void rc_send_data_task2 (void *arg) {
 
-    espnow_data_packet_t *send_packet
+    espnow_data_packet_t *send_packet;
     uint8_t r = esp_now_send(send_packet->dest_mac, send_packet->buffer, send_packet->len);
 }
 
