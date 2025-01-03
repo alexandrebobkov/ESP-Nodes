@@ -484,7 +484,7 @@ static void rc_send_data_task2 (void *pvParameter) {
     espnow_data_packet_t *send_packet = (espnow_data_packet_t *)pvParameter;
 
     while (true) {
-        memcpy(send_packet->dest_mac, receiver_mac, ESP_NOW_ETH_ALEN);
+        //memcpy(send_packet->dest_mac, receiver_mac, ESP_NOW_ETH_ALEN);
         esp_err_t r = esp_now_send(send_packet->dest_mac, send_packet->buffer, send_packet->len);
         if (r != ESP_OK) {
             ESP_LOGE(TAG, "Send error.");
@@ -505,7 +505,8 @@ static esp_err_t rc_espnow_init (void) {
     }
 
     memset(send_packet, 0, sizeof(espnow_data_packet_t));
-    memcpy(send_packet->dest_mac, receiver_mac, ESP_NOW_ETH_ALEN);
+    //memcpy(send_packet->dest_mac, receiver_mac, ESP_NOW_ETH_ALEN);
+    send_packet->dest_mac = receiver_mac;
     send_packet->len = CONFIG_ESPNOW_SEND_LEN; // 128
     send_packet->buffer = malloc(CONFIG_ESPNOW_SEND_LEN);
     sensors_data_prepare(send_packet);
