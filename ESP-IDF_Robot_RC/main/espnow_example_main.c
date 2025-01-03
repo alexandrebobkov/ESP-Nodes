@@ -32,7 +32,7 @@
 
 #include "rc.h"
 #include "motor_controls.h"
-#include "controls.h"
+//#include "controls.h"
 
 #define PROJ_X                      (1)                     // ADC1_CH1; 0 GPIO joystick, x-axis
 #define PROJ_Y                      (0)                     // ADC1_CH0; 1 GPIO joystick, y-axis
