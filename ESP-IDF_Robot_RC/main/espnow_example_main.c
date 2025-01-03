@@ -440,11 +440,8 @@ void sensors_data_prepare(espnow_data_packet_t *send_param)
 
     assert(send_param->len >= sizeof(sensors_data_t));
 
-    buf->type = 1; // UNICAST IS_BROADCAST_ADDR(send_param->dest_mac) ? EXAMPLE_ESPNOW_DATA_BROADCAST : EXAMPLE_ESPNOW_DATA_UNICAST;
-    buf->state = send_param->state;
-    buf->seq_num = s_example_espnow_seq[buf->type]++;
-    buf->crc = 0;
-    buf->magic = send_param->magic;
+    buffer->type = 1; // UNICAST IS_BROADCAST_ADDR(send_param->dest_mac) ? EXAMPLE_ESPNOW_DATA_BROADCAST : EXAMPLE_ESPNOW_DATA_UNICAST;
+    buffer->crc = 0;
     /* Fill all remaining bytes after the data with random values */
     //esp_fill_random(buf->payload, send_param->len - sizeof(example_espnow_data_t));
     //memcpy(buf->payload, (uint8_t)16, send_param->len - sizeof(example_espnow_data_t));
