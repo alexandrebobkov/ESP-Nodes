@@ -473,7 +473,8 @@ void sendData (void) {
     buffer->motor4_rpm_pcm = 0;
     ESP_LOGW(TAG, "x-axis: %x", (uint8_t)buffer->x_axis);
 
-    uint8_t result = esp_now_send(receiver_mac, &flagToSend, sizeof(flagToSend));
+    //uint8_t result = esp_now_send(receiver_mac, &flagToSend, sizeof(flagToSend));
+    uint8_t result = esp_now_send(receiver_mac, &buffer, sizeof(buffer));
     if (result != 0) {
         ESP_LOGE("ESP-NOW", "Error sending data!");
         deletePeer();
