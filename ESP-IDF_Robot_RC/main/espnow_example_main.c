@@ -485,8 +485,9 @@ static void rc_send_data_task2 (void *pvParameter) {
 
     while (true) {
         memcpy(send_packet->dest_mac, receiver_mac, ESP_NOW_ETH_ALEN);
-        if (esp_now_send(send_packet->dest_mac, send_packet->buffer, send_packet->len) != ESP_OK) {
-            ESP_LOGE(TAG, "Send error");
+        esp_err_t r = esp_now_send(send_packet->dest_mac, send_packet->buffer, send_packet->len);
+        if (r != ESP_OK) {
+            ESP_LOGE(TAG, "Send error, %i", r);
             vTaskDelete(NULL);
             break;
         }
