@@ -483,6 +483,8 @@ static esp_err_t rc_espnow_init (void) {
         return ESP_FAIL;
     }
 
+    memset(send_packet, 0, sizeof(espnow_data_packet_t));
+
     xTaskCreate(example_espnow_task, "controller data packets task", 2048, send_packet, 14, NULL);
 
 }
