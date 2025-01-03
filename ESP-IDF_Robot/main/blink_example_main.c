@@ -110,7 +110,7 @@ static TaskHandle_t s_task_handle;
 static TaskHandle_t m_task_handle;  // Task for controlling motors PWMs
 //static adc_channel_t channel[2] = {ADC_CHANNEL_2, ADC_CHANNEL_3};
 static adc_channel_t channel[2] = {ADC_CHANNEL_0, ADC_CHANNEL_1};
-
+static sensors_data_t *buf;
 
 #define ESP_INTR_FLAG_DEFAULT 0
 
@@ -795,6 +795,14 @@ static void display_chip_temperature () {
     ESP_LOGI("ESP32-C3", "Reading sensor temperature");
     ESP_ERROR_CHECK(temperature_sensor_get_celsius(temp_sensor, &tsens_value));
     ESP_LOGW("ESP32-C3", "Temperature value %.02f ℃", tsens_value);
+}
+
+void onDataReceived (uint8_t *mac_addr, uint8_t *data, uint8_t data_len) {
+
+    //memcpy(buf, data, data_len);
+    buf = (sensors_data_t*)data;
+    ESP_LOGW(TAG, "Data was received");
+    ESP_LOGI(TAG, "x-axis: %i", buf->x_axis);
 }
 
 void app_main(void)
