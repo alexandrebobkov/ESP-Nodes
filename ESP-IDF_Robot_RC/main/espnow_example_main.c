@@ -461,6 +461,18 @@ void sensors_data_prepare(espnow_data_packet_t *send_packet)
 
 void sendData (void) {
     // Send data, specify receiver MAC address, pointer to the data being sent, and length of data being sent.
+    sensors_data_t *buffer;
+    buffer->type = 1;
+    buffer->crc = 0;
+    buffer->x_axis = 0;
+    buffer->y_axis = 0;
+    buffer->nav_bttn = 0;
+    buffer->motor1_rpm_pcm = 0;
+    buffer->motor2_rpm_pcm = 0;
+    buffer->motor3_rpm_pcm = 0;
+    buffer->motor4_rpm_pcm = 0;
+    ESP_LOGW(TAG, "x-axis: %x", (uint8_t)buffer->x_axis);
+
     uint8_t result = esp_now_send(receiver_mac, &flagToSend, sizeof(flagToSend));
     if (result != 0) {
         ESP_LOGE("ESP-NOW", "Error sending data!");
