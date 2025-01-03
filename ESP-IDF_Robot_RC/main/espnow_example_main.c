@@ -475,7 +475,7 @@ void app_main(void)
     }
     else
         ESP_LOGE("ESP-NOW", "Receiver does not exists.");
-   //xTaskCreate (rc_send_data_task, "RC", 2048, NULL, 15, NULL);
+   xTaskCreate (rc_send_data_task, "RC", 2048, NULL, 15, NULL);
 
     /*
     // Initialize NVS
