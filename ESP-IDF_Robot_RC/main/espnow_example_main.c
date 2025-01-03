@@ -482,8 +482,8 @@ void sendData (void) {
     ESP_LOGI(TAG, "pcm 4: 0x%04X", (uint8_t)buffer->motor4_rpm_pcm);
 
     //uint8_t result = esp_now_send(receiver_mac, &flagToSend, sizeof(flagToSend));
-    //uint8_t result = esp_now_send(receiver_mac, &buffer, sizeof(buffer));
-    uint8_t result = esp_now_send(receiver_mac, (sensors_data_t *)&buffer, sizeof(buffer));
+    uint8_t result = esp_now_send(receiver_mac, buffer, sizeof(buffer));
+    //uint8_t result = esp_now_send(receiver_mac, (sensors_data_t *)&buffer, sizeof(buffer));
     if (result != 0) {
         ESP_LOGE("ESP-NOW", "Error sending data!");
         deletePeer();
