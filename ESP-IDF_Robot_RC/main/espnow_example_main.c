@@ -449,8 +449,8 @@ void app_main(void)
     /*
         ADC
     */
-   rc_adc_init();
-   xTaskCreate(rc_task, "RC", 2048, NULL, 5, NULL);
+   //rc_adc_init();
+   //xTaskCreate(rc_task, "RC", 2048, NULL, 5, NULL);
 
    wifi_init();
    esp_now_init();
