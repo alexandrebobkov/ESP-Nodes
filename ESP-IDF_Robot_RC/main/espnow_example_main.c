@@ -470,13 +470,13 @@ void sendData (void) {
     buffer->x_axis = (uint8_t)240;
     buffer->y_axis = (uint8_t)2040;
     buffer->nav_bttn = 0;
-    buffer->motor1_rpm_pcm = (uint8_t)10;
+    buffer->motor1_rpm_pcm = 10;
     buffer->motor2_rpm_pcm = 0;
     buffer->motor3_rpm_pcm = 0;
     buffer->motor4_rpm_pcm = 0;
     ESP_LOGI(TAG, "x-axis: 0x%04X", (uint8_t)buffer->x_axis);
     ESP_LOGI(TAG, "y-axis: 0x%04X", (uint8_t)buffer->y_axis);
-    ESP_LOGI(TAG, "pcm 1: 0x%04X", (uint8_t)buffer->motor1_rpm_pcm);
+    ESP_LOGI(TAG, "pcm 1: 0x%04X", buffer->motor1_rpm_pcm);
     ESP_LOGI(TAG, "pcm 2: 0x%04X", (uint8_t)buffer->motor2_rpm_pcm);
     ESP_LOGI(TAG, "pcm 3: 0x%04X", (uint8_t)buffer->motor3_rpm_pcm);
     ESP_LOGI(TAG, "pcm 4: 0x%04X", (uint8_t)buffer->motor4_rpm_pcm);
