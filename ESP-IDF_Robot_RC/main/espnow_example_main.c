@@ -68,7 +68,7 @@ static uint16_t s_example_espnow_seq[EXAMPLE_ESPNOW_DATA_MAX] = { 0, 0 };
 static void example_espnow_deinit(example_espnow_send_param_t *send_param);
 
 /* WiFi should start before using ESPNOW */
-static void example_wifi_init(void)
+static void wifi_init(void)
 {
     ESP_ERROR_CHECK(esp_netif_init());
     ESP_ERROR_CHECK(esp_event_loop_create_default());
