@@ -444,6 +444,11 @@ void sensors_data_prepare(espnow_data_packet_t *send_param)
     buffer->crc = 0;
     buffer->x_axis = 0;
     buffer->y_axis = 0;
+    buffer->nav_bttn = 0;
+    buffer->motor1_rpm_pcm = 0;
+    buffer->motor2_rpm_pcm = 0;
+    buffer->motor3_rpm_pcm = 0;
+    buffer->motor4_rpm_pcm = 0;
     ESP_LOGW(TAG, "x-axis: %x", (uint8_t)buffer->x_axis);
     buf->crc = esp_crc16_le(UINT16_MAX, (uint8_t const *)buf, send_param->len);
 }
