@@ -474,11 +474,12 @@ static void rc_send_data_task (void *arg) {
 }
 
 static esp_err_t rc_espnow_init () {
-    
+
 }
 static void rc_send_data_task2 (void *arg) {
 
-    uint8_t r = esp_now_send(send_param->dest_mac, send_param->buffer, send_param->len);
+    espnow_data_packet_t *send_packet
+    uint8_t r = esp_now_send(send_packet->dest_mac, send_packet->buffer, send_packet->len);
 }
 
 void app_main(void)
