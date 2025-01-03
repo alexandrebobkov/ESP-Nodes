@@ -478,6 +478,10 @@ static esp_err_t rc_espnow_init (void) {
     espnow_data_packet_t *send_packet;
 
     send_packet = malloc(sizeof(espnow_data_packet_t));
+    if (send_packet == NULL) {
+        ESP_LOGE(TAG, "malloc fail.");
+        return ESP_FAIL;
+    }
 
     xTaskCreate(example_espnow_task, "controller data packets task", 2048, send_packet, 14, NULL);
 
