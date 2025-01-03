@@ -430,6 +430,9 @@ void app_main(void)
    rc_adc_init();
    xTaskCreate(rc_task, "RC", 2048, NULL, 5, NULL);
 
+   esp_now_init();
+
+    /*
     // Initialize NVS
     esp_err_t ret = nvs_flash_init();
     if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
@@ -440,4 +443,5 @@ void app_main(void)
 
     example_wifi_init();
     example_espnow_init();
+    */
 }
