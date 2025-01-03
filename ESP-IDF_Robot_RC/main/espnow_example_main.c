@@ -551,7 +551,7 @@ void onDataReceived (uint8_t *mac_addr, uint8_t *data, uint8_t data_len) {
 
 void onDataSent (uint8_t *mac_addr, esp_now_send_status_t status) {
     status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
-    ESP_LOGw(TAG, "Packet send status: %s", status);
+    ESP_LOGW(TAG, "Packet send status: %s", status);
 }
 
 
