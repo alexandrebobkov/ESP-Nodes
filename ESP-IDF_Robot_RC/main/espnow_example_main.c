@@ -30,6 +30,13 @@
 #include "esp_crc.h"
 #include "espnow_example.h"
 
+#include "rc.h"
+
+#define PROJ_X                      (1)                     // ADC1_CH1; 0 GPIO joystick, x-axis
+#define PROJ_Y                      (0)                     // ADC1_CH0; 1 GPIO joystick, y-axis
+#define NAV_BTN                     (8)                     // 8 GPIO joystick button
+
+
 #define ESPNOW_MAXDELAY 512
 
 static const char *TAG = "espnow_example";
