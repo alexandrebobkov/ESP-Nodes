@@ -797,7 +797,7 @@ static void display_chip_temperature () {
     ESP_LOGW("ESP32-C3", "Temperature value %.02f ℃", tsens_value);
 }
 
-void onDataReceived (const uint8_t *mac_addr, uint8_t *data, uint8_t data_len) {
+void onDataReceived (const uint8_t *mac_addr, const uint8_t *data, uint8_t data_len) {
 
     memcpy(&buf, data, sizeof(buf));
     //buf = (sensors_data_t*)data;
