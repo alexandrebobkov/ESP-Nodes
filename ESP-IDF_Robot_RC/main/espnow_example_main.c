@@ -503,6 +503,7 @@ static void rc_send_data_task2 (void *pvParameter) {
         if (esp_now_send(send_packet->dest_mac, send_packet->buffer, send_packet->len) != ESP_OK) {
             ESP_LOGE(TAG, "Send error");
             vTaskDelete(NULL);
+            break;
         }
         vTaskDelay(5000 / portTICK_PERIOD_MS);
     }
