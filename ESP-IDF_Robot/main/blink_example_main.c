@@ -890,7 +890,7 @@ void app_main(void)
     buf.motor1_rpm_pcm = 0;
     wifi_init();
     esp_now_init();
-    esp_now_register_recv_cb(onDataReceived);
+    esp_now_register_recv_cb(esp_now_recv_cb_t(onDataReceived));
 
     /*
         ADC
