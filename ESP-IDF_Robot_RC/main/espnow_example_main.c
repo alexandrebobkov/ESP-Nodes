@@ -541,6 +541,8 @@ void onDataReceived (uint8_t *mac_addr, uint8_t *data, uint8_t data_len) {
 
     //memcpy(buf, data, data_len);
     buf = (sensors_data_t*)data;
+    ESP_LOGI(TAG, "Data was received");
+    ESP_LOGI(TAG, "x-axis: %i", buf->x_axis);
 }
 
 
