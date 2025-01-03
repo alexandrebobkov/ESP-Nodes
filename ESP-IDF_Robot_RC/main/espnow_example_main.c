@@ -372,8 +372,8 @@ static esp_err_t example_espnow_init(void)
         return ESP_FAIL;
     }
     memset(send_param, 0, sizeof(example_espnow_send_param_t));
-    send_param->unicast = false;
-    send_param->broadcast = true;
+    send_param->unicast = true; //false;
+    send_param->broadcast = false; //true;
     send_param->state = 0;
     //esp_random();
     send_param->magic = 50;//esp_random(); //(uint32_t)50;//esp_random();
