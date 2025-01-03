@@ -442,16 +442,9 @@ void sensors_data_prepare(espnow_data_packet_t *send_param)
 
     buffer->type = 1; // UNICAST IS_BROADCAST_ADDR(send_param->dest_mac) ? EXAMPLE_ESPNOW_DATA_BROADCAST : EXAMPLE_ESPNOW_DATA_UNICAST;
     buffer->crc = 0;
-    /* Fill all remaining bytes after the data with random values */
-    //esp_fill_random(buf->payload, send_param->len - sizeof(example_espnow_data_t));
-    //memcpy(buf->payload, (uint8_t)16, send_param->len - sizeof(example_espnow_data_t));
-    //memcpy(buf->payload[0], (uint8_t)12, send_param->len - sizeof(example_espnow_data_t));
-    //memcpy(buf->payload[0], 12, send_param->len - sizeof(example_espnow_data_t));
-    buf->payload[0] = (uint8_t)12;
-    buf->payload[1] = (uint8_t)10;
-    ESP_LOGW(TAG, "Payload: %x", (uint8_t)buf->payload);
-    ESP_LOGW(TAG, "payload[0]: %x", (uint8_t)buf->payload[0]);
-    ESP_LOGW(TAG, "payload[1]: %x", (uint8_t)buf->payload[1]);
+    buffer->x_axis = 0;
+    buffer->y_axis = 0;
+    ESP_LOGW(TAG, "x-axis: %x", (uint8_t)buffer->x_axis);
     buf->crc = esp_crc16_le(UINT16_MAX, (uint8_t const *)buf, send_param->len);
 }
 
