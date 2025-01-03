@@ -28,10 +28,10 @@
 #include "esp_mac.h"
 #include "esp_now.h"
 #include "esp_crc.h"
-#include "espnow_example.h"
+//#include "espnow_example.h"
 
-#include "rc.h"
-#include "motor_controls.h"
+//#include "rc.h"
+//#include "motor_controls.h"
 //#include "controls.h"
 
 #define PROJ_X                      (1)                     // ADC1_CH1; 0 GPIO joystick, x-axis
