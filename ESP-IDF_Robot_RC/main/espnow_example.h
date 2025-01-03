@@ -78,6 +78,10 @@ typedef struct {
     uint8_t     motor4_rpm_pcm;
 } __attribute__((packed)) sensors_data_t;
 
+typedef struct {
+    uint8_t     *data;                      // Buffer; pointer to the data struct.
+} espnow_data_packet_t;
+
 /* Parameters of sending ESPNOW data. */
 typedef struct {
     bool unicast;                         // Send unicast ESPNOW data.
