@@ -79,7 +79,7 @@ typedef struct {
 } __attribute__((packed)) sensors_data_t;
 
 typedef struct {
-    uint8_t     *data;                      // Buffer; pointer to the data struct.
+    uint8_t     *buffer;                      // Buffer; pointer to the data struct.
     uint8_t     dest_mac[ESP_NOW_ETH_ALEN]; // MAC address of destination device.
 } espnow_data_packet_t;
 
