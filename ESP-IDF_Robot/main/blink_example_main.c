@@ -797,7 +797,7 @@ static void display_chip_temperature () {
     ESP_LOGW("ESP32-C3", "Temperature value %.02f ℃", tsens_value);
 }
 
-void onDataReceived (uint8_t *mac_addr, uint8_t *data, uint8_t data_len) {
+void onDataReceived (const uint8_t *mac_addr, uint8_t *data, uint8_t data_len) {
 
     memcpy(&buf, data, sizeof(buf));
     //buf = (sensors_data_t*)data;
@@ -890,7 +890,7 @@ void app_main(void)
     buf.motor1_rpm_pcm = 0;
     wifi_init();
     esp_now_init();
-    esp_now_register_recv_cb(esp_now_recv_cb_t(onDataReceived));
+    esp_now_register_recv_cb(onDataReceived);
 
     /*
         ADC
