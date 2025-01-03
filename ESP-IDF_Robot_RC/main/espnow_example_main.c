@@ -496,9 +496,12 @@ static void rc_send_data_task2 (void *pvParameter) {
 
     espnow_data_packet_t *send_packet = (espnow_data_packet_t *)pvParameter;
 
-    uint8_t r = esp_now_send(send_packet->dest_mac, send_packet->buffer, send_packet->len);
+    
 
-    vTaskDelay(5000 / portTICK_PERIOD_MS);
+    while (true) {
+        memcpy(send_packet->dest_mac, receiver_mac, ESP_NOW_ETH_ALEN);
+        vTaskDelay(5000 / portTICK_PERIOD_MS);
+    }
 }
 
 void app_main(void)
