@@ -49,6 +49,7 @@
 
 static uint8_t receiver_mac[ESP_NOW_ETH_ALEN]   = {0xE4, 0xB0, 0x63, 0x17, 0x9E, 0x45};
 static esp_now_peer_info_t peerInfo;
+static uint8_t flagToSend = 0;
 
 static uint8_t broadcast_mac[ESP_NOW_ETH_ALEN]  = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
 static uint8_t robot_mac[ESP_NOW_ETH_ALEN]      = {0xE4, 0xB0, 0x63, 0x17, 0x9E, 0x45};     // MAC address of Robot
@@ -422,6 +423,10 @@ static void rc_task (void *arg) {
     }
 }
 
+static void rc_send_data_task (void *arg) {
+    uint8_t result = esp_now_send(receiver_mac, &flagToSend, )
+}
+
 void app_main(void)
 {
     /*
@@ -436,6 +441,8 @@ void app_main(void)
    peerInfo.encrypt = false;
    memcpy (peerInfo.peer_addr, receiver_mac, 6);
    esp_now_add_peer(&peerInfo);
+
+   xTaskCreate (rc_send_data_task, "RC", 2048, NULL, 5, NULL);
 
     /*
     // Initialize NVS
