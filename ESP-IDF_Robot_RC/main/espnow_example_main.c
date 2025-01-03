@@ -391,8 +391,28 @@ static void example_espnow_deinit(example_espnow_send_param_t *send_param)
     esp_now_deinit();
 }
 
+static void rc_task (void *arg) {
+    while (true) {
+        rc_get_raw_data();
+
+        ESP_LOGI("PWM", "Motor 1 PWM: %d", m.motor1_rpm_pcm);
+        ESP_LOGI("PWM", "Motor 2 PWM: %d", m.motor2_rpm_pcm);
+        ESP_LOGI("PWM", "Motor 3 PWM: %d", m.motor3_rpm_pcm);
+        ESP_LOGI("PWM", "Motor 4 PWM: %d", m.motor4_rpm_pcm);
+
+        //vTaskDelay (10 / portTICK_PERIOD_MS);  // Determines responsiveness  
+        vTaskDelay (1000 / portTICK_PERIOD_MS); 
+    }
+}
+
 void app_main(void)
 {
+    /*
+        ADC
+    */
+   rc_adc_init();
+   xTaskCreate(rc_task, "RC", 2048, NULL, 5, NULL);
+
     // Initialize NVS
     esp_err_t ret = nvs_flash_init();
     if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
