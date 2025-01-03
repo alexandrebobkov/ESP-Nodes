@@ -422,7 +422,12 @@ static void rc_task (void *arg) {
         vTaskDelay (1000 / portTICK_PERIOD_MS); 
     }
 }
-
+void deletePeer (void) {
+    uint8_t delStatus = esp_now_del_peer(receiver_mac);
+    if (delStatus != 0) {
+        ESP_LOGE("ESP-NOW", "Could not delete peer");
+    }
+}
 static void rc_send_data_task (void *arg) {
     uint8_t result = esp_now_send(receiver_mac, &flagToSend, sizeof(flagToSend));
     if (result != 0) {
