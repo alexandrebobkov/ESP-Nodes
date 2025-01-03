@@ -437,10 +437,9 @@ void deletePeer (void) {
 void sensors_data_prepare(espnow_data_packet_t *send_param)
 {
     sensors_data_t *buffer = (sensors_data_t *)send_param->buffer;
-
     assert(send_param->len >= sizeof(sensors_data_t));
 
-    buffer->type = 1; // UNICAST IS_BROADCAST_ADDR(send_param->dest_mac) ? EXAMPLE_ESPNOW_DATA_BROADCAST : EXAMPLE_ESPNOW_DATA_UNICAST;
+    buffer->type = 1;
     buffer->crc = 0;
     buffer->x_axis = 0;
     buffer->y_axis = 0;
