@@ -42,7 +42,7 @@
             ESP NOW
     ============================
 
-    ESP32-C3 Blue board MAC:    54:32:04:46:71:80
+    ESP32-C3 Luatos ESP32C3 board MAC:    54:32:04:46:71:80
     ESP32-C3 SuperMini MAC:     34:b7:da:f9:33:8d
     ESP32-C3 Breadboard MAC:    e4:b0:63:17:9e:45
 */
@@ -475,7 +475,7 @@ void app_main(void)
     }
     else
         ESP_LOGE("ESP-NOW", "Receiver does not exists.");
-   xTaskCreate (rc_send_data_task, "RC", 2048, NULL, 15, NULL);
+    xTaskCreate (rc_send_data_task, "RC", 2048, NULL, 15, NULL);
 
     /*
     // Initialize NVS
