@@ -539,8 +539,8 @@ static esp_err_t rc_espnow_init (void) {
 
 void onDataReceived (uint8_t *mac_addr, uint8_t *data, uint8_t data_len) {
 
-    memcpy(buf, data, data_len);
-    //) buf = data;
+    //memcpy(buf, data, data_len);
+    buf = &data;
 }
 
 
