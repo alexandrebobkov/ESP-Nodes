@@ -457,7 +457,6 @@ void app_main(void)
    peerInfo.encrypt = false;
    memcpy (peerInfo.peer_addr, receiver_mac, 6);
    esp_now_add_peer(&peerInfo);
-
    xTaskCreate (rc_send_data_task, "RC", 2048, NULL, 5, NULL);
 
     /*
