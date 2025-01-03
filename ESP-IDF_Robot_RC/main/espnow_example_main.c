@@ -424,7 +424,11 @@ static void rc_task (void *arg) {
 }
 
 static void rc_send_data_task (void *arg) {
-    uint8_t result = esp_now_send(receiver_mac, &flagToSend, )
+    uint8_t result = esp_now_send(receiver_mac, &flagToSend, sizeof(flagToSend));
+    if (result != 0) {
+        ESP_LOGE("ESP-NOW", "Error sending data!");
+        deletePeer();
+    }
 }
 
 void app_main(void)
