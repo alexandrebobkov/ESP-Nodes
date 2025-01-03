@@ -432,6 +432,7 @@ void app_main(void)
 
    wifi_init();
    esp_now_init();
+   memcpy (peerInfo.peer_addr, )
 
     /*
     // Initialize NVS
