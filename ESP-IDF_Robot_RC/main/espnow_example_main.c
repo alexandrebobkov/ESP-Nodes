@@ -58,7 +58,7 @@ static uint8_t rc_mac[ESP_NOW_ETH_ALEN]         = {0x34, 0xB7, 0xDA, 0xF9, 0x33,
 
 #define ESPNOW_MAXDELAY 512
 
-static const char *TAG = "RC";
+static const char *TAG = "Remote Controller";
 
 static QueueHandle_t s_example_espnow_queue;
 
