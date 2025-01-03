@@ -474,8 +474,10 @@ static void rc_send_data_task (void *arg) {
 }
 
 static esp_err_t rc_espnow_init (void) {
-    
+
     espnow_data_packet_t *send_packet;
+
+    xTaskCreate(example_espnow_task, "example_espnow_task", 2048, send_packet, 14, NULL);
 
 }
 static void rc_send_data_task2 (void *arg) {
