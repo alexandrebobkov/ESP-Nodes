@@ -536,6 +536,10 @@ static esp_err_t rc_espnow_init (void) {
     return ESP_OK;
 }
 
+void onDataReceived (uint8_t *mac_addr, uint8_t *data, uint8_t data_len) {
+    
+}
+
 
 void app_main(void)
 {
@@ -555,6 +559,8 @@ void app_main(void)
 
     wifi_init();
     esp_now_init();
+    esp_now_register_recv_cb(onDataReceived);
+
     memcpy (peerInfo.peer_addr, receiver_mac, 6);
     esp_now_add_peer(&peerInfo);
     if (esp_now_is_peer_exist(receiver_mac)) {
