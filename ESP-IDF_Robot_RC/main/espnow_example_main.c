@@ -479,6 +479,20 @@ static void rc_send_data_task (void *arg) {
     }
 }
 
+static void rc_send_data_task2 (void *pvParameter) {
+
+    espnow_data_packet_t *send_packet = (espnow_data_packet_t *)pvParameter;
+
+    while (true) {
+        memcpy(send_packet->dest_mac, receiver_mac, ESP_NOW_ETH_ALEN);
+        if (esp_now_send(send_packet->dest_mac, send_packet->buffer, send_packet->len) != ESP_OK) {
+            ESP_LOGE(TAG, "Send error");
+            vTaskDelete(NULL);
+            break;
+        }
+        vTaskDelay(5000 / portTICK_PERIOD_MS);
+    }
+}
 static esp_err_t rc_espnow_init (void) {
 
     espnow_data_packet_t *send_packet;
@@ -494,24 +508,11 @@ static esp_err_t rc_espnow_init (void) {
     send_packet->len = CONFIG_ESPNOW_SEND_LEN; // 128
     send_packet->buffer = malloc(CONFIG_ESPNOW_SEND_LEN);
     sensors_data_prepare(send_packet);
-    xTaskCreate(rc_send_data_task2, "controller data packets task", 2048, send_packet, 10, NULL);
+    xTaskCreate(rc_send_data_task2, "controller data packets task", 2048, send_packet, 8, NULL);
 
     return ESP_OK;
 }
-static void rc_send_data_task2 (void *pvParameter) {
 
-    espnow_data_packet_t *send_packet = (espnow_data_packet_t *)pvParameter;
-
-    while (true) {
-        memcpy(send_packet->dest_mac, receiver_mac, ESP_NOW_ETH_ALEN);
-        if (esp_now_send(send_packet->dest_mac, send_packet->buffer, send_packet->len) != ESP_OK) {
-            ESP_LOGE(TAG, "Send error");
-            vTaskDelete(NULL);
-            break;
-        }
-        vTaskDelay(5000 / portTICK_PERIOD_MS);
-    }
-}
 
 void app_main(void)
 {
