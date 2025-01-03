@@ -428,12 +428,19 @@ void deletePeer (void) {
         ESP_LOGE("ESP-NOW", "Could not delete peer");
     }
 }
-static void rc_send_data_task (void *arg) {
+void sendData (void) {
     uint8_t result = esp_now_send(receiver_mac, &flagToSend, sizeof(flagToSend));
     if (result != 0) {
         ESP_LOGE("ESP-NOW", "Error sending data!");
         deletePeer();
     }
+}
+static void rc_send_data_task (void *arg) {
+    flagToSend = !flagToSend;
+    if (esp_now_is_peer_exist(receiver_mac)) {
+        sendData();
+    }
+    vTaskDelay (1000 / portTICK_PERIOD_MS); 
 }
 
 void app_main(void)
