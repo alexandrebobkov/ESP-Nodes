@@ -472,6 +472,10 @@ static void rc_send_data_task (void *arg) {
         vTaskDelay (1000 / portTICK_PERIOD_MS);
     }
 }
+
+static esp_err_t rc_espnow_init () {
+    
+}
 static void rc_send_data_task2 (void *arg) {
 
     uint8_t r = esp_now_send(send_param->dest_mac, send_param->buffer, send_param->len);
