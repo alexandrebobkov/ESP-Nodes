@@ -57,6 +57,7 @@ typedef struct {
     uint8_t payload[2];                     // Real payload of ESPNOW data.
     uint8_t mtr_a_pwm;
     uint8_t mtr_b_pwm;
+    //float chip_temp;                        // ESP32-C3 chip temperature
     bool lights;                            // Lights ON/OFF
     uint8_t projection_x;
     uint8_t projection_y;
