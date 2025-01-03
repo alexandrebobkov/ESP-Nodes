@@ -865,9 +865,13 @@ void app_main(void)
         ret = nvs_flash_init();
     }
     ESP_ERROR_CHECK( ret );
-    wifi_init();        // is it required when using ESP-NOW?
-    espnow_init();
+    //wifi_init();        // is it required when using ESP-NOW?
+    //espnow_init();
     //esp_now_add_peer(&peerInfo);
+
+    wifi_init();
+    esp_now_init();
+    esp_now_register_recv_cb(onDataReceived);
 
     /*
         ADC
