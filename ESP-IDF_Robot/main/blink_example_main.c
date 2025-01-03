@@ -110,7 +110,7 @@ static TaskHandle_t s_task_handle;
 static TaskHandle_t m_task_handle;  // Task for controlling motors PWMs
 //static adc_channel_t channel[2] = {ADC_CHANNEL_2, ADC_CHANNEL_3};
 static adc_channel_t channel[2] = {ADC_CHANNEL_0, ADC_CHANNEL_1};
-static sensors_data_t *buf;
+static sensors_data_t buf;
 
 #define ESP_INTR_FLAG_DEFAULT 0
 
