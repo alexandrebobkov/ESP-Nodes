@@ -170,7 +170,7 @@ void example_espnow_data_prepare(example_espnow_send_param_t *send_param)
 
     assert(send_param->len >= sizeof(example_espnow_data_t));
 
-    buf->type = IS_BROADCAST_ADDR(send_param->dest_mac) ? EXAMPLE_ESPNOW_DATA_BROADCAST : EXAMPLE_ESPNOW_DATA_UNICAST;
+    buf->type = 1; // UNICAST IS_BROADCAST_ADDR(send_param->dest_mac) ? EXAMPLE_ESPNOW_DATA_BROADCAST : EXAMPLE_ESPNOW_DATA_UNICAST;
     buf->state = send_param->state;
     buf->seq_num = s_example_espnow_seq[buf->type]++;
     buf->crc = 0;
