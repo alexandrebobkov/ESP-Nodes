@@ -802,7 +802,10 @@ void onDataReceived (uint8_t *mac_addr, uint8_t *data, uint8_t data_len) {
     //memcpy(buf, data, data_len);
     buf = (sensors_data_t*)data;
     ESP_LOGW(TAG, "Data was received");
-    ESP_LOGI(TAG, "x-axis: %i", buf->x_axis);
+    ESP_LOGI(TAG, "x-axis: %i", (uint8_t)buf->x_axis);
+    ESP_LOGI(TAG, "y-axis: %i", (uint8_t)buf->y_axis);
+    ESP_LOGI(TAG, "pcm 1: %x", (uint8_t)buf->motor1_rpm_pcm);
+    
 }
 
 void app_main(void)
