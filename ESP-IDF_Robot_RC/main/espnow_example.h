@@ -67,15 +67,15 @@ typedef struct {
 } __attribute__((packed)) example_espnow_data_t;
 
 typedef struct {
-    uint16_t seq_num;                     // Sequence number of ESPNOW data.
-    uint16_t crc;                         // CRC16 value of ESPNOW data.
-    uint8_t x-axis;
-    uint8_t y-axis;
-    bool nav_bttn;
-    uint8_t motor1_rpm_pcm;
-    uint8_t motor2_rpm_pcm;
-    uint8_t motor3_rpm_pcm;
-    uint8_t motor4_rpm_pcm;
+    uint16_t    seq_num;                     // Sequence number of ESPNOW data.
+    uint16_t    crc;                         // CRC16 value of ESPNOW data.
+    uint8_t     x_axis;
+    uint8_t     y_axis;
+    bool        nav_bttn;
+    uint8_t     motor1_rpm_pcm;
+    uint8_t     motor2_rpm_pcm;
+    uint8_t     motor3_rpm_pcm;
+    uint8_t     motor4_rpm_pcm;
 } __attribute__((packed)) sensors_data_t;
 
 /* Parameters of sending ESPNOW data. */
