@@ -67,6 +67,7 @@ typedef struct {
 } __attribute__((packed)) example_espnow_data_t;
 
 typedef struct {
+    uint8_t     type;                       // Broadcast or unicast ESPNOW data.s
     uint16_t    seq_num;                     // Sequence number of ESPNOW data.
     uint16_t    crc;                         // CRC16 value of ESPNOW data.
     uint8_t     x_axis;
