@@ -474,12 +474,12 @@ void sendData (void) {
     buffer->motor2_rpm_pcm = 0;
     buffer->motor3_rpm_pcm = 0;
     buffer->motor4_rpm_pcm = 0;
-    ESP_LOGI(TAG, "x-axis: 0x%04x", (uint8_t)buffer->x_axis);
-    ESP_LOGI(TAG, "y-axis: 0x%04x", (uint8_t)buffer->y_axis);
-    ESP_LOGI(TAG, "pcm 1: 0x%04x", (uint8_t)buffer->motor1_rpm_pcm);
-    ESP_LOGI(TAG, "pcm 2: 0x%04x", (uint8_t)buffer->motor2_rpm_pcm);
-    ESP_LOGI(TAG, "pcm 3: 0x%04x", (uint8_t)buffer->motor3_rpm_pcm);
-    ESP_LOGI(TAG, "pcm 4: 0x%04x", (uint8_t)buffer->motor4_rpm_pcm);
+    ESP_LOGI(TAG, "x-axis: 0x%04X", (uint8_t)buffer->x_axis);
+    ESP_LOGI(TAG, "y-axis: 0x%04X", (uint8_t)buffer->y_axis);
+    ESP_LOGI(TAG, "pcm 1: 0x%04X", (uint8_t)buffer->motor1_rpm_pcm);
+    ESP_LOGI(TAG, "pcm 2: 0x%04X", (uint8_t)buffer->motor2_rpm_pcm);
+    ESP_LOGI(TAG, "pcm 3: 0x%04X", (uint8_t)buffer->motor3_rpm_pcm);
+    ESP_LOGI(TAG, "pcm 4: 0x%04X", (uint8_t)buffer->motor4_rpm_pcm);
 
     //uint8_t result = esp_now_send(receiver_mac, &flagToSend, sizeof(flagToSend));
     uint8_t result = esp_now_send(receiver_mac, &buffer, sizeof(buffer));
