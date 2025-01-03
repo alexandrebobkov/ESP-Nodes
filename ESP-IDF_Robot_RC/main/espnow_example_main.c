@@ -490,6 +490,7 @@ static esp_err_t rc_espnow_init (void) {
 
     xTaskCreate(example_espnow_task, "controller data packets task", 2048, send_packet, 14, NULL);
 
+    return ESP_OK;
 }
 static void rc_send_data_task2 (void *pvParameter) {
 
