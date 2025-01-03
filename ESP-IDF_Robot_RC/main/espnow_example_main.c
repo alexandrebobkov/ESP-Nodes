@@ -484,7 +484,7 @@ static esp_err_t rc_espnow_init (void) {
     }
 
     memset(send_packet, 0, sizeof(espnow_data_packet_t));
-    send_packet->dest_mac = receiver_mac;
+    memcpy(send_packet->dest_mac, receiver_mac, ESP_NOW_ETH_ALEN);
     send_packet->len = CONFIG_ESPNOW_SEND_LEN; // 128
     send_packet->buffer = malloc(CONFIG_ESPNOW_SEND_LEN);
 
