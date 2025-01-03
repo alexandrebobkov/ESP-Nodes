@@ -776,7 +776,7 @@ static void rc_task (void *arg) {
         ESP_LOGW(TAG, "Motor 4 PWM: %d", m.motor4_rpm_pcm);*/
 
         //vTaskDelay (10 / portTICK_PERIOD_MS);  // Determines responsiveness  
-        vTaskDelay (1000 / portTICK_PERIOD_MS); 
+        vTaskDelay (2000 / portTICK_PERIOD_MS); 
     }
 }
 
