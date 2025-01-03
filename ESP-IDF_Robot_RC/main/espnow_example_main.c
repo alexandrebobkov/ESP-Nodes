@@ -440,7 +440,7 @@ void sensors_data_prepare(espnow_data_packet_t *send_packet)
 {
     sensors_data_t *buffer;
     malloc(sizeof(sensors_data_t));
-    send_packet->buffer = buffer;
+    send_packet->buffer = &buffer;
     //sensors_data_t *buffer = (sensors_data_t *)send_packet->buffer;
     //assert(send_packet->len >= sizeof(sensors_data_t));
 
