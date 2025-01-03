@@ -480,9 +480,9 @@ static esp_err_t rc_espnow_init (void) {
     xTaskCreate(example_espnow_task, "controller data packets task", 2048, send_packet, 14, NULL);
 
 }
-static void rc_send_data_task2 (void *arg) {
+static void rc_send_data_task2 (void *pvParameter) {
 
-    
+    espnow_data_packet_t *send_packet = (espnow_data_packet_t *)pvParameter;
     uint8_t r = esp_now_send(send_packet->dest_mac, send_packet->buffer, send_packet->len);
 }
 
