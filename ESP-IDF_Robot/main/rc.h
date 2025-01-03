@@ -21,7 +21,7 @@ struct motors_rpm m;
 
 static int adc_raw[2][10];
 static int voltage[2][10];
-static int sample = 0, x = 0, y = 0, x_sum = 0, y_sum = 0;
+static int s = 0, sample = 10, x = 0, y = 0, x_sum = 0, y_sum = 0;
 static bool adc_calibration_init(adc_unit_t unit, adc_channel_t channel, adc_atten_t atten, adc_cali_handle_t *out_handle);
 static void adc_calibration_deinit(adc_cali_handle_t handle);
 adc_cali_handle_t adc1_cali_chan0_handle, adc1_cali_chan1_handle;
@@ -78,16 +78,16 @@ static void rc_get_raw_data() {
     ESP_LOGI("Joystick F", "Position: %d (%d)", rescale_raw_val(adc_raw[0][1]), check_motor_pcm(rescale_raw_val(adc_raw[0][1])));
     ESP_LOGW("Joystick", " sample %d, (x,y): (%d, %d)", sample, x, y);
 
-    if (sample < 10) {
+    if (s < sample) {
         x_sum += check_motor_pcm(rescale_raw_val(adc_raw[0][0]));
         y_sum += check_motor_pcm(rescale_raw_val(adc_raw[0][1]));
-        sample ++;
+        s ++;
     }
-    else if (sample == 10) {
+    else if (s == sample) {
         //x = check_motor_pcm(rescale_raw_val(adc_raw[0][0]));
         //y = check_motor_pcm(rescale_raw_val(adc_raw[0][1]));
-        x = x_sum / 10;
-        y = y_sum / 10;
+        x = x_sum / sample;
+        y = y_sum / sample;
     
 
     if ((x > 0 && x < 500) && (y > 500)) {
@@ -129,12 +129,12 @@ static void rc_get_raw_data() {
         m.motor3_rpm_pcm = 0;
         m.motor4_rpm_pcm = 0;
     }
-    sample++;
+    s++;
     }
     else {
         x_sum = 0;
         y_sum = 0;
-        sample = 0;
+        s = 0;
     }
 
     ESP_LOGI("PWM", "Motor 1 PWM: %d", m.motor1_rpm_pcm);
