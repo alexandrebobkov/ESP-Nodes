@@ -455,8 +455,6 @@ void sensors_data_prepare(espnow_data_packet_t *send_param)
 void sendData (void) {
     // Send data, specify receiver MAC address, pointer to the data being sent, and length of data being sent.
     uint8_t result = esp_now_send(receiver_mac, &flagToSend, sizeof(flagToSend));
-
-    result = esp_now_send(send_param->dest_mac, send_param->buffer, send_param->len);
     if (result != 0) {
         ESP_LOGE("ESP-NOW", "Error sending data!");
         deletePeer();
@@ -473,6 +471,10 @@ static void rc_send_data_task (void *arg) {
         }
         vTaskDelay (1000 / portTICK_PERIOD_MS);
     }
+}
+static void rc_send_data_task2 (void *arg) {
+
+    uint8_t r = esp_now_send(send_param->dest_mac, send_param->buffer, send_param->len);
 }
 
 void app_main(void)
