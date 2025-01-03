@@ -80,6 +80,7 @@ typedef struct {
 
 typedef struct {
     uint8_t     *data;                      // Buffer; pointer to the data struct.
+    uint8_t     dest_mac[ESP_NOW_ETH_ALEN]; // MAC address of destination device.
 } espnow_data_packet_t;
 
 /* Parameters of sending ESPNOW data. */
