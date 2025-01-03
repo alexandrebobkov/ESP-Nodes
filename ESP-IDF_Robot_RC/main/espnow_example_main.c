@@ -429,6 +429,35 @@ void deletePeer (void) {
         ESP_LOGE("ESP-NOW", "Could not delete peer");
     }
 }
+
+/*
+    ESP-NOW
+*/
+/* Prepare ESPNOW data to be sent. */
+void sensors_data_prepare(espnow_data_packet_t *send_param)
+{
+    example_espnow_data_t *buf = (example_espnow_data_t *)send_param->buffer;
+
+    assert(send_param->len >= sizeof(example_espnow_data_t));
+
+    buf->type = 1; // UNICAST IS_BROADCAST_ADDR(send_param->dest_mac) ? EXAMPLE_ESPNOW_DATA_BROADCAST : EXAMPLE_ESPNOW_DATA_UNICAST;
+    buf->state = send_param->state;
+    buf->seq_num = s_example_espnow_seq[buf->type]++;
+    buf->crc = 0;
+    buf->magic = send_param->magic;
+    /* Fill all remaining bytes after the data with random values */
+    //esp_fill_random(buf->payload, send_param->len - sizeof(example_espnow_data_t));
+    //memcpy(buf->payload, (uint8_t)16, send_param->len - sizeof(example_espnow_data_t));
+    //memcpy(buf->payload[0], (uint8_t)12, send_param->len - sizeof(example_espnow_data_t));
+    //memcpy(buf->payload[0], 12, send_param->len - sizeof(example_espnow_data_t));
+    buf->payload[0] = (uint8_t)12;
+    buf->payload[1] = (uint8_t)10;
+    ESP_LOGW(TAG, "Payload: %x", (uint8_t)buf->payload);
+    ESP_LOGW(TAG, "payload[0]: %x", (uint8_t)buf->payload[0]);
+    ESP_LOGW(TAG, "payload[1]: %x", (uint8_t)buf->payload[1]);
+    buf->crc = esp_crc16_le(UINT16_MAX, (uint8_t const *)buf, send_param->len);
+}
+
 void sendData (void) {
     // Send data, specify receiver MAC address, pointer to the data being sent, and length of data being sent.
     uint8_t result = esp_now_send(receiver_mac, &flagToSend, sizeof(flagToSend));
