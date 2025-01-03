@@ -530,9 +530,9 @@ void app_main(void)
     }
     ESP_ERROR_CHECK( ret );
 
-    /*wifi_init();
+    wifi_init();
     esp_now_init();
-    memcpy (peerInfo.peer_addr, receiver_mac, 6);
+    /*memcpy (peerInfo.peer_addr, receiver_mac, 6);
     esp_now_add_peer(&peerInfo);
     if (esp_now_is_peer_exist(receiver_mac)) {
         ESP_LOGI("ESP-NOW", "Receiver exists.");
