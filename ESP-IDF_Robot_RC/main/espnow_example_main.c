@@ -433,6 +433,7 @@ void app_main(void)
    wifi_init();
    esp_now_init();
    memcpy (peerInfo.peer_addr, receiver_mac, 6);
+   esp_now_add_peer(&peerInfo);
 
     /*
     // Initialize NVS
