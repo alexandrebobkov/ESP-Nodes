@@ -103,7 +103,7 @@ void sendData (void) {
     // Call ESP-NOW function to send data (MAC address of receiver, pointer to the memory holding data & data length)
     uint8_t result = esp_now_send(receiver_mac, &buffer, sizeof(buffer));
 
-    // If status is NOT OK
+    // If status is NOT OK, display error message and error code (in hexadecimal).
     if (result != 0) {
         ESP_LOGE("ESP-NOW", "Error sending data! Error code: 0x%04X", result);
         deletePeer();
