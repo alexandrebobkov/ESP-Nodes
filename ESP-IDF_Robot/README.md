@@ -47,7 +47,7 @@ struct motors_rpm {
 
 #### Calculating PWM Values
 
-The DC motors require digital PWM signals which, in turn, depend on analog signals supplied by the joystick stick. Consequently, analog values need to be interpreted into digital PWM signals.
+The DC motors require digital PWM signals which, in turn, depend on analog signals supplied by the joystick stick. Consequently, analog values need to be interpreted into digital PWM signals. ESP32-C3 is capable of sampling voltage (analog signal) for the purpose of forming PWM signal. 
 
 ### Receiver & Controller (ESP-NOW) Firmware
 
