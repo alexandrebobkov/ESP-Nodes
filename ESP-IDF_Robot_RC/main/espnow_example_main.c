@@ -47,7 +47,7 @@
 
 
 //static uint8_t receiver_mac[ESP_NOW_ETH_ALEN]   = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
-//static esp_now_peer_info_t peerInfo;
+static esp_now_peer_info_t peerInfo;
 //static uint8_t flagToSend = 0;
 
 
