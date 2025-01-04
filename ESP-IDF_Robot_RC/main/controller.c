@@ -8,6 +8,7 @@
 #include "config.h"
 
 static const char *TAG = "RC";
+static uint8_t flagToSend = 0;
 
 void deletePeer (void) {
     uint8_t delStatus = esp_now_del_peer(receiver_mac);
