@@ -49,6 +49,7 @@ typedef struct {
 static uint8_t receiver_mac[ESP_NOW_ETH_ALEN]   = {0xE4, 0xB0, 0x63, 0x17, 0x9E, 0x45};
 
 static esp_now_peer_info_t peerInfo;
+static uint8_t flagToSend = 0;
 static sensors_data_t *buf;
 static const char *TAG = "Remote Controller";
 
@@ -122,8 +123,8 @@ void sendData (void) {
     ESP_LOGI(TAG, "pcm 3: 0x%04X", (uint8_t)buffer->motor3_rpm_pcm);
     ESP_LOGI(TAG, "pcm 4: 0x%04X", (uint8_t)buffer->motor4_rpm_pcm);
 
-    //uint8_t result = esp_now_send(receiver_mac, &flagToSend, sizeof(flagToSend));
-    uint8_t result = esp_now_send(receiver_mac, &buffer, sizeof(buffer));
+    uint8_t result = esp_now_send(receiver_mac, &flagToSend, sizeof(flagToSend));
+    //uint8_t result = esp_now_send(receiver_mac, &buffer, sizeof(buffer));
     //uint8_t result = esp_now_send(receiver_mac, (sensors_data_t *)&buffer, sizeof(buffer));
     if (result != 0) {
         ESP_LOGE("ESP-NOW", "Error sending data! Error code: 0x%04X", result);
