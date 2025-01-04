@@ -72,7 +72,7 @@ void onDataReceived (uint8_t *mac_addr, uint8_t *data, uint8_t data_len) {
 void onDataSent (uint8_t *mac_addr, esp_now_send_status_t status) {
     ESP_LOGW(TAG, "Packet send status: 0x%04X", status);
 }
-
+// Function to delete peer (i.e. when communication error occurs)
 void deletePeer (void) {
     uint8_t delStatus = esp_now_del_peer(receiver_mac);
     if (delStatus != 0) {
