@@ -26,6 +26,8 @@ __The table below lists GPIOs/Pins programmed to delivery specific operating fun
 
 ### Model Car Firmware
 
+#### Controlling DC Motors
+
 The Model Car uses four DC motors attached to mecanum wheels. The rotation magntutude of each DC motors is controlled by PWM. Each of corresponding PWM value is stored in a struct for later processing.
 
 DC motors PWM values are organized in a struct as follows:
@@ -41,9 +43,11 @@ struct motors_rpm {
     int motor4_rpm_pcm;
     int motor4_gpio;
 };
-
-
 ```
+
+#### Calculating PWM Values
+
+The DC motors require digital PWM signals which, in turn, depend on analog signals supplied by the joystick stick. Consequently, analog values need to be interpreted into digital PWM signals.
 
 ### Receiver & Controller (ESP-NOW) Firmware
 
