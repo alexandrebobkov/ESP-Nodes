@@ -179,7 +179,7 @@ static esp_err_t rc_espnow_init (void) {
     send_packet->len = CONFIG_ESPNOW_SEND_LEN; // 128
     send_packet->buffer = malloc(CONFIG_ESPNOW_SEND_LEN);
     sensors_data_prepare(send_packet);
-    xTaskCreate(rc_send_data_task2, "controller data packets task", 2048, send_packet, 8, NULL);
+    xTaskCreate(rc_send_data_task, "controller data packets task", 2048, send_packet, 8, NULL);
 
     return ESP_OK;
 }
