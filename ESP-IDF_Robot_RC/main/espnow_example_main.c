@@ -85,7 +85,6 @@ void deletePeer (void) {
 void sendData (void) {
     sensors_data_t buffer;              // Declare data struct
 
-    buffer.type = 1;
     buffer.crc = 0;
     buffer.x_axis = 240;
     buffer.y_axis = 256;
