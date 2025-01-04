@@ -133,10 +133,11 @@ void app_main(void)
     }
     ESP_ERROR_CHECK( ret );
 
-    wifi_init();
-    esp_now_init();
-    esp_now_register_recv_cb(onDataReceived);
-    esp_now_register_send_cb(onDataSent);
+    // ESP-NOW
+    wifi_init();                                    // Initialize Wi-Fi
+    esp_now_init();                                 // Call ESP-NOW initialization function
+    esp_now_register_recv_cb(onDataReceived);       // Define call back for the event when data is being received
+    esp_now_register_send_cb(onDataSent);           // Define call back for the event when data is sent received
 
     memcpy (peerInfo.peer_addr, receiver_mac, 6);
     peerInfo.channel = 1;
