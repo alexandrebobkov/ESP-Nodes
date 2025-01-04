@@ -49,7 +49,7 @@ struct motors_rpm {
 
 The DC motors require digital PWM signals which, in turn, depend on analog signals supplied by the joystick stick. Consequently, analog values need to be interpreted into digital PWM signals. ESP32-C3 is capable of sampling voltage (analog signal) for the purpose of forming PWM signal.
 
-As joystick x- and y- coordinates change, so do voltages on corresponding joystick analog outputs. Based on the hardware implementation, the voltage on x- and y- analog outputs can change witin a range from 0V to 3.3V . When ESP32-C3 takes sample of voltages on these outputs, ESP32-C ADC produces values witin a range from 0 to 2048.
+As joystick x- and y- coordinates change, so do voltages on corresponding joystick analog outputs. Based on the hardware implementation, the voltage on x- and y- analog outputs can change witin a range from 0V to 3.3V . When ESP32-C3 takes sample of voltages on these outputs, ESP32-C ADC produces values witin a range from 0 to 2048. When joystick is in neutral position, the x- and y- values are (1024, 1024). 
 
 ### Receiver & Controller (ESP-NOW) Firmware
 
