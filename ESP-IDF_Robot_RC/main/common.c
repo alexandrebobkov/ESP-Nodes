@@ -1,9 +1,8 @@
 #include "freertos/FreeRTOS.h"
 #include "esp_wifi.h"
 #include "esp_now.h"
-
-#include "esp_netif.h"
-#include "esp_mac.h"
+//#include "esp_netif.h"
+//#include "esp_mac.h"
 
 /* WiFi should start before using ESPNOW */
 static void wifi_init(void)
@@ -13,7 +12,7 @@ static void wifi_init(void)
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
     ESP_ERROR_CHECK( esp_wifi_init(&cfg) );
     ESP_ERROR_CHECK( esp_wifi_set_storage(WIFI_STORAGE_RAM) );
-    ESP_ERROR_CHECK( esp_wifi_set_mode(ESPNOW_WIFI_MODE) );
+    ESP_ERROR_CHECK( esp_wifi_set_mode(EWIFI_MODE_AP) );
     ESP_ERROR_CHECK( esp_wifi_start());
     ESP_ERROR_CHECK( esp_wifi_set_channel(CONFIG_ESPNOW_CHANNEL, WIFI_SECOND_CHAN_NONE));
 
