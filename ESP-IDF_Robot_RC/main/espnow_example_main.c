@@ -100,9 +100,10 @@ void sendData (void) {
     ESP_LOGI(TAG, "pcm 1, pcm 2 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor1_rpm_pcm, (uint8_t)buffer.motor2_rpm_pcm);
     ESP_LOGI(TAG, "pcm 3, pcm 4 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor3_rpm_pcm, (uint8_t)buffer.motor4_rpm_pcm);
 
-    //uint8_t result = esp_now_send(receiver_mac, &flagToSend, sizeof(flagToSend));
+    // Call ESP-NOW function to send data (MAC address of receiver, pointer to the memory holding data & data length)
     uint8_t result = esp_now_send(receiver_mac, &buffer, sizeof(buffer));
 
+    // If status is NOT OK
     if (result != 0) {
         ESP_LOGE("ESP-NOW", "Error sending data! Error code: 0x%04X", result);
         deletePeer();
