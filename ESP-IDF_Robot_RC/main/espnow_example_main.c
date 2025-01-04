@@ -147,7 +147,7 @@ static void rc_send_data_task (void *arg) {
 
 void app_main(void)
 {
-    // Initialize NVS
+    // Initialize NVS to store Wi-Fi configurations
     esp_err_t ret = nvs_flash_init();
     if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
         ESP_ERROR_CHECK( nvs_flash_erase() );
@@ -157,8 +157,8 @@ void app_main(void)
 
     wifi_init();
     esp_now_init();
-    //esp_now_register_recv_cb(onDataReceived);
-    //esp_now_register_send_cb(onDataSent);
+    esp_now_register_recv_cb(onDataReceived);
+    esp_now_register_send_cb(onDataSent);
 
     memcpy (peerInfo.peer_addr, receiver_mac, 6);
     peerInfo.channel = 1;
