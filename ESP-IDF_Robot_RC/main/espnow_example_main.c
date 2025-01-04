@@ -62,8 +62,7 @@ static void wifi_init(void)
 // Call-back for the event when data is being received
 void onDataReceived (uint8_t *mac_addr, uint8_t *data, uint8_t data_len) {
 
-    //memcpy(buf, data, data_len);
-    buf = (sensors_data_t*)data;
+    buf = (sensors_data_t*)data;                            // Allocate memory for buffer to store data being received
     ESP_LOGW(TAG, "Data was received");
     ESP_LOGI(TAG, "x-axis: 0x%04x", buf->x_axis);
     ESP_LOGI(TAG, "x-axis: 0x%04x", buf->y_axis);
