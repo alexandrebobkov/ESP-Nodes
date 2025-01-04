@@ -2,7 +2,7 @@
 
 <img alt="ESP32=C3 RC Car" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/ESP-IDF_Robot/assets/chassi-002.jpg" width="80%"/>
 
-## Designated Pins & GPIOs
+### Designated Pins & GPIOs
 
 __The table below lists GPIOs/Pins programmed to delivery specific operating functions.__
 
@@ -16,11 +16,13 @@ __The table below lists GPIOs/Pins programmed to delivery specific operating fun
 | 4 | 2 | GPIO controlling __counter__ clockwise rotation PWM of left motors | LEDC_CHANNEL_2 |
 | 7 | 6 | GPIO controlling __counter__ clockwise rotation PWM of right motors | LEDC_CHANNEL_3 |
 
-## Schematic
+### Schematic
 
 <img alt="ESP32=C3 RC Car Schematic" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/ESP-IDF_Robot/assets/schematic-002.png" width="80%"/>
 
-## Variables
+## How Does It Work?
+
+### Variables
 
 | Variable | Value | Description |
 | MTR_FREQUENCY | 5000 | Default PWM frequency. |
