@@ -1,6 +1,7 @@
 #include "freertos/FreeRTOS.h"
 #include "common.h"
 #include "esp_mac.h"
+#include "esp_log.h"
 #include "controls.h"
 
 void onDataReceived (uint8_t *mac_addr, uint8_t *data, uint8_t data_len) {
