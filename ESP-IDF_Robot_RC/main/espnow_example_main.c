@@ -30,12 +30,12 @@
 #include "esp_crc.h"
 //#include "espnow_example.h"
 
-#include "rc.h"
+//#include "rc.h"
 #include "motor_controls.h"
 #include "controls.h"
 
 #include "controller.h"
-#include "receiver.h"
+//#include "receiver.h"
 #include "common.h"
 #include "config.h"
 
@@ -64,7 +64,7 @@ void app_main(void)
     ESP_ERROR_CHECK( ret );
 
     wifi_init();
-    //esp_now_init();
+    esp_now_init();
     rc_espnow_init();
     esp_now_register_recv_cb(onDataReceived);
     esp_now_register_send_cb(onDataSent);

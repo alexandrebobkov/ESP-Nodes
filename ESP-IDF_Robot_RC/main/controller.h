@@ -14,5 +14,6 @@ static void rc_send_data_task2 (void *pvParameter);
 void sendData (void);
 void sensors_data_prepare(espnow_data_packet_t *send_packet);
 void deletePeer (void);
+static esp_err_t rc_espnow_init (void);
 
 #endif
