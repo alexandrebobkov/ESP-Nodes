@@ -100,8 +100,8 @@ void sendData (void) {
     buffer.motor4_rpm_pcm = 0;
     ESP_LOGI(TAG, "Joystick (x,y) position (0x%04X, 0x%04X)", (uint8_t)buffer.x_axis, (uint8_t)buffer.y_axis);
   
-    ESP_LOGI(TAG, "pcm 1: 0x%04X, pcm 2: 0x%04X", (uint8_t)buffer.motor1_rpm_pcm, (uint8_t)buffer.motor2_rpm_pcm);
-    ESP_LOGI(TAG, "pcm 3: 0x%04X, pcm 4: 0x%04X", (uint8_t)buffer.motor3_rpm_pcm, (uint8_t)buffer.motor4_rpm_pcm);
+    ESP_LOGI(TAG, "pcm 1, pcm 2 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor1_rpm_pcm, (uint8_t)buffer.motor2_rpm_pcm);
+    ESP_LOGI(TAG, "pcm 3, pcm 4 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor3_rpm_pcm, (uint8_t)buffer.motor4_rpm_pcm);
 
     //uint8_t result = esp_now_send(receiver_mac, &flagToSend, sizeof(flagToSend));
     uint8_t result = esp_now_send(receiver_mac, &buffer, sizeof(buffer));
