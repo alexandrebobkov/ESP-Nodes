@@ -52,17 +52,6 @@ static void rc_send_data_task2 (void *pvParameter) {
     }
 }
 
-static void rc_send_data_task (void *arg) {
-
-    while (true) {
-        flagToSend = !flagToSend;
-        if (esp_now_is_peer_exist(receiver_mac)) {
-            sendData();
-        }
-        vTaskDelay (1000 / portTICK_PERIOD_MS);
-    }
-}
-
 void sendData (void) {
     // Send data, specify receiver MAC address, pointer to the data being sent, and length of data being sent.
     sensors_data_t buffer;
@@ -91,6 +80,17 @@ void sendData (void) {
     }
     else
         ESP_LOGW("ESP-NOW", "Data was sent.");
+}
+
+static void rc_send_data_task (void *arg) {
+
+    while (true) {
+        flagToSend = !flagToSend;
+        if (esp_now_is_peer_exist(receiver_mac)) {
+            sendData();
+        }
+        vTaskDelay (1000 / portTICK_PERIOD_MS);
+    }
 }
 
 
