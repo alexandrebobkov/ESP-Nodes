@@ -54,7 +54,7 @@ typedef struct {
 static uint8_t receiver_mac[ESP_NOW_ETH_ALEN]   = {0xE4, 0xB0, 0x63, 0x17, 0x9E, 0x45};
 
 static esp_now_peer_info_t peerInfo;
-static sensors_data_t *buf, *buffer;
+static sensors_data_t *buf, buffer;
 static const char *TAG = "Remote Controller";
 
 /* WiFi should start before using ESPNOW */
