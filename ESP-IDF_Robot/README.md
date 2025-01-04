@@ -26,7 +26,12 @@ __The table below lists GPIOs/Pins programmed to delivery specific operating fun
 
 ### Model Car Firmware
 
+The Model Car uses four DC motors attached to _ wheels. The rotation magntutude of each DC motors is controlled by PWM. Each of corresponding PWM value is stored in a struct for later processing.
 
+DC motors PWM values are organized in a struct as follows:
+
+```C
+```
 
 ### Receiver & Controller (ESP-NOW) Firmware
 
