@@ -66,7 +66,7 @@ typedef struct {
     uint8_t payload[2];                   // Real payload of ESPNOW data.
 } __attribute__((packed)) example_espnow_data_t;
 
-typedef struct {
+/*typedef struct {
     uint8_t     type;                       // Broadcast or unicast ESPNOW data.s
     uint16_t    seq_num;                     // Sequence number of ESPNOW data.
     uint16_t    crc;                         // CRC16 value of ESPNOW data.
@@ -83,7 +83,7 @@ typedef struct {
     int len;                                // Length of ESPNOW data to be sent, unit: byte.
     uint8_t     *buffer;                      // Buffer; pointer to the data struct.
     uint8_t     dest_mac[ESP_NOW_ETH_ALEN]; // MAC address of destination device.
-} espnow_data_packet_t;
+} espnow_data_packet_t;*/
 
 /* Parameters of sending ESPNOW data. */
 typedef struct {
