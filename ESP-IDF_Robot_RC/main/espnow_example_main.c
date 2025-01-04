@@ -45,11 +45,6 @@ typedef struct {
     uint8_t     motor4_rpm_pcm;
 } __attribute__((packed)) sensors_data_t;
 
-typedef struct {
-    int len;                                // Length of ESPNOW data to be sent, unit: byte.
-    uint8_t     *buffer;                      // Buffer; pointer to the data struct.
-    uint8_t     dest_mac[ESP_NOW_ETH_ALEN]; // MAC address of destination device.
-} espnow_data_packet_t;
 
 static uint8_t receiver_mac[ESP_NOW_ETH_ALEN]   = {0xE4, 0xB0, 0x63, 0x17, 0x9E, 0x45};
 
@@ -65,7 +60,7 @@ static void wifi_init(void)
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
     ESP_ERROR_CHECK( esp_wifi_init(&cfg) );
     ESP_ERROR_CHECK( esp_wifi_set_storage(WIFI_STORAGE_RAM) );
-    ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_AP) );
+    ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_AP));
     ESP_ERROR_CHECK( esp_wifi_start());
     ESP_ERROR_CHECK( esp_wifi_set_channel(CONFIG_ESPNOW_CHANNEL, WIFI_SECOND_CHAN_NONE));
 }
