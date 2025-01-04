@@ -61,7 +61,7 @@ static void wifi_init(void)
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
     ESP_ERROR_CHECK( esp_wifi_init(&cfg) );
     ESP_ERROR_CHECK( esp_wifi_set_storage(WIFI_STORAGE_RAM) );
-    ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_AP));
+    ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_STA));// WIFI_MODE_AP));
     ESP_ERROR_CHECK( esp_wifi_start());
     ESP_ERROR_CHECK( esp_wifi_set_channel(CONFIG_ESPNOW_CHANNEL, WIFI_SECOND_CHAN_NONE));
 }
@@ -88,7 +88,7 @@ void deletePeer (void) {
 }
 void sendData (void) {
     // Send data, specify receiver MAC address, pointer to the data being sent, and length of data being sent.
-    /*sensors_data_t buffer;
+    sensors_data_t buffer;
     buffer.type = 1;
     buffer.crc = 0;
     buffer.x_axis = 240;
@@ -103,9 +103,9 @@ void sendData (void) {
     ESP_LOGI(TAG, "pcm 1: 0x%04X", (uint8_t)buffer.motor1_rpm_pcm);
     ESP_LOGI(TAG, "pcm 2: 0x%04X", (uint8_t)buffer.motor2_rpm_pcm);
     ESP_LOGI(TAG, "pcm 3: 0x%04X", (uint8_t)buffer.motor3_rpm_pcm);
-    ESP_LOGI(TAG, "pcm 4: 0x%04X", (uint8_t)buffer.motor4_rpm_pcm);*/
+    ESP_LOGI(TAG, "pcm 4: 0x%04X", (uint8_t)buffer.motor4_rpm_pcm);
 
-    sensors_data_t *buffer;
+    /*sensors_data_t *buffer;
     buffer = malloc(sizeof(sensors_data_t));
     buffer->type = 1;
     buffer->crc = 0;
@@ -121,10 +121,10 @@ void sendData (void) {
     ESP_LOGI(TAG, "pcm 1: 0x%04X", (uint8_t)buffer->motor1_rpm_pcm);
     ESP_LOGI(TAG, "pcm 2: 0x%04X", (uint8_t)buffer->motor2_rpm_pcm);
     ESP_LOGI(TAG, "pcm 3: 0x%04X", (uint8_t)buffer->motor3_rpm_pcm);
-    ESP_LOGI(TAG, "pcm 4: 0x%04X", (uint8_t)buffer->motor4_rpm_pcm);
+    ESP_LOGI(TAG, "pcm 4: 0x%04X", (uint8_t)buffer->motor4_rpm_pcm);*/
 
-    uint8_t result = esp_now_send(receiver_mac, &flagToSend, sizeof(flagToSend));
-    //uint8_t result = esp_now_send(receiver_mac, &buffer, sizeof(buffer));
+    //uint8_t result = esp_now_send(receiver_mac, &flagToSend, sizeof(flagToSend));
+    uint8_t result = esp_now_send(receiver_mac, &buffer, sizeof(buffer));
     //uint8_t result = esp_now_send(receiver_mac, (sensors_data_t *)&buffer, sizeof(buffer));
     if (result != 0) {
         ESP_LOGE("ESP-NOW", "Error sending data! Error code: 0x%04X", result);
