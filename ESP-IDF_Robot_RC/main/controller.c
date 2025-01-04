@@ -5,6 +5,7 @@
 #include "freertos/FreeRTOS.h"
 
 #include "common.h"
+#include "config.h"
 
 static const char *TAG = "RC";
 
