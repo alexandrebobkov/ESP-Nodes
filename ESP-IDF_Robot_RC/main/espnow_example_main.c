@@ -483,16 +483,7 @@ void sendData (void) {
     else
         ESP_LOGW("ESP-NOW", "Data was sent.");
 }
-static void rc_send_data_task (void *arg) {
 
-    while (true) {
-        flagToSend = !flagToSend;
-        if (esp_now_is_peer_exist(receiver_mac)) {
-            sendData();
-        }
-        vTaskDelay (1000 / portTICK_PERIOD_MS);
-    }
-}
 
 void app_main(void)
 {
