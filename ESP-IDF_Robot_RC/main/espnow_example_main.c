@@ -39,34 +39,13 @@
 #include "common.h"
 #include "config.h"
 
-/*#define PROJ_X                      (1)                     // ADC1_CH1; 0 GPIO joystick, x-axis
-#define PROJ_Y                      (0)                     // ADC1_CH0; 1 GPIO joystick, y-axis
-#define NAV_BTN                     (8)                     // 8 GPIO joystick button*/
-
-
-
-
-//static uint8_t receiver_mac[ESP_NOW_ETH_ALEN]   = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
-static esp_now_peer_info_t peerInfo;
-//static uint8_t flagToSend = 0;
-
-
-static sensors_data_t *buf;
-static sensors_data_t *buffer;
-
-//static void rc_send_data_task2 (void *pvParameter);
 
 #define ESPNOW_MAXDELAY 512
 
+static esp_now_peer_info_t peerInfo;
+static sensors_data_t *buf;
+static sensors_data_t *buffer;
 static const char *TAG = "Remote Controller";
-
-//static QueueHandle_t s_example_espnow_queue;
-
-// Broadcast address
-//static uint8_t s_example_broadcast_mac[ESP_NOW_ETH_ALEN] = { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
-//static uint8_t s_example_broadcast_mac[ESP_NOW_ETH_ALEN] = { 0xE4, 0xB0, 0x63, 0x17, 0x9E, 0x45 };
-//static uint16_t s_example_espnow_seq[EXAMPLE_ESPNOW_DATA_MAX] = { 0, 0 };
-
 
 void app_main(void)
 {
