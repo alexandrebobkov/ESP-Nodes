@@ -4,6 +4,12 @@
 
 #include "common.h"
 
+static const char *TAG = "RC";
+
+void onDataSent (uint8_t *mac_addr, esp_now_send_status_t status) {
+    //status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
+    ESP_LOGW(TAG, "Packet send status: %i", status);
+}
 void sensors_data_prepare(espnow_data_packet_t *send_packet) {
     //sensors_data_t *buffer;
     //malloc(sizeof(sensors_data_t));
