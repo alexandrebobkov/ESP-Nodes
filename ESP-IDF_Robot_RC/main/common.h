@@ -47,6 +47,5 @@ static void wifi_init(void);
 static esp_err_t rc_espnow_init (void);
 
 static void example_espnow_deinit(example_espnow_send_param_t *send_param);
-static void onDataReceived();
 
 #endif
