@@ -2,7 +2,8 @@
 #include "common.h"
 #include "esp_mac.h"
 #include "esp_log.h"
-#include "controller.h"
+
+struct motors_rpm m;
 
 void onDataReceived (uint8_t *mac_addr, uint8_t *data, uint8_t data_len) {
 

@@ -5,7 +5,6 @@
 #include "esp_mac.h"
 #include "common.h"
 
-struct motors_rpm m;
 
 /* WiFi should start before using ESPNOW */
 static void wifi_init(void)
