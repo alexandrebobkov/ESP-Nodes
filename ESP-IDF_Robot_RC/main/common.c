@@ -17,7 +17,7 @@ static void wifi_init(void)
 #endif
 }
 
-static esp_err_t rc_espnow_init (void) {
+/*static esp_err_t rc_espnow_init (void) {
 
     espnow_data_packet_t *send_packet;
 
@@ -35,4 +35,4 @@ static esp_err_t rc_espnow_init (void) {
     xTaskCreate(rc_send_data_task2, "controller data packets task", 2048, send_packet, 8, NULL);
 
     return ESP_OK;
-}
+}*/
