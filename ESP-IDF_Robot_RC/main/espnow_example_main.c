@@ -139,9 +139,10 @@ void app_main(void)
     esp_now_register_recv_cb(onDataReceived);       // Define call back for the event when data is being received
     esp_now_register_send_cb(onDataSent);           // Define call back for the event when data is sent received
 
-    memcpy (peerInfo.peer_addr, receiver_mac, 6);
-    peerInfo.channel = 1;
-    peerInfo.encrypt = false;
+    // Set ESP-NOW receiver peer configuration values
+    memcpy (peerInfo.peer_addr, receiver_mac, 6);   // Copy receiver MAC address
+    peerInfo.channel = 1;                           // Define communication channel
+    peerInfo.encrypt = false;                       // Keep data unencrypted
     esp_now_add_peer(&peerInfo);
     /*if (esp_now_is_peer_exist(receiver_mac)) {
         ESP_LOGI("ESP-NOW", "Receiver exists.");
