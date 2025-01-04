@@ -16,6 +16,10 @@ __The table below lists GPIOs/Pins programmed to delivery specific operating fun
 | 4 | 2 | GPIO controlling __counter__ clockwise rotation PWM of left motors | LEDC_CHANNEL_2 |
 | 7 | 6 | GPIO controlling __counter__ clockwise rotation PWM of right motors | LEDC_CHANNEL_3 |
 
+## Schematic
+
+<img alt="ESP32=C3 RC Car Schematic" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/ESP-IDF_Robot/assets/schematic-002.png" width="70%"/>
+
 ## Variables
 
 | Variable | Value | Description |
