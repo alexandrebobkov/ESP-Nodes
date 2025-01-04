@@ -151,5 +151,6 @@ void app_main(void)
     else
         ESP_LOGE("ESP-NOW", "Receiver does not exists.");*/
 
+    // Define a task to periodically call function that sends data
     xTaskCreate (rc_send_data_task, "RC", 2048, NULL, 15, NULL);
 }
