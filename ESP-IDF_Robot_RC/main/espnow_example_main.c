@@ -132,7 +132,7 @@ void sendData (void) {
     uint8_t result = esp_now_send(receiver_mac, &buffer, sizeof(buffer));
     //uint8_t result = esp_now_send(receiver_mac, (sensors_data_t *)&buffer, sizeof(buffer));
     if (result != 0) {
-        ESP_LOGE("ESP-NOW", "Error sending data! Error code: %i", result);
+        ESP_LOGE("ESP-NOW", "Error sending data! Error code: 0x%04X", result);
         deletePeer();
     }
     else
