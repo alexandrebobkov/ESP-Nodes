@@ -92,7 +92,7 @@ void deletePeer (void) {
 }
 void sendData (void) {
     // Send data, specify receiver MAC address, pointer to the data being sent, and length of data being sent.
-    sensors_data_t buffer;
+    //sensors_data_t buffer;
     buffer.type = 1;
     buffer.crc = 0;
     buffer.x_axis = 240;
