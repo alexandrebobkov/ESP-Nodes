@@ -44,3 +44,4 @@ typedef struct {
 } espnow_data_packet_t;
 
 static void wifi_init(void);
+static esp_err_t rc_espnow_init (void);
