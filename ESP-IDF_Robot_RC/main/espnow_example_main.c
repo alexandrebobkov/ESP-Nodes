@@ -100,9 +100,6 @@ static void rc_task (void *arg) {
     }
 }
 
-
-
-
 void app_main(void)
 {
     /*
