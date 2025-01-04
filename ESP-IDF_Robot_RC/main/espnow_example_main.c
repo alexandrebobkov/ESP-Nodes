@@ -180,7 +180,7 @@ static esp_err_t rc_espnow_init (void) {
     send_packet->len = CONFIG_ESPNOW_SEND_LEN; // 128
     send_packet->buffer = malloc(CONFIG_ESPNOW_SEND_LEN);
     sensors_data_prepare(send_packet);
-    xTaskCreate(rc_send_data_task, "controller data packets task", 2048, send_packet, 8, NULL);
+    xTaskCreate(rc_send_data_task2, "controller data packets task", 2048, send_packet, 8, NULL);
 
     return ESP_OK;
 }
@@ -203,12 +203,12 @@ void app_main(void)
 
     wifi_init();
     esp_now_init();
-    rc_espnow_init();
+    //rc_espnow_init();
     esp_now_register_recv_cb(onDataReceived);
     esp_now_register_send_cb(onDataSent);
 
     memcpy (peerInfo.peer_addr, receiver_mac, 6);
     esp_now_add_peer(&peerInfo);
 
-    //xTaskCreate (rc_send_data_task, "RC", 2048, NULL, 15, NULL);
+    xTaskCreate (rc_send_data_task, "RC", 2048, NULL, 15, NULL);
 }
