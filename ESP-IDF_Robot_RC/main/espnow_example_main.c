@@ -103,6 +103,12 @@ void sensors_data_prepare(espnow_data_packet_t *send_packet) {
     ESP_LOGW(TAG, "x-axis: %x", (uint8_t)buffer->x_axis);
     buffer->crc = esp_crc16_le(UINT16_MAX, (uint8_t const *)buffer, send_packet->len);
 }
+void deletePeer (void) {
+    uint8_t delStatus = esp_now_del_peer(receiver_mac);
+    if (delStatus != 0) {
+        ESP_LOGE("ESP-NOW", "Could not delete peer");
+    }
+}
 void sendData (void) {
     // Send data, specify receiver MAC address, pointer to the data being sent, and length of data being sent.
     sensors_data_t buffer;
