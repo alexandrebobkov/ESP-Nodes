@@ -1,17 +1,12 @@
-/* ESPNOW Example
+/* ESP-NOW Remote Controller & Receiver
 
-   This example code is in the Public Domain (or CC0 licensed, at your option.)
+   by: Alexander Bobkov
+   Jan 4, 2025
 
-   Unless required by applicable law or agreed to in writing, this
-   software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-   CONDITIONS OF ANY KIND, either express or implied.
+   Program that sends values saved in struct from controller device to the receiver using ESP-NOW communication protocol.
+
 */
 
-/*
-   This example shows how to use ESPNOW.
-   Prepare two device, one for sending ESPNOW data and another for receiving
-   ESPNOW data.
-*/
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
@@ -30,7 +25,7 @@
 #include "esp_crc.h"
 
 
-#define ESPNOW_MAXDELAY 512
+//#define ESPNOW_MAXDELAY 512
 
 typedef struct {
     uint8_t     type;                       // Broadcast or unicast ESPNOW data.s
@@ -98,7 +93,7 @@ void sendData (void) {
     buffer.motor2_rpm_pcm = 0;
     buffer.motor3_rpm_pcm = 0;
     buffer.motor4_rpm_pcm = 0;
-    
+
     ESP_LOGI(TAG, "Joystick (x,y) position ( 0x%04X, 0x%04X )", (uint8_t)buffer.x_axis, (uint8_t)buffer.y_axis);  
     ESP_LOGI(TAG, "pcm 1, pcm 2 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor1_rpm_pcm, (uint8_t)buffer.motor2_rpm_pcm);
     ESP_LOGI(TAG, "pcm 3, pcm 4 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor3_rpm_pcm, (uint8_t)buffer.motor4_rpm_pcm);
