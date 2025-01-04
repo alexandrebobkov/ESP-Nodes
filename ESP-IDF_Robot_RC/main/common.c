@@ -1,5 +1,6 @@
 #include "freertos/FreeRTOS.h"
 #include "esp_wifi.h"
+#include "esp_now.h"
 
 /* WiFi should start before using ESPNOW */
 static void wifi_init(void)
