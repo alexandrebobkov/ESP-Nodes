@@ -83,26 +83,7 @@ void onDataSent (uint8_t *mac_addr, esp_now_send_status_t status) {
     //status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
     ESP_LOGW(TAG, "Packet send status: %i", status);
 }
-void sensors_data_prepare(espnow_data_packet_t *send_packet) {
-    //sensors_data_t *buffer;
-    //malloc(sizeof(sensors_data_t));
-    //send_packet->buffer = &buffer;
-    //sensors_data_t *buffer = (sensors_data_t *)send_packet->buffer;
-    sensors_data_t *buffer = (sensors_data_t *)send_packet->buffer;
-    assert(send_packet->len >= sizeof(sensors_data_t));
 
-    buffer->type = 1;
-    buffer->crc = 0;
-    buffer->x_axis = 0;
-    buffer->y_axis = 0;
-    buffer->nav_bttn = 0;
-    buffer->motor1_rpm_pcm = 0;
-    buffer->motor2_rpm_pcm = 0;
-    buffer->motor3_rpm_pcm = 0;
-    buffer->motor4_rpm_pcm = 0;
-    ESP_LOGW(TAG, "x-axis: %x", (uint8_t)buffer->x_axis);
-    buffer->crc = esp_crc16_le(UINT16_MAX, (uint8_t const *)buffer, send_packet->len);
-}
 void deletePeer (void) {
     uint8_t delStatus = esp_now_del_peer(receiver_mac);
     if (delStatus != 0) {
@@ -138,24 +119,7 @@ void sendData (void) {
     else
         ESP_LOGW("ESP-NOW", "Data was sent.");
 }
-static void rc_send_data_task2 (void *pvParameter) {
 
-    espnow_data_packet_t *send_packet = (espnow_data_packet_t *)pvParameter;
-
-    while (true) {
-        /*//memcpy(send_packet->dest_mac, receiver_mac, ESP_NOW_ETH_ALEN);
-        esp_err_t r = esp_now_send(receiver_mac, send_packet->buffer, sizeof(sensors_data_t));//send_packet->len);
-        //esp_now_send(send_packet->dest_mac, send_packet->buffer, send_packet->len);
-
-        if (r != ESP_OK) {
-            ESP_LOGE(TAG, "Send error.");
-            vTaskDelete(NULL);
-            break;
-        }*/
-       sendData();
-        vTaskDelay(5000 / portTICK_PERIOD_MS);
-    }
-}
 static void rc_send_data_task (void *arg) {
 
     while (true) {
@@ -165,34 +129,10 @@ static void rc_send_data_task (void *arg) {
         vTaskDelay (1000 / portTICK_PERIOD_MS);
     }
 }
-static esp_err_t rc_espnow_init (void) {
 
-    espnow_data_packet_t *send_packet;
-
-    send_packet = malloc(sizeof(espnow_data_packet_t));
-    if (send_packet == NULL) {
-        ESP_LOGE(TAG, "malloc fail.");
-        return ESP_FAIL;
-    }
-
-    memset(send_packet, 0, sizeof(espnow_data_packet_t));
-    memcpy(send_packet->dest_mac, receiver_mac, ESP_NOW_ETH_ALEN);
-    send_packet->len = CONFIG_ESPNOW_SEND_LEN; // 128
-    send_packet->buffer = malloc(CONFIG_ESPNOW_SEND_LEN);
-    sensors_data_prepare(send_packet);
-    xTaskCreate(rc_send_data_task2, "controller data packets task", 2048, send_packet, 8, NULL);
-
-    return ESP_OK;
-}
 
 void app_main(void)
 {
-    /*
-        ADC
-    */
-   //rc_adc_init();
-   //xTaskCreate(rc_task, "RC", 2048, NULL, 5, NULL);
-
    // Initialize NVS
     esp_err_t ret = nvs_flash_init();
     if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
@@ -203,7 +143,6 @@ void app_main(void)
 
     wifi_init();
     esp_now_init();
-    //rc_espnow_init();
     esp_now_register_recv_cb(onDataReceived);
     esp_now_register_send_cb(onDataSent);
 
