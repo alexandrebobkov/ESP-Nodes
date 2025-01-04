@@ -18,7 +18,7 @@ __The table below lists GPIOs/Pins programmed to delivery specific operating fun
 
 ## Schematic
 
-<img alt="ESP32=C3 RC Car Schematic" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/ESP-IDF_Robot/assets/schematic-002.png" width="70%"/>
+<img alt="ESP32=C3 RC Car Schematic" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/ESP-IDF_Robot/assets/schematic-002.png" width="80%"/>
 
 ## Variables
 
