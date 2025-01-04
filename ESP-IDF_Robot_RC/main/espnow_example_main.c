@@ -68,10 +68,12 @@ void onDataReceived (uint8_t *mac_addr, uint8_t *data, uint8_t data_len) {
     ESP_LOGI(TAG, "x-axis: 0x%04x", buf->y_axis);
     ESP_LOGI(TAG, "PCM 1: 0x%04x", buf->motor1_rpm_pcm);
 }
+
 // Call-back for the event when data is being sent
 void onDataSent (uint8_t *mac_addr, esp_now_send_status_t status) {
     ESP_LOGW(TAG, "Packet send status: 0x%04X", status);
 }
+
 // Function to delete peer (i.e. when communication error occurs)
 void deletePeer (void) {
     uint8_t delStatus = esp_now_del_peer(receiver_mac);
@@ -79,8 +81,8 @@ void deletePeer (void) {
         ESP_LOGE("ESP-NOW", "Could not delete peer");
     }
 }
+// Function to send data to the receiver
 void sendData (void) {
-    // Send data, specify receiver MAC address, pointer to the data being sent, and length of data being sent.
     sensors_data_t buffer;
     buffer.type = 1;
     buffer.crc = 0;
