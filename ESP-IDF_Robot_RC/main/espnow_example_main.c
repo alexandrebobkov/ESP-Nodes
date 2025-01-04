@@ -139,8 +139,8 @@ void app_main(void)
 
     wifi_init();
     esp_now_init();
-    esp_now_register_recv_cb(onDataReceived);
-    esp_now_register_send_cb(onDataSent);
+    //esp_now_register_recv_cb(onDataReceived);
+    //esp_now_register_send_cb(onDataSent);
 
     memcpy (peerInfo.peer_addr, receiver_mac, 6);
     peerInfo.channel = 1;
