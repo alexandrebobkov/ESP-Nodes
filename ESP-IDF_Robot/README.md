@@ -31,6 +31,16 @@ The Model Car uses four DC motors attached to _ wheels. The rotation magntutude 
 DC motors PWM values are organized in a struct as follows:
 
 ```C
+struct motors_rpm {
+    int motor1_rpm_pcm;
+    int motor1_gpio;
+    int motor2_rpm_pcm;
+    int motor2_gpio;
+    int motor3_rpm_pcm;
+    int motor3_gpio;
+    int motor4_rpm_pcm;
+    int motor4_gpio;
+};
 ```
 
 ### Receiver & Controller (ESP-NOW) Firmware
