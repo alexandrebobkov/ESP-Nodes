@@ -54,7 +54,7 @@ static uint8_t flagToSend = 0;
 static sensors_data_t *buf;
 static sensors_data_t *buffer;
 
-static void rc_send_data_task2 (void *pvParameter);
+//static void rc_send_data_task2 (void *pvParameter);
 
 #define ESPNOW_MAXDELAY 512
 
@@ -67,38 +67,6 @@ static QueueHandle_t s_example_espnow_queue;
 static uint8_t s_example_broadcast_mac[ESP_NOW_ETH_ALEN] = { 0xE4, 0xB0, 0x63, 0x17, 0x9E, 0x45 };
 //static uint16_t s_example_espnow_seq[EXAMPLE_ESPNOW_DATA_MAX] = { 0, 0 };
 
-
-
-/* WiFi should start before using ESPNOW */
-/*static void wifi_init(void)
-{
-    ESP_ERROR_CHECK(esp_netif_init());
-    ESP_ERROR_CHECK(esp_event_loop_create_default());
-    wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
-    ESP_ERROR_CHECK( esp_wifi_init(&cfg) );
-    ESP_ERROR_CHECK( esp_wifi_set_storage(WIFI_STORAGE_RAM) );
-    ESP_ERROR_CHECK( esp_wifi_set_mode(ESPNOW_WIFI_MODE) );
-    ESP_ERROR_CHECK( esp_wifi_start());
-    ESP_ERROR_CHECK( esp_wifi_set_channel(CONFIG_ESPNOW_CHANNEL, WIFI_SECOND_CHAN_NONE));
-
-#if CONFIG_ESPNOW_ENABLE_LONG_RANGE
-    ESP_ERROR_CHECK( esp_wifi_set_protocol(ESPNOW_WIFI_IF, WIFI_PROTOCOL_11B|WIFI_PROTOCOL_11G|WIFI_PROTOCOL_11N|WIFI_PROTOCOL_LR) );
-#endif
-}*/
-
-static void rc_task (void *arg) {
-    while (true) {
-        rc_get_raw_data();
-
-        ESP_LOGI("PWM", "Motor 1 PWM: %d", m.motor1_rpm_pcm);
-        ESP_LOGI("PWM", "Motor 2 PWM: %d", m.motor2_rpm_pcm);
-        ESP_LOGI("PWM", "Motor 3 PWM: %d", m.motor3_rpm_pcm);
-        ESP_LOGI("PWM", "Motor 4 PWM: %d", m.motor4_rpm_pcm);
-
-        //vTaskDelay (10 / portTICK_PERIOD_MS);  // Determines responsiveness  
-        vTaskDelay (1000 / portTICK_PERIOD_MS); 
-    }
-}
 
 void app_main(void)
 {
