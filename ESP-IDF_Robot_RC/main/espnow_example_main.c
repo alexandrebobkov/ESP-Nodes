@@ -104,7 +104,7 @@ void sendData (void) {
     ESP_LOGI(TAG, "pcm 3: 0x%04X", (uint8_t)buffer.motor3_rpm_pcm);
     ESP_LOGI(TAG, "pcm 4: 0x%04X", (uint8_t)buffer.motor4_rpm_pcm);*/
 
-    sensors_data_t *buffer;
+    sensors_data_t buffer;
     buffer->type = 1;
     buffer->crc = 0;
     buffer->x_axis = 240;
