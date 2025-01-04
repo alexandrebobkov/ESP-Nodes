@@ -24,9 +24,11 @@ __The table below lists GPIOs/Pins programmed to delivery specific operating fun
 
 ### Hardware
 
-### Firmware
+### Model Car Firmware
 
-### Receiver & Controller (ESP-NOW)
+
+
+### Receiver & Controller (ESP-NOW) Firmware
 
 #### RC Controller
 
