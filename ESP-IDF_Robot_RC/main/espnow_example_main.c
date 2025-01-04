@@ -120,6 +120,15 @@ static void rc_send_data_task2 (void *pvParameter) {
         vTaskDelay(5000 / portTICK_PERIOD_MS);
     }
 }
+static void rc_send_data_task (void *arg) {
+
+    while (true) {
+        if (esp_now_is_peer_exist(receiver_mac)) {
+            sendData();
+        }
+        vTaskDelay (1000 / portTICK_PERIOD_MS);
+    }
+}
 static esp_err_t rc_espnow_init (void) {
 
     espnow_data_packet_t *send_packet;
@@ -165,5 +174,5 @@ void app_main(void)
     memcpy (peerInfo.peer_addr, receiver_mac, 6);
     esp_now_add_peer(&peerInfo);
 
-    xTaskCreate (rc_send_data_task2, "RC", 2048, NULL, 15, NULL);
+    xTaskCreate (rc_send_data_task, "RC", 2048, NULL, 15, NULL);
 }
