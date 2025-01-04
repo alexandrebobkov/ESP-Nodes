@@ -27,10 +27,11 @@
 
 //#define ESPNOW_MAXDELAY 512
 
-// Struct typedef struct {
-    uint8_t     type;                       // Broadcast or unicast ESPNOW data.s
-    uint16_t    seq_num;                     // Sequence number of ESPNOW data.
-    uint16_t    crc;                         // CRC16 value of ESPNOW data.
+// Struct holding sensors values
+typedef struct {
+    uint8_t     type;                       // Broadcast or unicast ESPNOW data
+    uint16_t    seq_num;                     // Sequence number of ESPNOW data
+    uint16_t    crc;                         // CRC16 value of ESPNOW data
     uint8_t     x_axis;
     uint8_t     y_axis;
     bool        nav_bttn;
