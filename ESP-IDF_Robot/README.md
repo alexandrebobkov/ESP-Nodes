@@ -22,7 +22,17 @@ __The table below lists GPIOs/Pins programmed to delivery specific operating fun
 
 ## How Does It Work?
 
+### Hardware
+
+### Firmware
+
 ### Receiver & Controller (ESP-NOW)
+
+#### RC Controller
+
+RC Controller uses the two ADC on ESP32-C3 to sample voltage levels on joystick x- and y- axis potentionometers. Then, these values are stored in a struct.
+
+Sensors values are organized in a struct as follows: 
 
 ``` C
 // Struct holding sensors values
