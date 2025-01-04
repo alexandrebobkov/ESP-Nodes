@@ -1,4 +1,4 @@
-# Install script for directory: /home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_Robot_RC
+# Install script for directory: /home/alex/github/ESP-Nodes/ESP-IDF_Robot_RC
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,12 +34,12 @@ endif()
 
 # Set path to fallback-tool for dependency-resolution.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/home/abobkov/.espressif/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/riscv32-esp-elf-objdump")
+  set(CMAKE_OBJDUMP "/home/alex/.espressif/tools/riscv32-esp-elf/esp-13.2.0_20240530/riscv32-esp-elf/bin/riscv32-esp-elf-objdump")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_Robot_RC/build/esp-idf/cmake_install.cmake")
+  include("/home/alex/github/ESP-Nodes/ESP-IDF_Robot_RC/build/esp-idf/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -57,6 +57,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-  file(WRITE "/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_Robot_RC/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/home/alex/github/ESP-Nodes/ESP-IDF_Robot_RC/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
