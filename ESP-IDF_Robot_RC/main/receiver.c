@@ -2,8 +2,9 @@
 #include "common.h"
 #include "esp_mac.h"
 #include "esp_log.h"
+#include "rc.h"
 
-struct motors_rpm m;
+//struct motors_rpm m;
 
 void onDataReceived (uint8_t *mac_addr, uint8_t *data, uint8_t data_len) {
 
