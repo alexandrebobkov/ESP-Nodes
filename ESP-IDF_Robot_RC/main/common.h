@@ -5,6 +5,8 @@
 #ifndef COMMON_H
 #define COMMON_H
 
+#include "esp_now.h"
+
 typedef struct {
     uint8_t     type;                       // Broadcast or unicast ESPNOW data.s
     uint16_t    seq_num;                     // Sequence number of ESPNOW data.
