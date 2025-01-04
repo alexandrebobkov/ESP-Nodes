@@ -12,13 +12,13 @@ typedef struct {
     uint8_t     motor2_rpm_pcm;
     uint8_t     motor3_rpm_pcm;
     uint8_t     motor4_rpm_pcm;
-} __attribute__((packed)) sensors_data_t;
+} __attribute__((packed)) data_t;
 
 typedef struct {
-    int len;                                // Length of ESPNOW data to be sent, unit: byte.
-    uint8_t     *buffer;                      // Buffer; pointer to the data struct.
-    uint8_t     dest_mac[ESP_NOW_ETH_ALEN]; // MAC address of destination device.
-} espnow_data_packet_t;
+    int len;                                    // Length of ESPNOW data to be sent, unit: byte.
+    uint8_t     *buffer;                        // Buffer; pointer to the data struct.
+    uint8_t     dest_mac[ESP_NOW_ETH_ALEN];     // MAC address of destination device.
+} espnow_data_encapsulation_t;
 
 /* WiFi should start before using ESPNOW */
 static void wifi_init(void)
