@@ -24,6 +24,16 @@ __The table below lists GPIOs/Pins programmed to delivery specific operating fun
 
 ### Receiver & Controller (ESP-NOW)
 
+``` C
+// Struct holding sensors values
+typedef struct {
+    uint16_t    crc;                // CRC16 value of ESPNOW data
+    uint8_t     x_axis;             // Joystick x-position
+    uint8_t     y_axis;             // Joystick y-position
+    bool        nav_bttn;           // Joystick push button
+} __attribute__((packed)) sensors_data_t;
+```
+
 ### Variables
 
 | Variable | Value | Description |
