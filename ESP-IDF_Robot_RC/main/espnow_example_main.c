@@ -68,8 +68,8 @@ void onDataReceived (uint8_t *mac_addr, uint8_t *data, uint8_t data_len) {
     ESP_LOGI(TAG, "x-axis: 0x%04x", buf->y_axis);
     ESP_LOGI(TAG, "PCM 1: 0x%04x", buf->motor1_rpm_pcm);
 }
+// Call-back for the event when data is being sent
 void onDataSent (uint8_t *mac_addr, esp_now_send_status_t status) {
-    //status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
     ESP_LOGW(TAG, "Packet send status: 0x%04X", status);
 }
 
