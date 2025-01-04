@@ -59,6 +59,7 @@ static void wifi_init(void)
     ESP_ERROR_CHECK( esp_wifi_set_channel(CONFIG_ESPNOW_CHANNEL, WIFI_SECOND_CHAN_NONE));   // Both sender & receiver must be on the same channel
 }
 
+// Call-back for the event when data is being received
 void onDataReceived (uint8_t *mac_addr, uint8_t *data, uint8_t data_len) {
 
     //memcpy(buf, data, data_len);
