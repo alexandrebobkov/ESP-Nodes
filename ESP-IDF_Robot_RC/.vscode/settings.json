@@ -4,12 +4,8 @@
     "idf.openOcdConfigs": [
         "board/esp32c3-builtin.cfg"
     ],
-    "idf.port": "/dev/ttyUSB0",
-<<<<<<< HEAD
+    "idf.port": "/dev/ttyACM0",
     "idf.toolsPath": "/home/abobkov/.espressif",
-=======
-    "idf.toolsPath": "/home/abobkov/.espressif",
->>>>>>> 6368154d158f5a020d1616f1c98c698ca00a4372
     "idf.flashType": "UART",
     "files.associations": {
         "stdlib.h": "c"
