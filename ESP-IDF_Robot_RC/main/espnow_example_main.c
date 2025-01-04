@@ -112,12 +112,12 @@ void sendData (void) {
         ESP_LOGW("ESP-NOW", "Data was sent.");
 }
 
+// Continous, periodic task that sends data.
 static void rc_send_data_task (void *arg) {
 
     while (true) {
-        if (esp_now_is_peer_exist(receiver_mac)) {
+        if (esp_now_is_peer_exist(receiver_mac))
             sendData();
-        }
         vTaskDelay (1000 / portTICK_PERIOD_MS);
     }
 }
