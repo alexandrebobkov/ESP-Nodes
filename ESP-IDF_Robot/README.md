@@ -22,6 +22,8 @@ __The table below lists GPIOs/Pins programmed to delivery specific operating fun
 
 ## How Does It Work?
 
+### Receiver & Controller (ESP-NOW)
+
 ### Variables
 
 | Variable | Value | Description |
