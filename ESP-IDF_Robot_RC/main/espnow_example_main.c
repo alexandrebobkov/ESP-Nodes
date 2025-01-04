@@ -65,7 +65,7 @@ static QueueHandle_t s_example_espnow_queue;
 // Broadcast address
 //static uint8_t s_example_broadcast_mac[ESP_NOW_ETH_ALEN] = { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
 static uint8_t s_example_broadcast_mac[ESP_NOW_ETH_ALEN] = { 0xE4, 0xB0, 0x63, 0x17, 0x9E, 0x45 };
-static uint16_t s_example_espnow_seq[EXAMPLE_ESPNOW_DATA_MAX] = { 0, 0 };
+//static uint16_t s_example_espnow_seq[EXAMPLE_ESPNOW_DATA_MAX] = { 0, 0 };
 
 
 
