@@ -35,6 +35,8 @@
 #include "controls.h"
 
 #include "controller.h"
+#include "receiver.h"
+#include "common.h"
 #include "config.h"
 
 /*#define PROJ_X                      (1)                     // ADC1_CH1; 0 GPIO joystick, x-axis
