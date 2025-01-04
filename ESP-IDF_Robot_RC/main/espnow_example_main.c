@@ -531,22 +531,6 @@ static esp_err_t rc_espnow_init (void) {
     return ESP_OK;
 }
 
-void onDataReceived (uint8_t *mac_addr, uint8_t *data, uint8_t data_len) {
-
-    //memcpy(buf, data, data_len);
-    buf = (sensors_data_t*)data;
-    ESP_LOGW(TAG, "Data was received");
-    ESP_LOGI(TAG, "x-axis: 0x%04x", buf->x_axis);
-    ESP_LOGI(TAG, "x-axis: 0x%04x", buf->y_axis);
-    ESP_LOGI(TAG, "PCM 1: 0x%04x", buf->motor1_rpm_pcm);
-}
-
-void onDataSent (uint8_t *mac_addr, esp_now_send_status_t status) {
-    //status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
-    ESP_LOGW(TAG, "Packet send status: %i", status);
-}
-
-
 void app_main(void)
 {
     /*
