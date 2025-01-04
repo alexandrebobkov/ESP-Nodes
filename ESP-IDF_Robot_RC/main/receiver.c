@@ -1,4 +1,5 @@
 #include "freertos/FreeRTOS.h"
+#include "common.h"
 
 extern static sensors_data_t *buf;
 extern static sensors_data_t *buffer;
