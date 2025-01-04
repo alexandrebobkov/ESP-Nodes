@@ -143,7 +143,7 @@ void app_main(void)
     memcpy (peerInfo.peer_addr, receiver_mac, 6);   // Copy receiver MAC address
     peerInfo.channel = 1;                           // Define communication channel
     peerInfo.encrypt = false;                       // Keep data unencrypted
-    esp_now_add_peer(&peerInfo);
+    esp_now_add_peer(&peerInfo);                    // Add peer to the list of registered devices
     /*if (esp_now_is_peer_exist(receiver_mac)) {
         ESP_LOGI("ESP-NOW", "Receiver exists.");
         sendData();
