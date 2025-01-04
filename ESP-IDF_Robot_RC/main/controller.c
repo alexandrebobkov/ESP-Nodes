@@ -2,7 +2,7 @@
 #include "esp_now.h"
 #include "esp_crc.h"
 
-{
+void sensors_data_prepare(espnow_data_packet_t *send_packet) {
     //sensors_data_t *buffer;
     //malloc(sizeof(sensors_data_t));
     //send_packet->buffer = &buffer;
