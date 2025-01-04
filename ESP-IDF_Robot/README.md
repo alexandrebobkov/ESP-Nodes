@@ -28,7 +28,7 @@ __The table below lists GPIOs/Pins programmed to delivery specific operating fun
 
 #### Controlling DC Motors
 
-The Model Car uses four DC motors attached to mecanum wheels. The rotation magntutude of each DC motors is controlled by PWM. Each of corresponding PWM value is stored in a struct for later processing.
+The Model Car uses four DC motors attached to mecanum wheels. The rotation magntutude of each DC motors is controlled by PWM. Each of corresponding PWM value is stored in a struct for later processing. The PWM value can take within a range from 0 to 8091. 
 
 DC motors PWM values are organized in a struct as follows:
 
