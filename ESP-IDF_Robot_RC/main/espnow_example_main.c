@@ -145,13 +145,13 @@ void app_main(void)
     memcpy (peerInfo.peer_addr, receiver_mac, 6);
     peerInfo.channel = 1;
     peerInfo.encrypt = false;
-    /*esp_now_add_peer(&peerInfo);
+    esp_now_add_peer(&peerInfo);
     if (esp_now_is_peer_exist(receiver_mac)) {
         ESP_LOGI("ESP-NOW", "Receiver exists.");
         sendData();
     }
     else
-        ESP_LOGE("ESP-NOW", "Receiver does not exists.");*/
+        ESP_LOGE("ESP-NOW", "Receiver does not exists.");
 
     xTaskCreate (rc_send_data_task, "RC", 2048, NULL, 15, NULL);
 }
