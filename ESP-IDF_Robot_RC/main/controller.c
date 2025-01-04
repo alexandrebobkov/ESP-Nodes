@@ -66,7 +66,7 @@ void sendData (void) {
     buffer.type = 1;
     buffer.crc = 0;
     buffer.x_axis = 240;
-    buffer.y_axis = 2040;
+    buffer.y_axis = 256;
     buffer.nav_bttn = 0;
     buffer.motor1_rpm_pcm = 10;
     buffer.motor2_rpm_pcm = 0;
