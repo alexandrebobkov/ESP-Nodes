@@ -143,7 +143,7 @@ static void rc_send_data_task2 (void *pvParameter) {
     espnow_data_packet_t *send_packet = (espnow_data_packet_t *)pvParameter;
 
     while (true) {
-        //memcpy(send_packet->dest_mac, receiver_mac, ESP_NOW_ETH_ALEN);
+        /*//memcpy(send_packet->dest_mac, receiver_mac, ESP_NOW_ETH_ALEN);
         esp_err_t r = esp_now_send(receiver_mac, send_packet->buffer, sizeof(sensors_data_t));//send_packet->len);
         //esp_now_send(send_packet->dest_mac, send_packet->buffer, send_packet->len);
 
@@ -151,7 +151,8 @@ static void rc_send_data_task2 (void *pvParameter) {
             ESP_LOGE(TAG, "Send error.");
             vTaskDelete(NULL);
             break;
-        }
+        }*/
+       sendData();
         vTaskDelay(5000 / portTICK_PERIOD_MS);
     }
 }
