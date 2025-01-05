@@ -75,8 +75,8 @@ static void update_pwm (int x, int y) {
         check_motor_pcm(rescale_raw_val(y)));
 
     if (s < sample) {
-        x_sum += check_motor_pcm(rescale_raw_val(adc_raw[0][0]));
-        y_sum += check_motor_pcm(rescale_raw_val(adc_raw[0][1]));
+        x_sum += check_motor_pcm(rescale_raw_val(x));
+        y_sum += check_motor_pcm(rescale_raw_val(y));
         s ++;
     }
     else if (s == sample) {
