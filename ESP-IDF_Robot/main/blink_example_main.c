@@ -140,7 +140,7 @@ struct_message controlData;
 esp_now_peer_info_t peerInfo;
 static void espnow_deinit(espnow_send_param_t *send_param);
 
-#ifdef CONFIG_BLINK_LED_STRIP
+
 
 static led_strip_handle_t led_strip;
 
