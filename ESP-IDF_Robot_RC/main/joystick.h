@@ -40,7 +40,7 @@ static void joystick_show_raw_xy() {
     ESP_LOGI("(x,y)", "( %d, %d )", x, y);
 }
 
-static void get_joystick_xy(uint8_t x_axis, uint8_t y_axis) {
+static void get_joystick_xy(int* x_axis, int* y_axis) {
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_0, &x_axis));
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_1, &y_axis));
 }
