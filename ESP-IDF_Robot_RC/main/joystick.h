@@ -5,19 +5,22 @@
 #include "esp_adc/adc_oneshot.h"
 
 static unsigned uint8_t x = 0, y = 0;
-adc_oneshot_unit_handle_t adc1_x_handle;
+adc_oneshot_unit_handle_t adc1_x_handle, adc1_y_handle;
 
 static esp_err_t joystick_adc_init() {
     adc_oneshot_unit_init_cgf_t adc_init_config1 = {
         .unit_id = ADC_UNIT_1,
     };
-    ESP_ERROR_CHECK(adc_oneshot_new_init(&adc_init_config1, &adc1_x_andle;));
+    ESP_ERROR_CHECK(adc_oneshot_new_init(&adc_init_config1, &adc1_x_handle));
+    ESP_ERROR_CHECK(adc_oneshot_new_init(&adc_init_config1, &adc1_y_handle));
 
     adc_oneshot_chan_cfg_t config = {
         .bitwidth = SOC_ADC_DIGI_MAX_BITWIDTH,
         .atten = ADC_ATTEN_DB_12,
 
     };
+    ESP_ERROR_CHECK(ADC_ONESHOT_CONFIG_CHANNEL(adc1_x_handle, ADC1_CHANNEL_0, &config));
+    ESP_ERROR_CHECK(ADC_ONESHOT_CONFIG_CHANNEL(adc1_y_handle, ADC1_CHANNEL_0, &config));
 }
 
 static void joystick_get_raw_xy() {
