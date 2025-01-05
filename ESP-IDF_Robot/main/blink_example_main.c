@@ -135,17 +135,10 @@ typedef struct struct_message {
 
 static int rc_x = 0, rc_y = 0;
 
-uint8_t broadcastAddress[] = {};
-struct_message controlData;
+//uint8_t broadcastAddress[] = {};
+//struct_message controlData;
 esp_now_peer_info_t peerInfo;
 static void espnow_deinit(espnow_send_param_t *send_param);
-
-
-
-static led_strip_handle_t led_strip;
-
-
-
 
 static void blink_led(void)
 {
