@@ -21,11 +21,12 @@ static esp_err_t joystick_adc_init() {
 
     };
     ESP_ERROR_CHECK(adc_oneshot_config_channel(adc1_x_handle, ADC1_CHANNEL_0, &config));
-    ESP_ERROR_CHECK(adc_oneshot_config_channel(adc1_y_handle, ADC1_CHANNEL_0, &config));
+    ESP_ERROR_CHECK(adc_oneshot_config_channel(adc1_y_handle, ADC1_CHANNEL_1, &config));
 }
 
 static void joystick_get_raw_xy() {
     ESP_ERROR_CHECK(adc_oneshot_read(adc1_x_handle, ADC1_CHANNEL_0, x));
+    ESP_ERROR_CHECK(adc_oneshot_read(adc1_y_handle, ADC1_CHANNEL_1, y));
 }
 
 #endif
