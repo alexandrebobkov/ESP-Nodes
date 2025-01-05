@@ -10,7 +10,7 @@ adc_oneshot_unit_handle_t adc1_x_handle;
 static esp_err_t joystick_adc_init() {
     adc_oneshot_unit_init_cgf_t adc_init_config1 = {
         .unit_id = ADC_UNIT_1,
-    }
+    };
 }
 
 static void joystick_get_raw_xy() {
