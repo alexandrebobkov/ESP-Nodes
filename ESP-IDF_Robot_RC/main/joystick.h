@@ -40,6 +40,8 @@ static void joystick_show_raw_xy() {
     ESP_LOGI("(x,y)", "( %d, %d )", x, y);
 }
 
+void get_joystick_xy(uint8_t *x, uint8_t *y) {}
+
 static void joystick_task(void *arg) {
 
     while (true) {
