@@ -99,8 +99,9 @@ void sendData (void) {
 
     get_joystick_xy(&x, &y);
     ESP_LOGI("(x, y)", "[ %d, %d ]", x, y);
-    buffer.x_axis = x;
-    buffer.y_axis = y;
+    get_joystick_xy(&buffer.x_axis, &buffer.y_axis);
+    //buffer.x_axis = x;
+    //buffer.y_axis = y;
 
     // Display brief summary of data being sent.
     ESP_LOGI(TAG, "Joystick (x,y) position ( %d, %d )", buffer.x_axis, buffer.y_axis);  
