@@ -80,15 +80,15 @@ void sendData (void) {
     buffer.x_axis = 240;
     buffer.y_axis = 256;
     buffer.nav_bttn = 0;
-    buffer.motor1_rpm_pcm = 10;
-    buffer.motor2_rpm_pcm = 0;
-    buffer.motor3_rpm_pcm = 0;
-    buffer.motor4_rpm_pcm = 0;
+    buffer.motor1_rpm_pwm = 10;
+    buffer.motor2_rpm_pwm = 0;
+    buffer.motor3_rpm_pwm = 0;
+    buffer.motor4_rpm_pwm = 0;
 
     // Display brief summary of data being sent.
     ESP_LOGI(TAG, "Joystick (x,y) position ( 0x%04X, 0x%04X )", (uint8_t)buffer.x_axis, (uint8_t)buffer.y_axis);  
-    ESP_LOGI(TAG, "pcm 1, pcm 2 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor1_rpm_pcm, (uint8_t)buffer.motor2_rpm_pcm);
-    ESP_LOGI(TAG, "pcm 3, pcm 4 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor3_rpm_pcm, (uint8_t)buffer.motor4_rpm_pcm);
+    ESP_LOGI(TAG, "pwm 1, pwm 2 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.pwm, (uint8_t)buffer.pwm);
+    ESP_LOGI(TAG, "pwm 3, pwm 4 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.pwm, (uint8_t)buffer.pwm);
 
     // Call ESP-NOW function to send data (MAC address of receiver, pointer to the memory holding data & data length)
     uint8_t result = esp_now_send(receiver_mac, &buffer, sizeof(buffer));
@@ -159,7 +159,7 @@ void onDataReceived (uint8_t *mac_addr, uint8_t *data, uint8_t data_len) {
     ESP_LOGW(TAG, "Data was received");
     ESP_LOGI(TAG, "x-axis: 0x%04x", buf->x_axis);
     ESP_LOGI(TAG, "x-axis: 0x%04x", buf->y_axis);
-    ESP_LOGI(TAG, "PCM 1: 0x%04x", buf->motor1_rpm_pcm);
+    ESP_LOGI(TAG, "PWM 1: 0x%04x", buf->motor1_rpm_pwm);
 }
 
 // Call-back for the event when data is being sent
@@ -189,5 +189,10 @@ static void rc_send_data_task (void *arg) {
 | crc |  |  |
 | x_axis |  |  |
 | y_axis |  |  |
+| nav_btn |  |  |
+| motor1_rpm_pwm |  |  |
+| motor2_rpm_pwm |  |  |
+| motor3_rpm_pwm |  |  |
+| motor4_rpm_pwm |  |  |
 | MTR_FREQUENCY | 5000 | Default PWM frequency, Hz. |
 
