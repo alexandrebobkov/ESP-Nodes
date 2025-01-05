@@ -51,36 +51,10 @@
 #include "esp_system.h"
 #include "espnow_config.h"
 
+#include "config.h"
+
 static const char *TAG = "ESP IDF Robot";
 
-// MOTORS PWM CONFIG
-#define MTR_FREQUENCY               (5000)
-#define MTR_MODE                    LEDC_LOW_SPEED_MODE
-#define MTR_DUTY_RES                LEDC_TIMER_13_BIT
-// LEFT SIDE MOTORS, FORWARD
-#define MTR_FRONT_LEFT_IO           (6)
-#define MTR_FRONT_LEFT_TMR          LEDC_TIMER_0
-#define MTR_FRONT_LEFT              LEDC_CHANNEL_1
-#define MTR_FRONT_LEFT_DUTY         (3361)
-// RIGHT SIDE MOTORS, FORWARD
-#define MTR_FRONT_RIGHT_IO          (5)
-#define MTR_FRONT_RIGHT_TMR         LEDC_TIMER_1
-#define MTR_FRONT_RIGHT             LEDC_CHANNEL_0
-#define MTR_FRONT_RIGHT_DUTY        (3361)
-// LEFT SIDE MOTORS, REVERSE
-#define MTR_FRONT_LEFT_REV_IO       (4)
-#define MTR_FRONT_LEFT_REV_TMR      LEDC_TIMER_2
-#define MTR_FRONT_LEFT_REV          LEDC_CHANNEL_2
-#define MTR_FRONT_LEFT_REV_DUTY     (3361)
-// RIGHT SIDE MOTORS, REVERSE
-#define MTR_FRONT_RIGHT_REV_IO      (7)
-#define MTR_FRONT_RIGHT_REV_TMR     LEDC_TIMER_3
-#define MTR_FRONT_RIGHT_REV         LEDC_CHANNEL_3
-#define MTR_FRONT_RIGHT_REV_DUTY    (3361)
-
-
-#define LEDC_DUTY                   (3361)//7820) // 8068, 7944, 7820, 7696, 7572, *7680*, 7424, 7168, 6144, 512, 768
-#define LEDC_FREQUENCY              (5000)//8192)//4000) // For LED the freuqncy of 500Hz seems to be sufficient. // Frequency in Hertz. For DC motor, set frequency at 5 kHz
 
 /* Use project configuration menu (idf.py menuconfig) to choose the GPIO to blink,
    or you can edit the following line and set a number here.
@@ -763,7 +737,7 @@ static void rc_task (void *arg) {
         //rc_get_raw_data();    // Uncomment to read on-board joystick
         update_pwm (rc_x, rc_y);
 
-        ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, m.motor1_rpm_pcm);
+        /*ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, m.motor1_rpm_pcm);
         ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT);
         ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT, m.motor2_rpm_pcm);
         ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT);
@@ -771,7 +745,7 @@ static void rc_task (void *arg) {
         ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT_REV, m.motor3_rpm_pcm);
         ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT_REV);
         ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT_REV, m.motor4_rpm_pcm);
-        ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT_REV);
+        ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT_REV);*/
 
         ESP_LOGI("x,y", "( %d, %d ) [ %d, %d] ", rc_x, rc_y, x, y);
         /*ESP_LOGW(TAG, "Motor 1 PWM: %d", m.motor1_rpm_pcm);
@@ -780,7 +754,7 @@ static void rc_task (void *arg) {
         ESP_LOGW(TAG, "Motor 4 PWM: %d", m.motor4_rpm_pcm);*/
 
         //vTaskDelay (10 / portTICK_PERIOD_MS);  // Determines responsiveness  
-        vTaskDelay (2000 / portTICK_PERIOD_MS); 
+        vTaskDelay (1000 / portTICK_PERIOD_MS); 
     }
 }
 
@@ -823,7 +797,7 @@ void onDataReceived (const uint8_t *mac_addr, const uint8_t *data, uint8_t data_
 
     //update_pwm(buf.x_axis, buf.y_axis);
     update_pwm(rc_x, rc_y);
-    ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, m.motor1_rpm_pcm);
+    /*ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, m.motor1_rpm_pcm);
     ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT);
     ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT, m.motor2_rpm_pcm);
     ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT);
@@ -831,7 +805,7 @@ void onDataReceived (const uint8_t *mac_addr, const uint8_t *data, uint8_t data_
     ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT_REV, m.motor3_rpm_pcm);
     ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT_REV);
     ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT_REV, m.motor4_rpm_pcm);
-    ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT_REV);
+    ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT_REV);*/
     
 }
 

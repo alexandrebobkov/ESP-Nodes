@@ -9,6 +9,7 @@
 #include "esp_adc/adc_cali_scheme.h"
 
 #include "controls.h"
+#include "config.h"
 
 #define ADC_CHNL            ADC_CHANNEL_1
 #define ADC_ATTEN           ADC_ATTEN_DB_11
@@ -129,12 +130,15 @@ static void update_pwm (int rc_x, int rc_y) {
             m.motor3_rpm_pcm = 0;
             m.motor4_rpm_pcm = 0;
         }
-    /*}
-    else {
-        x_sum = 0;
-        y_sum = 0;
-        s = 0;
-    }*/
+    ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, m.motor1_rpm_pcm);
+    ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT);
+    ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT, m.motor2_rpm_pcm);
+    ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT);
+
+    ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT_REV, m.motor3_rpm_pcm);
+    ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT_REV);
+    ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT_REV, m.motor4_rpm_pcm);
+    ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT_REV);
 }
 
 static void rc_get_raw_data() {
