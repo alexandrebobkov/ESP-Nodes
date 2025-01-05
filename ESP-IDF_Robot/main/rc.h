@@ -21,7 +21,7 @@ struct motors_rpm m;
 
 static int adc_raw[2][10];
 static int voltage[2][10];
-static int s = 0, sample = 5, x = 0, y = 0, x_sum = 0, y_sum = 0;
+static int s = 0, sample = 5, x_sum = 0, y_sum = 0;
 static bool adc_calibration_init(adc_unit_t unit, adc_channel_t channel, adc_atten_t atten, adc_cali_handle_t *out_handle);
 static void adc_calibration_deinit(adc_cali_handle_t handle);
 adc_cali_handle_t adc1_cali_chan0_handle, adc1_cali_chan1_handle;
@@ -88,8 +88,8 @@ static void rc_get_raw_data() {
         //y = check_motor_pcm(rescale_raw_val(adc_raw[0][1]));
         x = x_sum / sample;
         y = y_sum / sample;*/
-    x = buf.x_axis;
-    y = buf.y_axis;
+    //x = buf.x_axis;
+    //y = buf.y_axis;
     
 
     if ((x > 0 && x < 500) && (y > 500)) {
