@@ -810,7 +810,7 @@ void onDataReceived (const uint8_t *mac_addr, const uint8_t *data, uint8_t data_
     ESP_LOGI(TAG, "PCM 1: 0x%04X", buf->motor1_rpm_pcm);*/
 
     ESP_LOGW(TAG, "Data was received (%i bytes)", data_len);
-    ESP_LOGI("(x,y)", "( %d, %d)", buf.x_axis, buf.y_axis);
+    ESP_LOGI("Received (x,y)", "( %d, %d )", buf.x_axis, buf.y_axis);
     ESP_LOGI(TAG, "PCM 1: 0x%04X", buf.motor1_rpm_pcm);
     ESP_LOGI(TAG, "PCM 2: 0x%04X", buf.motor2_rpm_pcm);
     ESP_LOGI(TAG, "PCM 3: 0x%04X", buf.motor3_rpm_pcm);
