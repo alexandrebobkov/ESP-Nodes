@@ -1,6 +1,9 @@
 #ifndef JOYSTICK_H
 #define JOYSTICK_H
 
+#include "driver/adc.h"
+#include "esp_adc/adc_oneshot.h"
+
 static unsigned uint8_t x, y;
 adc_oneshot_unit_handle_t adc1_x_handle;
 
