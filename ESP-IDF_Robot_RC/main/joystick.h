@@ -16,7 +16,7 @@ static esp_err_t joystick_adc_init() {
     };
     ESP_ERROR_CHECK(adc_oneshot_new_unit(&adc_init_config_xy, &adc_xy_handle));
 
-    adc_oneshot_chan_cfg_t config_x = {
+    /*adc_oneshot_chan_cfg_t config_x = {
         .bitwidth = SOC_ADC_DIGI_MAX_BITWIDTH,
         .atten = ADC_ATTEN_DB_11,
 
@@ -25,7 +25,7 @@ static esp_err_t joystick_adc_init() {
         .bitwidth = SOC_ADC_DIGI_MAX_BITWIDTH,
         .atten = ADC_ATTEN_DB_11,
 
-    };
+    };*/
     ESP_ERROR_CHECK(adc_oneshot_config_channel(adc_xy_handle, ADC1_CHANNEL_0, &config_x));
     ESP_ERROR_CHECK(adc_oneshot_config_channel(adc_xy_handle, ADC1_CHANNEL_1, &config_y));
 
