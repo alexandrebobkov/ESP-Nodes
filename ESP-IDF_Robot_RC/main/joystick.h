@@ -8,14 +8,14 @@
 #include "esp_adc/adc_oneshot.h"
 
 static unsigned int x, y;
-adc_oneshot_unit_handle_t adc_x_handle, adc_y_handle;
+adc_oneshot_unit_handle_t adc_x_handle, adc_y_handle, adc_xy_handle;
 
 static esp_err_t joystick_adc_init() {
     adc_oneshot_unit_init_cfg_t adc_init_config_xy = {
         .unit_id = ADC_UNIT_1,
     };
-    ESP_ERROR_CHECK(adc_oneshot_new_unit(&adc_init_config_xy, &adc_x_handle));
-    ESP_ERROR_CHECK(adc_oneshot_new_unit(&adc_init_config_xy, &adc_y_handle));
+    ESP_ERROR_CHECK(adc_oneshot_new_unit(&adc_init_config_xy, &adc_xy_handle));
+    //ESP_ERROR_CHECK(adc_oneshot_new_unit(&adc_init_config_xy, &adc_xy_handle));
 
     adc_oneshot_chan_cfg_t config_x = {
         .bitwidth = SOC_ADC_DIGI_MAX_BITWIDTH,
@@ -27,8 +27,8 @@ static esp_err_t joystick_adc_init() {
         .atten = ADC_ATTEN_DB_11,
 
     };
-    ESP_ERROR_CHECK(adc_oneshot_config_channel(adc_x_handle, ADC1_CHANNEL_0, &config_x));
-    //ESP_ERROR_CHECK(adc_oneshot_config_channel(adc_y_handle, ADC1_CHANNEL_1, &config_y));
+    ESP_ERROR_CHECK(adc_oneshot_config_channel(adc_xy_handle, ADC1_CHANNEL_0, &config_x));
+    ESP_ERROR_CHECK(adc_oneshot_config_channel(adc_xy_handle, ADC1_CHANNEL_1, &config_y));
 
     return ESP_OK;
 }
