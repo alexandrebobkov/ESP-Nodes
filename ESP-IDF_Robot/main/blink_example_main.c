@@ -923,7 +923,7 @@ void app_main(void)
     motors_init();
     //xTaskCreate(motors_task, "PWM task", 2048, NULL, 10, NULL);
 
-    while (1) {
+    //while (1) {
         //display_chip_temperature();
 
         //ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");
@@ -935,7 +935,7 @@ void app_main(void)
 
         //rc_get_raw_data();
 
-        vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
+    //    vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
 
         // Gradually reduce DC motor rotation speed.
         /*if (var >= 2048)
@@ -962,5 +962,5 @@ void app_main(void)
         ESP_LOGW(TAG, "Motor 3 PWM: %d", m.motor3_rpm_pcm);
         ESP_LOGW(TAG, "Motor 4 PWM: %d", m.motor4_rpm_pcm);
         */
-    }
+    //}
 }
