@@ -13,6 +13,7 @@ static adc_oneshot_unit_handle_t adc_xy_handle;
 static esp_err_t joystick_adc_init() {
     adc_oneshot_unit_init_cfg_t adc_init_config_xy = {
         .unit_id = ADC_UNIT_1,
+        .ulp_mode = ADC_ULP_MODE_DISABLE,
     };
     ESP_ERROR_CHECK(adc_oneshot_new_unit(&adc_init_config_xy, &adc_xy_handle));
 
