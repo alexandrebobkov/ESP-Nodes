@@ -140,8 +140,7 @@ static int rc_x = 0, rc_y = 0;
 esp_now_peer_info_t peerInfo;
 static void espnow_deinit(espnow_send_param_t *send_param);
 
-static void blink_led(void)
-{
+static void blink_led(void) {
     /* Set the GPIO level according to the state (LOW or HIGH)*/
     gpio_set_level(BLINK_GPIO, s_led_state);
 }
