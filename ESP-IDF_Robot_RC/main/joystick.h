@@ -3,6 +3,8 @@
 
 #include "driver/adc.h"
 #include "esp_adc_cal.h"
+#include "esp_adc/adc_cali.h"
+#include "esp_adc/adc_cali_scheme.h"
 #include "esp_adc/adc_oneshot.h"
 
 static unsigned int x, y;
