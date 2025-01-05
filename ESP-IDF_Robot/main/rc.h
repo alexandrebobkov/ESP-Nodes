@@ -70,7 +70,7 @@ static int check_motor_pcm(int x) {
 // Update PWM based on received values
 static void update_pwm (int x, int y) {
 
-    m.motor1_rpm_pcm = check_motor_pcm(rescale_raw_val(x));
+    //m.motor1_rpm_pcm = check_motor_pcm(rescale_raw_val(x));
     ESP_LOGI("x,y", "%d, %d", 
         check_motor_pcm(rescale_raw_val(x)),
         check_motor_pcm(rescale_raw_val(y)));
