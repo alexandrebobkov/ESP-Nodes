@@ -8,7 +8,7 @@
 #include "esp_adc/adc_oneshot.h"
 
 static unsigned int x, y;
-adc_oneshot_unit_handle_t adc_x_handle, adc_y_handle, adc_xy_handle;
+adc_oneshot_unit_handle_t adc_xy_handle;
 
 static esp_err_t joystick_adc_init() {
     adc_oneshot_unit_init_cfg_t adc_init_config_xy = {
