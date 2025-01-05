@@ -95,21 +95,21 @@ static void update_pwm (int x, int y) {
             m.motor4_rpm_pcm = 0;
         }
         else if ((x > 0 && x < 500) && (y < -200)) {
-        ESP_LOGW("RC", "REVERSE");
-        // Both sides rotate in reverse direction.
-        m.motor1_rpm_pcm = 0;
-        m.motor2_rpm_pcm = 0;
-        m.motor3_rpm_pcm = -y;
-        m.motor4_rpm_pcm = -y;
-    }
-    else if ((y < 0 && y > -200) && (x < -1000)) {
-        ESP_LOGW("RC", "LEFT");
-        // Left side rotates in forward direction, right side rotates in reverse direction.
-        m.motor1_rpm_pcm = -x;
-        m.motor2_rpm_pcm = 0;
-        m.motor3_rpm_pcm = -x;
-        m.motor4_rpm_pcm = 0;
-    }
+            ESP_LOGW("RC", "REVERSE");
+            // Both sides rotate in reverse direction.
+            m.motor1_rpm_pcm = 0;
+            m.motor2_rpm_pcm = 0;
+            m.motor3_rpm_pcm = -y;
+            m.motor4_rpm_pcm = -y;
+        }
+        else if ((y < 0 && y > -200) && (x < -1000)) {
+            ESP_LOGW("RC", "LEFT");
+            // Left side rotates in forward direction, right side rotates in reverse direction.
+            m.motor1_rpm_pcm = -x;
+            m.motor2_rpm_pcm = 0;
+            m.motor3_rpm_pcm = -x;
+            m.motor4_rpm_pcm = 0;
+        }
     else if ((y < 0 && y > -200) && (x > 1000)) {
         ESP_LOGW("RC", "RIGHT");
         // Right side rotates in forward direction, left side rotates in reverse direction.
