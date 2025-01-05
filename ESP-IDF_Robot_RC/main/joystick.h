@@ -16,7 +16,7 @@ static esp_err_t joystick_adc_init() {
     };
     ESP_ERROR_CHECK(adc_oneshot_new_unit(&adc_init_config_xy, &adc_xy_handle));
 
-    /*adc_oneshot_chan_cfg_t config_x = {
+    adc_oneshot_chan_cfg_t config_x = {
         .bitwidth = SOC_ADC_DIGI_MAX_BITWIDTH,
         .atten = ADC_ATTEN_DB_11,
 
@@ -25,7 +25,7 @@ static esp_err_t joystick_adc_init() {
         .bitwidth = SOC_ADC_DIGI_MAX_BITWIDTH,
         .atten = ADC_ATTEN_DB_11,
 
-    };*/
+    };
     ESP_ERROR_CHECK(adc_oneshot_config_channel(adc_xy_handle, ADC1_CHANNEL_0, &config_x));
     ESP_ERROR_CHECK(adc_oneshot_config_channel(adc_xy_handle, ADC1_CHANNEL_1, &config_y));
 
@@ -33,7 +33,6 @@ static esp_err_t joystick_adc_init() {
 }
 
 static void joystick_show_raw_xy() {
-
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_0, &x));
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_1, &y));
     ESP_LOGI("(x,y)", "( %d, %d )", x, y);
@@ -45,7 +44,6 @@ static void get_joystick_xy(int* x_axis, int* y_axis) {
 }
 
 static void joystick_task(void *arg) {
-
     while (true) {
         joystick_show_raw_xy();
         vTaskDelay (750 / portTICK_PERIOD_MS);

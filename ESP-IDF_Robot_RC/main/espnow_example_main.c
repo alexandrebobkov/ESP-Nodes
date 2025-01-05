@@ -26,9 +26,6 @@
 
 #include "joystick.h"
 
-
-//#define ESPNOW_MAXDELAY 512
-
 // Struct holding sensors values
 typedef struct {
     uint16_t    crc;                // CRC16 value of ESPNOW data
@@ -86,7 +83,6 @@ void deletePeer (void) {
 }
 // Function to send data to the receiver
 void sendData (void) {
-    //sensors_data_t buffer;              // Declare data struct
 
     buffer.crc = 0;
     buffer.x_axis = 240;
@@ -99,7 +95,6 @@ void sendData (void) {
 
     get_joystick_xy(&x, &y);
     //ESP_LOGI("(x, y)", "[ %d, %d ]", x, y);
-    //get_joystick_xy(&buffer.x_axis, &buffer.y_axis);
     buffer.x_axis = x;
     buffer.y_axis = y;
 
@@ -116,8 +111,6 @@ void sendData (void) {
         ESP_LOGE("ESP-NOW", "Error sending data! Error code: 0x%04X", result);
         deletePeer();
     }
-    //else
-        //ESP_LOGW("ESP-NOW", "Data was sent.");
 }
 
 // Continous, periodic task that sends data.
@@ -129,7 +122,6 @@ static void rc_send_data_task (void *arg) {
         vTaskDelay (10 / portTICK_PERIOD_MS);
     }
 }
-
 
 void app_main(void)
 {
@@ -154,12 +146,6 @@ void app_main(void)
     peerInfo.channel = 1;                           // Define communication channel
     peerInfo.encrypt = false;                       // Keep data unencrypted
     esp_now_add_peer(&peerInfo);                    // Add peer to the list of registered devices
-    /*if (esp_now_is_peer_exist(receiver_mac)) {
-        ESP_LOGI("ESP-NOW", "Receiver exists.");
-        sendData();
-    }
-    else
-        ESP_LOGE("ESP-NOW", "Receiver does not exists.");*/
 
     // Define a task to periodically call function that sends data
     xTaskCreate (rc_send_data_task, "RC", 2048, NULL, 15, NULL);
