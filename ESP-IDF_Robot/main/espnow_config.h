@@ -93,8 +93,8 @@ typedef struct {
 // Struct holding sensors values
 typedef struct {
     uint16_t    crc;                // CRC16 value of ESPNOW data
-    uint8_t     x_axis;             // Joystick x-position
-    uint8_t     y_axis;             // Joystick y-position
+    int         x_axis;             // Joystick x-position
+    int         y_axis;             // Joystick y-position
     bool        nav_bttn;           // Joystick push button
     uint8_t     motor1_rpm_pcm;     // PCMs for 4 motors
     uint8_t     motor2_rpm_pcm;
