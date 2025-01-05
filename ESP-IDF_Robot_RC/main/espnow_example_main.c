@@ -126,9 +126,9 @@ static void rc_send_data_task (void *arg) {
 
 void app_main(void)
 {
-    joystick_adc_init();
-    xTaskCreate(joystick_task, "RC", 2048, NULL, 5, NULL);
-    
+    if (ESP_ERROR_CHECK(joystick_adc_init() == 0)
+        xTaskCreate(joystick_task, "RC", 2048, NULL, 5, NULL);
+
     // Initialize NVS to store Wi-Fi configurations
     esp_err_t ret = nvs_flash_init();
     if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
