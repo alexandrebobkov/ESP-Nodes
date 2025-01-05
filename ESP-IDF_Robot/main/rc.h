@@ -87,7 +87,7 @@ static void update_pwm (int x, int y) {
         y = y_sum / sample;
         s++;*/
 
-        if ((x > 0 && x < 500) && (y > 500)) {
+        if ((x > 500) && (y > 0 && y < 500)) {
             ESP_LOGW("ESP-NOW", "FORWARD");
             // Both sides rotate in forward direction.
             m.motor1_rpm_pcm = y;   // left, forward
