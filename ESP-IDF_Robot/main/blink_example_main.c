@@ -168,7 +168,6 @@ static void configure_led(void)
     };
 }
 
-#elif CONFIG_BLINK_LED_GPIO
 
 static void blink_led(void)
 {
