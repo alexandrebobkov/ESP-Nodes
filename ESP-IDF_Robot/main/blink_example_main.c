@@ -26,11 +26,6 @@
 #include "motor_controls.h"
 /* System-wide controls */
 #include "controls.h"
-//#include "driver/adc.h"
-//#include "esp_adc_cal.h"
-//#include "esp_adc/adc_oneshot.h"
-//#include "esp_adc/adc_cali.h"
-//#include "esp_adc/adc_cali_scheme.h"
 #include "esp_adc/adc_continuous.h"
 
 /* ESP-NOW */
@@ -46,7 +41,6 @@
 #include "esp_netif.h"
 #include "esp_now.h"
 #include "esp_mac.h"
-//#include "espnow_utils.h"
 #include "esp_wifi.h"
 #include "esp_system.h"
 #include "espnow_config.h"
