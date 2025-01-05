@@ -159,7 +159,7 @@ typedef struct struct_message {
     uint8_t motor_a_pwm;
 } struct_message;
 
-//static int x = 0, y = 0;
+static int rc_x = 0, rc_y = 0;
 
 uint8_t broadcastAddress[] = {};
 struct_message controlData;
@@ -814,11 +814,11 @@ void onDataReceived (const uint8_t *mac_addr, const uint8_t *data, uint8_t data_
     ESP_LOGI(TAG, "PCM 2: 0x%04X", buf.motor2_rpm_pcm);
     ESP_LOGI(TAG, "PCM 3: 0x%04X", buf.motor3_rpm_pcm);
     ESP_LOGI(TAG, "PCM 4: 0x%04X", buf.motor4_rpm_pcm);
-    x = buf.x_axis;
-    y = buf.y_axis;
+    rc_x = buf.x_axis;
+    rc_y = buf.y_axis;
 
     //update_pwm(buf.x_axis, buf.y_axis);
-    update_pwm(x, y);
+    update_pwm(rc_x, rc_y);
     ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, m.motor1_rpm_pcm);
     ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT);
     ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT, m.motor2_rpm_pcm);
