@@ -75,7 +75,7 @@ static void update_pwm (int x, int y) {
         check_motor_pcm(rescale_raw_val(x)),
         check_motor_pcm(rescale_raw_val(y)));
 
-    if (s < sample) {
+    /*if (s < sample) {
         x_sum += check_motor_pcm(rescale_raw_val(x));
         y_sum += check_motor_pcm(rescale_raw_val(y));
         s ++;
@@ -85,7 +85,7 @@ static void update_pwm (int x, int y) {
         //y = check_motor_pcm(rescale_raw_val(adc_raw[0][1]));
         x = x_sum / sample;
         y = y_sum / sample;
-        s++;
+        s++;*/
 
         if ((x > 0 && x < 500) && (y > 500)) {
             ESP_LOGW("ESP-NOW", "FORWARD");
@@ -126,12 +126,12 @@ static void update_pwm (int x, int y) {
             m.motor3_rpm_pcm = 0;
             m.motor4_rpm_pcm = 0;
         }
-    }
+    /*}
     else {
         x_sum = 0;
         y_sum = 0;
         s = 0;
-    }
+    }*/
 }
 
 static void rc_get_raw_data() {
