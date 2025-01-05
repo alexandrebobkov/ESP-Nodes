@@ -166,23 +166,6 @@ static void configure_led(void)
         .strip_gpio_num = BLINK_GPIO,
         .max_leds = 1, // at least one LED on board
     };
-#if CONFIG_BLINK_LED_STRIP_BACKEND_RMT
-    led_strip_rmt_config_t rmt_config = {
-        .resolution_hz = 10 * 1000 * 1000, // 10MHz
-        .flags.with_dma = false,
-    };
-    ESP_ERROR_CHECK(led_strip_new_rmt_device(&strip_config, &rmt_config, &led_strip));
-#elif CONFIG_BLINK_LED_STRIP_BACKEND_SPI
-    led_strip_spi_config_t spi_config = {
-        .spi_bus = SPI2_HOST,
-        .flags.with_dma = true,
-    };
-    ESP_ERROR_CHECK(led_strip_new_spi_device(&strip_config, &spi_config, &led_strip));
-#else
-#error "unsupported LED strip backend"
-#endif
-    /* Set all LED off to clear all pixels */
-    led_strip_clear(led_strip);
 }
 
 #elif CONFIG_BLINK_LED_GPIO
@@ -192,10 +175,6 @@ static void blink_led(void)
     /* Set the GPIO level according to the state (LOW or HIGH)*/
     gpio_set_level(BLINK_GPIO, s_led_state);
 }
-
-#else
-#error "unsupported LED type"
-#endif
 
 static void IRAM_ATTR gpio_isr_handler (void* arg) {
     uint32_t gpio_num = (uint32_t) arg;
