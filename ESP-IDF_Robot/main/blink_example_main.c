@@ -197,10 +197,7 @@ static void blink_led(void)
 #error "unsupported LED type"
 #endif
 
-static void IRAM_ATTR gpio_isr_handler (void* arg) {
-    uint32_t gpio_num = (uint32_t) arg;
-    xQueueSendFromISR(gpio_evt_queue, &gpio_num, NULL);
-}
+
 // Push button interrupt task
 static void gpio_task (void* arg) {
     uint32_t io_num;
@@ -225,14 +222,12 @@ static void configure_button (void) {
     //gpio_set_direction(PUSH_BTN_GPIO, GPIO_MODE_INPUT);
 }
 
-/*static void motors_init (void) {
-
+static void motors_init (void) {
     m.motor1_rpm_pcm = 0;
     m.motor2_rpm_pcm = 0;
     m.motor3_rpm_pcm = 0;
     m.motor4_rpm_pcm = 0;
-
-}*/
+}
 
 static void ledc_init (void) {
 
