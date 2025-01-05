@@ -15,7 +15,7 @@ static esp_err_t joystick_adc_init() {
         .unit_id = ADC_UNIT_1,
     };
     adc_oneshot_unit_init_cfg_t adc_init_config_y = {
-        .unit_id = ADC_UNIT_1,
+        .unit_id = ADC_UNIT_0,
     };
     ESP_ERROR_CHECK(adc_oneshot_new_unit(&adc_init_config_x, &adc_x_handle));
     ESP_ERROR_CHECK(adc_oneshot_new_unit(&adc_init_config_y, &adc_y_handle));
