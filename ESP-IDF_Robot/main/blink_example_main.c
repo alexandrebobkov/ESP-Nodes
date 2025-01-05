@@ -225,14 +225,14 @@ static void configure_button (void) {
     //gpio_set_direction(PUSH_BTN_GPIO, GPIO_MODE_INPUT);
 }
 
-static void motors_init (void) {
+/*static void motors_init (void) {
 
     m.motor1_rpm_pcm = 0;
     m.motor2_rpm_pcm = 0;
     m.motor3_rpm_pcm = 0;
     m.motor4_rpm_pcm = 0;
 
-}
+}*/
 
 static void ledc_init (void) {
 
