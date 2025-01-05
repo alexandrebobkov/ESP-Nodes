@@ -58,9 +58,10 @@ Since ESP-NOW uses wireless module, Wi-Fi needs to be initialized before configu
 ```C
 #include "esp_wifi.h"
 
-
 void app_main(void) {
+
     wifi_init();
+
 }
 ```
 
