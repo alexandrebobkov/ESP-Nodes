@@ -126,7 +126,7 @@ static void rc_send_data_task (void *arg) {
     while (true) {
         if (esp_now_is_peer_exist(receiver_mac))
             sendData();
-        vTaskDelay (1000 / portTICK_PERIOD_MS);
+        vTaskDelay (100 / portTICK_PERIOD_MS);
     }
 }
 
