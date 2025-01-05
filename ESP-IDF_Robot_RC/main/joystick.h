@@ -2,6 +2,7 @@
 #define JOYSTICK_H
 
 #include "driver/adc.h"
+#include "asp_adc_cal.h"
 #include "esp_adc/adc_oneshot.h"
 
 static unsigned uint8_t x = 0, y = 0;
