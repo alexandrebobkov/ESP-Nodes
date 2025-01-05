@@ -352,25 +352,8 @@ static void temp_sensor_task (void *arg) {
 // Task function to read joystick values and update motors rotation speeds.
 static void rc_task (void *arg) {
     while (true) {
-        //rc_get_raw_data();    // Uncomment to read on-board joystick
         update_pwm (rc_x, rc_y);
-
-        /*ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, m.motor1_rpm_pcm);
-        ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT);
-        ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT, m.motor2_rpm_pcm);
-        ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT);
-
-        ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT_REV, m.motor3_rpm_pcm);
-        ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT_REV);
-        ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT_REV, m.motor4_rpm_pcm);
-        ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT_REV);*/
-
         ESP_LOGI("x,y", "( %d, %d ) [ %d, %d] ", rc_x, rc_y, x, y);
-        /*ESP_LOGW(TAG, "Motor 1 PWM: %d", m.motor1_rpm_pcm);
-        ESP_LOGW(TAG, "Motor 2 PWM: %d", m.motor2_rpm_pcm);
-        ESP_LOGW(TAG, "Motor 3 PWM: %d", m.motor3_rpm_pcm);
-        ESP_LOGW(TAG, "Motor 4 PWM: %d", m.motor4_rpm_pcm);*/
-
         //vTaskDelay (10 / portTICK_PERIOD_MS);  // Determines responsiveness  
         vTaskDelay (1000 / portTICK_PERIOD_MS); 
     }
