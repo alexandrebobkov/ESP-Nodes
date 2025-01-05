@@ -53,6 +53,17 @@ Once analog signals are measured, their magnitudes are converted into PWM values
 
 ESP-NOW is used to communicate data between Controller and Receiver.
 
+Since ESP-NOW uses wireless module, Wi-Fi needs to be initialized before configuring ESP-NOW.
+
+```C
+#include "esp_wifi.h"
+
+
+void app_main(void) {
+    wifi_init();
+}
+```
+
 #### RC Controller
 
 RC Controller uses the two ADC on ESP32-C3 to sample voltage levels on joystick x- and y- axis potentionometers. Then, these values are stored in a struct.
