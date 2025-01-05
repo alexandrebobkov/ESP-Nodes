@@ -58,10 +58,28 @@ Since ESP-NOW uses wireless module, Wi-Fi needs to be initialized before configu
 ```C
 #include "esp_wifi.h"
 
-void app_main(void) {
+void app_main(void)
+{
+    // Initialize NVS to store Wi-Fi configurations
+    esp_err_t ret = nvs_flash_init();
+    if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
+        ESP_ERROR_CHECK( nvs_flash_erase() );
+        ret = nvs_flash_init();
+    }
+    ESP_ERROR_CHECK( ret );
 
-    wifi_init();
+    // ESP-NOW
+    wifi_init();                                    // Initialize Wi-Fi
+    esp_now_init();                                 // Call ESP-NOW initialization function
+    esp_now_register_recv_cb(onDataReceived);       // Define call back for the event when data is being received
+    esp_now_register_send_cb(onDataSent);           // Define call back for the event when data is sent received
 
+    // Set ESP-NOW receiver peer configuration values
+    memcpy (peerInfo.peer_addr, receiver_mac, 6);   // Copy receiver MAC address
+    peerInfo.channel = 1;                           // Define communication channel
+    peerInfo.encrypt = false;                       // Keep data unencrypted
+    esp_now_add_peer(&peerInfo);                    // Add peer to 
+    xTaskCreate (rc_send_data_task, "RC", 2048, NULL, 15, NULL);
 }
 ```
 
