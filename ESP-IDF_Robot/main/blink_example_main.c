@@ -82,7 +82,6 @@ uint32_t x_avg = 0, y_avg = 0;
 static TaskHandle_t led_task_handle;
 static TaskHandle_t s_task_handle;
 static TaskHandle_t m_task_handle;  // Task for controlling motors PWMs
-//static adc_channel_t channel[2] = {ADC_CHANNEL_2, ADC_CHANNEL_3};
 static adc_channel_t channel[2] = {ADC_CHANNEL_0, ADC_CHANNEL_1};
 static sensors_data_t buf;
 
@@ -99,9 +98,6 @@ static sensors_data_t buf;
 #define ESPNOW_WIFI_MODE WIFI_MODE_AP
 #define ESPNOW_WIFI_IF   ESP_IF_WIFI_AP
 #endif
-
-// Declare struct to hold motors RPMs
-//Motors *m;
 
 static temperature_sensor_handle_t temp_sensor;
 static temperature_sensor_config_t temp_sensor_config;
