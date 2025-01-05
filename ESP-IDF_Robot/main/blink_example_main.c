@@ -159,7 +159,7 @@ typedef struct struct_message {
     uint8_t motor_a_pwm;
 } struct_message;
 
-static int x = 0, y = 0;
+//static int x = 0, y = 0;
 
 uint8_t broadcastAddress[] = {};
 struct_message controlData;
