@@ -106,10 +106,8 @@ static sensors_data_t buf;
 static temperature_sensor_handle_t temp_sensor;
 static temperature_sensor_config_t temp_sensor_config;
 static float tsens_value;
-
-static QueueHandle_t gpio_evt_queue = NULL;
 static uint8_t s_led_state = 1;
-//static bool s_led_state = true;
+
 
 /*  ============================
             ESP NOW
@@ -119,19 +117,12 @@ static uint8_t s_led_state = 1;
     ESP32-C3 SuperMini MAC:     34:b7:da:f9:33:8d
     ESP32-C3 Breadboard MAC:    e4:b0:63:17:9e:45
 */
-//#define ESPNOW_MAXDELAY 512
-//static QueueHandle_t espnow_queue;
 static uint8_t broadcast_mac[ESP_NOW_ETH_ALEN] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
 //static uint8_t broadcast_mac[ESP_NOW_ETH_ALEN]  = {0x54, 0x32, 0x04, 0x46, 0x71, 0x80};     // MAC address of troubleshooting Dev board
 //static uint8_t broadcast_mac[ESP_NOW_ETH_ALEN]  = {0xE4, 0xB0, 0x63, 0x17, 0x9E, 0x45};
 static uint8_t robot_mac[ESP_NOW_ETH_ALEN]      = {0xE4, 0xB0, 0x63, 0x17, 0x9E, 0x45};     // MAC address of Robot
 static uint8_t rc_mac[ESP_NOW_ETH_ALEN]         = {0x34, 0xB7, 0xDA, 0xF9, 0x33, 0x8D};     // MAC address of Remote Control
 static uint8_t espnow_seq[ESPNOW_DATA_MAX]      = {0, 0};
-//static uint8_t espnow_broadcast_mac[ESP_NOW_ETH_ALEN] = {};
-/*typedef struct struct_message {
-    char node[32];
-    uint8_t motor_a_pwm;
-} struct_message;*/
 
 static int rc_x = 0, rc_y = 0;
 
