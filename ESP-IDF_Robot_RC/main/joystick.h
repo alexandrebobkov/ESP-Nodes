@@ -11,11 +11,14 @@ static unsigned int x, y;
 adc_oneshot_unit_handle_t adc1_x_handle, adc1_y_handle;
 
 static esp_err_t joystick_adc_init() {
-    adc_oneshot_unit_init_cfg_t adc_init_config1 = {
+    adc_oneshot_unit_init_cfg_t adc_init_config_x = {
         .unit_id = ADC_UNIT_1,
     };
-    ESP_ERROR_CHECK(adc_oneshot_new_unit(&adc_init_config1, &adc1_x_handle));
-    ESP_ERROR_CHECK(adc_oneshot_new_unit(&adc_init_config1, &adc1_y_handle));
+    adc_oneshot_unit_init_cfg_t adc_init_config_y = {
+        .unit_id = ADC_UNIT_2,
+    };
+    ESP_ERROR_CHECK(adc_oneshot_new_unit(&adc_init_config_x, &adc1_x_handle));
+    ESP_ERROR_CHECK(adc_oneshot_new_unit(&adc_init_config_y, &adc1_y_handle));
 
     adc_oneshot_chan_cfg_t config = {
         .bitwidth = SOC_ADC_DIGI_MAX_BITWIDTH,
