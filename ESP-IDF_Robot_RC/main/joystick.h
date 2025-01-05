@@ -4,7 +4,7 @@
 #include "driver/adc.h"
 #include "esp_adc/adc_oneshot.h"
 
-static unsigned int x, y;
+static unsigned int *x, *y;
 adc_oneshot_unit_handle_t adc1_x_handle, adc1_y_handle;
 
 static esp_err_t joystick_adc_init() {
