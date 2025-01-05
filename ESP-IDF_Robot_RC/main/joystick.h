@@ -15,7 +15,6 @@ static esp_err_t joystick_adc_init() {
         .unit_id = ADC_UNIT_1,
     };
     ESP_ERROR_CHECK(adc_oneshot_new_unit(&adc_init_config_xy, &adc_xy_handle));
-    //ESP_ERROR_CHECK(adc_oneshot_new_unit(&adc_init_config_xy, &adc_xy_handle));
 
     adc_oneshot_chan_cfg_t config_x = {
         .bitwidth = SOC_ADC_DIGI_MAX_BITWIDTH,
