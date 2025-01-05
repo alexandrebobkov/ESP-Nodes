@@ -28,7 +28,7 @@ static void joystick_get_raw_xy() {
     ESP_ERROR_CHECK(adc_oneshot_read(adc1_x_handle, ADC1_CHANNEL_0, x));
     ESP_ERROR_CHECK(adc_oneshot_read(adc1_y_handle, ADC1_CHANNEL_1, y));
 
-    ESP_LOGI("");
+    ESP_LOGI("(x,y)", "( %i, %i)", x, y);
 }
 
 #endif
