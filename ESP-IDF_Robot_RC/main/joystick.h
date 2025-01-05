@@ -30,7 +30,7 @@ static esp_err_t joystick_adc_init() {
         .atten = ADC_ATTEN_DB_11,
 
     };
-    ESP_ERROR_CHECK(adc_oneshot_config_channel(adc_x_handle, ADC1_CHANNEL_0, &config));
+    ESP_ERROR_CHECK(adc_oneshot_config_channel(adc_x_handle, ADC1_CHANNEL_0, &config_x));
     //ESP_ERROR_CHECK(adc_oneshot_config_channel(adc_y_handle, ADC1_CHANNEL_1, &config));
 
     return ESP_OK;
