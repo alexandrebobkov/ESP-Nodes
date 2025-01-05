@@ -773,6 +773,7 @@ static void rc_task (void *arg) {
         ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT_REV, m.motor4_rpm_pcm);
         ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT_REV);
 
+        ESP_LOGI("x,y", "( %d, %d ) [ %d, %d] ", rc_x, rc_y, x, y);
         /*ESP_LOGW(TAG, "Motor 1 PWM: %d", m.motor1_rpm_pcm);
         ESP_LOGW(TAG, "Motor 2 PWM: %d", m.motor2_rpm_pcm);
         ESP_LOGW(TAG, "Motor 3 PWM: %d", m.motor3_rpm_pcm);
@@ -809,12 +810,14 @@ void onDataReceived (const uint8_t *mac_addr, const uint8_t *data, uint8_t data_
     ESP_LOGI(TAG, "y-axis: 0x%04X", buf->y_axis);
     ESP_LOGI(TAG, "PCM 1: 0x%04X", buf->motor1_rpm_pcm);*/
 
+    /*
     ESP_LOGW(TAG, "Data was received (%i bytes)", data_len);
     ESP_LOGI("Received (x,y)", "( %d, %d )", buf.x_axis, buf.y_axis);
     ESP_LOGI(TAG, "PCM 1: 0x%04X", buf.motor1_rpm_pcm);
     ESP_LOGI(TAG, "PCM 2: 0x%04X", buf.motor2_rpm_pcm);
     ESP_LOGI(TAG, "PCM 3: 0x%04X", buf.motor3_rpm_pcm);
     ESP_LOGI(TAG, "PCM 4: 0x%04X", buf.motor4_rpm_pcm);
+    */
     rc_x = buf.x_axis;
     rc_y = buf.y_axis;
 
