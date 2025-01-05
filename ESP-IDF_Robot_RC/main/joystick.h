@@ -20,8 +20,8 @@ static esp_err_t joystick_adc_init() {
         .atten = ADC_ATTEN_DB_12,
 
     };
-    ESP_ERROR_CHECK(ADC_ONESHOT_CONFIG_CHANNEL(adc1_x_handle, ADC1_CHANNEL_0, &config));
-    ESP_ERROR_CHECK(ADC_ONESHOT_CONFIG_CHANNEL(adc1_y_handle, ADC1_CHANNEL_0, &config));
+    ESP_ERROR_CHECK(adc_oneshot_config_channel(adc1_x_handle, ADC1_CHANNEL_0, &config));
+    ESP_ERROR_CHECK(adc_oneshot_config_channel(adc1_y_handle, ADC1_CHANNEL_0, &config));
 }
 
 static void joystick_get_raw_xy() {
