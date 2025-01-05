@@ -53,6 +53,21 @@ Once analog signals are measured, their magnitudes are converted into PWM values
 
 ESP-NOW is used to communicate data between Controller and Receiver.
 
+#### RC Controller
+
+RC Controller uses the two ADC on ESP32-C3 to sample voltage levels on joystick x- and y- axis potentionometers. Then, these values are stored in a struct.
+
+Sensors values are organized in a struct as follows: 
+
+``` C
+// Struct holding sensors values
+typedef struct {
+    uint16_t    crc;                // CRC16 value of ESPNOW data
+    uint8_t     x_axis;             // Joystick x-position
+    uint8_t     y_axis;             // Joystick y-position
+    bool        nav_bttn;           // Joystick push button
+} __attribute__((packed)) sensors_data_t;
+```
 
 The function _sendData()_ is a core function that sends data to the received using ESP-NOW.
 
@@ -165,22 +180,6 @@ static void rc_send_data_task (void *arg) {
         vTaskDelay (1000 / portTICK_PERIOD_MS);
     }
 }
-```
-
-#### RC Controller
-
-RC Controller uses the two ADC on ESP32-C3 to sample voltage levels on joystick x- and y- axis potentionometers. Then, these values are stored in a struct.
-
-Sensors values are organized in a struct as follows: 
-
-``` C
-// Struct holding sensors values
-typedef struct {
-    uint16_t    crc;                // CRC16 value of ESPNOW data
-    uint8_t     x_axis;             // Joystick x-position
-    uint8_t     y_axis;             // Joystick y-position
-    bool        nav_bttn;           // Joystick push button
-} __attribute__((packed)) sensors_data_t;
 ```
 
 ### Variables
