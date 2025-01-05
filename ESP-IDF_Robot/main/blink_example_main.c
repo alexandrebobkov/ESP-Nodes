@@ -817,7 +817,8 @@ void onDataReceived (const uint8_t *mac_addr, const uint8_t *data, uint8_t data_
     x = buf.x_axis;
     y = buf.y_axis;
 
-    update_pwm(buf.x_axis, buf.y_axis);
+    //update_pwm(buf.x_axis, buf.y_axis);
+    update_pwm(x, y);
     ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, m.motor1_rpm_pcm);
     ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT);
     ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT, m.motor2_rpm_pcm);
