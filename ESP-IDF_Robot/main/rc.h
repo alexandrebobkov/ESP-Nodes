@@ -73,7 +73,7 @@ static void update_pwm (int rc_x, int rc_y) {
     //m.motor1_rpm_pcm = check_motor_pcm(rescale_raw_val(x));
     x = check_motor_pcm(rescale_raw_val(rc_x));
     y = check_motor_pcm(rescale_raw_val(rc_y));
-    ESP_LOGI("x,y", "( %d, %d ) [ %d, %d] ", rc_x, rc_y, x, y);
+    //ESP_LOGI("x,y", "( %d, %d ) [ %d, %d] ", rc_x, rc_y, x, y);
 
     /*if (s < sample) {
         x_sum += check_motor_pcm(rescale_raw_val(x));
@@ -88,7 +88,7 @@ static void update_pwm (int rc_x, int rc_y) {
         s++;*/
 
         if ((x > 500) && (y > 0 && y < 600)) {
-            ESP_LOGW("ESP-NOW", "FORWARD");
+            //ESP_LOGW("ESP-NOW", "FORWARD");
             // Both sides rotate in forward direction.
             m.motor1_rpm_pcm = x;   // left, forward
             m.motor2_rpm_pcm = x;   // right, forward
@@ -97,7 +97,7 @@ static void update_pwm (int rc_x, int rc_y) {
         }
         else if ((x < 0) && (y > 0 && y < 600)) {
         //else if ((x > 0 && x < 500) && (y < -200)) {
-            ESP_LOGW("ESP-NOW", "REVERSE");
+            //ESP_LOGW("ESP-NOW", "REVERSE");
             // Both sides rotate in reverse direction.
             m.motor1_rpm_pcm = 0;
             m.motor2_rpm_pcm = 0;
@@ -106,7 +106,7 @@ static void update_pwm (int rc_x, int rc_y) {
         }
         else if ((x > 0 && x < 500) && (y < 200)) {
         //else if ((y < 0 && y > -200) && (x < -1000)) {
-            ESP_LOGW("ESP-NOW", "LEFT");
+            //ESP_LOGW("ESP-NOW", "LEFT");
             // Left side rotates in forward direction, right side rotates in reverse direction.
             m.motor1_rpm_pcm = -y;
             m.motor2_rpm_pcm = 0;
@@ -115,7 +115,7 @@ static void update_pwm (int rc_x, int rc_y) {
         }
         else if ((x > 0 && x < 500) && (y > 600)) {
         //else if ((y < 0 && y > -200) && (x > 1000)) {
-            ESP_LOGW("ESP-NOW", "RIGHT");
+            //ESP_LOGW("ESP-NOW", "RIGHT");
             // Right side rotates in forward direction, left side rotates in reverse direction.
             m.motor1_rpm_pcm = 0;
             m.motor2_rpm_pcm = y; 
@@ -123,7 +123,7 @@ static void update_pwm (int rc_x, int rc_y) {
             m.motor4_rpm_pcm = y; 
         }
         else {
-            ESP_LOGW("ESP-NOW", "STAND STILL");
+            //ESP_LOGW("ESP-NOW", "STAND STILL");
             m.motor1_rpm_pcm = 0;
             m.motor2_rpm_pcm = 0;
             m.motor3_rpm_pcm = 0;
