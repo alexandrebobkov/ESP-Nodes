@@ -2,7 +2,7 @@
 #define JOYSTICK_H
 
 #include "driver/adc.h"
-#include "asp_adc_cal.h"
+//#include "asp_adc_cal.h"
 #include "esp_adc/adc_oneshot.h"
 
 static unsigned uint8_t x = 0, y = 0;
@@ -12,8 +12,8 @@ static esp_err_t joystick_adc_init() {
     adc_oneshot_unit_init_cfg_t adc_init_config1 = {
         .unit_id = ADC_UNIT_1,
     };
-    ESP_ERROR_CHECK(adc_oneshot_new_init(&adc_init_config1, &adc1_x_handle));
-    ESP_ERROR_CHECK(adc_oneshot_new_init(&adc_init_config1, &adc1_y_handle));
+    ESP_ERROR_CHECK(adc_oneshot_new_unit(&adc_init_config1, &adc1_x_handle));
+    ESP_ERROR_CHECK(adc_oneshot_new_unit(&adc_init_config1, &adc1_y_handle));
 
     adc_oneshot_chan_cfg_t config = {
         .bitwidth = SOC_ADC_DIGI_MAX_BITWIDTH,
