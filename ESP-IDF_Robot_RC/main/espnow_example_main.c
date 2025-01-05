@@ -96,7 +96,7 @@ void sendData (void) {
     buffer.motor3_rpm_pcm = 0;
     buffer.motor4_rpm_pcm = 0;
 
-    get_joystick_xy(&buffer.x_axis, &buffer.y_axis);
+    get_joystick_xy(buffer.x_axis, buffer.y_axis);
 
     // Display brief summary of data being sent.
     ESP_LOGI(TAG, "Joystick (x,y) position ( %d, %d )", buffer.x_axis, buffer.y_axis);  
