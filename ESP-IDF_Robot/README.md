@@ -185,6 +185,7 @@ static void rc_send_data_task (void *arg) {
 ### Variables
 
 | Variable | Value | Description |
+| --- | --- | --- |
+| --- | --- | --- |
 | MTR_FREQUENCY | 5000 | Default PWM frequency. |
-| --- | --- | --- |
-| --- | --- | --- |
+
