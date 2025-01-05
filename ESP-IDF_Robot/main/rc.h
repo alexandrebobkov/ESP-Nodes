@@ -67,6 +67,7 @@ static int check_motor_pcm(int x) {
         return x;
 }
 
+// Update PWM based on received values
 static void update_pwm (int x, int y) {
 
     m.motor1_rpm_pcm = check_motor_pcm(rescale_raw_val(x));
