@@ -83,6 +83,25 @@ void app_main(void)
 }
 ```
 
+The _onDataReceived()_ and _onDataSent()_ are two call-bacl functions that get evoked on each corresponding event.
+
+```C
+// Call-back for the event when data is being received
+void onDataReceived (uint8_t *mac_addr, uint8_t *data, uint8_t data_len) {
+
+    buf = (sensors_data_t*)data;                            // Allocate memory for buffer to store data being received
+    ESP_LOGW(TAG, "Data was received");
+    ESP_LOGI(TAG, "x-axis: 0x%04x", buf->x_axis);
+    ESP_LOGI(TAG, "x-axis: 0x%04x", buf->y_axis);
+    ESP_LOGI(TAG, "PCM 1: 0x%04x", buf->motor1_rpm_pcm);
+}
+
+// Call-back for the event when data is being sent
+void onDataSent (uint8_t *mac_addr, esp_now_send_status_t status) {
+    ESP_LOGW(TAG, "Packet send status: 0x%04X", status);
+}
+```
+
 #### RC Controller
 
 RC Controller uses the two ADC on ESP32-C3 to sample voltage levels on joystick x- and y- axis potentionometers. Then, these values are stored in a struct.
