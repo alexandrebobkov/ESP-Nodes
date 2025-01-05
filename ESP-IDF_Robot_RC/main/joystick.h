@@ -7,7 +7,7 @@
 #include "esp_adc/adc_cali_scheme.h"
 #include "esp_adc/adc_oneshot.h"
 
-static unsigned int x, y;
+static int x, y;
 adc_oneshot_unit_handle_t adc_xy_handle;
 
 static esp_err_t joystick_adc_init() {

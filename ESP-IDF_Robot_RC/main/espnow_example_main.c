@@ -126,8 +126,7 @@ static void rc_send_data_task (void *arg) {
 
 void app_main(void)
 {
-    joystick_adc_init();
-    
+    joystick_adc_init();    
 
     // Initialize NVS to store Wi-Fi configurations
     esp_err_t ret = nvs_flash_init();
@@ -157,4 +156,5 @@ void app_main(void)
 
     // Define a task to periodically call function that sends data
     xTaskCreate (rc_send_data_task, "RC", 2048, NULL, 15, NULL);
+    xTaskCreate (joystick_task, "RC", 2048, NULL, 2, NULL);
 }
