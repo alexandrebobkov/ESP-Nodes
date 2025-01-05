@@ -816,6 +816,8 @@ void onDataReceived (const uint8_t *mac_addr, const uint8_t *data, uint8_t data_
     ESP_LOGI(TAG, "PCM 4: 0x%04X", buf.motor4_rpm_pcm);
     x = buf.x_axis;
     y = buf.y_axis;
+
+    update_pwm(buf.x_axis, buf.y_axis);
     
 }
 
