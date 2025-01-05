@@ -110,21 +110,21 @@ static void update_pwm (int x, int y) {
             m.motor3_rpm_pcm = -x;
             m.motor4_rpm_pcm = 0;
         }
-    else if ((y < 0 && y > -200) && (x > 1000)) {
-        ESP_LOGW("RC", "RIGHT");
-        // Right side rotates in forward direction, left side rotates in reverse direction.
-        m.motor1_rpm_pcm = 0;
-        m.motor2_rpm_pcm = x; 
-        m.motor3_rpm_pcm = 0;
-        m.motor4_rpm_pcm = x; 
-    }
-    else {
-        ESP_LOGW("RC", "STAND STILL");
-        m.motor1_rpm_pcm = 0;
-        m.motor2_rpm_pcm = 0;
-        m.motor3_rpm_pcm = 0;
-        m.motor4_rpm_pcm = 0;
-    }
+        else if ((y < 0 && y > -200) && (x > 1000)) {
+            ESP_LOGW("RC", "RIGHT");
+            // Right side rotates in forward direction, left side rotates in reverse direction.
+            m.motor1_rpm_pcm = 0;
+            m.motor2_rpm_pcm = x; 
+            m.motor3_rpm_pcm = 0;
+            m.motor4_rpm_pcm = x; 
+        }
+        else {
+            ESP_LOGW("RC", "STAND STILL");
+            m.motor1_rpm_pcm = 0;
+            m.motor2_rpm_pcm = 0;
+            m.motor3_rpm_pcm = 0;
+            m.motor4_rpm_pcm = 0;
+        }
     }
     else {
         x_sum = 0;
