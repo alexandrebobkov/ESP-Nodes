@@ -820,7 +820,7 @@ void onDataReceived (const uint8_t *mac_addr, const uint8_t *data, uint8_t data_
 
     //update_pwm(buf.x_axis, buf.y_axis);
     update_pwm(rc_x, rc_y);
-    ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, m.motor1_rpm_pcm);
+    /*ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, m.motor1_rpm_pcm);
     ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT);
     ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT, m.motor2_rpm_pcm);
     ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT);
@@ -828,7 +828,7 @@ void onDataReceived (const uint8_t *mac_addr, const uint8_t *data, uint8_t data_
     ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT_REV, m.motor3_rpm_pcm);
     ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT_REV);
     ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT_REV, m.motor4_rpm_pcm);
-    ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT_REV);
+    ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT_REV);*/
     
 }
 
