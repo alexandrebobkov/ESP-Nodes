@@ -68,12 +68,12 @@ static int check_motor_pcm(int x) {
 }
 
 // Update PWM based on received values
-static void update_pwm (int x, int y) {
+static void update_pwm (int rc_x, int rc_y) {
 
     //m.motor1_rpm_pcm = check_motor_pcm(rescale_raw_val(x));
-    ESP_LOGI("x,y", "%d, %d", 
-        check_motor_pcm(rescale_raw_val(x)),
-        check_motor_pcm(rescale_raw_val(y)));
+    x = check_motor_pcm(rescale_raw_val(rc_x));
+    y = check_motor_pcm(rescale_raw_val(rc_y));
+    ESP_LOGI("x,y", "%d, %d", x, y);
 
     /*if (s < sample) {
         x_sum += check_motor_pcm(rescale_raw_val(x));
