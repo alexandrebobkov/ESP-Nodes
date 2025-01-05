@@ -67,7 +67,7 @@ static int check_motor_pcm(int x) {
         return x;
 }
 
-
+static void update_pwm (int x, int y) {}
 static void rc_get_raw_data() {
 
     ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, ADC1_CHAN0, &adc_raw[0][0]));
