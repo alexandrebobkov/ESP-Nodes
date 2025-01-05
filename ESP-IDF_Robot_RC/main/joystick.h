@@ -11,6 +11,13 @@ static esp_err_t joystick_adc_init() {
     adc_oneshot_unit_init_cgf_t adc_init_config1 = {
         .unit_id = ADC_UNIT_1,
     };
+    ESP_ERROR_CHECK(adc_oneshot_new_init(&adc_init_config1, &adc1_x_andle;));
+
+    adc_oneshot_chan_cfg_t config = {
+        .bitwidth = SOC_ADC_DIGI_MAX_BITWIDTH,
+        .atten = ADC_ATTEN_DB_12,
+
+    };
 }
 
 static void joystick_get_raw_xy() {
