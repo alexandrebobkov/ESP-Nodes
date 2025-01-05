@@ -99,7 +99,7 @@ void sendData (void) {
 
     get_joystick_xy(&x, &y);
     ESP_LOGI("(x, y)", "[ %d, %d ]", x, y);
-     buffer.x_axis = x;
+    buffer.x_axis = x;
     buffer.y_axis = y;
 
     // Display brief summary of data being sent.
