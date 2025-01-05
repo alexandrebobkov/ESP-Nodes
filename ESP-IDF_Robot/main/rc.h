@@ -70,7 +70,9 @@ static int check_motor_pcm(int x) {
 static void update_pwm (int x, int y) {
 
     m.motor1_rpm_pcm = check_motor_pcm(rescale_raw_val(x));
-    ESP_LOGI("x,y", "%d", check_motor_pcm(rescale_raw_val(x)));
+    ESP_LOGI("x,y", "%d, %d", 
+        check_motor_pcm(rescale_raw_val(x)),
+        check_motor_pcm(rescale_raw_val(y)));
 }
 
 static void rc_get_raw_data() {
