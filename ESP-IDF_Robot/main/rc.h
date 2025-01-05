@@ -85,6 +85,46 @@ static void update_pwm (int x, int y) {
         x = x_sum / sample;
         y = y_sum / sample;
         s++;
+
+        if ((x > 0 && x < 500) && (y > 500)) {
+            ESP_LOGW("RC", "FORWARD");
+            // Both sides rotate in forward direction.
+            m.motor1_rpm_pcm = y;   // left, forward
+            m.motor2_rpm_pcm = y;   // right, forward
+            m.motor3_rpm_pcm = 0;
+            m.motor4_rpm_pcm = 0;
+        }
+        else if ((x > 0 && x < 500) && (y < -200)) {
+        ESP_LOGW("RC", "REVERSE");
+        // Both sides rotate in reverse direction.
+        m.motor1_rpm_pcm = 0;
+        m.motor2_rpm_pcm = 0;
+        m.motor3_rpm_pcm = -y;
+        m.motor4_rpm_pcm = -y;
+    }
+    else if ((y < 0 && y > -200) && (x < -1000)) {
+        ESP_LOGW("RC", "LEFT");
+        // Left side rotates in forward direction, right side rotates in reverse direction.
+        m.motor1_rpm_pcm = -x;
+        m.motor2_rpm_pcm = 0;
+        m.motor3_rpm_pcm = -x;
+        m.motor4_rpm_pcm = 0;
+    }
+    else if ((y < 0 && y > -200) && (x > 1000)) {
+        ESP_LOGW("RC", "RIGHT");
+        // Right side rotates in forward direction, left side rotates in reverse direction.
+        m.motor1_rpm_pcm = 0;
+        m.motor2_rpm_pcm = x; 
+        m.motor3_rpm_pcm = 0;
+        m.motor4_rpm_pcm = x; 
+    }
+    else {
+        ESP_LOGW("RC", "STAND STILL");
+        m.motor1_rpm_pcm = 0;
+        m.motor2_rpm_pcm = 0;
+        m.motor3_rpm_pcm = 0;
+        m.motor4_rpm_pcm = 0;
+    }
     }
     else {
         x_sum = 0;
