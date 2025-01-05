@@ -78,7 +78,7 @@ static void rc_get_raw_data() {
     ESP_LOGI("Joystick F", "Position: %d (%d)", rescale_raw_val(adc_raw[0][1]), check_motor_pcm(rescale_raw_val(adc_raw[0][1])));
     ESP_LOGW("Joystick", " sample %d, (x,y): (%d, %d)", sample, x, y);
 
-    /*if (s < sample) {
+    if (s < sample) {
         x_sum += check_motor_pcm(rescale_raw_val(adc_raw[0][0]));
         y_sum += check_motor_pcm(rescale_raw_val(adc_raw[0][1]));
         s ++;
@@ -87,7 +87,7 @@ static void rc_get_raw_data() {
         //x = check_motor_pcm(rescale_raw_val(adc_raw[0][0]));
         //y = check_motor_pcm(rescale_raw_val(adc_raw[0][1]));
         x = x_sum / sample;
-        y = y_sum / sample;*/
+        y = y_sum / sample;
     //x = buf.x_axis;
     //y = buf.y_axis;
     
