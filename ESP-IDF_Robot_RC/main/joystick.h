@@ -4,7 +4,7 @@
 #include "driver/adc.h"
 #include "esp_adc/adc_oneshot.h"
 
-static unsigned int *x, *y;
+static unsigned int x, y;
 adc_oneshot_unit_handle_t adc1_x_handle, adc1_y_handle;
 
 static esp_err_t joystick_adc_init() {
@@ -30,7 +30,7 @@ static void joystick_get_raw_xy() {
     ESP_ERROR_CHECK(adc_oneshot_read(adc1_x_handle, ADC1_CHANNEL_0, &x));
     ESP_ERROR_CHECK(adc_oneshot_read(adc1_y_handle, ADC1_CHANNEL_1, &y));
 
-    ESP_LOGI("(x,y)", "( %i, %i)", x, y);
+    ESP_LOGI("(x,y)", "( %d, %d)", x, y);
 }
 
 static void joystick_task(void *arg) {
