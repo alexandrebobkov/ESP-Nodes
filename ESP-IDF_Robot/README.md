@@ -53,6 +53,41 @@ Once analog signals are measured, their magnitudes are converted into PWM values
 
 ESP-NOW is used to communicate data between Controller and Receiver.
 
+
+The function _sendData()_ is a core function that sends data to the received using ESP-NOW.
+
+```C
+// Function to send data to the receiver
+void sendData (void) {
+    sensors_data_t buffer;              // Declare data struct
+
+    buffer.crc = 0;
+    buffer.x_axis = 240;
+    buffer.y_axis = 256;
+    buffer.nav_bttn = 0;
+    buffer.motor1_rpm_pcm = 10;
+    buffer.motor2_rpm_pcm = 0;
+    buffer.motor3_rpm_pcm = 0;
+    buffer.motor4_rpm_pcm = 0;
+
+    // Display brief summary of data being sent.
+    ESP_LOGI(TAG, "Joystick (x,y) position ( 0x%04X, 0x%04X )", (uint8_t)buffer.x_axis, (uint8_t)buffer.y_axis);  
+    ESP_LOGI(TAG, "pcm 1, pcm 2 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor1_rpm_pcm, (uint8_t)buffer.motor2_rpm_pcm);
+    ESP_LOGI(TAG, "pcm 3, pcm 4 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor3_rpm_pcm, (uint8_t)buffer.motor4_rpm_pcm);
+
+    // Call ESP-NOW function to send data (MAC address of receiver, pointer to the memory holding data & data length)
+    uint8_t result = esp_now_send(receiver_mac, &buffer, sizeof(buffer));
+
+    // If status is NOT OK, display error message and error code (in hexadecimal).
+    if (result != 0) {
+        ESP_LOGE("ESP-NOW", "Error sending data! Error code: 0x%04X", result);
+        deletePeer();
+    }
+    else
+        ESP_LOGW("ESP-NOW", "Data was sent.");
+}
+```
+
 Since ESP-NOW uses wireless module, Wi-Fi needs to be initialized before configuring ESP-NOW.
 
 ```C
@@ -115,6 +150,20 @@ void onDataReceived (uint8_t *mac_addr, uint8_t *data, uint8_t data_len) {
 // Call-back for the event when data is being sent
 void onDataSent (uint8_t *mac_addr, esp_now_send_status_t status) {
     ESP_LOGW(TAG, "Packet send status: 0x%04X", status);
+}
+```
+
+The _rc_send_data_task()_ function runs every second to send data over ESP-NOW.
+
+```C
+// Continous, periodic task that sends data.
+static void rc_send_data_task (void *arg) {
+
+    while (true) {
+        if (esp_now_is_peer_exist(receiver_mac))
+            sendData();
+        vTaskDelay (1000 / portTICK_PERIOD_MS);
+    }
 }
 ```
 
