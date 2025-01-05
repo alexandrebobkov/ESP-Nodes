@@ -73,6 +73,24 @@ static void update_pwm (int x, int y) {
     ESP_LOGI("x,y", "%d, %d", 
         check_motor_pcm(rescale_raw_val(x)),
         check_motor_pcm(rescale_raw_val(y)));
+
+    if (s < sample) {
+        x_sum += check_motor_pcm(rescale_raw_val(adc_raw[0][0]));
+        y_sum += check_motor_pcm(rescale_raw_val(adc_raw[0][1]));
+        s ++;
+    }
+    else if (s == sample) {
+        //x = check_motor_pcm(rescale_raw_val(adc_raw[0][0]));
+        //y = check_motor_pcm(rescale_raw_val(adc_raw[0][1]));
+        x = x_sum / sample;
+        y = y_sum / sample;
+        s++;
+    }
+    else {
+        x_sum = 0;
+        y_sum = 0;
+        s = 0;
+    }
 }
 
 static void rc_get_raw_data() {
