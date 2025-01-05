@@ -32,8 +32,8 @@
 // Struct holding sensors values
 typedef struct {
     uint16_t    crc;                // CRC16 value of ESPNOW data
-    uint8_t     x_axis;             // Joystick x-position
-    uint8_t     y_axis;             // Joystick y-position
+    int         x_axis;             // Joystick x-position
+    int         y_axis;             // Joystick y-position
     bool        nav_bttn;           // Joystick push button
     uint8_t     motor1_rpm_pcm;     // PCMs for 4 motors
     uint8_t     motor2_rpm_pcm;
@@ -96,8 +96,10 @@ void sendData (void) {
     buffer.motor3_rpm_pcm = 0;
     buffer.motor4_rpm_pcm = 0;
 
+    get_joystick_xy(&buffer.x_axis, &buffer.y_axis);
+
     // Display brief summary of data being sent.
-    ESP_LOGI(TAG, "Joystick (x,y) position ( 0x%04X, 0x%04X )", (uint8_t)buffer.x_axis, (uint8_t)buffer.y_axis);  
+    ESP_LOGI(TAG, "Joystick (x,y) position ( %d, %d )", buffer.x_axis, buffer.y_axis);  
     ESP_LOGI(TAG, "pcm 1, pcm 2 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor1_rpm_pcm, (uint8_t)buffer.motor2_rpm_pcm);
     ESP_LOGI(TAG, "pcm 3, pcm 4 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor3_rpm_pcm, (uint8_t)buffer.motor4_rpm_pcm);
 
