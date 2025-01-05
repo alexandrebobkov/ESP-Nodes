@@ -330,8 +330,6 @@ static void wifi_init()
     ESP_ERROR_CHECK( esp_wifi_set_channel(CONFIG_ESPNOW_CHANNEL, WIFI_SECOND_CHAN_NONE));
 }
 
-
-void motors_task (void *pvParameter) {}
 static void led_task (void *arg) {
     while(1) {
         ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");
@@ -379,35 +377,9 @@ static void display_chip_temperature () {
 void onDataReceived (const uint8_t *mac_addr, const uint8_t *data, uint8_t data_len) {
 
     memcpy(&buf, data, sizeof(buf));
-    //buf = (sensors_data_t*)data;
-    /*ESP_LOGW(TAG, "Data was received");
-    ESP_LOGI(TAG, "x-axis: 0x%04X", buf->x_axis);
-    ESP_LOGI(TAG, "y-axis: 0x%04X", buf->y_axis);
-    ESP_LOGI(TAG, "PCM 1: 0x%04X", buf->motor1_rpm_pcm);*/
-
-    /*
-    ESP_LOGW(TAG, "Data was received (%i bytes)", data_len);
-    ESP_LOGI("Received (x,y)", "( %d, %d )", buf.x_axis, buf.y_axis);
-    ESP_LOGI(TAG, "PCM 1: 0x%04X", buf.motor1_rpm_pcm);
-    ESP_LOGI(TAG, "PCM 2: 0x%04X", buf.motor2_rpm_pcm);
-    ESP_LOGI(TAG, "PCM 3: 0x%04X", buf.motor3_rpm_pcm);
-    ESP_LOGI(TAG, "PCM 4: 0x%04X", buf.motor4_rpm_pcm);
-    */
     rc_x = buf.x_axis;
     rc_y = buf.y_axis;
-
-    //update_pwm(buf.x_axis, buf.y_axis);
-    update_pwm(rc_x, rc_y);
-    /*ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, m.motor1_rpm_pcm);
-    ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT);
-    ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT, m.motor2_rpm_pcm);
-    ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT);
-
-    ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT_REV, m.motor3_rpm_pcm);
-    ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT_REV);
-    ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT_REV, m.motor4_rpm_pcm);
-    ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT_REV);*/
-    
+    update_pwm(rc_x, rc_y);    
 }
 
 void app_main(void)
@@ -423,21 +395,11 @@ void app_main(void)
     // Initialize the config structure.
     gpio_config_t io_conf = {};
 
-    /* Configure the peripheral according to the LED type */
-    //configure_led();
-
     /* 
         Configure on-board LED
     */
-    /*io_conf.intr_type = GPIO_INTR_DISABLE;
-    io_conf.mode = GPIO_MODE_OUTPUT;
-    io_conf.pin_bit_mask = GPIO_OUTPUT_PIN_SEL;
-    io_conf.pull_down_en = 0;
-    io_conf.pull_up_en = 0;
-    gpio_config(&io_conf);*/
     gpio_reset_pin(BLINK_GPIO);
     gpio_set_direction(BLINK_GPIO, GPIO_MODE_OUTPUT);
-    //xTaskCreate(led_task, "LED task", 1024, NULL, 5, NULL);
     xTaskCreate(led_task, "LED", 2048, NULL, 15, NULL);
 
     // Configure on-board push button
@@ -478,9 +440,6 @@ void app_main(void)
         ret = nvs_flash_init();
     }
     ESP_ERROR_CHECK( ret );
-    //wifi_init();        // is it required when using ESP-NOW?
-    //espnow_init();
-    //esp_now_add_peer(&peerInfo);
 
     buf.x_axis = 0;
     buf.y_axis = 0;
@@ -499,46 +458,4 @@ void app_main(void)
         MOTORS
     */
     motors_init();
-    //xTaskCreate(motors_task, "PWM task", 2048, NULL, 10, NULL);
-
-    //while (1) {
-        //display_chip_temperature();
-
-        //ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");
-
-        // ADC
-        // Display GPIOs used        
-        //ESP_LOGI(TAG, "ADC1_CH0: %d", ADC1_CHANNEL_0);
-        //ESP_LOGI(TAG, "ADC1_CH1: %d", ADC1_CHANNEL_1);
-
-        //rc_get_raw_data();
-
-    //    vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
-
-        // Gradually reduce DC motor rotation speed.
-        /*if (var >= 2048)
-            var -= 124;
-        else
-            var = 8091;
-        //update_pwm(var);
-        ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, var);
-        ledc_update_duty(LEDC_MODE, LEDC_CHANNEL);*/
-
-        /*
-        ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, m.motor1_rpm_pcm);
-        ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT);
-        ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT, m.motor2_rpm_pcm);
-        ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT);
-
-        ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT_REV, m.motor3_rpm_pcm);
-        ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT_REV);
-        ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT_REV, m.motor4_rpm_pcm);
-        ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT_REV);
-
-        ESP_LOGW(TAG, "Motor 1 PWM: %d", m.motor1_rpm_pcm);
-        ESP_LOGW(TAG, "Motor 2 PWM: %d", m.motor2_rpm_pcm);
-        ESP_LOGW(TAG, "Motor 3 PWM: %d", m.motor3_rpm_pcm);
-        ESP_LOGW(TAG, "Motor 4 PWM: %d", m.motor4_rpm_pcm);
-        */
-    //}
 }
