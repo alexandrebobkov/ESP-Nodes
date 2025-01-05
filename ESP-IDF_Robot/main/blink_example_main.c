@@ -760,7 +760,7 @@ static void temp_sensor_task (void *arg) {
 // Task function to read joystick values and update motors rotation speeds.
 static void rc_task (void *arg) {
     while (true) {
-        //rc_get_raw_data();    // Uncomment to read on-board joystick
+        rc_get_raw_data();    // Uncomment to read on-board joystick
 
         ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, m.motor1_rpm_pcm);
         ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT);
