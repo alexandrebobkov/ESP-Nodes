@@ -9,6 +9,7 @@
 
 static int x, y;
 static adc_oneshot_unit_handle_t adc_xy_handle;
+extern static sensors_data_t buffer;   
 
 static esp_err_t joystick_adc_init() {
     adc_oneshot_unit_init_cfg_t adc_init_config_xy = {
