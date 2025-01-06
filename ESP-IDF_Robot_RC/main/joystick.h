@@ -42,7 +42,7 @@ static void get_joystick_xy(int* x_axis, int* y_axis) {
 static void joystick_task(void *arg) {
     while (true) {
         joystick_show_raw_xy();
-        vTaskDelay (750 / portTICK_PERIOD_MS);
+        vTaskDelay (10 / portTICK_PERIOD_MS);
     }
 }
 
