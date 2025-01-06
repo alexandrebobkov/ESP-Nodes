@@ -1,7 +1,7 @@
 #ifndef JOYSTICK_H
 #define JOYSTICK_H
 
-//#include "driver/adc.h"
+#include "driver/adc.h"
 //#include "esp_adc_cal.h"
 //#include "esp_adc/adc_cali.h"
 //#include "esp_adc/adc_cali_scheme.h"
