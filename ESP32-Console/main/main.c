@@ -17,9 +17,7 @@
 #include "esp_system.h"
 #include "esp_console.h"
 
-esp_console_config_t {
-
-} console_config;
+esp_console_config_t *console_config;
 
 static void initialize_nvs (void) {
     esp_err_t err = nvs_flash_init();
