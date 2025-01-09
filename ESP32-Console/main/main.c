@@ -7,6 +7,8 @@
 
 #include <stdio.h>
 
+#include "esp_console.h"
+
 void app_main(void)
 {
 
