@@ -17,6 +17,10 @@
 #include "esp_system.h"
 #include "esp_console.h"
 
+esp_console_config_t console_config {
+
+};
+
 static void initialize_nvs (void) {
     esp_err_t err = nvs_flash_init();
     if (err == ESP_ERR_NVS_NO_FREE_PAGES || err == ESP_ERR_NVS_NEW_VERSION_FOUND) {
@@ -33,6 +37,7 @@ void app_main(void)
     /*
         INITIALIZE COMMANDS
     */
-   esp_console_register_help_command();
+   esp_console_init(console_config);
+   //esp_console_register_help_command();
 
 }
