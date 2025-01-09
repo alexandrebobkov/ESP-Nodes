@@ -9,6 +9,8 @@
 #include <string.h>
 
 #include "esp_log.h"
+#include "esp_flash.h"
+#include "nvs.h"
 #include "esp_console.h"
 
 static void initialize_nvs (void) {
