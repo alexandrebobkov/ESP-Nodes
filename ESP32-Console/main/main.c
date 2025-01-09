@@ -34,6 +34,10 @@ void app_main(void)
     initialize_nvs();
 
     console_config->max_cmdline_length = 124;
+    console_config->max_cmdline_args = 5;
+
+    cmd1.command = 'about';
+    cmd1->command = 'about'
 
     /*
         INITIALIZE COMMANDS
