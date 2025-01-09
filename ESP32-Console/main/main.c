@@ -37,7 +37,8 @@ void app_main(void)
     console_config->max_cmdline_length = 124;
     console_config->max_cmdline_args = 5;
 
-    cmd1->command = 'about'
+    cmd1->command = 'about';
+    cmd1->func = cmd1_func;
 
     /*
         INITIALIZE COMMANDS
