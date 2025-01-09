@@ -27,5 +27,6 @@ static void initialize_nvs (void) {
 
 void app_main(void)
 {
+    initialize_nvs();
 
 }
