@@ -19,6 +19,7 @@
 
 esp_console_config_t *console_config;
 esp_console_cmd_t *cmd1;
+esp_console_cmd_func_t *cmd1_func; 
 
 static void initialize_nvs (void) {
     esp_err_t err = nvs_flash_init();
