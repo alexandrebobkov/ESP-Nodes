@@ -30,4 +30,8 @@ void app_main(void)
 {
     initialize_nvs();
 
+    /*
+        INITIALIZE COMMANDS
+    */
+
 }
