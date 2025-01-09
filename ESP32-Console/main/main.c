@@ -33,6 +33,8 @@ void app_main(void)
 {
     initialize_nvs();
 
+    console_config->max_cmdline_length = 124;
+
     /*
         INITIALIZE COMMANDS
     */
