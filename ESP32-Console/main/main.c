@@ -17,7 +17,7 @@
 #include "esp_system.h"
 #include "esp_console.h"
 
-esp_console_config_t *console_config;
+struct esp_console_config_t console_config {};
 esp_console_cmd_t *cmd1;
 
 static void initialize_nvs (void) {
