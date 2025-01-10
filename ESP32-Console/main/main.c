@@ -36,11 +36,9 @@ void app_main(void)
 {
     initialize_nvs();
 
-    console_config->max_cmdline_length = 124;
-    console_config->max_cmdline_args = 5;
-
-    cmd1->command = 'about';
-    cmd1->func = cmd1_func;
+    esp_console_repl_t *repl = NULL;
+    esp_console_config_t repl_config = ESP_CONSOLE_REPL_CONFIG_DEFAULT();
+    repl_config.prompt = "foxie >";
 
     /*
         INITIALIZE COMMANDS
