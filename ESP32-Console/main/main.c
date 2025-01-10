@@ -44,6 +44,10 @@ void app_main(void)
         INITIALIZE COMMANDS
     */
    register_commands();
-   //esp_console_register_help_command();
+   
+   /*
+        START CONSOLE REPL
+   */
+    ESP_ERROR_CHECK(esp_console_start_repl(repl));
 
 }
