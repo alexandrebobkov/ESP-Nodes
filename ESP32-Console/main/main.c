@@ -43,7 +43,7 @@ void app_main(void)
     /*
         INITIALIZE COMMANDS
     */
-   esp_console_init(console_config);
+   register_commands();
    //esp_console_register_help_command();
 
 }
