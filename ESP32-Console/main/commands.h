@@ -19,4 +19,8 @@ static void register_info (void) {
     };
 }
 
+void register_commands (void) {
+    register_info();
+}
+
 #endif
