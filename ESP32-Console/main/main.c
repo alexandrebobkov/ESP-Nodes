@@ -17,6 +17,8 @@
 #include "esp_system.h"
 #include "esp_console.h"
 
+#include "commands.h"
+
 esp_console_config_t *console_config;
 esp_console_cmd_t *cmd1;
 esp_console_cmd_func_t *cmd1_func; 
