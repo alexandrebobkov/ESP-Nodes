@@ -1,6 +1,10 @@
 #ifndef COMMANDS_H
 #define COMMANDS_H
 
+#include "argtable3/argtable3.h"
+#include "esp_console.h"
+#include "esp_log.h"
+
 static struct {
     struct arg_int *detail;
     struct arg_int *chip_temp;
