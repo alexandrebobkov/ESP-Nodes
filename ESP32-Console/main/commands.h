@@ -3,7 +3,7 @@
 
 static struct {
     struct arg_int *detail;
-    struct arg_int *temp;
+    struct arg_int *chip_temp;
     struct arg_int *voltage;
 } info_args;
 static int do_info_cmd (int argc, char **argv) {
