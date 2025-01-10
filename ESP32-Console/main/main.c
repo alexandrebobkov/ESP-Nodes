@@ -10,6 +10,7 @@
 
 #include "esp_log.h"
 #include "esp_flash.h"
+
 #include "nvs.h"
 #include "nvs_flash.h"
 #include "esp_vfs_dev.h"
@@ -34,10 +35,12 @@ static void initialize_nvs (void) {
 
 void app_main(void)
 {
-    initialize_nvs();
-
     esp_console_repl_t *repl = NULL;
     esp_console_config_t repl_config = ESP_CONSOLE_REPL_CONFIG_DEFAULT();
+
+    initialize_nvs();
+
+    
     repl_config.prompt = "foxie >";
 
     /*
