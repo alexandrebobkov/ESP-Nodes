@@ -40,7 +40,6 @@ void app_main(void)
 
     initialize_nvs();
 
-    
     repl_config.prompt = "foxie >";
 
     /*
