@@ -67,14 +67,8 @@ void app_main(void)
 
     repl_config.prompt = "foxie >";
     
-    //repl_config.max_cmdline_length = CONFIG_CONSOLE_MAX_COMMAND_LINE_LENGTH;
-//#if CONFIG_ESP_CONSOLE_UART
     esp_console_dev_uart_config_t uart_config = ESP_CONSOLE_DEV_UART_CONFIG_DEFAULT();    
     ESP_ERROR_CHECK(esp_console_new_repl_uart(&uart_config, &repl_config, &repl));
-//#elif CONFIG_ESP_CONSOLE_USB_CDC
-//    esp_console_dev_usb_cdc_config_t cdc_config = ESP_CONSOLE_DEV_CDC_CONFIG_DEFAULT();
-//    ESP_ERROR_CHECK(esp_console_new_repl_uart(&cdc_config, &repl_config, &repl));
-//#endif
 
     register_commands();
     /*
