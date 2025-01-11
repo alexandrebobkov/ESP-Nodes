@@ -29,6 +29,7 @@ static int do_info_cmd (int argc, char **argv) {
     }
 }
 static void register_info (void) {
+    info_args.detail = arg_str1(NULL, NULL, "<temp>", "Chip temperature");
     const esp_console_cmd_t info_cmd = {
         .command = "info",
         .help = "System Information",
