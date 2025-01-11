@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "ESP32-Console",
-    "project_version":    "ESP32-Node_Switch-v2.7-3314-g368ac5dc7-dirty",
+    "project_version":    "ESP32-Node_Switch-v2.7-3318-gfa9879ae3-dirty",
     "project_path":       "/home/abobkov/MyProjects/ESP-Nodes/ESP32-Console",
     "idf_path":           "/home/abobkov/esp/v5.3.2/esp-idf",
     "build_dir":          "/home/abobkov/MyProjects/ESP-Nodes/ESP32-Console/build",
@@ -625,7 +625,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "/home/abobkov/MyProjects/ESP-Nodes/ESP32-Console/build/esp-idf/esp_driver_usb_serial_jtag/libesp_driver_usb_serial_jtag.a",
-            "sources": [ "/home/abobkov/esp/v5.3.2/esp-idf/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag.c", "/home/abobkov/esp/v5.3.2/esp-idf/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag_connection_monitor.c" ],
+            "sources": [ "/home/abobkov/esp/v5.3.2/esp-idf/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag.c", "/home/abobkov/esp/v5.3.2/esp-idf/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag_connection_monitor.c", "/home/abobkov/esp/v5.3.2/esp-idf/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag_vfs.c" ],
             "include_dirs": [ "include" ]
         },
         "esp_eth": {
