@@ -41,9 +41,8 @@ void app_main(void)
 
     initialize_nvs();
 
-    ESP_ERROR_CHECK(esp_console_new_repl_uart(&uart_config, &repl_config, &repl));
-
     repl_config.prompt = "foxie >";
+    ESP_ERROR_CHECK(esp_console_new_repl_uart(&uart_config, &repl_config, &repl));
 
     /*
         INITIALIZE COMMANDS
