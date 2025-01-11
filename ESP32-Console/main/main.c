@@ -72,6 +72,7 @@ void app_main(void)
     ESP_ERROR_CHECK(esp_console_new_repl_usb_serial_jtag(&usb_config, &repl_config, &repl));
     //ESP_ERROR_CHECK(esp_console_new_repl_uart(&uart_config, &repl_config, &repl));
 
+    esp_console_register_help_command();
     register_commands();
     /*
         START CONSOLE REPL
