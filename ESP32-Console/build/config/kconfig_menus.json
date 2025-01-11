@@ -5989,10 +5989,7 @@
                         "help": "This baud rate is used for UART.\n\nThe app's maximum baud rate depends on the UART clock source. If Power Management is disabled,\nthe UART clock source is the APB clock and all baud rates in the available range will be sufficiently\naccurate. If Power Management is enabled, REF_TICK clock source is used so the baud rate is divided\nfrom 1MHz. Baud rates above 1Mbps are not possible and values between 500Kbps and 1Mbps may not be\naccurate.",
                         "id": "APPTRACE_UART_BAUDRATE",
                         "name": "APPTRACE_UART_BAUDRATE",
-                        "range": [
-                            1200,
-                            8000000
-                        ],
+                        "range": null,
                         "title": "UART baud rate",
                         "type": "int"
                     },
@@ -6002,10 +5999,7 @@
                         "help": "Size of the UART input ring buffer.\nThis size related to the baudrate, system tick frequency and amount of data to transfer.\nThe data placed to this buffer before sent out to the interface.",
                         "id": "APPTRACE_UART_RX_BUFF_SIZE",
                         "name": "APPTRACE_UART_RX_BUFF_SIZE",
-                        "range": [
-                            64,
-                            32768
-                        ],
+                        "range": null,
                         "title": "UART RX ring buffer size",
                         "type": "int"
                     },
@@ -6015,10 +6009,7 @@
                         "help": "Size of the UART output ring buffer.\nThis size related to the baudrate, system tick frequency and amount of data to transfer.",
                         "id": "APPTRACE_UART_TX_BUFF_SIZE",
                         "name": "APPTRACE_UART_TX_BUFF_SIZE",
-                        "range": [
-                            2048,
-                            32768
-                        ],
+                        "range": null,
                         "title": "UART TX ring buffer size",
                         "type": "int"
                     },
@@ -6028,10 +6019,7 @@
                         "help": "Maximum size of the single message to transfer.",
                         "id": "APPTRACE_UART_TX_MSG_SIZE",
                         "name": "APPTRACE_UART_TX_MSG_SIZE",
-                        "range": [
-                            64,
-                            32768
-                        ],
+                        "range": null,
                         "title": "UART TX message size",
                         "type": "int"
                     },
@@ -6094,10 +6082,7 @@
                         "help": "Timeout for flushing last trace data to host in case of panic. In ms.\nUse -1 to disable timeout and wait forever.",
                         "id": "APPTRACE_ONPANIC_HOST_FLUSH_TMO",
                         "name": "APPTRACE_ONPANIC_HOST_FLUSH_TMO",
-                        "range": [
-                            -1,
-                            5000
-                        ],
+                        "range": null,
                         "title": "Timeout for flushing last trace data to host on panic",
                         "type": "int"
                     },
@@ -6107,10 +6092,7 @@
                         "help": "Threshold for flushing last trace data to host on panic in post-mortem mode.\nThis is minimal amount of data needed to perform flush. In bytes.",
                         "id": "APPTRACE_POSTMORTEM_FLUSH_THRESH",
                         "name": "APPTRACE_POSTMORTEM_FLUSH_THRESH",
-                        "range": [
-                            0,
-                            16384
-                        ],
+                        "range": null,
                         "title": "Threshold for flushing last trace data to host on panic",
                         "type": "int"
                     },
@@ -18251,7 +18233,7 @@
                         "id": "ESP_IPC_TASK_STACK_SIZE",
                         "name": "ESP_IPC_TASK_STACK_SIZE",
                         "range": [
-                            2048,
+                            512,
                             65536
                         ],
                         "title": "Inter-Processor Call (IPC) task stack size",
