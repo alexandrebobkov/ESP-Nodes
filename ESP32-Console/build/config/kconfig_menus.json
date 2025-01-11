@@ -5969,7 +5969,10 @@
                         "help": "This GPIO is used for UART TX pin.",
                         "id": "APPTRACE_UART_TX_GPIO",
                         "name": "APPTRACE_UART_TX_GPIO",
-                        "range": null,
+                        "range": [
+                            0,
+                            46
+                        ],
                         "title": "UART TX on GPIO#",
                         "type": "int"
                     },
@@ -5979,7 +5982,10 @@
                         "help": "This GPIO is used for UART RX pin.",
                         "id": "APPTRACE_UART_RX_GPIO",
                         "name": "APPTRACE_UART_RX_GPIO",
-                        "range": null,
+                        "range": [
+                            0,
+                            46
+                        ],
                         "title": "UART RX on GPIO#",
                         "type": "int"
                     },
@@ -5989,7 +5995,10 @@
                         "help": "This baud rate is used for UART.\n\nThe app's maximum baud rate depends on the UART clock source. If Power Management is disabled,\nthe UART clock source is the APB clock and all baud rates in the available range will be sufficiently\naccurate. If Power Management is enabled, REF_TICK clock source is used so the baud rate is divided\nfrom 1MHz. Baud rates above 1Mbps are not possible and values between 500Kbps and 1Mbps may not be\naccurate.",
                         "id": "APPTRACE_UART_BAUDRATE",
                         "name": "APPTRACE_UART_BAUDRATE",
-                        "range": null,
+                        "range": [
+                            1200,
+                            8000000
+                        ],
                         "title": "UART baud rate",
                         "type": "int"
                     },
@@ -5999,7 +6008,10 @@
                         "help": "Size of the UART input ring buffer.\nThis size related to the baudrate, system tick frequency and amount of data to transfer.\nThe data placed to this buffer before sent out to the interface.",
                         "id": "APPTRACE_UART_RX_BUFF_SIZE",
                         "name": "APPTRACE_UART_RX_BUFF_SIZE",
-                        "range": null,
+                        "range": [
+                            64,
+                            32768
+                        ],
                         "title": "UART RX ring buffer size",
                         "type": "int"
                     },
@@ -6009,7 +6021,10 @@
                         "help": "Size of the UART output ring buffer.\nThis size related to the baudrate, system tick frequency and amount of data to transfer.",
                         "id": "APPTRACE_UART_TX_BUFF_SIZE",
                         "name": "APPTRACE_UART_TX_BUFF_SIZE",
-                        "range": null,
+                        "range": [
+                            2048,
+                            32768
+                        ],
                         "title": "UART TX ring buffer size",
                         "type": "int"
                     },
@@ -6019,7 +6034,10 @@
                         "help": "Maximum size of the single message to transfer.",
                         "id": "APPTRACE_UART_TX_MSG_SIZE",
                         "name": "APPTRACE_UART_TX_MSG_SIZE",
-                        "range": null,
+                        "range": [
+                            64,
+                            32768
+                        ],
                         "title": "UART TX message size",
                         "type": "int"
                     },
@@ -6082,7 +6100,10 @@
                         "help": "Timeout for flushing last trace data to host in case of panic. In ms.\nUse -1 to disable timeout and wait forever.",
                         "id": "APPTRACE_ONPANIC_HOST_FLUSH_TMO",
                         "name": "APPTRACE_ONPANIC_HOST_FLUSH_TMO",
-                        "range": null,
+                        "range": [
+                            -1,
+                            5000
+                        ],
                         "title": "Timeout for flushing last trace data to host on panic",
                         "type": "int"
                     },
@@ -6092,7 +6113,10 @@
                         "help": "Threshold for flushing last trace data to host on panic in post-mortem mode.\nThis is minimal amount of data needed to perform flush. In bytes.",
                         "id": "APPTRACE_POSTMORTEM_FLUSH_THRESH",
                         "name": "APPTRACE_POSTMORTEM_FLUSH_THRESH",
-                        "range": null,
+                        "range": [
+                            0,
+                            16384
+                        ],
                         "title": "Threshold for flushing last trace data to host on panic",
                         "type": "int"
                     },
@@ -18233,7 +18257,7 @@
                         "id": "ESP_IPC_TASK_STACK_SIZE",
                         "name": "ESP_IPC_TASK_STACK_SIZE",
                         "range": [
-                            512,
+                            2048,
                             65536
                         ],
                         "title": "Inter-Processor Call (IPC) task stack size",
@@ -19777,7 +19801,10 @@
                         "help": "Size of the memory to be reserved for core dump stack. If 0 core dump process will run on\nthe stack of crashed task/ISR, otherwise special stack will be allocated.\nTo ensure that core dump itself will not overflow task/ISR stack set this to the value around 1300-1800\ndepending on the chosen checksum calculation method. SHA256 method needs more stack space than CRC32.\nNOTE: It eats DRAM.",
                         "id": "ESP_COREDUMP_STACK_SIZE",
                         "name": "ESP_COREDUMP_STACK_SIZE",
-                        "range": null,
+                        "range": [
+                            0,
+                            4096
+                        ],
                         "title": "Reserved stack size",
                         "type": "int"
                     },
@@ -20801,7 +20828,7 @@
                                 "id": "FREERTOS_ISR_STACKSIZE",
                                 "name": "FREERTOS_ISR_STACKSIZE",
                                 "range": [
-                                    1536,
+                                    2096,
                                     32768
                                 ],
                                 "title": "ISR stack size",
