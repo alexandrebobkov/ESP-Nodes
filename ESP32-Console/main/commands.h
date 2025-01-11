@@ -29,7 +29,7 @@ static int do_info_cmd (int argc, char **argv) {
     return 0;
 }
 static void register_info (void) {
-    info_args.detail = arg_str1(NULL, NULL, "<temp>", "Display chip temperature");
+    info_args.detail = arg_str1(NULL, NULL, "<temp>", "Diplays the chip temperature");
     info_args.end = arg_end(2);
 
     const esp_console_cmd_t info_cmd = {
