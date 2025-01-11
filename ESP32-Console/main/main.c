@@ -63,14 +63,14 @@ void app_main(void)
     /*
         INITIALIZE COMMANDS
     */
-    //register_commands();
+    register_commands();
 
     repl_config.prompt = "foxie >";
     
     esp_console_dev_uart_config_t uart_config = ESP_CONSOLE_DEV_UART_CONFIG_DEFAULT();    
     ESP_ERROR_CHECK(esp_console_new_repl_uart(&uart_config, &repl_config, &repl));
 
-    register_commands();
+    //register_commands();
     /*
         START CONSOLE REPL
     */
