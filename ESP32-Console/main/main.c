@@ -63,7 +63,7 @@ void app_main(void)
     /*
         INITIALIZE COMMANDS
     */
-    register_commands();
+    //register_commands();
 
     repl_config.prompt = "foxie >";
     
@@ -72,7 +72,7 @@ void app_main(void)
     ESP_ERROR_CHECK(esp_console_new_repl_usb_serial_jtag(&usb_config, &repl_config, &repl));
     //ESP_ERROR_CHECK(esp_console_new_repl_uart(&uart_config, &repl_config, &repl));
 
-    //register_commands();
+    register_commands();
     /*
         START CONSOLE REPL
     */
