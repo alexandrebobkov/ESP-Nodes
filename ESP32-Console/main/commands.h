@@ -15,6 +15,7 @@ static struct {
 } info_args;
 static int do_info_cmd (int argc, char **argv) {
     ESP_LOGW("CLI", "This is the Information Command.");
+    int nerrors = arg_parse(argc, argv, (void**) &info_args);
 
     if (info_args.chip_temp->count) {
         ESP_LOGW("CLI", "Information: Chip Temperature %d", 25);
