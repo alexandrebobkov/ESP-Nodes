@@ -29,7 +29,7 @@ static int do_info_cmd (int argc, char **argv) {
     return 0;
 }
 static void register_info (void) {
-    info_args.detail = arg_str1(NULL, NULL, "<temp>", "Diplays the chip temperature.");
+    info_args.detail = arg_str0(NULL, NULL, "<temp>", "Diplays the chip temperature.");
     info_args.detail = arg_str1(NULL, "gpio", "<num>", "Diplays the GPIO level.");
     info_args.end = arg_end(2);
 
