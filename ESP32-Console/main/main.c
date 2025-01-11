@@ -48,6 +48,7 @@ void app_main(void)
     register_commands();
 
     repl_config.prompt = "foxie >";
+    repl_config.history_save_path = HISTORY_PATH;
     ESP_ERROR_CHECK(esp_console_new_repl_uart(&uart_config, &repl_config, &repl));
    
     /*
