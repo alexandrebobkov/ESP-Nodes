@@ -9,13 +9,19 @@
 #include "esp_log.h"
 
 static struct {
-    struct arg_int *detail;
+    struct arg_str *detail;
     //struct arg_int *chip_temp;
     //struct arg_int *voltage;
+    struct arg_end *end;
 } info_args;
 static int do_info_cmd (int argc, char **argv) {
     ESP_LOGW("CLI", "This is the Information Command.");
+
     int nerrors = arg_parse(argc, argv, (void**) &info_args);
+    if (nerrors != 0) {
+        arg_print_errors(stderr, info_args.end, argv[0]);
+        return 1;
+    }
 
     if (info_args.chip_temp->count) {
         ESP_LOGW("CLI", "Information: Chip Temperature %d", 25);
