@@ -10,6 +10,7 @@
 
 #include "esp_log.h"
 #include "esp_flash.h"
+#include "sdkconfig.h"
 
 #include "nvs.h"
 #include "nvs_flash.h"
