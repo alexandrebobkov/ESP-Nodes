@@ -58,7 +58,8 @@ void app_main(void)
     //esp_console_dev_usb_cdc_config_t cdc_config = ESP_CONSOLE_DEV_CDC_CONFIG_DEFAULT();
 
     initialize_nvs();
-    initialize_filesystem();
+    //initialize_filesystem();
+    //repl_config.history_save_path = HISTORY_PATH;
 
     /*
         INITIALIZE COMMANDS
@@ -66,7 +67,7 @@ void app_main(void)
     register_commands();
 
     repl_config.prompt = "foxie >";
-    repl_config.history_save_path = HISTORY_PATH;
+    
     //repl_config.max_cmdline_length = CONFIG_CONSOLE_MAX_COMMAND_LINE_LENGTH;
     ESP_ERROR_CHECK(esp_console_new_repl_uart(&uart_config, &repl_config, &repl));
    
