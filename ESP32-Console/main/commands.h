@@ -23,7 +23,7 @@ static int do_info_cmd (int argc, char **argv) {
         return 1;
     }
 
-    if (info_args.chip_temp->count) {
+    if (info_args.detail->count != 0) {
         ESP_LOGW("CLI", "Information: Chip Temperature %d", 25);
     }
     return 0;
