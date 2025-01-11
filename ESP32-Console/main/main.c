@@ -73,6 +73,8 @@ void app_main(void)
 #elif CONFIG_ESP_CONSOLE_USB_CDC
     esp_console_dev_usb_cdc_config_t cdc_config = ESP_CONSOLE_DEV_CDC_CONFIG_DEFAULT();
     ESP_ERROR_CHECK(esp_console_new_repl_uart(&cdc_config, &repl_config, &repl));
+#endif
+
     /*
         START CONSOLE REPL
     */
