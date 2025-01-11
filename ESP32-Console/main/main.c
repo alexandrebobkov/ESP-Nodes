@@ -58,6 +58,7 @@ void app_main(void)
     //esp_console_dev_usb_cdc_config_t cdc_config = ESP_CONSOLE_DEV_CDC_CONFIG_DEFAULT();
 
     initialize_nvs();
+    initialize_filesystem();
 
     /*
         INITIALIZE COMMANDS
