@@ -5969,10 +5969,7 @@
                         "help": "This GPIO is used for UART TX pin.",
                         "id": "APPTRACE_UART_TX_GPIO",
                         "name": "APPTRACE_UART_TX_GPIO",
-                        "range": [
-                            0,
-                            46
-                        ],
+                        "range": null,
                         "title": "UART TX on GPIO#",
                         "type": "int"
                     },
@@ -5982,10 +5979,7 @@
                         "help": "This GPIO is used for UART RX pin.",
                         "id": "APPTRACE_UART_RX_GPIO",
                         "name": "APPTRACE_UART_RX_GPIO",
-                        "range": [
-                            0,
-                            46
-                        ],
+                        "range": null,
                         "title": "UART RX on GPIO#",
                         "type": "int"
                     },
@@ -17876,7 +17870,10 @@
                         "help": "This baud rate is used by both the ESP-IDF Bootloader and the app (including\nboot log output and default standard input/output/error of the app).\n\nThe app's maximum baud rate depends on the UART clock source. If Power Management is disabled,\nthe UART clock source is the APB clock and all baud rates in the available range will be sufficiently\naccurate. If Power Management is enabled, REF_TICK clock source is used so the baud rate is divided\nfrom 1MHz. Baud rates above 1Mbps are not possible and values between 500Kbps and 1Mbps may not be\naccurate.\n\nIf the configuration is different in the Bootloader binary compared to the app binary, UART\nis reconfigured after the bootloader exits and the app starts.",
                         "id": "ESP_CONSOLE_UART_BAUDRATE",
                         "name": "ESP_CONSOLE_UART_BAUDRATE",
-                        "range": null,
+                        "range": [
+                            1200,
+                            4000000
+                        ],
                         "title": "UART console baud rate",
                         "type": "int"
                     },
