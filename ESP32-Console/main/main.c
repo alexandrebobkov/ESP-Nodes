@@ -75,6 +75,7 @@ void app_main(void)
     ESP_ERROR_CHECK(esp_console_new_repl_uart(&cdc_config, &repl_config, &repl));
 #endif
 
+    register_commands();
     /*
         START CONSOLE REPL
     */
