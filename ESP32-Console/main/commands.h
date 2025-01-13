@@ -43,13 +43,13 @@ static int exec_info_cmd (int argc, char **argv) {
     }
 
     if (info_args.temp->count != 0) {
-        ESP_LOGW("CLI", "info(): Chip Temperature %d", 25);
+        ESP_LOGW("CLI", "info(): Chip Temperature: %d", 25);
     }
     return 0;
 }
 static void register_info (void) {
-    info_args.temp = arg_str0("t", "temp", NULL, "Diplays the chip temperature.");
-    info_args.voltage = arg_str0("v", "voltage", "<voltage>", "Display viltage.");
+    info_args.temp = arg_str0("t", "temp", "<C|F>", "Diplays the chip temperature.");
+    info_args.voltage = arg_str0("v", "voltage", "<V|mV>", "Display voltage.");
     //info_args.temp = arg_litn("t", "temp", 0, 1, "chip temperature");
     //info_args.detail = arg_str1(NULL, "gpio", "<num>", "Diplays the GPIO level.");
     info_args.end = arg_end(2);
