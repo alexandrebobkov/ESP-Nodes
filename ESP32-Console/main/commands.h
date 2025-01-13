@@ -55,7 +55,7 @@ static int exec_info_cmd (int argc, char **argv) {
     return 0;
 }
 static void register_info (void) {
-    info_args.temp = arg_str0("t", "temp", "<C|F>", "Diplays the chip temperature.");
+    info_args.temp = arg_str1("t", "temp", "<C|F>", "Diplays the chip temperature.");
     info_args.voltage = arg_str0("v", "voltage", "<V|mV>", "Displays voltage.");
     info_args.chip_temp = arg_lit0("T", "temperature", "print the chip temperature.");
     //info_args.temp = arg_litn("t", "temp", 0, 1, "chip temperature");
