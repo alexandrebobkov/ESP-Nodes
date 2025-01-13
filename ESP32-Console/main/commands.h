@@ -8,7 +8,7 @@
 #include "esp_console.h"
 #include "esp_log.h"
 
-static int do_info_cmd(int argc, char **argv);
+static int exec_info_cmd(int argc, char **argv);
 static void register_info(void);
 
 static struct {
@@ -17,7 +17,7 @@ static struct {
     //struct arg_int *voltage;
     struct arg_end *end;
 } info_args;
-static int do_info_cmd (int argc, char **argv) {
+static int exec_info_cmd (int argc, char **argv) {
     ESP_LOGW("CLI", "This is the Information Command.");
 
     int nerrors = arg_parse(argc, argv, (void**) &info_args);
@@ -40,7 +40,7 @@ static void register_info (void) {
         .command = "info",
         .help = "Prints system information",
         .hint = NULL,
-        .func = &do_info_cmd,
+        .func = &exec_info_cmd,
         .argtable = &info_args
     };
 
