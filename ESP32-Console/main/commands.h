@@ -24,12 +24,12 @@ static struct {
 } info_args;
 static int exec_info_cmd (int argc, char **argv) {
 
-    v/*oid *argtable[] = {
+    /*void *argtable[] = {
         help = arg_litn(NULL, "help", 0, 1, "display this help"),
         temp = arg_litn("t", "temp", 0, 1, "chip temperature"),
         end = arg_end(20),
-    };*/
-    char progname[] = "info";
+    };
+    char progname[] = "info";*/
     //int nerrors;
     //nerrors = arg_parse(argc, argv, argtable);
 
