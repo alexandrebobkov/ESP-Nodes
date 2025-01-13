@@ -18,7 +18,7 @@ struct arg_lit *temp, *help;
 struct arg_end *end;
 static struct {
     struct arg_str *temp;
-    //struct arg_int *chip_temp;
+    struct arg_int *chip_temp;
     struct arg_str *voltage;
     struct arg_end *end;
 } info_args;
@@ -53,6 +53,7 @@ static int exec_info_cmd (int argc, char **argv) {
 static void register_info (void) {
     info_args.temp = arg_str0("t", "temp", "<C|F>", "Diplays the chip temperature.");
     info_args.voltage = arg_str0("v", "voltage", "<V|mV>", "Displays voltage.");
+    info_args.chip_temp = arg_intn("T", "temperature", 0, 1, "Display chip temperature.");
     //info_args.temp = arg_litn("t", "temp", 0, 1, "chip temperature");
     //info_args.detail = arg_str1(NULL, "gpio", "<num>", "Diplays the GPIO level.");
     info_args.end = arg_end(2);
