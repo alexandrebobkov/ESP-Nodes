@@ -17,7 +17,7 @@ static void register_set_gpio(void);
 struct arg_lit *temp, *help;
 struct arg_end *end;
 static struct {
-    struct arg_str *detail;
+    struct arg_str *temp;
     //struct arg_int *chip_temp;
     //struct arg_int *voltage;
     struct arg_end *end;
