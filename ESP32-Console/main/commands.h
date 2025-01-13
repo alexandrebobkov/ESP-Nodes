@@ -29,6 +29,10 @@ static int exec_info_cmd (int argc, char **argv) {
         temp = arg_litn("t", "temp", 0, 1, "chip temperature"),
         end = arg_end(20),
     };
+    char progname[] = "info";
+    //int nerrors;
+    //nerrors = arg_parse(argc, argv, argtable);
+
     ESP_LOGW("CLI", "This is the Information Command.");
 
     int nerrors = arg_parse(argc, argv, (void**) &info_args);
