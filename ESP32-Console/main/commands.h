@@ -35,7 +35,8 @@ static int exec_info_cmd (int argc, char **argv) {
 
     ESP_LOGW("CLI", "This is the Information Command.");
 
-    int nerrors = arg_parse(argc, argv, (void**) &info_args);
+    //int nerrors = arg_parse(argc, argv, (void**) &info_args);
+    int nerrors = arg_parse(argc, argv, argtable);
     if (nerrors != 0) {
         arg_print_errors(stderr, info_args.end, argv[0]);
         return 1;
