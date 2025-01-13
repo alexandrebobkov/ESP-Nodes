@@ -8,7 +8,8 @@
 #include "esp_console.h"
 #include "esp_log.h"
 
-static int do_info_cmd (int argc, char **argv);
+static int do_info_cmd(int argc, char **argv);
+static void register_info(void);
 
 static struct {
     struct arg_str *detail;
