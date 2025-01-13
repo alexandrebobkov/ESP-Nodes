@@ -43,7 +43,7 @@ static int exec_info_cmd (int argc, char **argv) {
     }
 
     if (info_args.temp->count != 0) {
-        if (info_args.temp->sval == "C") {
+        if (strcmp(info_args.temp->sval, "C")) {
             ESP_LOGI("CLI", "Display temperature in Celcius");
         }
         ESP_LOGW("CLI", "info(): Chip Temperature: %d", 25);
