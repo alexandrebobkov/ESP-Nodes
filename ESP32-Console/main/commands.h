@@ -14,7 +14,7 @@ static void register_info(void);
 static int exec_set_gpio();
 static void register_set_gpio(void);
 
-struct arg_lit *verb, *help;
+struct arg_lit *temp, *help;
 struct arg_end *end;
 static struct {
     struct arg_str *detail;
@@ -23,6 +23,12 @@ static struct {
     struct arg_end *end;
 } info_args;
 static int exec_info_cmd (int argc, char **argv) {
+
+    void *argtable[] = {
+        help = arg_litn(NULL, "help", 0, 1, "display this help"),
+        temp = arg_litn("t", "temp", 0, 1, "chip temperature"),
+        end = arg_end(20),
+    };
     ESP_LOGW("CLI", "This is the Information Command.");
 
     int nerrors = arg_parse(argc, argv, (void**) &info_args);
