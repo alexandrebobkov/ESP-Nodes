@@ -48,6 +48,12 @@ static int exec_info_cmd (int argc, char **argv) {
         }
         ESP_LOGW("CLI", "info(): Chip Temperature: %d", 25);
     }
+
+    if (info_args.chip_temp->count != 0) {
+        if (info_args.chip_temp->ival == 1) {
+            ESP_LOGI("CLI", "Display temperature in Celcius");
+        }
+    }
     return 0;
 }
 static void register_info (void) {
