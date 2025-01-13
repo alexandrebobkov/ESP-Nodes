@@ -9,6 +9,7 @@
 #include "esp_log.h"
 
 static int exec_info_cmd(int argc, char **argv);
+static int exec_set_gpio();
 static void register_info(void);
 
 static struct {
