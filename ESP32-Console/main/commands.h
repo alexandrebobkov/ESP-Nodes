@@ -25,19 +25,9 @@ static struct {
 } info_args;
 static int exec_info_cmd (int argc, char **argv) {
 
-    /*void *argtable[] = {
-        help = arg_litn(NULL, "help", 0, 1, "display this help"),
-        temp = arg_litn("t", "temp", 0, 1, "chip temperature"),
-        end = arg_end(20),
-    };
-    char progname[] = "info";*/
-    //int nerrors;
-    //nerrors = arg_parse(argc, argv, argtable);
-
     ESP_LOGW("CLI", "This is the Information Command.");
 
     int nerrors = arg_parse(argc, argv, (void**) &info_args);
-    //int nerrors = arg_parse(argc, argv, argtable);
     if (nerrors != 0) {
         arg_print_errors(stderr, info_args.end, argv[0]);
         return 1;
