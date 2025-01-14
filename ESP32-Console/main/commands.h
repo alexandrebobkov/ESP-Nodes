@@ -6,6 +6,7 @@
 
 #include "argtable3/argtable3.h"
 #include "esp_chip_info.h"
+#include "soc/rtc.h"
 #include "esp_console.h"
 #include "esp_log.h"
 
@@ -33,7 +34,7 @@ static int exec_info_cmd (int argc, char **argv) {
 
     rtc_cpu_freq_config_t freq_config;
     rtc_clk_cpu_freq_get_config(&freq_config);
-    
+
     uint32_t total_internal_memory = heap_caps_get_total_size(MALLOC_CAP_INTERNAL);
     uint32_t free_internal_memory = heap_caps_get_free_size(MALLOC_CAP_INTERNAL);
 
