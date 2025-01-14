@@ -31,7 +31,7 @@ static struct {
 } info_args;
 static int exec_info_cmd (int argc, char **argv) {
 
-    ESP_LOGW("CLI", "This is the Information Command.");
+    ESP_LOGW("CLI", "Information about microcontroller chip.");
 
     int nerrors = arg_parse(argc, argv, (void**) &info_args);
     if (nerrors != 0) {
