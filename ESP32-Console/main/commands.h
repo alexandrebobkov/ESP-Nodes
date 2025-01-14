@@ -44,7 +44,7 @@ static int exec_info_cmd (int argc, char **argv) {
     ESP_LOGW("CLI", "Information about microcontroller chip.");
     ESP_LOGI("Chip Info", "Source Clock Frequency: %" PRIu32 " MHz", freq_config.source_freq_mhz);
     ESP_LOGI("Chip Info", "Effective CPU Frequency: %" PRIu32 " MHz", freq_config.freq_mhz);
-    ESP_LOGI("Memory Info", "Total DRAM (internal memory): %"PRIu32" bytes", total_internal_memory);
+    ESP_LOGI("Memory Info", "Total DRAM (internal memory): %"PRIu32" [Kb]", total_internal_memory/1024);
     ESP_LOGI("Memory Info", "Free DRAM (internal memory): %"PRIu32" bytes", free_internal_memory);
 
     uint32_t features = chip_info.features;
