@@ -8,6 +8,7 @@
 #include "esp_console.h"
 #include "esp_log.h"
 
+// Display information about ESP32 chip.
 static int exec_info_cmd(int argc, char **argv);
 static void register_info(void);
 
