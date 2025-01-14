@@ -5,6 +5,7 @@
 #include <string.h>
 
 #include "argtable3/argtable3.h"
+#include "esp_chip_info.h"
 #include "esp_console.h"
 #include "esp_log.h"
 
