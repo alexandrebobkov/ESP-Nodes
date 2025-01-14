@@ -54,8 +54,12 @@ static int exec_info_cmd (int argc, char **argv) {
     if (info_args.chip_temp->count != 0) {
         ESP_LOGW("CLI", "info(): Chip Temperature: %d", 35);
     }
-    if (info_args.voltage->count != 0) {}
-    if (info_args.current->count != 0) {}
+    if (info_args.voltage->count != 0) {
+        ESP_LOGI("CLI", "Displaying voltage.");
+    }
+    if (info_args.current->count != 0) {
+        ESP_LOGI("CLI", "");
+    }
     return 0;
 }
 static void register_info (void) {
