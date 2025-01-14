@@ -62,9 +62,9 @@ static int exec_info_cmd (int argc, char **argv) {
     }
     if (info_args.current->count != 0) {
         if (strcmp(info_args.current->sval[0], "mA") == 0)
-            ESP_LOGI("CLI", "Displaying voltage, [mA].");
+            ESP_LOGI("CLI", "Displaying current, [mA].");
         else if (strcmp(info_args.current->sval[0], "A") == 0)
-            ESP_LOGI("CLI", "Displaying voltage, [A].");
+            ESP_LOGI("CLI", "Displaying current, [A].");
     }
     return 0;
 }
