@@ -11,7 +11,7 @@
 static int exec_info_cmd(int argc, char **argv);
 static void register_info(void);
 
-static int exec_set_gpio();
+static int exec_set_gpio(int argc, char **argv);
 static void register_set_gpio(void);
 
 struct arg_lit *temp, *help;
