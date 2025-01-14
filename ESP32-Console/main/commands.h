@@ -62,6 +62,17 @@ static int exec_info_cmd (int argc, char **argv) {
     ESP_LOGI("Chip Info", "IEEE 802.15.4 support: %s", (features & CHIP_FEATURE_IEEE802154) ? "Yes" : "No");
     ESP_LOGI("Chip Info", "Bluetooth Classic support: %s", (features & CHIP_FEATURE_BT) ? "Yes" : "No");
     ESP_LOGI("Chip Info", "Bluetooth LE (BLE) support: %s", (features & CHIP_FEATURE_BLE) ? "Yes" : "No");
+    //CONFIG_SOC_LIGHT_SLEEP_SUPPORTED
+    ESP_LOGI("Chip Info", "Compile date %s", CONFIG_APP_COMPILE_TIME_DATE);
+    //CONFIG_APPTRACE_UART_BAUDRATE
+    //CONFIG_APPTRACE_UART_RX_GPIO
+    //CONFIG_APPTRACE_UART_TX_GPIO
+    //CONFIG_BOOTLOADER_COMPILE_TIME_DATE
+    //CONFIG_CONSOLE_UART_NUM
+    //CONFIG_ESP32C3_UNIVERSAL_MAC_ADDRESSES
+    //CONFIG_ESP_PHY_MAX_WIFI_TX_POWER
+    //CONFIG_ESP_MAC_ADDR_UNIVERSE_WIFI_AP
+    
 
     int nerrors = arg_parse(argc, argv, (void**) &info_args);
     if (nerrors != 0) {
