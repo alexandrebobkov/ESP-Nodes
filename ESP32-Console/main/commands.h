@@ -46,6 +46,22 @@ static int exec_info_cmd (int argc, char **argv) {
     ESP_LOGI("Memory Info", "Total DRAM (internal memory): %"PRIu32" bytes", total_internal_memory);
     ESP_LOGI("Memory Info", "Free DRAM (internal memory): %"PRIu32" bytes", free_internal_memory);
 
+    uint32_t features = chip_info.features;
+
+    char binary_str[33]; // 32 bits + null terminator
+    for (int i = 31; i >= 0; i--) {
+        binary_str[31 - i] = (features & (1U << i)) ? '1' : '0';
+    }
+    binary_str[32] = '\0'; // Null terminate the string
+    ESP_LOGI("Chip Info", "Features Bitmap: %s", binary_str);
+
+    ESP_LOGI("Chip Info", "Embedded Flash: %s", (features & CHIP_FEATURE_EMB_FLASH) ? "Yes" : "No");
+    ESP_LOGI("Chip Info", "Embedded PSRAM: %s", (features & CHIP_FEATURE_EMB_PSRAM) ? "Yes" : "No");
+    ESP_LOGI("Chip Info", "Wi-Fi 2.4GHz support: %s", (features & CHIP_FEATURE_WIFI_BGN) ? "Yes" : "No");
+    ESP_LOGI("Chip Info", "IEEE 802.15.4 support: %s", (features & CHIP_FEATURE_IEEE802154) ? "Yes" : "No");
+    ESP_LOGI("Chip Info", "Bluetooth Classic support: %s", (features & CHIP_FEATURE_BT) ? "Yes" : "No");
+    ESP_LOGI("Chip Info", "Bluetooth LE (BLE) support: %s", (features & CHIP_FEATURE_BLE) ? "Yes" : "No");
+
     int nerrors = arg_parse(argc, argv, (void**) &info_args);
     if (nerrors != 0) {
         arg_print_errors(stderr, info_args.end, argv[0]);
