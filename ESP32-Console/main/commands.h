@@ -58,7 +58,7 @@ static int exec_info_cmd (int argc, char **argv) {
         ESP_LOGI("CLI", "Displaying voltage.");
     }
     if (info_args.current->count != 0) {
-        ESP_LOGI("CLI", "");
+        ESP_LOGI("CLI", "Displaying current.");
     }
     return 0;
 }
