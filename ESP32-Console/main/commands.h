@@ -74,11 +74,11 @@ static void register_info (void) {
     info_args.end       = arg_end(2);
 
     const esp_console_cmd_t info_cmd = {
-        .command = "info",
-        .help = "Prints system information",
-        .hint = NULL,
-        .func = &exec_info_cmd,
-        .argtable = &info_args
+        .command    = "info",
+        .help       = "Prints system information",
+        .hint       = NULL,
+        .func       = &exec_info_cmd,
+        .argtable   = &info_args
     };
 
     ESP_ERROR_CHECK(esp_console_cmd_register(&info_cmd));
