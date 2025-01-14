@@ -64,8 +64,8 @@ static int exec_info_cmd (int argc, char **argv) {
 }
 static void register_info (void) {
     info_args.temp = arg_str1("t", "temp", "<C|F>", "Diplays the chip temperature.");
-    info_args.voltage = arg_str0("v", "voltage", "<V|mV>", "Displays voltage.");
-    info_args.current = arg_str0("c", "current", "<mA|A>", "Display current.");
+    info_args.voltage = arg_str0("v", "voltage", "<V|mV>", "Displays the voltage.");
+    info_args.current = arg_str0("c", "current", "<A|mA>", "Displays the current.");
     info_args.chip_temp = arg_lit0("T", "temperature", "print the chip temperature.");
     //info_args.temp = arg_litn("t", "temp", 0, 1, "chip temperature");
     //info_args.detail = arg_str1(NULL, "gpio", "<num>", "Diplays the GPIO level.");
