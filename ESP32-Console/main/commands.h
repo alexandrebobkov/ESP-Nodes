@@ -63,7 +63,7 @@ static int exec_info_cmd (int argc, char **argv) {
     ESP_LOGI("Chip Info", "Bluetooth Classic support: %s", (features & CHIP_FEATURE_BT) ? "Yes" : "No");
     ESP_LOGI("Chip Info", "Bluetooth LE (BLE) support: %s", (features & CHIP_FEATURE_BLE) ? "Yes" : "No");
     //CONFIG_SOC_LIGHT_SLEEP_SUPPORTED
-    ESP_LOGI("Chip Info", "Compile date %s", CONFIG_APP_COMPILE_TIME_DATE);
+    ESP_LOGI("Chip Info", "Compile date %i", CONFIG_APP_COMPILE_TIME_DATE);
     //CONFIG_APPTRACE_UART_BAUDRATE
     //CONFIG_APPTRACE_UART_RX_GPIO
     //CONFIG_APPTRACE_UART_TX_GPIO
