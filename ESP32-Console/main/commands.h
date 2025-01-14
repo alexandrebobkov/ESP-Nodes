@@ -31,9 +31,9 @@ static struct {
 } info_args;
 static int exec_info_cmd (int argc, char **argv) {
 
-    ESP_LOGW("CLI", "Information about microcontroller chip.");
+    uint32_t total_internal_memory = heap_caps_get_total_size(MALLOC_CAP_INTERNAL);
 
-    chip_info.model;
+    ESP_LOGW("CLI", "Information about microcontroller chip.");
 
     int nerrors = arg_parse(argc, argv, (void**) &info_args);
     if (nerrors != 0) {
