@@ -55,11 +55,16 @@ static int exec_info_cmd (int argc, char **argv) {
         ESP_LOGW("CLI", "info(): Chip Temperature: %d", 35);
     }
     if (info_args.voltage->count != 0) {
-        if (strcmp(info_args.voltage->sval[0], "mV") == 0) {
-            ESP_LOGI("CLI", "Displaying voltage, [mV]."); }
+        if (strcmp(info_args.voltage->sval[0], "mV") == 0)
+            ESP_LOGI("CLI", "Displaying voltage, [mV].");
+        else if (strcmp(info_args.voltage->sval[0], "V") == 0)
+            ESP_LOGI("CLI", "Displaying voltage, [V].");
     }
     if (info_args.current->count != 0) {
-        ESP_LOGI("CLI", "Displaying current.");
+        if (strcmp(info_args.current->sval[0], "mA") == 0)
+            ESP_LOGI("CLI", "Displaying voltage, [mA].");
+        else if (strcmp(info_args.current->sval[0], "A") == 0)
+            ESP_LOGI("CLI", "Displaying voltage, [A].");
     }
     return 0;
 }
