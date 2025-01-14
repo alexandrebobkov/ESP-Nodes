@@ -33,6 +33,8 @@ static int exec_info_cmd (int argc, char **argv) {
 
     ESP_LOGW("CLI", "Information about microcontroller chip.");
 
+    chip_info.model;
+
     int nerrors = arg_parse(argc, argv, (void**) &info_args);
     if (nerrors != 0) {
         arg_print_errors(stderr, info_args.end, argv[0]);
