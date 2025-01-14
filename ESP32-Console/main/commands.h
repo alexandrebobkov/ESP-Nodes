@@ -32,8 +32,11 @@ static struct {
 static int exec_info_cmd (int argc, char **argv) {
 
     uint32_t total_internal_memory = heap_caps_get_total_size(MALLOC_CAP_INTERNAL);
+    uint32_t free_internal_memory = heap_caps_get_free_size(MALLOC_CAP_INTERNAL);
 
     ESP_LOGW("CLI", "Information about microcontroller chip.");
+    ESP_LOGI("Memory Info", "Total DRAM (internal memory): %"PRIu32" bytes", total_internal_memory);
+    ESP_LOGI("Memory Info", "Free DRAM (internal memory): %"PRIu32" bytes", free_internal_memory);
 
     int nerrors = arg_parse(argc, argv, (void**) &info_args);
     if (nerrors != 0) {
