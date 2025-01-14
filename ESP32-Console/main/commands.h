@@ -20,6 +20,7 @@ static struct {
     struct arg_str *temp;
     struct arg_int *chip_temp;
     struct arg_str *voltage;
+    struct arg_str *current;
     struct arg_end *end;
 } info_args;
 static int exec_info_cmd (int argc, char **argv) {
@@ -50,10 +51,11 @@ static int exec_info_cmd (int argc, char **argv) {
             ESP_LOGI("CLI", "Displaying temperature in Farenheight.");
         }
     }
-
     if (info_args.chip_temp->count != 0) {
         ESP_LOGW("CLI", "info(): Chip Temperature: %d", 35);
     }
+    if (info_args.voltage->count != 0) {}
+    if (info_args.current->count != 0) {}
     return 0;
 }
 static void register_info (void) {
