@@ -14,8 +14,8 @@ static void register_info(void);
 static int exec_set_gpio(int argc, char **argv);
 static void register_set_gpio(void);
 
-static int exec_print_adc(int argc, char **argv);
-static void register_print_adc(void);
+static int exec_print_gpio(int argc, char **argv);
+static void register_print_gpio(void);
 
 struct arg_lit *temp, *help;
 struct arg_end *end;
