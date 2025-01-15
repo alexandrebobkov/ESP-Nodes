@@ -160,7 +160,7 @@ static void register_gpio (void) {
 
 void register_commands (void) {
     register_info();
-    //register_gpio();
+    register_gpio();
 }
 
 #endif
