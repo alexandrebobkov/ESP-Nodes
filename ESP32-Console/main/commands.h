@@ -141,7 +141,7 @@ static void register_gpio (void) {
 
     gpio_args.gpio      = arg_int0(NULL, "gpio", "<pin>", "Specifies GPIO to be used");
     gpio_args.mode      = arg_str0(NULL, "mode", "<in|out>", "Sets the mode of GPIO.");
-    gpio_args.level     = arg_int0(NULL, "level", "<1|0>", "Sets the level of GPIO.");
+    gpio_args.level     = arg_int0(NULL, "level", "<1|0>", "Sets the logical level of GPIO.");
     const esp_console_cmd_t gpio_cmd = {
         .command    = "GPIO",
         .help       = "Sets/Gets GPIOs",
