@@ -129,9 +129,9 @@ static struct {
 } gpio_args;
 static int exec_gpio_cmd (int argc, char **argv) {
 
-    int nerrors = arg_parse(argc, argv, (void**) &info_args);
+    int nerrors = arg_parse(argc, argv, (void**) &gpio_args);
     if (nerrors != 0) {
-        arg_print_errors(stderr, info_args.end, argv[0]);
+        arg_print_errors(stderr, gpio_args.end, argv[0]);
         return 1;
     }
     else {
@@ -158,7 +158,7 @@ static void register_gpio (void) {
 
 void register_commands (void) {
     register_info();
-    //register_gpio();
+    register_gpio();
 }
 
 #endif
