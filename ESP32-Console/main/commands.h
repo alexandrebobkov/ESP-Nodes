@@ -135,6 +135,7 @@ static int exec_gpio_cmd (int argc, char **argv) {
         return 1;
     }
     else {
+        if (gpio_args.gpio != 0) {}
         return 0;
     }
 }
