@@ -15,7 +15,7 @@ static int exec_info_cmd(int argc, char **argv);
 static void register_info(void);
 
 // Operate GPIOs states
-static int exec_gpio(int argc, char **argv);
+static int exec_gpio_cmd(int argc, char **argv);
 static void register_gpio(void);
 
 // Display GPIOs states.
