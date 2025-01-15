@@ -1,0 +1,15 @@
+#ifndef CMD_GPIO_GET_H
+#define CMD_GPIO_GET_H
+
+#include <stdio.h>
+#include <string.h>
+
+#include "argtable3/argtable3.h"
+#include "esp_console.h"
+#include "esp_log.h"
+
+// Operate GPIOs states
+static int exec_gpio_get_cmd(int argc, char **argv);
+static void register_gpio_get_cmd(void);
+
+#endif
