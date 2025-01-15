@@ -117,7 +117,6 @@ static void register_info (void) {
         .func       = &exec_info_cmd,
         .argtable   = &info_args
     };
-
     ESP_ERROR_CHECK(esp_console_cmd_register(&info_cmd));
 }
 
@@ -137,6 +136,7 @@ static void register_gpio (void) {
         .func       = &exec_gpio_cmd,
         .argtable   = &gpio_args
     };
+    ESP_ERROR_CHECK(esp_console_cmd_register(&));
 }
 
 void register_commands (void) {
