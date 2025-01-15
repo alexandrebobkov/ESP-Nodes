@@ -137,8 +137,8 @@ static int exec_gpio_cmd (int argc, char **argv) {
     else {
         if (gpio_args.gpio != 0) {
             printf("GPIO %i", gpio_args.gpio->ival[0]);
+            return 0;
         }
-        return 0;
     }
 }
 static void register_gpio (void) {
