@@ -129,14 +129,14 @@ static struct {
 } gpio_args;
 static int exec_gpio_cmd (int argc, char **argv) {}
 static void register_gpio (void) {
-    const esp_console_cmd_t info_cmd = {
+    const esp_console_cmd_t gpio_cmd = {
         .command    = "GPIO",
         .help       = "Sets/Gets GPIOs",
         .hint       = NULL,
         .func       = &exec_gpio_cmd,
         .argtable   = &gpio_args
     };
-    ESP_ERROR_CHECK(esp_console_cmd_register(&));
+    ESP_ERROR_CHECK(esp_console_cmd_register(&gpio_cmd));
 }
 
 void register_commands (void) {
