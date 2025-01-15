@@ -22,8 +22,17 @@ static int exec_gpio_get_cmd(int argc, char **argv) {
 
     printf("Getting GPIO status ...\n");
 
-    gpio_dump_io_configuration(stdout, 1ULL << 8);
-    return 0;
+    int nerrors = arg_parse(argc, argv, (void**) &gpio_set_args);
+    if (nerrors != 0) {
+        arg_print_errors(stderr, gpio_get_args.end, argv[0]);
+        return 1;
+    }
+    else {
+        if (gpio_get_args.gpio != 0) {
+            gpio_dump_io_configuration(stdout, 1ULL << 8);
+            return 0;
+        }
+    }
 }
 
 static void register_gpio_get_cmd (void) {
