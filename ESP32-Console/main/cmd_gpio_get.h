@@ -21,4 +21,18 @@ static int exec_gpio_get_cmd(int argc, char **argv) {
     return 0;
 }
 
+static void register_set_gpio (void) {
+
+    gpio_get_args.gpio      = arg_int0("p", "gpio", "<pin>", "Specifies GPIO to be used.");
+    gpio_get_args.end       = arg_end(2);
+    const esp_console_cmd_t gpio_get_cmd = {
+        .command    = "gpio-set",
+        .help       = "Sets GPIOs logic levels",
+        .hint       = NULL,
+        .func       = &exec_gpio_get_cmd,
+        .argtable   = &gpio_get_args
+    };
+    ESP_ERROR_CHECK(esp_console_cmd_register(&gpio_get_cmd));
+}
+
 #endif
