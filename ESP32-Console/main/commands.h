@@ -19,8 +19,8 @@ static int exec_gpio_cmd(int argc, char **argv);
 static void register_gpio(void);
 
 // Display GPIOs states.
-static int exec_print_gpio(int argc, char **argv);
-static void register_print_gpio(void);
+//static int exec_print_gpio(int argc, char **argv);
+//static void register_print_gpio(void);
 
 struct arg_lit *temp, *help;
 struct arg_end *end;
