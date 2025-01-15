@@ -128,7 +128,14 @@ static struct {
     struct arg_end *end;
 } gpio_args;
 static int exec_gpio_cmd (int argc, char **argv) {
-    return 0;
+
+    int nerrors = arg_parse(argc, argv, (void**) &info_args);
+    if (nerrors != 0) {
+        arg_print_errors(stderr, info_args.end, argv[0]);
+        return 1;
+    }
+    else
+        return 0;
 }
 static void register_gpio (void) {
     const esp_console_cmd_t gpio_cmd = {
