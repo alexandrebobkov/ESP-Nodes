@@ -8,6 +8,10 @@
 #include "esp_console.h"
 #include "esp_log.h"
 
+// Operate GPIOs states
+static int exec_gpio_cmd(int argc, char **argv);
+static void register_gpio(void);
+
 static struct {
     struct arg_int *gpio;
     struct arg_str *mode;
