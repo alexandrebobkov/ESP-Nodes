@@ -21,7 +21,7 @@ static int exec_gpio_get_cmd(int argc, char **argv) {
     return 0;
 }
 
-static void register_set_gpio (void) {
+static void register_get_gpio (void) {
 
     gpio_get_args.gpio      = arg_int0("p", "gpio", "<pin>", "Specifies GPIO to be used.");
     gpio_get_args.end       = arg_end(2);
