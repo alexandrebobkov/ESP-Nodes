@@ -55,6 +55,7 @@ static void initialize_nvs (void) {
 
 void app_main(void)
 {
+    printf("\n==========================================\n");
     printf("Welcome to Breadboard Power Adapter ESP32-C3\n");
     printf("\n");
 
