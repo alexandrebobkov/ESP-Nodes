@@ -121,7 +121,9 @@ static void register_info (void) {
     ESP_ERROR_CHECK(esp_console_cmd_register(&info_cmd));
 }
 
-static void register_gpio (void) {}
+static void register_gpio (void) {
+    const esp_console_cmd_t info_cmd = {};
+}
 
 void register_commands (void) {
     register_info();
