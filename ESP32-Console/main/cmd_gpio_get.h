@@ -20,6 +20,8 @@ static void register_gpio_get_cmd(void);
 static int exec_gpio_get_cmd(int argc, char **argv) {
 
     printf("Getting GPIO status ...\n");
+
+    gpio_dump_io_configuration(stdout, 1ULL << 8);
     return 0;
 }
 
