@@ -136,7 +136,7 @@ static int exec_gpio_cmd (int argc, char **argv) {
     }
     else {
         if (gpio_args.gpio != 0) {
-            ESP_LOGI("GPIO", "GPIO %i", gpio_args.gpio->ival[0]);
+            ESP_LOGI("GPIO", "pin: %i, mode: %s, level: %i", gpio_args.gpio->ival[0], gpio_args.mode->sval[0], gpio_args.level->ival[0]);
         }
     }
     return 0;
