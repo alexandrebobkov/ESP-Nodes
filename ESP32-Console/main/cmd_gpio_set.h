@@ -1,5 +1,6 @@
-#ifndef COMMANDS_H
-#define COMMANDS_H
+#ifndef CMD_GPIO_SET_H
+#define CMD_GPIO_SET_H
+
 
 #include <stdio.h>
 #include <string.h>
