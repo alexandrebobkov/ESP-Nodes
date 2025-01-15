@@ -74,6 +74,7 @@ void app_main(void)
 
     esp_console_register_help_command();
     register_commands();
+    register_set_gpio();
     /*
         START CONSOLE REPL
     */
