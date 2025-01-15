@@ -121,6 +121,13 @@ static void register_info (void) {
     ESP_ERROR_CHECK(esp_console_cmd_register(&info_cmd));
 }
 
+static struct {
+    struct arg_str *temp;
+    struct arg_int *chip_temp;
+    struct arg_str *voltage;
+    struct arg_str *current;
+    struct arg_end *end;
+} info_args;
 static void register_gpio (void) {
     const esp_console_cmd_t info_cmd = {
         .command    = "GPIO",
