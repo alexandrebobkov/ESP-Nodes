@@ -122,7 +122,13 @@ static void register_info (void) {
 }
 
 static void register_gpio (void) {
-    const esp_console_cmd_t info_cmd = {};
+    const esp_console_cmd_t info_cmd = {
+        .command    = "GPIO",
+        .help       = "Sets/Gets GPIOs",
+        .hint       = NULL,
+        .func       = &exec,
+        .argtable   = &gpio_args
+    };
 }
 
 void register_commands (void) {
