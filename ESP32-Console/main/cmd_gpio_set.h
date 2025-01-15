@@ -33,7 +33,7 @@ static int exec_gpio_set_cmd (int argc, char **argv) {
     }
     return 0;
 }
-static void register_set_gpio (void) {
+static void register_gpio_set_cmd (void) {
 
     gpio_set_args.gpio      = arg_int0("p", "gpio", "<pin>", "Specifies GPIO to be used");
     gpio_set_args.mode      = arg_str0("m", "mode", "<in|out>", "Sets the mode of GPIO.");
