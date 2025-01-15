@@ -57,7 +57,7 @@ void app_main(void)
 {
     printf("\n==========================================\n");
     printf("Welcome to Breadboard Power Adapter ESP32-C3\n");
-    printf("\n");
+    printf("\n==========================================\n");
 
     esp_console_repl_t *repl = NULL;
     esp_console_repl_config_t repl_config = ESP_CONSOLE_REPL_CONFIG_DEFAULT();
