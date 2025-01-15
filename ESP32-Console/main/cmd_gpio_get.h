@@ -26,8 +26,8 @@ static void register_set_gpio (void) {
     gpio_get_args.gpio      = arg_int0("p", "gpio", "<pin>", "Specifies GPIO to be used.");
     gpio_get_args.end       = arg_end(2);
     const esp_console_cmd_t gpio_get_cmd = {
-        .command    = "gpio-set",
-        .help       = "Sets GPIOs logic levels",
+        .command    = "gpio-get",
+        .help       = "Gets GPIOs logic levels",
         .hint       = NULL,
         .func       = &exec_gpio_get_cmd,
         .argtable   = &gpio_get_args
