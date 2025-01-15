@@ -126,7 +126,7 @@ static void register_gpio (void) {
         .command    = "GPIO",
         .help       = "Sets/Gets GPIOs",
         .hint       = NULL,
-        .func       = &exec,
+        .func       = &exec_gpio_cmd,
         .argtable   = &gpio_args
     };
 }
