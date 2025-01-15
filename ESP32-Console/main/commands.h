@@ -121,10 +121,10 @@ static void register_info (void) {
 }
 
 static struct {
-    struct arg_str *gpio;
-    struct arg_int *mode;
-    struct arg_str *level;
-    struct arg_str *pwm;
+    struct arg_int *gpio;
+    struct arg_str *mode;
+    struct arg_int *level;
+    struct arg_int *pwm;
     struct arg_end *end;
 } gpio_args;
 static int exec_gpio_cmd (int argc, char **argv) {
