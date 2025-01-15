@@ -120,6 +120,8 @@ static void register_info (void) {
     ESP_ERROR_CHECK(esp_console_cmd_register(&info_cmd));
 }
 
+static void register_gpio (void) {}
+
 void register_commands (void) {
     register_info();
 }
