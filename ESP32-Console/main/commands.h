@@ -134,8 +134,9 @@ static int exec_gpio_cmd (int argc, char **argv) {
         arg_print_errors(stderr, info_args.end, argv[0]);
         return 1;
     }
-    else
+    else {
         return 0;
+    }
 }
 static void register_gpio (void) {
 
