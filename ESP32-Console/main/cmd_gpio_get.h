@@ -17,4 +17,8 @@ static struct {
 static int exec_gpio_get_cmd(int argc, char **argv);
 static void register_gpio_get_cmd(void);
 
+static int exec_gpio_get_cmd(int argc, char **argv) { 
+    return 0;
+}
+
 #endif
