@@ -149,8 +149,8 @@ static void register_set_gpio (void) {
     gpio_set_args.pwm       = arg_int0("f", "pwm", "<num>", "Set PWM for GPIO.");
     gpio_set_args.end       = arg_end(2);
     const esp_console_cmd_t gpio_set_cmd = {
-        .command    = "gpio",
-        .help       = "Sets/Gets GPIOs",
+        .command    = "gpio-set",
+        .help       = "Sets GPIOs logic levels",
         .hint       = NULL,
         .func       = &exec_gpio_set_cmd,
         .argtable   = &gpio_set_args
