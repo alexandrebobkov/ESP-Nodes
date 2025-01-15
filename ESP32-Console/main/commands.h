@@ -127,7 +127,9 @@ static struct {
     struct arg_str *current;
     struct arg_end *end;
 } gpio_args;
-static int exec_gpio_cmd (int argc, char **argv) {}
+static int exec_gpio_cmd (int argc, char **argv) {
+    return 0;
+}
 static void register_gpio (void) {
     const esp_console_cmd_t gpio_cmd = {
         .command    = "GPIO",
