@@ -31,7 +31,8 @@ static int exec_gpio_get_cmd(int argc, char **argv) {
     }
     else {
         if (gpio_get_args.gpio != 0) {
-            gpio_dump_io_configuration(stdout, 1ULL << gpio_get_args.gpio->ival[0]);
+            printf(gpio_get_args.gpio->ival[0]);
+            gpio_dump_io_configuration(stdout, 1ULL << 4);//gpio_get_args.gpio->ival[0]);
             s = 0;
         }
     }
