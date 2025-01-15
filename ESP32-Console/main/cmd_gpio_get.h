@@ -19,7 +19,7 @@ static void register_gpio_get_cmd(void);
 
 static int exec_gpio_get_cmd(int argc, char **argv) {
 
-    printf("Getting GPIO status ...");
+    printf("Getting GPIO status ...\n");
     return 0;
 }
 
