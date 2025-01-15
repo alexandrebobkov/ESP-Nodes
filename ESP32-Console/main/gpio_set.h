@@ -1,0 +1,49 @@
+#ifndef COMMANDS_H
+#define COMMANDS_H
+
+#include <stdio.h>
+#include <string.h>
+
+#include "argtable3/argtable3.h"
+#include "esp_console.h"
+#include "esp_log.h"
+
+static struct {
+    struct arg_int *gpio;
+    struct arg_str *mode;
+    struct arg_int *level;
+    struct arg_int *pwm;
+    struct arg_end *end;
+} gpio_set_args;
+static int exec_gpio_set_cmd (int argc, char **argv) {
+
+    int nerrors = arg_parse(argc, argv, (void**) &gpio_set_args);
+    if (nerrors != 0) {
+        arg_print_errors(stderr, gpio_set_args.end, argv[0]);
+        return 1;
+    }
+    else {
+        if (gpio_set_args.gpio != 0 && gpio_set_args.mode != 0 && gpio_set_args.level != 0) {
+            ESP_LOGI("GPIO", "pin: %i, mode: %s, level: %i", gpio_set_args.gpio->ival[0], gpio_set_args.mode->sval[0], gpio_set_args.level->ival[0]);
+        }
+    }
+    return 0;
+}
+static void register_set_gpio (void) {
+
+    gpio_set_args.gpio      = arg_int0("p", "gpio", "<pin>", "Specifies GPIO to be used");
+    gpio_set_args.mode      = arg_str0("m", "mode", "<in|out>", "Sets the mode of GPIO.");
+    gpio_set_args.level     = arg_int0("l", "level", "<1|0>", "Sets the logical level of GPIO.");
+    gpio_set_args.pwm       = arg_int0("f", "pwm", "<num>", "Set PWM for GPIO.");
+    gpio_set_args.end       = arg_end(2);
+    const esp_console_cmd_t gpio_set_cmd = {
+        .command    = "gpio-set",
+        .help       = "Sets GPIOs logic levels",
+        .hint       = NULL,
+        .func       = &exec_gpio_set_cmd,
+        .argtable   = &gpio_set_args
+    };
+    ESP_ERROR_CHECK(esp_console_cmd_register(&gpio_set_cmd));
+}
+
+#endif
