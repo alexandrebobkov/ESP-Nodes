@@ -14,6 +14,8 @@ static struct {
     struct arg_end *end;
 } gpio_get_args;
 
+static int pin;
+
 // Operate GPIOs states
 static int exec_gpio_get_cmd(int argc, char **argv);
 static void register_gpio_get_cmd(void);
