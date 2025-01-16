@@ -30,13 +30,17 @@ static int exec_gpio_set_cmd (int argc, char **argv) {
     else {
         //if (gpio_set_args.gpio != 0 && gpio_set_args.mode != 0 && gpio_set_args.level != 0) {
         if (gpio_set_args.gpio->count > 0 && gpio_set_args.level->count > 0) {
-            ESP_LOGI("GPIO", "pin: %i, mode: %s, level: %i", gpio_set_args.gpio->ival[0], gpio_set_args.mode->sval[0], gpio_set_args.level->ival[0]);
-            //gpio_set_direction(gpio_set_args.gpio->ival[0], GPIO_MODE_OUTPUT);
 
-            pin_config.pin_bit_mask = 1ULL << gpio_set_args.gpio->ival[0];
-            pin_config.mode = GPIO_MODE_OUTPUT;
-            gpio_config(&pin_config);
-            gpio_set_level(gpio_set_args.gpio->ival[0], gpio_set_args.level->ival[0]);
+            ESP_LOGI("GPIO", "pin: %i, mode: %s, level: %i", gpio_set_args.gpio->ival[0], gpio_set_args.mode->sval[0], gpio_set_args.level->ival[0]);
+                //gpio_set_direction(gpio_set_args.gpio->ival[0], GPIO_MODE_OUTPUT);
+                pin_config.pin_bit_mask = 1ULL << gpio_set_args.gpio->ival[0];
+                pin_config.mode = GPIO_MODE_OUTPUT;
+                gpio_config(&pin_config);
+
+            if (gpio_set_args.level->ival[0] == 1)
+                gpio_set_level(gpio_set_args.gpio->ival[0], 1);
+            if (gpio_set_args.level->ival[0] == 0)
+                gpio_set_level(gpio_set_args.gpio->ival[0], 0);
         }
     }
     return 0;
