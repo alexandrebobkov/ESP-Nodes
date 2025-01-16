@@ -14,10 +14,10 @@ static void register_gpio(void);
 gpio_config_t pin_config;
 
 static struct {
-    struct arg_int *gpio;
-    struct arg_str *mode;
-    struct arg_int *level;
-    struct arg_int *pwm;
+    struct arg_int *gpio;   // Stores GPIO number
+    struct arg_str *mode;   // Stores Input or Output mode
+    struct arg_int *level;  // Stores HIGH or LOW level
+    struct arg_int *pwm;    // Stores cycle duty value (PWM)
     struct arg_end *end;
 } gpio_set_args;
 static int exec_gpio_set_cmd (int argc, char **argv) {
