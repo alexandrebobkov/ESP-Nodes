@@ -28,8 +28,11 @@ static int exec_gpio_set_cmd (int argc, char **argv) {
     }
     else {
         if (gpio_set_args.gpio != 0 && gpio_set_args.mode != 0 && gpio_set_args.level != 0) {
+            gpio_config_t pin_config;
             ESP_LOGI("GPIO", "pin: %i, mode: %s, level: %i", gpio_set_args.gpio->ival[0], gpio_set_args.mode->sval[0], gpio_set_args.level->ival[0]);
-            gpio_set_direction(gpio_set_args.gpio->ival[0], GPIO_MODE_OUTPUT);
+            //gpio_set_direction(gpio_set_args.gpio->ival[0], GPIO_MODE_OUTPUT);
+            pin_config.mode = GPIO_MODE_OUTPUT;
+            gpio_config(&pin_config);
             gpio_set_level(gpio_set_args.gpio->ival[0], gpio_set_args.level->ival[0]);
         }
     }
