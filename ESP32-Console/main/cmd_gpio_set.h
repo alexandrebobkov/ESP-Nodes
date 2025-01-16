@@ -36,7 +36,7 @@ static int exec_gpio_set_cmd (int argc, char **argv) {
                 pin_config.mode = GPIO_MODE_OUTPUT;
                 gpio_config(&pin_config);
 
-                gpio_set_level(gpio_set_args.gpio->ival[0, gpio_set_args.level->ival[0]]);
+                gpio_set_level(gpio_set_args.gpio->ival[0], gpio_set_args.level->ival[0]]);
 
             /*if (gpio_set_args.level->ival[0] == 1)
                 gpio_set_level(gpio_set_args.gpio->ival[0], 1);
