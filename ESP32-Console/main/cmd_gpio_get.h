@@ -33,7 +33,7 @@ static int exec_gpio_get_cmd(int argc, char **argv) {
         s = 1;
     }
     else {
-        if (gpio_get_args.gpio != 0) {
+        if (gpio_get_args.gpio->count > 0)// != 0) {
             pin = gpio_get_args.gpio->ival[0];
             printf("GPIO: %d \n", pin);
             ESP_LOGI("gpio-get", "GPIO # %i", gpio_get_args.gpio->ival[0]);
