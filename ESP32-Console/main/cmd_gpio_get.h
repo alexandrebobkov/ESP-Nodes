@@ -11,6 +11,7 @@
 
 static struct {
     struct arg_int *gpio;
+    struct arg_int *dump;
     struct arg_end *end;
 } gpio_get_args;
 
