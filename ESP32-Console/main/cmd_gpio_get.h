@@ -33,11 +33,13 @@ static int exec_gpio_get_cmd(int argc, char **argv) {
         s = 1;
     }
     else {
+        // Gets GPIO level
         if (gpio_get_args.gpio->count > 0) {// != 0) {
             pin = gpio_get_args.gpio->ival[0];
             printf("GPIO: %d \n", pin);
             ESP_LOGI("gpio-get", "GPIO # %i", gpio_get_args.gpio->ival[0]);
-            gpio_dump_io_configuration(stdout, 1ULL << gpio_get_args.gpio->ival[0]);// 4);
+            //gpio_dump_io_configuration(stdout, 1ULL << gpio_get_args.gpio->ival[0]);
+            
             s = 0;
         }
         // Dump GPIO configuration information.
