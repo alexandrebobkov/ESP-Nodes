@@ -18,7 +18,7 @@ static struct {
     struct arg_str *mode;   // Stores Input or Output mode
     struct arg_int *level;  // Stores HIGH or LOW level
     struct arg_int *pwm;    // Stores cycle duty value (PWM)
-    struct arg_end *end;
+    struct arg_end *end;    // Stores parsing errors
 } gpio_set_args;
 static int exec_gpio_set_cmd (int argc, char **argv) {
 
