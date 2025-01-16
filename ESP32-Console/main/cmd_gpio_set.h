@@ -31,6 +31,7 @@ static int exec_gpio_set_cmd (int argc, char **argv) {
             gpio_config_t pin_config;
             ESP_LOGI("GPIO", "pin: %i, mode: %s, level: %i", gpio_set_args.gpio->ival[0], gpio_set_args.mode->sval[0], gpio_set_args.level->ival[0]);
             //gpio_set_direction(gpio_set_args.gpio->ival[0], GPIO_MODE_OUTPUT);
+            
             pin_config.pin_bit_mask = 1ULL << gpio_set_args.gpio->ival[0];
             pin_config.mode = GPIO_MODE_OUTPUT;
             gpio_config(&pin_config);
