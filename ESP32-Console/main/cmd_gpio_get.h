@@ -42,6 +42,7 @@ static int exec_gpio_get_cmd(int argc, char **argv) {
         }
         if (gpio_get_args.dump->count > 0) {
             printf("Printing GPIO dump \n");
+            gpio_dump_io_configuration(stdout, 1ULL << gpio_get_args.gpio->ival[0]);
             s = 0;
         }
     }
