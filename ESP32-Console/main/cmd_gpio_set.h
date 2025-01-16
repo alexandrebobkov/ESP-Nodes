@@ -23,7 +23,7 @@ static struct {
 static int exec_gpio_set_cmd (int argc, char **argv) {
 
     int nerrors = arg_parse(argc, argv, (void**) &gpio_set_args);
-    // Confirm there were no errors
+    // Confirm there were no parsing errors
     if (nerrors != 0) {
         arg_print_errors(stderr, gpio_set_args.end, argv[0]);
         return 1;
