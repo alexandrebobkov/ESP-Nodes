@@ -29,6 +29,7 @@ static int exec_gpio_set_cmd (int argc, char **argv) {
         return 1;
     }
     else {
+        // Set GPIO level HIGH or LOW
         if (gpio_set_args.gpio->count > 0 && gpio_set_args.level->count > 0) {
             ESP_LOGI("GPIO", "pin: %i, mode: %s, level: %i", gpio_set_args.gpio->ival[0], gpio_set_args.mode->sval[0], gpio_set_args.level->ival[0]);
                 pin_config.pin_bit_mask = 1ULL << gpio_set_args.gpio->ival[0];
