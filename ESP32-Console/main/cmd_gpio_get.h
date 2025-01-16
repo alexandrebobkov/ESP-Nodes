@@ -36,8 +36,7 @@ static int exec_gpio_get_cmd(int argc, char **argv) {
             pin = gpio_get_args.gpio->ival[0];
             printf("GPIO: %d \n", pin);
             ESP_LOGI("gpio-get", "GPIO # %i", gpio_get_args.gpio->ival[0]);
-            ESP_LOGI("gpio-get", "GPIO # %i", gpio_get_args.gpio->ival[1]);
-            gpio_dump_io_configuration(stdout, 1ULL << 4);//gpio_get_args.gpio->ival[0]);
+            gpio_dump_io_configuration(stdout, 1ULL << 4);
             s = 0;
         }
     }
