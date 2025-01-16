@@ -44,7 +44,7 @@ static int exec_gpio_get_cmd(int argc, char **argv) {
 
 static void register_gpio_get_cmd (void) {
 
-    gpio_get_args.gpio      = arg_int1("p", "pin", "<pin>", "Specifies GPIO to be used.");
+    gpio_get_args.gpio      = arg_int0("p", "pin", "<pin>", "Specifies GPIO to be used.");
     gpio_get_args.end       = arg_end(2);
     const esp_console_cmd_t gpio_get_cmd = {
         .command    = "gpio-get",
