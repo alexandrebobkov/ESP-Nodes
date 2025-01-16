@@ -48,7 +48,7 @@ static void register_gpio_get_cmd (void) {
 
     gpio_get_args.gpio      = arg_int0("p", "pin", "<pin>", "Specifies GPIO to be used.");
     gpio_get_args.dump      = arg_int0("d", "dump", "<pin>", "Outputs the GPIO dump.");
-    gpio_get_args.end       = arg_end(2);
+    gpio_get_args.end       = arg_end(5);
     const esp_console_cmd_t gpio_get_cmd = {
         .command    = "gpio-get",
         .help       = "Gets GPIOs logic levels",
