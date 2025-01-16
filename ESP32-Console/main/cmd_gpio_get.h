@@ -26,14 +26,14 @@ static int exec_gpio_get_cmd(int argc, char **argv) {
 
     printf("Getting GPIO status ...\n");
 
-    int nerrors = arg_parse(argc, argv, (void**) &gpio_set_args);
+    int nerrors = arg_parse(argc, argv, (void**) &gpio_get_args);
     if (nerrors != 0) {
         arg_print_errors(stderr, gpio_get_args.end, argv[0]);
         s = 1;
     }
     else {
         if (gpio_get_args.gpio != 0) {
-            int pin = gpio_get_args.gpio->ival[0];
+            pin = gpio_get_args.gpio->ival[0];
             printf("GPIO: %d \n", pin);
             ESP_LOGI("gpio-get", "GPIO # %i", gpio_get_args.gpio->ival[0]);
             ESP_LOGI("gpio-get", "GPIO # %i", gpio_get_args.gpio->ival[1]);
