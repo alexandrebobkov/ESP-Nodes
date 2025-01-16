@@ -57,7 +57,7 @@ static void register_gpio_get_cmd (void) {
     gpio_get_args.end       = arg_end(5);
     const esp_console_cmd_t gpio_get_cmd = {
         .command    = "gpio-get",
-        .help       = "Gets GPIOs logic levels",
+        .help       = "Displays information about GPIOs",
         .hint       = NULL,
         .func       = &exec_gpio_get_cmd,
         .argtable   = &gpio_get_args
