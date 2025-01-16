@@ -27,6 +27,7 @@ static int exec_gpio_set_cmd (int argc, char **argv) {
     if (nerrors != 0) {
         arg_print_errors(stderr, gpio_set_args.end, argv[0]);
         return 1;
+        break;
     }
     else {
         // Set GPIO level HIGH or LOW
