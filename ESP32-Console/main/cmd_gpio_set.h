@@ -22,7 +22,7 @@ static struct {
     struct arg_end *end;    // Stores parsing errors
 } gpio_set_args;
 
-// Function being called when command is entered.
+// Function being called when command 'gpio-set' is entered.
 static int exec_gpio_set_cmd (int argc, char **argv) {
 
     int nerrors = arg_parse(argc, argv, (void**) &gpio_set_args);
