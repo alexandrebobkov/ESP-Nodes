@@ -8,7 +8,7 @@
 #include "esp_console.h"
 #include "esp_log.h"
 
-// Operate GPIOs states
+// Set GPIOs states
 static int exec_gpio_cmd(int argc, char **argv);
 static void register_gpio(void);
 gpio_config_t pin_config;
