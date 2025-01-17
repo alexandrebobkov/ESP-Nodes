@@ -13,6 +13,7 @@ static int exec_gpio_cmd(int argc, char **argv);
 static void register_gpio(void);
 gpio_config_t pin_config;
 
+// Struct holding the ommand arguments
 static struct {
     struct arg_int *gpio;   // Stores GPIO number
     struct arg_str *mode;   // Stores Input or Output mode
@@ -20,6 +21,8 @@ static struct {
     struct arg_int *pwm;    // Stores cycle duty value (PWM)
     struct arg_end *end;    // Stores parsing errors
 } gpio_set_args;
+
+// Function being called when command is entered.
 static int exec_gpio_set_cmd (int argc, char **argv) {
 
     int nerrors = arg_parse(argc, argv, (void**) &gpio_set_args);
