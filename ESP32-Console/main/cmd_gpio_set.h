@@ -54,6 +54,7 @@ static int exec_gpio_set_cmd (int argc, char **argv) {
     }
     return 0;
 }
+// Function registering the 'gpio-set' command with its arguments.
 static void register_gpio_set_cmd (void) {
 
     gpio_set_args.gpio  = arg_int0("p", "gpio",     "<pin>",    "Specifies GPIO to be used");
