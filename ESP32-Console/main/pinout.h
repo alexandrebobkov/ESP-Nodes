@@ -40,7 +40,7 @@ IO0     16
 #define     GPIO19      9
 */
 
-#define     PIN1        GPIO_EN         //      1
+#define     PIN1        GPIO_EN         //  ?????        1
 #define     PIN16       GPIO_NUM_0      //  GPIO0       16
 #define     PIN15       GPIO_NUM_1      //  GPIO1       15
 #define     PIN14       GPIO_NUM_2      //  GPIO2       14
