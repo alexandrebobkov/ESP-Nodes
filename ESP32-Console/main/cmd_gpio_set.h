@@ -52,7 +52,7 @@ static int exec_gpio_set_cmd (int argc, char **argv) {
                 gpio_config(&pin_config);
                 // Change the pin level
                 gpio_set_level(gpio_set_args.gpio->ival[0], gpio_set_args.level->ival[0]);
-                ESP_LOW("gpio-set", "GPIO %d level is %d", gpio_set_args.gpio->ival[0], gpio_fet_level);
+                ESP_LOW("gpio-set", "GPIO %d level is %d", gpio_set_args.gpio->ival[0], gpio_get_level(gpio_set_args.gpio->ival[0]));
             }
         }
     }
