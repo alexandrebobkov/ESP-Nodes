@@ -60,7 +60,7 @@ static void register_gpio_set_cmd (void) {
     gpio_set_args.gpio  = arg_int0("p", "gpio",     "<pin>",    "Specifies GPIO to be used");
     gpio_set_args.mode  = arg_str0("m", "mode",     "<in|out>", "Sets the mode of GPIO.");
     gpio_set_args.level = arg_int0("l", "level",    "<1|0>",    "Sets the logical level of GPIO.");
-    gpio_set_args.pwm   = arg_int0("f", "pwm",      "<num>",    "Set PWM for GPIO.");
+    gpio_set_args.pwm   = arg_int0("f", "pwm",      "<num>",    "Set PWM for the given GPIO.");
     gpio_set_args.end   = arg_end(2);
     const esp_console_cmd_t gpio_set_cmd = {
         .command    = "gpio-set",
