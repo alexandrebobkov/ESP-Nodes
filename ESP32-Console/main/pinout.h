@@ -16,7 +16,7 @@ USB D+  9
 USB D-  11
 RxD     10
 TxD     12
-IO3     12
+IO3     13
 IO2     14
 IO1     15
 IO0     16
@@ -27,7 +27,7 @@ IO0     16
 #define     GPIO0       16
 #define     GPIO1       15
 #define     GPIO2       14
-#define     GPIO3       12
+#define     GPIO3       13
 #define     GPIO4       2
 #define     GPIO5       3
 #define     GPIO6       4
