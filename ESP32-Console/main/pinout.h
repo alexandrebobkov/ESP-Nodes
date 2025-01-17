@@ -40,17 +40,17 @@ IO0     16
 #define     GPIO19      9
 */
 
-#define     PIN1        GPIO_EN     1
-#define     PIN16       GPIO0       16
-#define     PIN15       GPIO1       15
-#define     PIN14       GPIO2       14
-#define     PIN13       GPIO3       13
-#define     PIN2        GPIO4       2
-#define     PIN3        GPIO5       3
-#define     PIN4        GPIO6       4
-#define     PIN6        GPIO7       6
-#define     PIN5        GPIO8       5
-#define     PIN8        GPIO9       8
-#define     PIN10       GPIO10      10
-#define     PIN11       GPIO18      11
-#define     PIN9        GPIO19      9
+#define     PIN1        GPIO_EN         //      1
+#define     PIN16       GPIO_NUM_0      //  GPIO0       16
+#define     PIN15       GPIO_NUM_1      //  GPIO1       15
+#define     PIN14       GPIO_NUM_2      //  GPIO2       14
+#define     PIN13       GPIO_NUM_3      //  GPIO3       13
+#define     PIN2        GPIO_NUM_4      //  GPIO4       2
+#define     PIN3        GPIO_NUM_5      //  GPIO5       3
+#define     PIN4        GPIO_NUM_6      //  GPIO6       4
+#define     PIN6        GPIO_NUM_7      //  GPIO7       6
+#define     PIN5        GPIO_NUM_8      //  GPIO8       5
+#define     PIN8        GPIO_NUM_9      //  GPIO9       8
+#define     PIN10       GPIO_NUM_10     //  GPIO10      10
+#define     PIN11       GPIO_NUM_18     //  GPIO18      11
+#define     PIN9        GPIO_NUM_19     //  GPIO19      9
