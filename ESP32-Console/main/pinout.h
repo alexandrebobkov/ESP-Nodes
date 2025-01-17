@@ -16,5 +16,9 @@ USB D+  9
 USB D-  11
 RxD     10
 TxD     12
+IO3     12
+IO2     14
+IO1     15
+IO0     16
 
 */
