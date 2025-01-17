@@ -40,7 +40,7 @@ static int exec_gpio_get_cmd(int argc, char **argv) {
             //ESP_LOGI("gpio-get", "GPIO # %i", gpio_get_args.gpio->ival[0]);
             //gpio_dump_io_configuration(stdout, 1ULL << gpio_get_args.gpio->ival[0]);
             printf("GPIO #%d level is %d\n", gpio_get_args.gpio->ival[0], gpio_get_level(gpio_get_args.gpio->ival[0]));
-            ESP_LIGW("gpio-get}, "\n %d ", gpio_get_level(GPIO_NUM_8));
+            ESP_LIGW("gpio-get", "\n %d ", gpio_get_level(GPIO_NUM_8));
             //printf("GPIO level was changed.");
             s = 0;
         }
