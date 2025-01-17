@@ -45,7 +45,7 @@ static int exec_gpio_set_cmd (int argc, char **argv) {
             // Set the bit mask for the pin number that was passed
             pin_config.pin_bit_mask = 1ULL << gpio_set_args.gpio->ival[0];
             // Since we are setting the pin level, set the pin mode to OUTPUT
-            if (strcmp(gpio_set_args.mode->sval, "out") == 1) {
+            if (strcmp(gpio_set_args.mode->sval[0], "out") == 0) {
                 pin_config.mode = GPIO_MODE_OUTPUT;
                 // Submit pin configuration
                 gpio_config(&pin_config);
