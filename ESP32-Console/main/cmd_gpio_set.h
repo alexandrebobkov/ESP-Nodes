@@ -107,7 +107,7 @@ static int exec_gpio_reset_cmd(int argc, char **argv) {
     }
 
 }
-static void register_gpio_reset(void) {
+static void register_gpio_reset_cmd(void) {
     gpio_set_args.gpio  = arg_int0("p", "pin", "<pin>",     "Specifies GPIO to reset.");
     gpio_set_args.mode  = arg_str0("r", "reset", NULL,      "Resets the GPIO configuration.");
     gpio_set_args.level = NULL;
