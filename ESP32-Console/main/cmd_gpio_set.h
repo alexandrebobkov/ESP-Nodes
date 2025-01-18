@@ -92,8 +92,8 @@ static void register_gpio_reset(void) {
     gpio_set_args.pwm   = NULL;
     gpio_set_args.end   = arg_end(2);
     const esp_console_cmd_t gpio_set_cmd = {
-        .command    = "gpio-set",
-        .help       = "Sets GPIOs logic levels",
+        .command    = "gpio-reset",
+        .help       = "Resets GPIO configuration.",
         .hint       = NULL,
         .func       = &exec_gpio_set_cmd,
         .argtable   = &gpio_set_args
