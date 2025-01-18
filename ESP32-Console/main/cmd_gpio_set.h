@@ -91,11 +91,11 @@ static void register_gpio_reset(void) {
     gpio_set_args.level = NULL;
     gpio_set_args.pwm   = NULL;
     gpio_set_args.end   = arg_end(2);
-    const esp_console_cmd_t gpio_set_cmd = {
+    const esp_console_cmd_t gpio_reset_cmd = {
         .command    = "gpio-reset",
         .help       = "Resets GPIO configuration.",
         .hint       = NULL,
-        .func       = &exec_gpio_set_cmd,
+        .func       = &exec_gpio_reset_cmd,
         .argtable   = &gpio_set_args
     };
     ESP_ERROR_CHECK(esp_console_cmd_register(&gpio_set_cmd));
