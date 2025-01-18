@@ -14,7 +14,7 @@ static int exec_gpio_cmd(int argc, char **argv);
 static void register_gpio(void);
 
 // Resets GPIO
-static int exec_gpio_reset(int argc, char **argv);
+static int exec_gpio_reset_cmd(int argc, char **argv);
 static void register_gpio_reset(void);
 
 gpio_config_t pin_config;
@@ -96,7 +96,7 @@ static void register_gpio_reset(void) {
         .help       = "Resets GPIO configuration.",
         .hint       = NULL,
         .func       = &exec_gpio_reset_cmd,
-        .argtable   = &gpio_set_args
+        .argtable   = &gpio_reset_args
     };
     ESP_ERROR_CHECK(esp_console_cmd_register(&gpio_set_cmd));
 }
