@@ -96,9 +96,9 @@ static void register_gpio_reset(void) {
         .help       = "Resets GPIO configuration.",
         .hint       = NULL,
         .func       = &exec_gpio_reset_cmd,
-        .argtable   = &gpio_reset_args
+        .argtable   = &gpio_set_args
     };
-    ESP_ERROR_CHECK(esp_console_cmd_register(&gpio_set_cmd));
+    ESP_ERROR_CHECK(esp_console_cmd_register(&gpio_reset_cmd));
 }
 
 #endif
