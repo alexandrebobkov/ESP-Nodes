@@ -82,7 +82,7 @@ void app_main(void)
     register_commands();
     register_gpio_set_cmd();
     register_gpio_get_cmd();
-    register_gpio_reset_cmd();
+    //register_gpio_reset_cmd();
     /*
         START CONSOLE REPL
     */
