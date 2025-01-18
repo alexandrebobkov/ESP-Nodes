@@ -48,8 +48,8 @@ static int exec_gpio_set_cmd (int argc, char **argv) {
             // Since we are setting the pin level, set the pin mode to OUTPUT
             if (strcmp(gpio_set_args.mode->sval[0], "out") == 0) {
                 pin_config.mode = GPIO_MODE_OUTPUT;
-                pin_config.pull_down_en = false;
-                pin_config.pull_up_en = false;
+                pin_config.pull_down_en = 0;
+                pin_config.pull_up_en = 0;
                 // Submit pin configuration
                 gpio_config(&pin_config);
                 // Change the pin level
