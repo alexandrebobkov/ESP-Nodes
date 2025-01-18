@@ -12,6 +12,10 @@
 // Set GPIOs states
 static int exec_gpio_cmd(int argc, char **argv);
 static void register_gpio(void);
+
+static int exec_gpio_reset(int argc, char **argv);
+staticv oid register_gpio_reset(void);
+
 gpio_config_t pin_config;
 
 // Struct holding the ommand arguments
