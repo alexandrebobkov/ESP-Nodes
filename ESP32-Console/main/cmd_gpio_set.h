@@ -101,10 +101,10 @@ static int exec_gpio_reset_cmd(int argc, char **argv) {
             // Display brief summary of passed arguments.
             ESP_LOGI("gpio-reset", "pin to reset: %i",
                 gpio_set_args.gpio->ival[0]);
-            // Set the bit mask for the pin number that was passed
-            pin_config.pin_bit_mask = 1ULL << gpio_set_args.gpio->ival[0];
-            // Since we are setting the pin level, set the pin mode to OUTPUT
-            if (strcmp(gpio_set_args.mode->sval[0], "out") == 0) {
+            if (strcmp(gpio_set_args.mode->sval[0], "reset") == 0) {}
+        }
+        return 0;
+    }
 
 }
 static void register_gpio_reset(void) {
