@@ -85,6 +85,20 @@ static void register_gpio_set_cmd (void) {
 
 // Resets GPIO
 static int exec_gpio_reset(int argc, char **argv) {}
-static void register_gpio_reset(void) {}
+static void register_gpio_reset(void) {
+    gpio_set_args.gpio  = arg_int0("r", "reset", "<pin>",    "Specifies GPIO to reset.");
+    gpio_set_args.mode  = NULL;
+    gpio_set_args.level = NULL;
+    gpio_set_args.pwm   = NULL;
+    gpio_set_args.end   = arg_end(2);
+    const esp_console_cmd_t gpio_set_cmd = {
+        .command    = "gpio-set",
+        .help       = "Sets GPIOs logic levels",
+        .hint       = NULL,
+        .func       = &exec_gpio_set_cmd,
+        .argtable   = &gpio_set_args
+    };
+    ESP_ERROR_CHECK(esp_console_cmd_register(&gpio_set_cmd));
+}
 
 #endif
