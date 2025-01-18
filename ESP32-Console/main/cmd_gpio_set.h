@@ -83,6 +83,7 @@ static void register_gpio_set_cmd (void) {
     ESP_ERROR_CHECK(esp_console_cmd_register(&gpio_set_cmd));
 }
 
+// Resets GPIO
 static int exec_gpio_reset(int argc, char **argv) {}
 static void register_gpio_reset(void) {}
 
