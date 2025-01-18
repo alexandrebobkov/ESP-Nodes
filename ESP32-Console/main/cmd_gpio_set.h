@@ -61,6 +61,8 @@ static int exec_gpio_set_cmd (int argc, char **argv) {
                 gpio_set_level(gpio_set_args.gpio->ival[0], gpio_set_args.level->ival[0]);
                 ESP_LOGW("gpio-set", "GPIO %d level is %d", gpio_set_args.gpio->ival[0], gpio_get_level(gpio_set_args.gpio->ival[0]));
             }
+        }
+        if (gpio_set_args.gpio->count > 0 && gpio_set_args.mode->count > 0) {
             if (strcmp(gpio_set_args.mode->sval[0], "reset") == 0) {
                 ESP_LOGW("gpio-reset", "GPIO %d was reset.", gpio_set_args.gpio->ival[0]);
             }
