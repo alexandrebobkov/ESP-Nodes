@@ -22,6 +22,7 @@
 #include "commands.h"
 #include "cmd_gpio_set.h"
 #include "cmd_gpio_get.h"
+#include "cmd_espnow.h"
 
 esp_console_config_t *console_config;
 esp_console_cmd_t *cmd1;
