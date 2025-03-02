@@ -22,7 +22,6 @@
 #include "commands.h"
 #include "cmd_gpio_set.h"
 #include "cmd_gpio_get.h"
-#include "cmd_espnow.h"
 
 esp_console_config_t *console_config;
 esp_console_cmd_t *cmd1;
@@ -74,16 +73,17 @@ void app_main(void)
 
     repl_config.prompt = "foxie >";
     
-    //esp_console_dev_uart_config_t uart_config = ESP_CONSOLE_DEV_UART_CONFIG_DEFAULT();    
+    // Update settings in menu config
+    //esp_console_dev_uart_config_t uart_config = ESP_CONSOLE_DEV_UART_CONFIG_DEFAULT();  
+    //ESP_ERROR_CHECK(esp_console_new_repl_uart(&uart_config, &repl_config, &repl));  
     esp_console_dev_usb_serial_jtag_config_t usb_config = ESP_CONSOLE_DEV_USB_SERIAL_JTAG_CONFIG_DEFAULT();
     ESP_ERROR_CHECK(esp_console_new_repl_usb_serial_jtag(&usb_config, &repl_config, &repl));
-    //ESP_ERROR_CHECK(esp_console_new_repl_uart(&uart_config, &repl_config, &repl));
+    
 
     esp_console_register_help_command();
     register_commands();
     register_gpio_set_cmd();
     register_gpio_get_cmd();
-    //register_gpio_reset_cmd();
     /*
         START CONSOLE REPL
     */
