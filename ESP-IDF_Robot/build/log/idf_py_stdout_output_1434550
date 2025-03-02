@@ -1158,3 +1158,32 @@ In file included from /home/alex/github/ESP-Nodes/ESP-IDF_Robot/main/blink_examp
 [87/99] Generating project_elf_src_esp32c3.c
 [88/99] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32c3/mpi_periph.c.obj
 [89/99] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32c3/twai_periph.c.obj
+[90/99] Building C object CMakeFiles/bootloader.elf.dir/project_elf_src_esp32c3.c.obj
+[91/99] Building C object esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32c3/wdt_periph.c.obj
+[92/99] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/bootloader_start.c.obj
+[93/99] Building C object esp-idf/micro-ecc/CMakeFiles/__idf_micro-ecc.dir/uECC_verify_antifault.c.obj
+[94/99] Linking C static library esp-idf/micro-ecc/libmicro-ecc.a
+[95/99] Linking C static library esp-idf/soc/libsoc.a
+[96/99] Linking C static library esp-idf/main/libmain.a
+[97/99] Linking C executable bootloader.elf
+[98/99] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32c3 image...
+Merged 2 ELF sections
+Successfully created esp32c3 image.
+Generated /home/alex/github/ESP-Nodes/ESP-IDF_Robot/build/bootloader/bootloader.bin
+[99/99] cd /home/alex/github/ESP-Nodes/ESP-IDF_Robot/build/bootloader/esp-idf/esptool_py && /home/alex/.espressif/python_env/idf5.3_py3.12_env/bin/python /home/alex/esp/v5.3.2/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/alex/github/ESP-Nodes/ESP-IDF_Robot/build/bootloader/bootloader.bin
+Bootloader binary size 0x53a0 bytes. 0x2c60 bytes (35%) free.
+[941/947] No install step for 'bootloader'
+[942/947] Completed 'bootloader'
+[943/947] Generating ld/sections.ld
+[944/947] Building C object CMakeFiles/ESP-IDF_Robot.elf.dir/project_elf_src_esp32c3.c.obj
+[945/947] Linking CXX executable ESP-IDF_Robot.elf
+[946/947] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32c3 image...
+Merged 1 ELF section
+Successfully created esp32c3 image.
+Generated /home/alex/github/ESP-Nodes/ESP-IDF_Robot/build/ESP-IDF_Robot.bin
+[947/947] cd /home/alex/github/ESP-Nodes/ESP-IDF_Robot/build/esp-idf/esptool_py && /home/alex/.espressif/python_env/idf5.3_py3.12_env/bin/python /home/alex/esp/v5.3.2/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/alex/github/ESP-Nodes/ESP-IDF_Robot/build/partition_table/partition-table.bin /home/alex/github/ESP-Nodes/ESP-IDF_Robot/build/ESP-IDF_Robot.bin
+ESP-IDF_Robot.bin binary size 0xbe220 bytes. Smallest app partition is 0x100000 bytes. 0x41de0 bytes (26%) free.
