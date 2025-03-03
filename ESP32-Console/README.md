@@ -14,6 +14,8 @@ $ minicom -D /dev/ttyACM0
 
 ### info
 
-### get
+### gpio-get
 
-### set
+### gpio-set
+
+## How Does it Work?
