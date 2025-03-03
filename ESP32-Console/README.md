@@ -7,6 +7,11 @@ Interact with ESP32-C3 microcontroller via Console CLI. Control GPIOs, display i
 
 ## CLI Commands
 
+To access mictrocontroller CLI terminal you may use various utilities that support connecting to serial devices. For example, minicom:
+```bash
+$ minicom -D /dev/ttyACM0
+```
+
 ### info
 
 ### get
