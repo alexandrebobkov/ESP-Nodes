@@ -1,6 +1,14 @@
 #ifndef CMD_SCAN_WIFI_H
 #define CMD_SCAN_WIFI_H
 
+#include <stdio.h>
+#include <string.h>
+
+#include "driver/gpio.h"
+#include "argtable3/argtable3.h"
+#include "esp_console.h"
+#include "esp_log.h"
+
 static struct {
 //    struct arg_int *gpio;
     struct arg_int *dump;
@@ -16,7 +24,7 @@ static int exec_scan_wifi_cmd(int argc, char **argv) {
 
     int nerrors = arg_parse(argc, argv, (void**) &scan_wifi_args);
     if (nerrors != 0) {
-        arg_print_errors(stderr, gpio_get_args.end, argv[0]);
+        arg_print_errors(stderr, scan_wifi_args.end, argv[0]);
         s = 1;
     }
     else {
