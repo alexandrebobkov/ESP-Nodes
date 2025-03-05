@@ -28,16 +28,9 @@ static int exec_scan_wifi_cmd(int argc, char **argv) {
         s = 1;
     }
     else {
-        // Gets GPIO level
-        if (gpio_get_args.gpio->count > 0) {
-            pin = gpio_get_args.gpio->ival[0];
-            printf("\nGPIO: %d \n", pin);
-            //ESP_LOGI("gpio-get", "GPIO # %i", gpio_get_args.gpio->ival[0]);
-            //gpio_dump_io_configuration(stdout, 1ULL << gpio_get_args.gpio->ival[0]);
-            printf("GPIO #%d level is %d\n", gpio_get_args.gpio->ival[0], gpio_get_level(gpio_get_args.gpio->ival[0]));
-            ESP_LOGW("gpio-get", "%d ", gpio_get_level(GPIO_NUM_8));
-            //printf("GPIO level was changed.");
-            s = 0;
+        // Scan Wi-Fi
+        if (scan_wifi_args.gpio->count > 0) {
+            printf("\nScanning is in progress");
         }
         // Dump GPIO configuration information.
         if (gpio_get_args.dump->count > 0) {
