@@ -20,6 +20,7 @@ static void register_scan_wifi_cmd(void);
 
 static int exec_scan_wifi_cmd(int argc, char **argv) {
 
+    int s = 0;
     printf("Scanning Wi-Fi ...\n");
 
     int nerrors = arg_parse(argc, argv, (void**) &scan_wifi_args);
@@ -31,7 +32,7 @@ static int exec_scan_wifi_cmd(int argc, char **argv) {
         // Scan Wi-Fi
         printf("\nScanning is in progress");
     }
-    return 0;
+    return s;
 }
 
 static void register_scan_wifi_cmd (void) {
