@@ -31,7 +31,7 @@ static int exec_scan_wifi_cmd(int argc, char **argv) {
         // Scan Wi-Fi
         printf("\nScanning is in progress");
     }
-    return s;
+    return 0;
 }
 
 static void register_scan_wifi_cmd (void) {
