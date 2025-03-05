@@ -38,7 +38,7 @@ static void register_scan_wifi_cmd (void) {
 
     scan_wifi_args.ap_number      = arg_int0("n", "num", "<ap number>", "Specifies number of APs to scan.");
 //    gpio_get_args.dump      = arg_int0("d", "dump", "<pin>", "Outputs the GPIO dump.");
-    gpio_get_args.end       = arg_end(5);
+    scan_wifi_args.end       = arg_end(5);
     const esp_console_cmd_t gpio_get_cmd = {
         .command    = "scan-wifi",
         .help       = "Scans Wi-Fi access points.",
