@@ -22,6 +22,7 @@
 #include "commands.h"
 #include "cmd_gpio_set.h"
 #include "cmd_gpio_get.h"
+#include "cmd_scan_wifi.h"
 
 esp_console_config_t *console_config;
 esp_console_cmd_t *cmd1;
@@ -84,6 +85,7 @@ void app_main(void)
     register_commands();
     register_gpio_set_cmd();
     register_gpio_get_cmd();
+    register_scan_wifi_cmd();
     /*
         START CONSOLE REPL
     */
