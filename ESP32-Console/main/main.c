@@ -72,7 +72,7 @@ void app_main(void)
     */
     //register_commands();
 
-    repl_config.prompt = "foxie >";
+    repl_config.prompt = "zen >";
     
     // Update settings in menu config
     //esp_console_dev_uart_config_t uart_config = ESP_CONSOLE_DEV_UART_CONFIG_DEFAULT();  
