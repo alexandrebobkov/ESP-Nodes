@@ -10,8 +10,8 @@
 #include "esp_log.h"
 
 static struct {
-//    struct arg_int *gpio;
-    struct arg_int *dump;
+    struct arg_int *ap_number;
+//    struct arg_int *dump;
     struct arg_end *end;
 } scan_wifi_args;
 
@@ -36,17 +36,17 @@ static int exec_scan_wifi_cmd(int argc, char **argv) {
 
 static void register_scan_wifi_cmd (void) {
 
-    gpio_get_args.gpio      = arg_int0("p", "pin", "<pin>", "Specifies GPIO to be used.");
-    gpio_get_args.dump      = arg_int0("d", "dump", "<pin>", "Outputs the GPIO dump.");
+    gpio_get_args.ap_number      = arg_int0("n", "num", "<ap number>", "Specifies number of APs to scan.");
+//    gpio_get_args.dump      = arg_int0("d", "dump", "<pin>", "Outputs the GPIO dump.");
     gpio_get_args.end       = arg_end(5);
     const esp_console_cmd_t gpio_get_cmd = {
-        .command    = "gpio-get",
-        .help       = "Displays information about GPIOs",
+        .command    = "scan-wifi",
+        .help       = "Scans Wi-Fi access points.",
         .hint       = NULL,
-        .func       = &exec_gpio_get_cmd,
-        .argtable   = &gpio_get_args
+        .func       = &exec_scan_wifi_cmd,
+        .argtable   = &scan_wifi_args
     };
-    ESP_ERROR_CHECK(esp_console_cmd_register(&gpio_get_cmd));
+    ESP_ERROR_CHECK(esp_console_cmd_register(&scan_wifi_cmd));
 }
 
 #endif
