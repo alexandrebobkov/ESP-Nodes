@@ -29,16 +29,7 @@ static int exec_scan_wifi_cmd(int argc, char **argv) {
     }
     else {
         // Scan Wi-Fi
-        if (scan_wifi_args.gpio->count > 0) {
-            printf("\nScanning is in progress");
-        }
-        // Dump GPIO configuration information.
-        if (gpio_get_args.dump->count > 0) {
-            printf("Printing GPIO dump ...\n");
-            printf("GPDIO: %d \n", gpio_get_args.dump->ival[0]);
-            gpio_dump_io_configuration(stdout, 1ULL << gpio_get_args.dump->ival[0]);
-            s = 0;
-        }
+        printf("\nScanning is in progress");
     }
     return s;
 }
