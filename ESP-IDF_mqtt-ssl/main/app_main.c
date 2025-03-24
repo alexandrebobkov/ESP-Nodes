@@ -26,7 +26,7 @@
 #include "esp_log.h"
 #include "mqtt_client.h"
 
-static const char *TAG = "mqtts_example";
+static const char *TAG = "mqtts_ssl";
 
 extern const uint8_t client_cert_pem_start[] asm("_binary_client_crt_start");
 extern const uint8_t client_cert_pem_end[] asm("_binary_client_crt_end");
