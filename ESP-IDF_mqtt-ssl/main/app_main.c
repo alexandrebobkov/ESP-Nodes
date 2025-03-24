@@ -28,11 +28,11 @@
 
 static const char *TAG = "mqtts_ssl";
 
-extern const uint8_t client_cert_pem_start[] asm("_binary_client_crt_start");
+extern const uint8_t client_cert_pem_start[] asm("_binary_client_crt_start");           // client.crt
 extern const uint8_t client_cert_pem_end[] asm("_binary_client_crt_end");
-extern const uint8_t client_key_pem_start[] asm("_binary_client_key_start");
+extern const uint8_t client_key_pem_start[] asm("_binary_client_key_start");            // client.key
 extern const uint8_t client_key_pem_end[] asm("_binary_client_key_end");
-extern const uint8_t server_cert_pem_start[] asm("_binary_mosquitto_org_crt_start");
+extern const uint8_t server_cert_pem_start[] asm("_binary_mosquitto_org_crt_start");    // mosquitto.crt
 extern const uint8_t server_cert_pem_end[] asm("_binary_mosquitto_org_crt_end");
 
 static void log_error_if_nonzero(const char *message, int error_code)
