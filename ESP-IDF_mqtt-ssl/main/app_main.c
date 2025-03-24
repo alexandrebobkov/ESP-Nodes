@@ -1,10 +1,7 @@
-/* MQTT Mutual Authentication Example
+/* MQTT SSL Mutual Authentication
 
-   This example code is in the Public Domain (or CC0 licensed, at your option.)
-
-   Unless required by applicable law or agreed to in writing, this
-   software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-   CONDITIONS OF ANY KIND, either express or implied.
+    Created:    March 3, 2025
+    Edited:     March 24, 2025
 */
 #include <stdio.h>
 #include <stdint.h>
