@@ -112,7 +112,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
 static void mqtt_app_start(void)
 {
   const esp_mqtt_client_config_t mqtt_cfg = {
-    .broker.address.uri = "mqqts://techquadbit.ddns.net:8884",//" "mqtts://test.mosquitto.org:8884", //
+    .broker.address.uri = "mqtts://techquadbit.ddns.net:8884",//" "mqtts://test.mosquitto.org:8884", //
     .broker.verification.certificate = (const char *)server_cert_pem_start,
     .credentials = {
       .authentication = {
