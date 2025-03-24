@@ -364,6 +364,9 @@ PYTHON:UNINITIALIZED=/home/abobkov/.espressif/python_env/idf5.4_py3.12_env/bin/p
 //No help, variable specified on the command line.
 PYTHON_DEPS_CHECKED:UNINITIALIZED=1
 
+//No help, variable specified on the command line.
+SDKCONFIG:UNINITIALIZED=/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_mqtt-ssl/sdkconfig
+
 //Allow unsafe builds. These builds ARE NOT SECURE.
 UNSAFE_BUILD:BOOL=OFF
 
