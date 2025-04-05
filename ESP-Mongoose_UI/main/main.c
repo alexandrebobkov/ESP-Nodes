@@ -4,8 +4,8 @@
 
 #include "mongoose_glue.h"
 
-#define WIFI_SSID "My_WiFi_Network"
-#define WIFI_PASS "My_WiFi_Password"
+#define WIFI_SSID "IoT_bots"
+#define WIFI_PASS "208208208"
 
 extern void wifi_init(const char *ssid, const char *pass);
 
