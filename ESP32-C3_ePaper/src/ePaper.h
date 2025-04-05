@@ -25,8 +25,8 @@
 
 
 //#elif defined(ESP32)
-GxIO_Class io(SPI, /*CS=5*/ 7, /*DC=*/ 1, /*RST=*/ 10); // arbitrary selection of 17, 16
-GxEPD_Class display(io, /*RST=*/ 10, /*BUSY=*/ 4); // arbitrary selection of (16), 4
+GxIO_Class io(SPI, /*CS=5*/ 2, /*DC=*/ 4, /*RST=*/ 1); // arbitrary selection of 17, 16
+GxEPD_Class display(io, /*RST=*/ 1, /*BUSY=*/ 3); // arbitrary selection of (16), 4
 //GxIO_Class io(SPI, SS, 22, 21);
 //GxEPD_Class display(io, 16, 4);
 
