@@ -30,8 +30,8 @@
 //GxEPD_Class display(io, /*RST=*/ 16, /*BUSY=*/ 4); // arbitrary selection of (16), 4
 
 // == ESP32-C3
-GxIO_Class io(SPI, /*CS=5*/ SS, /*DC=*/ 17, /*RST=*/ 16); // arbitrary selection of 17, 16
-GxEPD_Class display(io, /*RST=*/ 16, /*BUSY=*/ 4); // arbitrary selection of (16), 4
+GxIO_Class io(SPI, /*CS=5*/ 3, /*DC=*/ 5, /*RST=*/ 2); // arbitrary selection of 17, 16
+GxEPD_Class display(io, /*RST=*/ 2, /*BUSY=*/4 /*7*/); // arbitrary selection of (16), 4
 
 
 //GxIO_Class io(SPI, SS, 22, 21);
