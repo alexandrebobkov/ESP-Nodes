@@ -1,7 +1,7 @@
 {
     "C_Cpp.intelliSenseEngine": "default",
     "idf.espIdfPathWin": "C:\\Users\\alex\\esp\\v5.4\\esp-idf",
-    "idf.pythonInstallPath": "c:\\Users\\alex\\esp\\tools\\idf-python\\3.11.2\\python.exe",
+    "idf.pythonInstallPath": "/usr/bin/python3",
     "idf.openOcdConfigs": [
         "board/esp32c3-builtin.cfg"
     ],
@@ -12,5 +12,9 @@
         "IDF_CCACHE_ENABLE": "1",
         "ESP_ROM_ELF_DIR": "c:\\Users\\alex\\esp\\tools\\esp-rom-elfs\\20240305/",
         "IDF_TARGET": "esp32c3"
-    }
+    },
+    "idf.port": "/dev/ttyACM0",
+    "idf.espIdfPath": "/home/abobkov/esp/esp-idf",
+    "idf.toolsPath": "/home/abobkov/.espressif",
+    "idf.flashType": "UART"
 }
