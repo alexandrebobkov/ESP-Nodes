@@ -15,7 +15,10 @@
 ########################
 
 //No help, variable specified on the command line.
-CCACHE_ENABLE:UNINITIALIZED=0
+CCACHE_ENABLE:UNINITIALIZED=1
+
+//Path to a program.
+CCACHE_FOUND:FILEPATH=C:/Users/alex/esp/tools/ccache/4.10.2/ccache-4.10.2-windows-x86_64/ccache.exe
 
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=C:/Users/alex/esp/tools/riscv32-esp-elf/esp-14.2.0_20241119/riscv32-esp-elf/bin/riscv32-esp-elf-addr2line.exe
@@ -363,6 +366,9 @@ PYTHON:UNINITIALIZED=c:\Users\alex\esp\python_env\idf5.4_py3.11_env\Scripts\pyth
 
 //No help, variable specified on the command line.
 PYTHON_DEPS_CHECKED:UNINITIALIZED=1
+
+//No help, variable specified on the command line.
+SDKCONFIG:UNINITIALIZED=c:\Users\alex\github\ESP-Nodes\ESP-IDF_ePaper\sdkconfig
 
 //Allow unsafe builds. These builds ARE NOT SECURE.
 UNSAFE_BUILD:BOOL=OFF
