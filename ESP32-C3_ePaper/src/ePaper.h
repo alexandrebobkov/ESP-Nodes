@@ -24,9 +24,9 @@
 //GxEPD_Class display(io, /*RST=D4*/ 2, /*BUSY=D2*/ 4); // default selection of D4(=2), D2(=4)
 
 
-//#elif defined(ESP32)
-GxIO_Class io(SPI, /*CS=5*/ 2, /*DC=*/ 4, /*RST=*/ 1); // arbitrary selection of 17, 16
-GxEPD_Class display(io, /*RST=*/ 1, /*BUSY=*/ 3); // arbitrary selection of (16), 4
+//#elif defined(ESP32C3)
+GxIO_Class io(SPI, /*CS=5*/ 3, /*DC=*/ 5, /*RST=*/ 2); // arbitrary selection of 17, 16
+GxEPD_Class display(io, /*RST=*/ 2, /*BUSY=*/ 7); // arbitrary selection of (16), 4
 //GxIO_Class io(SPI, SS, 22, 21);
 //GxEPD_Class display(io, 16, 4);
 

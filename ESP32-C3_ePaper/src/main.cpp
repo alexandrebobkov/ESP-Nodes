@@ -7,7 +7,13 @@ void setup();
 
 void setup() {
 
-  pinMode(12, OUTPUT);
+  pinMode(8, OUTPUT);
+  Serial.println("LED ON");
+  digitalWrite(8, HIGH);
+  delay(750);
+  Serial.println("LED OFF");
+  digitalWrite(8, LOW);
+  delay(750);
   
   Serial.begin(115200);
   Serial.println("Running setup ...");
@@ -45,9 +51,9 @@ void setup() {
 
 void loop() {
   Serial.println("LED ON");
-  digitalWrite(12, HIGH);
+  digitalWrite(8, HIGH);
   delay(750);
   Serial.println("LED OFF");
-  digitalWrite(12, LOW);
+  digitalWrite(8, LOW);
   delay(750);
 }
