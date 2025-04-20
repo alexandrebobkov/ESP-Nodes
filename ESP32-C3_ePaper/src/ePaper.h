@@ -25,6 +25,15 @@
 
 
 //#elif defined(ESP32C3)
+/* ========================================================
+ DO NOT CHANGE THE ASSIGNED PINS BELOW
+ BUSY = GPIO3
+ RST  = GPIO2
+ DC   = GPIO1
+ CS   = GPIO7 (SS)
+ CLK  = GPIO4 (SCK)
+ DIN  = GPIO6 (MOSI)
+ */
 GxIO_Class io(SPI, /*CS=5*/ 7, /*DC=*/ 1, /*RST=*/ 2); // arbitrary selection of 17, 16
 GxEPD_Class display(io, /*RST=*/ 2, /*BUSY=*/ 3); // arbitrary selection of (16), 4
 //GxIO_Class io(SPI, SS, 22, 21);
