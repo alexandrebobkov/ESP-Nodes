@@ -549,6 +549,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_ePaper/build/esp-idf/fasani__adafruit_gfx/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_ePaper/build/esp-idf/main/cmake_install.cmake")
 endif()
 

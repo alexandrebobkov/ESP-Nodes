@@ -9,12 +9,20 @@ dependencies:
       registry_url: https://components.espressif.com/
       type: service
     version: 2.5.3
+  fasani/adafruit_gfx:
+    component_hash: 8e1c83032d233ad8db4adc82209e1c7f89b9784513d7dd70bdc95260b3409135
+    dependencies: []
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 1.7.8
   idf:
     source:
       type: idf
     version: 5.4.0
 direct_dependencies:
 - espressif/led_strip
-manifest_hash: a9af7824fb34850fbe175d5384052634b3c00880abb2d3a7937e666d07603998
+- fasani/adafruit_gfx
+manifest_hash: 4140e913e21bc225f903224d0abd05d0463a67b42829151a6d89b8fc9a3bd836
 target: esp32c3
 version: 2.0.0
