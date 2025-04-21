@@ -1,3 +1,9 @@
+/*
+
+  By:           Alexander Bobkov
+  Date:         April 20, 2025
+  Description:  This is a simple example of how to use the GxEPD library to display text and graphics on an ePaper display.
+*/
 #include <Arduino.h>
 #include "ePaper.h"
 
