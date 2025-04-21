@@ -13,6 +13,7 @@ void setup();
 
 void setup() {
 
+    // Blink on-board LED once upon initialization
   pinMode(8, OUTPUT);
   Serial.println("LED ON");
   digitalWrite(8, HIGH);
