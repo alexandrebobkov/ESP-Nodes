@@ -14,7 +14,9 @@
 #include "led_strip.h"
 #include "sdkconfig.h"
 
-static const char *TAG = "example";
+#include "ePaper.h"
+
+static const char *TAG = "ESP32C3 EPD";
 
 /* Use project configuration menu (idf.py menuconfig) to choose the GPIO to blink,
    or you can edit the following line and set a number here.
