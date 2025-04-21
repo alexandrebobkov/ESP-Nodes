@@ -1,0 +1,166 @@
+menu "EET ROBOT Configuration"
+
+    orsource "$IDF_PATH/examples/common_components/env_caps/$IDF_TARGET/Kconfig.env_caps"
+
+    choice BLINK_LED
+        prompt "Blink LED type"
+        default BLINK_LED_GPIO if IDF_TARGET_ESP32 || IDF_TARGET_ESP32C2
+        default BLINK_LED_STRIP
+        help
+            Select the LED type. A normal level controlled LED or an addressable LED strip.
+            The default selection is based on the Espressif DevKit boards.
+            You can change the default selection according to your board.
+
+        config BLINK_LED_GPIO
+            bool "GPIO"
+        config BLINK_LED_STRIP
+            bool "LED strip"
+    endchoice
+
+    choice BLINK_LED_STRIP_BACKEND
+        depends on BLINK_LED_STRIP
+        prompt "LED strip backend peripheral"
+        default BLINK_LED_STRIP_BACKEND_RMT if SOC_RMT_SUPPORTED
+        default BLINK_LED_STRIP_BACKEND_SPI
+        help
+            Select the backend peripheral to drive the LED strip.
+
+        config BLINK_LED_STRIP_BACKEND_RMT
+            depends on SOC_RMT_SUPPORTED
+            bool "RMT"
+        config BLINK_LED_STRIP_BACKEND_SPI
+            bool "SPI"
+    endchoice
+
+    config BLINK_GPIO
+        int "Blink GPIO number"
+        range ENV_GPIO_RANGE_MIN ENV_GPIO_OUT_RANGE_MAX
+        default 5 if IDF_TARGET_ESP32
+        default 18 if IDF_TARGET_ESP32S2
+        default 48 if IDF_TARGET_ESP32S3
+        default 10
+        help
+            GPIO number (IOxx) to blink on and off the LED.
+            Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to blink.
+
+    config BLINK_PERIOD
+        int "Blink period in ms"
+        range 10 3600000
+        default 750
+        help
+            Define the blinking period in milliseconds.
+
+    config BUTTON_GPIO
+        int "On-board push button GPIO number"
+        default 3
+        help
+            GPIO number (IOxx) of on-board push button.
+
+    config MOTOR_FRONT_LEFT_GPIO
+        int "GPIO of front-left motor."
+        default 0
+        help
+            GPIO number (IOxx) of front-left motor.
+            
+    config MOTOR_FRONT_LEFT_GPIO
+        int "GPIO of front-right motor."
+        default 0
+        help
+            GPIO number (IOxx) of front-right motor.
+
+    choice MOTOR_CONTROL
+        prompt "Motor rotation control method."
+        default MOTOR_CTRL_PWR
+        help
+            Select the motor control method. ON-OFF or PWM.
+
+        config MOTOR_CTRL_PWR
+            bool "PWR"
+        config MOTOR_CTRL_PWM
+            bool "PWM"        
+    endchoice
+
+    choice ESPNOW_WIFI_MODE
+        prompt "WiFi mode"
+        default ESPNOW_WIFI_MODE_STATION
+        help
+            WiFi mode(station or softap).
+
+        config ESPNOW_WIFI_MODE_STATION
+            bool "Station"
+        config ESPNOW_WIFI_MODE_STATION_SOFTAP
+            bool "Softap"
+    endchoice
+
+    config ESPNOW_CHANNEL
+        int "Channel"
+        default 1
+        range 0 14
+        help
+            The channel on which sending and receiving ESPNOW data.
+            
+    config ESPNOW_PMK
+        string "ESPNOW primary master key"
+        default "pmk1234567890123"
+        help
+            ESPNOW primary master for the example to use. The length of ESPNOW primary master must be 16 bytes.
+        
+    config ESPNOW_LMK
+        string "ESPNOW local master key"
+        default "lmk1234567890123"
+        help
+            ESPNOW local master for the example to use. The length of ESPNOW local master must be 16 bytes.
+
+    config ESPNOW_SEND_COUNT
+        int "Send count"
+        default 100
+        range 1 65535
+        help
+            Total count of unicast ESPNOW data to be sent.
+        
+    config ESPNOW_SEND_DELAY
+        int "Send delay"
+        default 1000
+        range 0 65535
+        help
+            Delay between sending two ESPNOW data, unit: ms.
+        
+    config ESPNOW_SEND_LEN
+        int "Send len"
+        range 128 250
+        default 128
+        help
+            Length of ESPNOW data to be sent, unit: byte.
+        
+    config ESPNOW_ENABLE_LONG_RANGE
+        bool "Enable Long Range"
+        default "n"
+        help
+            When enable long range, the PHY rate of ESP32 will be 512Kbps or 256Kbps
+        
+    config ESPNOW_ENABLE_POWER_SAVE
+        bool "Enable ESPNOW Power Save"
+        default "n"
+        select ESP_WIFI_STA_DISCONNECTED_PM_ENABLE
+        depends on ESPNOW_WIFI_MODE_STATION
+        help
+            With ESPNOW power save enabled, chip would be able to wakeup and sleep periodically
+            Notice ESP_WIFI_STA_DISCONNECTED_PM_ENABLE is essential at Wi-Fi disconnected
+                
+    config ESPNOW_WAKE_WINDOW
+        int "ESPNOW wake window, unit in millisecond"
+        range 0 65535
+        default 50
+        depends on ESPNOW_ENABLE_POWER_SAVE
+        help
+            ESPNOW wake window
+                
+    config ESPNOW_WAKE_INTERVAL
+        int "ESPNOW wake interval, unit in millisecond"
+        range 1 65535
+        default 100
+        depends on ESPNOW_ENABLE_POWER_SAVE
+        help
+            ESPNOW wake interval
+
+endmenu
