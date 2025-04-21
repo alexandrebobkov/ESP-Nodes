@@ -3,7 +3,15 @@
   By:           Alexander Bobkov
   Date:         April 20, 2025
   Description:  This is an example of how to use the GxEPD library to display text and graphics on an ePaper display powered by the ESP32-C3 microcontroller.
-*/
+
+  BUSY = GPIO3
+  RST  = GPIO2
+  DC   = GPIO1
+  CS   = GPIO7 (SS)
+  CLK  = GPIO4 (SCK)
+  DIN  = GPIO6 (MOSI)
+
+  */
 #include <Arduino.h>
 #include "ePaper.h"
 
