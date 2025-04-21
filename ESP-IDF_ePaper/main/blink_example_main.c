@@ -14,7 +14,7 @@
 #include "led_strip.h"
 #include "sdkconfig.h"
 
-#include "ePaper.h"
+//#include "ePaper.h"
 
 static const char *TAG = "ESP32C3 EPD";
 
