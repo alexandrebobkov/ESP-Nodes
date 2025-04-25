@@ -64,8 +64,8 @@ void setup() {
   display.setFont(&FreeSerif24pt7b);
   display.print("DATA BOARD");
   //display.update();
-  
-  display.drawBitmap(200, 200, gridicons_bug, 24, 24, GxEPD_WHITE);
+
+  display.drawBitmap(200, 200, gridicons_bug, 24, 24, GxEPD_BLACK);
   display.drawBitmap(150, 150, gridicons_cloud, 24, 24, GxEPD_BLACK);
   
   // Add UI elements
@@ -82,6 +82,7 @@ void setup() {
   display.drawLine(0, 200, display.width(), 200, GxEPD_BLACK);
   display.drawLine(200, 0, 200, display.height(), GxEPD_BLACK);*/
 
+  display.invertDisplay();
   display.update();
 }
 
