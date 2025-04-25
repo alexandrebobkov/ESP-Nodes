@@ -71,10 +71,11 @@ void setup() {
   display.print("Backups");
 
 // Display text nicely centered on the display
+  display.setTextColor(GxEPD_WHITE);
   display.setFont(&FreeSansBold12pt7b);                                          // Specify the font family & size
-  display.getTextBounds("SERVER DASHBOARD", 10, 100, &tbx, &tby, &tbw, &tbh);   // Request width of text to be displayed
+  display.getTextBounds("SERVER INFOBOARD", 10, 100, &tbx, &tby, &tbw, &tbh);   // Request width of text to be displayed
   display.setCursor((display.width() - tbw) / 2, 100);                        // Calculate x-coordinate value
-  display.print("SERVER DASHBOARD");                                            // Print the text
+  display.print("SERVER INFOBOARD");                                            // Print the text
   //display.update();
 
   //display.drawBitmap(200, 200, gridicons_bug, 24, 24, GxEPD_BLACK);
