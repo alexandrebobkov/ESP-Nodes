@@ -63,11 +63,11 @@ void setup() {
   display.setFont(&FreeSans9pt7b);
   display.print("PreeSerif 9pt7b");
 
-  //display.setCursor(10, 100);
-  display.setFont(&FreeSerif18pt7b);
-  display.getTextBounds("INFO DASHBOARD", 10, 100, &tbx, &tby, &tbw, &tbh);
-  display.setCursor((display.width() - tbw) / 2, 100);
-  display.print("INFO DASHBOARD");
+// Display text nicely centered on the display
+  display.setFont(&FreeSerif18pt7b);                                          // Specify the font family & size
+  display.getTextBounds("INFO DASHBOARD", 10, 100, &tbx, &tby, &tbw, &tbh);   // Request width of text to be displayed
+  display.setCursor((display.width() - tbw) / 2, 100);                        // Calculate x-coordinate value
+  display.print("INFO DASHBOARD");                                            // Print the text
   //display.update();
 
   //display.drawBitmap(200, 200, gridicons_bug, 24, 24, GxEPD_BLACK);
