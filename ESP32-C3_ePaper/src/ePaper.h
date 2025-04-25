@@ -19,6 +19,7 @@
 #include <Fonts/Picopixel.h>
 #include <Fonts/TomThumb.h>
 #include <imglib/gridicons_bug.h>
+#include <imglib/gridicons_cloud.h>
 #include <GxIO/GxIO_SPI/GxIO_SPI.h>
 #include <GxIO/GxIO.h>
 #include <SD.h>
