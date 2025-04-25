@@ -74,6 +74,7 @@ void setup() {
   display.setCursor(str_x+200, str_y);
   display.setFont(&FreeMono9pt7b);
   display.print("25%");
+  display.setFont(&FreeMonoBold9pt7b);
   // Display Backups storage usage
   display.setCursor(str_x, str_y+str_inc);
   display.setFont(&FreeMonoBold9pt7b);
