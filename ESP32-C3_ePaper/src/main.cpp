@@ -61,7 +61,7 @@ void setup() {
   display.drawBitmap(display.width()-24, 0, gridicons_computer, 24, 24, GxEPD_BLACK);
 
   display.setCursor(10, 150);
-  display.setFont(&FreeSans9pt7b);
+  display.setFont(&FreeMonoBold9pt7b);
   display.print("Files Storage");
   display.setCursor(10, 160);
   display.setFont(&FreeMonoBold9pt7b);
