@@ -63,10 +63,10 @@ void setup() {
 
   display.setCursor(10, 150);
   display.setFont(&FreeMonoBold9pt7b);
-  display.print("Files Storage");
+  display.print("Files");
   display.setCursor(10, 160);
   display.setFont(&FreeMonoBold9pt7b);
-  display.print("Archives Storage");
+  display.print("Backups");
 
 // Display text nicely centered on the display
   display.setFont(&FreeSans12pt7b);                                          // Specify the font family & size
