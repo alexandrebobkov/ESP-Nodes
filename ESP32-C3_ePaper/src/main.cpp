@@ -71,7 +71,7 @@ void setup() {
   display.print("Backups");
 
 // Display text nicely centered on the display
-  display.setFont(&FreeSans12pt7b);                                          // Specify the font family & size
+  display.setFont(&FreeSansBold12pt7b);                                          // Specify the font family & size
   display.getTextBounds("SERVER DASHBOARD", 10, 100, &tbx, &tby, &tbw, &tbh);   // Request width of text to be displayed
   display.setCursor((display.width() - tbw) / 2, 100);                        // Calculate x-coordinate value
   display.print("SERVER DASHBOARD");                                            // Print the text
