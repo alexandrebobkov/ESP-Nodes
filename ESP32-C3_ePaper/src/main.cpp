@@ -47,6 +47,13 @@ void setup() {
   display.setFont(&TomThumb);
   display.print("10.100.50.105");
   display.update();
+
+  // Display fonts
+  display.setCursor(10, 10);
+  display.setFont(&Picopixel);
+  display.print("Picopixel");
+  display.update();
+
   // Add UI elements
   // Draw axis: (x1,y1) @ 5, 100 and width-2*margin_x height-2*margin_y
   display.drawRect(5, 155, display.width()-10, display.height()-160, GxEPD_RED);
