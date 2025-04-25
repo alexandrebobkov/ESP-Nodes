@@ -72,7 +72,7 @@ void setup() {
   //display.update();
 
   //display.drawBitmap(200, 200, gridicons_bug, 24, 24, GxEPD_BLACK);
-  //display.invertDisplay(true);
+  display.invertDisplay(true);
   display.drawBitmap(150, 150, gridicons_cloud, 24, 24, GxEPD_WHITE);
   
   // Add UI elements
