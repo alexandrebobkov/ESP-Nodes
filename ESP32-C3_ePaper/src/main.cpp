@@ -19,7 +19,7 @@
 void loop();
 void setup();
 
-uint16_t tbx, tby; 
+int16_t tbx, tby; 
 uint16_t tbw, tbh;
 
 void setup() {
