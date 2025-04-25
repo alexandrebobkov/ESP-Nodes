@@ -64,11 +64,11 @@ void setup() {
   display.setFont(&FreeSans9pt7b);
   display.print("Files Storage");
   display.setCursor(10, 160);
-  display.setFont(&FreeSerif9pt7b);
+  display.setFont(&FreeSans9pt7b);
   display.print("Archives Storage");
 
 // Display text nicely centered on the display
-  display.setFont(&FreeSerif12pt7b);                                          // Specify the font family & size
+  display.setFont(&Freesans12pt7b);                                          // Specify the font family & size
   display.getTextBounds("SERVER DASHBOARD", 10, 100, &tbx, &tby, &tbw, &tbh);   // Request width of text to be displayed
   display.setCursor((display.width() - tbw) / 2, 100);                        // Calculate x-coordinate value
   display.print("SERVER DASHBOARD");                                            // Print the text
