@@ -59,6 +59,7 @@ void setup() {
   //display.update();
 
   display.drawBitmap(display.width()-24, 0, gridicons_computer, 24, 24, GxEPD_BLACK);
+  display.drawRect(0, 0, display.width()-24, 24, GxEPD_BLACK);
 
   display.setCursor(10, 150);
   display.setFont(&FreeMonoBold9pt7b);
