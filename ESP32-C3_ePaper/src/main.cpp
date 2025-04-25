@@ -64,7 +64,7 @@ void setup() {
   display.setFont(&FreeSans9pt7b);
   display.print("Files Storage");
   display.setCursor(10, 160);
-  display.setFont(&FreeMono9pt7b);
+  display.setFont(&FreeMonoBold9pt7b);
   display.print("Archives Storage");
 
 // Display text nicely centered on the display
