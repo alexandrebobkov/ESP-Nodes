@@ -63,6 +63,7 @@ void setup() {
   //display.drawRect(0, 0, display.width()-24, 24, GxEPD_BLACK);
   
 
+  // Storage Information Section
   int str_x=10, str_y=50, str_inc=15;
   display.setCursor(str_x, str_y);
   display.setFont(&FreeMonoBold9pt7b);
