@@ -78,6 +78,7 @@ void setup() {
   // Add UI elements
   // Draw axis: (x1,y1) @ 5, 100 and width-2*margin_x height-2*margin_y
   display.drawRect(5, 155, display.width()-10, display.height()-160, GxEPD_RED);
+  display.setTextColor(GxEPD_WHITE);
   display.setFont(&TomThumb);
   for (int i = 0; i < display.width()-10; i+=50) {
     display.setCursor(i, display.height());
