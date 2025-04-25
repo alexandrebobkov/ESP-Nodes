@@ -19,6 +19,9 @@
 void loop();
 void setup();
 
+uint16_t tbx, tby; 
+uint16_t tbw, tbh;
+
 void setup() {
 
     // Blink on-board LED once upon initialization
