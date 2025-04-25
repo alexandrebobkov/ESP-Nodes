@@ -52,12 +52,12 @@ void setup() {
   display.setCursor(10, 10);
   display.setFont(&Picopixel);
   display.print("Picopixel");
-  display.update();
+  //display.update();
   // Display fonts
   display.setCursor(10, 20);
   display.setFont(&FreeMonoBold12pt7b);
   display.print("PreeMonoBold12pt7b");
-  display.update();
+  //display.update();
 
   // Add UI elements
   // Draw axis: (x1,y1) @ 5, 100 and width-2*margin_x height-2*margin_y
