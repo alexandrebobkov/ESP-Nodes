@@ -58,6 +58,8 @@ void setup() {
   display.print("Picopixel");
   //display.update();
 
+  display.drawBitmap(24, 24, gridicons_computer, 24, 24, GxEPD_BLACK);
+
   display.setCursor(10, 150);
   display.setFont(&FreeSans9pt7b);
   display.print("Files Storage");
