@@ -58,10 +58,10 @@ void setup() {
   display.print("Picopixel");
   //display.update();
 
-  display.setCursor(10, 30);
+  display.setCursor(10, 150);
   display.setFont(&FreeSans9pt7b);
   display.print("Files Storage");
-  display.setCursor(10, 50);
+  display.setCursor(10, 180);
   display.setFont(&FreeSerif9pt7b);
   display.print("Archives Storage");
 
