@@ -54,7 +54,7 @@ void setup() {
   display.print("Picopixel");
   //display.update();
   // Display fonts
-  display.setCursor(10, 20);
+  display.setCursor(10, 30);
   display.setFont(&FreeMonoBold12pt7b);
   display.print("PreeMonoBold12pt7b");
   //display.update();
