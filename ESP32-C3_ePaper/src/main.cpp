@@ -57,12 +57,13 @@ void setup() {
   display.setFont(&Picopixel);
   display.print("Picopixel");
   //display.update();
+
   display.setCursor(10, 30);
   display.setFont(&FreeSans9pt7b);
-  display.print("PreeSans 9pt7b");
+  display.print("Files Pool");
   display.setCursor(10, 50);
-  display.setFont(&FreeSans9pt7b);
-  display.print("PreeSerif 9pt7b");
+  display.setFont(&FreeSerif9pt7b);
+  display.print("Archives Pool");
 
 // Display text nicely centered on the display
   display.setFont(&FreeSerif12pt7b);                                          // Specify the font family & size
