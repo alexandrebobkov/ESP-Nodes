@@ -65,7 +65,7 @@ void setup() {
   display.print("DATA BOARD");
   //display.update();
   
-  display.drawBitmap(200, 200, gridicons_bug, 24, 24, GxEPD_BLACK);
+  display.drawBitmap(200, 200, gridicons_bug, 24, 24, GxEPD_WHITE);
   display.drawBitmap(150, 150, gridicons_cloud, 24, 24, GxEPD_BLACK);
   
   // Add UI elements
