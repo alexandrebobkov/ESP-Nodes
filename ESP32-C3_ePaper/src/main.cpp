@@ -65,6 +65,7 @@ void setup() {
 
   display.setCursor(10, 100);
   display.setFont(&FreeSerif18pt7b);
+  display.getTextBounds("INFO DASHBOARD", 10, 100, &tbx, &tby, &tbw, &tbh);
   display.print("INFO DASHBOARD");
   //display.update();
 
