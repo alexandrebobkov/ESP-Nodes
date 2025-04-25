@@ -64,10 +64,10 @@ void setup() {
   
 
   int str_x=10, str_y=150, str_inc=15;
-  display.setCursor(10, 150);
+  display.setCursor(str_x, str_y);
   display.setFont(&FreeMonoBold9pt7b);
   display.print("Files");
-  display.setCursor(10, 165);
+  display.setCursor(str_x, str_y+str_inc);
   display.setFont(&FreeMonoBold9pt7b);
   display.print("Backups");
 
