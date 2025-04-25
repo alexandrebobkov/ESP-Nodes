@@ -54,9 +54,9 @@ void setup() {
   display.print("Picopixel");
   display.update();
   // Display fonts
-  display.setCursor(10, 10);
-  display.setFont(&FreeSerif12pt7b);
-  display.print("Picopixel");
+  display.setCursor(10, 20);
+  display.setFont(&FreeMonoBold12pt7b);
+  display.print("PreeMonoBold12pt7b");
   display.update();
 
   // Add UI elements
