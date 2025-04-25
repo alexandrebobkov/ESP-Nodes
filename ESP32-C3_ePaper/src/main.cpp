@@ -57,8 +57,12 @@ void setup() {
   display.setFont(&FreeSans9pt7b);
   display.print("PreeSans 9pt7b");
   display.setCursor(10, 50);
-  display.setFont(&FreeSansBold9pt7b);
-  display.print("PreeSans Bold 9pt7b");
+  display.setFont(&FreeSans9pt7b);
+  display.print("PreeSerif 9pt7b");
+
+  display.setCursor(10, 100);
+  display.setFont(&FreeSerif24pt7b);
+  display.print("PreeSerif 24pt7b");
   //display.update();
 
   // Add UI elements
