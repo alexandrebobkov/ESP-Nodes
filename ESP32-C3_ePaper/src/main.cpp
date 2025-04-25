@@ -79,6 +79,7 @@ void setup() {
   display.fillRect(str_x+100, str_y-str_inc, 100*0.25, str_inc, GxEPD_BLACK);
   // Backups bar
   display.drawRect(str_x+100, str_y+str_inc, 100, str_inc, GxEPD_BLACK);
+  display.drawRect(str_x+100, str_y+str_inc, 100*0.75, str_inc, GxEPD_BLACK);
 
 // Display text nicely centered on the display
   display.setTextColor(GxEPD_WHITE);
