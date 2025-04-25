@@ -63,6 +63,7 @@ void setup() {
   //display.drawRect(0, 0, display.width()-24, 24, GxEPD_BLACK);
   
 
+  int str_x=10, str_y=150, str_inc=15;
   display.setCursor(10, 150);
   display.setFont(&FreeMonoBold9pt7b);
   display.print("Files");
