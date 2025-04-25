@@ -72,8 +72,8 @@ void setup() {
   //display.update();
 
   //display.drawBitmap(200, 200, gridicons_bug, 24, 24, GxEPD_BLACK);
-  display.invertDisplay(true);
-  display.drawBitmap(150, 150, gridicons_cloud, 24, 24, GxEPD_WHITE);
+  //display.invertDisplay(true);
+  //display.drawBitmap(150, 150, gridicons_cloud, 24, 24, GxEPD_WHITE);
   
   // Add UI elements
   // Draw axis: (x1,y1) @ 5, 100 and width-2*margin_x height-2*margin_y
