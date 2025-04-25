@@ -66,7 +66,7 @@ void setup() {
   display.setCursor(10, 150);
   display.setFont(&FreeMonoBold9pt7b);
   display.print("Files");
-  display.setCursor(10, 160);
+  display.setCursor(10, 165);
   display.setFont(&FreeMonoBold9pt7b);
   display.print("Backups");
 
