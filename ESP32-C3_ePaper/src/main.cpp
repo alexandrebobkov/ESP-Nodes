@@ -67,12 +67,13 @@ void setup() {
     Storage Information Section
   */
   int str_x=10, str_y=50, str_inc=15;
-  // Display storage names
+  // Display Files storage usage
   display.setCursor(str_x, str_y);
   display.setFont(&FreeMonoBold9pt7b);
   display.print("Files");
   display.setCursor(str_x+250, str_y);
   display.print("Free: 75%");
+  // Display Backups storage usage
   display.setCursor(str_x+250, str_y+str_inc);
   display.setFont(&FreeMonoBold9pt7b);
   display.print("Backups");
