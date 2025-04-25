@@ -9,6 +9,7 @@
 // FreeFonts from Adafruit_GFX
 #include <Fonts/FreeSans9pt7b.h>
 #include <Fonts/FreeSansBold9pt7b.h>
+#include <Fonts/FreeSans12pt7b.h>
 #include <Fonts/FreeSerif9pt7b.h>
 #include <Fonts/FreeSerif12pt7b.h>
 #include <Fonts/FreeSerif18pt7b.h>
