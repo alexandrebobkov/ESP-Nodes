@@ -70,9 +70,9 @@ void setup() {
   // Display Files storage usage
   display.setCursor(str_x, str_y);
   display.setFont(&FreeMonoBold9pt7b);
-  display.setFont(&FreeMono9pt7b);
   display.print("Files");
   display.setCursor(str_x+200, str_y);
+  display.setFont(&FreeMono9pt7b);
   display.print("25%");
   // Display Backups storage usage
   display.setCursor(str_x, str_y+str_inc);
