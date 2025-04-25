@@ -56,7 +56,7 @@ void setup() {
   display.setCursor(10, 30);
   display.setFont(&FreeSans9pt7b);
   display.print("PreeSans 9pt7b");
-  display.setCursor(10, 30);
+  display.setCursor(10, 50);
   display.setFont(&FreeSansBold9pt7b);
   display.print("PreeSans Bold 9pt7b");
   //display.update();
