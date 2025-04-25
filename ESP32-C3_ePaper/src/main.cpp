@@ -40,8 +40,9 @@ void setup() {
   display.init(115200);
   display.fillScreen(GxEPD_BLACK);
   display.update();
-  display.fillScreen(GxEPD_WHITE);
+  //display.fillScreen(GxEPD_WHITE);
   //display.setTextColor(GxEPD_BLACK);
+  display.setTextColor(GxEPD_WHITE);
   display.setFont(&FreeMono9pt7b);
   //display.setCursor(205, 10);
   //display.print("ESP32_DisplayNode"); // Takes 195 pixels in width
@@ -88,7 +89,7 @@ void setup() {
   display.drawLine(200, 0, 200, display.height(), GxEPD_BLACK);*/
 
   display.invertDisplay(true);
-  display.update();
+  //display.update();
 }
 
 void loop() {
