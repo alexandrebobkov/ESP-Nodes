@@ -65,7 +65,7 @@ void setup() {
   display.print("DATA BOARD");
   //display.update();
   
-  display.drawBitmap(200, 200, &gridicons_bug, 50, 50, GxEPD_RED);
+  display.drawBitmap(200, 200, gridicons_bug, 50, 50, GxEPD_RED);
   
   // Add UI elements
   // Draw axis: (x1,y1) @ 5, 100 and width-2*margin_x height-2*margin_y
