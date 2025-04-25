@@ -59,7 +59,7 @@ void setup() {
   //display.update();
 
   display.fillRect(0, 0, display.width(), 24, GxEPD_BLACK);
-  display.drawBitmap(display.width()-24, 0, gridicons_computer, 24, 24, GxEPD_BLACK);
+  display.drawBitmap(display.width()-24, 0, gridicons_computer, 24, 24, GxEPD_WHITE);
   //display.drawRect(0, 0, display.width()-24, 24, GxEPD_BLACK);
   
 
