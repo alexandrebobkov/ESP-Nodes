@@ -62,7 +62,7 @@ void setup() {
 
   display.setCursor(10, 100);
   display.setFont(&FreeSerif24pt7b);
-  display.print("PreeSerif 24pt7b");
+  display.print("INFORMATION DASHBOARD");
   //display.update();
 
   // Add UI elements
