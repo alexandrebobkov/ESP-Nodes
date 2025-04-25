@@ -7,6 +7,9 @@
 //#include <GxGDEP015OC1/GxGDEP015OC1.h>
 #include GxEPD_BitmapExamples
 // FreeFonts from Adafruit_GFX
+#include <Fonts/FreeSans9pt7b.h>
+#include <Fonts/FreeSansBold9pt7b.h>
+#include <Fonts/FreeSerif9pt7b.h>
 #include <Fonts/FreeMono9pt7b.h>
 #include <Fonts/FreeMonoBold9pt7b.h>
 #include <Fonts/FreeMonoBold12pt7b.h>
