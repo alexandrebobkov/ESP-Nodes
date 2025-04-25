@@ -71,15 +71,15 @@ void setup() {
   display.setCursor(str_x, str_y);
   display.setFont(&FreeMonoBold9pt7b);
   display.print("Files");
-  display.setCursor(str_x+215, str_y-1);
-  display.setFont(&FreeMono9pt7b);
+  display.setCursor(str_x+215, str_y-2);
+  //display.setFont(&FreeMono9pt7b);
   display.print("25%");
   display.setFont(&FreeMonoBold9pt7b);
   // Display Backups storage usage
   display.setCursor(str_x, str_y+str_inc);
   display.setFont(&FreeMonoBold9pt7b);
   display.print("Backups");
-  display.setCursor(str_x+215, str_y+str_inc);
+  display.setCursor(str_x+215, str_y+str_inc-2);
   display.print("75%");
   // Files bar
   display.drawRect(str_x+100, str_y-str_inc, 100, str_inc, GxEPD_BLACK);
