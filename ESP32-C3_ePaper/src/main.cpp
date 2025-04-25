@@ -82,7 +82,7 @@ void setup() {
   display.drawLine(0, 200, display.width(), 200, GxEPD_BLACK);
   display.drawLine(200, 0, 200, display.height(), GxEPD_BLACK);*/
 
-  display.invertDisplay();
+  display.invertDisplay(true);
   display.update();
 }
 
