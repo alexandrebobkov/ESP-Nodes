@@ -63,9 +63,10 @@ void setup() {
   display.setFont(&FreeSans9pt7b);
   display.print("PreeSerif 9pt7b");
 
-  display.setCursor(10, 100);
+  //display.setCursor(10, 100);
   display.setFont(&FreeSerif18pt7b);
   display.getTextBounds("INFO DASHBOARD", 10, 100, &tbx, &tby, &tbw, &tbh);
+  display.setCursor((display.width() - tbw) / 2, 100);
   display.print("INFO DASHBOARD");
   //display.update();
 
