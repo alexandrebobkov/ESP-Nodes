@@ -76,6 +76,8 @@ void setup() {
   display.setCursor(str_x, str_y+str_inc);
   display.setFont(&FreeMonoBold9pt7b);
   display.print("Backups");
+  display.setCursor(str_x, str_y+str_inc+250);
+display.print("Free: 25%");
   // Files bar
   display.drawRect(str_x+100, str_y-str_inc, 100, str_inc, GxEPD_BLACK);
   display.fillRect(str_x+100, str_y-str_inc, 100*0.25, str_inc, GxEPD_BLACK);
