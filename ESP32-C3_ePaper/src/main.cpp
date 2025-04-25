@@ -74,7 +74,7 @@ void setup() {
   display.setCursor(str_x, str_y+str_inc);
   display.setFont(&FreeMonoBold9pt7b);
   display.print("Backups");
-  display.drawRect(str_x+100, str_y-str_inc*0, 100, str_inc, GxEPD_BLACK);
+  display.drawRect(str_x+100, str_y-str_inc, 100, str_inc, GxEPD_BLACK);
   display.drawRect(str_x+100, str_y+str_inc*1, 100, str_inc, GxEPD_BLACK);
 
 // Display text nicely centered on the display
