@@ -60,10 +60,10 @@ void setup() {
 
   display.setCursor(10, 30);
   display.setFont(&FreeSans9pt7b);
-  display.print("Files Pool");
+  display.print("Files Storage");
   display.setCursor(10, 50);
   display.setFont(&FreeSerif9pt7b);
-  display.print("Archives Pool");
+  display.print("Archives Storage");
 
 // Display text nicely centered on the display
   display.setFont(&FreeSerif12pt7b);                                          // Specify the font family & size
