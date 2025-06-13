@@ -1,12 +1,12 @@
 {
     "C_Cpp.intelliSenseEngine": "default",
-    "idf.espIdfPath": "/home/abobkov/esp/esp-idf",
+    "idf.espIdfPath": "/home/alex/esp/v5.4.1/esp-idf",
     "idf.pythonInstallPath": "/usr/bin/python3",
     "idf.openOcdConfigs": [
         "board/esp32c3-builtin.cfg"
     ],
     "idf.port": "/dev/ttyACM0",
-    "idf.toolsPath": "/home/abobkov/.espressif",
+    "idf.toolsPath": "/home/alex/.espressif",
     "idf.customExtraVars": {
         "OPENOCD_SCRIPTS": "/home/abobkov/.espressif/tools/openocd-esp32/v0.12.0-esp32-20240821/openocd-esp32/share/openocd/scripts",
         "ESP_ROM_ELF_DIR": "/home/abobkov/.espressif/tools/esp-rom-elfs/20230320/",

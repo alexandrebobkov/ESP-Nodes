@@ -1,4 +1,4 @@
-/* * Data converted from /home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_mqtt-ssl/main/client.key
+/* * Data converted from /home/alex/github/ESP-Nodes/ESP-IDF_mqtt-ssl/main/client.key
  * (null byte appended)
  */
 .data

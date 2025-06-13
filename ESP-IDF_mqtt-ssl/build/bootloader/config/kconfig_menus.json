@@ -2163,6 +2163,26 @@
         "children": [],
         "depends_on": null,
         "help": null,
+        "id": "SOC_LP_TIMER_BIT_WIDTH_LO",
+        "name": "SOC_LP_TIMER_BIT_WIDTH_LO",
+        "range": null,
+        "title": null,
+        "type": "int"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_LP_TIMER_BIT_WIDTH_HI",
+        "name": "SOC_LP_TIMER_BIT_WIDTH_HI",
+        "range": null,
+        "title": null,
+        "type": "int"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
         "id": "SOC_MWDT_SUPPORT_XTAL",
         "name": "SOC_MWDT_SUPPORT_XTAL",
         "range": null,
@@ -4473,6 +4493,67 @@
                 "type": "bool"
             },
             {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depends_on": "<choice SECURE_FLASH_PSEUDO_ROUND_FUNC_STRENGTH>",
+                                "help": null,
+                                "id": "SECURE_FLASH_PSEUDO_ROUND_FUNC_STRENGTH_LOW",
+                                "name": "SECURE_FLASH_PSEUDO_ROUND_FUNC_STRENGTH_LOW",
+                                "range": null,
+                                "title": "Low",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "<choice SECURE_FLASH_PSEUDO_ROUND_FUNC_STRENGTH>",
+                                "help": null,
+                                "id": "SECURE_FLASH_PSEUDO_ROUND_FUNC_STRENGTH_MEDIUM",
+                                "name": "SECURE_FLASH_PSEUDO_ROUND_FUNC_STRENGTH_MEDIUM",
+                                "range": null,
+                                "title": "Medium",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "<choice SECURE_FLASH_PSEUDO_ROUND_FUNC_STRENGTH>",
+                                "help": null,
+                                "id": "SECURE_FLASH_PSEUDO_ROUND_FUNC_STRENGTH_HIGH",
+                                "name": "SECURE_FLASH_PSEUDO_ROUND_FUNC_STRENGTH_HIGH",
+                                "range": null,
+                                "title": "High",
+                                "type": "bool"
+                            }
+                        ],
+                        "depends_on": "SECURE_FLASH_PSEUDO_ROUND_FUNC",
+                        "help": "The strength of the pseudo rounds functions can be configured to low, medium and high,\neach denoting the values that would be stored in the efuses field.\nBy default the value to set to low.\nYou can configure the strength of the pseudo rounds functions according to your use cases,\nfor example, increasing the strength would provide higher security but would slow down the\nflash encryption/decryption operations.\nFor more info regarding the performance impact, please checkout the pseudo round function section of the\nsecurity guide documentation.",
+                        "id": "security-features-permanently-enable-xts-aes-s-pseudo-rounds-function-strength-of-the-pseudo-rounds-function",
+                        "name": "SECURE_FLASH_PSEUDO_ROUND_FUNC_STRENGTH",
+                        "title": "Strength of the pseudo rounds function",
+                        "type": "choice"
+                    }
+                ],
+                "depends_on": "SECURE_FLASH_ENCRYPTION_MODE_RELEASE && SOC_FLASH_ENCRYPTION_XTS_AES_SUPPORT_PSEUDO_ROUND",
+                "help": "If set (default), the bootloader will permanently enable the XTS-AES peripheral's pseudo rounds function.\nNote: Enabling this config would burn an efuse.",
+                "id": "SECURE_FLASH_PSEUDO_ROUND_FUNC",
+                "name": "SECURE_FLASH_PSEUDO_ROUND_FUNC",
+                "range": null,
+                "title": "Permanently enable XTS-AES's pseudo rounds function",
+                "type": "bool"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": null,
+                "id": "SECURE_FLASH_PSEUDO_ROUND_FUNC_STRENGTH",
+                "name": "SECURE_FLASH_PSEUDO_ROUND_FUNC_STRENGTH",
+                "range": null,
+                "title": null,
+                "type": "int"
+            },
+            {
                 "children": [],
                 "depends_on": null,
                 "help": null,
@@ -6317,7 +6398,7 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "!APP_BUILD_TYPE_PURE_RAM_APP && !ESP_SLEEP_POWER_DOWN_FLASH",
+                                "depends_on": "!APP_BUILD_TYPE_PURE_RAM_APP",
                                 "help": "All IOs will be set to isolate(floating) state by default during sleep.\nSince the power supply of SPI Flash is not lost during lightsleep, if its CS pin is recognized as\nlow level(selected state) in the floating state, there will be a large current leakage, and the\ndata in Flash may be corrupted by random signals on other SPI pins.\nSelect this option will set the CS pin of Flash to PULL-UP state during sleep, but this will\nincrease the sleep current about 10 uA.\nIf you are developing with esp32xx modules, you must select this option, but if you are developing\nwith chips, you can also pull up the CS pin of SPI Flash in the external circuit to save power\nconsumption caused by internal pull-up during sleep.\n(!!! Don't deselect this option if you don't have external SPI Flash CS pin pullups.)",
                                 "id": "ESP_SLEEP_FLASH_LEAKAGE_WORKAROUND",
                                 "name": "ESP_SLEEP_FLASH_LEAKAGE_WORKAROUND",
@@ -6337,7 +6418,7 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "!ESP_SLEEP_POWER_DOWN_FLASH && (ESP_SLEEP_PSRAM_LEAKAGE_WORKAROUND || ESP_SLEEP_FLASH_LEAKAGE_WORKAROUND)",
+                                "depends_on": "ESP_SLEEP_PSRAM_LEAKAGE_WORKAROUND || ESP_SLEEP_FLASH_LEAKAGE_WORKAROUND",
                                 "help": "To reduce leakage current, some types of SPI Flash/RAM only need to pull up the CS pin\nduring light sleep. But there are also some kinds of SPI Flash/RAM that need to pull up\nall pins. It depends on the SPI Flash/RAM chip used.",
                                 "id": "ESP_SLEEP_MSPI_NEED_ALL_IO_PU",
                                 "name": "ESP_SLEEP_MSPI_NEED_ALL_IO_PU",
@@ -6837,7 +6918,7 @@
                         "id": "ESP_CRYPTO_FORCE_ECC_CONSTANT_TIME_POINT_MUL",
                         "name": "ESP_CRYPTO_FORCE_ECC_CONSTANT_TIME_POINT_MUL",
                         "range": null,
-                        "title": "Forcfully enable ECC constant time point multiplication operations",
+                        "title": "Forcefully enable ECC constant time point multiplication operations",
                         "type": "bool"
                     }
                 ],
@@ -8723,8 +8804,8 @@
                     },
                     {
                         "children": [],
-                        "depends_on": null,
-                        "help": "Enable this option to apply the countermeasure for ECDSA signature operation\nThis countermeasure masks the real ECDSA sign operation\nunder dummy sign operations to add randomness in the generated power signature.",
+                        "depends_on": "IDF_TARGET_ESP32H2",
+                        "help": "Enable this option to apply the countermeasure for ECDSA signature operation\nThis countermeasure masks the real ECDSA sign operation\nunder dummy sign operations to add randomness in the generated power signature.\nThis countermeasure is only necessary for ESP32-H2 < v1.2.",
                         "id": "HAL_ECDSA_GEN_SIG_CM",
                         "name": "HAL_ECDSA_GEN_SIG_CM",
                         "range": null,
@@ -9486,6 +9567,36 @@
                                 "name": "SPI_FLASH_FORCE_ENABLE_XMC_C_SUSPEND",
                                 "range": null,
                                 "title": "Enable XMC-C series flash chip suspend feature anyway",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "SPI_FLASH_AUTO_SUSPEND && FREERTOS_UNICORE && IDF_EXPERIMENTAL_FEATURES && !APP_BUILD_TYPE_PURE_RAM_APP",
+                                "help": "Enable this config will disable auto-resume from hardware. Thus the software will resume the chip\nafter any higher priority task/interrupt which suspend the chip. The benefit is that the suspend-resume\nwill not disturb the higher priority task and interrupt.\n\nThis currently is only valid on single core chip.",
+                                "id": "SPI_FLASH_SOFTWARE_RESUME",
+                                "name": "SPI_FLASH_SOFTWARE_RESUME",
+                                "range": null,
+                                "title": "Resume flash program/erase form suspend state by software control",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "SPI_FLASH_AUTO_SUSPEND && FREERTOS_UNICORE && !APP_BUILD_TYPE_PURE_RAM_APP",
+                                "help": "Disable freertos task scheduler when CONFIG_SPI_FLASH_AUTO_SUSPEND is enabled.\nThus only interrupt can trigger a suspend. When SPI_FLASH_AUTO_SUSPEND is enabled,\ndefault behavior is not disable the task scheduler, so both interrupt and high priority\ntask can suspend the erase/program operation. When this option is enabled, task\nscheduler is disabled, only interrupt can suspend erase/program operation.",
+                                "id": "SPI_FLASH_DISABLE_SCHEDULER_IN_SUSPEND",
+                                "name": "SPI_FLASH_DISABLE_SCHEDULER_IN_SUSPEND",
+                                "range": null,
+                                "title": "Disable task scheduler when suspend is enabled when SPI1 operation is ongoing",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "SPI_FLASH_AUTO_SUSPEND && !APP_BUILD_TYPE_PURE_RAM_APP",
+                                "help": "Majority flash supports to use flash register to judge if flash suspend status is\ndone or not. So enable this config, the behavior would use flash register WIP bit to judge\nwhether suspend is valid instead of waiting for a specific long time, which can save a\nlot of time and benefit for performance improvement.",
+                                "id": "SPI_FLASH_AUTO_CHECK_SUSPEND_STATUS",
+                                "name": "SPI_FLASH_AUTO_CHECK_SUSPEND_STATUS",
+                                "range": null,
+                                "title": "Check flash status automatically after flash suspend",
                                 "type": "bool"
                             }
                         ],
