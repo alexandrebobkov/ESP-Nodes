@@ -109,8 +109,21 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
 static void mqtt_app_start(void)
 {
   const esp_mqtt_client_config_t mqtt_cfg = {
-    .broker.address.uri = "mqtts://techquadbit.net:8883",                  // Mosquitto MQTT broker
-    .broker.verification.certificate = (const char *)server_cert_pem_start,
+    .broker = {
+        .address = {
+            .uri = "mqtts://techquadbit.net:8883",  // Complete MQTT broker URI
+        },
+        .verification = {
+            .use_global_ca_store = false,          // Use a global CA store
+            //.crt_bundle_attach = esp_crt_bundle_attach, // Attach the certificate bundle
+            .certificate = (const char *)server_cert_pem_start, // Server certificate for verification
+            //.certificate_len = server_cert_pem_end - server_cert_pem_start, // Length of the server certificate
+            .skip_cert_common_name_check = true,  // Do not skip common name check
+            .common_name = "techquadbit.net",      // Common name for server certificate verification
+        }
+    },
+    //.broker.address.uri = "mqtts://techquadbit.net:8883",                  // Mosquitto MQTT broker
+    //.broker.verification.certificate = (const char *)server_cert_pem_start,
     .credentials = {
       .authentication = {
         .certificate = (const char *)client_cert_pem_start,
