@@ -8,6 +8,7 @@ if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "")
   "bootloader/bootloader.bin"
   "bootloader/bootloader.elf"
   "bootloader/bootloader.map"
+  "broker.crt.S"
   "client.crt.S"
   "client.key.S"
   "config/sdkconfig.cmake"
