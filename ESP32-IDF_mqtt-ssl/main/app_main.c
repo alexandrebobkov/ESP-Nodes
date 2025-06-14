@@ -46,8 +46,7 @@ r3zSGjcIqzkp8NHIFBF/ZXsclqQLiEZPAViu9c23wIyutD4RfpekmsVDiQJvP6ei
 5uILJrwT7l46DMes96jYcthWbHiy6wkw1flfT0ykrd3MriYMxLDKimM81n5tVDLa
 bI9JmWpDkPzflY9VGlTZ3QQHuTvI6zQxeaGKSj/7fAP6G0sRMxaSJXD38C/Xpi7p
 f3VJRuf5mqUnbjak+W5VZT5e96AVAyy+5g==
------END CERTIFICATE-----
-";
+-----END CERTIFICATE-----";
 #else
 extern const uint8_t mqtt_eclipseprojects_io_pem_start[]   asm("_binary_mqtt_eclipseprojects_io_pem_start");
 #endif
@@ -88,7 +87,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
     switch ((esp_mqtt_event_id_t)event_id) {
     case MQTT_EVENT_CONNECTED:
         ESP_LOGI(TAG, "MQTT_EVENT_CONNECTED");
-        msg_id = esp_mqtt_client_subscribe(client, "/nodes/outdoors/foxie1/sensors/temperature", 0);
+        msg_id = esp_mqtt_client_subscribe(client, "nodes/outdoors/foxie1/sensors/temperature", 0);
         ESP_LOGI(TAG, "sent subscribe successful, msg_id=%d", msg_id);
 
         msg_id = esp_mqtt_client_subscribe(client, "/topic/qos1", 1);
@@ -103,7 +102,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
 
     case MQTT_EVENT_SUBSCRIBED:
         ESP_LOGI(TAG, "MQTT_EVENT_SUBSCRIBED, msg_id=%d", event->msg_id);
-        msg_id = esp_mqtt_client_publish(client, "/nodes/outdoors/foxie1/sensors/temperature", "data", 0, 0, 0);
+        msg_id = esp_mqtt_client_publish(client, "nodes/outdoors/foxie1/sensors/temperature", "data", 0, 0, 0);
         ESP_LOGI(TAG, "sent publish successful, msg_id=%d", msg_id);
         break;
     case MQTT_EVENT_UNSUBSCRIBED:
