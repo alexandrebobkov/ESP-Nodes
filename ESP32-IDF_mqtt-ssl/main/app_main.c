@@ -146,7 +146,7 @@ static void mqtt_app_start(void)
         .broker = {
             .address.uri = CONFIG_BROKER_URI,
             .verification.certificate = (const char *)mqtt_eclipseprojects_io_pem_start,
-            .global_ca_store = false
+            //.global_ca_store = false
             //.skip_server_verification = true
         },
     };
