@@ -112,6 +112,8 @@ static void mqtt_app_start(void)
     .broker = {
         .address = {
             .uri = "mqtts://techquadbit.net:8883",  // Complete MQTT broker URI
+            //.port = 8883,                // MQTT broker port
+            .transport = MQTT_TRANSPORT_OVER_SSL, // Use SSL/TLS transport
         },
         .verification = {
             .use_global_ca_store = false,          // Use a global CA store
