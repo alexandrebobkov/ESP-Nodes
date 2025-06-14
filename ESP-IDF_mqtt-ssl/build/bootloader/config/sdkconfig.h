@@ -1,6 +1,6 @@
 /*
  * Automatically generated file. DO NOT EDIT.
- * Espressif IoT Development Framework (ESP-IDF) 5.4.1 Configuration Header
+ * Espressif IoT Development Framework (ESP-IDF) 5.4.0 Configuration Header
  */
 #pragma once
 #define CONFIG_SOC_ADC_SUPPORTED 1
@@ -216,8 +216,6 @@
 #define CONFIG_SOC_TIMER_GROUP_SUPPORT_XTAL 1
 #define CONFIG_SOC_TIMER_GROUP_SUPPORT_APB 1
 #define CONFIG_SOC_TIMER_GROUP_TOTAL_TIMERS 2
-#define CONFIG_SOC_LP_TIMER_BIT_WIDTH_LO 32
-#define CONFIG_SOC_LP_TIMER_BIT_WIDTH_HI 16
 #define CONFIG_SOC_MWDT_SUPPORT_XTAL 1
 #define CONFIG_SOC_TWAI_CONTROLLER_NUM 1
 #define CONFIG_SOC_TWAI_CLK_SUPPORT_APB 1
