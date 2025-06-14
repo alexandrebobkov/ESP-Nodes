@@ -6,6 +6,7 @@ if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "")
   "bootloader/bootloader.bin"
   "bootloader/bootloader.elf"
   "bootloader/bootloader.map"
+  "ca.crt.S"
   "config/sdkconfig.cmake"
   "config/sdkconfig.h"
   "esp-idf/esptool_py/flasher_args.json.in"
@@ -19,6 +20,8 @@ if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "")
   "mqtt_eclipseprojects_io.pem.S"
   "mqtt_ssl.bin"
   "mqtt_ssl.map"
+  "node.crt.S"
+  "node.key.S"
   "project_elf_src_esp32c3.c"
   "x509_crt_bundle.S"
   )
