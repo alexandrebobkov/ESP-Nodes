@@ -28,7 +28,8 @@ static const char *TAG = "mqtts_example";
 
 
 #if CONFIG_BROKER_CERTIFICATE_OVERRIDDEN == 1
-static const uint8_t mqtt_eclipseprojects_io_pem_start[]  = "-----BEGIN CERTIFICATE-----
+static const uint8_t mqtt_eclipseprojects_io_pem_start[]  = "
+-----BEGIN CERTIFICATE-----
 MIIDFTCCAf2gAwIBAgIUUcFs7KhvOW1uc1ZV/88AtEafX4UwDQYJKoZIhvcNAQEL
 BQAwGjEYMBYGA1UEAwwPdGVjaHF1YWRiaXQubmV0MB4XDTI1MDYxMzIwMjYzOFoX
 DTI2MDYxMzIwMjYzOFowGjEYMBYGA1UEAwwPdGVjaHF1YWRiaXQubmV0MIIBIjAN
