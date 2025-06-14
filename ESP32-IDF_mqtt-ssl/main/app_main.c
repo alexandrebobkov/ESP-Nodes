@@ -145,7 +145,8 @@ static void mqtt_app_start(void)
     const esp_mqtt_client_config_t mqtt_cfg = {
         .broker = {
             .address.uri = CONFIG_BROKER_URI,
-            //.verification.certificate = (const char *)mqtt_eclipseprojects_io_pem_start
+            .verification.certificate = (const char *)mqtt_eclipseprojects_io_pem_start,
+            .use_global_ca_store = false
         },
     };
 
