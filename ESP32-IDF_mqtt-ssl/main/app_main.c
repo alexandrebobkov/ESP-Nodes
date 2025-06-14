@@ -28,8 +28,8 @@ static const char *TAG = "mqtts_example";
 
 
 #if CONFIG_BROKER_CERTIFICATE_OVERRIDDEN == 1
-static const uint8_t mqtt_eclipseprojects_io_pem_start[]  = "
------BEGIN CERTIFICATE-----
+static const uint8_t mqtt_eclipseprojects_io_pem_start[]  = 
+"-----BEGIN CERTIFICATE-----
 MIIDFTCCAf2gAwIBAgIUUcFs7KhvOW1uc1ZV/88AtEafX4UwDQYJKoZIhvcNAQEL
 BQAwGjEYMBYGA1UEAwwPdGVjaHF1YWRiaXQubmV0MB4XDTI1MDYxMzIwMjYzOFoX
 DTI2MDYxMzIwMjYzOFowGjEYMBYGA1UEAwwPdGVjaHF1YWRiaXQubmV0MIIBIjAN
@@ -47,7 +47,7 @@ r3zSGjcIqzkp8NHIFBF/ZXsclqQLiEZPAViu9c23wIyutD4RfpekmsVDiQJvP6ei
 5uILJrwT7l46DMes96jYcthWbHiy6wkw1flfT0ykrd3MriYMxLDKimM81n5tVDLa
 bI9JmWpDkPzflY9VGlTZ3QQHuTvI6zQxeaGKSj/7fAP6G0sRMxaSJXD38C/Xpi7p
 f3VJRuf5mqUnbjak+W5VZT5e96AVAyy+5g==
------END CERTIFICATE-----";
+-----END CERTIFICATE-----\n";
 #else
 extern const uint8_t mqtt_eclipseprojects_io_pem_start[]   asm("_binary_mqtt_eclipseprojects_io_pem_start");
 #endif
