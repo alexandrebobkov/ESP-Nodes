@@ -119,7 +119,7 @@ static void mqtt_app_start(void)
             .certificate = (const char *)server_cert_pem_start, // Server certificate for verification
             //.certificate_len = server_cert_pem_end - server_cert_pem_start, // Length of the server certificate
             .skip_cert_common_name_check = true,  // Do not skip common name check
-            .common_name = "techquadbit.net",      // Common name for server certificate verification
+            //.common_name = "techquadbit.net",      // Common name for server certificate verification
         }
     },
     //.broker.address.uri = "mqtts://techquadbit.net:8883",                  // Mosquitto MQTT broker
