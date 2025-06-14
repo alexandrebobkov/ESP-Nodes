@@ -1,10 +1,10 @@
-/* MQTT over SSL Example
+/* MQTT over self-signed SSL
 
-   This example code is in the Public Domain (or CC0 licensed, at your option.)
+   Date: June 14, 2025
+   Adapted by: Alexander Bobkov
+   ESP-IDF: v5.4.1
 
-   Unless required by applicable law or agreed to in writing, this
-   software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-   CONDITIONS OF ANY KIND, either express or implied.
+   Subscribes to the temperature topic using SSL
 */
 
 #include <stdio.h>
