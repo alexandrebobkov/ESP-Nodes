@@ -28,7 +28,26 @@ static const char *TAG = "mqtts_example";
 
 
 #if CONFIG_BROKER_CERTIFICATE_OVERRIDDEN == 1
-static const uint8_t mqtt_eclipseprojects_io_pem_start[]  = "-----BEGIN CERTIFICATE-----\n" CONFIG_BROKER_CERTIFICATE_OVERRIDE "\n-----END CERTIFICATE-----";
+static const uint8_t mqtt_eclipseprojects_io_pem_start[]  = "-----BEGIN CERTIFICATE-----
+MIIDFTCCAf2gAwIBAgIUUcFs7KhvOW1uc1ZV/88AtEafX4UwDQYJKoZIhvcNAQEL
+BQAwGjEYMBYGA1UEAwwPdGVjaHF1YWRiaXQubmV0MB4XDTI1MDYxMzIwMjYzOFoX
+DTI2MDYxMzIwMjYzOFowGjEYMBYGA1UEAwwPdGVjaHF1YWRiaXQubmV0MIIBIjAN
+BgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqwXyY95ffB1Zfys3D9b0/B2lDysm
++8aLiBMjRfHHmEQ3X95VsPy4H/mu66FVsrQqxzha1zNQEz1QaYyZ6oXl3FqhN06X
+B1HtVdefZ6rD0ctiYQSjpT64NhnUX83ZBb46Mh6cGTe0L+LYF//nmOi1WAqCRonf
+B5BW/Yd3M52QIB5cGIhH0i2E28577Awc5t0w96uZCmGfqM5gxFIgmy462XExA2+w
+6u7Ud49bk1L3eTYHvWxgen4RGgaEfpsA8e5Q0bRkIL5D3Oc0JW8tdw6Cmvb+/d7d
+BB20TTCMfZ4GYabSS5wp3thmdKe4QW7QJcdAyoNOSWtt51Bhud0DkU+0RwIDAQAB
+o1MwUTAdBgNVHQ4EFgQUY7baZn9x7Hh0WZ9vI1uzEdhRTp4wHwYDVR0jBBgwFoAU
+Y7baZn9x7Hh0WZ9vI1uzEdhRTp4wDwYDVR0TAQH/BAUwAwEB/zANBgkqhkiG9w0B
+AQsFAAOCAQEAWehGGHGobcYGpfczSpshCzmVGwFa+v+FzFYDrMB1LpW6NkipnnFA
+uF8itmhd7pnkayo6xOBvVHb23gsWfAsh/z7KRiIgSACXZjOjFv08A24TXCVMKX2C
+r3zSGjcIqzkp8NHIFBF/ZXsclqQLiEZPAViu9c23wIyutD4RfpekmsVDiQJvP6ei
+5uILJrwT7l46DMes96jYcthWbHiy6wkw1flfT0ykrd3MriYMxLDKimM81n5tVDLa
+bI9JmWpDkPzflY9VGlTZ3QQHuTvI6zQxeaGKSj/7fAP6G0sRMxaSJXD38C/Xpi7p
+f3VJRuf5mqUnbjak+W5VZT5e96AVAyy+5g==
+-----END CERTIFICATE-----
+";
 #else
 extern const uint8_t mqtt_eclipseprojects_io_pem_start[]   asm("_binary_mqtt_eclipseprojects_io_pem_start");
 #endif
