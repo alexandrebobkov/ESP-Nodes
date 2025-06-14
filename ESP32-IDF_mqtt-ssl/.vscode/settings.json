@@ -10,6 +10,6 @@
         "ESP_ROM_ELF_DIR": "/home/abobkov/.espressif/tools/esp-rom-elfs/20230320/",
         "IDF_TARGET": "esp32c3"
     },
-    "idf.port": "/dev/ttyS4",
+    "idf.port": "/dev/ttyACM0",
     "idf.flashType": "UART"
 }
