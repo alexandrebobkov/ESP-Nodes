@@ -61,14 +61,14 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
     switch ((esp_mqtt_event_id_t)event_id) {
     case MQTT_EVENT_CONNECTED:
         ESP_LOGI(TAG, "MQTT_EVENT_CONNECTED");
-        msg_id = esp_mqtt_client_subscribe(client, "/topic/qos0", 0);
+        msg_id = esp_mqtt_client_subscribe(client, "/nodes/outdoors/foxie1/sensors/temperature", 0);
         ESP_LOGI(TAG, "sent subscribe successful, msg_id=%d", msg_id);
 
-        msg_id = esp_mqtt_client_subscribe(client, "/topic/qos1", 1);
-        ESP_LOGI(TAG, "sent subscribe successful, msg_id=%d", msg_id);
+        //msg_id = esp_mqtt_client_subscribe(client, "/topic/qos1", 1);
+        //ESP_LOGI(TAG, "sent subscribe successful, msg_id=%d", msg_id);
 
-        msg_id = esp_mqtt_client_unsubscribe(client, "/topic/qos1");
-        ESP_LOGI(TAG, "sent unsubscribe successful, msg_id=%d", msg_id);
+        //msg_id = esp_mqtt_client_unsubscribe(client, "/topic/qos1");
+        //ESP_LOGI(TAG, "sent unsubscribe successful, msg_id=%d", msg_id);
         break;
     case MQTT_EVENT_DISCONNECTED:
         ESP_LOGI(TAG, "MQTT_EVENT_DISCONNECTED");
@@ -76,7 +76,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
 
     case MQTT_EVENT_SUBSCRIBED:
         ESP_LOGI(TAG, "MQTT_EVENT_SUBSCRIBED, msg_id=%d", event->msg_id);
-        msg_id = esp_mqtt_client_publish(client, "/topic/qos0", "data", 0, 0, 0);
+        msg_id = esp_mqtt_client_publish(client, "/nodes/outdoors/foxie1/sensors/temperature", "data", 0, 0, 0);
         ESP_LOGI(TAG, "sent publish successful, msg_id=%d", msg_id);
         break;
     case MQTT_EVENT_UNSUBSCRIBED:
@@ -109,8 +109,23 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
 static void mqtt_app_start(void)
 {
   const esp_mqtt_client_config_t mqtt_cfg = {
-    .broker.address.uri = "mqtts://techquadbit.ddns.net:8883",                  // Mosquitto MQTT broker
-    .broker.verification.certificate = (const char *)server_cert_pem_start,
+    .broker = {
+        .address = {
+            .uri = "mqtts://techquadbit.net:8883",  // Complete MQTT broker URI
+            //.port = 8883,                // MQTT broker port
+            .transport = MQTT_TRANSPORT_OVER_SSL, // Use SSL/TLS transport
+        },
+        .verification = {
+            .use_global_ca_store = false,          // Use a global CA store
+            //.crt_bundle_attach = esp_crt_bundle_attach, // Attach the certificate bundle
+            .certificate = (const char *)server_cert_pem_start, // Server certificate for verification
+            //.certificate_len = server_cert_pem_end - server_cert_pem_start, // Length of the server certificate
+            .skip_cert_common_name_check = true,  // Do not skip common name check
+            //.common_name = "techquadbit.net",      // Common name for server certificate verification
+        }
+    },
+    //.broker.address.uri = "mqtts://techquadbit.net:8883",                  // Mosquitto MQTT broker
+    //.broker.verification.certificate = (const char *)server_cert_pem_start,
     .credentials = {
       .authentication = {
         .certificate = (const char *)client_cert_pem_start,

@@ -444,6 +444,10 @@ void loop() {
     connection.publish(MQTT_IOT_CHANNEL_OUTPUT_PULSE, "0");
     connection.publish(MQTT_IOT_CHANNEL_0, "3");
     Serial.println("test_topic: 3");
+    Serial.println("Publishing to the topics:");
+    Serial.println(MQTT_IOT_CHANNEL_TEMPERATURE);
+    Serial.println(MQTT_IOT_CHANNEL_PRESSURE);
+    Serial.println(MQTT_IOT_CHANNEL_HUMIDITY);
     Serial.print("MQTT State: ");
     Serial.println(connection.state());       // state() == 0 => Connected to MQTT
     Serial.print("MQTT Connected: ");
