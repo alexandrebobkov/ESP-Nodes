@@ -96,6 +96,7 @@ ESP32-C3 ADC supports 12-bit resolution, with the conversion voltage ranging fro
 | ADC_ATTEN_DB_11 | 150 mV ~ 2450 mV |
 
 <a href="https://www.espressif.com/sites/default/files/documentation/esp32-c3_datasheet_en.pdf">ESP32-C3 Datasheet</a>
+
 <a href="https://docs.espressif.com/projects/esp-idf/en/v4.4/esp32/api-reference/peripherals/adc.html">Analog to Digital Converter (ACD)</a>
 
 The potentionometers values are organized in a struct as follows: 
