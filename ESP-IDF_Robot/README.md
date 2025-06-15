@@ -77,7 +77,18 @@ ESP-NOW is used to communicate data between Controller and Receiver.
 
 RC Controller uses the two ADC on ESP32-C3 to sample voltage levels on joystick x- and y- axis potentionometers. Then, these values are stored in a struct.
 
-Sensors values are organized in a struct as follows: 
+ESP32-C3 ADC supports 12-bit resolution, with the conversion voltage ranging from 0 mV to 1100 mV (by design). The input signals can be attenuated to 0dB, 2.5dB, 5dB or 12dB.
+
+| Signal | Channel | ADC Selection |
+| --- | --- | --- |
+| GPIO0 | 0 | SAR ADC1 |
+| GPIO1 | 1 | SAR ADC1 |
+| GPIO2 | 2 | SAR ADC1 |
+| GPIO3 | 3 | SAR ADC1 |
+| GPIO4 | 4 | SAR ADC1 |
+| GPIO5 | 0 | SAR ADC1 |
+
+The potentionometers values are organized in a struct as follows: 
 
 ``` C
 // Struct holding sensors values
