@@ -86,7 +86,7 @@ ESP32-C3 ADC supports 12-bit resolution, with the conversion voltage ranging fro
 | GPIO2 | 2 | SAR ADC1 |
 | GPIO3 | 3 | SAR ADC1 |
 | GPIO4 | 4 | SAR ADC1 |
-| GPIO5 | 0 | SAR ADC1 |
+| GPIO5 | 0 | SAR ADC2 |
 
 The potentionometers values are organized in a struct as follows: 
 
