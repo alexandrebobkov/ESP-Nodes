@@ -54,13 +54,13 @@ Once analog signals are measured, their magnitudes are converted into PWM values
 
 | LEDC_CLKx | PWM Frequency | Highest Resolution | Lowest Resolution |
 | --- | --- | --- | --- |
-| APB_CLK (80 MHZ) | 1kHz | 14 | 7 |
-| APB_CLK (80 MHz) | 5kHz | 13 | 4 |
-| APB_CLK (80 MHz) | 10 kHz | 12 | 3 |
-| XTAL_CLK (40 MHz) | 1 kHz | 14 | 6 |
-| XTAL_CLK (40 MHz) | 4 kHz | 13 | 4 |
-| RC_FAST_CLK (17.5 MHz) | 1 kHz | 14 | 5 |
-| RC_FAST_CLK (17.5 kHz} | 1.75 kHz | 13 | 4 |
+| APB_CLK (80 MHZ) | 1kHz | 14 (16,384) | 7 (128) |
+| APB_CLK (80 MHz) | 5kHz | 13 (8,192) | 4 (16) |
+| APB_CLK (80 MHz) | 10 kHz | 12 (4,096) | 3 (8) |
+| XTAL_CLK (40 MHz) | 1 kHz | 14 (16,384) | 6 (64) |
+| XTAL_CLK (40 MHz) | 4 kHz | 13 (8,192) | 4 (16) |
+| RC_FAST_CLK (17.5 MHz) | 1 kHz | 14 (16,384) | 5 (32) |
+| RC_FAST_CLK (17.5 kHz} | 1.75 kHz | 13 (8,192) | 4 (16) |
 
 <a href="https://www.espressif.com/sites/default/files/documentation/esp32-c3_technical_reference_manual_en.pdf#ledpwm">ESP32-C3 Datasheet</a>
 
