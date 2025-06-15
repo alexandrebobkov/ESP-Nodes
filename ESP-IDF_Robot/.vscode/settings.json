@@ -1,10 +1,11 @@
 {
     "C_Cpp.intelliSenseEngine": "default",
-    "idf.espIdfPath": "/home/alex/esp/v5.3.2/esp-idf",
+    "idf.espIdfPath": "/home/alex/esp/v5.4.1/esp-idf",
     "idf.openOcdConfigs": [
         "board/esp32c3-builtin.cfg"
     ],
     "idf.toolsPath": "/home/alex/.espressif",
     "idf.port": "/dev/ttyACM0",
-    "idf.flashType": "UART"
+    "idf.flashType": "UART",
+    "idf.pythonInstallPath": "/usr/bin/python3"
 }

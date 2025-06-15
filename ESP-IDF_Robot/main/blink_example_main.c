@@ -6,6 +6,8 @@
 
     built-in LED GPIO: 10
     build-in push button GPIO: 3
+
+    ESP-PDF: v5.4.1
 */
 #include <stdio.h>
 #include <stdlib.h>
