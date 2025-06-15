@@ -67,7 +67,7 @@ The table below lists the commonly-used frequencies and their corresponding reso
 | RC_FAST_CLK (17.5 MHz) | 1 kHz | 14 (16,384) | 5 (32) |
 | RC_FAST_CLK (17.5 kHz} | 1.75 kHz | 13 (8,192) | 4 (16) |
 
-<a href="https://www.espressif.com/sites/default/files/documentation/esp32-c3_technical_reference_manual_en.pdf#ledpwm">ESP32-C3 Datasheet</a>
+<a href="https://www.espressif.com/sites/default/files/documentation/esp32-c3_technical_reference_manual_en.pdf#ledpwm">ESP32-C3 Technical Reference Manual</a>
 
 ### Receiver & Controller (ESP-NOW) Firmware
 
@@ -87,6 +87,16 @@ ESP32-C3 ADC supports 12-bit resolution, with the conversion voltage ranging fro
 | GPIO3 | 3 | SAR ADC1 |
 | GPIO4 | 4 | SAR ADC1 |
 | GPIO5 | 0 | SAR ADC2 |
+
+| Attenuation | Measurable input voltage range |
+| --- | --- |
+| ADC_ATTEN_DB_0 | 100 mV ~ 950 mV |
+| ADC_ATTEN_DB_2_5 | 100 mV ~ 1250 mV |
+| ADC_ATTEN_DB_6 | 150 mV ~ 1750 mV |
+| ADC_ATTEN_DB_11 | 150 mV ~ 2450 mV |
+
+<a href="https://www.espressif.com/sites/default/files/documentation/esp32-c3_datasheet_en.pdf">ESP32-C3 Datasheet</a>
+<a href="https://docs.espressif.com/projects/esp-idf/en/v4.4/esp32/api-reference/peripherals/adc.html">Analog to Digital Converter (ACD)</a>
 
 The potentionometers values are organized in a struct as follows: 
 
