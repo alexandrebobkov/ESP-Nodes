@@ -4,7 +4,7 @@
 // MOTORS PWM CONFIG
 #define MTR_FREQUENCY               (5000)
 #define MTR_MODE                    LEDC_LOW_SPEED_MODE
-#define MTR_DUTY_RES                LEDC_TIMER_13_BIT
+#define MTR_DUTY_RES                LEDC_TIMER_13_BIT       // 13-bit resolution supports the range
 // LEFT SIDE MOTORS, FORWARD
 #define MTR_FRONT_LEFT_IO           (6)
 #define MTR_FRONT_LEFT_TMR          LEDC_TIMER_0
