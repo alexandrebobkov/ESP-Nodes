@@ -41,7 +41,7 @@ struct motors_rpm {
 };
 ```
 
-<img alt="DC Motor PWM" src="dso_01_01_00_23_23.bmp" width="80%"/>
+<img alt="DC Motor PWM" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/ESP-IDF_Robot/dso_01_01_00_23_23.bmp" width="80%"/>
 
 #### Calculating PWM Values
 
