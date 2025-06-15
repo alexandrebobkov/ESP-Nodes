@@ -59,6 +59,8 @@ Once analog signals are measured, their magnitudes are converted into PWM values
 | APB_CLK (80 MHz) | 10 kHz | 12 | 3 |
 | XTAL_CLK (40 MHz) | 1 kHz | 14 | 6 |
 | XTAL_CLK (40 MHz) | 4 kHz | 13 | 4 |
+| RC_FAST_CLK (17.5 MHz) | 1 kHz | 14 | 5 |
+| RC_FAST_CLK (17.5 kHz} | 1.75 kHz | 13 | 4 |
 
 <a href="https://www.espressif.com/sites/default/files/documentation/esp32-c3_technical_reference_manual_en.pdf#ledpwm">ESP32-C3 Datasheet</a>
 
