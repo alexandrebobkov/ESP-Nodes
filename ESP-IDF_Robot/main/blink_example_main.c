@@ -166,6 +166,7 @@ static void motors_init (void) {
     m.motor4_rpm_pcm = 0;
 }
 
+// Initialize DC Motors PWM timers and channels
 static void ledc_init (void) {
 
     // MOTOR FRONT RIGHT, FORWARD
