@@ -51,6 +51,15 @@ As joystick x- and y- coordinates change, so do voltages on corresponding joysti
 
 Once analog signals are measured, their magnitudes are converted into PWM values; in addition, PWM values __cannot be nagative__. When joystick is in neutral position, the PWM values for all four motors is 0. However, when joystick is moved Front, Back, Left or Right, the PWM values for corresponding motor(s) is(are) updated, and can take value up to 8091.
 
+
+| LEDC_CLKx | PWM Frequency | Highest Resolution | Lowest Resolution |
+| --- | --- | --- | --- |
+| APB_CLK (80 MHZ) | 1kHz | 14 | 7 |
+| APB_CLK (80 MHz) | 5kHz | 13 | 4 |
+| APB_CLK (80 MHz) | 10 kHz | 12 | 3 |
+| XTAL_CLK (40 MHz) | 1 kHz | 14 | 6 |
+| XTAL_CLK (40 MHz) | 4 kHz | 13 | 4 |
+
 <a href="https://www.espressif.com/sites/default/files/documentation/esp32-c3_technical_reference_manual_en.pdf#ledpwm">ESP32-C3 Datasheet</a>
 
 ### Receiver & Controller (ESP-NOW) Firmware
