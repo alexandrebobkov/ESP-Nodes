@@ -43,7 +43,7 @@ struct motors_rpm {
 
 <img alt="DC Motor PWM" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/ESP-IDF_Robot/assets/dso_01_01_00_23_23.bmp" width="65%"/>
 
-#### Calculating PWM Values
+#### Calculating Supported Range of PWM Values
 
 The DC motors require digital PWM signals which, in turn, depend on analog signals supplied by the joystick stick. Consequently, analog values need to be interpreted into digital PWM signals. ESP32-C3 is capable of sampling voltage (analog signal) for the purpose of forming PWM signal.
 
@@ -51,6 +51,11 @@ As joystick x- and y- coordinates change, so do voltages on corresponding joysti
 
 Once analog signals are measured, their magnitudes are converted into PWM values; in addition, PWM values __cannot be nagative__. When joystick is in neutral position, the PWM values for all four motors is 0. However, when joystick is moved Front, Back, Left or Right, the PWM values for corresponding motor(s) is(are) updated, and can take value up to 8091.
 
+The ESP32-C3 is equipped with 14-bit counters (hence the maximum resolution of the PWM signal is 14 bits) that supply PWM timers with the reference clock. The counter counts up to 2^Resolution - 1, overflows and begins counting from 0 again.
+
+The frequency of a PWM generator output signal is depedent on the frequency of the timer's clock source, the clock divisor, and the duty resolution (counter width).
+
+The table below lists the commonly-used frequencies and their corresponding resolutions.
 
 | LEDC_CLKx | PWM Frequency | Highest Resolution | Lowest Resolution |
 | --- | --- | --- | --- |
