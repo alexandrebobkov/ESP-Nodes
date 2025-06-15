@@ -158,6 +158,7 @@ static void configure_button (void) {
     //gpio_set_direction(PUSH_BTN_GPIO, GPIO_MODE_INPUT);
 }
 
+// Struct for storing DC Motors PWM values
 static void motors_init (void) {
     m.motor1_rpm_pcm = 0;
     m.motor2_rpm_pcm = 0;
