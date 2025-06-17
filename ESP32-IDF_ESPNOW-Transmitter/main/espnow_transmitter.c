@@ -392,7 +392,9 @@ static void example_espnow_deinit(example_espnow_send_param_t *send_param)
     s_example_espnow_queue = NULL;
     esp_now_deinit();
 }
-
+void sendData (void) {
+    
+}
 static void rc_send_data_task()
 {
     while (true) {
