@@ -3,6 +3,7 @@
 #include "esp_err.h"
 #include "esp_log.h"
 #include "config.h"
+#include "joystick.h"
 
 int x, y; // Joystick x and y positions
 adc_oneshot_unit_handle_t adc_xy_handle;
