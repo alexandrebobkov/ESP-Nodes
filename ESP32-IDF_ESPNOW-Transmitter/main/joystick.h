@@ -4,7 +4,7 @@
 #include "driver/adc.h"
 #include "esp_adc/adc_oneshot.h"
 
-static int x, y, x_axis, y_axis; // Joystick x and y positions
+static int x, y; // Joystick x and y positions
 static adc_oneshot_unit_handle_t adc_xy_handle;
 
 // Struct holding sensors values
@@ -47,8 +47,8 @@ static void joystick_show_raw_xy() {
 }
 
 static void get_joystick_xy(int *x_axis, int *y_axis) {
-    ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_0, &x_axis));
-    ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_1, &y_axis));
+    ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_0, x_axis));
+    ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_1, y_axis));
 }
 
 static void joystick_task(void *arg) {
