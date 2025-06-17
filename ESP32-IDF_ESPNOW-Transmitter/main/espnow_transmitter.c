@@ -462,5 +462,5 @@ void app_main(void)
     esp_now_add_peer(&devices);
 
     // Defince a task for periodically sending ESPNOW remote control data
-    xTaskCreaterc_(rc_send_data_task, "RC", 2048, NULL, 4, NULL);
+    xTaskCreate(rc_send_data_task, "RC", 2048, NULL, 4, NULL);
 }
