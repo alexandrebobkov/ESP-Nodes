@@ -3,3 +3,6 @@ ESP32_Temperture-Node/src/secrets.h
 *.tar.xz
 ESP-IDF_ePaper/components/arduino
 .vscode/
+build/*
+.vscode/
+!build/**/.{bin,elf,map}
