@@ -97,6 +97,7 @@ void sendData (void) {
     if (result != 0) {
         ESP_LOGE("ESP-NOW", "Error sending data! Error code: 0x%04X", result);
         ESP_LOGE("ESP-NOW", "esp_now_send() failed: %s", esp_err_to_name(result));
+        ESP_LOGE()
         deletePeer();
     }
 }
