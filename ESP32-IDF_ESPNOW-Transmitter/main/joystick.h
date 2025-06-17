@@ -44,23 +44,26 @@ static esp_err_t joystick_adc_init(void);
     return ESP_OK;
 }*/
 
-static void joystick_show_raw_xy() {
+static void joystick_show_raw_xy();
+/*{
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_0, &x));
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_1, &y));
     ESP_LOGI("(x,y)", "( %d, %d )", x, y);
-}
+}*/
 
-static void get_joystick_xy(int *x_axis, int *y_axis) {
+static void get_joystick_xy(int *x_axis, int *y_axis);
+/*{
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_0, x_axis));
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_1, y_axis));
-}
+}*/
 
-static void joystick_task(void *arg) {
+static void joystick_task(void *arg);
+/*{
     while (true) {
         joystick_show_raw_xy();
         vTaskDelay (10 / portTICK_PERIOD_MS);
     }
-}
+}*/
 
 /* WiFi should start before using ESPNOW */
 static void wifi_init() {
