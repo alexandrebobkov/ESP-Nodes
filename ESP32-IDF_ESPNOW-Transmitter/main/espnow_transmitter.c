@@ -407,4 +407,5 @@ void app_main(void)
 
     wifi_init();
     esp_now_init();
+    esp_now_register_send_cb(onDataSent);
 }
