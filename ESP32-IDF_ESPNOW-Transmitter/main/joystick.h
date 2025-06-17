@@ -81,13 +81,13 @@ static void wifi_init() {
 }
 
 // Function to delete peer (i.e. when communication error occurs)
-void deletePeer (void) {
+void deletePeer (void);/*{
     uint8_t delStatus = esp_now_del_peer(receiver_mac);
     if (delStatus != 0) {
         ESP_LOGE("ESP-NOW", "Could not delete peer");
     }
-}
-static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status) {
+}*/
+static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status);/*{
     if (status == ESP_NOW_SEND_SUCCESS) {
         ESP_LOGI(TAG, "Data sent successfully to: %02X:%02X:%02X:%02X:%02X:%02X",
                  mac_addr[0], mac_addr[1], mac_addr[2],
@@ -101,7 +101,7 @@ static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status
         ESP_LOGE("sendData()", "Ensure that receiver is powered-on and MAC is correct.");
         deletePeer();
     }
-}
+}*/
 // Function for sending the data to the receiver
 void sendData (void);
 /*{
