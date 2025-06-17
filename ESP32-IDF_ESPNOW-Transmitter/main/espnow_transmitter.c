@@ -406,4 +406,5 @@ void app_main(void)
     //example_espnow_init();
 
     wifi_init();
+    esp_now_init();
 }
