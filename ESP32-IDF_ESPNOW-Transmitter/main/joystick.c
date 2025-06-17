@@ -36,11 +36,11 @@ typedef struct {
     uint8_t     motor4_rpm_pcm;
 } __attribute__((packed)) sensors_data_t;
 
-static int x, y; // Joystick x and y positions
-static adc_oneshot_unit_handle_t adc_xy_handle;
-static sensors_data_t buffer;
+int x, y; // Joystick x and y positions
+adc_oneshot_unit_handle_t adc_xy_handle;
+sensors_data_t buffer;
 
-static esp_err_t joystick_adc_init() {
+esp_err_t joystick_adc_init() {
     adc_oneshot_unit_init_cfg_t adc_init_config_xy = {
         .unit_id = ADC_UNIT_1,
         .ulp_mode = ADC_ULP_MODE_DISABLE,
@@ -61,18 +61,18 @@ static esp_err_t joystick_adc_init() {
     return ESP_OK;
 }
 
-static void joystick_show_raw_xy() {
+void joystick_show_raw_xy() {
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_0, &x));
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_1, &y));
     ESP_LOGI(TAG, "( %d, %d )", x, y);
 }
 
-static void get_joystick_xy(int *x_axis, int *y_axis) {
+void get_joystick_xy(int *x_axis, int *y_axis) {
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_0, x_axis));
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_1, y_axis));
 }
 
-static void joystick_task(void *arg) {
+void joystick_task(void *arg) {
     while (true) {
         joystick_show_raw_xy();
         vTaskDelay (10 / portTICK_PERIOD_MS);
@@ -84,7 +84,7 @@ void deletePeer (void) {
         ESP_LOGE("ESP-NOW", "Could not delete peer");
     }
 }
-static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status) {
+void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status) {
     if (status == ESP_NOW_SEND_SUCCESS) {
         ESP_LOGI(TAG, "Data sent successfully to: %02X:%02X:%02X:%02X:%02X:%02X",
                  mac_addr[0], mac_addr[1], mac_addr[2],
