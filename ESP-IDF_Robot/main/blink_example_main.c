@@ -308,9 +308,10 @@ static void display_chip_temperature () {
     ESP_LOGW("ESP32-C3", "Temperature value %.02f ℃", tsens_value);
 }
 
+// ESP-NOW callback on data received
 void onDataReceived (const uint8_t *mac_addr, const uint8_t *data, uint8_t data_len) {
 
-    memcpy(&buf, data, sizeof(buf));
+    memcpy(&buf, data, sizeof(buf));    // Write buffer into the struct
     rc_x = buf.x_axis;
     rc_y = buf.y_axis;
     update_pwm(rc_x, rc_y);    
