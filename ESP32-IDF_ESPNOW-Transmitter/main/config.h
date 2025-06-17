@@ -18,7 +18,6 @@ static const char *TAG = "ESP-NOW_Transmitter";
 #define NAV_BTN                     (8)                     // 8 GPIO joystick button
 
 /*  ============================
-    
             ESP NOW
     ============================
 
