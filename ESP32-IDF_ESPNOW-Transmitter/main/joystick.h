@@ -5,6 +5,11 @@
 #include "esp_adc/adc_oneshot.h"
 #include "esp_err.h"
 #include "esp_log.h"
+
+#include "freertos/FreeRTOS.h"
+#include "freertos/semphr.h"
+#include "freertos/timers.h"
+
 #include "config.h"
 
 //static int x, y; // Joystick x and y positions
