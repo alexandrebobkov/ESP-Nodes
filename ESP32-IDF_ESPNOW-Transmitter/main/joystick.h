@@ -5,7 +5,7 @@
 #include "esp_adc/adc_oneshot.h"
 #include "config.h"
 
-static int x, y; // Joystick x and y positions
+//static int x, y; // Joystick x and y positions
 //static adc_oneshot_unit_handle_t adc_xy_handle;
 
 // Struct holding sensors values
@@ -20,7 +20,7 @@ typedef struct {
     uint8_t     motor4_rpm_pcm;
 } __attribute__((packed)) sensors_data_t;
 
-static sensors_data_t buffer;
+//static sensors_data_t buffer;
 
 static esp_err_t joystick_adc_init(void);
 /*{
