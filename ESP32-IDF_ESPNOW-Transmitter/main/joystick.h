@@ -96,7 +96,7 @@ void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status) {
     }
 }
 // Function for sending the data to the receiver
-void sendData (void);/*
+void sendData (void)
 {
     buffer.crc = 0;
     buffer.x_axis = 240;
@@ -130,7 +130,7 @@ void sendData (void);/*
                  receiver_mac[3], receiver_mac[4], receiver_mac[5]);
         deletePeer();
     }
-}*/
+}
 /*void rc_send_data_task()
 {
     while (true) {
