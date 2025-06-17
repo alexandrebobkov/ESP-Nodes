@@ -312,8 +312,8 @@ static void display_chip_temperature () {
 void onDataReceived (const uint8_t *mac_addr, const uint8_t *data, uint8_t data_len) {
 
     memcpy(&buf, data, sizeof(buf));    // Write buffer into the struct
-    rc_x = buf.x_axis;                  // Save x-axis value
-    rc_y = buf.y_axis;                  // s
+    rc_x = buf.x_axis;                  // Save joystic x-axis value
+    rc_y = buf.y_axis;                  // Save y-axis value
     update_pwm(rc_x, rc_y);    
 }
 
