@@ -2,3 +2,6 @@
 ESP32_Temperture-Node/src/secrets.h
 *.tar.xz
 ESP-IDF_ePaper/components/arduino
+!*.bin
+!*.elf
+!*.map
