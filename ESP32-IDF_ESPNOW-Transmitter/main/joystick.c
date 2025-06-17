@@ -2,6 +2,7 @@
 #include "esp_adc/adc_oneshot.h"
 #include "esp_err.h"
 #include "esp_log.h"
+#include "esp_now.h"
 #include "config.h"
 #include "joystick.h"
 
