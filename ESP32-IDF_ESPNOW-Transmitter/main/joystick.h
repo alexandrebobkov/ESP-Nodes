@@ -6,7 +6,7 @@
 #include "config.h"
 
 static int x, y; // Joystick x and y positions
-static adc_oneshot_unit_handle_t adc_xy_handle;
+//static adc_oneshot_unit_handle_t adc_xy_handle;
 
 // Struct holding sensors values
 typedef struct {
