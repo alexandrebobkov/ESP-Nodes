@@ -47,8 +47,8 @@ static void joystick_show_raw_xy() {
 }
 
 static void get_joystick_xy(int* x_axis, int* y_axis) {
-    ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_0, &x));
-    ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_1, &y));
+    ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_0, &x_axis));
+    ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_1, &y_axis));
 }
 
 static void joystick_task(void *arg) {
