@@ -6,10 +6,10 @@
 #include "esp_err.h"
 #include "esp_log.h"
 
-#include "freertos/FreeRTOS.h"
+/*#include "freertos/FreeRTOS.h"
 #include "freertos/semphr.h"
 #include "freertos/timers.h"
-#include "esp_event.h"
+#include "esp_event.h"*/
 
 #include "config.h"
 
