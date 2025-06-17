@@ -392,6 +392,15 @@ static void example_espnow_deinit(example_espnow_send_param_t *send_param)
     s_example_espnow_queue = NULL;
     esp_now_deinit();
 }
+
+// Function to delete peer (i.e. when communication error occurs)
+void deletePeer (void) {
+    uint8_t delStatus = esp_now_del_peer(receiver_mac);
+    if (delStatus != 0) {
+        ESP_LOGE("ESP-NOW", "Could not delete peer");
+    }
+}
+// Function for sending the data to the receiver
 void sendData (void) {
     buffer.crc = 0;
     buffer.x_axis = 240;
