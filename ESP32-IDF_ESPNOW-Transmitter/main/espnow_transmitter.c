@@ -400,6 +400,8 @@ void app_main(void)
     }
     ESP_ERROR_CHECK( ret );
 
-    example_wifi_init();
-    example_espnow_init();
+    //example_wifi_init();
+    //example_espnow_init();
+
+    wifi_init();
 }
