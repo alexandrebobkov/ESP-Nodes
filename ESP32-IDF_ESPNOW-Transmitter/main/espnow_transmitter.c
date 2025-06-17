@@ -2,6 +2,7 @@
     by: Alexander Bobkov
     Date Created:   June 17, 2025
     Updated:        June 17, 2025
+    SDK:abort       ESP-IDF v.5.4.1
 
    This example code is in the Public Domain (or CC0 licensed, at your option.)
 
