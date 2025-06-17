@@ -393,7 +393,33 @@ static void example_espnow_deinit(example_espnow_send_param_t *send_param)
     esp_now_deinit();
 }
 void sendData (void) {
-    
+    buffer.crc = 0;
+    buffer.x_axis = 240;
+    buffer.y_axis = 256;
+    buffer.nav_bttn = 0;
+    buffer.motor1_rpm_pcm = 0; //10;
+    buffer.motor2_rpm_pcm = 0;
+    buffer.motor3_rpm_pcm = 0;
+    buffer.motor4_rpm_pcm = 0;
+
+    get_joystick_xy(&x, &y);
+    //ESP_LOGI("(x, y)", "[ %d, %d ]", x, y);
+    buffer.x_axis = x;
+    buffer.y_axis = y;
+
+    // Display brief summary of data being sent.
+    //ESP_LOGI(TAG, "Joystick (x,y) position ( %d, %d )", buffer.x_axis, buffer.y_axis);  
+    //ESP_LOGI(TAG, "pcm 1, pcm 2 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor1_rpm_pcm, (uint8_t)buffer.motor2_rpm_pcm);
+    //ESP_LOGI(TAG, "pcm 3, pcm 4 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor3_rpm_pcm, (uint8_t)buffer.motor4_rpm_pcm);
+
+    // Call ESP-NOW function to send data (MAC address of receiver, pointer to the memory holding data & data length)
+    uint8_t result = esp_now_send(receiver_mac, &buffer, sizeof(buffer));
+
+    // If status is NOT OK, display error message and error code (in hexadecimal).
+    if (result != 0) {
+        ESP_LOGE("ESP-NOW", "Error sending data! Error code: 0x%04X", result);
+        deletePeer();
+    }
 }
 static void rc_send_data_task()
 {
