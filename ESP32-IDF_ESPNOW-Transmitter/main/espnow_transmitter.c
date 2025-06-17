@@ -130,6 +130,14 @@ void app_main(void)
         ESP_LOGE(TAG, "wifi_init() failed: %s", esp_err_to_name(wifi_ret));
         return;
     }
+    ESP_LOGI(TAG, "Wi-Fi initialized successfully");
+
+    esp_err_t espnow_ret = esp_now_init();
+    if (espnow_ret != ESP_OK) {
+        ESP_LOGE(TAG, "Error initializing ESPNOW");
+        ESP_LOGE(TAG, "esp_now_init() failed: %s", esp_err_to_name(espnow_ret));
+        return;
+    }
     ESP_LOGI(TAG, "ESPNOW initialized successfully");
 
     // Set ESP-NOW receiver device configuration values
