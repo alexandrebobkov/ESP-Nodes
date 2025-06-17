@@ -22,8 +22,8 @@ typedef struct {
 
 static sensors_data_t buffer;
 
-static esp_err_t joystick_adc_init(void);
-/* {
+static esp_err_t joystick_adc_init(void)
+{
     adc_oneshot_unit_init_cfg_t adc_init_config_xy = {
         .unit_id = ADC_UNIT_1,
         .ulp_mode = ADC_ULP_MODE_DISABLE,
@@ -42,7 +42,7 @@ static esp_err_t joystick_adc_init(void);
     ESP_ERROR_CHECK(adc_oneshot_config_channel(adc_xy_handle, ADC1_CHANNEL_1, &config_y));
 
     return ESP_OK;
-}*/
+}
 
 static void joystick_show_raw_xy() {
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_0, &x));
