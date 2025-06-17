@@ -71,8 +71,6 @@ void joystick_task(void *arg) {
     }
 }
 
-
-
 // Function to delete peer (i.e. when communication error occurs)
 void deletePeer (void) {
     uint8_t delStatus = esp_now_del_peer(receiver_mac);
