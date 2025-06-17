@@ -376,6 +376,7 @@ void app_main(void)
     }
     ESP_ERROR_CHECK( ret );
 
+    // Initialize buffer with 0s
     buf.x_axis = 0;
     buf.y_axis = 0;
     buf.motor1_rpm_pcm = 0;
