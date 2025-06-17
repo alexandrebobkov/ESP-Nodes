@@ -5,7 +5,19 @@
 #include "esp_adc/adc_oneshot.h"
 
 tatic int x, y;
-static adc_oneshot_unit_handle_t adc_xy_handle; 
+static adc_oneshot_unit_handle_t adc_xy_handle;
+
+// Struct holding sensors values
+typedef struct {
+    uint16_t    crc;                // CRC16 value of ESPNOW data
+    int         x_axis;             // Joystick x-position
+    int         y_axis;             // Joystick y-position
+    bool        nav_bttn;           // Joystick push button
+    uint8_t     motor1_rpm_pcm;     // PWMs for 4 DC motors
+    uint8_t     motor2_rpm_pcm;
+    uint8_t     motor3_rpm_pcm;
+    uint8_t     motor4_rpm_pcm;
+} __attribute__((packed)) sensors_data_t;
 
 static esp_err_t joystick_adc_init() {
     adc_oneshot_unit_init_cfg_t adc_init_config_xy = {
