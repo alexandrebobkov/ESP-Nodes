@@ -31,6 +31,7 @@
 #include "espnow_example.h"
 
 #include "joystick.h"
+#include "config.h"
 
 #define ESPNOW_MAXDELAY 512
 
