@@ -412,5 +412,5 @@ void app_main(void)
     memcpy(devices.peer_addr, receiver_mac, 6);
     devices.channel = 1;
     devices.encrypt = false;
-    esp_now_add_peer(&peerInfo);
+    esp_now_add_peer(&devices);
 }
