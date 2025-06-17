@@ -30,6 +30,8 @@
 #include "esp_crc.h"
 #include "espnow_example.h"
 
+#include "joystick.h"
+
 #define ESPNOW_MAXDELAY 512
 
 static const char *TAG = "ESP-NOW_Transmitter";
