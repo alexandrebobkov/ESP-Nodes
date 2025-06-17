@@ -22,7 +22,7 @@ typedef struct {
 
 static sensors_data_t buffer;
 
-static esp_err_t joystick_adc_init();
+static esp_err_t joystick_adc_init(void);
 /* {
     adc_oneshot_unit_init_cfg_t adc_init_config_xy = {
         .unit_id = ADC_UNIT_1,
