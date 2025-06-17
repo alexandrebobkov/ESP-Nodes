@@ -10,8 +10,6 @@
 //static int x, y; // Joystick x and y positions
 //static adc_oneshot_unit_handle_t adc_xy_handle;
 
-
-
 //static sensors_data_t buffer;
 esp_err_t joystick_adc_init(void) {
     adc_oneshot_unit_init_cfg_t adc_init_config_xy = {
