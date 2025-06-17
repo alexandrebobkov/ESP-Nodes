@@ -35,7 +35,8 @@
 #include "joystick.h"
 #include "config.h"
 
-static esp_now_peer_info_t devices;
+const char *TAG = "ESP-NOW_Transmitter"; 
+esp_now_peer_info_t devices;
 
 /* WiFi should start before using ESPNOW */
 static void wifi_init() {
@@ -68,7 +69,7 @@ void app_main(void)
 
     esp_err_t espnow_ret = esp_now_init();
     if (espnow_ret != ESP_OK) {
-        ESP_LOGE(TAG, "Error initializing ESPNOW");
+        //ESP_LOGE(TAG, "Error initializing ESPNOW: %s", espnow_ret);
         ESP_LOGE(TAG, "esp_now_init() failed: %s", esp_err_to_name(espnow_ret));
         return;
     }

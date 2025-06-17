@@ -5,8 +5,6 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-static const char *TAG = "ESP-NOW_Transmitter"; 
-
 #define ESPNOW_MAXDELAY 512
 
 /*  ============================

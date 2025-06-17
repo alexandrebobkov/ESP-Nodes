@@ -5,9 +5,11 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/semphr.h"
 #include "freertos/timers.h"
+#include "freertos/task.h"
 #include "nvs_flash.h"
 #include "esp_random.h"
 #include "esp_event.h"
+#include "esp_err.h"
 #include "esp_netif.h"
 #include "esp_wifi.h"
 #include "esp_log.h"
@@ -19,6 +21,8 @@
 #include "esp_adc/adc_oneshot.h"
 
 #include "config.h"
+
+const char *TAG = "ESP-NOW_Transmitter"; 
 
 // Struct holding sensors values
 typedef struct {
@@ -60,7 +64,7 @@ static esp_err_t joystick_adc_init() {
 static void joystick_show_raw_xy() {
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_0, &x));
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_1, &y));
-    ESP_LOGI("(x,y)", "( %d, %d )", x, y);
+    ESP_LOGI(TAG, "( %d, %d )", x, y);
 }
 
 static void get_joystick_xy(int *x_axis, int *y_axis) {

@@ -1,8 +1,10 @@
 #ifndef JOYSTICK_H
 #define JOYSTICK_H
 
-#include "driver/adc.h"
-#include "esp_adc/adc_oneshot.h"
+//#include "driver/adc.h"
+//#include "esp_adc/adc_oneshot.h"
+#include "esp_err.h"
+#include "esp_log.h"
 #include "config.h"
 
 //static int x, y; // Joystick x and y positions
