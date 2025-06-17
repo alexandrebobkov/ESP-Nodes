@@ -4,5 +4,9 @@ ESP32_Temperture-Node/src/secrets.h
 ESP-IDF_ePaper/components/arduino
 .vscode/
 build/*
-.vscode/
-!build/**/*.{bin,elf,map}
+!build/*.bin
+!build/*.elf
+!build/*.map
+!build/**/*.bin
+!build/**/*.elf
+!build/**/*.map
