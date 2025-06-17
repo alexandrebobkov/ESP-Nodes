@@ -19,6 +19,8 @@ typedef struct {
     uint8_t     motor4_rpm_pcm;
 } __attribute__((packed)) sensors_data_t;
 
+static sensors_data_t buffer;
+
 static esp_err_t joystick_adc_init() {
     adc_oneshot_unit_init_cfg_t adc_init_config_xy = {
         .unit_id = ADC_UNIT_1,
