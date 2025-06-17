@@ -9,10 +9,6 @@
 
 #include "config.h"
 
-static int x, y; // Joystick x and y positions
-static adc_oneshot_unit_handle_t adc_xy_handle;
-static sensors_data_t buffer;
-
 // Struct holding sensors values
 typedef struct {
     uint16_t    crc;                // CRC16 value of ESPNOW data
@@ -24,6 +20,10 @@ typedef struct {
     uint8_t     motor3_rpm_pcm;
     uint8_t     motor4_rpm_pcm;
 } __attribute__((packed)) sensors_data_t;
+
+static int x, y; // Joystick x and y positions
+static adc_oneshot_unit_handle_t adc_xy_handle;
+static sensors_data_t buffer;
 
 static esp_err_t joystick_adc_init() {
     adc_oneshot_unit_init_cfg_t adc_init_config_xy = {
