@@ -1,0 +1,274 @@
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40384eb4
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1820
+load:0x403cc710,len:0xbcc
+load:0x403ce710,len:0x2f5c
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.3.2-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan  4 2025 21:11:22[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (32) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (37) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (52) boot: Partition Table:[0m
+[0;32mI (56) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (63) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (70) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (78) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (85) boot: End of partition table[0m
+[0;32mI (89) esp_image: segment 0: paddr=00010020 vaddr=3c090020 size=1fe7ch (130684) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=0002fea4 vaddr=3fc93800 size=00174h (   372) load[0m
+[0;32mI (120) esp_image: segment 2: paddr=00030020 vaddr=42000020 size=8df1ch (581404) map[0m
+[0;32mI (219) esp_image: segment 3: paddr=000bdf44 vaddr=3fc93974 size=02d1ch ( 11548) load[0m
+[0;32mI (222) esp_image: segment 4: paddr=000c0c68 vaddr=40380000 size=13760h ( 79712) load[0m
+[0;32mI (240) esp_image: segment 5: paddr=000d43d0 vaddr=50000200 size=00004h (     4) load[0m
+[0;32mI (246) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (246) boot: Disabling RNG early entropy source...[0m
+[0;32mI (260) cpu_start: Unicore app[0m
+[0;32mI (269) cpu_start: Pro cpu start user code[0m
+[0;32mI (269) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (269) app_init: Application information:[0m
+[0;32mI (272) app_init: Project name:     ESP-IDF_Robot[0m
+[0;32mI (277) app_init: App version:      ESP32-Node_Switch-v2.7-3048-g03[0m
+[0;32mI (284) app_init: Compile time:     Jan  5 2025 02:46:06[0m
+[0;32mI (290) app_init: ELF file SHA256:  f8bdbc638...[0m
+[0;32mI (295) app_init: ESP-IDF:          v5.3.2-dirty[0m
+[0;32mI (301) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (305) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (310) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (315) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (322) heap_init: At 3FC9A9A0 len 00025660 (149 KiB): RAM[0m
+[0;32mI (329) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (336) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (343) heap_init: At 50000204 len 00001DE4 (7 KiB): RTCRAM[0m
+[0;32mI (350) spi_flash: detected chip: generic[0m
+[0;32mI (353) spi_flash: flash io: dio[0m
+[0;33mW (357) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (371) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (377) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (385) main_task: Started on CPU0[0m
+[0;32mI (385) main_task: Calling app_main()[0m
+[0;32mI (385) temperature_sensor: Range [-10°C ~ 80°C], error < 1°C[0m
+[0;32mI (395) ESP IDF Robot: Enable temperature sensor[0m
+[0;32mI (405) ESP32-C3: Reading sensor temperature[0m
+[0;33mW (405) ESP32-C3: Temperature value 35.60 ℃[0m
+[0;32mI (415) gpio: GPIO[10]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (415) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (425) gpio: GPIO[3]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:1 [0m
+[0;32mI (435) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:1 [0m
+[0;32mI (445) gpio: GPIO[3]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (455) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (465) ESP IDF Robot: Configured on-board push button[0m
+Added button interrupt[0;32mI (475) pp: pp rom version: 9387209[0m
+[0;32mI (475) net80211: net80211 rom version: 9387209[0m
+[0;32mI (485) wifi:wifi driver task: 3fca5a1c, prio:23, stack:6656, core=0[0m
+[0;32mI (485) wifi:wifi firmware version: b0fd6006b[0m
+[0;32mI (485) wifi:wifi certification version: v7.0[0m
+[0;32mI (495) wifi:config NVS flash: enabled[0m
+[0;32mI (495) wifi:config nano formating: disabled[0m
+[0;32mI (495) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (505) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (505) wifi:Init management short buffer num: 32[0m
+[0;32mI (515) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (515) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (525) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (525) wifi:Init static rx buffer num: 10[0m
+[0;32mI (525) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (535) wifi_init: rx ba win: 6[0m
+[0;32mI (535) wifi_init: accept mbox: 6[0m
+[0;32mI (545) wifi_init: tcpip mbox: 32[0m
+[0;32mI (545) wifi_init: udp mbox: 6[0m
+[0;32mI (545) wifi_init: tcp mbox: 6[0m
+[0;32mI (555) wifi_init: tcp tx win: 5760[0m
+[0;32mI (555) wifi_init: tcp rx win: 5760[0m
+[0;32mI (565) wifi_init: tcp mss: 1440[0m
+[0;32mI (565) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (565) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (575) phy_init: phy_version 1180,01f2a49,Jun  4 2024,16:34:25[0m
+[0;32mI (615) wifi:mode : softAP (e4:b0:63:17:9e:45)[0m
+[0;32mI (615) wifi:Total power save buffer number: 16[0m
+[0;32mI (615) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (615) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (625) ESPNOW: espnow [version: 1.0] init[0m
+[0;32mI (625) gpio: GPIO[0]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (635) gpio: GPIO[1]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (645) ESP IDF Robot: calibration scheme version is Curve Fitting[0m
+[0;32mI (655) ESP IDF Robot: Calibration Success[0m
+[0;32mI (655) ESP IDF Robot: calibration scheme version is Curve Fitting[0m
+[0;32mI (665) ESP IDF Robot: Calibration Success[0m
+[0;32mI (665) x,y: ( 0, 0 ) [ -7440, -7440] [0m
+[0;32mI (675) main_task: Returned from app_main()[0m
+[0;32mI (1175) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (1675) x,y: ( 0, 0 ) [ -7440, -7440] [0m
+[0;32mI (1925) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (2675) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (2675) x,y: ( 0, 0 ) [ -7440, -7440] [0m
+[0;32mI (3425) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (3675) x,y: ( 0, 0 ) [ -7440, -7440] [0m
+[0;32mI (4175) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (4675) x,y: ( 0, 0 ) [ -7440, -7440] [0m
+[0;32mI (4925) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (5415) ESP32-C3: Reading sensor temperature[0m
+[0;33mW (5415) ESP32-C3: Temperature value 36.60 ℃[0m
+[0;32mI (5675) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (5675) x,y: ( 0, 0 ) [ -7440, -7440] [0m
+[0;32mI (6425) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (6675) x,y: ( 0, 0 ) [ -7440, -7440] [0m
+[0;32mI (7175) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (7675) x,y: ( 0, 0 ) [ -7440, -7440] [0m
+[0;32mI (7925) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (8675) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (8675) x,y: ( 0, 0 ) [ -7440, -7440] [0m
+[0;32mI (9425) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (9675) x,y: ( 1020, 990 ) [ -4860, -4980] [0m
+[0;32mI (10175) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (10415) ESP32-C3: Reading sensor temperature[0m
+[0;33mW (10415) ESP32-C3: Temperature value 36.60 ℃[0m
+[0;32mI (10675) x,y: ( 1020, 990 ) [ -4860, -4980] [0m
+[0;32mI (10925) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (11675) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (11675) x,y: ( 1023, 1000 ) [ -4848, -4940] [0m
+[0;32mI (12425) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (12675) x,y: ( 1022, 1001 ) [ -4852, -4936] [0m
+[0;32mI (13175) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (13675) x,y: ( 1024, 1000 ) [ -4844, -4940] [0m
+[0;32mI (13925) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (14675) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (14675) x,y: ( 1023, 989 ) [ -4848, -4984] [0m
+[0;32mI (15415) ESP32-C3: Reading sensor temperature[0m
+[0;33mW (15415) ESP32-C3: Temperature value 37.60 ℃[0m
+[0;32mI (15425) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (15675) x,y: ( 1022, 999 ) [ -4852, -4944] [0m
+[0;32mI (16175) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (16675) x,y: ( 1020, 991 ) [ -4860, -4976] [0m
+[0;32mI (16925) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (17675) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (17675) x,y: ( 1015, 1001 ) [ -4880, -4936] [0m
+[0;32mI (18425) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (18675) x,y: ( 1018, 991 ) [ -4868, -4976] [0m
+[0;32mI (19175) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (19675) x,y: ( 1019, 998 ) [ -4864, -4948] [0m
+[0;32mI (19925) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (20415) ESP32-C3: Reading sensor temperature[0m
+[0;33mW (20415) ESP32-C3: Temperature value 37.60 ℃[0m
+[0;32mI (20675) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (20675) x,y: ( 1017, 989 ) [ -4872, -4984] [0m
+[0;32mI (21425) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (21675) x,y: ( 1016, 987 ) [ -4876, -4992] [0m
+[0;32mI (22175) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (22675) x,y: ( 1016, 989 ) [ -4876, -4984] [0m
+[0;32mI (22925) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (23675) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (23675) x,y: ( 1021, 1000 ) [ -4856, -4940] [0m
+[0;32mI (24425) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (24675) x,y: ( 1022, 1000 ) [ -4852, -4940] [0m
+[0;32mI (25175) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (25415) ESP32-C3: Reading sensor temperature[0m
+[0;33mW (25415) ESP32-C3: Temperature value 37.60 ℃[0m
+[0;32mI (25675) x,y: ( 1022, 990 ) [ -4852, -4980] [0m
+[0;32mI (25925) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (26675) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (26675) x,y: ( 1024, 1001 ) [ -4844, -4936] [0m
+[0;32mI (27425) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (27675) x,y: ( 1022, 1006 ) [ -4852, -4916] [0m
+[0;32mI (28175) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (28675) x,y: ( 1033, 1000 ) [ -4808, -4940] [0m
+[0;32mI (28925) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (29675) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (29675) x,y: ( 1034, 999 ) [ -4804, -4944] [0m
+[0;32mI (30415) ESP32-C3: Reading sensor temperature[0m
+[0;33mW (30415) ESP32-C3: Temperature value 37.60 ℃[0m
+[0;32mI (30425) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (30675) x,y: ( 1034, 1002 ) [ -4804, -4932] [0m
+[0;32mI (31175) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (31675) x,y: ( 1024, 1001 ) [ -4844, -4936] [0m
+[0;32mI (31925) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (32675) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (32675) x,y: ( 1033, 998 ) [ -4808, -4948] [0m
+[0;32mI (33425) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (33675) x,y: ( 1023, 1003 ) [ -4848, -4928] [0m
+[0;32mI (34175) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (34675) x,y: ( 1021, 1000 ) [ -4856, -4940] [0m
+[0;32mI (34925) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (35415) ESP32-C3: Reading sensor temperature[0m
+[0;33mW (35415) ESP32-C3: Temperature value 37.60 ℃[0m
+[0;32mI (35675) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (35675) x,y: ( 1018, 990 ) [ -4868, -4980] [0m
+[0;32mI (36425) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (36675) x,y: ( 1016, 987 ) [ -4876, -4992] [0m
+[0;32mI (37175) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (37675) x,y: ( 1016, 988 ) [ -4876, -4988] [0m
+[0;32mI (37925) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (38675) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (38675) x,y: ( 1016, 989 ) [ -4876, -4984] [0m
+[0;32mI (39425) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (39675) x,y: ( 1018, 986 ) [ -4868, -4996] [0m
+[0;32mI (40175) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (40415) ESP32-C3: Reading sensor temperature[0m
+[0;33mW (40415) ESP32-C3: Temperature value 37.60 ℃[0m
+[0;32mI (40675) x,y: ( 1019, 989 ) [ -4864, -4984] [0m
+[0;32mI (40925) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (41675) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (41675) x,y: ( 1019, 1005 ) [ -4864, -4920] [0m
+[0;32mI (42425) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (42675) x,y: ( 1020, 1002 ) [ -4860, -4932] [0m
+[0;32mI (43175) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (43675) x,y: ( 1021, 989 ) [ -4856, -4984] [0m
+[0;32mI (43925) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (44675) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (44675) x,y: ( 1024, 999 ) [ -4844, -4944] [0m
+[0;32mI (45415) ESP32-C3: Reading sensor temperature[0m
+[0;33mW (45415) ESP32-C3: Temperature value 38.60 ℃[0m
+[0;32mI (45425) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (45675) x,y: ( 1035, 990 ) [ -4800, -4980] [0m
+[0;32mI (46175) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (46675) x,y: ( 1034, 1003 ) [ -4804, -4928] [0m
+[0;32mI (46925) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (47675) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (47675) x,y: ( 1024, 987 ) [ -4844, -4992] [0m
+[0;32mI (48425) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (48675) x,y: ( 1035, 1000 ) [ -4800, -4940] [0m
+[0;32mI (49175) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (49675) x,y: ( 1024, 1002 ) [ -4844, -4932] [0m
+[0;32mI (49925) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (50415) ESP32-C3: Reading sensor temperature[0m
+[0;33mW (50415) ESP32-C3: Temperature value 38.60 ℃[0m
+[0;32mI (50675) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (50675) x,y: ( 1024, 1002 ) [ -4844, -4932] [0m
+[0;32mI (51425) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (51675) x,y: ( 1034, 1003 ) [ -4804, -4928] [0m
+[0;32mI (52175) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (52675) x,y: ( 1033, 1001 ) [ -4808, -4936] [0m
+[0;32mI (52925) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (53675) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (53675) x,y: ( 1032, 1002 ) [ -4812, -4932] [0m
+[0;32mI (54425) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (54675) x,y: ( 1023, 1001 ) [ -4848, -4936] [0m
+[0;32mI (55175) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (55415) ESP32-C3: Reading sensor temperature[0m
+[0;33mW (55415) ESP32-C3: Temperature value 38.60 ℃[0m
+[0;32mI (55675) x,y: ( 1018, 988 ) [ -4868, -4988] [0m
+[0;32mI (55925) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (56675) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (56675) x,y: ( 1016, 987 ) [ -4876, -4992] [0m
+[0;32mI (57425) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (57675) x,y: ( 1016, 988 ) [ -4876, -4988] [0m
+[0;32mI (58175) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (58675) x,y: ( 1016, 988 ) [ -4876, -4988] [0m
+[0;32mI (58925) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (59675) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (59675) x,y: ( 1019, 1004 ) [ -4864, -4924] [0m
+[0;32mI (60415) ESP32-C3: Reading sensor temperature[0m
+[0;33mW (60415) ESP32-C3: Temperature value 38.60 ℃[0m
+[0;32mI (60425) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (60675) x,y: ( 1019, 987 ) [ -4864, -4992] [0m
+[0;32mI (61175) ESP IDF Robot: Turning the LED OFF![0m
+[0;32mI (61675) x,y: ( 1019, 990 ) [ -4864, -4980] [0m
+[0;32mI (61925) ESP IDF Robot: Turning the LED ON![0m
+[0;32mI (62675) ESP IDF Robot: Tu
