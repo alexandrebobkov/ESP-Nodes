@@ -42,7 +42,7 @@ typedef struct {
 static uint8_t receiver_mac[ESP_NOW_ETH_ALEN]   = {0xE4, 0xB0, 0x63, 0x17, 0x9E, 0x45};     // MAC address of Robot
 
 static esp_now_peer_info_t peerInfo;                // ESP-NOW pointer holding info about devices (peers)
-static sensors_data_t *buf, buffer;                         // Pointer to the struct buffer holding data being sent.
+static sensors_data_t *buf, buffer;                 // Pointer to the struct buffer holding data being sent.
 static const char *TAG = "Remote Controller";
 static int x = 0, y = 0;
 
