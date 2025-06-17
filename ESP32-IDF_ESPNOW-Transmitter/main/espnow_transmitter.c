@@ -96,6 +96,7 @@ void sendData (void) {
     // If status is NOT OK, display error message and error code (in hexadecimal).
     if (result != 0) {
         ESP_LOGE("ESP-NOW", "Error sending data! Error code: 0x%04X", result);
+        ESP_LOGE("ESP-NOW", "esp_now_send() failed: %s", esp_err_to_name(result));
         deletePeer();
     }
 }
