@@ -40,7 +40,7 @@ const char *TAG = "ESP-NOW_Transmitter";
 esp_now_peer_info_t devices;
 
 /* WiFi should start before using ESPNOW */
-static void wifi_init() {
+void wifi_init() {
     ESP_ERROR_CHECK(esp_netif_init());
     ESP_ERROR_CHECK(esp_event_loop_create_default());
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
