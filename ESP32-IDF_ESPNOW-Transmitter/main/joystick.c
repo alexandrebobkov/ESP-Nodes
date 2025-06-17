@@ -3,6 +3,8 @@
 
 #include "config.h"
 
+static adc_oneshot_unit_handle_t adc_xy_handle;
+
 static esp_err_t joystick_adc_init() {
     adc_oneshot_unit_init_cfg_t adc_init_config_xy = {
         .unit_id = ADC_UNIT_1,
