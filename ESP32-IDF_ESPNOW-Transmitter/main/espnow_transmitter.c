@@ -394,6 +394,13 @@ static void example_espnow_deinit(example_espnow_send_param_t *send_param)
 }
 
 static void rc_send_data_task()
+{
+    while (true) {
+        if (esp_now_is_peer_exist(receiver_mac))
+            sendData()
+        vTaskDelay (10 / portTICK_PERIOD_MS);
+    }
+}
 
 void app_main(void)
 {
