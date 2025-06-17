@@ -35,8 +35,7 @@
 #include "joystick.h"
 #include "config.h"
 
-static const char *TAG = "ESP-NOW_Transmitter";
-static sensors_data_t buffer; 
+static const char *TAG = "ESP-NOW_Transmitter"; 
 
 /* WiFi should start before using ESPNOW */
 static void wifi_init() {
