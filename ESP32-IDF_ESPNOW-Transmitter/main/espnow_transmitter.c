@@ -36,7 +36,7 @@
 #define ESPNOW_MAXDELAY 512
 
 static const char *TAG = "ESP-NOW_Transmitter";
-static sensors_data_t buffer; 
+static sensors_data_t *buffer; 
 
 static QueueHandle_t s_example_espnow_queue = NULL;
 
