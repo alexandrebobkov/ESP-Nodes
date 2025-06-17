@@ -113,7 +113,7 @@ void sendData (void) {
     }
 }
 
-// Continous, periodic task that sends data.
+// Continous, periodic task for sending the data.
 static void rc_send_data_task (void *arg) {
 
     while (true) {
