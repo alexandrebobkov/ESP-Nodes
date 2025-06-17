@@ -117,7 +117,7 @@ void sendData (void);
         deletePeer();
     }
 }*/
-static void rc_send_data_task();
+static void rc_send_data_task(void);
 /*{
     while (true) {
         if (esp_now_is_peer_exist(receiver_mac))
