@@ -35,8 +35,6 @@
 #include "joystick.h"
 #include "config.h"
 
-#define ESPNOW_MAXDELAY 512
-
 static const char *TAG = "ESP-NOW_Transmitter";
 static sensors_data_t buffer; 
 
