@@ -81,7 +81,7 @@ void deletePeer (void) {
         ESP_LOGE("ESP-NOW", "Could not delete peer");
     }
 }
-// Function to send data to the receiver
+// Function for sending the data to the receiver
 void sendData (void) {
 
     buffer.crc = 0;
