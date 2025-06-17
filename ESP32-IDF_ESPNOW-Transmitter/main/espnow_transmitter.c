@@ -140,9 +140,6 @@ void app_main(void)
     }
     ESP_ERROR_CHECK( ret );
 
-    //example_wifi_init();
-    //example_espnow_init();
-
     wifi_init();
 
     esp_err_t espnow_ret = esp_now_init();
