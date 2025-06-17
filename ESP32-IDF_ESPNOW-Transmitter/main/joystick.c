@@ -1,5 +1,6 @@
 #include "driver/adc.h"
 #include "esp_adc/adc_oneshot.h"
+
 #include "config.h"
 
 static esp_err_t joystick_adc_init() {
