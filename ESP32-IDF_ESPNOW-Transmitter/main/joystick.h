@@ -1,8 +1,8 @@
 #ifndef JOYSTICK_H
 #define JOYSTICK_H
 
-//#include "driver/adc.h"
-//#include "esp_adc/adc_oneshot.h"
+#include "driver/adc.h"
+#include "esp_adc/adc_oneshot.h"
 #include "esp_err.h"
 #include "esp_log.h"
 #include "config.h"
@@ -13,8 +13,7 @@
 
 
 //static sensors_data_t buffer;
-esp_err_t joystick_adc_init(void);
-/*{
+esp_err_t joystick_adc_init(void) {
     adc_oneshot_unit_init_cfg_t adc_init_config_xy = {
         .unit_id = ADC_UNIT_1,
         .ulp_mode = ADC_ULP_MODE_DISABLE,
@@ -33,39 +32,36 @@ esp_err_t joystick_adc_init(void);
     ESP_ERROR_CHECK(adc_oneshot_config_channel(adc_xy_handle, ADC1_CHANNEL_1, &config_y));
 
     return ESP_OK;
-}*/
+}
 
-void joystick_show_raw_xy();
-/*{
+void joystick_show_raw_xy() {
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_0, &x));
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_1, &y));
     ESP_LOGI("(x,y)", "( %d, %d )", x, y);
-}*/
+}
 
-void get_joystick_xy(int *x_axis, int *y_axis);
-/*{
+void get_joystick_xy(int *x_axis, int *y_axis) {
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_0, x_axis));
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_1, y_axis));
-}*/
+}
 
-void joystick_task(void *arg);
-/*{
+void joystick_task(void *arg) {
     while (true) {
         joystick_show_raw_xy();
         vTaskDelay (10 / portTICK_PERIOD_MS);
     }
-}*/
+}
 
 
 
 // Function to delete peer (i.e. when communication error occurs)
-void deletePeer (void);/*{
+void deletePeer (void) {
     uint8_t delStatus = esp_now_del_peer(receiver_mac);
     if (delStatus != 0) {
         ESP_LOGE("ESP-NOW", "Could not delete peer");
     }
-}*/
-void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status);/*{
+}
+void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status) {
     if (status == ESP_NOW_SEND_SUCCESS) {
         ESP_LOGI(TAG, "Data sent successfully to: %02X:%02X:%02X:%02X:%02X:%02X",
                  mac_addr[0], mac_addr[1], mac_addr[2],
@@ -79,10 +75,10 @@ void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status);/*{
         ESP_LOGE("sendData()", "Ensure that receiver is powered-on and MAC is correct.");
         deletePeer();
     }
-}*/
+}
 // Function for sending the data to the receiver
-void sendData (void);
-/*{
+void sendData (void)
+{
     buffer.crc = 0;
     buffer.x_axis = 240;
     buffer.y_axis = 256;
@@ -115,7 +111,7 @@ void sendData (void);
                  receiver_mac[3], receiver_mac[4], receiver_mac[5]);
         deletePeer();
     }
-}*/
+}
 //void rc_send_data_task(void *arg);
 /*{
     while (true) {
