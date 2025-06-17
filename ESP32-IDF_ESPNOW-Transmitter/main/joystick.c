@@ -135,7 +135,7 @@ void sendData (void) {
     }
 }
 
-static void rc_send_data_task()
+void rc_send_data_task()
 {
     while (true) {
         if (esp_now_is_peer_exist(receiver_mac))
