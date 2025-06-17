@@ -38,10 +38,6 @@
 static const char *TAG = "ESP-NOW_Transmitter";
 static sensors_data_t buffer; 
 
-//static uint8_t s_example_broadcast_mac[ESP_NOW_ETH_ALEN] = { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
-
-//static void example_espnow_deinit(example_espnow_send_param_t *send_param);
-
 /* WiFi should start before using ESPNOW */
 static void wifi_init() {
     ESP_ERROR_CHECK(esp_netif_init());
