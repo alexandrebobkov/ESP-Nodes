@@ -35,6 +35,8 @@
 #include "joystick.h"
 #include "config.h"
 
+static esp_now_peer_info_t devices;
+
 void app_main(void)
 {
     joystick_adc_init();

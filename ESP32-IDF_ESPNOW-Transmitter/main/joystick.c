@@ -3,8 +3,6 @@
 
 #include "config.h"
 
-static esp_now_peer_info_t devices;
-
 static esp_err_t joystick_adc_init() {
     adc_oneshot_unit_init_cfg_t adc_init_config_xy = {
         .unit_id = ADC_UNIT_1,
