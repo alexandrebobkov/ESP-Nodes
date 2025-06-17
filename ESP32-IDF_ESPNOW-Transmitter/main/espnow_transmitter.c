@@ -124,9 +124,10 @@ void app_main(void)
     //example_wifi_init();
     //example_espnow_init();
 
-    wifi_init();
-    if (esp_now_init() != ESP_OK) {
+    esp_err_t wifi_ret = wifi_init();
+    if (wifi_ret != ESP_OK) {
         ESP_LOGE(TAG, "Error initializing ESPNOW");
+        ESP_LOGE(TAG, "wifi_init() failed: %s", esp_err_to_name(wifi_ret));
         return;
     }
     ESP_LOGI(TAG, "ESPNOW initialized successfully");
