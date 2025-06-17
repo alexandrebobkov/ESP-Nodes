@@ -4,7 +4,7 @@
 #include "driver/adc.h"
 #include "esp_adc/adc_oneshot.h"
 
-static int x, y;
+static int x_axis, y_axis;
 static adc_oneshot_unit_handle_t adc_xy_handle;
 
 // Struct holding sensors values
