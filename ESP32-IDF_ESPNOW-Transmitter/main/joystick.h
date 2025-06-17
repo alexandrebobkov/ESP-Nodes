@@ -9,6 +9,21 @@
 
 //static int x, y; // Joystick x and y positions
 //static adc_oneshot_unit_handle_t adc_xy_handle;
+// Struct holding sensors values
+typedef struct {
+    uint16_t    crc;                // CRC16 value of ESPNOW data
+    int         x_axis;             // Joystick x-position
+    int         y_axis;             // Joystick y-position
+    bool        nav_bttn;           // Joystick push button
+    uint8_t     motor1_rpm_pcm;     // PWMs for 4 DC motors
+    uint8_t     motor2_rpm_pcm;
+    uint8_t     motor3_rpm_pcm;
+    uint8_t     motor4_rpm_pcm;
+} __attribute__((packed)) sensors_data_t;
+
+int x, y; // Joystick x and y positions
+adc_oneshot_unit_handle_t adc_xy_handle;
+sensors_data_t buffer;
 
 //static sensors_data_t buffer;
 esp_err_t joystick_adc_init(void) {
