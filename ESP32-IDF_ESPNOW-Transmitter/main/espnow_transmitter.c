@@ -95,9 +95,12 @@ void sendData (void) {
 
     // If status is NOT OK, display error message and error code (in hexadecimal).
     if (result != 0) {
-        ESP_LOGE("ESP-NOW", "Error sending data! Error code: 0x%04X", result);
-        ESP_LOGE("ESP-NOW", "esp_now_send() failed: %s", esp_err_to_name(result));
-        ESP_LOGE()
+        ESP_LOGE("sendData()", "Error sending data! Error code: 0x%04X", result);
+        ESP_LOGE("sendData()", "esp_now_send() failed: %s", esp_err_to_name(result));
+        ESP_LOGE("sendData()", "Ensure that receiver is powered-on.");
+        ESP_LOGE("sendData()", "Ensure that received MAC is: %02X:%02X:%02X:%02X:%02X:%02X",
+                 receiver_mac[0], receiver_mac[1], receiver_mac[2],
+                 receiver_mac[3], receiver_mac[4], receiver_mac[5]);
         deletePeer();
     }
 }
