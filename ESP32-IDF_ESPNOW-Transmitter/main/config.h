@@ -22,9 +22,9 @@
     ESP32-C3 SuperMini MAC:                 34:b7:da:f9:33:8d
     ESP32-C3 Breadboard MAC:                e4:b0:63:17:9e:45
 */
-static uint8_t broadcast_mac[ESP_NOW_ETH_ALEN]  = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+static uint8_t broadcast_mac[ESP_NOW_ETH_ALEN]  = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};     // Broadcast MAC address
 static uint8_t receiver_mac[ESP_NOW_ETH_ALEN]   = {0xE4, 0xB0, 0x63, 0x17, 0x9E, 0x45};     // MAC address of Robot
-static esp_now_peer_info_t devices;
 static uint8_t rc_mac[ESP_NOW_ETH_ALEN]         = {0x34, 0xB7, 0xDA, 0xF9, 0x33, 0x8D};     // MAC address of Remote Control
+static esp_now_peer_info_t devices;
 
 #endif
