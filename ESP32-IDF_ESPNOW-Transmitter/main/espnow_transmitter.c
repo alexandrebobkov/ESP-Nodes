@@ -69,6 +69,18 @@ void deletePeer (void) {
         ESP_LOGE("ESP-NOW", "Could not delete peer");
     }
 }
+static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status) {
+    if (status == ESP_NOW_SEND_SUCCESS) {
+        ESP_LOGI(TAG, "Data sent successfully to: %02X:%02X:%02X:%02X:%02X:%02X",
+                 mac_addr[0], mac_addr[1], mac_addr[2],
+                 mac_addr[3], mac_addr[4], mac_addr[5]);
+    } else {
+        ESP_LOGE(TAG, "Error sending data to: %02X:%02X:%02X:%02X:%02X:%02X",
+                 mac_addr[0], mac_addr[1], mac_addr[2],
+                 mac_addr[3], mac_addr[4], mac_addr[5]);
+        deletePeer();
+    }
+}
 // Function for sending the data to the receiver
 void sendData (void) {
     buffer.crc = 0;
@@ -137,6 +149,7 @@ void app_main(void)
         return;
     }
     ESP_LOGI(TAG, "ESPNOW initialized successfully");
+    esp_now_register_send_cb(statusDataSend);
 
     // Set ESP-NOW receiver device configuration values
     memcpy(devices.peer_addr, receiver_mac, 6);
