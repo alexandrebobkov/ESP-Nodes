@@ -4,7 +4,7 @@
 #include "driver/adc.h"
 #include "esp_adc/adc_oneshot.h"
 
-static int x, y;
+static int x, y, x_axis, y_axis; // Joystick x and y positions
 static adc_oneshot_unit_handle_t adc_xy_handle;
 
 // Struct holding sensors values
