@@ -148,6 +148,6 @@ void app_main(void)
     esp_now_add_peer(&peerInfo);                    // Add peer to the list of registered devices
 
     // Define a task to periodically call function that sends data
-    xTaskCreate (rc_send_data_task, "RC", 2048, NULL, 15, NULL);
-    xTaskCreate (joystick_task, "RC", 2048, NULL, 2, NULL);
+    xTaskCreate (rc_send_data_task, "RC", 2048, NULL, 15, NULL);        // sendData()
+    xTaskCreate (joystick_task, "RC", 2048, NULL, 2, NULL);             // joystick_show_raw_xy()
 }
