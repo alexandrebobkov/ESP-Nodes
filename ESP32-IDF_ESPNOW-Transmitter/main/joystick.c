@@ -6,7 +6,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/semphr.h"
 #include "freertos/timers.h"
-
+#include "esp_event.h"
 #include "config.h"
 #include "joystick.h"
 
