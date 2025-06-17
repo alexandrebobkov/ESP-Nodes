@@ -32,8 +32,8 @@
 #include "esp_crc.h"
 #include "espnow_example.h"
 
-#include "joystick.h"
 #include "config.h"
+#include "joystick.h"
 
 const char *TAG = "ESP-NOW_Transmitter"; 
 esp_now_peer_info_t devices;
