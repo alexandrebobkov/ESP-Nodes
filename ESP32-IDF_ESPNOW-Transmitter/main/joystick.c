@@ -3,6 +3,10 @@
 #include "esp_err.h"
 #include "esp_log.h"
 #include "esp_now.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/semphr.h"
+#include "freertos/timers.h"
+
 #include "config.h"
 #include "joystick.h"
 
