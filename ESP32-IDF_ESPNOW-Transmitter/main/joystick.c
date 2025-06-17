@@ -1,3 +1,9 @@
+#include "driver/adc.h"
+#include "esp_adc/adc_oneshot.h"
+#include "esp_err.h"
+#include "esp_log.h"
+#include "config.h"
+
 int x, y; // Joystick x and y positions
 adc_oneshot_unit_handle_t adc_xy_handle;
 sensors_data_t buffer;
