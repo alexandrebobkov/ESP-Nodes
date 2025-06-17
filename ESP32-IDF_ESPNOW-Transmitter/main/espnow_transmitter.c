@@ -1,4 +1,7 @@
-/* ESPNOW Example
+/*  ESPNOW Transmitter
+    by: Alexander Bobkov
+    Date Created:   June 17, 2025
+    Updated:        June 17, 2025
 
    This example code is in the Public Domain (or CC0 licensed, at your option.)
 
@@ -8,9 +11,7 @@
 */
 
 /*
-   This example shows how to use ESPNOW.
-   Prepare two device, one for sending ESPNOW data and another for receiving
-   ESPNOW data.
+   This program uses ESPNOW for transmitting joystick x- and y- axis values to the receiving device.
 */
 #include <stdlib.h>
 #include <time.h>
