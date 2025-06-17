@@ -393,6 +393,8 @@ static void example_espnow_deinit(example_espnow_send_param_t *send_param)
     esp_now_deinit();
 }
 
+static void rc_send_data_task()
+
 void app_main(void)
 {
     // Initialize NVS
@@ -414,4 +416,7 @@ void app_main(void)
     devices.channel = 1;
     devices.encrypt = false;
     esp_now_add_peer(&devices);
+
+    // Defince a task for periodically sending ESPNOW remote control data
+    xTaskCreaterc_(send_data_task, "RC", 2048, NULL, 4, NULL);
 }
