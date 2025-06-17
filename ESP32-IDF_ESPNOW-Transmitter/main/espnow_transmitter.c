@@ -37,6 +37,7 @@ static const char *TAG = "ESP-NOW_Transmitter";
 static QueueHandle_t s_example_espnow_queue = NULL;
 
 static uint8_t s_example_broadcast_mac[ESP_NOW_ETH_ALEN] = { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
+static uint8_t receiver[ESP_NOW_ETH_ALEN] = {0xE4, 0xB0, 0x63, 0x17, 0x9E, 0x45};     // MAC address of Receiver device
 static uint16_t s_example_espnow_seq[EXAMPLE_ESPNOW_DATA_MAX] = { 0, 0 };
 
 static void example_espnow_deinit(example_espnow_send_param_t *send_param);
