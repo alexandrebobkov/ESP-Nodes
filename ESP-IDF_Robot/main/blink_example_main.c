@@ -292,6 +292,7 @@ static void rc_task (void *arg) {
 
 /*
     EXP32-C3 Chip built-in temprature sensor
+    Read & display the temperature value
 */
 static void chip_sensor_init () {
     temp_sensor = NULL;
