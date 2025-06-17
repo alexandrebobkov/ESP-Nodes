@@ -410,4 +410,7 @@ void app_main(void)
     esp_now_init();
 
     memcpy(peerInfo.peer_addr, receiver_mac, 6);
+    peerInfo.channel = 1;
+    peerInfo.encrypt = false;
+    esp_now_add_peer(&peerInfo);
 }
