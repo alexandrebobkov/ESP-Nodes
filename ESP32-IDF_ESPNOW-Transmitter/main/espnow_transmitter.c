@@ -37,8 +37,6 @@
 
 static const char *TAG = "ESP-NOW_Transmitter"; 
 
-
-
 void app_main(void)
 {
     joystick_adc_init();
