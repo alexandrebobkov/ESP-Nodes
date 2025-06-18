@@ -3,7 +3,7 @@
 
 static sensors_data_t buffer;
 static int x, y; // Joystick x and y positions
-static adc_oneshot_unit_handle_t adc_xy_handle;
+adc_oneshot_unit_handle_t adc_xy_handle;
 
 int convert_axis_to_pwm(int axis_value) {
     // Convert the joystick axis value to a PWM value
@@ -23,7 +23,7 @@ void sendRawData(void) {
     buffer.x_axis = 240;
     buffer.y_axis = 256;
     buffer.nav_bttn = 0;
-    buffer.motor1_rpm_pcm = 0; //10;
+    buffer.motor1_rpm_pcm = 0;
     buffer.motor2_rpm_pcm = 0;
     buffer.motor3_rpm_pcm = 0;
     buffer.motor4_rpm_pcm = 0;
