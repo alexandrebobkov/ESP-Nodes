@@ -160,7 +160,7 @@ void transmission_init()
 {
     esp_err_t espnow_ret = esp_now_init();
     if (espnow_ret != ESP_OK) {
-        ESP_LOGE(TAG, "Error initializing ESPNOW: %s", espnow_ret);
+        //ESP_LOGE(TAG, "Error initializing ESPNOW: %s", espnow_ret);
         ESP_LOGE(TAG, "esp_now_init() failed: %s", esp_err_to_name(espnow_ret));
         return;
     }
