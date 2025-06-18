@@ -51,7 +51,7 @@ typedef struct {
     uint8_t     motor4_rpm_pcm;
 } __attribute__((packed)) sensors_data_t;
 
-static int x, y; // Joystick x and y positions
+static int x, y; // Joystick x- and y- axis positions
 adc_oneshot_unit_handle_t adc_xy_handle;
 sensors_data_t buffer;
 
