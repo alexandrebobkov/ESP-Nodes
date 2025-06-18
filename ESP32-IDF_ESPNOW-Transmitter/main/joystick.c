@@ -9,6 +9,8 @@
 #include "config.h"
 #include "joystick.h"
 
+#include "sensors_data.h"
+
 //static const char *TAG = "ESP-NOW_Transmitter"; 
 
 //extern sensors_data_t buffer;
