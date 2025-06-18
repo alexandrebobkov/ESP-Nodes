@@ -5,7 +5,7 @@
 #include "freertos/semphr.h"
 #include "freertos/timers.h"
 
-#include "driver/adc.h"
+//#include "driver/adc.h"
 #include "esp_adc/adc_oneshot.h"
 #include "esp_err.h"
 #include "esp_log.h"
