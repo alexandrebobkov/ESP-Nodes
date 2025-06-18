@@ -38,7 +38,7 @@
 
 #include "joystick.h"
 
-static const char *TAG = "ESP-NOW_Transmitter"; 
+//static const char *TAG = "ESP-NOW_Transmitter"; 
 esp_now_peer_info_t devices;
 
 
