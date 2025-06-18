@@ -1,7 +1,7 @@
 /*  ESPNOW Transmitter
     by: Alexander Bobkov
     Date Created:   June 17, 2025
-    Updated:        June 17, 2025
+    Updated:        June 18, 2025
     SDK:abort       ESP-IDF v.5.4.1
 
    This example code is in the Public Domain (or CC0 licensed, at your option.)
@@ -41,9 +41,9 @@
 const char *TAG = "ESP-NOW_Transmitter"; 
 esp_now_peer_info_t devices;
 
-broadcast_mac[ESP_NOW_ETH_ALEN]      = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};     // Broadcast MAC address
-receiver_mac[ESP_NOW_ETH_ALEN]       = {0xE4, 0xB0, 0x63, 0x17, 0x9E, 0x45};     // MAC address of Robot
-transmitter_mac[ESP_NOW_ETH_ALEN]    = {0x34, 0xB7, 0xDA, 0xF9, 0x33, 0x8D};     // MAC address of Remote Control
+//broadcast_mac[ESP_NOW_ETH_ALEN]      = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};     // Broadcast MAC address
+//receiver_mac[ESP_NOW_ETH_ALEN]       = {0xE4, 0xB0, 0x63, 0x17, 0x9E, 0x45};     // MAC address of Robot
+//transmitter_mac[ESP_NOW_ETH_ALEN]    = {0x34, 0xB7, 0xDA, 0xF9, 0x33, 0x8D};     // MAC address of Remote Control
 
 
 void app_main(void)
@@ -60,7 +60,7 @@ void app_main(void)
 
     wifi_init();
 
-    esp_err_t espnow_ret = esp_now_init();
+    /*esp_err_t espnow_ret = esp_now_init();
     if (espnow_ret != ESP_OK) {
         //ESP_LOGE(TAG, "Error initializing ESPNOW: %s", espnow_ret);
         ESP_LOGE(TAG, "esp_now_init() failed: %s", esp_err_to_name(espnow_ret));
@@ -73,7 +73,8 @@ void app_main(void)
     memcpy(devices.peer_addr, receiver_mac, 6);
     devices.channel = 1;
     devices.encrypt = false;
-    esp_now_add_peer(&devices);
+    esp_now_add_peer(&devices);*/
+    transmission_init();
 
     // Defince a task for periodically sending ESPNOW remote control data
     xTaskCreate(rc_send_data_task, "RC", 2048, NULL, 4, NULL);

@@ -18,9 +18,9 @@ adc_oneshot_unit_handle_t adc_xy_handle;
 sensors_data_t buffer;
 static int x, y; // Joystick x- and y- axis positions
 
-broadcast_mac[ESP_NOW_ETH_ALEN]      = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};     // Broadcast MAC address
-receiver_mac[ESP_NOW_ETH_ALEN]       = {0xE4, 0xB0, 0x63, 0x17, 0x9E, 0x45};     // MAC address of Robot
-transmitter_mac[ESP_NOW_ETH_ALEN]    = {0x34, 0xB7, 0xDA, 0xF9, 0x33, 0x8D};     // MAC address of Remote Control
+uint8_t broadcast_mac[ESP_NOW_ETH_ALEN]      = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};     // Broadcast MAC address
+uint8_t receiver_mac[ESP_NOW_ETH_ALEN]       = {0xE4, 0xB0, 0x63, 0x17, 0x9E, 0x45};     // MAC address of Robot
+uint8_t transmitter_mac[ESP_NOW_ETH_ALEN]    = {0x34, 0xB7, 0xDA, 0xF9, 0x33, 0x8D};     // MAC address of Remote Control
 
 
 
@@ -146,4 +146,22 @@ void rc_send_data_task()
         }
         vTaskDelay (1000 / portTICK_PERIOD_MS);
     }
+}
+
+void transmission_init()
+{
+    esp_err_t espnow_ret = esp_now_init();
+    if (espnow_ret != ESP_OK) {
+        //ESP_LOGE(TAG, "Error initializing ESPNOW: %s", espnow_ret);
+        ESP_LOGE(TAG, "esp_now_init() failed: %s", esp_err_to_name(espnow_ret));
+        return;
+    }
+    ESP_LOGI(TAG, "ESPNOW initialized successfully");
+    esp_now_register_send_cb(statusDataSend);
+
+    // Set ESP-NOW receiver device configuration values
+    memcpy(devices.peer_addr, receiver_mac, 6);
+    devices.channel = 1;
+    devices.encrypt = false;
+    esp_now_add_peer(&devices);
 }
