@@ -40,6 +40,13 @@ void get_joystick_xy(int *x_axis, int *y_axis) {
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC_CHANNEL_1, y_axis));
 }
 
+// Function to delete peer (i.e. when communication error occurs)
+void deletePeer (void) {
+    uint8_t delStatus = esp_now_del_peer(receiver_mac);
+    if (delStatus != 0) {
+        ESP_LOGE("ESP-NOW", "Could not delete peer");
+    }
+}
 void sendData (void)
 {
     buffer.crc = 0;
