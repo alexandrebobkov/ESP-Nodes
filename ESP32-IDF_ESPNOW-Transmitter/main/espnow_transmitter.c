@@ -38,61 +38,8 @@
 
 #include "joystick.h"
 
-//static const char *TAG = "ESP-NOW_Transmitter"; 
+const char *TAG = "ESP-NOW_Transmitter"; 
 esp_now_peer_info_t devices;
-
-
-
-void joystick_task(void *arg) {
-    while (true) {
-        joystick_show_raw_xy();
-        vTaskDelay (1000 / portTICK_PERIOD_MS);
-    }
-}
-
-
-void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status) {
-    if (status == ESP_NOW_SEND_SUCCESS) {
-        ESP_LOGI(TAG, "Data sent successfully to: %02X:%02X:%02X:%02X:%02X:%02X",
-                 mac_addr[0], mac_addr[1], mac_addr[2],
-                 mac_addr[3], mac_addr[4], mac_addr[5]);
-    } else {
-        ESP_LOGE(TAG, "Error sending data to: %02X:%02X:%02X:%02X:%02X:%02X",
-                 mac_addr[0], mac_addr[1], mac_addr[2],
-                 mac_addr[3], mac_addr[4], mac_addr[5]);
-        ESP_LOGE("sendData()", "Error sending data. Error code: 0x%04X", status);
-        ESP_LOGE("sendData()", "esp_now_send() failed: %s", esp_err_to_name(status));
-        ESP_LOGE("sendData()", "Ensure that receiver is powered-on and MAC is correct.");
-        deletePeer();
-    }
-}
-
-
-/* WiFi should start before using ESPNOW */
-void wifi_init() {
-    ESP_ERROR_CHECK(esp_netif_init());
-    ESP_ERROR_CHECK(esp_event_loop_create_default());
-    wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
-    ESP_ERROR_CHECK( esp_wifi_init(&cfg) );
-    ESP_ERROR_CHECK( esp_wifi_set_storage(WIFI_STORAGE_RAM) );
-    ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_STA));//ESPNOW_WIFI_MODE));
-    ESP_ERROR_CHECK( esp_wifi_start());
-    ESP_ERROR_CHECK( esp_wifi_set_channel(CONFIG_ESPNOW_CHANNEL, WIFI_SECOND_CHAN_NONE));
-    #if CONFIG_ESPNOW_ENABLE_LONG_RANGE
-    ESP_ERROR_CHECK( esp_wifi_set_protocol(ESPNOW_WIFI_IF, WIFI_PROTOCOL_11B|WIFI_PROTOCOL_11G|WIFI_PROTOCOL_11N|WIFI_PROTOCOL_LR) );
-    #endif
-}
-
-void rc_send_data_task()
-{
-    while (true) {
-        if (esp_now_is_peer_exist(receiver_mac)) {
-            sendData();
-            //sendRawData(); 
-        }
-        vTaskDelay (1000 / portTICK_PERIOD_MS);
-    }
-}
 
 void app_main(void)
 {

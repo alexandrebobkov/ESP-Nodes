@@ -1,12 +1,19 @@
+#include "freertos/FreeRTOS.h"
+#include "freertos/semphr.h"
+#include "freertos/timers.h"
 #include "esp_adc/adc_oneshot.h"
 #include "esp_log.h"
 #include "esp_err.h"
 #include "esp_mac.h"
 #include "esp_now.h"
+#include "esp_event.h"
+#include "esp_netif.h"
+#include "esp_wifi.h"
+
 #include "sensors_data.h"
 #include "config.h"
 
-//static const char *TAG = "ESP-NOW_Transmitter"; 
+const char *JTAG = "Joystick"; 
 adc_oneshot_unit_handle_t adc_xy_handle;
 sensors_data_t buffer;
 static int x, y; // Joystick x- and y- axis positions
@@ -68,9 +75,9 @@ void sendData (void)
     buffer.y_axis = y;
 
     // Display brief summary of data being sent.
-    ESP_LOGI(TAG, "Joystick (x,y) position ( %d, %d )", buffer.x_axis, buffer.y_axis);
-    ESP_LOGI(TAG, "pcm 1, pcm 2 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor1_rpm_pcm, (uint8_t)buffer.motor2_rpm_pcm);
-    ESP_LOGI(TAG, "pcm 3, pcm 4 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor3_rpm_pcm, (uint8_t)buffer.motor4_rpm_pcm);
+    ESP_LOGI(JTAG, "Joystick (x,y) position ( %d, %d )", buffer.x_axis, buffer.y_axis);
+    ESP_LOGI(JTAG, "pcm 1, pcm 2 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor1_rpm_pcm, (uint8_t)buffer.motor2_rpm_pcm);
+    ESP_LOGI(JTAG, "pcm 3, pcm 4 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor3_rpm_pcm, (uint8_t)buffer.motor4_rpm_pcm);
 
     // Call ESP-NOW function to send data (MAC address of receiver, pointer to the memory holding data & data length)
     uint8_t result = esp_now_send(receiver_mac, (uint8_t *)&buffer, sizeof(buffer));
@@ -84,5 +91,54 @@ void sendData (void)
                  receiver_mac[0], receiver_mac[1], receiver_mac[2],
                  receiver_mac[3], receiver_mac[4], receiver_mac[5]);
         deletePeer();
+    }
+}
+
+void joystick_task(void *arg) {
+    while (true) {
+        joystick_show_raw_xy();
+        vTaskDelay (1000 / portTICK_PERIOD_MS);
+    }
+}
+
+void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status) {
+    if (status == ESP_NOW_SEND_SUCCESS) {
+        ESP_LOGI(JTAG, "Data sent successfully to: %02X:%02X:%02X:%02X:%02X:%02X",
+                 mac_addr[0], mac_addr[1], mac_addr[2],
+                 mac_addr[3], mac_addr[4], mac_addr[5]);
+    } else {
+        ESP_LOGE(JTAG, "Error sending data to: %02X:%02X:%02X:%02X:%02X:%02X",
+                 mac_addr[0], mac_addr[1], mac_addr[2],
+                 mac_addr[3], mac_addr[4], mac_addr[5]);
+        ESP_LOGE("sendData()", "Error sending data. Error code: 0x%04X", status);
+        ESP_LOGE("sendData()", "esp_now_send() failed: %s", esp_err_to_name(status));
+        ESP_LOGE("sendData()", "Ensure that receiver is powered-on and MAC is correct.");
+        deletePeer();
+    }
+}
+
+/* WiFi should start before using ESPNOW */
+void wifi_init() {
+    ESP_ERROR_CHECK(esp_netif_init());
+    ESP_ERROR_CHECK(esp_event_loop_create_default());
+    wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
+    ESP_ERROR_CHECK( esp_wifi_init(&cfg) );
+    ESP_ERROR_CHECK( esp_wifi_set_storage(WIFI_STORAGE_RAM) );
+    ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_STA));//ESPNOW_WIFI_MODE));
+    ESP_ERROR_CHECK( esp_wifi_start());
+    ESP_ERROR_CHECK( esp_wifi_set_channel(CONFIG_ESPNOW_CHANNEL, WIFI_SECOND_CHAN_NONE));
+    #if CONFIG_ESPNOW_ENABLE_LONG_RANGE
+    ESP_ERROR_CHECK( esp_wifi_set_protocol(ESPNOW_WIFI_IF, WIFI_PROTOCOL_11B|WIFI_PROTOCOL_11G|WIFI_PROTOCOL_11N|WIFI_PROTOCOL_LR) );
+    #endif
+}
+
+void rc_send_data_task()
+{
+    while (true) {
+        if (esp_now_is_peer_exist(receiver_mac)) {
+            sendData();
+            //sendRawData(); 
+        }
+        vTaskDelay (1000 / portTICK_PERIOD_MS);
     }
 }

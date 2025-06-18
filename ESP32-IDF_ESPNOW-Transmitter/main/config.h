@@ -4,7 +4,7 @@
 /*
     Configuration variables
 */
-const char *TAG = "ESP-NOW_Transmitter"; 
+//const char *TAG = "ESP-NOW_Transmitter"; 
 
 /*  ============================
     Joystick
