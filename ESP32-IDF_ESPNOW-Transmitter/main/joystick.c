@@ -9,7 +9,7 @@
 
 #include "config.h"
 
-const char *TAG = "ESP-NOW_Transmitter"; 
+ststic const char *TAG = "ESP-NOW_Transmitter"; 
 
 static sensors_data_t buffer;
 static int x, y; // Joystick x and y positions
