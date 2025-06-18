@@ -39,8 +39,6 @@
 const char *TAG = "ESP-NOW_Transmitter"; 
 esp_now_peer_info_t devices;
 
-//static int x, y; // Joystick x and y positions
-//static adc_oneshot_unit_handle_t adc_xy_handle;
 // Struct holding sensors values
 typedef struct {
     uint16_t    crc;                // CRC16 value of ESPNOW data
