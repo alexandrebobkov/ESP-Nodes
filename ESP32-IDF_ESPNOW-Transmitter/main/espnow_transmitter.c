@@ -46,25 +46,8 @@ void app_main(void)
         ret = nvs_flash_init();
     }
     ESP_ERROR_CHECK( ret );
-
     wifi_init();
-
-    /*esp_err_t espnow_ret = esp_now_init();
-    if (espnow_ret != ESP_OK) {
-        //ESP_LOGE(TAG, "Error initializing ESPNOW: %s", espnow_ret);
-        ESP_LOGE(TAG, "esp_now_init() failed: %s", esp_err_to_name(espnow_ret));
-        return;
-    }
-    ESP_LOGI(TAG, "ESPNOW initialized successfully");
-    esp_now_register_send_cb(statusDataSend);
-
-    // Set ESP-NOW receiver device configuration values
-    memcpy(devices.peer_addr, receiver_mac, 6);
-    devices.channel = 1;
-    devices.encrypt = false;
-    esp_now_add_peer(&devices);*/
     transmission_init();
-
     // Defince a task for periodically sending ESPNOW remote control data
     xTaskCreate(rc_send_data_task, "RC", 2048, NULL, 4, NULL);
 }
