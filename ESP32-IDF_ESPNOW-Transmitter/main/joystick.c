@@ -2,6 +2,8 @@
 #include "driver/adc.h"
 
 static sensors_data_t buffer;
+static int x, y; // Joystick x and y positions
+static adc_oneshot_unit_handle_t adc_xy_handle;
 
 int convert_axis_to_pwm(int axis_value) {
     // Convert the joystick axis value to a PWM value
