@@ -21,7 +21,7 @@
 //static int x, y; // Joystick x and y positions
 //static adc_oneshot_unit_handle_t adc_xy_handle;
 // Struct holding sensors values
-typedef struct {
+/*typedef struct {
     uint16_t    crc;                // CRC16 value of ESPNOW data
     int         x_axis;             // Joystick x-position
     int         y_axis;             // Joystick y-position
@@ -30,7 +30,7 @@ typedef struct {
     uint8_t     motor2_rpm_pcm;
     uint8_t     motor3_rpm_pcm;
     uint8_t     motor4_rpm_pcm;
-} __attribute__((packed)) sensors_data_t;
+} __attribute__((packed)) sensors_data_t;*/
 
 static int x, y; // Joystick x and y positions
 extern adc_oneshot_unit_handle_t adc_xy_handle;
