@@ -32,6 +32,7 @@ adc_oneshot_unit_handle_t adc_xy_handle;
 sensors_data_t buffer;
 
 int convert_axis_to_pwm(int axis_value);
+void sendRawData(void);
 
 //static sensors_data_t buffer;
 esp_err_t joystick_adc_init(void) {
