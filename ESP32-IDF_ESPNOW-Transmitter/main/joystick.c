@@ -15,7 +15,7 @@
 #include "esp_err.h"
 #include "esp_mac.h"
 #include "esp_now.h"
-#include "esp_crc.h"
+//#include "esp_crc.h"
 
 #include "sensors_data.h"
 #include "config.h"
