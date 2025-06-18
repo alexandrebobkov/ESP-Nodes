@@ -1,9 +1,9 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
-#include <assert.h>
+//#include <assert.h>
 #include "freertos/FreeRTOS.h"
-#include "freertos/semphr.h"
+//#include "freertos/semphr.h"
 //#include "freertos/timers.h"
 #include "esp_adc/adc_oneshot.h"
 #include "nvs_flash.h"
