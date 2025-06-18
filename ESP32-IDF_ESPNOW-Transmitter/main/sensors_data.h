@@ -1,6 +1,10 @@
 #ifndef SENSORS_DATA_H
 #define SENSORS_DATA_H
 
+#include <stdlib.h>
+#include <stdint.h>
+#include <stdbool.h>
+
 typedef struct {
     uint16_t    crc;                // CRC16 value of ESPNOW data
     int         x_axis;             // Joystick x-position
