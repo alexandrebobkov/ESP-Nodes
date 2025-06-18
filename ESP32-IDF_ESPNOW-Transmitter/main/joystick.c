@@ -1,4 +1,5 @@
 #include "sensors_data.h"
+#include "driver/adc.h"
 
 static sensors_data_t buffer;
 
@@ -7,6 +8,11 @@ int convert_axis_to_pwm(int axis_value) {
     // Assuming axis_value is in the range of 0-4095 for a 12-bit ADC
     // and we want to map it to a PWM range of 0-255
     return (axis_value * 255) / 4095;
+}
+
+void get_joystick_xy_axis(int *x_axis, int *y_axis) {
+    ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_0, x_axis));
+    ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_1, y_axis));
 }
 
 void sendRawData(void) {
