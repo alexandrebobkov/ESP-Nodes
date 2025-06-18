@@ -46,6 +46,7 @@ int convert_axis_to_pwm(int axis_value);
 void get_joystick_xy_axis(int *x_axis, int *y_axis);
 void sendRawData(void);
 void deleteDev(void);
+void deletePeer(void);
 
 //static sensors_data_t buffer;
 esp_err_t joystick_adc_init(void) {
