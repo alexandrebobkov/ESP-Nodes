@@ -1,4 +1,5 @@
 #include "sensors_data.h"
+#include "driver/adc.h"
 #include "esp_adc/adc_oneshot.h"
 
 static sensors_data_t buffer;
