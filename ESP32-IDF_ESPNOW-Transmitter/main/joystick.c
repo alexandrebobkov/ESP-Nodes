@@ -1,4 +1,4 @@
-#include "joystick.h"
+#include "sensors_data.h"
 
 static sensors_data_t buffer;
 
