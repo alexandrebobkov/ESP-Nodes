@@ -26,7 +26,8 @@ uint8_t broadcast_mac[ESP_NOW_ETH_ALEN]      = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x
 uint8_t receiver_mac[ESP_NOW_ETH_ALEN]       = {0xE4, 0xB0, 0x63, 0x17, 0x9E, 0x45};     // MAC address of Robot
 uint8_t transmitter_mac[ESP_NOW_ETH_ALEN]    = {0x34, 0xB7, 0xDA, 0xF9, 0x33, 0x8D};     // MAC address of Remote Control
 
-esp_err_t joystick_adc_init(void) {
+esp_err_t joystick_adc_init(void) 
+{
     adc_oneshot_unit_init_cfg_t adc_init_config_xy = {
         .unit_id = ADC_UNIT_1,
         .ulp_mode = ADC_ULP_MODE_DISABLE,
@@ -62,7 +63,7 @@ void get_joystick_xy(int *x_axis, int *y_axis)
 
 // Function to delete peer (i.e. when communication error occurs)
 void deletePeer (void) 
-
+{
     uint8_t delStatus = esp_now_del_peer(receiver_mac);
     if (delStatus != 0) {
         ESP_LOGE("ESP-NOW", "Could not delete peer");
@@ -104,14 +105,16 @@ void sendData (void)
     }
 }
 
-void joystick_task(void *arg) {
+void joystick_task(void *arg)
+{
     while (true) {
         joystick_show_raw_xy();
         vTaskDelay (1000 / portTICK_PERIOD_MS);
     }
 }
 
-void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status) {
+void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status)
+{
     if (status == ESP_NOW_SEND_SUCCESS) {
         ESP_LOGI(JTAG, "Data sent successfully to: %02X:%02X:%02X:%02X:%02X:%02X",
                  mac_addr[0], mac_addr[1], mac_addr[2],
@@ -128,7 +131,8 @@ void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status) {
 }
 
 /* WiFi should start before using ESPNOW */
-void wifi_init() {
+void wifi_init()
+{
     ESP_ERROR_CHECK(esp_netif_init());
     ESP_ERROR_CHECK(esp_event_loop_create_default());
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
