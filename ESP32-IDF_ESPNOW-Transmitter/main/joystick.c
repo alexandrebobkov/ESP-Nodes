@@ -11,7 +11,7 @@
 
 #include "sensors_data.h"
 
-static const char *TAG = "ESP-NOW_Transmitter"; 
+//static const char *TAG = "ESP-NOW_Transmitter"; 
 
 extern sensors_data_t buffer;
 static int x, y; // Joystick x and y positions
