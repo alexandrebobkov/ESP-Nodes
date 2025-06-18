@@ -28,8 +28,8 @@ typedef struct {
 } __attribute__((packed)) sensors_data_t;
 
 //static int x, y; // Joystick x and y positions
-adc_oneshot_unit_handle_t adc_xy_handle;
-sensors_data_t buffer;
+extern adc_oneshot_unit_handle_t adc_xy_handle;
+extern sensors_data_t buffer;
 
 int convert_axis_to_pwm(int axis_value);
 void get_joystick_xy_axis(int *x_axis, int *y_axis);
