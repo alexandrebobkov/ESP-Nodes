@@ -28,6 +28,13 @@ void deleteDev (void) {
         ESP_LOGE("ESP-NOW", "Could not delete peer");
     }
 }
+// Function to delete peer (i.e. when communication error occurs)
+void deletePeer (void) {
+    uint8_t delStatus = esp_now_del_peer(receiver_mac);
+    if (delStatus != 0) {
+        ESP_LOGE("ESP-NOW", "Could not delete peer");
+    }
+}
 
 int convert_axis_to_pwm(int axis_value) {
     // Convert the joystick axis value to a PWM value
