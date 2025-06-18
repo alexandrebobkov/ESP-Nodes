@@ -21,7 +21,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/semphr.h"
 #include "freertos/timers.h"
-#include "driver/adc_oneshot.h"
+#include "esp_adc/adc_oneshot.h"
 #include "nvs_flash.h"
 #include "esp_random.h"
 #include "esp_event.h"
