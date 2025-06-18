@@ -40,14 +40,8 @@
 
 const char *TAG = "ESP-NOW_Transmitter"; 
 esp_now_peer_info_t devices;
-static int x, y; // Joystick x- and y- axis positions
 
 sensors_data_t buffer;
-
-//static sensors_data_t buffer;
-
-
-
 
 void joystick_task(void *arg) {
     while (true) {
