@@ -1,6 +1,8 @@
 #include "esp_adc/adc_oneshot.h"
 #include "esp_log.h"
 #include "esp_err.h"
+#include "esp_mac.h"
+#include "esp_now.h"
 #include "config.h"
 
 adc_oneshot_unit_handle_t adc_xy_handle;
