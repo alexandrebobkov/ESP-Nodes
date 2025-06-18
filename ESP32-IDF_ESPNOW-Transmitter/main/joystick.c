@@ -3,6 +3,7 @@
 #include "esp_err.h"
 
 adc_oneshot_unit_handle_t adc_xy_handle;
+sensors_data_t buffer;
 static int x, y; // Joystick x- and y- axis positions
 
 
