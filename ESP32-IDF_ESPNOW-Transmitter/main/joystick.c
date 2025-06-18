@@ -2,6 +2,8 @@
 #include "esp_log.h"
 #include "esp_err.h"
 
+adc_oneshot_unit_handle_t adc_xy_handle;
+
 esp_err_t joystick_adc_init(void) {
     adc_oneshot_unit_init_cfg_t adc_init_config_xy = {
         .unit_id = ADC_UNIT_1,
