@@ -15,9 +15,6 @@ static sensors_data_t buffer;
 static int x, y; // Joystick x and y positions
 adc_oneshot_unit_handle_t adc_xy_handle;
 
-//static uint8_t receiver_mac[ESP_NOW_ETH_ALEN]       = {0xE4, 0xB0, 0x63, 0x17, 0x9E, 0x45};     // MAC address of Robot
-
-
 // Function to delete peer (i.e. when communication error occurs)
 void deleteDev (void) {
     uint8_t delStatus = esp_now_del_peer(receiver_mac);
