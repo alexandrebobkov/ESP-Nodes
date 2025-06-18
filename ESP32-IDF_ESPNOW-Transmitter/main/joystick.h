@@ -11,7 +11,7 @@
 #include "freertos/timers.h"
 #include "esp_event.h"*/
 
-#include "config.h"
+//#include "config.h"
 
 //static int x, y; // Joystick x and y positions
 //static adc_oneshot_unit_handle_t adc_xy_handle;
@@ -27,7 +27,7 @@ typedef struct {
     uint8_t     motor4_rpm_pcm;
 } __attribute__((packed)) sensors_data_t;
 
-int x, y; // Joystick x and y positions
+static int x, y; // Joystick x and y positions
 adc_oneshot_unit_handle_t adc_xy_handle;
 sensors_data_t buffer;
 
