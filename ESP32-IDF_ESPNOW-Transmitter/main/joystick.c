@@ -6,7 +6,7 @@
 #include "sensors_data.h"
 #include "config.h"
 
-static const char *TAG = "ESP-NOW_Transmitter"; 
+//static const char *TAG = "ESP-NOW_Transmitter"; 
 adc_oneshot_unit_handle_t adc_xy_handle;
 sensors_data_t buffer;
 static int x, y; // Joystick x- and y- axis positions
