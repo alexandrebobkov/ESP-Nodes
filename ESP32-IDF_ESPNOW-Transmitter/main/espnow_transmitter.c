@@ -34,13 +34,15 @@
 #include "esp_crc.h"
 //#include "espnow_example.h"
 
+#include "sensors_data.h"
+
 #include "config.h"
 
 const char *TAG = "ESP-NOW_Transmitter"; 
 esp_now_peer_info_t devices;
 
 // Struct holding sensors values
-typedef struct {
+/*typedef struct {
     uint16_t    crc;                // CRC16 value of ESPNOW data
     int         x_axis;             // Joystick x-position
     int         y_axis;             // Joystick y-position
@@ -49,7 +51,7 @@ typedef struct {
     uint8_t     motor2_rpm_pcm;
     uint8_t     motor3_rpm_pcm;
     uint8_t     motor4_rpm_pcm;
-} __attribute__((packed)) sensors_data_t;
+} __attribute__((packed)) sensors_data_t;*/
 
 static int x, y; // Joystick x- and y- axis positions
 adc_oneshot_unit_handle_t adc_xy_handle;
