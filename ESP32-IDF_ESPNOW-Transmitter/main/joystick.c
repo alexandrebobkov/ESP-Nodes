@@ -7,10 +7,11 @@
 #include "esp_mac.h"
 #include "esp_now.h"
 #include "config.h"
+#include "joystick.h"
 
 //static const char *TAG = "ESP-NOW_Transmitter"; 
 
-extern static sensors_data_t buffer;
+extern sensors_data_t buffer;
 static int x, y; // Joystick x and y positions
 adc_oneshot_unit_handle_t adc_xy_handle;
 //uint8_t receiver_mac[ESP_NOW_ETH_ALEN]       = {0xE4, 0xB0, 0x63, 0x17, 0x9E, 0x45};     // MAC address of Robot
