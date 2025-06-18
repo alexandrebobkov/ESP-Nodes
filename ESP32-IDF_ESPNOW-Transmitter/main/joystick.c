@@ -28,5 +28,5 @@ void sendRawData(void) {
     buffer.motor3_rpm_pcm = 0;
     buffer.motor4_rpm_pcm = 0;
 
-    get_joystick_xy(&x, &y);
+    get_joystick_xy_axis(&x, &y);
 }
