@@ -4,11 +4,7 @@
 /*
     Configuration variables
 */
-//#define CONFIG_ESPNOW_CHANNEL           (1)                     // ESPNOW channel, default is 1
-//#define CONFIG_ESPNOW_WIFI_MODE         (WIFI_MODE_STA)         // WiFi mode
-//#define CONFIG_ESPNOW_WIFI_IF           (WIFI_IF_STA)           // WiFi interface
-//#define CONFIG_ESPNOW_ENABLE_LONG_RANGE (0)                   // Enable long range mode
-//#define ESPNOW_MAXDELAY 512
+extern static const char *TAG = "ESP-NOW_Transmitter"; 
 
 /*  ============================
     Joystick
