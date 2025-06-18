@@ -26,8 +26,6 @@ uint8_t broadcast_mac[ESP_NOW_ETH_ALEN]      = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x
 uint8_t receiver_mac[ESP_NOW_ETH_ALEN]       = {0xE4, 0xB0, 0x63, 0x17, 0x9E, 0x45};     // MAC address of Robot
 uint8_t transmitter_mac[ESP_NOW_ETH_ALEN]    = {0x34, 0xB7, 0xDA, 0xF9, 0x33, 0x8D};     // MAC address of Remote Control
 
-
-
 esp_err_t joystick_adc_init(void) {
     adc_oneshot_unit_init_cfg_t adc_init_config_xy = {
         .unit_id = ADC_UNIT_1,
@@ -49,19 +47,22 @@ esp_err_t joystick_adc_init(void) {
     return ESP_OK;
 }
 
-void joystick_show_raw_xy() {
+void joystick_show_raw_xy()
+{
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC_CHANNEL_0, &x));
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC_CHANNEL_1, &y));
     ESP_LOGI("(x,y)", "( %d, %d )", x, y);
 }
 
-void get_joystick_xy(int *x_axis, int *y_axis) {
+void get_joystick_xy(int *x_axis, int *y_axis)
+{
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC_CHANNEL_0, x_axis));
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC_CHANNEL_1, y_axis));
 }
 
 // Function to delete peer (i.e. when communication error occurs)
-void deletePeer (void) {
+void deletePeer (void) 
+
     uint8_t delStatus = esp_now_del_peer(receiver_mac);
     if (delStatus != 0) {
         ESP_LOGE("ESP-NOW", "Could not delete peer");
