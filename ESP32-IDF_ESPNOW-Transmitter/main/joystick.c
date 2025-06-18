@@ -33,8 +33,8 @@ int convert_axis_to_pwm(int axis_value) {
 }
 
 void get_joystick_xy_axis(int *x_axis, int *y_axis) {
-    ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_0, x_axis));
-    ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC1_CHANNEL_1, y_axis));
+    ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC_CHANNEL_0, x_axis));
+    ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC_CHANNEL_1, y_axis));
 }
 
 void sendRawData(void) {
