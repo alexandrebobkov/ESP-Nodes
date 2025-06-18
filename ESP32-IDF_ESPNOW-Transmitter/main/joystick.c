@@ -1,3 +1,5 @@
+#include "joystick.h"
+
 static sensors_data_t buffer;
 
 int convert_axis_to_pwm(int axis_value) {
