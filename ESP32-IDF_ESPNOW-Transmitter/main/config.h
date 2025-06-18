@@ -18,8 +18,6 @@
 #define PROJ_Y                      (0)                     // ADC1_CH0; 1 GPIO joystick, y-axis
 #define NAV_BTN                     (8)                     // 8 GPIO joystick button
 
-const char *TAG = "ESP-NOW_Transmitter"; 
-
 /*  ============================
             ESP NOW
     ============================
