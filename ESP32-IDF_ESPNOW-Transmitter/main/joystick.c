@@ -13,6 +13,14 @@ static sensors_data_t buffer;
 static int x, y; // Joystick x and y positions
 adc_oneshot_unit_handle_t adc_xy_handle;
 
+// Function to delete peer (i.e. when communication error occurs)
+void deleteDev (void) {
+    uint8_t delStatus = esp_now_del_peer(receiver_mac);
+    if (delStatus != 0) {
+        ESP_LOGE("ESP-NOW", "Could not delete peer");
+    }
+}
+
 int convert_axis_to_pwm(int axis_value) {
     // Convert the joystick axis value to a PWM value
     // Assuming axis_value is in the range of 0-4095 for a 12-bit ADC
@@ -56,6 +64,6 @@ void sendRawData(void) {
         ESP_LOGE("sendData()", "Ensure that received MAC is: %02X:%02X:%02X:%02X:%02X:%02X",
                  receiver_mac[0], receiver_mac[1], receiver_mac[2],
                  receiver_mac[3], receiver_mac[4], receiver_mac[5]);
-        deletePeer();
+        deleteDev();
     }
 }
