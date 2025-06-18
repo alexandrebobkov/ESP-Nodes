@@ -13,7 +13,7 @@
 
 /*
    This program uses ESPNOW for transmitting joystick x- and y- axis values to the receiving device.
-*/
+
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
@@ -31,7 +31,7 @@
 #include "esp_err.h"
 #include "esp_mac.h"
 #include "esp_now.h"
-#include "esp_crc.h"
+#include "esp_crc.h"*/
 
 #include "joystick.h"
 
