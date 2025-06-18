@@ -30,12 +30,12 @@
 #include "esp_log.h"
 
 
-#include "esp_now.h"
+
 #include "esp_crc.h"*/
 #include "freertos/FreeRTOS.h"
 #include "nvs_flash.h"
 #include "esp_err.h"
-#include "esp_mac.h"
+
 
 #include "joystick.h"
 
