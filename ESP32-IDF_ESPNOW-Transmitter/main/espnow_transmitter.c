@@ -33,9 +33,6 @@
 #include "esp_now.h"
 #include "esp_crc.h"
 
-//#include "config.h"
-
-
 #include "joystick.h"
 
 //const char *TAG = "ESP-NOW_Transmitter"; 
