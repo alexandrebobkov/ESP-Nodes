@@ -38,8 +38,8 @@
 
 #include "joystick.h"
 
-const char *TAG = "ESP-NOW_Transmitter"; 
-esp_now_peer_info_t devices;
+//const char *TAG = "ESP-NOW_Transmitter"; 
+
 
 //broadcast_mac[ESP_NOW_ETH_ALEN]      = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};     // Broadcast MAC address
 //receiver_mac[ESP_NOW_ETH_ALEN]       = {0xE4, 0xB0, 0x63, 0x17, 0x9E, 0x45};     // MAC address of Robot
