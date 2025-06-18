@@ -31,7 +31,7 @@
 #include "esp_mac.h"
 #include "esp_now.h"
 #include "esp_crc.h"
-//#include "espnow_example.h"
+#include "espnow_example.h"
 
 #include "config.h"
 #include "joystick.h"

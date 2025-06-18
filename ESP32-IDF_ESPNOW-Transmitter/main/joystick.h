@@ -35,7 +35,7 @@
 static int x, y; // Joystick x and y positions
 extern adc_oneshot_unit_handle_t adc_xy_handle;
 extern sensors_data_t buffer;
-extern uint8_t receiver_mac[6];
+//extern uint8_t receiver_mac[6];
 
 int convert_axis_to_pwm(int axis_value);
 void get_joystick_xy_axis(int *x_axis, int *y_axis);
