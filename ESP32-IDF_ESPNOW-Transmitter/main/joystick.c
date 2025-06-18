@@ -3,6 +3,9 @@
 #include "esp_adc/adc_oneshot.h"
 #include "esp_err.h"
 #include "esp_log.h"
+#include "esp_err.h"
+#include "esp_mac.h"
+#include "esp_now.h"
 
 static sensors_data_t buffer;
 static int x, y; // Joystick x and y positions
