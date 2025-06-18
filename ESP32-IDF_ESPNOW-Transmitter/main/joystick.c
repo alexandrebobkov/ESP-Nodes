@@ -3,6 +3,8 @@
 #include "esp_err.h"
 
 adc_oneshot_unit_handle_t adc_xy_handle;
+static int x, y; // Joystick x- and y- axis positions
+
 
 esp_err_t joystick_adc_init(void) {
     adc_oneshot_unit_init_cfg_t adc_init_config_xy = {
