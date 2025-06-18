@@ -75,10 +75,10 @@ void sendData (void)
     buffer.x_axis = 240;
     buffer.y_axis = 256;
     buffer.nav_bttn = 0;
-    buffer.motor1_rpm_pcm = 0; //10;
-    buffer.motor2_rpm_pcm = 0;
-    buffer.motor3_rpm_pcm = 0;
-    buffer.motor4_rpm_pcm = 0;
+    buffer.motor1_rpm_pwm = 0;
+    buffer.motor2_rpm_pwm = 0;
+    buffer.motor3_rpm_pwm = 0;
+    buffer.motor4_rpm_pwm = 0;
 
     get_joystick_xy(&x, &y);
     //ESP_LOGI("(x, y)", "[ %d, %d ]", x, y);
@@ -87,8 +87,8 @@ void sendData (void)
 
     // Display brief summary of data being sent.
     ESP_LOGI(JTAG, "Joystick (x,y) position ( %d, %d )", buffer.x_axis, buffer.y_axis);
-    ESP_LOGI(JTAG, "pcm 1, pcm 2 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor1_rpm_pcm, (uint8_t)buffer.motor2_rpm_pcm);
-    ESP_LOGI(JTAG, "pcm 3, pcm 4 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor3_rpm_pcm, (uint8_t)buffer.motor4_rpm_pcm);
+    ESP_LOGI(JTAG, "pwm 1, pwm 2 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor1_rpm_pcm, (uint8_t)buffer.motor2_rpm_pcm);
+    ESP_LOGI(JTAG, "pwm 3, pwm 4 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor3_rpm_pcm, (uint8_t)buffer.motor4_rpm_pcm);
 
     // Call ESP-NOW function to send data (MAC address of receiver, pointer to the memory holding data & data length)
     uint8_t result = esp_now_send((uint8_t*)receiver_mac, (uint8_t *)&buffer, sizeof(buffer));
@@ -123,9 +123,9 @@ void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status)
         ESP_LOGE(JTAG, "Error sending data to: %02X:%02X:%02X:%02X:%02X:%02X",
                  mac_addr[0], mac_addr[1], mac_addr[2],
                  mac_addr[3], mac_addr[4], mac_addr[5]);
-        ESP_LOGE("sendData()", "Error sending data. Error code: 0x%04X", status);
-        ESP_LOGE("sendData()", "esp_now_send() failed: %s", esp_err_to_name(status));
-        ESP_LOGE("sendData()", "Ensure that receiver is powered-on and MAC is correct.");
+        ESP_LOGE(JTAG, "Error sending data. Error code: 0x%04X", status);
+        ESP_LOGE(JTAG, "esp_now_send() failed: %s", esp_err_to_name(status));
+        ESP_LOGE(JTAG, "Ensure that receiver is powered-on and MAC is correct.");
         deletePeer();
     }
 }
