@@ -1,4 +1,4 @@
-sensors_data_t buffer;
+static sensors_data_t buffer;
 
 int convert_axis_to_pwm(int axis_value) {
     // Convert the joystick axis value to a PWM value
