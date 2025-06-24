@@ -40,5 +40,5 @@ void app_main(void)
     wifi_init();
     transmission_init();
     // Defince a task for periodically sending ESPNOW remote control data
-    xTaskCreate(rc_send_data_task, "RC", 2048, NULL, 4, NULL);
+    //xTaskCreate(rc_send_data_task, "RC", 2048, NULL, 4, NULL);
 }
