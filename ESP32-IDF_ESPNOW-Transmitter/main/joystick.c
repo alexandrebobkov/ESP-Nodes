@@ -76,6 +76,7 @@ void sendData (void)
     buffer.x_axis = 240;
     buffer.y_axis = 256;
     buffer.nav_bttn = 0;
+    buffer.led = 0;
     buffer.motor1_rpm_pwm = 0;
     buffer.motor2_rpm_pwm = 0;
     buffer.motor3_rpm_pwm = 0;
