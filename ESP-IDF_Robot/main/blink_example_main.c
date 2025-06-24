@@ -382,7 +382,7 @@ void app_main(void)
     buf.motor1_rpm_pcm = 0;
     wifi_init();
     esp_now_init();
-    esp_now_register_recv_cb(onDataReceived);   // Callback function for receiving data
+    esp_now_register_recv_cb((void*)onDataReceived);   // Callback function for receiving data
 
     /*
         ADC
