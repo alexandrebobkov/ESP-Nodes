@@ -22,9 +22,6 @@ void sendData (void);
 void deletePeer (void);
 void joystick_task(void *arg);
 void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status);
-
 void rc_send_data_task();
-
-
 
 #endif
