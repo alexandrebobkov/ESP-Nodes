@@ -25,9 +25,6 @@
     ESP32-C3 Breadboard #1 MAC:             e4:b0:63:17:9e:45
     ESP32-C3 Breadboard #2 MAC:             9c:9e:6e:14:b5:54 (rapid blink)
     ESP32-C3 zenBoard MAC:                  dc:da:0c:8e:b3:70
-
-    
-    
 */
 
 extern uint8_t broadcast_mac[ESP_NOW_ETH_ALEN];
