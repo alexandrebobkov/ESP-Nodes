@@ -27,7 +27,6 @@ void app_main(void)
 {
     // Initialize internal temperature sensor
     chip_sensor_init();
-    //xTaskCreate(temp_sensor_task, "ESP32C3 Sensor", 2048, NULL, 15, NULL);
 
     joystick_adc_init();
 
