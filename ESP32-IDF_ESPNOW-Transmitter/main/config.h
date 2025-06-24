@@ -1,6 +1,9 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+#include <stdint.h>
+#include "esp_now.h"
+
 /*
     Configuration variables
 */
@@ -26,4 +29,9 @@
     
     
 */
+
+extern uint8_t broadcast_mac[ESP_NOW_ETH_ALEN];
+extern uint8_t receiver_mac[ESP_NOW_ETH_ALEN];
+extern uint8_t transmitter_mac[ESP_NOW_ETH_ALEN];
+extern const char *TAG;
 #endif
