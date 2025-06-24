@@ -100,6 +100,7 @@ static void sendData (void)
 }
 
 // Callback function to handle the status of data transmission
+// This function is called when the data is sent or if there is an error.
 static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status)
 {
     if (status == ESP_NOW_SEND_SUCCESS) {
