@@ -19,6 +19,11 @@
 
     ESP32-C3 Luatos ESP32C3 board MAC:      54:32:04:46:71:80
     ESP32-C3 SuperMini MAC:                 34:b7:da:f9:33:8d
-    ESP32-C3 Breadboard MAC:                e4:b0:63:17:9e:45
+    ESP32-C3 Breadboard #1 MAC:             e4:b0:63:17:9e:45
+    ESP32-C3 Breadboard #2 MAC:             9c:9e:6e:14:b5:54 (rapid blink)
+    ESP32-C3 zenBoard MAC:                  dc:da:0c:8e:b3:70
+
+    
+    
 */
 #endif
