@@ -14,7 +14,7 @@
 #include "sensors_data.h"
 #include "config.h"
 
-const char *JTAG = "Joystick"; 
+static const char *TAG = "Joystick"; 
 //const char *TAG = "ESP-NOW_Transmitter"; 
 
 esp_now_peer_info_t devices;
@@ -67,7 +67,7 @@ void deletePeer (void)
 {
     uint8_t delStatus = esp_now_del_peer(receiver_mac);
     if (delStatus != 0) {
-        ESP_LOGE("ESP-NOW", "Could not delete peer");
+        ESP_LOGE(TAG, "Could not delete peer");
     }
 }
 void sendData (void)
@@ -88,19 +88,19 @@ void sendData (void)
     buffer.y_axis = y;
 
     // Display brief summary of data being sent.
-    ESP_LOGI(JTAG, "Joystick (x,y) position ( %d, %d )", buffer.x_axis, buffer.y_axis);
-    ESP_LOGI(JTAG, "pwm 1, pwm 2 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor1_rpm_pwm, (uint8_t)buffer.motor2_rpm_pwm);
-    ESP_LOGI(JTAG, "pwm 3, pwm 4 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor3_rpm_pwm, (uint8_t)buffer.motor4_rpm_pwm);
+    ESP_LOGI(TAG, "Joystick (x,y) position ( %d, %d )", buffer.x_axis, buffer.y_axis);
+    ESP_LOGI(TAG, "pwm 1, pwm 2 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor1_rpm_pwm, (uint8_t)buffer.motor2_rpm_pwm);
+    ESP_LOGI(TAG, "pwm 3, pwm 4 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor3_rpm_pwm, (uint8_t)buffer.motor4_rpm_pwm);
 
     // Call ESP-NOW function to send data (MAC address of receiver, pointer to the memory holding data & data length)
     uint8_t result = esp_now_send((uint8_t*)receiver_mac, (uint8_t *)&buffer, sizeof(buffer));
 
     // If status is NOT OK, display error message and error code (in hexadecimal).
     if (result != 0) {
-        ESP_LOGE("sendData()", "Error sending data! Error code: 0x%04X", result);
-        ESP_LOGE("sendData()", "esp_now_send() failed: %s", esp_err_to_name(result));
-        ESP_LOGE("sendData()", "Ensure that receiver is powered-on.");
-        ESP_LOGE("sendData()", "Ensure that received MAC is: %02X:%02X:%02X:%02X:%02X:%02X",
+        ESP_LOGE(TAG, "Error sending data! Error code: 0x%04X", result);
+        ESP_LOGE(TAG, "esp_now_send() failed: %s", esp_err_to_name(result));
+        ESP_LOGE(TAG, "Ensure that receiver is powered-on.");
+        ESP_LOGE(TAG, "Ensure that received MAC is: %02X:%02X:%02X:%02X:%02X:%02X",
                  receiver_mac[0], receiver_mac[1], receiver_mac[2],
                  receiver_mac[3], receiver_mac[4], receiver_mac[5]);
         deletePeer();
