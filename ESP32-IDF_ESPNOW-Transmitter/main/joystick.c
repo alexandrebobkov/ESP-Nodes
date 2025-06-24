@@ -118,16 +118,16 @@ void joystick_task(void *arg)
 void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status)
 {
     if (status == ESP_NOW_SEND_SUCCESS) {
-        ESP_LOGI(JTAG, "Data sent successfully to: %02X:%02X:%02X:%02X:%02X:%02X",
+        ESP_LOGI(TAG, "Data sent successfully to: %02X:%02X:%02X:%02X:%02X:%02X",
                  mac_addr[0], mac_addr[1], mac_addr[2],
                  mac_addr[3], mac_addr[4], mac_addr[5]);
     } else {
         ESP_LOGE(JTAG, "Error sending data to: %02X:%02X:%02X:%02X:%02X:%02X",
                  mac_addr[0], mac_addr[1], mac_addr[2],
                  mac_addr[3], mac_addr[4], mac_addr[5]);
-        ESP_LOGE(JTAG, "Error sending data. Error code: 0x%04X", status);
-        ESP_LOGE(JTAG, "esp_now_send() failed: %s", esp_err_to_name(status));
-        ESP_LOGE(JTAG, "Ensure that receiver is powered-on and MAC is correct.");
+        ESP_LOGE(TAG, "Error sending data. Error code: 0x%04X", status);
+        ESP_LOGE(TAG, "esp_now_send() failed: %s", esp_err_to_name(status));
+        ESP_LOGE(TAG, "Ensure that receiver is powered-on and MAC is correct.");
         deletePeer();
     }
 }
