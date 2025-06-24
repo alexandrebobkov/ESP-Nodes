@@ -7,11 +7,6 @@
 
 #include "config.h"
 
-
-//extern uint8_t broadcast_mac[ESP_NOW_ETH_ALEN];     // Broadcast MAC address
-//extern uint8_t receiver_mac[ESP_NOW_ETH_ALEN];      // MAC address of Robot
-//extern uint8_t transmitter_mac[ESP_NOW_ETH_ALEN];   // MAC address of Remote Control
-
 void wifi_init();
 void transmission_init();
 
