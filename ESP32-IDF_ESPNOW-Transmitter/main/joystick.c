@@ -118,6 +118,8 @@ static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status
         //esp_restart();
         esp_now_deinit();
         esp_now_init();
+        ESP_LOGI(TAG, "Re-initializing ESPNOW...");
+        // Re-initialize the peer device
     }
 }
 
