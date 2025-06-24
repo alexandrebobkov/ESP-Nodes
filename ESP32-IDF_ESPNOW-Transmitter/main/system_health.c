@@ -12,7 +12,7 @@ static const char *TAG = "SystemHealth";
     EXP32-C3 Chip built-in temprature sensor
     Read & display the temperature value
 */
-void temp_sensor_task (void *arg) {
+static void temp_sensor_task (void *arg) {
     while (true) {
         ESP_LOGI(TAG, "Reading sensor temperature");
         float tsens_value;
