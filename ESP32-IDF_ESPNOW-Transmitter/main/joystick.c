@@ -99,14 +99,7 @@ static void sendData (void)
     }
 }
 
-/*void joystick_task(void *arg)
-{
-    while (true) {
-        joystick_show_raw_xy();
-        vTaskDelay (1000 / portTICK_PERIOD_MS);
-    }
-}*/
-
+// Callback function to handle the status of data transmission
 static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status)
 {
     if (status == ESP_NOW_SEND_SUCCESS) {
