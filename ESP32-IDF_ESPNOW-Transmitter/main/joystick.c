@@ -140,7 +140,7 @@ void wifi_init()
     #endif
 }
 
-void rc_send_data_task()
+static void rc_send_data_task()
 {
     while (true) {
         if (esp_now_is_peer_exist((uint8_t*)receiver_mac)) {
