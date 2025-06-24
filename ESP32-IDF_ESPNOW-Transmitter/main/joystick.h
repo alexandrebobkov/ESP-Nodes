@@ -17,10 +17,7 @@ static void deletePeer (void);
 
 static esp_err_t joystick_adc_init(void);
 //void joystick_show_raw_xy();
-
-
-
-void joystick_task(void *arg);
+//void joystick_task(void *arg);
 static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status);
 
 
