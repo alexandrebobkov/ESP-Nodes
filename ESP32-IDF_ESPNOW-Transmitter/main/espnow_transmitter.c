@@ -20,7 +20,7 @@
 #include "nvs_flash.h"
 #include "esp_err.h"
 
-
+#include "system_health.h"
 #include "joystick.h"
 
 void app_main(void)
