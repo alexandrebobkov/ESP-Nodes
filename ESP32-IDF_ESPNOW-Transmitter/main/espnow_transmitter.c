@@ -28,26 +28,18 @@
 #include "esp_err.h"
 
 static temperature_sensor_handle_t temp_sensor;
-//static temperature_sensor_config_t temp_sensor_config;
-static float tsens_value;
 const char *TAGt = "ESP-NOW_Transmitter"; 
 
 /*
     EXP32-C3 Chip built-in temprature sensor
     Read & display the temperature value
 */
-/*static void display_chip_temperature () {
-    ESP_LOGI(TAGt, "Reading sensor temperature");
-    ESP_ERROR_CHECK(temperature_sensor_get_celsius(temp_sensor, &tsens_value));
-    ESP_LOGW(TAGt, "Temperature value %.02f ℃", tsens_value);
-}*/
 static void temp_sensor_task (void *arg) {
     while (true) {
         ESP_LOGI(TAGt, "Reading sensor temperature");
         float tsens_value;
         ESP_ERROR_CHECK(temperature_sensor_get_celsius(temp_sensor, &tsens_value));
         ESP_LOGW(TAGt, "Temperature value %.02f ℃", tsens_value);
-        //display_chip_temperature();
         vTaskDelay(5000 / portTICK_PERIOD_MS);
     }
 }
