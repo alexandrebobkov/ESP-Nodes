@@ -15,8 +15,8 @@ static void sendData (void);
 static void get_joystick_xy(int *x_axis, int *y_axis);
 static void deletePeer (void);
 
-esp_err_t joystick_adc_init(void);
-void joystick_show_raw_xy();
+static esp_err_t joystick_adc_init(void);
+//void joystick_show_raw_xy();
 
 
 
