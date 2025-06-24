@@ -3,6 +3,8 @@
 #include "esp_log.h"
 #include "esp_err.h"
 
+#include "system_health.h"
+
 static temperature_sensor_handle_t temp_sensor;
 const char *TAGt = "ESP-NOW_Transmitter"; 
 
