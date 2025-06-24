@@ -6,7 +6,7 @@
 #include "system_health.h"
 
 static temperature_sensor_handle_t temp_sensor;
-const char *TAGt = "ESP-NOW_Transmitter"; 
+static const char *TAGt = "ESP-NOW_Transmitter"; 
 
 /*
     EXP32-C3 Chip built-in temprature sensor
