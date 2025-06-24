@@ -28,8 +28,6 @@ void app_main(void)
     // Initialize internal temperature sensor
     chip_sensor_init();
 
-    joystick_adc_init();
-
     // Initialize NVS
     esp_err_t ret = nvs_flash_init();
     if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
@@ -38,6 +36,7 @@ void app_main(void)
     }
     ESP_ERROR_CHECK( ret );
     wifi_init();
+    joystick_adc_init();
     transmission_init();
     // Defince a task for periodically sending ESPNOW remote control data
     //xTaskCreate(rc_send_data_task, "RC", 2048, NULL, 4, NULL);
