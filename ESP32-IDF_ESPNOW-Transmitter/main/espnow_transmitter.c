@@ -24,6 +24,8 @@
 #include "joystick.h"
 
 #include "driver/temperature_sensor.h"
+#include "esp_log.h"
+#include "esp_err.h"
 
 static temperature_sensor_handle_t temp_sensor;
 //static temperature_sensor_config_t temp_sensor_config;
