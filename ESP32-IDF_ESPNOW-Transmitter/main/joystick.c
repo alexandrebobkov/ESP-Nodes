@@ -117,8 +117,12 @@ static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status
         deletePeer();
         //esp_restart();
         esp_now_deinit();
-        transmission_init();
+        esp_now_init();
         ESP_LOGI(TAG, "Re-initializing ESPNOW...");
+        memcpy(devices.peer_addr, receiver_mac, 6);
+        devices.channel = 1;
+        devices.encrypt = false;
+        esp_now_add_peer(&devices);
     }
 }
 
