@@ -55,14 +55,14 @@ void get_joystick_xy(int *x_axis, int *y_axis)
 }
 
 // Function to delete peer (i.e. when communication error occurs)
-void deletePeer (void) 
+static void deletePeer (void) 
 {
     uint8_t delStatus = esp_now_del_peer(receiver_mac);
     if (delStatus != 0) {
         ESP_LOGE(TAG, "Could not delete peer");
     }
 }
-void sendData (void)
+static void sendData (void)
 {
     buffer.crc = 0;
     buffer.x_axis = 240;
@@ -107,7 +107,7 @@ void joystick_task(void *arg)
     }
 }
 
-void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status)
+static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status)
 {
     if (status == ESP_NOW_SEND_SUCCESS) {
         ESP_LOGI(TAG, "Data sent successfully to: %02X:%02X:%02X:%02X:%02X:%02X",
