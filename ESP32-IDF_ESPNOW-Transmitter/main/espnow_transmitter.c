@@ -27,6 +27,15 @@
     EXP32-C3 Chip built-in temprature sensor
     Read & display the temperature value
 */
+static void temp_sensor_task (void *arg) {
+    while (true) {
+        ESP_LOGI("ESP32-C3", "Reading sensor temperature");
+        float tsens_value;
+        ESP_ERROR_CHECK(temperature_sensor_get_celsius(temp_sensor, &tsens_value));
+        ESP_LOGW("ESP32-C3", "Temperature value %.02f ℃", tsens_value);
+        vTaskDelay(5000 / portTICK_PERIOD_MS);
+    }
+}
 static void chip_sensor_init () {
     temp_sensor = NULL;
     temperature_sensor_config_t temp_sensor_config = TEMPERATURE_SENSOR_CONFIG_DEFAULT(10, 50);
