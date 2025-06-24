@@ -113,6 +113,7 @@ static uint8_t s_led_state = 1;
     ESP32-C3 SuperMini MAC:         34:b7:da:f9:33:8d
     ESP32-C3 Breadboard #1 MAC:     e4:b0:63:17:9e:45
     ESP32-C3 Breadboard #2 MAC:     9c:9e:6e:14:b5:54 (rapid blink)
+    ESP32-C3 zenBoard MAC:          dc:da:0c:8e:b3:70
 */
 static uint8_t broadcast_mac[ESP_NOW_ETH_ALEN] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
 //static uint8_t broadcast_mac[ESP_NOW_ETH_ALEN]  = {0x54, 0x32, 0x04, 0x46, 0x71, 0x80};     // MAC address of troubleshooting Dev board
