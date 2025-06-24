@@ -4,6 +4,8 @@
     Updated:        June 18, 2025
     SDK:abort       ESP-IDF v.5.4.1
 
+    Modification:   added boolean variable LED to the struct 'buffer'
+
    This example code is in the Public Domain (or CC0 licensed, at your option.)
 
    Unless required by applicable law or agreed to in writing, this
