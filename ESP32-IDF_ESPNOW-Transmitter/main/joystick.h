@@ -12,6 +12,7 @@
 //extern uint8_t receiver_mac[ESP_NOW_ETH_ALEN];      // MAC address of Robot
 //extern uint8_t transmitter_mac[ESP_NOW_ETH_ALEN];   // MAC address of Remote Control
 
+void wifi_init();
 void transmission_init();
 
 esp_err_t joystick_adc_init(void);
@@ -21,7 +22,7 @@ void sendData (void);
 void deletePeer (void);
 void joystick_task(void *arg);
 void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status);
-void wifi_init();
+
 void rc_send_data_task();
 
 
