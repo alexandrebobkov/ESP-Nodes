@@ -36,12 +36,18 @@ const char *TAG = "ESP-NOW_Transmitter";
     EXP32-C3 Chip built-in temprature sensor
     Read & display the temperature value
 */
+static void display_chip_temperature () {
+    ESP_LOGI(TAG, "Reading sensor temperature");
+    ESP_ERROR_CHECK(temperature_sensor_get_celsius(temp_sensor, &tsens_value));
+    ESP_LOGW(TAG, "Temperature value %.02f ℃", tsens_value);
+}
 static void temp_sensor_task (void *arg) {
     while (true) {
         ESP_LOGI(TAG, "Reading sensor temperature");
         float tsens_value;
         ESP_ERROR_CHECK(temperature_sensor_get_celsius(temp_sensor, &tsens_value));
         ESP_LOGW(TAG, "Temperature value %.02f ℃", tsens_value);
+        display_chip_temperature();
         vTaskDelay(5000 / portTICK_PERIOD_MS);
     }
 }
@@ -52,11 +58,6 @@ static void chip_sensor_init () {
 
     ESP_LOGI(TAG, "Enable temperature sensor");
     ESP_ERROR_CHECK(temperature_sensor_enable(temp_sensor));
-}
-static void display_chip_temperature () {
-    ESP_LOGI(TAG, "Reading sensor temperature");
-    ESP_ERROR_CHECK(temperature_sensor_get_celsius(temp_sensor, &tsens_value));
-    ESP_LOGW(TAG, "Temperature value %.02f ℃", tsens_value);
 }
 
 void app_main(void)
