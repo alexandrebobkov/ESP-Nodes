@@ -115,14 +115,7 @@ static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status
         ESP_LOGE(TAG, "esp_now_send() failed: %s", esp_err_to_name(status));
         ESP_LOGE(TAG, "Ensure that receiver is powered-on and MAC is correct.");
         deletePeer();
-        //esp_restart();
-        esp_now_deinit();
-        esp_now_init();
-        ESP_LOGI(TAG, "Re-initializing ESPNOW...");
-        memcpy(devices.peer_addr, receiver_mac, 6);
-        devices.channel = 1;
-        devices.encrypt = false;
-        esp_now_add_peer(&devices);
+        esp_restart();
     }
 }
 
