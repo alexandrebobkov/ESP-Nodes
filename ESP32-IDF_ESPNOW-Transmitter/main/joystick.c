@@ -122,7 +122,7 @@ void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status)
                  mac_addr[0], mac_addr[1], mac_addr[2],
                  mac_addr[3], mac_addr[4], mac_addr[5]);
     } else {
-        ESP_LOGE(JTAG, "Error sending data to: %02X:%02X:%02X:%02X:%02X:%02X",
+        ESP_LOGE(TAG, "Error sending data to: %02X:%02X:%02X:%02X:%02X:%02X",
                  mac_addr[0], mac_addr[1], mac_addr[2],
                  mac_addr[3], mac_addr[4], mac_addr[5]);
         ESP_LOGE(TAG, "Error sending data. Error code: 0x%04X", status);
