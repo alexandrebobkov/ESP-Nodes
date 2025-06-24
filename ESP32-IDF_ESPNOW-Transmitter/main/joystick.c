@@ -14,9 +14,6 @@
 #include "sensors_data.h"
 #include "config.h"
 
-//static const char *TAG = "Joystick"; 
-//const char *TAG = "ESP-NOW_Transmitter"; 
-
 esp_now_peer_info_t devices;
 adc_oneshot_unit_handle_t adc_xy_handle;
 sensors_data_t buffer;
