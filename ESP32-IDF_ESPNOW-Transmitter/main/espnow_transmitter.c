@@ -23,6 +23,10 @@
 
 #include "joystick.h"
 
+static temperature_sensor_handle_t temp_sensor;
+//static temperature_sensor_config_t temp_sensor_config;
+static float tsens_value;
+
 /*
     EXP32-C3 Chip built-in temprature sensor
     Read & display the temperature value
