@@ -1,4 +1,4 @@
-/* * Data converted from /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_ESPNOW-Transmitter/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from /home/alex/github/ESP-Nodes/ESP32-IDF_ESPNOW-Transmitter/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 #if !defined (__APPLE__) && !defined (__linux__)

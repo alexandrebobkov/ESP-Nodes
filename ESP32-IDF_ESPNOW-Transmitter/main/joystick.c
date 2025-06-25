@@ -15,7 +15,7 @@
 #include "config.h"
 
 esp_now_peer_info_t devices;
-adc_oneshot_unit_handle_t adc_xy_handle;
+static adc_oneshot_unit_handle_t adc_xy_handle;
 sensors_data_t buffer;
 static int x, y; // Joystick x- and y- axis positions
 
@@ -41,12 +41,12 @@ esp_err_t joystick_adc_init(void)
     return ESP_OK;
 }
 
-/*void joystick_show_raw_xy()
+void joystick_show_raw_xy()
 {
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC_CHANNEL_0, &x));
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC_CHANNEL_1, &y));
     ESP_LOGI("(x,y)", "( %d, %d )", x, y);
-}*/
+}
 
 static void get_joystick_xy(int *x_axis, int *y_axis)
 {
@@ -74,6 +74,7 @@ static void sendData (void)
     buffer.motor3_rpm_pwm = 0;
     buffer.motor4_rpm_pwm = 0;
 
+    joystick_show_raw_xy();
     get_joystick_xy(&x, &y);
     //ESP_LOGI("(x, y)", "[ %d, %d ]", x, y);
     buffer.x_axis = x;
