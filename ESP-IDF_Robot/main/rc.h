@@ -174,12 +174,12 @@ static void update_pwm (int rc_x, int rc_y) {
         m.motor3_rpm_pcm = x;
         m.motor4_rpm_pcm = 0;
     }
-    else if ((x > 7400) && (y < 0)) {
+    /*else if ((x > 7400) && (y < 0)) {
         m.motor1_rpm_pcm = 0;
         m.motor2_rpm_pcm = 0;
         m.motor3_rpm_pcm = 0;
         m.motor4_rpm_pcm = -x;
-    }
+    }*/
         else {
             //ESP_LOGW("ESP-NOW", "STAND STILL");
             m.motor1_rpm_pcm = 0;
