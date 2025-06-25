@@ -169,8 +169,8 @@ static void update_pwm (int rc_x, int rc_y) {
     }
     // DIAGONALLY FORWARD
     else if ((x > 7400) && (y > 7400)) {
-        m.motor1_rpm_pcm = x;   // left, forward
-        m.motor2_rpm_pcm = 0;   // right, forward
+        m.motor1_rpm_pcm = 0;   // left, forward
+        m.motor2_rpm_pcm = x;   // right, forward
         m.motor3_rpm_pcm = 0;
         m.motor4_rpm_pcm = 0;
     }
