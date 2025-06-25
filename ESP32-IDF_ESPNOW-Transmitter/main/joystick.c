@@ -74,7 +74,7 @@ static void sendData (void)
     buffer.motor3_rpm_pwm = 0;
     buffer.motor4_rpm_pwm = 0;
 
-    joystick_show_raw_xy();
+    //joystick_show_raw_xy();
     get_joystick_xy(&x, &y);
     //ESP_LOGI("(x, y)", "[ %d, %d ]", x, y);
     buffer.x_axis = x;
