@@ -152,10 +152,10 @@ static void update_pwm (int rc_x, int rc_y) {
         //else if ((y < 0 && y > -200) && (x < -1000)) {
             //ESP_LOGW("ESP-NOW", "LEFT");
             // Left side rotates in forward direction, right side rotates in reverse direction.
-            m.motor1_rpm_pcm = -y;
-            m.motor2_rpm_pcm = 0;
-            m.motor3_rpm_pcm = -y;
-            m.motor4_rpm_pcm = 0;
+        m.motor1_rpm_pcm = -y;
+        m.motor2_rpm_pcm = 0;
+        m.motor3_rpm_pcm = -y;
+        m.motor4_rpm_pcm = 0;
     }
     else if ((x > -200 && x < 500) && (y > 600)) {
         //else if ((y < 0 && y > -200) && (x > 1000)) {
