@@ -70,7 +70,7 @@ static int check_motor_pcm(int x) {
 
 // Update PWM based on received values
 static void update_pwm (int rc_x, int rc_y) {
-
+    
     //m.motor1_rpm_pcm = check_motor_pcm(rescale_raw_val(x));
     x = check_motor_pcm(rescale_raw_val(rc_x));
     y = check_motor_pcm(rescale_raw_val(rc_y));
@@ -130,6 +130,48 @@ static void update_pwm (int rc_x, int rc_y) {
             m.motor3_rpm_pcm = 0;
             m.motor4_rpm_pcm = 0;
         }*/
+    if ((x > 0) && (y > 0 && y < 500)) {
+            //ESP_LOGW("ESP-NOW", "FORWARD");
+            // Both sides rotate in forward direction.
+        m.motor1_rpm_pcm = x;   // left, forward
+        m.motor2_rpm_pcm = x;   // right, forward
+        m.motor3_rpm_pcm = 0;
+        m.motor4_rpm_pcm = 0;
+    }
+    else if ((x < 0) && (y > 0 && y < 500)) {
+        //else if ((x > 0 && x < 500) && (y < -200)) {
+            //ESP_LOGW("ESP-NOW", "REVERSE");
+            // Both sides rotate in reverse direction.
+        m.motor1_rpm_pcm = 0;
+        m.motor2_rpm_pcm = 0;
+        m.motor3_rpm_pcm = -x;
+        m.motor4_rpm_pcm = -x;
+    }
+        else if ((x > 0 && x < 500) && (y < 200)) {
+        //else if ((y < 0 && y > -200) && (x < -1000)) {
+            //ESP_LOGW("ESP-NOW", "LEFT");
+            // Left side rotates in forward direction, right side rotates in reverse direction.
+            m.motor1_rpm_pcm = -y;
+            m.motor2_rpm_pcm = 0;
+            m.motor3_rpm_pcm = -y;
+            m.motor4_rpm_pcm = 0;
+        }
+        else if ((x > 0 && x < 500) && (y > 600)) {
+        //else if ((y < 0 && y > -200) && (x > 1000)) {
+            //ESP_LOGW("ESP-NOW", "RIGHT");
+            // Right side rotates in forward direction, left side rotates in reverse direction.
+            m.motor1_rpm_pcm = 0;
+            m.motor2_rpm_pcm = y; 
+            m.motor3_rpm_pcm = 0;
+            m.motor4_rpm_pcm = y; 
+        }
+        else {
+            //ESP_LOGW("ESP-NOW", "STAND STILL");
+            m.motor1_rpm_pcm = 0;
+            m.motor2_rpm_pcm = 0;
+            m.motor3_rpm_pcm = 0;
+            m.motor4_rpm_pcm = 0;
+        }
     ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, m.motor1_rpm_pcm);
     ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT);
     ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT, m.motor2_rpm_pcm);
