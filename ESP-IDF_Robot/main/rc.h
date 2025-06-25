@@ -131,7 +131,7 @@ static void update_pwm (int rc_x, int rc_y) {
             m.motor4_rpm_pcm = 0;
         }*/
     // FORWARD AND REVERSE
-    if ((x > 0) && (y > 0 && y < 1100)) {//500)) {
+    if ((x > 0) && (y > 1000 && y < 1100)) {// (y > 0 && y < 1100)) {//500)) {
             //ESP_LOGW("ESP-NOW", "FORWARD");
             // Both sides rotate in forward direction.
         m.motor1_rpm_pcm = x;   // left, forward
