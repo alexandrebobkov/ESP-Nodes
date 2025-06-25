@@ -2,7 +2,7 @@
 #define CONFIG_H
 
 // MOTORS PWM CONFIG
-#define MTR_FREQUENCY               (5000)
+#define MTR_FREQUENCY               (7000)
 #define MTR_MODE                    LEDC_LOW_SPEED_MODE
 #define MTR_DUTY_RES                LEDC_TIMER_13_BIT       // 13-bit resolution supports maximum duty value 8192
 // LEFT SIDE MOTORS, FORWARD
@@ -27,8 +27,8 @@
 #define MTR_FRONT_RIGHT_REV_DUTY    (3361)
 
 
-#define LEDC_DUTY                   (3361) //7820) // 8068, 7944, 7820, 7696, 7572, *7680*, 7424, 7168, 6144, 512, 768
-#define LEDC_FREQUENCY              (2500) //8192) //4000) // For LED the freuqncy of 500Hz seems to be sufficient. // Frequency in Hertz. For DC motor, set frequency at 5 kHz; try 1kHz @ 14 bits resolution
+//#define LEDC_DUTY                   (3361) //7820) // 8068, 7944, 7820, 7696, 7572, *7680*, 7424, 7168, 6144, 512, 768
+//#define LEDC_FREQUENCY              (2500) //8192) //4000) // For LED the freuqncy of 500Hz seems to be sufficient. // Frequency in Hertz. For DC motor, set frequency at 5 kHz; try 1kHz @ 14 bits resolution
 
 
 #endif
