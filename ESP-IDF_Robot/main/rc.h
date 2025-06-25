@@ -171,8 +171,8 @@ static void update_pwm (int rc_x, int rc_y) {
     else if ((x > 7400) && (y > 7400)) {
         m.motor1_rpm_pcm = 0;   // left, forward
         m.motor2_rpm_pcm = 0;   // right, forward
-        m.motor3_rpm_pcm = x;
-        m.motor4_rpm_pcm = 0;
+        m.motor3_rpm_pcm = 0;
+        m.motor4_rpm_pcm = x;
     }
     /*else if ((x > 7400) && (y < 0)) {
         m.motor1_rpm_pcm = 0;
