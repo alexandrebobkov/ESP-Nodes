@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "ESP-IDF_Robot",
-    "project_version":    "ESP32-Node_Switch-v2.7-6718-ge50ab6b4f-dirty",
+    "project_version":    "ESP32-Node_Switch-v2.7-6770-g833ff3f9c-dirty",
     "project_path":       "/home/alex/github/ESP-Nodes/ESP-IDF_Robot",
     "idf_path":           "/home/alex/esp/v5.4.1/esp-idf",
     "build_dir":          "/home/alex/github/ESP-Nodes/ESP-IDF_Robot/build",
@@ -1210,7 +1210,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [ "espressif__led_strip" ],
             "file": "/home/alex/github/ESP-Nodes/ESP-IDF_Robot/build/esp-idf/main/libmain.a",
-            "sources": [ "/home/alex/github/ESP-Nodes/ESP-IDF_Robot/main/blink_example_main.c" ],
+            "sources": [ "/home/alex/github/ESP-Nodes/ESP-IDF_Robot/main/ultrasonic.c", "/home/alex/github/ESP-Nodes/ESP-IDF_Robot/main/blink_example_main.c" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {
