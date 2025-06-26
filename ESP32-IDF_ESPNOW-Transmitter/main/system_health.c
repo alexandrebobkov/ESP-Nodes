@@ -4,6 +4,7 @@
 #include "esp_log.h"
 #include "esp_err.h"
 
+#include "config.h"
 #include "system_health.h"
 
 static uint8_t sys_led_state = 1; // LED state variable
