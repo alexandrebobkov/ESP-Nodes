@@ -25,7 +25,7 @@ static void temp_sensor_task (void *arg) {
 
 static void system_led_task (void *arg) {
     while (1) {
-        gpio_set_level(BLINK_GPIO, sys_led_state);
+        gpio_set_level(SYS_LED_GPIO, sys_led_state);
         vTaskDelay(250 / portTICK_PERIOD_MS);
         sys_led_state = !sys_led_state; // Toggle the LED state
     }
