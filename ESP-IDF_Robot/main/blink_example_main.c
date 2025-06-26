@@ -16,7 +16,7 @@
 
     Voltage, DevBoard:  5V
     Voltage, Robot:     7.4V (2S LiPo battery)
-    Current, standby:  0.02A
+    Current, standby:  0.3A
     Current, motors:   0.5A
 */
 
