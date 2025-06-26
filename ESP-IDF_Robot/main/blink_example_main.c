@@ -289,7 +289,7 @@ static void rc_task (void *arg) {
     while (true) {
         update_pwm (rc_x, rc_y);
         ESP_LOGI("x,y", "( %d, %d ) [ %d, %d] ", rc_x, rc_y, x, y);
-        vTaskDelay (10 / portTICK_PERIOD_MS);  // Determines responsiveness  
+        vTaskDelay (100 / portTICK_PERIOD_MS);  // Determines responsiveness  
         //vTaskDelay (1000 / portTICK_PERIOD_MS); 
     }
 }
