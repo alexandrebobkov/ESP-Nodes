@@ -151,7 +151,7 @@ static void update_pwm (int rc_x, int rc_y) {
         m.motor4_rpm_pcm = -x;
     }
     // ROTATE CLOCKWISE AND COUNTER CLOCKWISE
-    else if ((x > 500 && x < 700) && (y < -0)) {
+    else if ((x > 500 && x < 700) && (y < 0)) {
     //else if ((x > -200 && x < 500) && (y < 200)) {
         //else if ((y < 0 && y > -200) && (x < -1000)) {
             //ESP_LOGW("ESP-NOW", "LEFT");
