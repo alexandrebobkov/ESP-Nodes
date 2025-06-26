@@ -9,4 +9,6 @@ typedef struct {
     gpio_num_t echo_gpio;     // GPIO for the echo pin
 } ultrasonic_sensor_t;
 
+esp_err_t ultrasonic_init (const ultrasonic_sensor_t *sensor);
+
 #endif
