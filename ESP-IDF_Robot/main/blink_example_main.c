@@ -11,6 +11,13 @@
     build-in push button GPIO:  3
 
     ESP-PDF: v5.4.1
+
+    SPECS
+
+    Voltage, DevBoard:  5V
+    Voltage, Robot:     7.4V (2S LiPo battery)
+    Current, standby:  0.02A
+    Current, motors:   0.5A
 */
 
 #include <stdio.h>
