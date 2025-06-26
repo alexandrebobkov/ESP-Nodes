@@ -9,7 +9,7 @@
 
 static uint8_t sys_led_state = 1; // LED state variable
 static temperature_sensor_handle_t temp_sensor;
-static const char *TAG = "SystemHealth"; 
+//static const char *TAG = "SystemHealth"; 
 
 /*
     EXP32-C3 Chip built-in temprature sensor
