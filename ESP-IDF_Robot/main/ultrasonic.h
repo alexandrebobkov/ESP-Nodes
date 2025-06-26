@@ -4,6 +4,12 @@
 #include "driver/gpio.h"
 #include "esp_err.h"
 
+#define TRIGGER_LOW_DELAY 4
+#define TRIGGER_HIGH_DELAY 10
+#define PING_TIMEOUT 6000
+#define ROUNDTRIP_M 5800.0f
+#define ROUNDTRIP_CM 58
+
 typedef struct {
     gpio_num_t trigger_gpio;  // GPIO for the trigger pin
     gpio_num_t echo_gpio;     // GPIO for the echo pin
