@@ -22,7 +22,7 @@ static int rescale_raw_val (int raw) {
     int s;
     //s = 4*raw - 8940;
     //s = (8190/1200^1)*(raw - 1200)^1;   // Linear rescaling
-    s = (8190/1200^3)*(raw - 1200)^3;   // Cubic rescaling
+    s = (8190/1870^3)*(raw - 1870)^3;   // Cubic rescaling
     return s;
 }
 
