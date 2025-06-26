@@ -63,7 +63,7 @@ static int check_motor_pcm(int x) {
     if (x > lim)
         return 8100;//lim;
     else if (x < -lim)
-        return -lim;
+        return -8100;//-lim;
     else
         return x;
 }
