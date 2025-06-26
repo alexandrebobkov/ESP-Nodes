@@ -21,6 +21,9 @@ static void temp_sensor_task (void *arg) {
         vTaskDelay(5000 / portTICK_PERIOD_MS);
     }
 }
+static void system_led_task (void *arg) {
+    
+}
 void chip_sensor_init () {
     temp_sensor = NULL;
     temperature_sensor_config_t temp_sensor_config = TEMPERATURE_SENSOR_CONFIG_DEFAULT(10, 50);
