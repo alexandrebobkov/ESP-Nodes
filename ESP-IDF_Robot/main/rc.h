@@ -140,7 +140,7 @@ static void update_pwm (int rc_x, int rc_y) {
         m.motor3_rpm_pcm = 0;
         m.motor4_rpm_pcm = 0;
     }
-    else if ((x < 0)) {
+    else if ((x < 0) && (y > 0 && y < 255))) {
     //else if ((x < -300) && (y > 0 && y < 500)) {
         //else if ((x > 0 && x < 500) && (y < -200)) {
             //ESP_LOGW("ESP-NOW", "FORWARD");
