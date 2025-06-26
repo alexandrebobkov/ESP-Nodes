@@ -1,3 +1,8 @@
+#include <freertos/FreeRTOS.h>
+#include <freertos/task.h>
+#include <esp_timer.h>
+#include <esp_timer.h>
+
 #include "ultrasonic.h"
 
 esp_err_t ultrasonic_init (const ultrasonic_sensor_t *sensor)
