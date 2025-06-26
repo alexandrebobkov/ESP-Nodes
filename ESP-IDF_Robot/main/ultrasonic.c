@@ -88,9 +88,9 @@ esp_err_t ultrasonic_measure_raw(const ultrasonic_sensor_t *dev, uint32_t max_ti
 
     // Ping: Low for 2..4 us, then high 10 us
     CHECK(gpio_set_level(dev->trigger_pin, 0));
-    ets_delay_us(TRIGGER_LOW_DELAY);
+    esp_rom_delay_us(TRIGGER_LOW_DELAY);
     CHECK(gpio_set_level(dev->trigger_pin, 1));
-    ets_delay_us(TRIGGER_HIGH_DELAY);
+    esp_rom_delay_us(TRIGGER_HIGH_DELAY);
     CHECK(gpio_set_level(dev->trigger_pin, 0));
 
     // Previous ping isn't ended
