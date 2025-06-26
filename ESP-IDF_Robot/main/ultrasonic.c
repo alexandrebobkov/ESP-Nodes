@@ -45,8 +45,8 @@ esp_err_t ultrasonic_measure_raw (const ultrasonic_sensor_t *sensor, uint32_t ma
 
     // Send a 10us pulse to the trigger pin
     gpio_set_level(sensor->trigger_gpio, 1);
-    esp_timer_delay(10); // Delay for 10 microseconds
-    gpio_set_level(sensor->trigger_gpio, 0);
+    vTaskDelay (10 / portTICK_PERIOD_MS); 
+    gpio_set_level(sensor->trigger_gpio, 0);ets_sys
 
     // Wait for the echo pin to go high
     uint32_t start_time = esp_timer_get_time();
