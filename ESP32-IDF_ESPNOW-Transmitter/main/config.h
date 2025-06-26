@@ -8,6 +8,8 @@
     Configuration variables
 */
 
+#define SYS_LED_GPIO  (10)  // 10 GPIO of on-board LED
+
 /*  ============================
     Joystick
     ============================ 
