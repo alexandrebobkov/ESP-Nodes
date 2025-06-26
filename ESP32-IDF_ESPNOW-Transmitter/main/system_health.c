@@ -21,9 +21,19 @@ static void temp_sensor_task (void *arg) {
         vTaskDelay(5000 / portTICK_PERIOD_MS);
     }
 }
+
 static void system_led_task (void *arg) {
-    
+    while (1) {
+        gpio_set_level(BLINK_GPIO, s_led_state);
+        vTaskDelay(250 / portTICK_PERIOD_MS);
+        s_led_state = !s_led_state; // Toggle the LED state
+    }
 }
+void system_led_init () {
+    // Initialize the system LED here if needed
+    xTaskCreate(system_led_task, "System LED", 2048, NULL, 15, NULL);
+}
+
 void chip_sensor_init () {
     temp_sensor = NULL;
     temperature_sensor_config_t temp_sensor_config = TEMPERATURE_SENSOR_CONFIG_DEFAULT(10, 50);
