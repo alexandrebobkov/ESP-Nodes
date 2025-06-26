@@ -28,12 +28,13 @@ static void temp_sensor_task (void *arg) {
 static void system_led_task (void *arg) {
     while (1) {
         gpio_set_level(SYS_LED_GPIO, sys_led_state);
-        vTaskDelay(250 / portTICK_PERIOD_MS);
+        vTaskDelay(750 / portTICK_PERIOD_MS);
         sys_led_state = !sys_led_state; // Toggle the LED state
     }
 }
 void system_led_init () {
-    // Initialize the system LED here if needed
+    gpio_reset_pin(SYS_LED_GPIO);
+    gpio_set_direction(SYS_LED_GPIO, GPIO_MODE_OUTPUT);
     xTaskCreate(system_led_task, "System LED", 2048, NULL, 15, NULL);
 }
 
