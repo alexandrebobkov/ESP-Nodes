@@ -1,5 +1,6 @@
 #include "freertos/FreeRTOS.h"
 #include "driver/temperature_sensor.h"
+#include "esp_system.h"
 #include "esp_log.h"
 #include "esp_err.h"
 
