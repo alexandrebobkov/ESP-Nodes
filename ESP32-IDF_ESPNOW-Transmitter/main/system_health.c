@@ -5,6 +5,7 @@
 
 #include "system_health.h"
 
+static uint8_t s_led_state = 1; // LED state variable
 static temperature_sensor_handle_t temp_sensor;
 static const char *TAG = "SystemHealth"; 
 
