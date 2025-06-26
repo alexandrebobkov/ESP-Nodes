@@ -50,7 +50,7 @@
 #define ROUNDTRIP_M 5800.0f
 #define ROUNDTRIP_CM 58
 
-#if HELPER_TARGET_IS_ESP32
+/*#if HELPER_TARGET_IS_ESP32
 static portMUX_TYPE mux = portMUX_INITIALIZER_UNLOCKED;
 #define PORT_ENTER_CRITICAL portENTER_CRITICAL(&mux)
 #define PORT_EXIT_CRITICAL portEXIT_CRITICAL(&mux)
@@ -67,7 +67,7 @@ static portMUX_TYPE mux = portMUX_INITIALIZER_UNLOCKED;
 
 #define CHECK_ARG(VAL) do { if (!(VAL)) return ESP_ERR_INVALID_ARG; } while (0)
 #define CHECK(x) do { esp_err_t __; if ((__ = x) != ESP_OK) return __; } while (0)
-#define RETURN_CRITICAL(RES) do { PORT_EXIT_CRITICAL; return RES; } while(0)
+#define RETURN_CRITICAL(RES) do { PORT_EXIT_CRITICAL; return RES; } while(0)*/
 
 esp_err_t ultrasonic_init(const ultrasonic_sensor_t *dev)
 {
