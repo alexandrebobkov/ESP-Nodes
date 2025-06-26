@@ -1,7 +1,5 @@
 #include "config.h"
 
-#define SYS_LED_GPIO  (10)  // 10 GPIO of on-board LED
-
 uint8_t broadcast_mac[ESP_NOW_ETH_ALEN] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
 //uint8_t receiver_mac[ESP_NOW_ETH_ALEN]  = {0x9c, 0x9e, 0x6e, 0x14, 0xb5, 0x54};
 // ESP32-C3 Breadboard Robot Receiver
