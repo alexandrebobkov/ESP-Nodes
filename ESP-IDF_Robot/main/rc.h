@@ -59,7 +59,7 @@ static esp_err_t rc_adc_init (void) {
 }
 
 static int check_motor_pcm(int x) {
-    int lim = 7440;
+    int lim = 8100;//7440;
     if (x > lim)
         return lim;
     else if (x < -lim)
