@@ -20,8 +20,8 @@ static int interpolate_raw_val (int raw) {
 static int rescale_raw_val (int raw) {
 
     int s;
-    //s = 4*raw - 8940;
-    s = (8190/2048^1)*(raw - 2048)^1;   // Linear rescaling
+    s = 4*raw - 8190;
+    //s = (8190/2048^1)*(raw - 2048)^1;   // Linear rescaling
     //s = (8190/1870^3)*(raw - 1870)^3;   // Cubic rescaling
     return s;
 }
