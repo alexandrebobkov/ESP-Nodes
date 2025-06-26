@@ -5,7 +5,7 @@
 
 #include "system_health.h"
 
-static uint8_t s_led_state = 1; // LED state variable
+static uint8_t sys_led_state = 1; // LED state variable
 static temperature_sensor_handle_t temp_sensor;
 static const char *TAG = "SystemHealth"; 
 
@@ -25,9 +25,9 @@ static void temp_sensor_task (void *arg) {
 
 static void system_led_task (void *arg) {
     while (1) {
-        gpio_set_level(BLINK_GPIO, s_led_state);
+        gpio_set_level(BLINK_GPIO, sys_led_state);
         vTaskDelay(250 / portTICK_PERIOD_MS);
-        s_led_state = !s_led_state; // Toggle the LED state
+        sys_led_state = !sys_led_state; // Toggle the LED state
     }
 }
 void system_led_init () {
