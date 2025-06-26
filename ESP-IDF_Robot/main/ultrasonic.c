@@ -36,3 +36,35 @@ esp_err_t ultrasonic_init (const ultrasonic_sensor_t *sensor)
     
     return ret;
 }
+
+esp_err_t ultrasonic_measure_raw (const ultrasonic_sensor_t *sensor, uint32_t max_time_us, uint32_t *time_us)
+{
+    if (sensor == NULL || time_us == NULL) {
+        return ESP_ERR_INVALID_ARG;
+    }
+
+    // Send a 10us pulse to the trigger pin
+    gpio_set_level(sensor->trigger_gpio, 1);
+    esp_timer_delay(10); // Delay for 10 microseconds
+    gpio_set_level(sensor->trigger_gpio, 0);
+
+    // Wait for the echo pin to go high
+    uint32_t start_time = esp_timer_get_time();
+    while (gpio_get_level(sensor->echo_gpio) == 0) {
+        if (esp_timer_get_time() - start_time > max_time_us) {
+            return ESP_ERR_TIMEOUT;
+        }
+    }
+
+    // Measure the duration of the high signal on the echo pin
+    start_time = esp_timer_get_time();
+    while (gpio_get_level(sensor->echo_gpio) == 1) {
+        if (esp_timer_get_time() - start_time > max_time_us) {
+            return ESP_ERR_TIMEOUT;
+        }
+    }
+
+    *time_us = esp_timer_get_time() - start_time;
+
+    return ESP_OK;
+}
