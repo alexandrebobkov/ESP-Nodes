@@ -50,6 +50,8 @@
 #include "esp_system.h"
 #include "espnow_config.h"
 
+#include "ultrasonic.h"
+
 #include "config.h"
 
 static const char *TAG = "ESP IDF Robot";
@@ -319,6 +321,22 @@ void onDataReceived (const uint8_t *mac_addr, const uint8_t *data, uint8_t data_
     rc_x = buf.x_axis;                  // Save joystic x-axis value
     rc_y = buf.y_axis;                  // Save joystic y-axis value
     update_pwm(rc_x, rc_y);    
+}
+
+void ultrasonic_task (void *arg) {
+    ultrasonic_sensor_t sensor = {
+        .trigger_gpio = GPIO_NUM_4,  // Example GPIO for trigger
+        .echo_gpio = GPIO_NUM_5       // Example GPIO for echo
+    };
+    ESP_ERROR_CHECK(ultrasonic_init(&sensor));
+
+    uint32_t time_us;
+    while (true) {
+        ESP_ERROR_CHECK(ultrasonic_measure_raw(&sensor, PING_TIMEOUT, &time_us));
+        float distance_cm = (float)time_us / ROUNDTRIP_CM;
+        ESP_LOGI(TAG, "Distance: %.2f cm", distance_cm);
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
+    }
 }
 
 void app_main(void)
