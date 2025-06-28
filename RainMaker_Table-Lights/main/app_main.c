@@ -1,4 +1,6 @@
-/* Switch Example
+/* ESP-Rainmaker Switch Example
+
+    ESP-IDF v5.4.1
 
    This example code is in the Public Domain (or CC0 licensed, at your option.)
 
