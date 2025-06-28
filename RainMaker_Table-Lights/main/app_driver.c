@@ -1,5 +1,5 @@
-/*  LED Lightbulb demo implementation using RGB LED
-
+/* Switch demo implementation using button and RGB LED
+   
    This example code is in the Public Domain (or CC0 licensed, at your option.)
 
    Unless required by applicable law or agreed to in writing, this
@@ -8,130 +8,80 @@
 */
 
 #include <sdkconfig.h>
-#include <esp_log.h>
+
 #include <iot_button.h>
 #include <esp_rmaker_core.h>
-#include <esp_rmaker_standard_types.h>
-#include <esp_rmaker_standard_params.h>
+#include <esp_rmaker_standard_params.h> 
 
 #include <app_reset.h>
-
-#if CONFIG_IDF_TARGET_ESP32C2
-#include <ledc_driver.h>
-#else
 #include <ws2812_led.h>
-#endif
-
 #include "app_priv.h"
 
 /* This is the button that is used for toggling the power */
 #define BUTTON_GPIO          CONFIG_EXAMPLE_BOARD_BUTTON_GPIO
 #define BUTTON_ACTIVE_LEVEL  0
 
+/* This is the GPIO on which the power will be set */
+#define OUTPUT_GPIO    CONFIG_EXAMPLE_OUTPUT_GPIO
+static bool g_power_state = DEFAULT_POWER;
+
+/* These values correspoind to H,S,V = 120,100,10 */
+#define DEFAULT_RED     0
+#define DEFAULT_GREEN   25
+#define DEFAULT_BLUE    0
+
 #define WIFI_RESET_BUTTON_TIMEOUT       3
 #define FACTORY_RESET_BUTTON_TIMEOUT    10
 
-static uint16_t g_hue = DEFAULT_HUE;
-static uint16_t g_saturation = DEFAULT_SATURATION;
-static uint16_t g_value = DEFAULT_BRIGHTNESS;
-static bool g_power = DEFAULT_POWER;
-
-#if CONFIG_IDF_TARGET_ESP32C2
-esp_err_t app_light_set_led(uint32_t hue, uint32_t saturation, uint32_t brightness)
+static void app_indicator_set(bool state)
 {
-    /* Whenever this function is called, light power will be ON */
-    if (!g_power) {
-        g_power = true;
-        esp_rmaker_param_update_and_report(
-                esp_rmaker_device_get_param_by_type(light_device, ESP_RMAKER_PARAM_POWER),
-                esp_rmaker_bool(g_power));
-    }
-    ledc_set_hsv(hue, saturation, brightness);
-    return ESP_OK;
-}
-
-esp_err_t app_light_set_power(bool power)
-{
-    g_power = power;
-    if (power) {
-        ledc_set_hsv(g_hue, g_saturation, g_value);
-    } else {
-        ledc_clear();
-    }
-    return ESP_OK;
-}
-
-esp_err_t app_light_init(void)
-{
-    ledc_init();
-    return ESP_OK;
-}
-#else
-esp_err_t app_light_set_led(uint32_t hue, uint32_t saturation, uint32_t brightness)
-{
-    /* Whenever this function is called, light power will be ON */
-    if (!g_power) {
-        g_power = true;
-        esp_rmaker_param_update_and_report(
-                esp_rmaker_device_get_param_by_type(light_device, ESP_RMAKER_PARAM_POWER),
-                esp_rmaker_bool(g_power));
-    }
-    return ws2812_led_set_hsv(hue, saturation, brightness);
-}
-
-esp_err_t app_light_set_power(bool power)
-{
-    g_power = power;
-    if (power) {
-        ws2812_led_set_hsv(g_hue, g_saturation, g_value);
+    if (state) {
+        ws2812_led_set_rgb(DEFAULT_RED, DEFAULT_GREEN, DEFAULT_BLUE);
     } else {
         ws2812_led_clear();
     }
-    return ESP_OK;
 }
 
-esp_err_t app_light_init(void)
+static void app_indicator_init(void)
 {
-    esp_err_t err = ws2812_led_init();
-    if (err != ESP_OK) {
-        return err;
-    }
-    if (g_power) {
-        ws2812_led_set_hsv(g_hue, g_saturation, g_value);
-    } else {
-        ws2812_led_clear();
-    }
-    return ESP_OK;
+    ws2812_led_init();
+    app_indicator_set(g_power_state);
 }
-#endif
-
-esp_err_t app_light_set_brightness(uint16_t brightness)
-{
-    g_value = brightness;
-    return app_light_set_led(g_hue, g_saturation, g_value);
-}
-esp_err_t app_light_set_hue(uint16_t hue)
-{
-    g_hue = hue;
-    return app_light_set_led(g_hue, g_saturation, g_value);
-}
-esp_err_t app_light_set_saturation(uint16_t saturation)
-{
-    g_saturation = saturation;
-    return app_light_set_led(g_hue, g_saturation, g_value);
-}
-
 static void push_btn_cb(void *arg)
 {
-    app_light_set_power(!g_power);
+    bool new_state = !g_power_state;
+    app_driver_set_state(new_state);
+#ifdef CONFIG_EXAMPLE_ENABLE_TEST_NOTIFICATIONS
+    /* This snippet has been added just to demonstrate how the APIs esp_rmaker_param_update_and_notify()
+     * and esp_rmaker_raise_alert() can be used to trigger push notifications on the phone apps.
+     * Normally, there should not be a need to use these APIs for such simple operations. Please check
+     * API documentation for details.
+     */
+    if (new_state) {
+        esp_rmaker_param_update_and_notify(
+                esp_rmaker_device_get_param_by_name(switch_device, ESP_RMAKER_DEF_POWER_NAME),
+                esp_rmaker_bool(new_state));
+    } else {
+        esp_rmaker_param_update_and_report(
+                esp_rmaker_device_get_param_by_name(switch_device, ESP_RMAKER_DEF_POWER_NAME),
+                esp_rmaker_bool(new_state));
+        esp_rmaker_raise_alert("Switch was turned off");
+    }
+#else
     esp_rmaker_param_update_and_report(
-            esp_rmaker_device_get_param_by_type(light_device, ESP_RMAKER_PARAM_POWER),
-            esp_rmaker_bool(g_power));
+            esp_rmaker_device_get_param_by_name(switch_device, ESP_RMAKER_DEF_POWER_NAME),
+            esp_rmaker_bool(new_state));
+#endif
+}
+
+static void set_power_state(bool target)
+{
+    gpio_set_level(OUTPUT_GPIO, target);
+    app_indicator_set(target);
 }
 
 void app_driver_init()
 {
-    app_light_init();
     button_handle_t btn_handle = iot_button_create(BUTTON_GPIO, BUTTON_ACTIVE_LEVEL);
     if (btn_handle) {
         /* Register a callback for a button tap (short press) event */
@@ -139,4 +89,28 @@ void app_driver_init()
         /* Register Wi-Fi reset and factory reset functionality on same button */
         app_reset_button_register(btn_handle, WIFI_RESET_BUTTON_TIMEOUT, FACTORY_RESET_BUTTON_TIMEOUT);
     }
+
+    /* Configure power */
+    gpio_config_t io_conf = {
+        .mode = GPIO_MODE_OUTPUT,
+        .pull_up_en = 1,
+    };
+    io_conf.pin_bit_mask = ((uint64_t)1 << OUTPUT_GPIO);
+    /* Configure the GPIO */
+    gpio_config(&io_conf);
+    app_indicator_init();
+}
+
+int IRAM_ATTR app_driver_set_state(bool state)
+{
+    if(g_power_state != state) {
+        g_power_state = state;
+        set_power_state(g_power_state);
+    }
+    return ESP_OK;
+}
+
+bool app_driver_get_state(void)
+{
+    return g_power_state;
 }
