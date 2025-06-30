@@ -43,7 +43,7 @@ simplepdf_vars = {
     'primary-opaque': 'rgba(26, 150, 26, 0.8)',
     'primary': "#1A961A",
     'secondary': "#379683",
-    'cover-bg': 'url(cover-ng.jpg) no-repeat center',
+    'cover-bg': 'url(cover-bg.jpg) no-repeat center',
 #   'cover-bg': 'url(ESP32C3_Breadboard-Adapter.jpg) no-repeat center',
 #    'cover': "#FFFFFF",
     'links': "#790000",
