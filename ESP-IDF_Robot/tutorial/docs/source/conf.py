@@ -38,9 +38,9 @@ simplepdf_title = 'ESP-IDF ESPNOW RC Car'
 simplepdf_author = 'Alexander B.'
 simplepdf_file_name = 'esp-idf_espnow_rc-car.pdf'
 simplepdf_vars = {
-    'cover-overlay': '#047e2c',
+#    'cover-overlay': '#047e2c',
 #    'cover-bg': "#034b1b",
-    'primary-opaque': 'rgba(26, 150, 26, 0.8)',
+#    'primary-opaque': 'rgba(26, 150, 26, 0.8)',
     'primary': "#1A961A",
     'secondary': "#379683",
     'cover-bg': 'url(cover-bg.jpg) no-repeat center',
