@@ -463,13 +463,13 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
     content: none; } }
 
 @page :first {
-  background: url(ESP32C3_Breadboard-Adapter.png) width: 100%;
+  background: url(ESP-IDF_Robot.jpg);
   background-size: cover;
   margin: 0; }
 
 @media screen {
   #cover {
-    background: url(ESP32C3_Breadboard-Adapter.png) width: 100%;
+    background: url(ESP-IDF_Robot.jpg);
     background-size: cover;
     margin: 0; } }
 
@@ -485,7 +485,7 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
     content: none; } }
 
 @page back_cover {
-  background: url(ESP32C3_Breadboard-Adapter.png) width: 100%;
+  background: url(ESP-IDF_Robot.jpg);
   background-size: cover;
   margin: 0;
   color: #ffffff; }
@@ -507,7 +507,7 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
   display: flex;
   flex-wrap: wrap;
   height: 297mm;
-  background: url(ESP32C3_Breadboard-Adapter.png) width: 100%;
+  background: url(ESP-IDF_Robot.jpg);
   background-size: cover;
   margin: 0; }
   #cover h1 {
