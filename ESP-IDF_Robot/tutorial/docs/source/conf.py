@@ -45,7 +45,7 @@ simplepdf_vars = {
     'secondary': "#379683",
     'cover-bg': 'url(cover-bg.jpg) no-repeat center',
 #   'cover-bg': 'url(ESP32C3_Breadboard-Adapter.jpg) no-repeat center',
-    'cover': "#DADAE4",
+    'cover': "#E4DADA",
     'links': "#790000",
     'bottom-center-content': '"Getting RC onn the road"',
     'bottom-right-content': '"Alexander B."',
