@@ -1,0 +1,26 @@
+{%- extends "layout.html" %}
+{%- set render_cover = (not theme_nocover|tobool) %}
+
+{%- block extrahead %}
+    
+{% endblock %}
+{%- block sidebar1 %}
+    {%- if render_cover %}
+        {%- include "cover.html" -%}
+    {%- endif %}
+    {{ sidebar() }}
+{% endblock %}
+{% block body %}
+    {{ body }}
+{% endblock %}
+{%- block footer %}
+    {%- if render_cover %}
+        {%- include "back_cover.html" -%}
+    {%- endif %}
+{%- endblock %}
+
+{% block debug %}
+
+{% endblock %}
+
+<h1>OUTSIDE BLOCK</h1>

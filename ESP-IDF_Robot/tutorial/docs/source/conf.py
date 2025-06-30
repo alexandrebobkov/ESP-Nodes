@@ -31,20 +31,21 @@ html_theme = 'alabaster'
 html_static_path = ['_static']
 
 # -- Options for simplepdf output --------------------------------------------
-simplepdf_css = '_static/simplepdf_alex.css'
+#simplepdf_css = '_static/simplepdf_alex.css'
 simplepdf_coverpage = True
 simplepdf_toc_depth = 3
 simplepdf_title = 'ESP-IDF ESPNOW RC Car'
 simplepdf_author = 'Alexander B.'
-simplepdf_file_name = 'cms-setup-guide.pdf'
+simplepdf_file_name = 'esp-idf_espnow_rc-car.pdf'
 simplepdf_vars = {
-    'cover-image': '_static/ESP32C3_Breadboard-Adapter.png',
-    'cover-overlay': '#047e2c',
-    'cover-bg': "#034b1b",
+#    'cover-overlay': '#047e2c',
+#    'cover-bg': "#034b1b",
     'primary-opaque': 'rgba(26, 150, 26, 0.8)',
     'primary': "#1A961A",
     'secondary': "#379683",
-    'cover': "#FFFFFF",
+    'cover-bg': 'url(_static/ESP32C3_Breadboard-Adapter.png) no-repeat center',
+#    'cover': "#FFFFFF",
     'links': "#790000",
     'bottom-center-content': '"Getting RC onn the road"',
     'bottom-right-content': '"Alexander B."',
+}

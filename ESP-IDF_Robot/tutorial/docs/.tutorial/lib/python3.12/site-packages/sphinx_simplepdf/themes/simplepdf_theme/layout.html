@@ -1,0 +1,11 @@
+{%- extends "basic/layout.html" %}
+
+{% block sidebar2 %}{% endblock %}
+
+{% block relbar1 %}{% endblock %}
+{% block relbar2 %}
+  {% if simplepdf_debug %}
+    {%- include "debug.html" -%}
+  {% endif %}
+
+{% endblock %}

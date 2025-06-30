@@ -1,0 +1,5 @@
+[sphinx.builders]
+simplepdf = sphinx_simplepdf.builders.simplepdf
+
+[sphinx.html_themes]
+simplepdf_theme = sphinx_simplepdf.themes.simplepdf_theme

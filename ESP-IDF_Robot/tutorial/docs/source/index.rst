@@ -13,5 +13,5 @@ documentation for details.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
+.. image:: _static/ESP32C3_Breadboard-Adapter.png

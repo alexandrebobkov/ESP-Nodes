@@ -279,7 +279,7 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
     line-height: 15pt;
     margin: 3em 0 1em; }
     .contents > ul > li::before {
-      background: #961a1a;
+      background: #1A961A;
       color: #ffffff;
       content: "";
       display: block;
@@ -290,7 +290,7 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
       color: #000000;
       font-size: 15pt; }
     .contents > ul > li a::after {
-      color: #961a1a;
+      color: #1A961A;
       content: target-counter(attr(href url), page);
       float: right; }
     .contents > ul > li > ul {
@@ -306,7 +306,7 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
           color: #000000;
           font-size: 12pt; }
         .contents > ul > li > ul li p::before {
-          color: #961a1a;
+          color: #1A961A;
           content: "• ";
           font-size: 40pt;
           line-height: 16pt;
@@ -328,7 +328,7 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
         color: #000000;
         font-size: 13pt; }
       .sphinxsidebarwrapper div > ul > li a::after {
-        color: #961a1a;
+        color: #1A961A;
         content: target-counter(attr(href url), page);
         float: right; }
       .sphinxsidebarwrapper div > ul > li > ul {
@@ -344,7 +344,7 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
             color: #000000;
             font-size: 12pt; }
           .sphinxsidebarwrapper div > ul > li > ul li a::before {
-            color: #961a1a;
+            color: #1A961A;
             content: "• ";
             font-size: 30pt;
             line-height: 10pt;
@@ -380,7 +380,7 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
 @page {
   padding-top: 1em;
   @top-left {
-    background: #961a1a;
+    background: #1A961A;
     color: #ffffff;
     content: counter(page);
     height: 1cm;
@@ -392,7 +392,7 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
     text-align: center;
     vertical-align: middle;
     width: 100%;
-    border-bottom-color: rgba(150, 26, 26, .5);
+    border-bottom-color: rgba(26, 150, 26, 0.8);
     border-bottom-style: solid;
     border-bottom-width: 0.05cm; }
   @top-right {
@@ -402,7 +402,7 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
     text-align: right;
     vertical-align: middle;
     width: 100%;
-    border-bottom-color: rgba(150, 26, 26, .5);
+    border-bottom-color: rgba(26, 150, 26, 0.8);
     border-bottom-style: solid;
     border-bottom-width: 0.05cm; }
   @bottom-left {
@@ -411,25 +411,27 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
     height: 1cm;
     vertical-align: middle;
     width: 100%;
-    border-top-color: rgba(150, 26, 26, .5);
+    border-top-color: rgba(26, 150, 26, 0.8);
     border-top-style: solid;
     border-top-width: 0.05cm;
     margin-top: 3px;
     position: absolute;
     bottom: 30pt; }
   @bottom-center {
+    content: "Getting RC onn the road";
     text-align: center;
     font-size: 9pt;
     height: 1cm;
     vertical-align: middle;
     width: 100%;
-    border-top-color: rgba(150, 26, 26, .5);
+    border-top-color: rgba(26, 150, 26, 0.8);
     border-top-style: solid;
     border-top-width: 0.05cm;
     margin-top: 3px;
     position: absolute;
     bottom: 30pt; }
   @bottom-right {
+    content: "Alexander B.";
     text-align: right;
     font-size: 9pt;
     height: 1cm;
@@ -438,7 +440,7 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
     margin-top: 3px;
     position: absolute;
     bottom: 30pt;
-    border-top-color: rgba(150, 26, 26, .5);
+    border-top-color: rgba(26, 150, 26, 0.8);
     border-top-style: solid;
     border-top-width: 0.05cm; } }
 
@@ -461,18 +463,18 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
     content: none; } }
 
 @page :first {
-  background: #961a1a;
+  background: url(_static/ESP32C3_Breadboard-Adapter.png) no-repeat center;
   background-size: cover;
   margin: 0; }
 
 @media screen {
   #cover {
-    background: #961a1a;
+    background: url(_static/ESP32C3_Breadboard-Adapter.png) no-repeat center;
     background-size: cover;
     margin: 0; } }
 
 @page chapter {
-  background: #961a1a;
+  background: #1A961A;
   color: #ffffff;
   margin: 0;
   @top-left {
@@ -483,7 +485,7 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
     content: none; } }
 
 @page back_cover {
-  background: #961a1a;
+  background: url(_static/ESP32C3_Breadboard-Adapter.png) no-repeat center;
   background-size: cover;
   margin: 0;
   color: #ffffff; }
@@ -505,12 +507,12 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
   display: flex;
   flex-wrap: wrap;
   height: 297mm;
-  background: #961a1a;
+  background: url(_static/ESP32C3_Breadboard-Adapter.png) no-repeat center;
   background-size: cover;
   margin: 0; }
   #cover h1 {
     font-family: "Work Sans", sans-serif;
-    color: #961a1a;
+    color: #1A961A;
     font-size: 38pt;
     margin: 5cm 2cm 0 2cm;
     page: no-chapter;
@@ -625,7 +627,7 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
   color: #007bff !important; }
 
 a {
-  color: #961a1a;
+  color: #790000;
   text-decoration: none; }
 
 a.text-primary:hover, a.text-primary:focus {
@@ -863,7 +865,7 @@ html {
   font-weight: 300;
   line-height: 1.5; }
   html body h1 {
-    color: #961a1a;
+    color: #1A961A;
     font-size: 30pt;
     page-break-before: always; }
   html body h2, html body h3, html body h4 {
