@@ -463,13 +463,13 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
     content: none; } }
 
 @page :first {
-  background: url(_static/ESP32C3_Breadboard-Adapter.png) no-repeat center;
+  background: url(ESP32C3_Breadboard-Adapter.png);
   background-size: cover;
   margin: 0; }
 
 @media screen {
   #cover {
-    background: url(_static/ESP32C3_Breadboard-Adapter.png) no-repeat center;
+    background: url(ESP32C3_Breadboard-Adapter.png);
     background-size: cover;
     margin: 0; } }
 
@@ -485,7 +485,7 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
     content: none; } }
 
 @page back_cover {
-  background: url(_static/ESP32C3_Breadboard-Adapter.png) no-repeat center;
+  background: url(ESP32C3_Breadboard-Adapter.png);
   background-size: cover;
   margin: 0;
   color: #ffffff; }
@@ -507,7 +507,7 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
   display: flex;
   flex-wrap: wrap;
   height: 297mm;
-  background: url(_static/ESP32C3_Breadboard-Adapter.png) no-repeat center;
+  background: url(ESP32C3_Breadboard-Adapter.png);
   background-size: cover;
   margin: 0; }
   #cover h1 {
@@ -523,7 +523,7 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
   #cover .container {
     width: 100%;
     top: 0;
-    background: #047e2c; }
+    background: rgba(0,0,0,0); }
     #cover .container .logo {
       font-size: 24pt;
       color: #ffffff;
