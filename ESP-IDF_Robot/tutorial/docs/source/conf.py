@@ -43,7 +43,7 @@ simplepdf_vars = {
     'primary-opaque': 'rgba(26, 150, 26, 0.8)',
     'primary': "#1A961A",
     'secondary': "#379683",
-    'cover-bg': 'url(ESP32C3_Breadboard-Adapter.png) object-fit: fill',
+    'cover-bg': 'url(ESP32C3_Breadboard-Adapter.png), object-fit: fill;',
 #    'cover': "#FFFFFF",
     'links': "#790000",
     'bottom-center-content': '"Getting RC onn the road"',
