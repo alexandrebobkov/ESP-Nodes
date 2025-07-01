@@ -14,7 +14,7 @@ The GPIO numbers correspond to those on the ESP32-C3 WROOM microcontroller. The 
 x- and y- axis
 ~~~~~~~~~~~~~~
 
-The GPIO0 and GPIO1 assigned to measuring the voltage of x- and y- axis of the Joystick. Lastly, there is a group of GPIO pairs responsible for PWM for DC motors.
+The **GPIO0** and **GPIO1** assigned to measuring the voltage of x- and y- axis of the Joystick. Lastly, there is a group of GPIO pairs responsible for PWM for DC motors.
 
 Direction and Speed
 ~~~~~~~~~~~~~~~~~~~
