@@ -7,8 +7,8 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'ByteRider'
-copyright = '2025, Alexander B.'
-author = 'Alexander B.'
+copyright = '2025, Alexander B'
+author = 'Alexander B'
 release = '06-2025'
 
 # -- General configuration ---------------------------------------------------
