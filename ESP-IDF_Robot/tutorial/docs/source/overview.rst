@@ -54,13 +54,13 @@ Fusion of Software & Hardware
 -----------------------------
 
 .. code-clock:: c
-    
-   struct motors_rpm {
-      int motor1_rpm_pcm;
-      int motor2_rpm_pcm;
-      int motor3_rpm_pcm;
-      int motor4_rpm_pcm;
-   };
+
+    struct motors_rpm {
+        int motor1_rpm_pcm;
+        int motor2_rpm_pcm;
+        int motor3_rpm_pcm;
+        int motor4_rpm_pcm;
+    };
 
 Schematic
 ---------
