@@ -170,31 +170,27 @@
           <p>
            The table below summarizes GPIOs and pins reserved for operations purposes.
           </p>
-          <p>
-           &hellip;existing code&hellip;
-.. image:: _static/ESP-IDF_Robot_schematic.png
-          </p>
           <table class="docutils align-default">
            <thead>
             <tr class="row-odd">
              <th class="head">
               <p>
-               Column 1
+               GPIO
               </p>
              </th>
              <th class="head">
               <p>
-               Column 2
+               Pin
               </p>
              </th>
              <th class="head">
               <p>
-               Column 3
+               Function
               </p>
              </th>
              <th class="head">
               <p>
-               Column 4
+               Notes
               </p>
              </th>
             </tr>
@@ -203,17 +199,61 @@
             <tr class="row-even">
              <td>
               <p>
-               Row 1
+               0
               </p>
              </td>
              <td>
               <p>
-               Data
+               16
               </p>
              </td>
              <td>
               <p>
-               Data
+               Joystick x-axis
+              </p>
+             </td>
+             <td>
+              <p>
+               ADC1_CH0
+              </p>
+             </td>
+            </tr>
+            <tr class="row-odd">
+             <td>
+              <p>
+               1
+              </p>
+             </td>
+             <td>
+              <p>
+               15
+              </p>
+             </td>
+             <td>
+              <p>
+               Joystick y-axis
+              </p>
+             </td>
+             <td>
+              <p>
+               ADC1_CH1
+              </p>
+             </td>
+            </tr>
+            <tr class="row-even">
+             <td>
+              <p>
+               8
+              </p>
+             </td>
+             <td>
+              <p>
+               5
+              </p>
+             </td>
+             <td>
+              <p>
+               Joystick push button
               </p>
              </td>
              <td>
@@ -225,132 +265,88 @@
             <tr class="row-odd">
              <td>
               <p>
-               Row 2
+               6
               </p>
              </td>
              <td>
               <p>
-               Data
+               4
               </p>
              </td>
              <td>
               <p>
-               Data
+               PWM for clockwise rotation of left-side motors
               </p>
              </td>
              <td>
               <p>
-               Data
+               LEDC_CHANNEL_1
               </p>
              </td>
             </tr>
             <tr class="row-even">
              <td>
               <p>
-               Row 3
+               5
               </p>
              </td>
              <td>
               <p>
-               Data
+               3
               </p>
              </td>
              <td>
               <p>
-               Data
+               PWM for clockwise rotation of right-side motors
               </p>
              </td>
              <td>
               <p>
-               Data
+               LEDC_CHANNEL_0
               </p>
              </td>
             </tr>
             <tr class="row-odd">
              <td>
               <p>
-               Row 4
+               4
               </p>
              </td>
              <td>
               <p>
-               Data
+               2
               </p>
              </td>
              <td>
               <p>
-               Data
+               PWM for counter-clockwise rotation of right-side motors
               </p>
              </td>
              <td>
               <p>
-               Data
-              </p>
-             </td>
-            </tr>
-            <tr class="row-even">
-             <td>
-              <p>
-               Row 5
-              </p>
-             </td>
-             <td>
-              <p>
-               Data
-              </p>
-             </td>
-             <td>
-              <p>
-               Data
-              </p>
-             </td>
-             <td>
-              <p>
-               Data
-              </p>
-             </td>
-            </tr>
-            <tr class="row-odd">
-             <td>
-              <p>
-               Row 6
-              </p>
-             </td>
-             <td>
-              <p>
-               Data
-              </p>
-             </td>
-             <td>
-              <p>
-               Data
-              </p>
-             </td>
-             <td>
-              <p>
-               Data
+               LEDC_CHANNEL_2
               </p>
              </td>
             </tr>
             <tr class="row-even">
              <td>
               <p>
-               Row 7
+               7
               </p>
              </td>
              <td>
               <p>
-               Data
+               6
               </p>
              </td>
              <td>
               <p>
-               Data
+               PWM for counter-clockwise rotation of left-side motors
               </p>
              </td>
              <td>
               <p>
-               Data
+               LEDC_CHANNEL_3
               </p>
              </td>
             </tr>

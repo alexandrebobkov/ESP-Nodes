@@ -39,51 +39,49 @@
 <section id="reserver-pins-gpios">
 <h2>Reserver Pins &amp; GPIOs<a class="headerlink" href="#reserver-pins-gpios" title="Link to this heading">¶</a></h2>
 <p>The table below summarizes GPIOs and pins reserved for operations purposes.</p>
-<p>…existing code…
-.. image:: _static/ESP-IDF_Robot_schematic.png</p>
 <table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="head"><p>Column 1</p></th>
-<th class="head"><p>Column 2</p></th>
-<th class="head"><p>Column 3</p></th>
-<th class="head"><p>Column 4</p></th>
+<tr class="row-odd"><th class="head"><p>GPIO</p></th>
+<th class="head"><p>Pin</p></th>
+<th class="head"><p>Function</p></th>
+<th class="head"><p>Notes</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Row 1</p></td>
-<td><p>Data</p></td>
-<td><p>Data</p></td>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>16</p></td>
+<td><p>Joystick x-axis</p></td>
+<td><p>ADC1_CH0</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>15</p></td>
+<td><p>Joystick y-axis</p></td>
+<td><p>ADC1_CH1</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>5</p></td>
+<td><p>Joystick push button</p></td>
 <td><p>Data</p></td>
 </tr>
-<tr class="row-odd"><td><p>Row 2</p></td>
-<td><p>Data</p></td>
-<td><p>Data</p></td>
-<td><p>Data</p></td>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>4</p></td>
+<td><p>PWM for clockwise rotation of left-side motors</p></td>
+<td><p>LEDC_CHANNEL_1</p></td>
 </tr>
-<tr class="row-even"><td><p>Row 3</p></td>
-<td><p>Data</p></td>
-<td><p>Data</p></td>
-<td><p>Data</p></td>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>3</p></td>
+<td><p>PWM for clockwise rotation of right-side motors</p></td>
+<td><p>LEDC_CHANNEL_0</p></td>
 </tr>
-<tr class="row-odd"><td><p>Row 4</p></td>
-<td><p>Data</p></td>
-<td><p>Data</p></td>
-<td><p>Data</p></td>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>2</p></td>
+<td><p>PWM for counter-clockwise rotation of right-side motors</p></td>
+<td><p>LEDC_CHANNEL_2</p></td>
 </tr>
-<tr class="row-even"><td><p>Row 5</p></td>
-<td><p>Data</p></td>
-<td><p>Data</p></td>
-<td><p>Data</p></td>
-</tr>
-<tr class="row-odd"><td><p>Row 6</p></td>
-<td><p>Data</p></td>
-<td><p>Data</p></td>
-<td><p>Data</p></td>
-</tr>
-<tr class="row-even"><td><p>Row 7</p></td>
-<td><p>Data</p></td>
-<td><p>Data</p></td>
-<td><p>Data</p></td>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>6</p></td>
+<td><p>PWM for counter-clockwise rotation of left-side motors</p></td>
+<td><p>LEDC_CHANNEL_3</p></td>
 </tr>
 </tbody>
 </table>
