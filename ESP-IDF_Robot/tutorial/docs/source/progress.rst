@@ -1,6 +1,9 @@
 WORK-IN-PROGRESS WALK THROUGH
 =============================
 
+Finished Work
+--------------
+
 .. image:: _static/ESP-IDF_Robot.jpg
 
 .. figure:: _static/chassi-progress_002d.jpg
