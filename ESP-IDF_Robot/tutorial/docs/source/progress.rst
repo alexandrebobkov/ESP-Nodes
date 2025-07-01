@@ -13,6 +13,8 @@ Chassis
     :height: 750px
     :align: right
 
+Completed chassis with DC motor controllers installed.
+
 Completed Wiring
 -----------------
 
