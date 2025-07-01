@@ -6,6 +6,11 @@ Finished Product
 
 .. image:: _static/ESP-IDF_Robot.jpg
 
+Chassi
+------
+
+.. image:: _static/chassi-progress_002d.jpg
+
 DC Motors Wires Harness
 ------------------------
 
