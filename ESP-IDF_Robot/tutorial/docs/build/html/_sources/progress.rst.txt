@@ -11,11 +11,14 @@ Chassis
 
 .. image:: _static/chassi-progress_002d.jpg
     :height: 750px
+    :align: center
 
 Completed Wiring
 -----------------
 
 .. image:: _static/chassi-progress_003a.jpg
+    :height: 750px
+    :align: center
 
 DC Motors Wires Harness
 ------------------------
