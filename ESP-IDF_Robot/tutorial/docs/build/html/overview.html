@@ -36,8 +36,8 @@
   <section id="how-does-it-work">
 <h1>HOW DOES IT WORK?<a class="headerlink" href="#how-does-it-work" title="Link to this heading">¶</a></h1>
 <p>The BitByteRider RC car is powered by ESP32-C3 Breadboard &amp; Power adapter developmemt board.</p>
-<section id="reserver-pins-gpios">
-<h2>Reserver Pins &amp; GPIOs<a class="headerlink" href="#reserver-pins-gpios" title="Link to this heading">¶</a></h2>
+<section id="reserved-pins-gpios">
+<h2>Reserved Pins &amp; GPIOs<a class="headerlink" href="#reserved-pins-gpios" title="Link to this heading">¶</a></h2>
 <p>The following table summarizes GPIOs and pins reserved for operations purposes.</p>
 <p>The GPIO numbers correspond to those on the ESP32-C3 WROOM microcontroller. The Pin number corresponds to the pin on the Breadboard and Power adapter development board.</p>
 <section id="x-and-y-axis">
@@ -45,10 +45,12 @@
 <p>The GPIO0 and GPIO1 assigned to measuring the voltage of x- and y- axis of the Joystick. Lastly, there is a group of GPIO pairs responsible for PWM for DC motors.</p>
 </section>
 <section id="direction-and-speed">
-<h3>Direction and speed<a class="headerlink" href="#direction-and-speed" title="Link to this heading">¶</a></h3>
-<p>The two DC motors on the left side are wired to the same PWM channel, as well as the two DC motors on the right side. Consequently, only four PWM channels are required for controlling the direction of the RC car.
-A pair of PWM channels are required for defining rotation speed and direction of the DC motors on each side.
-In particular, GPIO6 and GPIO5 provide PWM to the left- and right- side DC motors to rotate in a clockwise direction.
+<h3>Direction and Speed<a class="headerlink" href="#direction-and-speed" title="Link to this heading">¶</a></h3>
+<p>The two DC motors on the left side are wired to the dedicated PWM channels in pairs. This means that PWM channels can control rotation speed and direction of DC motors in pairs (i.e. left and right side).
+Consequently, only four PWM channels are required for controlling the direction of the RC car.
+Based on this constraint, the RC car can only move front, back, and rotate left and right. Any other movements are not possible (i.e. diagonal).</p>
+<p>A pair of PWM channels are required for defining rotation speed and direction of the DC motors on each side.
+In particular, __GPIO6__ and GPIO5 provide PWM to the left- and right- side DC motors to rotate in a clockwise direction.
 Similarly, GPIO4 and GPIO7 provide PWM to the left- and right- side DC motors to rotate in a counter-clockwise direction.
 Changing PWM on each channel determines the speed and direction of the RC car.</p>
 <table class="docutils align-default">
@@ -134,7 +136,7 @@ Changing PWM on each channel determines the speed and direction of the RC car.</
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">INTRODUCTION</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">HOW DOES IT WORK?</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#reserver-pins-gpios">Reserver Pins &amp; GPIOs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reserved-pins-gpios">Reserved Pins &amp; GPIOs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#schematic">Schematic</a></li>
 </ul>
 </li>
