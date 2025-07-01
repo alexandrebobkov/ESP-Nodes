@@ -50,7 +50,7 @@ Changing PWM on each channel determines the speed and direction of the RC car.
 | 7    | 6   | PWM for counter-clockwise rotation of left-side motors  | LEDC_CHANNEL_3 |
 +------+-----+---------------------------------------------------------+----------------+
 
-Fusion of Software & Hardware
+Fusion of Software with Hardware
 -----------------------------
 
 The *struct* for storing motors PWM values.
