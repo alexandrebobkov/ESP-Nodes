@@ -43,4 +43,4 @@ Completed Wiring
 DC Motors Wires Harness
 ------------------------
 
-.. image:: _static/motors-wiring-harness-001.jpg
+.. figure:: _static/motors-wiring-harness-001.jpg
