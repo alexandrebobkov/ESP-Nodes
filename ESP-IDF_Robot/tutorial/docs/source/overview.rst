@@ -9,11 +9,8 @@ Reserver Pins & GPIOs
 
 The table below summarizes GPIOs and pins reserved for operations purposes.
 
-...existing code...
-.. image:: _static/ESP-IDF_Robot_schematic.png
-
 +-----------+-----------+-----------+-----------+
-| Column 1  | Column 2  | Column 3  | Column 4  |
+| GPIO  | Pin  | Function  | Notes |
 +===========+===========+===========+===========+
 | Row 1     | Data      | Data      | Data      |
 +-----------+-----------+-----------+-----------+
