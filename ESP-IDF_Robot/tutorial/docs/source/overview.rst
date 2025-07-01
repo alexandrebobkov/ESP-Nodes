@@ -4,7 +4,7 @@ HOW DOES IT WORK?
 
 The BitByteRider RC car is powered by ESP32-C3 Breadboard & Power adapter developmemt board.
 
-Reserver Pins & GPIOs
+Reserved Pins & GPIOs
 ---------------------
 
 The following table summarizes GPIOs and pins reserved for operations purposes.
@@ -16,7 +16,7 @@ x- and y- axis
 
 The GPIO0 and GPIO1 assigned to measuring the voltage of x- and y- axis of the Joystick. Lastly, there is a group of GPIO pairs responsible for PWM for DC motors.
 
-Direction and speed
+Direction and Speed
 ~~~~~~~~~~~~~~~~~~~
 
 The two DC motors on the left side are wired to the same PWM channel, as well as the two DC motors on the right side. Consequently, only four PWM channels are required for controlling the direction of the RC car.
