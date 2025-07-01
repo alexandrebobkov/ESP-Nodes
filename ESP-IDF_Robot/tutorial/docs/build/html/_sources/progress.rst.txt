@@ -10,7 +10,7 @@ Chassis
 -------
 
 .. image:: _static/chassi-progress_002d.jpg
-    :height: 75%
+    :height: 750px
 
 Completed Wiring
 -----------------
