@@ -9,12 +9,12 @@ Finished Product
 Chassis
 -------
 
-.. image:: _static/chassi-progress_002d.jpg
+.. figure:: _static/chassi-progress_002d.jpg
     :height: 750px
     :align: right
 
     Caption.
-    
+
 Completed chassis with only DC motor controllers installed.
 
 Completed Wiring
