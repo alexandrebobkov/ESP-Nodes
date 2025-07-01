@@ -34,9 +34,11 @@ text text text text text text text text text text text text
 Completed Wiring
 -----------------
 
-.. image:: _static/chassi-progress_003a.jpg
+.. figure:: _static/chassi-progress_003a.jpg
     :height: 750px
     :align: right
+
+    Completed wiring.
 
 DC Motors Wires Harness
 ------------------------
