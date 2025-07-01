@@ -53,14 +53,14 @@ Changing PWM on each channel determines the speed and direction of the RC car.
 Fusion of Software & Hardware
 -----------------------------
 
-``` C
+.. code-clock:: c
+    
    struct motors_rpm {
       int motor1_rpm_pcm;
       int motor2_rpm_pcm;
       int motor3_rpm_pcm;
       int motor4_rpm_pcm;
    };
-```
 
 Schematic
 ---------
