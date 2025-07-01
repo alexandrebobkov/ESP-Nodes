@@ -67,18 +67,19 @@ The *struct* for storing motors PWM values.
 The function for updating motors' PWM values.
 
 .. code-block:: c
-    // Function to send data to the receiver
-void sendData (void) {
-    sensors_data_t buffer;              // Declare data struct
 
-    buffer.crc = 0;
-    buffer.x_axis = 240;
-    buffer.y_axis = 256;
-    buffer.nav_bttn = 0;
-    buffer.motor1_rpm_pwm = 10;
-    buffer.motor2_rpm_pwm = 0;
-    buffer.motor3_rpm_pwm = 0;
-    buffer.motor4_rpm_pwm = 0;
+    // Function to send data to the receiver
+    void sendData (void) {
+        sensors_data_t buffer;              // Declare data struct
+
+        buffer.crc = 0;
+        buffer.x_axis = 0;
+        buffer.y_axis = 0;
+        buffer.nav_bttn = 0;
+        buffer.motor1_rpm_pwm = 0;
+        buffer.motor2_rpm_pwm = 0;
+        buffer.motor3_rpm_pwm = 0;
+        buffer.motor4_rpm_pwm = 0;
 
     // Display brief summary of data being sent.
     ESP_LOGI(TAG, "Joystick (x,y) position ( 0x%04X, 0x%04X )", (uint8_t)buffer.x_axis, (uint8_t)buffer.y_axis);  
