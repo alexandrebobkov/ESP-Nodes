@@ -9,8 +9,16 @@ Reserver Pins & GPIOs
 
 The following table summarizes GPIOs and pins reserved for operations purposes.
 
-GPIO number corresponds to that on the ESP32-C3 WROOM microcontroller. The Pin number corresponds to the pin on the Breadboard and Power adapter development board.
+The GPIO numbers correspond to those on the ESP32-C3 WROOM microcontroller. The Pin number corresponds to the pin on the Breadboard and Power adapter development board.
+
+x- and y- axis
+~~~~~~~~~~~~~~
+
 The GPIO0 and GPIO1 assigned to measuring the voltage of x- and y- axis of the Joystick. Lastly, there is a group of GPIO pairs responsible for PWM for DC motors.
+
+Direction and speed
+~~~~~~~~~~~~~~~~~~~
+
 The two DC motors on the left side are wired to the same PWM channel, as well as the two DC motors on the right side. Consequently, only four PWM channels are required for controlling the direction of the RC car.
 A pair of PWM channels are required for defining rotation speed and direction of the DC motors on each side.
 In particular, GPIO6 and GPIO5 provide PWM to the left- and right- side DC motors to rotate in a clockwise direction.
