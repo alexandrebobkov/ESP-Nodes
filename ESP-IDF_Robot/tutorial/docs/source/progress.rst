@@ -15,6 +15,10 @@ Chassis
 
     Completed chassis with only DC motor controllers installed.
 
+text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text 
+text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text 
+text text text text text text text text text text text text 
+
 Completed Wiring
 -----------------
 
