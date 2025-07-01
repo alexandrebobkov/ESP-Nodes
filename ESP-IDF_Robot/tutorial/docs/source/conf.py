@@ -35,7 +35,7 @@ html_static_path = ['_static']
 simplepdf_coverpage = True
 simplepdf_toc_depth = 3
 simplepdf_title = 'ESP-IDF ESPNOW RC Car'
-simplepdf_author = 'Alexander B.'
+simplepdf_author = 'Alexander B'
 simplepdf_file_name = 'esp-idf_espnow_rc-car.pdf'
 simplepdf_vars = {
 #    'cover-overlay': '#047e2c',
