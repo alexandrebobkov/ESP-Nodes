@@ -44,3 +44,5 @@ DC Motors Wires Harness
 ------------------------
 
 .. figure:: _static/motors-wiring-harness-001.jpg
+
+    DC Motors wires secured inside harnes.
