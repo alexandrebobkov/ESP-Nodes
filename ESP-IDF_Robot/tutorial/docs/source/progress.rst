@@ -4,4 +4,4 @@ WORK-IN-PROGRESS WALK THROUGH
 Finished Product
 ----------------
 
-.. image:: ESP-IDF_Robot.jpg
+.. image:: _static/ESP-IDF_Robot.jpg
