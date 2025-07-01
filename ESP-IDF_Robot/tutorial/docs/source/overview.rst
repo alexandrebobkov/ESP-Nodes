@@ -30,7 +30,7 @@ Changing PWM on each channel determines the speed and direction of the RC car.
 
 .. raw:: html
 
-   <br/><br/>
+   <br/><br/><br/><br/>
 
 +------+-----+---------------------------------------------------------+----------------+
 | GPIO | Pin | Function                                                | Notes          |
