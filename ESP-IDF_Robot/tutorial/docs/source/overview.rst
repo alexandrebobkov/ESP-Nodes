@@ -9,6 +9,10 @@ Reserver Pins & GPIOs
 
 The table below summarizes GPIOs and pins reserved for operations purposes.
 
+GPIO number corresponds to that on the ESP32-C3 WROOM microcontroller. The Pin number corresponds to the pin on the Breadboard and Power adapter development board.
+The GPIO0 and GPIO1 assigned to measuring the voltage of x- and y- axis of the Joystick. Lastly, there is a group of GPIO pairs responsible for PWM for DC motors.
+
+
 +------+-----+---------------------------------------------------------+----------------+
 | GPIO | Pin | Function                                                | Notes          |
 +======+=====+=========================================================+================+
