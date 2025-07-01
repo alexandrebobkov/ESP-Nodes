@@ -22,9 +22,9 @@ The table below summarizes GPIOs and pins reserved for operations purposes.
 +------+-----+-----------+-----------+
 | 5    | 3   | PWM for clockwise rotation of right-side motors     | LEDC_CHANNEL_0      |
 +------+-----+-----------+-----------+
-| 4    | 2   | Data      | LEDC_CHANNEL_2      |
+| 4    | 2   | PWM for counter-clockwise rotation of right-side motors      | LEDC_CHANNEL_2      |
 +------+-----+-----------+-----------+
-| 7    | 6   | Data      | LEDC_CHANNEL_3      |
+| 7    | 6   | PWM for counter-clockwise rotation of left-side motors      | LEDC_CHANNEL_3      |
 +------+-----+-----------+-----------+
 
 Schematic
