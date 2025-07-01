@@ -9,4 +9,4 @@ Finished Product
 DC Motors Wires Harness
 ------------------------
 
-.. image :: _static/motors-wiring-harness-001.jpg
+.. image:: _static/motors-wiring-harness-001.jpg
