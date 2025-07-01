@@ -5,7 +5,7 @@ WORK-IN-PROGRESS WALK THROUGH
 
 .. figure:: _static/chassi-progress_002d.jpg
     :height: 750px
-    :align: left
+    :align: right
 
     Completed chassis with only DC motor controllers installed.
 
