@@ -11,6 +11,11 @@ Chassi
 
 .. image:: _static/chassi-progress_002d.jpg
 
+Completed Wirring
+-----------------
+
+.. image:: _staticchassi-progress_003a.jpg
+
 DC Motors Wires Harness
 ------------------------
 
