@@ -12,19 +12,19 @@ The table below summarizes GPIOs and pins reserved for operations purposes.
 +-----------+-----------+-----------+-----------+
 | GPIO  | Pin  | Function  | Notes |
 +===========+===========+===========+===========+
-| Row 1     | Data      | Data      | Data      |
+| 0     | Data      | Data      | Data      |
 +-----------+-----------+-----------+-----------+
-| Row 2     | Data      | Data      | Data      |
+| 1     | Data      | Data      | Data      |
 +-----------+-----------+-----------+-----------+
-| Row 3     | Data      | Data      | Data      |
+| 8     | Data      | Data      | Data      |
 +-----------+-----------+-----------+-----------+
-| Row 4     | Data      | Data      | Data      |
+| 6     | Data      | Data      | Data      |
 +-----------+-----------+-----------+-----------+
-| Row 5     | Data      | Data      | Data      |
+| 5    | Data      | Data      | Data      |
 +-----------+-----------+-----------+-----------+
-| Row 6     | Data      | Data      | Data      |
+| 4     | Data      | Data      | Data      |
 +-----------+-----------+-----------+-----------+
-| Row 7     | Data      | Data      | Data      |
+| 7     | Data      | Data      | Data      |
 +-----------+-----------+-----------+-----------+
 
 Schematic
