@@ -847,4 +847,107 @@ dvips/tex-gyre/q-ec.enc}] [2
 ]
 No file byterider.toc.
 \tf@toc=\write6
-\openout
+\openout6 = `byterider.toc'.
+
+[1
+
+] [2
+
+]
+LaTeX Font Info:    Trying to load font information for T1+txtt on input line 8
+8.
+ (/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txtt.fd
+File: t1txtt.fd 2000/12/15 v3.1
+) [1]
+[2
+
+]
+Chapter 1.
+<ESP32C3_Breadboard-Adapter.png, id=39, 813.0375pt x 813.0375pt>
+File: ESP32C3_Breadboard-Adapter.png Graphic file (type png)
+<use ESP32C3_Breadboard-Adapter.png>
+Package pdftex.def Info: ESP32C3_Breadboard-Adapter.png  used on input line 97.
+
+(pdftex.def)             Requested size: 469.75082pt x 469.75082pt.
+[3 <./ESP32C3_Breadboard-Adapter.png>] [4
+
+]
+Chapter 2.
+<ESP-IDF_Robot.jpg, id=52, 2520.41624pt x 1766.6pt>
+File: ESP-IDF_Robot.jpg Graphic file (type jpg)
+<use ESP-IDF_Robot.jpg>
+Package pdftex.def Info: ESP-IDF_Robot.jpg  used on input line 107.
+(pdftex.def)             Requested size: 469.73097pt x 329.24193pt.
+<chassi-progress_002d.jpg, id=53, 4015.0pt x 1766.6pt>
+File: chassi-progress_002d.jpg Graphic file (type jpg)
+<use chassi-progress_002d.jpg>
+Package pdftex.def Info: chassi-progress_002d.jpg  used on input line 115.
+(pdftex.def)             Requested size: 469.71024pt x 206.6725pt.
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 118--118
+[][] 
+ []
+
+[5 <./ESP-IDF_Robot.jpg>]
+Overfull \hbox (82.01428pt too wide) in paragraph at lines 121--121
+|[][]\T1/qhv/b/n/14.4 Wiring| 
+ []
+
+
+Package wrapfig Warning: Collision between wrapping environments on input line 
+124.
+
+<chassi-progress_003a.jpg, id=60, 4015.0pt x 1766.6pt>
+File: chassi-progress_003a.jpg Graphic file (type jpg)
+<use chassi-progress_003a.jpg>
+Package pdftex.def Info: chassi-progress_003a.jpg  used on input line 126.
+(pdftex.def)             Requested size: -9.98601pt x -4.39384pt.
+
+Overfull \hbox (25.69pt too wide) in paragraph at lines 127--127
+[]\T1/qtm/m/n/10 Fig.
+ []
+
+
+Overfull \hbox (17.78pt too wide) in paragraph at lines 127--127
+\T1/qtm/m/n/10 2:
+ []
+
+
+Overfull \hbox (53.89pt too wide) in paragraph at lines 127--127
+[]\T1/qtm/m/n/10 Completed
+ []
+
+
+Overfull \hbox (38.80998pt too wide) in paragraph at lines 127--127
+\T1/qtm/m/n/10 wiring. 
+ []
+
+! Extra }, or forgotten \endgroup.
+\endwrapfigure ...ip \egroup \box \z@ \fi \egroup 
+                                                  \WF@floatstyhook \def \wid...
+l.127 ...detokenize{progress:id2}}\end{wrapfigure}
+                                                  
+? 
+! Interruption.
+<to be read again> 
+                   \WF@floatstyhook 
+l.127 ...detokenize{progress:id2}}\end{wrapfigure}
+                                                  
+? 
+! Emergency stop.
+<to be read again> 
+                   \WF@floatstyhook 
+l.127 ...detokenize{progress:id2}}\end{wrapfigure}
+                                                  
+End of file on the terminal!
+
+ 
+Here is how much of TeX's memory you used:
+ 16628 strings out of 476106
+ 282240 string characters out of 5793932
+ 1926975 words of memory out of 5000000
+ 38288 multiletter control sequences out of 15000+600000
+ 595126 words of font info for 63 fonts, out of 8000000 for 9000
+ 60 hyphenation exceptions out of 8191
+ 72i,11n,83p,1198b,517s stack positions out of 10000i,1000n,20000p,200000b,200000s
+!  ==> Fatal error occurred, no output PDF file produced!
