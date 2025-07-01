@@ -6,12 +6,12 @@ Finished Product
 
 .. image:: _static/ESP-IDF_Robot.jpg
 
-Chassi
+Chassis``
 ------
 
 .. image:: _static/chassi-progress_002d.jpg
 
-Completed Wirring
+Completed Wiring
 -----------------
 
 .. image:: _staticchassi-progress_003a.jpg
