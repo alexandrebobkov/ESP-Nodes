@@ -30,7 +30,7 @@ Changing PWM on each channel determines the speed and direction of the RC car.
 
 .. raw:: html
 
-   <br/><br/>
+   <br/><br/><br/><br/>
 
 +------+-----+---------------------------------------------------------+----------------+
 | GPIO | Pin | Function                                                | Notes          |
@@ -49,6 +49,9 @@ Changing PWM on each channel determines the speed and direction of the RC car.
 +------+-----+---------------------------------------------------------+----------------+
 | 7    | 6   | PWM for counter-clockwise rotation of left-side motors  | LEDC_CHANNEL_3 |
 +------+-----+---------------------------------------------------------+----------------+
+
+Fusion of Software & Hardware
+-----------------------------
 
 Schematic
 ---------
