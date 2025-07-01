@@ -14,7 +14,7 @@ Chassis
 -------
 
 .. figure:: _static/chassi-progress_002d.jpg
-    :width: 750px
+    :width: 700px
     :align: left
 
     Completed chassis with only DC motor controllers installed.
