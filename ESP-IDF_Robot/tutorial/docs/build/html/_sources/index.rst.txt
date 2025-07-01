@@ -15,4 +15,5 @@ documentation for details.
    :maxdepth: 2
 
    intro
+   overview
    progress
