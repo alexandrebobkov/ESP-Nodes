@@ -14,7 +14,7 @@ Chassis
 Completed Wiring
 -----------------
 
-.. image:: _staticchassi-progress_003a.jpg
+.. image:: _static/chassi-progress_003a.jpg
 
 DC Motors Wires Harness
 ------------------------
