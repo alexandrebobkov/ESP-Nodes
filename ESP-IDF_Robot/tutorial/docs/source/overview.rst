@@ -56,10 +56,10 @@ Fusion of Software & Hardware
 .. code-block:: c
 
     struct motors_rpm {
-        int motor1_rpm_pcm;
-        int motor2_rpm_pcm;
-        int motor3_rpm_pcm;
-        int motor4_rpm_pcm;
+        int motor1_rpm_pwm;
+        int motor2_rpm_pwm;
+        int motor3_rpm_pwm;
+        int motor4_rpm_pwm;
     };
 
 Schematic
