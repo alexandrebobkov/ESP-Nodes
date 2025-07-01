@@ -13,7 +13,7 @@ Chassis
    :height: 750px
    :align: right
 
-    Completed chassis with only DC motor controllers installed.
+   Completed chassis with only DC motor controllers installed.
 
 Wiring
 -------
@@ -22,7 +22,7 @@ Wiring
    :height: 750px
    :align: right
 
-    Completed wiring.
+   Completed wiring.
 
 Motor Wires Harness
 --------------------
@@ -30,4 +30,4 @@ Motor Wires Harness
 .. figure:: _static/motors-wiring-harness-001.jpg
    :align: right
 
-    DC Motors wires secured inside harnes.
+   DC Motors wires secured inside harnes.
