@@ -10,8 +10,8 @@ Chassis
 -------
 
 .. figure:: _static/chassi-progress_002d.jpg
-   :height: 750px
-   :align: left
+   :height: 300px
+   :align: center
 
    Completed chassis with only DC motor controllers installed.
 
@@ -20,7 +20,7 @@ Wiring
 
 .. figure:: _static/chassi-progress_003a.jpg
    :height: 750px
-   :align: left
+   :align: center
 
    Completed wiring.
 
@@ -28,6 +28,6 @@ Motor Wires Harness
 --------------------
 
 .. figure:: _static/motors-wiring-harness-001.jpg
-   :align: left
+   :align: center
 
    DC Motors wires secured inside harnes.
