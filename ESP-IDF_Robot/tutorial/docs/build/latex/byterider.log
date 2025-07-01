@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.10.18)  1 JUL 2025 01:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.10.18)  1 JUL 2025 01:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -868,62 +868,63 @@ Chapter 1.
 
 ]
 Chapter 2.
-<ESP-IDF_Robot_schematic.png, id=84, 2484.28125pt x 1919.67188pt>
+<ESP-IDF_Robot_schematic.png, id=94, 2484.28125pt x 1919.67188pt>
 File: ESP-IDF_Robot_schematic.png Graphic file (type png)
 <use ESP-IDF_Robot_schematic.png>
-Package pdftex.def Info: ESP-IDF_Robot_schematic.png  used on input line 102.
+Package pdftex.def Info: ESP-IDF_Robot_schematic.png  used on input line 234.
 (pdftex.def)             Requested size: 469.74393pt x 362.98395pt.
-[5 <./ESP-IDF_Robot_schematic.png>] [6
-
-]
+[5] [6 <./ESP-IDF_Robot_schematic.png>]
 Chapter 3.
-<ESP-IDF_Robot.jpg, id=95, 2520.41624pt x 1766.6pt>
+<ESP-IDF_Robot.jpg, id=106, 2520.41624pt x 1766.6pt>
 File: ESP-IDF_Robot.jpg Graphic file (type jpg)
 <use ESP-IDF_Robot.jpg>
-Package pdftex.def Info: ESP-IDF_Robot.jpg  used on input line 112.
+Package pdftex.def Info: ESP-IDF_Robot.jpg  used on input line 244.
 (pdftex.def)             Requested size: 469.73097pt x 329.24193pt.
-<chassi-progress_002d.jpg, id=96, 4015.0pt x 1766.6pt>
+<chassi-progress_002d.jpg, id=107, 4015.0pt x 1766.6pt>
 File: chassi-progress_002d.jpg Graphic file (type jpg)
 <use chassi-progress_002d.jpg>
-Package pdftex.def Info: chassi-progress_002d.jpg  used on input line 121.
+Package pdftex.def Info: chassi-progress_002d.jpg  used on input line 253.
 (pdftex.def)             Requested size: 469.71024pt x 206.6725pt.
-<chassi-progress_003a.jpg, id=97, 4015.0pt x 1766.6pt>
+<chassi-progress_003a.jpg, id=108, 4015.0pt x 1766.6pt>
 File: chassi-progress_003a.jpg Graphic file (type jpg)
 <use chassi-progress_003a.jpg>
-Package pdftex.def Info: chassi-progress_003a.jpg  used on input line 131.
+Package pdftex.def Info: chassi-progress_003a.jpg  used on input line 263.
 (pdftex.def)             Requested size: 469.71024pt x 206.6725pt.
-<motors-wiring-harness-001.jpg, id=98, 4015.0pt x 1766.6pt>
+<motors-wiring-harness-001.jpg, id=109, 4015.0pt x 1766.6pt>
 File: motors-wiring-harness-001.jpg Graphic file (type jpg)
 <use motors-wiring-harness-001.jpg>
-Package pdftex.def Info: motors-wiring-harness-001.jpg  used on input line 141.
+Package pdftex.def Info: motors-wiring-harness-001.jpg  used on input line 273.
 
 (pdftex.def)             Requested size: 469.71024pt x 206.6725pt.
-(./byterider.ind) [7 <./ESP-IDF_Robot.jpg>] [8 <./chassi-progress_002d.jpg> <./
-chassi-progress_003a.jpg>] [9 <./motors-wiring-harness-001.jpg>]
+(./byterider.ind) [7
+
+ <./ESP-IDF_Robot.jpg>] [8 <./chassi-progress_002d.jpg> <./chassi-progress_003a
+.jpg>] [9 <./motors-wiring-harness-001.jpg>]
 (./byterider.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `byterider.out' has not changed.
-(rerunfilecheck)             Checksum: 0ED4870A69F3E95A625C91C6C50F9C45;884.
+(rerunfilecheck)             Checksum: BA10C88BFEF44AA801FEFDF165A68594;1154.
  ) 
 Here is how much of TeX's memory you used:
- 16709 strings out of 476106
- 283557 string characters out of 5793932
- 1927975 words of memory out of 5000000
- 38332 multiletter control sequences out of 15000+600000
+ 16731 strings out of 476106
+ 283888 string characters out of 5793932
+ 1936975 words of memory out of 5000000
+ 38352 multiletter control sequences out of 15000+600000
  599264 words of font info for 70 fonts, out of 8000000 for 9000
  60 hyphenation exceptions out of 8191
  72i,11n,83p,1198b,517s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/tex-gyre/qhvb.pfb></usr/share/texmf/font
 s/type1/public/tex-gyre/qhvbi.pfb></usr/share/texmf/fonts/type1/public/tex-gyre
-/qtmb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb>
-Output written on byterider.pdf (13 pages, 8781747 bytes).
+/qhvr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmb.pfb></usr/share/te
+xmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/txfonts/t1xtt.pfb>
+Output written on byterider.pdf (13 pages, 8804345 bytes).
 PDF statistics:
- 142 PDF objects out of 1000 (max. 8388607)
- 109 compressed objects within 2 object streams
- 24 named destinations out of 1000 (max. 500000)
- 102 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 157 PDF objects out of 1000 (max. 8388607)
+ 123 compressed objects within 2 object streams
+ 26 named destinations out of 1000 (max. 500000)
+ 118 words of extra memory for PDF output out of 10000 (max. 10000000)
 
