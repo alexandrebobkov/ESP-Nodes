@@ -53,6 +53,8 @@ Changing PWM on each channel determines the speed and direction of the RC car.
 Fusion of Software & Hardware
 -----------------------------
 
+The _struct_ for storing motors PWM values.
+
 .. code-block:: c
 
     struct motors_rpm {
