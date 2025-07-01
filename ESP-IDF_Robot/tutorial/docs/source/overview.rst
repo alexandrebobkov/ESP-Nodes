@@ -15,6 +15,7 @@ The two DC motors on the left side are wired to the same PWM channel, as well as
 A pair of PWM channels are required for defining rotation speed and direction of the DC motors on each side.
 In particular, GPIO6 and GPIO5 provide PWM to the left- and right- side DC motors to rotate in a clockwise direction.
 Similarly, GPIO4 and GPIO7 provide PWM to the left- and right- side DC motors to rotate in a counter-clockwise direction.
+Changing PWM on each channel determines the speed and direction of the RC car.
 
 +------+-----+---------------------------------------------------------+----------------+
 | GPIO | Pin | Function                                                | Notes          |
