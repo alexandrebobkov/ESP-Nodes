@@ -64,6 +64,39 @@ The *struct* for storing motors PWM values.
         int motor4_rpm_pwm;
     };
 
+The function for updating motors' PWM values.
+
+.. code-block:: c
+    // Function to send data to the receiver
+void sendData (void) {
+    sensors_data_t buffer;              // Declare data struct
+
+    buffer.crc = 0;
+    buffer.x_axis = 240;
+    buffer.y_axis = 256;
+    buffer.nav_bttn = 0;
+    buffer.motor1_rpm_pwm = 10;
+    buffer.motor2_rpm_pwm = 0;
+    buffer.motor3_rpm_pwm = 0;
+    buffer.motor4_rpm_pwm = 0;
+
+    // Display brief summary of data being sent.
+    ESP_LOGI(TAG, "Joystick (x,y) position ( 0x%04X, 0x%04X )", (uint8_t)buffer.x_axis, (uint8_t)buffer.y_axis);  
+    ESP_LOGI(TAG, "pwm 1, pwm 2 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.pwm, (uint8_t)buffer.pwm);
+    ESP_LOGI(TAG, "pwm 3, pwm 4 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.pwm, (uint8_t)buffer.pwm);
+
+    // Call ESP-NOW function to send data (MAC address of receiver, pointer to the memory holding data & data length)
+    uint8_t result = esp_now_send(receiver_mac, &buffer, sizeof(buffer));
+
+    // If status is NOT OK, display error message and error code (in hexadecimal).
+    if (result != 0) {
+        ESP_LOGE("ESP-NOW", "Error sending data! Error code: 0x%04X", result);
+        deletePeer();
+    }
+    else
+        ESP_LOGW("ESP-NOW", "Data was sent.");
+    }
+
 Schematic
 ---------
 
