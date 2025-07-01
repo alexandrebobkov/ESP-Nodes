@@ -4,18 +4,18 @@ WORK-IN-PROGRESS WALK THROUGH
 .. image:: _static/ESP-IDF_Robot.jpg
 
 .. figure:: _static/chassi-progress_002d.jpg
-    :height: 750px
-    :align: right
+   :height: 750px
+   :align: right
 
     Completed chassis with only DC motor controllers installed.
 
 .. figure:: _static/chassi-progress_003a.jpg
-    :height: 750px
-    :align: right
+   :height: 750px
+   :align: right
 
     Completed wiring.
 
 .. figure:: _static/motors-wiring-harness-001.jpg
-    :align: right
+   :align: right
 
     DC Motors wires secured inside harnes.
