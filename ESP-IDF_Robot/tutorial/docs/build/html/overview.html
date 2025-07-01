@@ -103,12 +103,45 @@ Changing PWM on each channel determines the speed and direction of the RC car.</
 </section>
 <section id="fusion-of-software-hardware">
 <h2>Fusion of Software &amp; Hardware<a class="headerlink" href="#fusion-of-software-hardware" title="Link to this heading">¶</a></h2>
+<p>The <em>struct</em> for storing motors PWM values.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">motors_rpm</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor1_rpm_pcm</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor2_rpm_pcm</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor3_rpm_pcm</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor4_rpm_pcm</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor1_rpm_pwm</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor2_rpm_pwm</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor3_rpm_pwm</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor4_rpm_pwm</span><span class="p">;</span>
 <span class="p">};</span>
+</pre></div>
+</div>
+<p>The function for updating motors’ PWM values.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Function to send data to the receiver</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">sendData</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">sensors_data_t</span><span class="w"> </span><span class="n">buffer</span><span class="p">;</span><span class="w">              </span><span class="c1">// Declare data struct</span>
+
+<span class="w">    </span><span class="n">buffer</span><span class="p">.</span><span class="n">crc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">buffer</span><span class="p">.</span><span class="n">x_axis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">buffer</span><span class="p">.</span><span class="n">y_axis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">buffer</span><span class="p">.</span><span class="n">nav_bttn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">buffer</span><span class="p">.</span><span class="n">motor1_rpm_pwm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">buffer</span><span class="p">.</span><span class="n">motor2_rpm_pwm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">buffer</span><span class="p">.</span><span class="n">motor3_rpm_pwm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">buffer</span><span class="p">.</span><span class="n">motor4_rpm_pwm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Display brief summary of data being sent.</span>
+<span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Joystick (x,y) position ( 0x%04X, 0x%04X )&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">)</span><span class="n">buffer</span><span class="p">.</span><span class="n">x_axis</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">)</span><span class="n">buffer</span><span class="p">.</span><span class="n">y_axis</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pwm 1, pwm 2 [ 0x%04X, 0x%04X ]&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">)</span><span class="n">buffer</span><span class="p">.</span><span class="n">pwm</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">)</span><span class="n">buffer</span><span class="p">.</span><span class="n">pwm</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pwm 3, pwm 4 [ 0x%04X, 0x%04X ]&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">)</span><span class="n">buffer</span><span class="p">.</span><span class="n">pwm</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">)</span><span class="n">buffer</span><span class="p">.</span><span class="n">pwm</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Call ESP-NOW function to send data (MAC address of receiver, pointer to the memory holding data &amp; data length)</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">esp_now_send</span><span class="p">(</span><span class="n">receiver_mac</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">buffer</span><span class="p">));</span>
+
+<span class="w">    </span><span class="c1">// If status is NOT OK, display error message and error code (in hexadecimal).</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ESP_LOGE</span><span class="p">(</span><span class="s">&quot;ESP-NOW&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Error sending data! Error code: 0x%04X&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">);</span>
+<span class="w">        </span><span class="n">deletePeer</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">ESP_LOGW</span><span class="p">(</span><span class="s">&quot;ESP-NOW&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Data was sent.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>
