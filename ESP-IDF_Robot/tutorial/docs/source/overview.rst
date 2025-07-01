@@ -81,21 +81,21 @@ The function for updating motors' PWM values.
         buffer.motor3_rpm_pwm = 0;
         buffer.motor4_rpm_pwm = 0;
 
-    // Display brief summary of data being sent.
-    ESP_LOGI(TAG, "Joystick (x,y) position ( 0x%04X, 0x%04X )", (uint8_t)buffer.x_axis, (uint8_t)buffer.y_axis);  
-    ESP_LOGI(TAG, "pwm 1, pwm 2 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.pwm, (uint8_t)buffer.pwm);
-    ESP_LOGI(TAG, "pwm 3, pwm 4 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.pwm, (uint8_t)buffer.pwm);
+        // Display brief summary of data being sent.
+        ESP_LOGI(TAG, "Joystick (x,y) position ( 0x%04X, 0x%04X )", (uint8_t)buffer.x_axis, (uint8_t)buffer.y_axis);  
+        ESP_LOGI(TAG, "pwm 1, pwm 2 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.pwm, (uint8_t)buffer.pwm);
+        ESP_LOGI(TAG, "pwm 3, pwm 4 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.pwm, (uint8_t)buffer.pwm);
 
-    // Call ESP-NOW function to send data (MAC address of receiver, pointer to the memory holding data & data length)
-    uint8_t result = esp_now_send(receiver_mac, &buffer, sizeof(buffer));
+        // Call ESP-NOW function to send data (MAC address of receiver, pointer to the memory holding data & data length)
+        uint8_t result = esp_now_send(receiver_mac, &buffer, sizeof(buffer));
 
-    // If status is NOT OK, display error message and error code (in hexadecimal).
-    if (result != 0) {
-        ESP_LOGE("ESP-NOW", "Error sending data! Error code: 0x%04X", result);
-        deletePeer();
-    }
-    else
-        ESP_LOGW("ESP-NOW", "Data was sent.");
+        // If status is NOT OK, display error message and error code (in hexadecimal).
+        if (result != 0) {
+            ESP_LOGE("ESP-NOW", "Error sending data! Error code: 0x%04X", result);
+            deletePeer();
+        }
+        else
+            ESP_LOGW("ESP-NOW", "Data was sent.");
     }
 
 Schematic
