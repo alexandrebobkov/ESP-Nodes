@@ -28,7 +28,7 @@ In particular, **GPIO6** and **GPIO5** provide PWM to the left- and right- side 
 Similarly, **GPIO4** and **GPIO7** provide PWM to the left- and right- side DC motors to rotate in a **counter-clockwise** direction.
 Changing PWM on each channel determines the speed and direction of the RC car.
 
-The following images illustrate various PWM duty cycles registered by oscilloscope (duty cycles 0%, 50% and 95%, resp.).
+The following images illustrate various PWM duty cycles registered by oscilloscope (duty cycles 0%, 48% and 91%, resp.).
 
 .. figure:: _static/ESP-IDF_Robot_PWM_Duty-0.bmp
 
