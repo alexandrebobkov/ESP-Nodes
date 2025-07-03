@@ -98,6 +98,20 @@ The function for updating motors' PWM values.
             ESP_LOGW("ESP-NOW", "Data was sent.");
     }
 
+The rc_send_data_task() function runs every 0.1 second to transmit the data to the receiver.
+
+.. code-block:: c
+
+    // Continous, periodic task that sends data.
+    static void rc_send_data_task (void *arg) {
+
+        while (true) {
+            if (esp_now_is_peer_exist(receiver_mac))
+                sendData();
+            vTaskDelay (100 / portTICK_PERIOD_MS);
+        }
+    }
+
 Schematic
 ---------
 
