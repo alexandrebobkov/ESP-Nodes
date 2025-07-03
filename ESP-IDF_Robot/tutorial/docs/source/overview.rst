@@ -30,7 +30,9 @@ Changing PWM on each channel determines the speed and direction of the RC car.
 
 The following images illustrate various PWM duty cycles registered by oscilloscope (duty cycles 0%, 50% and 95%, resp.).
 
-.. image:: _static/ESP-IDF_Robot_PWM_Duty-0.bmp
+.. figure:: _static/ESP-IDF_Robot_PWM_Duty-0.bmp
+
+    DC Motor PWM duty cycle 0%.
 
 .. image:: _static/ESP-IDF_Robot_PWM_Duty-50.bmp
 
