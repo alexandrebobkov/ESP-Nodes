@@ -34,6 +34,8 @@ The following images illustrate various PWM duty cycles recorded by oscilloscope
 
 .. image:: _static/ESP-IDF_Robot_PWM_Duty-50.bmp
 
+.. image:: _static/ESP-IDF_Robot_PWM_Duty-95.bmp
+
 .. raw:: html
 
    <br/><br/><br/><br/>
