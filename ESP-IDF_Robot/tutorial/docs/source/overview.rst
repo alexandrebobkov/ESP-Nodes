@@ -98,6 +98,8 @@ The function for updating motors' PWM values.
             ESP_LOGW("ESP-NOW", "Data was sent.");
     }
 
+The onDataReceived() and onDataSent() are two call-bacl functions that get evoked on each corresponding event.
+
 The rc_send_data_task() function runs every 0.1 second to transmit the data to the receiver.
 
 .. code-block:: c
