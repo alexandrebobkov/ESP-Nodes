@@ -144,6 +144,7 @@ Changing PWM on each channel determines the speed and direction of the RC car.</
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>The onDataReceived() and onDataSent() are two call-bacl functions that get evoked on each corresponding event.</p>
 <p>The rc_send_data_task() function runs every 0.1 second to transmit the data to the receiver.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Continous, periodic task that sends data.</span>
 <span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">rc_send_data_task</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
