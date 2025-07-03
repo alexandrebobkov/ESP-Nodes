@@ -100,6 +100,22 @@ The function for updating motors' PWM values.
 
 The onDataReceived() and onDataSent() are two call-bacl functions that get evoked on each corresponding event.
 
+.. code-block:: c
+    // Call-back for the event when data is being received
+    void onDataReceived (uint8_t *mac_addr, uint8_t *data, uint8_t data_len) {
+
+        buf = (sensors_data_t*)data;                            // Allocate memory for buffer to store data being received
+        ESP_LOGW(TAG, "Data was received");
+        ESP_LOGI(TAG, "x-axis: 0x%04x", buf->x_axis);
+        ESP_LOGI(TAG, "x-axis: 0x%04x", buf->y_axis);
+        ESP_LOGI(TAG, "PWM 1: 0x%04x", buf->motor1_rpm_pwm);
+    }
+
+    // Call-back for the event when data is being sent
+    void onDataSent (uint8_t *mac_addr, esp_now_send_status_t status) {
+        ESP_LOGW(TAG, "Packet send status: 0x%04X", status);
+    }
+
 The rc_send_data_task() function runs every 0.1 second to transmit the data to the receiver.
 
 .. code-block:: c
