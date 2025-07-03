@@ -32,11 +32,15 @@ The following images illustrate various PWM duty cycles registered by oscillosco
 
 .. figure:: _static/ESP-IDF_Robot_PWM_Duty-0.bmp
 
-    DC Motor PWM duty cycle 0%.
+    DC Motor PWM duty cycle 0%
 
-.. image:: _static/ESP-IDF_Robot_PWM_Duty-50.bmp
+.. figure:: _static/ESP-IDF_Robot_PWM_Duty-50.bmp
 
-.. image:: _static/ESP-IDF_Robot_PWM_Duty-95.bmp
+    DC Motor PWM duty cycle 47.6%
+
+.. gigure:: _static/ESP-IDF_Robot_PWM_Duty-95.bmp
+
+    DC Motor PWM duty cycle 90.8%.
 
 .. raw:: html
 
