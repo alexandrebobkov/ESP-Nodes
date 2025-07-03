@@ -20,7 +20,7 @@ Direction and Speed
 ~~~~~~~~~~~~~~~~~~~
 
 The pairs of DC motors on the left side are wired to the dedicated PWM channels. This means that *ESP32-C3 Breadboard DevBoard* can control rotation speed and direction of DC motors in pairs only (i.e. left and right side).
-Consequently, only four PWM channels are used for controlling the direction of the RC car. 
+Consequently, only four PWM channels are sufficient for controlling the direction of the RC car. 
 Based on this constraint, the RC car can only move front, back, and turn/rotate left and right. Any other movements are not possible (i.e. diagonal or sideways).
 
 A pair of PWM channels are required for defining rotation speed and direction of the DC motors on each side.
