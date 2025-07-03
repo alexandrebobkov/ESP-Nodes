@@ -19,14 +19,16 @@ The **GPIO0** and **GPIO1** assigned to measuring the voltage of x- and y- axis 
 Direction and Speed
 ~~~~~~~~~~~~~~~~~~~
 
-The two DC motors on the left side are wired to the dedicated PWM channels in pairs. This means that PWM channels can control rotation speed and direction of DC motors in pairs (i.e. left and right side).
-Consequently, only four PWM channels are required for controlling the direction of the RC car. 
-Based on this constraint, the RC car can only move front, back, and rotate left and right. Any other movements are not possible (i.e. diagonal).
+The pairs of DC motors on the left side are wired to the dedicated PWM channels. This means that *ESP32-C3 Breadboard DevBoard* can control rotation speed and direction of DC motors in pairs only (i.e. left and right side).
+Consequently, only four PWM channels are used for controlling the direction of the RC car. 
+Based on this constraint, the RC car can only move front, back, and turn/rotate left and right. Any other movements are not possible (i.e. diagonal or sideways).
 
 A pair of PWM channels are required for defining rotation speed and direction of the DC motors on each side.
 In particular, **GPIO6** and **GPIO5** provide PWM to the left- and right- side DC motors to rotate in a **clockwise** direction.
 Similarly, **GPIO4** and **GPIO7** provide PWM to the left- and right- side DC motors to rotate in a **counter-clockwise** direction.
 Changing PWM on each channel determines the speed and direction of the RC car.
+
+The following images illustrate various PWM duty cycles recorded by oscilloscope.
 
 .. raw:: html
 
