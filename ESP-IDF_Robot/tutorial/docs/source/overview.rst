@@ -30,6 +30,10 @@ Changing PWM on each channel determines the speed and direction of the RC car.
 
 The following images illustrate various PWM duty cycles recorded by oscilloscope.
 
+.. image:: _static/ESP-IDF_Robot_PWM_Duty-0.bmp
+
+.. image:: _static/ESP-IDF_Robot_PWM_Duty-50.bmp
+
 .. raw:: html
 
    <br/><br/><br/><br/>
