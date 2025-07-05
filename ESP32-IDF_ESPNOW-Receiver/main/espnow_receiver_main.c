@@ -36,6 +36,9 @@ void app_main(void) {
     wifi_init();
     ESP_ERROR_CHECK(esp_now_init());
 
+    esp_now_peer_info_t transmitterInfo = {0};
+    memcpy(transmitterInfo.peer_addr, transmitter_mac, ESP_NOW_ETH_ALEN);
+
     ESP_ERROR_CHECK(esp_now_register_recv_cb((void*)onDataReceived));
 
     system_led_init();
