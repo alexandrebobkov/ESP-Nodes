@@ -70,4 +70,7 @@ Main Function
         joystick_adc_init();
         transmission_init();
         system_led_init();
+
+        ... ... ...
+        ... ... ...
     }
