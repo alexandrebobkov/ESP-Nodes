@@ -149,10 +149,10 @@ static void rc_send_data_task()
             sendData();
         }
         vTaskDelay (10 / portTICK_PERIOD_MS);
-        if (esp_now_is_peer_exist((uint8_t*)receiver_2_mac)) {
+        /*if (esp_now_is_peer_exist((uint8_t*)receiver_2_mac)) {
             sendData();
         }
-        vTaskDelay (10 / portTICK_PERIOD_MS);
+        vTaskDelay (10 / portTICK_PERIOD_MS);*/
     }
 }
 
