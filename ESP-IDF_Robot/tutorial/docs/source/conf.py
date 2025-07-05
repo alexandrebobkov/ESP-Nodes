@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'ByteRider'
+project = 'Byte Rider'
 copyright = '2025, Alexander B'
 author = 'Alexander B'
 release = '06-2025'
