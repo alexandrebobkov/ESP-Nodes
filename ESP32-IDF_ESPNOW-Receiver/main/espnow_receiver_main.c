@@ -22,6 +22,7 @@
 #include "esp_err.h"
 
 #include "system_health.h"
+#include "donfig.h"
 #include "receiver.h"
 
 void app_main(void) {
