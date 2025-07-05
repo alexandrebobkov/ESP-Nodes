@@ -11,6 +11,9 @@
 #include "esp_mac.h"
 #include "esp_now.h"
 
+#include "sensors_data.h"
+#include "config.h"
+
 /* WiFi should start before using ESPNOW */
 void wifi_init()
 {
