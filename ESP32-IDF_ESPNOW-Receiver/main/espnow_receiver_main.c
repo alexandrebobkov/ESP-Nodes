@@ -30,4 +30,5 @@ void app_main(void) {
         ret = nvs_flash_init();
     }
     ESP_ERROR_CHECK( ret );
+    wifi_init();
 }
