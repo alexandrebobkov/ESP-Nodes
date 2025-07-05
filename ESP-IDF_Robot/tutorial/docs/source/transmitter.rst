@@ -25,6 +25,9 @@ Sending & Ecapsulating Data
 .. code-block:: c
 
     void sendData (void) {
+
+        buffer.x_axis = x_axis;
+        buffer.y_axis = y_axis;
     }
 
 Main Function
