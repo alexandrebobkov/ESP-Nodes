@@ -21,6 +21,7 @@
 #include "nvs_flash.h"
 #include "esp_err.h"
 
+#include "system_health.h"
 #include "receiver.h"
 
 void app_main(void) {
@@ -33,4 +34,6 @@ void app_main(void) {
     }
     ESP_ERROR_CHECK( ret );
     wifi_init();
+
+    system_led_init();
 }
