@@ -17,6 +17,7 @@
    This program uses ESPNOW for receiving joystick x- and y- axis values from the receiving device.
 */
 
+#include <tdlib.h>
 #include "freertos/FreeRTOS.h"
 #include "nvs_flash.h"
 #include "esp_err.h"
