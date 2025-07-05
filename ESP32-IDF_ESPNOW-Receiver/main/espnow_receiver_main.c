@@ -40,7 +40,7 @@ void app_main(void) {
 
     esp_now_peer_info_t transmitterInfo = {0};
     memcpy(transmitterInfo.peer_addr, transmitter_mac, ESP_NOW_ETH_ALEN);
-    transmitterInfo.channel = 11;
+    transmitterInfo.channel = 0; // Current WiFi channel
     transmitterInfo.ifidx = ESP_IF_WIFI_STA;
     transmitterInfo.encrypt = false;
     ESP_ERROR_CHECK(esp_now_add_peer(&transmitterInfo));
