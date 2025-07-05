@@ -5,6 +5,7 @@
 #include "esp_now.h"
 #include "esp_netif.h"
 
-void wifi_init();
+void wifi_init(void);
+void transmission_init(void);
 
 #endif
