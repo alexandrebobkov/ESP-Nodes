@@ -34,6 +34,8 @@ void app_main(void) {
     }
     ESP_ERROR_CHECK( ret );
     wifi_init();
+    esp_now_init();
+    esp_now_register_recv_cb((void*)onDataReceived);
 
     system_led_init();
 }
