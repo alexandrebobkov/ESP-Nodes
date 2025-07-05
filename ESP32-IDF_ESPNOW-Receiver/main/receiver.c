@@ -42,4 +42,5 @@ void transmission_init() {
 
 void onDataReceived (const uint8_t *mac_addr, const uint8_t *data, uint8_t data_len) {
 
+    memcpy(&buf, data, sizeof(buf));
 }
