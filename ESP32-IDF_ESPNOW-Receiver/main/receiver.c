@@ -26,3 +26,14 @@ void wifi_init()
     ESP_ERROR_CHECK( esp_wifi_set_protocol(ESPNOW_WIFI_IF, WIFI_PROTOCOL_11B|WIFI_PROTOCOL_11G|WIFI_PROTOCOL_11N|WIFI_PROTOCOL_LR) );
     #endif
 }
+
+void transmission_init() {
+
+    esp_err_t espnow_ret = esp_now_init();
+    if (espnow_ret != ESP_OK) {
+        ESP_LOGE(TAG, "esp_now_init() failed: %s", esp_err_to_name(espnow_ret));
+        return;
+    }
+    ESP_LOGI(TAG, "ESPNOW initialized successfully");
+    
+}
