@@ -97,6 +97,11 @@
           Struct Walkthrough
          </a>
         </li>
+        <li class="toctree-l2">
+         <a class="reference internal" href="#why-use-attribute-packed">
+          Why Use __attribute((packed))?
+         </a>
+        </li>
        </ul>
       </li>
       <li class="toctree-l1">
@@ -661,6 +666,52 @@ It&rsquo;s intended to be sent from a transmitting device (like a remote control
             led
            </em>
            allows the transmitter to toggle an onboard LED and is used for status indication (e.g. pairing, battery warning, etc).
+          </p>
+          <p>
+           <em>
+            motor1_rpm_pwm
+           </em>
+           to
+           <em>
+            motor4_rpm_pwm
+           </em>
+           provide individual PWM signals to four DC motors.
+This enables fine-grained speed control, supports differential drive configurations, and even allows for maneuvering in multi-directional platforms like omni-wheel robots.
+          </p>
+         </section>
+         <section id="why-use-attribute-packed">
+          <h3>
+           Why Use __attribute((packed))?
+           <a class="headerlink" href="#why-use-attribute-packed" title="Link to this heading">
+            &para;
+           </a>
+          </h3>
+          <p>
+           The packed attribute tells the compiler not to add any padding between fields in memory. This makes the struct:
+          </p>
+          <blockquote>
+           <div>
+            <ul class="simple">
+             <li>
+              <p>
+               Compact
+              </p>
+             </li>
+             <li>
+              <p>
+               Predictable for serialization over protocols like UART or ESP-NOW
+              </p>
+             </li>
+             <li>
+              <p>
+               Ideal for low-latency transmission in embedded systems
+              </p>
+             </li>
+            </ul>
+           </div>
+          </blockquote>
+          <p>
+           This ensures the receiver interprets the exact byte layout you expect, minimizing bandwidth and maximizing compatibility across platforms.
           </p>
          </section>
         </section>
