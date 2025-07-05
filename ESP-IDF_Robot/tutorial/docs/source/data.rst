@@ -38,7 +38,7 @@ This enables fine-grained speed control, supports differential drive configurati
 Why Use __attribute((packed))?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The packed attribute tells the compiler not to add any padding between fields in memory. This makes the struct:
+The *packed* attribute tells the compiler not to add any padding between fields in memory. This makes the struct:
 
    - Compact
    - Predictable for serialization over protocols like UART or ESP-NOW
