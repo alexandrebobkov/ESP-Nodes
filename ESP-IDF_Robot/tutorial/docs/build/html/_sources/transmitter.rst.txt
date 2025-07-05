@@ -1,2 +1,5 @@
 TRANSMITTER
 ===========
+
+Data Encapsulation
+------------------
