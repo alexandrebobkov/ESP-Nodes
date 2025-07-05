@@ -41,11 +41,14 @@
 </pre></div>
 </div>
 </section>
-<section id="receiving-data">
-<h2>Receiving Data<a class="headerlink" href="#receiving-data" title="Link to this heading">¶</a></h2>
+<section id="receiving-de-ecapsulating-data">
+<h2>Receiving &amp; De-Ecapsulating Data<a class="headerlink" href="#receiving-de-ecapsulating-data" title="Link to this heading">¶</a></h2>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">onDataReceived</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">mac_addr</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">data_len</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Data received from: %02x:%02x:%02x:%02x:%02x:%02x, len=%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span><span class="w"> </span><span class="n">data_len</span><span class="p">);</span>
 <span class="w">    </span><span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">buf</span><span class="p">));</span>
+
+<span class="w">    </span><span class="n">x_axis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buf</span><span class="p">.</span><span class="n">x_axis</span><span class="p">;</span>
+<span class="w">    </span><span class="n">y_axis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buf</span><span class="p">.</span><span class="n">y_axis</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -117,7 +120,7 @@
 <li class="toctree-l1"><a class="reference internal" href="transmitter.html">TRANSMITTER</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">RECEIVER</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#configuration-variables">Configuration Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#receiving-data">Receiving Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#receiving-de-ecapsulating-data">Receiving &amp; De-Ecapsulating Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#main-function">Main Function</a></li>
 </ul>
 </li>
