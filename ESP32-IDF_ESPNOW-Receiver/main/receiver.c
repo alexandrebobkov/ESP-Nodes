@@ -14,6 +14,8 @@
 #include "sensors_data.h"
 #include "config.h"
 
+static sensors_data_t buf;
+
 /* WiFi should start before using ESPNOW */
 void wifi_init()
 {
@@ -42,5 +44,6 @@ void transmission_init() {
 
 void onDataReceived (const uint8_t *mac_addr, const uint8_t *data, uint8_t data_len) {
 
+    ESP_LOGI();
     memcpy(&buf, data, sizeof(buf));
 }
