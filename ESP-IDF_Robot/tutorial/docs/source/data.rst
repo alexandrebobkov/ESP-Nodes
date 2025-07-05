@@ -1,8 +1,8 @@
 DATA STRUCT
 ===========
 
-The struct is used as a payload for sending control signals from transmitting device to the receiver.
-In addition, it may contain telemetry data, battery status, etc.
+The struct serves as the data payload for sending control signals from transmitting device to the receiver using ESP-NOW.
+In addition, it may contain additional data such as telemetry, battery status, etc.
 
 The *sensors_data_t* struct is designed as a data payload that encapsulates all control commands and sensor states relevant to the vehicle's operation.
 It's intended to be sent from a transmitting device (like a remote control or master controller) to a receiver (such as a microcontroller onboard the vehicle).
