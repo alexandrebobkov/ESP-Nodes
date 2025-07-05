@@ -27,3 +27,6 @@ Struct Walkthrough
 *nav_bttn* represents a joystick push-button.
 
 *led* allows the transmitter to toggle an onboard LED and is used for status indication (e.g. pairing, battery warning, etc).
+
+*motor1_rpm_pwm* to *motor4_rpm_pwm* provide individual PWM signals to four DC motors.
+This enables fine-grained speed control, supports differential drive configurations, and even allows for maneuvering in multi-directional platforms like omni-wheel robots.
