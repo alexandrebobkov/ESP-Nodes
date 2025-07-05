@@ -2,6 +2,8 @@
 
 <img alt="ESP32=C3 RC Car" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/ESP-IDF_Robot/assets/chassi-002.jpg" width="80%"/>
 
+<img alt="ESP32=C3 RC Car" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/ESP-IDF_Robot/assets/ESP-IDF_Robot.jpg" width="80%"/>
+
 ### Designated Pins & GPIOs
 
 __The table below lists GPIOs/Pins programmed to delivery specific operating functions.__
