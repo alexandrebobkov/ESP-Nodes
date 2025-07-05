@@ -6,11 +6,11 @@
 ByteRider documentation
 =======================
 
+.. image:: _static/ESP-IDF_Robot.jpg
+
 .. toctree::
    :maxdepth: 2
 
    intro
    overview
    progress
-
-.. image:: _static/ESP-IDF_Robot.jpg
