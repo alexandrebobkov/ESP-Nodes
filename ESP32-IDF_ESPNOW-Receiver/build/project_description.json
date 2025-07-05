@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "ESP32-IDF_ESPNOW-Receiver",
-    "project_version":    "ESP32-Node_Switch-v2.7-7184-gfb681d6c5-dirty",
+    "project_version":    "ESP32-Node_Switch-v2.7-7205-g2f317533a-dirty",
     "project_path":       "/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_ESPNOW-Receiver",
     "idf_path":           "/home/abobkov/esp/v5.4.1/esp-idf",
     "build_dir":          "/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_ESPNOW-Receiver/build",
@@ -1195,7 +1195,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_ESPNOW-Receiver/build/esp-idf/main/libmain.a",
-            "sources": [ "/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_ESPNOW-Receiver/main/espnow_receiver_main.c" ],
+            "sources": [ "/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_ESPNOW-Receiver/main/espnow_receiver_main.c", "/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_ESPNOW-Receiver/main/receiver.c" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {
