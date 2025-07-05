@@ -1,7 +1,5 @@
 # RC CAR powered by ESP32-C3 Breadboard Adapter (controlled via ESP-NOW)
 
-<img alt="ESP32=C3 RC Car" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/ESP-IDF_Robot/assets/chassi-002.jpg" width="80%"/>
-
 <img alt="ESP32=C3 RC Car" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/ESP-IDF_Robot/assets/ESP-IDF_Robot.jpg" width="80%"/>
 
 ### Designated Pins & GPIOs
@@ -23,6 +21,8 @@ __The table below lists GPIOs/Pins programmed to delivery specific operating fun
 <img alt="ESP32=C3 RC Car Schematic" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/ESP-IDF_Robot/assets/schematic-002.png" width="80%"/>
 
 ## How Does It Work?
+
+<img alt="ESP32=C3 RC Car" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/ESP-IDF_Robot/assets/chassi-002.jpg" width="80%"/>
 
 ### Hardware
 
