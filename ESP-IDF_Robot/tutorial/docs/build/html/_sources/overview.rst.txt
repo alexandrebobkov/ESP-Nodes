@@ -115,6 +115,7 @@ The function for updating motors' PWM values.
 The onDataReceived() and onDataSent() are two call-bacl functions that get evoked on each corresponding event.
 
 .. code-block:: c
+    
     // Call-back for the event when data is being received
     void onDataReceived (uint8_t *mac_addr, uint8_t *data, uint8_t data_len) {
 

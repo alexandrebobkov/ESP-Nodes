@@ -129,19 +129,6 @@
          &para;
         </a>
        </h1>
-       <p>
-        Add your content using
-        <code class="docutils literal notranslate">
-         <span class="pre">
-          reStructuredText
-         </span>
-        </code>
-        syntax. See the
-        <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">
-         reStructuredText
-        </a>
-        documentation for details.
-       </p>
        <div class="toctree-wrapper compound">
         <span id="document-intro">
         </span>
@@ -535,6 +522,25 @@ Changing PWM on each channel determines the speed and direction of the RC car.
           <p>
            The onDataReceived() and onDataSent() are two call-bacl functions that get evoked on each corresponding event.
           </p>
+          <div class="highlight-c notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="c1">// Call-back for the event when data is being received</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">onDataReceived</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">mac_addr</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">data_len</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="n">buf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">sensors_data_t</span><span class="o">*</span><span class="p">)</span><span class="n">data</span><span class="p">;</span><span class="w">                            </span><span class="c1">// Allocate memory for buffer to store data being received</span>
+<span class="w">    </span><span class="n">ESP_LOGW</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"Data was received"</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"x-axis: 0x%04x"</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="o">-&gt;</span><span class="n">x_axis</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"x-axis: 0x%04x"</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="o">-&gt;</span><span class="n">y_axis</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"PWM 1: 0x%04x"</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="o">-&gt;</span><span class="n">motor1_rpm_pwm</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Call-back for the event when data is being sent</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">onDataSent</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">mac_addr</span><span class="p">,</span><span class="w"> </span><span class="n">esp_now_send_status_t</span><span class="w"> </span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">ESP_LOGW</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"Packet send status: 0x%04X"</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="p">);</span>
+<span class="p">}</span>
+</pre>
+           </div>
+          </div>
           <p>
            The rc_send_data_task() function runs every 0.1 second to transmit the data to the receiver.
           </p>
@@ -650,6 +656,7 @@ Changing PWM on each channel determines the speed and direction of the RC car.
          </section>
         </section>
        </div>
+       <img alt="_images/ESP-IDF_Robot.jpg" src="_images/ESP-IDF_Robot.jpg"/>
       </section>
       <div class="clearer">
       </div>
