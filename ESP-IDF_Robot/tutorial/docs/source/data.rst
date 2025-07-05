@@ -20,6 +20,10 @@ It's intended to be sent from a transmitting device (like a remote control or ma
         uint8_t     motor4_rpm_pwm;
     } __attribute__((packed)) sensors_data_t;
 
+When used with communication protocols like ESP-NOW, this struct is **encoded** into a byte stream, then
+**transmitted** at regular intervals or in response to user input, and finally
+**decoded** on the receiving end to control hardware.
+
 Struct Walkthrough
 ^^^^^^^^^^^^^^^^^^
 

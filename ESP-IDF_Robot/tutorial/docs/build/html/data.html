@@ -51,6 +51,9 @@ It’s intended to be sent from a transmitting device (like a remote control or 
 <span class="p">}</span><span class="w"> </span><span class="n">__attribute__</span><span class="p">((</span><span class="n">packed</span><span class="p">))</span><span class="w"> </span><span class="n">sensors_data_t</span><span class="p">;</span>
 </pre></div>
 </div>
+<p>When used with communication protocols like ESP-NOW, this struct is <strong>encoded</strong> into a byte stream, then
+<strong>transmitted</strong> at regular intervals or in response to user input, and finally
+<strong>decoded</strong> on the receiving end to control hardware.</p>
 <section id="struct-walkthrough">
 <h2>Struct Walkthrough<a class="headerlink" href="#struct-walkthrough" title="Link to this heading">¶</a></h2>
 <p><em>x_axis</em> and <em>y_axis</em> fields capture analog input from a joystick, determining direction and speed.

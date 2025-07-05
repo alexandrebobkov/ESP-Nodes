@@ -640,6 +640,21 @@ It&rsquo;s intended to be sent from a transmitting device (like a remote control
 </pre>
           </div>
          </div>
+         <p>
+          When used with communication protocols like ESP-NOW, this struct is
+          <strong>
+           encoded
+          </strong>
+          into a byte stream, then
+          <strong>
+           transmitted
+          </strong>
+          at regular intervals or in response to user input, and finally
+          <strong>
+           decoded
+          </strong>
+          on the receiving end to control hardware.
+         </p>
          <section id="struct-walkthrough">
           <h3>
            Struct Walkthrough
