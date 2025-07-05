@@ -1,1 +1,23 @@
 # ninja log v6
+83	16664	1751688530285384068	build.ninja	f1d63c1e0c96bbb3
+86	115	1751688530572368109	project_elf_src_esp32c3.c	357cf589d1bf7e70
+86	115	1751688530572368109	/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_ESPNOW-Receiver/build/project_elf_src_esp32c3.c	357cf589d1bf7e70
+83	143	1751688530596184727	esp-idf/esp_system/ld/memory.ld	3c24fc9f9298b6c4
+83	143	1751688530596184727	/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_ESPNOW-Receiver/build/esp-idf/esp_system/ld/memory.ld	3c24fc9f9298b6c4
+84	181	1751688530631364828	esp-idf/esp_system/ld/sections.ld.in	dc54558bdec32b04
+84	181	1751688530631364828	/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_ESPNOW-Receiver/build/esp-idf/esp_system/ld/sections.ld.in	dc54558bdec32b04
+190	875	1751688530651363716	esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_txrx.c.obj	30874701cd92f028
+85	1168	1751688530708943915	partition_table/partition-table.bin	56fd6c1a2bd3911
+85	1168	1751688530708943915	/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_ESPNOW-Receiver/build/partition_table/partition-table.bin	56fd6c1a2bd3911
+182	1582	1751688530643364161	esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/src/esp_https_ota.c.obj	7453141dd625c335
+876	1605	1751688531337325797	esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_uri.c.obj	ff286d9f8cbae6e4
+186	1704	1751688530647363938	esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_main.c.obj	ee359db414dbb238
+1605	1726	1751688532066285797	esp-idf/esp_https_ota/libesp_https_ota.a	dd523debdb867984
+1168	1761	1751688531629309758	esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_ws.c.obj	862acc1fe8255c5c
+188	2249	1751688530649363827	esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_sess.c.obj	b6c749d17ceb1854
+1726	2493	1751688532187279232	esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/lib/http_auth.c.obj	4b6420902d76f987
+187	2581	1751688530648363883	esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_parse.c.obj	2dc084a7700701b
+1582	2658	1751688532043287045	esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.obj	45800466ffddfd0f
+2659	2833	1751688533120228687	esp-idf/esp_http_server/libesp_http_server.a	b80ee4265009cc07
+1761	3014	1751688532222277333	esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/lib/http_header.c.obj	aa528a9bdeb19ce1
+2251	3359	1751688532715250583	esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/lib/http_utils.c.obj	9bb3aafdbc343b11
