@@ -38,17 +38,35 @@
 <section id="configuration-variables">
 <h2>Configuration Variables<a class="headerlink" href="#configuration-variables" title="Link to this heading">¶</a></h2>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">transmitter_mac</span><span class="p">[</span><span class="n">ESP_NOW_ETH_ALEN</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mh">0x9C</span><span class="p">,</span><span class="w"> </span><span class="mh">0x9E</span><span class="p">,</span><span class="w"> </span><span class="mh">0x6E</span><span class="p">,</span><span class="w"> </span><span class="mh">0x14</span><span class="p">,</span><span class="w"> </span><span class="mh">0xB5</span><span class="p">,</span><span class="w"> </span><span class="mh">0x54</span><span class="p">};</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">x_axis</span><span class="p">;</span><span class="w">             </span><span class="c1">// Joystick x-position</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">y_axis</span><span class="p">;</span><span class="w">             </span><span class="c1">// Joystick y-position</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w">        </span><span class="n">nav_bttn</span><span class="p">;</span><span class="w">           </span><span class="c1">// Joystick push button</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w">        </span><span class="n">led</span><span class="p">;</span><span class="w">                </span><span class="c1">// LED ON/OFF state</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w">     </span><span class="n">motor1_rpm_pwm</span><span class="p">;</span><span class="w">     </span><span class="c1">// PWMs for 4 DC motors</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w">     </span><span class="n">motor2_rpm_pwm</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w">     </span><span class="n">motor3_rpm_pwm</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w">     </span><span class="n">motor4_rpm_pwm</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">__attribute__</span><span class="p">((</span><span class="n">packed</span><span class="p">))</span><span class="w"> </span><span class="n">sensors_data_t</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
 <section id="receiving-de-ecapsulating-data">
 <h2>Receiving &amp; De-Ecapsulating Data<a class="headerlink" href="#receiving-de-ecapsulating-data" title="Link to this heading">¶</a></h2>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">onDataReceived</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">mac_addr</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">data_len</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
+<span class="w">    </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
+
 <span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Data received from: %02x:%02x:%02x:%02x:%02x:%02x, len=%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span><span class="w"> </span><span class="n">data_len</span><span class="p">);</span>
 <span class="w">    </span><span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">buf</span><span class="p">));</span>
 
 <span class="w">    </span><span class="n">x_axis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buf</span><span class="p">.</span><span class="n">x_axis</span><span class="p">;</span>
-<span class="w">    </span><span class="n">y_axis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buf</span><span class="p">.</span><span class="n">y_axis</span>
+<span class="w">    </span><span class="n">y_axis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buf</span><span class="p">.</span><span class="n">y_axis</span><span class="p">;</span>
+
+<span class="w">    </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
+<span class="w">    </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -60,7 +78,14 @@
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;nvs_flash.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;esp_err.h&quot;</span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">app_main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
+<span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">app_main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
+<span class="w">    </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
+
 <span class="w">    </span><span class="c1">// Initialize NVS</span>
 <span class="w">    </span><span class="n">esp_err_t</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nvs_flash_init</span><span class="p">();</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESP_ERR_NVS_NO_FREE_PAGES</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESP_ERR_NVS_NEW_VERSION_FOUND</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -81,6 +106,9 @@
 <span class="w">    </span><span class="n">ESP_ERROR_CHECK</span><span class="p">(</span><span class="n">esp_now_register_recv_cb</span><span class="p">((</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="n">onDataReceived</span><span class="p">));</span>
 
 <span class="w">    </span><span class="n">system_led_init</span><span class="p">();</span>
+
+<span class="w">    </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
+<span class="w">    </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
 <span class="p">}</span>
 </pre></div>
 </div>
