@@ -13,4 +13,7 @@ ByteRider documentation
 
    intro
    overview
+   data
+   transmitter
+   receiver
    progress
