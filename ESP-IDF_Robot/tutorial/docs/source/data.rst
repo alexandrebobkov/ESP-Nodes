@@ -38,7 +38,9 @@ This enables fine-grained speed control, supports differential drive configurati
 Why Use __attribute((packed))?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The *packed* attribute tells the compiler not to add any padding between fields in memory. This makes the struct:
+ESP-NOW uses fixed-size data packets (up to 250 bytes). The *__attribute__((packed))* removes compiler-added padding for precise byte alignment.
+
+As *packed* attribute tells the compiler not to add any padding between fields in memory. This makes the struct:
 
    - Compact
    - Predictable for serialization over protocols like UART or ESP-NOW
