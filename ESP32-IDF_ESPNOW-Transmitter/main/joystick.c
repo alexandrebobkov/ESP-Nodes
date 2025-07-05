@@ -169,6 +169,7 @@ void transmission_init()
     esp_now_add_peer(&devices);
 
     memcpy(devices.peer_addr, receiver_2_mac, 6);
+    esp_now_add_peer(&devices);
 
     // Defince a task for periodically sending ESPNOW remote control data
     xTaskCreate(rc_send_data_task, "RC", 2048, NULL, 4, NULL);
