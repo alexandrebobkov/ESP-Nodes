@@ -21,6 +21,8 @@
 #include "nvs_flash.h"
 #include "esp_err.h"
 
+#include "receiver.h"
+
 void app_main(void) {
 
         // Initialize NVS
