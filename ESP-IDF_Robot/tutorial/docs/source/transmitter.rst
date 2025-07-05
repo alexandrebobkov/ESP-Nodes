@@ -1,6 +1,14 @@
 TRANSMITTER
 ===========
 
+Configuration Variables
+-----------------------
+
+.. code-block:: c
+
+    uint8_t receiver_mac[ESP_NOW_ETH_ALEN]  = {0xe4, 0xb0, 0x63, 0x17, 0x9e, 0x44};
+
+
 Data Encapsulation
 ------------------
 
