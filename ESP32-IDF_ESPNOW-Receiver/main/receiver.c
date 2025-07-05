@@ -38,5 +38,8 @@ void transmission_init() {
         return;
     }
     ESP_LOGI(TAG, "ESPNOW initialized successfully");
-    
+}
+
+void onDataReceived (const uint8_t *mac_addr, const uint8_t *data, uint8_t data_len) {
+
 }
