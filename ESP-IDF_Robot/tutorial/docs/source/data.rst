@@ -22,3 +22,8 @@ It's intended to be sent from a transmitting device (like a remote control or ma
 
 Struct Walkthrough
 ^^^^^^^^^^^^^^^^^^
+
+*x_axis* and *y_axis* fields capture analog input from a joystick, determining direction and speed.
+*nav_bttn* represents a joystick push-button.
+
+*led* allows the transmitter to toggle an onboard LED and is used for status indication (e.g. pairing, battery warning, etc).
