@@ -48,7 +48,14 @@ Main Function
     #include "nvs_flash.h"
     #include "esp_err.h"
 
+    ... ... ...
+    ... ... ...
+
     void app_main(void) {
+
+        ... ... ...
+        ... ... ...
+
         // Initialize internal temperature sensor
         chip_sensor_init();
 
