@@ -91,6 +91,13 @@
        <a class="reference internal" href="#data-struct">
         DATA STRUCT
        </a>
+       <ul>
+        <li class="toctree-l2">
+         <a class="reference internal" href="#struct-walkthrough">
+          Struct Walkthrough
+         </a>
+        </li>
+       </ul>
       </li>
       <li class="toctree-l1">
        <a class="reference internal" href="#transmitter">
@@ -628,6 +635,34 @@ It&rsquo;s intended to be sent from a transmitting device (like a remote control
 </pre>
           </div>
          </div>
+         <section id="struct-walkthrough">
+          <h3>
+           Struct Walkthrough
+           <a class="headerlink" href="#struct-walkthrough" title="Link to this heading">
+            &para;
+           </a>
+          </h3>
+          <p>
+           <em>
+            x_axis
+           </em>
+           and
+           <em>
+            y_axis
+           </em>
+           fields capture analog input from a joystick, determining direction and speed.
+           <em>
+            nav_bttn
+           </em>
+           represents a joystick push-button.
+          </p>
+          <p>
+           <em>
+            led
+           </em>
+           allows the transmitter to toggle an onboard LED and is used for status indication (e.g. pairing, battery warning, etc).
+          </p>
+         </section>
         </section>
         <span id="document-transmitter">
         </span>
