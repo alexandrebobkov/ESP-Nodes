@@ -61,9 +61,8 @@ It’s intended to be sent from a transmitting device (like a remote control or 
 <p><em>led</em> allows the transmitter to toggle an onboard LED and is used for status indication (e.g. pairing, battery warning, etc).</p>
 <p><em>motor1_rpm_pwm</em> to <em>motor4_rpm_pwm</em> provide individual PWM signals to four DC motors.
 This enables fine-grained speed control, supports differential drive configurations, and even allows for maneuvering in multi-directional platforms like omni-wheel robots.</p>
-</section>
 <section id="why-use-attribute-packed">
-<h2>Why Use __attribute((packed))?<a class="headerlink" href="#why-use-attribute-packed" title="Link to this heading">¶</a></h2>
+<h3>Why Use __attribute((packed))?<a class="headerlink" href="#why-use-attribute-packed" title="Link to this heading">¶</a></h3>
 <p>ESP-NOW uses fixed-size data packets (up to 250 bytes). The <em>__attribute__((packed))</em> removes compiler-added padding for precise byte alignment.</p>
 <p>As <em>packed</em> attribute tells the compiler not to add any padding between fields in memory, this makes the struct:</p>
 <blockquote>
@@ -74,6 +73,7 @@ This enables fine-grained speed control, supports differential drive configurati
 </ul>
 </div></blockquote>
 <p>This ensures the receiver interprets the exact byte layout you expect, minimizing bandwidth and maximizing compatibility across platforms.</p>
+</section>
 </section>
 </section>
 
@@ -108,7 +108,6 @@ This enables fine-grained speed control, supports differential drive configurati
 <li class="toctree-l1"><a class="reference internal" href="overview.html">HOW DOES IT WORK?</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">DATA STRUCT</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#struct-walkthrough">Struct Walkthrough</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#why-use-attribute-packed">Why Use __attribute((packed))?</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="transmitter.html">TRANSMITTER</a></li>
