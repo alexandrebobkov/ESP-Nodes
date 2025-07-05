@@ -26,8 +26,17 @@ Sending & Ecapsulating Data
 
     void sendData (void) {
 
+        ... ... ...
+        ... ... ...
+
         buffer.x_axis = x_axis;
         buffer.y_axis = y_axis;
+
+        // Call ESP-NOW function to send data (MAC address of receiver, pointer to the memory holding data & data length)
+        uint8_t result = esp_now_send((uint8_t*)receiver_mac, (uint8_t *)&buffer, sizeof(buffer));
+
+        ... ... ...
+        ... ... ...
     }
 
 Main Function
