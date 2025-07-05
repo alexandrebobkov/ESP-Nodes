@@ -109,12 +109,34 @@
           Data Encapsulation
          </a>
         </li>
+        <li class="toctree-l2">
+         <a class="reference internal" href="#main-function">
+          Main Function
+         </a>
+        </li>
        </ul>
       </li>
       <li class="toctree-l1">
        <a class="reference internal" href="#receiver">
         RECEIVER
        </a>
+       <ul>
+        <li class="toctree-l2">
+         <a class="reference internal" href="#configuration-variables">
+          Configuration Variables
+         </a>
+        </li>
+        <li class="toctree-l2">
+         <a class="reference internal" href="#receiving-data">
+          Receiving Data
+         </a>
+        </li>
+        <li class="toctree-l2">
+         <a class="reference internal" href="#main-function">
+          Main Function
+         </a>
+        </li>
+       </ul>
       </li>
       <li class="toctree-l1">
        <a class="reference internal" href="#work-in-progress-walk-through">
@@ -753,6 +775,39 @@ This enables fine-grained speed control, supports differential drive configurati
            </a>
           </h3>
          </section>
+         <section id="main-function">
+          <h3>
+           Main Function
+           <a class="headerlink" href="#main-function" title="Link to this heading">
+            &para;
+           </a>
+          </h3>
+          <div class="highlight-c notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">"freertos/FreeRTOS.h"</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"nvs_flash.h"</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"esp_err.h"</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">app_main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Initialize internal temperature sensor</span>
+<span class="w">    </span><span class="n">chip_sensor_init</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Initialize NVS</span>
+<span class="w">    </span><span class="n">esp_err_t</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nvs_flash_init</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESP_ERR_NVS_NO_FREE_PAGES</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESP_ERR_NVS_NEW_VERSION_FOUND</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ESP_ERROR_CHECK</span><span class="p">(</span><span class="w"> </span><span class="n">nvs_flash_erase</span><span class="p">()</span><span class="w"> </span><span class="p">);</span>
+<span class="w">        </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nvs_flash_init</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">ESP_ERROR_CHECK</span><span class="p">(</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">wifi_init</span><span class="p">();</span>
+<span class="w">    </span><span class="n">joystick_adc_init</span><span class="p">();</span>
+<span class="w">    </span><span class="n">transmission_init</span><span class="p">();</span>
+<span class="w">    </span><span class="n">system_led_init</span><span class="p">();</span>
+<span class="p">}</span>
+</pre>
+           </div>
+          </div>
+         </section>
         </section>
         <span id="document-receiver">
         </span>
@@ -763,6 +818,77 @@ This enables fine-grained speed control, supports differential drive configurati
            &para;
           </a>
          </h2>
+         <section id="configuration-variables">
+          <h3>
+           Configuration Variables
+           <a class="headerlink" href="#configuration-variables" title="Link to this heading">
+            &para;
+           </a>
+          </h3>
+          <div class="highlight-c notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">transmitter_mac</span><span class="p">[</span><span class="n">ESP_NOW_ETH_ALEN</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mh">0x9C</span><span class="p">,</span><span class="w"> </span><span class="mh">0x9E</span><span class="p">,</span><span class="w"> </span><span class="mh">0x6E</span><span class="p">,</span><span class="w"> </span><span class="mh">0x14</span><span class="p">,</span><span class="w"> </span><span class="mh">0xB5</span><span class="p">,</span><span class="w"> </span><span class="mh">0x54</span><span class="p">};</span>
+</pre>
+           </div>
+          </div>
+         </section>
+         <section id="receiving-data">
+          <h3>
+           Receiving Data
+           <a class="headerlink" href="#receiving-data" title="Link to this heading">
+            &para;
+           </a>
+          </h3>
+          <div class="highlight-c notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">onDataReceived</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">mac_addr</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">data_len</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"Data received from: %02x:%02x:%02x:%02x:%02x:%02x, len=%d"</span><span class="p">,</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span><span class="w"> </span><span class="n">data_len</span><span class="p">);</span>
+<span class="w">    </span><span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">buf</span><span class="p">));</span>
+<span class="p">}</span>
+</pre>
+           </div>
+          </div>
+         </section>
+         <section id="main-function">
+          <h3>
+           Main Function
+           <a class="headerlink" href="#main-function" title="Link to this heading">
+            &para;
+           </a>
+          </h3>
+          <div class="highlight-c notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"freertos/FreeRTOS.h"</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"nvs_flash.h"</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"esp_err.h"</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">app_main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Initialize NVS</span>
+<span class="w">    </span><span class="n">esp_err_t</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nvs_flash_init</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESP_ERR_NVS_NO_FREE_PAGES</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESP_ERR_NVS_NEW_VERSION_FOUND</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ESP_ERROR_CHECK</span><span class="p">(</span><span class="w"> </span><span class="n">nvs_flash_erase</span><span class="p">()</span><span class="w"> </span><span class="p">);</span>
+<span class="w">        </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nvs_flash_init</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">ESP_ERROR_CHECK</span><span class="p">(</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">wifi_init</span><span class="p">();</span>
+<span class="w">    </span><span class="n">ESP_ERROR_CHECK</span><span class="p">(</span><span class="n">esp_now_init</span><span class="p">());</span>
+
+<span class="w">    </span><span class="n">esp_now_peer_info_t</span><span class="w"> </span><span class="n">transmitterInfo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+<span class="w">    </span><span class="n">memcpy</span><span class="p">(</span><span class="n">transmitterInfo</span><span class="p">.</span><span class="n">peer_addr</span><span class="p">,</span><span class="w"> </span><span class="n">transmitter_mac</span><span class="p">,</span><span class="w"> </span><span class="n">ESP_NOW_ETH_ALEN</span><span class="p">);</span>
+<span class="w">    </span><span class="n">transmitterInfo</span><span class="p">.</span><span class="n">channel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// Current WiFi channel</span>
+<span class="w">    </span><span class="n">transmitterInfo</span><span class="p">.</span><span class="n">ifidx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESP_IF_WIFI_STA</span><span class="p">;</span>
+<span class="w">    </span><span class="n">transmitterInfo</span><span class="p">.</span><span class="n">encrypt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ESP_ERROR_CHECK</span><span class="p">(</span><span class="n">esp_now_add_peer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">transmitterInfo</span><span class="p">));</span>
+
+<span class="w">    </span><span class="n">ESP_ERROR_CHECK</span><span class="p">(</span><span class="n">esp_now_register_recv_cb</span><span class="p">((</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="n">onDataReceived</span><span class="p">));</span>
+
+<span class="w">    </span><span class="n">system_led_init</span><span class="p">();</span>
+<span class="p">}</span>
+</pre>
+           </div>
+          </div>
+         </section>
         </section>
         <span id="document-progress">
         </span>

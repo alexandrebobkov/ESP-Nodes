@@ -38,6 +38,31 @@
 <section id="data-encapsulation">
 <h2>Data Encapsulation<a class="headerlink" href="#data-encapsulation" title="Link to this heading">¶</a></h2>
 </section>
+<section id="main-function">
+<h2>Main Function<a class="headerlink" href="#main-function" title="Link to this heading">¶</a></h2>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;freertos/FreeRTOS.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;nvs_flash.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;esp_err.h&quot;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">app_main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Initialize internal temperature sensor</span>
+<span class="w">    </span><span class="n">chip_sensor_init</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Initialize NVS</span>
+<span class="w">    </span><span class="n">esp_err_t</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nvs_flash_init</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESP_ERR_NVS_NO_FREE_PAGES</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESP_ERR_NVS_NEW_VERSION_FOUND</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ESP_ERROR_CHECK</span><span class="p">(</span><span class="w"> </span><span class="n">nvs_flash_erase</span><span class="p">()</span><span class="w"> </span><span class="p">);</span>
+<span class="w">        </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nvs_flash_init</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">ESP_ERROR_CHECK</span><span class="p">(</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">wifi_init</span><span class="p">();</span>
+<span class="w">    </span><span class="n">joystick_adc_init</span><span class="p">();</span>
+<span class="w">    </span><span class="n">transmission_init</span><span class="p">();</span>
+<span class="w">    </span><span class="n">system_led_init</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
@@ -72,6 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="data.html">DATA STRUCT</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">TRANSMITTER</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#data-encapsulation">Data Encapsulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main-function">Main Function</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="receiver.html">RECEIVER</a></li>
