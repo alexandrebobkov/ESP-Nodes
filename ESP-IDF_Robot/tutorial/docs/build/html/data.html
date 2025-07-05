@@ -54,15 +54,15 @@ It’s intended to be sent from a transmitting device (like a remote control or 
 <p>When used with communication protocols like ESP-NOW, this struct is <strong>encoded</strong> into a byte stream, then
 <strong>transmitted</strong> at regular intervals or in response to user input, and finally
 <strong>decoded</strong> on the receiving end to control hardware.</p>
-<section id="struct-walkthrough">
-<h2>Struct Walkthrough<a class="headerlink" href="#struct-walkthrough" title="Link to this heading">¶</a></h2>
+<section id="data-payload">
+<h2>Data Payload<a class="headerlink" href="#data-payload" title="Link to this heading">¶</a></h2>
 <p><em>x_axis</em> and <em>y_axis</em> fields capture analog input from a joystick, determining direction and speed.
 <em>nav_bttn</em> represents a joystick push-button.</p>
 <p><em>led</em> allows the transmitter to toggle an onboard LED and is used for status indication (e.g. pairing, battery warning, etc).</p>
 <p><em>motor1_rpm_pwm</em> to <em>motor4_rpm_pwm</em> provide individual PWM signals to four DC motors.
 This enables fine-grained speed control, supports differential drive configurations, and even allows for maneuvering in multi-directional platforms like omni-wheel robots.</p>
 <section id="why-use-attribute-packed">
-<h3>Why Use __attribute((packed))?<a class="headerlink" href="#why-use-attribute-packed" title="Link to this heading">¶</a></h3>
+<h3>Why use __attribute((packed))?<a class="headerlink" href="#why-use-attribute-packed" title="Link to this heading">¶</a></h3>
 <p>ESP-NOW uses fixed-size data packets (up to 250 bytes). The <em>__attribute__((packed))</em> removes compiler-added padding for precise byte alignment.</p>
 <p>As <em>packed</em> attribute tells the compiler not to add any padding between fields in memory, this makes the struct:</p>
 <blockquote>
@@ -107,7 +107,7 @@ This enables fine-grained speed control, supports differential drive configurati
 <li class="toctree-l1"><a class="reference internal" href="intro.html">INTRODUCTION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">HOW DOES IT WORK?</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">DATA STRUCT</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#struct-walkthrough">Struct Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-payload">Data Payload</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="transmitter.html">TRANSMITTER</a></li>

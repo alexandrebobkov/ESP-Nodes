@@ -24,8 +24,8 @@ When used with communication protocols like ESP-NOW, this struct is **encoded** 
 **transmitted** at regular intervals or in response to user input, and finally
 **decoded** on the receiving end to control hardware.
 
-Struct Walkthrough
-------------------
+Data Payload
+------------
 
 *x_axis* and *y_axis* fields capture analog input from a joystick, determining direction and speed.
 *nav_bttn* represents a joystick push-button.
@@ -35,7 +35,7 @@ Struct Walkthrough
 *motor1_rpm_pwm* to *motor4_rpm_pwm* provide individual PWM signals to four DC motors.
 This enables fine-grained speed control, supports differential drive configurations, and even allows for maneuvering in multi-directional platforms like omni-wheel robots.
 
-Why Use __attribute((packed))?
+Why use __attribute((packed))?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ESP-NOW uses fixed-size data packets (up to 250 bytes). The *__attribute__((packed))* removes compiler-added padding for precise byte alignment.
