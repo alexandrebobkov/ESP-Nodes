@@ -19,3 +19,6 @@ It's intended to be sent from a transmitting device (like a remote control or ma
         uint8_t     motor3_rpm_pwm;
         uint8_t     motor4_rpm_pwm;
     } __attribute__((packed)) sensors_data_t;
+
+Struct Walkthrough
+^^^^^^^^^^^^^^^^^^
