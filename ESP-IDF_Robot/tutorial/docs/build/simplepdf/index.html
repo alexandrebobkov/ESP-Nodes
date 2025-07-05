@@ -702,7 +702,18 @@ This enables fine-grained speed control, supports differential drive configurati
            </a>
           </h3>
           <p>
-           The packed attribute tells the compiler not to add any padding between fields in memory. This makes the struct:
+           ESP-NOW uses fixed-size data packets (up to 250 bytes). The
+           <em>
+            __attribute__((packed))
+           </em>
+           removes compiler-added padding for precise byte alignment.
+          </p>
+          <p>
+           As
+           <em>
+            packed
+           </em>
+           attribute tells the compiler not to add any padding between fields in memory, this makes the struct:
           </p>
           <blockquote>
            <div>
