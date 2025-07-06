@@ -2,10 +2,10 @@ INTRODUCTION
 ============
 
 At the heart of this project is a customizable remote-controlled car that responds to real-time control inputs — capable of handling speed adjustments, 
-directional changes, and even extended features like lights or sensors. The foundational setup uses a transmitter and receiver architecture, 
+directional changes, and even extended features like lights or sensors. The foundational setup uses ESP-NOW for transmitter and receiver devices, 
 allowing you to wirelessly guide the car's behavior. While the design and physical appearance of the RC car can vary wildly depending on your 
-creativity and hardware, the control system remains elegantly efficient. To facilitate wireless communication between devices, the system employs 
-ESP-NOW, a lightweight and connection-free protocol ideal for fast, low-latency data transmission between ESP32 boards. Though ESP-NOW is used under 
+creativity and available hardware, the control system remains elegantly efficient. To facilitate wireless communication between devices, the system employs 
+ESP-NOW, a lightweight and connection-free protocol ideal for fast, low-latency data transmission between ESP32 microcontrollers. Though ESP-NOW is used under 
 the hood, the spotlight remains on the RC car itself: how it moves, adapts, and evolves with your ideas.
 
 An ESP-NOW-based remote-controlled car system transmits control data wirelessly using the ESP-NOW protocol, which enables fast and efficient 
