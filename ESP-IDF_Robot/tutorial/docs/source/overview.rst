@@ -27,9 +27,9 @@ Based on this constraint, the RC car can only move front, back, and turn/rotate 
 
 .. admonition:: What is PWM?
 
-    **PWM** stands for Pulse Width Modulation. It is a technique used to simulate analog voltage levels using discrete digital signals. It works by rapidly switching a 
-    digital pin between HIGH (on) and LOW (off) states at a fixed frequency (often, at base frequency of 5 kHz). The duty cycle—the percentage of time the signal is HIGH in one 
-    cycle determines the effective voltage delivered to a device.
+    **PWM** stands for Pulse Width Modulation. It is a technique used to simulate analog voltage levels using discrete digital signals. It works by 
+    rapidly switching a digital GPIO pin between HIGH (on) and LOW (off) states at a fixed frequency (often, at base frequency of 5 kHz). 
+    The duty cycle—the percentage of time the signal is HIGH in one cycle determines the effective voltage delivered to a device.
 
     A higher duty cycle increases the motor speed, and a lower duty cycle decreases the motor speed. This allows for fine-grained speed control 
     without needing analog voltage regulators.
