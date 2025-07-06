@@ -50,6 +50,13 @@ The Schematic and KiCAd PCB board are available on <a class="reference external"
 <p>The pairs of DC motors on the left side are wired to the dedicated PWM channels. This means that <em>ESP32-C3 Breadboard DevBoard</em> can control rotation speed and direction of DC motors in pairs only (i.e. left and right side).
 Consequently, only four PWM channels are sufficient for controlling the direction of the RC car.
 Based on this constraint, the RC car can only move front, back, and turn/rotate left and right. Any other movements are not possible (i.e. diagonal or sideways).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>What is PWM?</p>
+<p>PWM (Pulse Width Modulation) is a technique used to simulate analog voltage levels using digital signals. It works by rapidly switching a
+digital pin between HIGH (on) and LOW (off) states at a fixed frequency. The duty cycle—the percentage of time the signal is HIGH in one
+cycle—determines the effective voltage delivered to a device.</p>
+</div>
 <p>A pair of PWM channels are required for defining rotation speed and direction of the DC motors on each side.
 In particular, <strong>GPIO6</strong> and <strong>GPIO5</strong> provide PWM to the left- and right- side DC motors to rotate in a <strong>clockwise</strong> direction.
 Similarly, <strong>GPIO4</strong> and <strong>GPIO7</strong> provide PWM to the left- and right- side DC motors to rotate in a <strong>counter-clockwise</strong> direction.
