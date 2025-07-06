@@ -60,8 +60,8 @@
 </pre></div>
 </div>
 </section>
-<section id="receiving-de-ecapsulating-data">
-<h2>Receiving &amp; De-Ecapsulating Data<a class="headerlink" href="#receiving-de-ecapsulating-data" title="Link to this heading">¶</a></h2>
+<section id="receiving-extracting-data">
+<h2>Receiving &amp; Extracting Data<a class="headerlink" href="#receiving-extracting-data" title="Link to this heading">¶</a></h2>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">onDataReceived</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">mac_addr</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">data_len</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
@@ -96,10 +96,12 @@
 
 <span class="w">    </span><span class="c1">// Initialize NVS</span>
 <span class="w">    </span><span class="n">esp_err_t</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nvs_flash_init</span><span class="p">();</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESP_ERR_NVS_NO_FREE_PAGES</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESP_ERR_NVS_NEW_VERSION_FOUND</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESP_ERR_NVS_NO_FREE_PAGES</span><span class="w"> </span><span class="o">||</span>
+<span class="w">        </span><span class="n">ret</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESP_ERR_NVS_NEW_VERSION_FOUND</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="n">ESP_ERROR_CHECK</span><span class="p">(</span><span class="w"> </span><span class="n">nvs_flash_erase</span><span class="p">()</span><span class="w"> </span><span class="p">);</span>
 <span class="w">        </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nvs_flash_init</span><span class="p">();</span>
 <span class="w">    </span><span class="p">}</span>
+
 <span class="w">    </span><span class="n">ESP_ERROR_CHECK</span><span class="p">(</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="p">);</span>
 <span class="w">    </span><span class="n">wifi_init</span><span class="p">();</span>
 <span class="w">    </span><span class="n">ESP_ERROR_CHECK</span><span class="p">(</span><span class="n">esp_now_init</span><span class="p">());</span>
@@ -156,7 +158,7 @@
 <li class="toctree-l1"><a class="reference internal" href="transmitter.html">TRANSMITTER</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">RECEIVER</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#configuration-variables">Configuration Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#receiving-de-ecapsulating-data">Receiving &amp; De-Ecapsulating Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#receiving-extracting-data">Receiving &amp; Extracting Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#main-function">Main Function</a></li>
 </ul>
 </li>

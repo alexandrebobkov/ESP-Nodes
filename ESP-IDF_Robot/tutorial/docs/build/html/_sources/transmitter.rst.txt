@@ -19,6 +19,9 @@ Configuration Variables
         uint8_t     motor4_rpm_pwm;
     } __attribute__((packed)) sensors_data_t;
 
+Reading Joystick x- and y- Axis Values
+--------------------------------------
+
 Sending & Ecapsulating Data
 ----------------------------
 
