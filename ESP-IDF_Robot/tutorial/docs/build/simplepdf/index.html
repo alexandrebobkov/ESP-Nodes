@@ -117,6 +117,11 @@
          </a>
         </li>
         <li class="toctree-l2">
+         <a class="reference internal" href="#reading-joystick-x-and-y-axis-values">
+          Reading Joystick x- and y- Axis Values
+         </a>
+        </li>
+        <li class="toctree-l2">
          <a class="reference internal" href="#sending-ecapsulating-data">
           Sending &amp; Ecapsulating Data
          </a>
@@ -139,8 +144,8 @@
          </a>
         </li>
         <li class="toctree-l2">
-         <a class="reference internal" href="#receiving-de-ecapsulating-data">
-          Receiving &amp; De-Ecapsulating Data
+         <a class="reference internal" href="#receiving-extracting-data">
+          Receiving &amp; Extracting Data
          </a>
         </li>
         <li class="toctree-l2">
@@ -1018,6 +1023,14 @@ This enables fine-grained speed control, supports differential drive configurati
            </div>
           </div>
          </section>
+         <section id="reading-joystick-x-and-y-axis-values">
+          <h3>
+           Reading Joystick x- and y- Axis Values
+           <a class="headerlink" href="#reading-joystick-x-and-y-axis-values" title="Link to this heading">
+            &para;
+           </a>
+          </h3>
+         </section>
          <section id="sending-ecapsulating-data">
           <h3>
            Sending &amp; Ecapsulating Data
@@ -1134,10 +1147,10 @@ This enables fine-grained speed control, supports differential drive configurati
            </div>
           </div>
          </section>
-         <section id="receiving-de-ecapsulating-data">
+         <section id="receiving-extracting-data">
           <h3>
-           Receiving &amp; De-Ecapsulating Data
-           <a class="headerlink" href="#receiving-de-ecapsulating-data" title="Link to this heading">
+           Receiving &amp; Extracting Data
+           <a class="headerlink" href="#receiving-extracting-data" title="Link to this heading">
             &para;
            </a>
           </h3>
@@ -1185,10 +1198,12 @@ This enables fine-grained speed control, supports differential drive configurati
 
 <span class="w">    </span><span class="c1">// Initialize NVS</span>
 <span class="w">    </span><span class="n">esp_err_t</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nvs_flash_init</span><span class="p">();</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESP_ERR_NVS_NO_FREE_PAGES</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESP_ERR_NVS_NEW_VERSION_FOUND</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESP_ERR_NVS_NO_FREE_PAGES</span><span class="w"> </span><span class="o">||</span>
+<span class="w">        </span><span class="n">ret</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESP_ERR_NVS_NEW_VERSION_FOUND</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="n">ESP_ERROR_CHECK</span><span class="p">(</span><span class="w"> </span><span class="n">nvs_flash_erase</span><span class="p">()</span><span class="w"> </span><span class="p">);</span>
 <span class="w">        </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nvs_flash_init</span><span class="p">();</span>
 <span class="w">    </span><span class="p">}</span>
+
 <span class="w">    </span><span class="n">ESP_ERROR_CHECK</span><span class="p">(</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="p">);</span>
 <span class="w">    </span><span class="n">wifi_init</span><span class="p">();</span>
 <span class="w">    </span><span class="n">ESP_ERROR_CHECK</span><span class="p">(</span><span class="n">esp_now_init</span><span class="p">());</span>
