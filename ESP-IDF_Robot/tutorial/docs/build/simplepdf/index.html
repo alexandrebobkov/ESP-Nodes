@@ -95,8 +95,8 @@
        </ul>
       </li>
       <li class="toctree-l1">
-       <a class="reference internal" href="#data-struct">
-        DATA STRUCT
+       <a class="reference internal" href="#data-structs">
+        DATA STRUCTS
        </a>
        <ul>
         <li class="toctree-l2">
@@ -838,10 +838,10 @@ Right DC Motors spin clockwise
         </section>
         <span id="document-data">
         </span>
-        <section id="data-struct">
+        <section id="data-structs">
          <h2>
-          DATA STRUCT
-          <a class="headerlink" href="#data-struct" title="Link to this heading">
+          DATA STRUCTS
+          <a class="headerlink" href="#data-structs" title="Link to this heading">
            &para;
           </a>
          </h2>
@@ -869,6 +869,17 @@ It&rsquo;s intended to be sent from a transmitting device (like a remote control
 <span class="w">    </span><span class="kt">uint8_t</span><span class="w">     </span><span class="n">motor3_rpm_pwm</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">uint8_t</span><span class="w">     </span><span class="n">motor4_rpm_pwm</span><span class="p">;</span>
 <span class="p">}</span><span class="w"> </span><span class="n">__attribute__</span><span class="p">((</span><span class="n">packed</span><span class="p">))</span><span class="w"> </span><span class="n">sensors_data_t</span><span class="p">;</span>
+</pre>
+          </div>
+         </div>
+         <div class="highlight-c notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">motors_rpm</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor1_rpm_pwm</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor2_rpm_pwm</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor3_rpm_pwm</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor4_rpm_pwm</span><span class="p">;</span>
+<span class="p">};</span>
 </pre>
           </div>
          </div>
@@ -1108,6 +1119,17 @@ This enables fine-grained speed control, supports differential drive configurati
 <span class="w">    </span><span class="kt">uint8_t</span><span class="w">     </span><span class="n">motor3_rpm_pwm</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">uint8_t</span><span class="w">     </span><span class="n">motor4_rpm_pwm</span><span class="p">;</span>
 <span class="p">}</span><span class="w"> </span><span class="n">__attribute__</span><span class="p">((</span><span class="n">packed</span><span class="p">))</span><span class="w"> </span><span class="n">sensors_data_t</span><span class="p">;</span>
+</pre>
+           </div>
+          </div>
+          <div class="highlight-c notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">motors_rpm</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor1_rpm_pwm</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor2_rpm_pwm</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor3_rpm_pwm</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor4_rpm_pwm</span><span class="p">;</span>
+<span class="p">};</span>
 </pre>
            </div>
           </div>

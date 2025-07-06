@@ -1,5 +1,5 @@
-DATA STRUCT
-===========
+DATA STRUCTS
+============
 
 The struct serves as the data payload for sending control signals from transmitting device to the receiver using ESP-NOW.
 In addition, it may contain additional data such as telemetry, battery status, etc.
@@ -19,6 +19,15 @@ It's intended to be sent from a transmitting device (like a remote control or ma
         uint8_t     motor3_rpm_pwm;
         uint8_t     motor4_rpm_pwm;
     } __attribute__((packed)) sensors_data_t;
+
+.. code-block:: c
+
+    struct motors_rpm {
+        int motor1_rpm_pwm;
+        int motor2_rpm_pwm;
+        int motor3_rpm_pwm;
+        int motor4_rpm_pwm;
+    };
 
 When used with communication protocols like ESP-NOW, this struct is **encoded** into a byte stream, then
 **transmitted** at regular intervals or in response to user input, and finally
