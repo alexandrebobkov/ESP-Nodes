@@ -17,7 +17,7 @@ modular design gives users the freedom to customize both the appearance and beha
 ABSTRACT
 --------
 
-To enable real-time remote operation of the RC car, the system translates joystick inputs into PWM (Pulse Width Modulation) signals that control the DC motors. 
+To enable real-time remote operation of the RC car, the system translates joystick x- and y- axis inputs into PWM (Pulse Width Modulation) signals that control the DC motors. 
 These PWM values are stored in a predefined data structure, which is then transmitted wirelessly using ESP-NOW — a low-latency, connectionless 
 communication protocol developed by Espressif. Both the transmitter and receiver modules are based on ESP32-C3 microcontrollers.
 
