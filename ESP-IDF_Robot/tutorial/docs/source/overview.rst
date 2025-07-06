@@ -25,6 +25,8 @@ The pairs of DC motors on the left side are wired to the dedicated PWM channels.
 Consequently, only four PWM channels are sufficient for controlling the direction of the RC car. 
 Based on this constraint, the RC car can only move front, back, and turn/rotate left and right. Any other movements are not possible (i.e. diagonal or sideways).
 
+.. note::
+
 A pair of PWM channels are required for defining rotation speed and direction of the DC motors on each side.
 In particular, **GPIO6** and **GPIO5** provide PWM to the left- and right- side DC motors to rotate in a **clockwise** direction.
 Similarly, **GPIO4** and **GPIO7** provide PWM to the left- and right- side DC motors to rotate in a **counter-clockwise** direction.
