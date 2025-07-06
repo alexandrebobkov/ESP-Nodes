@@ -34,7 +34,7 @@ Based on this constraint, the RC car can only move front, back, and turn/rotate 
     A higher duty cycle increases the motor speed, and a lower duty cycle decreases the motor speed. This allows for fine-grained speed control 
     without needing analog voltage regulators.
 
-A pair of PWM channels are required for defining rotation speed and direction of the DC motors on each side.
+A pair of PWM channels are used per DC motor for defining their rotation speed and direction on each side.
 In particular, **GPIO6** and **GPIO5** provide PWM to the left- and right- side DC motors to rotate in a **clockwise** direction.
 Similarly, **GPIO4** and **GPIO7** provide PWM to the left- and right- side DC motors to rotate in a **counter-clockwise** direction.
 Changing PWM on each channel determines the speed and direction of the RC car.
