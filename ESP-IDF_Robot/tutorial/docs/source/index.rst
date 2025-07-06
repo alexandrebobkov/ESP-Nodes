@@ -17,3 +17,4 @@ ByteRider documentation
    transmitter
    receiver
    progress
+   references
