@@ -28,7 +28,7 @@ Configuration Variables
         int motor4_rpm_pwm;
     };
 
-Receiving & De-Ecapsulating Data
+Receiving & Extracting Data
 --------------------------------
 
 .. code-block:: c
