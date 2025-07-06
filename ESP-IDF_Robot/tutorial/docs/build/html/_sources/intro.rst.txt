@@ -1,4 +1,4 @@
-INTRODUCTION
+OVERVIEW
 ============
 
 At the heart of this project is a customizable remote-controlled car that responds to real-time control inputs — capable of handling speed adjustments, 
