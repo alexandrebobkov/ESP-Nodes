@@ -13,3 +13,6 @@ efficient communication between ESP32 devices without the need for Wi-Fi router,
 setup where a transmitter sends data to a receiver to define the car's speed and direction — forming the core communication loop. While the baseline 
 implementation focuses on movement, additional features like lights, sensors, or telemetry can easily be integrated by expanding the source code. This 
 modular design gives users the freedom to customize both the appearance and behavior of their RC car, resulting in endless creative possibilities.
+
+ABSTRACT
+--------
