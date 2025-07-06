@@ -1012,9 +1012,9 @@ This enables fine-grained speed control, supports differential drive configurati
 <span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">x_axis</span><span class="p">;</span><span class="w">             </span><span class="c1">// Joystick x-position</span>
 <span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">y_axis</span><span class="p">;</span><span class="w">             </span><span class="c1">// Joystick y-position</span>
-<span class="w">    </span><span class="kt">bool</span><span class="w">        </span><span class="n">nav_bttn</span><span class="p">;</span><span class="w">           </span><span class="c1">// Joystick push button</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w">        </span><span class="n">nav_btn</span><span class="p">;</span><span class="w">            </span><span class="c1">// Joystick push button</span>
 <span class="w">    </span><span class="kt">bool</span><span class="w">        </span><span class="n">led</span><span class="p">;</span><span class="w">                </span><span class="c1">// LED ON/OFF state</span>
-<span class="w">    </span><span class="kt">uint8_t</span><span class="w">     </span><span class="n">motor1_rpm_pwm</span><span class="p">;</span><span class="w">     </span><span class="c1">// PWMs for 4 DC motors</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w">     </span><span class="n">motor1_rpm_pwm</span><span class="p">;</span><span class="w">     </span><span class="c1">// PWMs for each DC motor</span>
 <span class="w">    </span><span class="kt">uint8_t</span><span class="w">     </span><span class="n">motor2_rpm_pwm</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">uint8_t</span><span class="w">     </span><span class="n">motor3_rpm_pwm</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">uint8_t</span><span class="w">     </span><span class="n">motor4_rpm_pwm</span><span class="p">;</span>
