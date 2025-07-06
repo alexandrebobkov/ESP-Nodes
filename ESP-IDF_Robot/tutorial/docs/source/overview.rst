@@ -27,6 +27,12 @@ Based on this constraint, the RC car can only move front, back, and turn/rotate 
 
 .. note::
 
+    What is PWM?
+
+    PWM (Pulse Width Modulation) is a technique used to simulate analog voltage levels using digital signals. It works by rapidly switching a 
+    digital pin between HIGH (on) and LOW (off) states at a fixed frequency. The duty cycle—the percentage of time the signal is HIGH in one 
+    cycle—determines the effective voltage delivered to a device.
+
 A pair of PWM channels are required for defining rotation speed and direction of the DC motors on each side.
 In particular, **GPIO6** and **GPIO5** provide PWM to the left- and right- side DC motors to rotate in a **clockwise** direction.
 Similarly, **GPIO4** and **GPIO7** provide PWM to the left- and right- side DC motors to rotate in a **counter-clockwise** direction.
