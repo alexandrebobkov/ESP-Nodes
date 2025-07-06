@@ -39,6 +39,8 @@ In particular, **GPIO6** and **GPIO5** provide PWM to the left- and right- side 
 Similarly, **GPIO4** and **GPIO7** provide PWM to the left- and right- side DC motors to rotate in a **counter-clockwise** direction.
 Changing PWM on each channel determines the speed and direction of the RC car.
 
+The table below summarizes the GPIO pins used for PWM to control the direction of the DC motors in the remote-controlled car.
+
 +-----------+-------+---------------------------------------+----------+
 | GPIOs     | State | Description                           | Function |          
 +===========+=======+=======================================+==========+
