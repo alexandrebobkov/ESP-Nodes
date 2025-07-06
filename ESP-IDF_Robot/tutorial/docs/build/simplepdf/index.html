@@ -333,9 +333,9 @@ Based on this constraint, the RC car can only move front, back, and turn/rotate 
              <strong>
               PWM
              </strong>
-             (Pulse Width Modulation) is a technique used to simulate analog voltage levels using ddiscrete igital signals. It works by rapidly switching a
-digital pin between HIGH (on) and LOW (off) states at a fixed frequency (often, at base frequency of 5 kHz). The duty cycle&mdash;the percentage of time the signal is HIGH in one
-cycle determines the effective voltage delivered to a device.
+             stands for Pulse Width Modulation. It is a technique used to simulate analog voltage levels using discrete digital signals. It works by
+rapidly switching a digital GPIO pin between HIGH (on) and LOW (off) states at a fixed frequency (often, at base frequency of 5 kHz).
+The duty cycle&mdash;the percentage of time the signal is HIGH in one cycle determines the effective voltage delivered to a device.
             </p>
             <p>
              A higher duty cycle increases the motor speed, and a lower duty cycle decreases the motor speed. This allows for fine-grained speed control
@@ -343,7 +343,7 @@ without needing analog voltage regulators.
             </p>
            </div>
            <p>
-            A pair of PWM channels are required for defining rotation speed and direction of the DC motors on each side.
+            A pair of PWM channels are used per DC motor for defining their rotation speed and direction on each side.
 In particular,
             <strong>
              GPIO6
@@ -372,6 +372,47 @@ Similarly,
             direction.
 Changing PWM on each channel determines the speed and direction of the RC car.
            </p>
+           <table class="docutils align-default">
+            <thead>
+             <tr class="row-odd">
+              <th class="head">
+               <p>
+                GPIO Num.
+               </p>
+              </th>
+              <th class="head">
+               <p>
+                State
+               </p>
+              </th>
+              <th class="head">
+               <p>
+                Function
+               </p>
+              </th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr class="row-even">
+              <td>
+               <p>
+                GPIO6
+GPIO4
+               </p>
+              </td>
+              <td>
+               <p>
+                PWM
+               </p>
+              </td>
+              <td>
+               <p>
+                Forward
+               </p>
+              </td>
+             </tr>
+            </tbody>
+           </table>
            <p>
             The following images illustrate various PWM duty cycles registered by oscilloscope (duty cycles 0%, 48% and 91%, resp.).
            </p>
