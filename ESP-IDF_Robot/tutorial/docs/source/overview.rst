@@ -1,7 +1,10 @@
 HOW DOES IT WORK?
 =================
 
-The BitByteRider RC car is powered by ESP32-C3 Breadboard & Power adapter developmemt board. The Schematic and KiCAd PCB board are available on _GitBub: https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter
+The BitByteRider RC car is powered by ESP32-C3 Breadboard & Power adapter developmemt board. 
+The Schematic and KiCAd PCB board are available on _GitBub: https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter
+
+.. _GithHub_ : https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter
 
 Reserved Pins & GPIOs
 ---------------------
