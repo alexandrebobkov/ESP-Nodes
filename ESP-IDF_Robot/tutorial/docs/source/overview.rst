@@ -45,6 +45,15 @@ Changing PWM on each channel determines the speed and direction of the RC car.
 | GPIO6 &   | PWM   | Forward  |
 | GPIO4     |       |          |
 +-----------+-------+----------+
+| GPIO5 &   | PWM   | Reverse  |
+| GPIO7     |       |          |
++-----------+-------+----------+
+| GPIO6 &   | PWM   | Left     |
+| GPIO7     |       |          |
++-----------+-------+----------+
+| GPIO4 &   | PWM   | Right    |
+| GPIO5     |       |          |
++-----------+-------+----------+
 
 The following images illustrate various PWM duty cycles registered by oscilloscope (duty cycles 0%, 48% and 91%, resp.).
 
