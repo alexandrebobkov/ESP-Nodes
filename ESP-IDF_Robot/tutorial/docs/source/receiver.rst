@@ -72,6 +72,7 @@ Main Function
             ESP_ERROR_CHECK( nvs_flash_erase() );
             ret = nvs_flash_init();
         }
+        
         ESP_ERROR_CHECK( ret );
         wifi_init();
         ESP_ERROR_CHECK(esp_now_init());
