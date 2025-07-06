@@ -16,3 +16,9 @@ modular design gives users the freedom to customize both the appearance and beha
 
 ABSTRACT
 --------
+
+- In the heart of this project, is data struct that contains values defining DC motors rotation speeds using PWM.
+- the data struct is consistent between transmitter and receiver
+- both, transmitter and receiver communicate using ESP-NOW protocol
+- transmitter encapsulates values if joystic position before sending them to the receiver devices
+- receiver device de-encapsulates the joystic position vallues and converts them to PWM values for setting the rotations and directions of DC motors
