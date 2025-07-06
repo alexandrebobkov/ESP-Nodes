@@ -19,6 +19,15 @@ Configuration Variables
         uint8_t     motor4_rpm_pwm;
     } __attribute__((packed)) sensors_data_t;
 
+.. code-block:: c
+
+    struct motors_rpm {
+        int motor1_rpm_pwm;
+        int motor2_rpm_pwm;
+        int motor3_rpm_pwm;
+        int motor4_rpm_pwm;
+    };
+
 Receiving & De-Ecapsulating Data
 --------------------------------
 
