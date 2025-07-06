@@ -17,12 +17,10 @@ modular design gives users the freedom to customize both the appearance and beha
 ABSTRACT
 --------
 
-At the core of this project lies a shared data structure that encapsulates the control parameters for the DC motors, specifically their rotation speeds, 
-which are modulated using Pulse Width Modulation (PWM). This structure ensures consistent interpretation of control signals between the transmitter 
-and receiver.
+The PWM parameters that control DC motors are stored in data struct, which then in turn is encapsulated for being ransmitted using ESP-NOW.
 
-The system employs ESP-NOW, a low-latency, connectionless communication protocol developed by Espressif, to facilitate wireless data exchange between 
-the transmitter and receiver modules. Both devices are based on ESP32 microcontrollers and maintain a synchronized understanding of the data structure 
+For transmitting the parameters, the system employs ESP-NOW, a low-latency, connectionless communication protocol developed by Espressif, to facilitate wireless data exchange between 
+the transmitter and receiver modules. Both devices are based on ESP32C3 microcontrollers and maintain a synchronized understanding of the data structure 
 to ensure seamless communication.
 
 On the transmitter side, joystick input is continuously read and translated into control values. These values are then encapsulated into the 
