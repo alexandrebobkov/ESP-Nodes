@@ -36,7 +36,9 @@ When used with communication protocols like ESP-NOW, this struct is **encoded** 
 .. admonition:: What is struct?
 
     In C programming, a struct (short for structure) is a user-defined data type that lets you group multiple variables of different types together under a 
-    single name. It's like a container that holds related information — perfect for organizing data that logically belongs together.
+    single name. It's like a container that holds related information — perfect for organizing data that logically belongs together. Structs are especially 
+    powerful in systems programming, embedded projects, and when dealing with raw binary data — like parsing sensor input or transmitting control packets over 
+    ESP-NOW.
 
 Data Payload
 ------------
