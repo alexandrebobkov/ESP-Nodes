@@ -10,4 +10,6 @@ the hood, the spotlight remains on the RC car itself: how it moves, adapts, and 
 
 An ESP-NOW-based remote-controlled car system transmits control data wirelessly using the ESP-NOW protocol, which enables fast and efficient 
 communication between ESP32 devices without the need for Wi-Fi pairing. The provided tutorial demonstrates a functional setup where a transmitter 
-sends data to a receiver to define the car's speed and direction — forming the core communication loop. While the baseline implementation focuses on movement, additional features like lights, sensors, or telemetry can easily be integrated by expanding the code. This modular design gives users the freedom to customize both the appearance and behavior of their RC car, resulting in endless creative possibilities.
+sends data to a receiver to define the car's speed and direction — forming the core communication loop. While the baseline implementation focuses on 
+movement, additional features like lights, sensors, or telemetry can easily be integrated by expanding the code. This modular design gives users the 
+freedom to customize both the appearance and behavior of their RC car, resulting in endless creative possibilities.
