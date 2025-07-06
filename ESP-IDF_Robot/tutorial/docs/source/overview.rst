@@ -42,16 +42,16 @@ Changing PWM on each channel determines the speed and direction of the RC car.
 +-----------+-------+---------------------------------------+----------+
 | GPIOs     | State | Description                           | Function |          
 +===========+=======+=======================================+==========+
-| GPIO6 &   | PWM   | Left & Right DC Motors                | Forward  |
-| GPIO4     |       | spin clockwise                        |          |
+| GPIO6,    | PWM   | Left & Right DC Motors spin           | Forward  |
+| GPIO4     |       | clockwise                             |          |
 +-----------+-------+---------------------------------------+----------+
-| GPIO5 &   | PWM   | Left & Right DC Motors                | Reverse  |
-| GPIO7     |       | spin counterclockwise                 |          |
+| GPIO5,    | PWM   | Left & Right DC Motors spin           | Reverse  |
+| GPIO7     |       | counterclockwise                      |          |
 +-----------+-------+---------------------------------------+----------+
-| GPIO6 &   | PWM   | Left DC Motors spin clockwise         | Left     |
+| GPIO6,    | PWM   | Left DC Motors spin clockwise         | Left     |
 | GPIO7     |       | Right DC Motors spin counterclockwise |          |
 +-----------+-------+---------------------------------------+----------+
-| GPIO4 &   | PWM   | Left DC Motors spin counterclockwise  | Right    |
+| GPIO4,    | PWM   | Left DC Motors spin counterclockwise  | Right    |
 | GPIO5     |       | Right DC Motors spin clockwise        |          |
 +-----------+-------+---------------------------------------+----------+
 
