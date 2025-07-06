@@ -40,9 +40,9 @@ Similarly, **GPIO4** and **GPIO7** provide PWM to the left- and right- side DC m
 Changing PWM on each channel determines the speed and direction of the RC car.
 
 +-----------+-------+----------+
-| GPIO Num. | State | Function |
+| GPIOs     | State | Function |
 +===========+=======+==========+
-| GPIO6     | PWM   | Forward  |
+| GPIO6 &   | PWM   | Forward  |
 | GPIO4     |       |          |
 +-----------+-------+----------+
 
