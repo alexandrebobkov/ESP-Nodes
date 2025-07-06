@@ -1,5 +1,5 @@
-DATA STRUCT
-===========
+DATA STRUCTS
+============
 
 The struct serves as the data payload for sending control signals from transmitting device to the receiver using ESP-NOW.
 In addition, it may contain additional data such as telemetry, battery status, etc.
