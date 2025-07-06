@@ -17,14 +17,12 @@ modular design gives users the freedom to customize both the appearance and beha
 ABSTRACT
 --------
 
-The PWM parameters that control DC motors are stored in data struct, which then in turn is encapsulated for being ransmitted using ESP-NOW.
+To enable real-time remote operation of the RC car, the system translates joystick inputs into PWM (Pulse Width Modulation) signals that control the DC motors. 
+These PWM values are stored in a predefined data structure, which is then transmitted wirelessly using ESP-NOW — a low-latency, connectionless 
+communication protocol developed by Espressif. Both the transmitter and receiver modules are based on ESP32-C3 microcontrollers.
 
-For transmitting the parameters, the system employs ESP-NOW, a low-latency, connectionless communication protocol developed by Espressif, to facilitate wireless data exchange between 
-the transmitter and receiver modules. Both devices are based on ESP32C3 microcontrollers and maintain a synchronized understanding of the data structure 
-to ensure seamless communication.
+On the transmitter side, the joystick's X and Y coordinates are continuously monitored and converted into PWM parameters. These values are packed into the 
+data structure and sent via ESP-NOW to the receiver.
 
-On the transmitter side, joystick input is continuously read and translated into control values. These values are then encapsulated into the 
-predefined data structure and transmitted via ESP-NOW to the receiver.
-
-The receiver module listens for incoming ESP-NOW packets, de-encapsulates the joystick data, and converts the received values into PWM signals. 
-These signals are then used to control the speed and direction of the DC motors, enabling real-time remote operation of the vehicle.
+The receiver module listens for incoming ESP-NOW packets, extracts the PWM control data, and applies it directly to the DC motors. This communication flow 
+allows the RC car to respond instantly to user input, managing speed and direction without any physical connection between the devices.
