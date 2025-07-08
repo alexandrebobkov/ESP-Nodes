@@ -478,4 +478,6 @@ void app_main(void)
 
     ESP_ERROR_CHECK(i2cdev_init());
     xTaskCreate(task, "test", configMINIMAL_STACK_SIZE * 8, NULL, 5, NULL);
+    
+    xTaskCreate(display_xy, "coordinates", configMINIMAL_STACK_SIZE * 8, NULL, 4, NULL);
 }
