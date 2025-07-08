@@ -87,8 +87,8 @@ static const char *TAG = "ESP IDF Robot";
 #define ADC_CONV_MODE               ADC_CONV_BOTH_UNIT// ADC_CONV_SINGLE_UNIT_1
 #define ADC_OUTPUT_TYPE             ADC_DIGI_OUTPUT_FORMAT_TYPE2    // ESP32C3
 #define READ_LEN                    1024//256
-#define ADC_GET_CHANNEL(p_data)     ((p_data)->type2.channel)
-#define ADC_GET_DATA(p_data)        ((p_data)->type2.data)
+//#define ADC_GET_CHANNEL(p_data)     ((p_data)->type2.channel)
+//#define ADC_GET_DATA(p_data)        ((p_data)->type2.data)
 #define PROJ_X                      (1)                     // ADC1_CH1; 0 GPIO joystick, x-axis
 #define PROJ_Y                      (0)                     // ADC1_CH0; 1 GPIO joystick, y-axis
 #define NAV_BTN                     (8)                     // 8 GPIO joystick button
@@ -387,7 +387,7 @@ void task(void *pvParameters)
         printf("VBUS: %.04f V, VSHUNT: %.04f mV, IBUS: %.04f mA, PBUS: %.04f mW\n",
                 bus_voltage, shunt_voltage * 1000, current * 1000, power * 1000);
 
-        vTaskDelay(pdMS_TO_TICKS(500));
+        vTaskDelay(pdMS_TO_TICKS(2500));
     }
 }
 
