@@ -67,6 +67,8 @@ static const char *TAG = "ESP IDF Robot";
 
 #define I2C_PORT 0
 #define I2C_ADDR 0x40
+#define CONFIG_EXAMPLE_I2C_MASTER_SDA 5
+#define CONFIG_EXAMPLE_I2C_MASTER_SCL 6
 
 
 /* Use project configuration menu (idf.py menuconfig) to choose the GPIO to blink,
