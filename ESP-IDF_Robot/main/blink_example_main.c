@@ -306,12 +306,11 @@ static void temp_sensor_task (void *arg) {
 static void rc_task (void *arg) {
     while (true) {
         update_pwm (rc_x, rc_y);
-        ESP_LOGI("x,y", "( %d, %d ) [ %d, %d] ", rc_x, rc_y, x, y);
+        //ESP_LOGI("x,y", "( %d, %d ) [ %d, %d] ", rc_x, rc_y, x, y);
         vTaskDelay (100 / portTICK_PERIOD_MS);  // Determines responsiveness  
         //vTaskDelay (1000 / portTICK_PERIOD_MS); 
     }
 }
-
 static void display_xy(void) {
     while (true) {
         ESP_LOGI("x,y", "( %d, %d ) [ %d, %d] ", rc_x, rc_y, x, y);
