@@ -59,6 +59,7 @@
 #include "espnow_config.h"
 
 #include "ultrasonic.h"
+#include "ina219.h"
 
 #include "config.h"
 
