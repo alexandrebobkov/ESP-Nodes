@@ -311,7 +311,7 @@ static void rc_task (void *arg) {
         //vTaskDelay (1000 / portTICK_PERIOD_MS); 
     }
 }
-static void display_xy(void) {
+static void display_xy() {
     while (true) {
         ESP_LOGI("x,y", "( %d, %d ) [ %d, %d] ", rc_x, rc_y, x, y);
         vTaskDelay (1000 / portTICK_PERIOD_MS);
