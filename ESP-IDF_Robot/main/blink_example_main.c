@@ -312,6 +312,13 @@ static void rc_task (void *arg) {
     }
 }
 
+static void display_xy(void) {
+    while (true) {
+        ESP_LOGI("x,y", "( %d, %d ) [ %d, %d] ", rc_x, rc_y, x, y);
+        vTaskDelay (1000 / portTICK_PERIOD_MS);
+    }
+}
+
 /*
     EXP32-C3 Chip built-in temprature sensor
     Read & display the temperature value
