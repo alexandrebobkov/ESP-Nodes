@@ -6,6 +6,7 @@
 
     Updated:    Jan 10, 2025
                 Jun 26, 2025
+                Jul  8, 2025
 
     built-in LED GPIO:          10
     build-in push button GPIO:  3
@@ -16,8 +17,8 @@
 
     Voltage, DevBoard:  5V
     Voltage, Robot:     7.4V (2S LiPo battery)
-    Current, standby:  0.3A
-    Current, motors:   0.5A
+    Current, standby:   300mA
+    Current, motors:    850mA
 */
 
 #include <stdio.h>
