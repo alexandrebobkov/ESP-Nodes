@@ -51,7 +51,7 @@ static i2c_port_state_t states[I2C_NUM_MAX];
 #define SEMAPHORE_TAKE(port)
 #else
 #define SEMAPHORE_TAKE(port) do { \
-        if (!xSemaphoreTake(states[port].lock, pdMS_TO_TICKS(CONFIG_I2CDEV_TIMEOUT))) \
+        if (!xSemaphoreTake(states[port].lock, pdMS_TO_TICKS(1000))) \ //CONFIG_I2CDEV_TIMEOUT))) \
         { \
             ESP_LOGE(TAG, "Could not take port mutex %d", port); \
             return ESP_ERR_TIMEOUT; \
