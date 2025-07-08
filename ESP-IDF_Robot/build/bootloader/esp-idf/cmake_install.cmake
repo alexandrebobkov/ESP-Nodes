@@ -142,9 +142,3 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/alex/github/ESP-Nodes/ESP-IDF_Robot/build/bootloader/esp-idf/main/cmake_install.cmake")
 endif()
 
-string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
-       "${CMAKE_INSTALL_MANIFEST_FILES}")
-if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/alex/github/ESP-Nodes/ESP-IDF_Robot/build/bootloader/esp-idf/install_local_manifest.txt"
-     "${CMAKE_INSTALL_MANIFEST_CONTENT}")
-endif()
