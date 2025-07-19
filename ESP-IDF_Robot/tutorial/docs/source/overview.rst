@@ -16,7 +16,8 @@ The GPIO numbers correspond to those on the ESP32-C3 WROOM microcontroller. The 
 Reading x- and y- axis
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The **GPIO0** and **GPIO1** assigned to measuring the voltage of x- and y- axis of the Joystick. Lastly, there is a group of GPIO pairs responsible for PWM for DC motors.
+To determine the position of the Joystick, the BitRider RC car uses ADC to measure voltage on two GPIOs connected to the joystic 
+x- and y- axis potentionometers (**GPIO0** and **GPIO1**).
 
 Controlling Direction and Speed
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
