@@ -34,7 +34,8 @@ possible (i.e. diagonal or sideways).
 
 :math:`PWM_{left} = PWM_{right}`
 
-:math:`PWM_{left} = PWM_{right}`
+.. math::
+  PWM_{left} = PWM_{right}
 
 +--------------------------+-------------------------------+
 | PWM of DC Motors         | Direction                     |
