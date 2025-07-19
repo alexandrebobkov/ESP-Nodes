@@ -34,12 +34,12 @@ possible (i.e. diagonal or sideways).
 
 +---+---+---+
 | PWM of DC Motors | Direction |
-+------------------+-----------+
++--------------------------+-----------+
 | PWM (left) = PWM (right) | Straight (Forward or Reverse) |
 +--------------------------+-------------------------------+
-| PWM (left) > PWM (right) | Turn Left |
+| PWM (left) > PWM (right) | Turn Left                     |
 +--------------------------+-------------------------------+
-| PWM (left) < PWM (right) | Turn Right |
+| PWM (left) < PWM (right) | Turn Right                    |
 +--------------------------+-------------------------------+
 
 .. admonition:: What is PWM?
