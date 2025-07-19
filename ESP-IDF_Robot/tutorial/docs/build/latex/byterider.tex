@@ -141,18 +141,66 @@ The following table summarizes GPIOs and pins reserved for operations purposes.
 The GPIO numbers correspond to those on the ESP32\sphinxhyphen{}C3 WROOM microcontroller. The Pin number corresponds to the pin on the Breadboard and Power adapter development board.
 
 
-\subsection{x\sphinxhyphen{} and y\sphinxhyphen{} axis}
-\label{\detokenize{overview:x-and-y-axis}}
+\subsection{Reading the Joystick x\sphinxhyphen{} and y\sphinxhyphen{} axis}
+\label{\detokenize{overview:reading-the-joystick-x-and-y-axis}}
 \sphinxAtStartPar
-The \sphinxstylestrong{GPIO0} and \sphinxstylestrong{GPIO1} assigned to measuring the voltage of x\sphinxhyphen{} and y\sphinxhyphen{} axis of the Joystick. Lastly, there is a group of GPIO pairs responsible for PWM for DC motors.
+To determine the position of the Joystick, the BitRider RC car uses ADC to measure voltage on two GPIOs connected to the joystic
+x\sphinxhyphen{} and y\sphinxhyphen{} axis potentionometers (\sphinxstylestrong{GPIO0} and \sphinxstylestrong{GPIO1}).
 
 
-\subsection{Direction and Speed}
-\label{\detokenize{overview:direction-and-speed}}
+\subsection{Controlling the Direction and Speed}
+\label{\detokenize{overview:controlling-the-direction-and-speed}}
 \sphinxAtStartPar
-The pairs of DC motors on the left side are wired to the dedicated PWM channels. This means that \sphinxstyleemphasis{ESP32\sphinxhyphen{}C3 Breadboard DevBoard} can control rotation speed and direction of DC motors in pairs only (i.e. left and right side).
-Consequently, only four PWM channels are sufficient for controlling the direction of the RC car.
-Based on this constraint, the RC car can only move front, back, and turn/rotate left and right. Any other movements are not possible (i.e. diagonal or sideways).
+To set any desired speed of BiteRider RC car, the \sphinxstyleemphasis{ESP32\sphinxhyphen{}C3 Breadboard Adapter DevBoard} uses PWM to control the rotation speed
+of DR motors. Similarly, to set the direction of the RC car, the rotation speed of corresponding DC motors is changed as required.
+
+\sphinxAtStartPar
+Due to the design and limited number of available GPIOs, the \sphinxstyleemphasis{ESP32\sphinxhyphen{}C3 Breadboard DevBoard} can control rotation speed and direction
+of DC motors in pairs only (i.e. left and right side). Consequently, this means that the four PWM channels used for controlling the
+direction of the RC car.
+
+\sphinxAtStartPar
+Based on this constraint, the RC car can only move front, back, and turn/rotate left and right. Any other movements are not
+possible (i.e. diagonal or sideways).
+
+
+\begin{savenotes}\sphinxattablestart
+\sphinxthistablewithglobalstyle
+\centering
+\begin{tabulary}{\linewidth}[t]{TT}
+\sphinxtoprule
+\sphinxtableatstartofbodyhook
+\sphinxAtStartPar
+PWM of DC Motors
+&
+\sphinxAtStartPar
+Direction
+\\
+\sphinxhline
+\sphinxAtStartPar
+PWM(left) = PWM(right)
+&
+\sphinxAtStartPar
+Straight
+\\
+\sphinxhline
+\sphinxAtStartPar
+PWM(left) \textgreater{} PWM(right)
+&
+\sphinxAtStartPar
+Left
+\\
+\sphinxhline
+\sphinxAtStartPar
+PWM(left) \textless{} PWM(right)
+&
+\sphinxAtStartPar
+Right
+\\
+\sphinxbottomrule
+\end{tabulary}
+\sphinxtableafterendhook\par
+\sphinxattableend\end{savenotes}
 
 \begin{sphinxadmonition}{note}{What is PWM?}
 
@@ -172,6 +220,12 @@ Changing PWM on each channel determines the speed and direction of the RC car.
 
 \sphinxAtStartPar
 The table below summarizes the GPIO pins used for PWM to control the direction of the DC motors in the remote\sphinxhyphen{}controlled car.
+\begin{quote}\begin{description}
+\sphinxlineitem{class}
+\sphinxAtStartPar
+break
+
+\end{description}\end{quote}
 
 
 \begin{savenotes}\sphinxattablestart
