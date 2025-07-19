@@ -13,7 +13,7 @@ The following table summarizes GPIOs and pins reserved for operations purposes.
 
 The GPIO numbers correspond to those on the ESP32-C3 WROOM microcontroller. The Pin number corresponds to the pin on the Breadboard and Power adapter development board.
 
-Reading x- and y- axis
+Reading the Joystick x- and y- axis
 ~~~~~~~~~~~~~~~~~~~~~~
 
 To determine the position of the Joystick, the BitRider RC car uses ADC to measure voltage on two GPIOs connected to the joystic 
