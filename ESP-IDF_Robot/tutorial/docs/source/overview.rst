@@ -22,7 +22,10 @@ x- and y- axis potentionometers (**GPIO0** and **GPIO1**).
 Controlling the Direction and Speed
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The pairs of DC motors on the left side are wired to the dedicated PWM channels. This means that *ESP32-C3 Breadboard DevBoard* can control rotation speed and direction of DC motors in pairs only (i.e. left and right side).
+To set any desired speed of BiteRider RC car, the *ESP32-C3 Breadboard Adapter DevBoard* uses PWM to control the rotation speed
+of DR motors. Similarly, to set the direction of the RC car, the rotation speed of corresponding DC motors is changed as required.
+
+Due to the design and limited number of available GPIOs, the *ESP32-C3 Breadboard DevBoard* can control rotation speed and direction of DC motors in pairs only (i.e. left and right side).
 Consequently, only four PWM channels are sufficient for controlling the direction of the RC car. 
 Based on this constraint, the RC car can only move front, back, and turn/rotate left and right. Any other movements are not possible (i.e. diagonal or sideways).
 
