@@ -9,7 +9,8 @@ ByteRider documentation
 .. image:: _static/ESP-IDF_Robot.jpg
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
+   :numbered:
 
    intro
    overview
