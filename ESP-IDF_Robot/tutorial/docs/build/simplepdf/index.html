@@ -83,13 +83,13 @@
          </a>
          <ul>
           <li class="toctree-l3">
-           <a class="reference internal" href="#x-and-y-axis">
-            2.1.1. x- and y- axis
+           <a class="reference internal" href="#reading-the-joystick-x-and-y-axis">
+            2.1.1. Reading the Joystick x- and y- axis
            </a>
           </li>
           <li class="toctree-l3">
-           <a class="reference internal" href="#direction-and-speed">
-            2.1.2. Direction and Speed
+           <a class="reference internal" href="#controlling-the-direction-and-speed">
+            2.1.2. Controlling the Direction and Speed
            </a>
           </li>
          </ul>
@@ -309,15 +309,16 @@ The Schematic and KiCAd PCB board are available on
           <p>
            The GPIO numbers correspond to those on the ESP32-C3 WROOM microcontroller. The Pin number corresponds to the pin on the Breadboard and Power adapter development board.
           </p>
-          <section id="x-and-y-axis">
+          <section id="reading-the-joystick-x-and-y-axis">
            <h4>
-            x- and y- axis
-            <a class="headerlink" href="#x-and-y-axis" title="Link to this heading">
+            Reading the Joystick x- and y- axis
+            <a class="headerlink" href="#reading-the-joystick-x-and-y-axis" title="Link to this heading">
              &para;
             </a>
            </h4>
            <p>
-            The
+            To determine the position of the Joystick, the BitRider RC car uses ADC to measure voltage on two GPIOs connected to the joystic
+x- and y- axis potentionometers (
             <strong>
              GPIO0
             </strong>
@@ -325,13 +326,13 @@ The Schematic and KiCAd PCB board are available on
             <strong>
              GPIO1
             </strong>
-            assigned to measuring the voltage of x- and y- axis of the Joystick. Lastly, there is a group of GPIO pairs responsible for PWM for DC motors.
+            ).
            </p>
           </section>
-          <section id="direction-and-speed">
+          <section id="controlling-the-direction-and-speed">
            <h4>
-            Direction and Speed
-            <a class="headerlink" href="#direction-and-speed" title="Link to this heading">
+            Controlling the Direction and Speed
+            <a class="headerlink" href="#controlling-the-direction-and-speed" title="Link to this heading">
              &para;
             </a>
            </h4>

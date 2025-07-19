@@ -41,12 +41,13 @@ The Schematic and KiCAd PCB board are available on <a class="reference external"
 <h2><span class="section-number">2.1. </span>Reserved Pins &amp; GPIOs<a class="headerlink" href="#reserved-pins-gpios" title="Link to this heading">¶</a></h2>
 <p>The following table summarizes GPIOs and pins reserved for operations purposes.</p>
 <p>The GPIO numbers correspond to those on the ESP32-C3 WROOM microcontroller. The Pin number corresponds to the pin on the Breadboard and Power adapter development board.</p>
-<section id="x-and-y-axis">
-<h3><span class="section-number">2.1.1. </span>x- and y- axis<a class="headerlink" href="#x-and-y-axis" title="Link to this heading">¶</a></h3>
-<p>The <strong>GPIO0</strong> and <strong>GPIO1</strong> assigned to measuring the voltage of x- and y- axis of the Joystick. Lastly, there is a group of GPIO pairs responsible for PWM for DC motors.</p>
+<section id="reading-the-joystick-x-and-y-axis">
+<h3><span class="section-number">2.1.1. </span>Reading the Joystick x- and y- axis<a class="headerlink" href="#reading-the-joystick-x-and-y-axis" title="Link to this heading">¶</a></h3>
+<p>To determine the position of the Joystick, the BitRider RC car uses ADC to measure voltage on two GPIOs connected to the joystic
+x- and y- axis potentionometers (<strong>GPIO0</strong> and <strong>GPIO1</strong>).</p>
 </section>
-<section id="direction-and-speed">
-<h3><span class="section-number">2.1.2. </span>Direction and Speed<a class="headerlink" href="#direction-and-speed" title="Link to this heading">¶</a></h3>
+<section id="controlling-the-direction-and-speed">
+<h3><span class="section-number">2.1.2. </span>Controlling the Direction and Speed<a class="headerlink" href="#controlling-the-direction-and-speed" title="Link to this heading">¶</a></h3>
 <p>The pairs of DC motors on the left side are wired to the dedicated PWM channels. This means that <em>ESP32-C3 Breadboard DevBoard</em> can control rotation speed and direction of DC motors in pairs only (i.e. left and right side).
 Consequently, only four PWM channels are sufficient for controlling the direction of the RC car.
 Based on this constraint, the RC car can only move front, back, and turn/rotate left and right. Any other movements are not possible (i.e. diagonal or sideways).</p>
@@ -278,8 +279,8 @@ Right DC Motors spin clockwise</p></td>
 <li class="toctree-l1"><a class="reference internal" href="intro.html">1. OVERVIEW</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">2. HOW DOES IT WORK?</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#reserved-pins-gpios">2.1. Reserved Pins &amp; GPIOs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#x-and-y-axis">2.1.1. x- and y- axis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#direction-and-speed">2.1.2. Direction and Speed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reading-the-joystick-x-and-y-axis">2.1.1. Reading the Joystick x- and y- axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controlling-the-direction-and-speed">2.1.2. Controlling the Direction and Speed</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#fusion-of-software-with-hardware">2.2. Fusion of Software with Hardware</a></li>
