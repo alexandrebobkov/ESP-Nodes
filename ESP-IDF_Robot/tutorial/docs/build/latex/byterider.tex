@@ -58,12 +58,12 @@
 
 
 \usepackage{sphinxmessages}
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{2}
 
 
 
-\title{ByteRider}
-\date{Jul 01, 2025}
+\title{Byte Rider}
+\date{Jul 19, 2025}
 \release{06\sphinxhyphen{}2025}
 \author{Alexander B}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -84,16 +84,44 @@
 \phantomsection\label{\detokenize{index::doc}}
 
 
-\sphinxAtStartPar
-Add your content using \sphinxcode{\sphinxupquote{reStructuredText}} syntax. See the
-\sphinxhref{https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html}{reStructuredText}
-documentation for details.
+\noindent\sphinxincludegraphics{{ESP-IDF_Robot}.jpg}
 
 \sphinxstepscope
 
 
-\chapter{INTRODUCTION}
-\label{\detokenize{intro:introduction}}\label{\detokenize{intro::doc}}
+\chapter{OVERVIEW}
+\label{\detokenize{intro:overview}}\label{\detokenize{intro::doc}}
+\sphinxAtStartPar
+At the heart of this project is a customizable remote\sphinxhyphen{}controlled car that responds to real\sphinxhyphen{}time control inputs, capable of handling speed adjustments,
+directional changes, and even extended features like lights or sensors. The foundational setup uses ESP\sphinxhyphen{}NOW for transmitter and receiver devices,
+allowing you to wirelessly guide the car’s behaviour. While the design and physical appearance of the RC car can vary wildly depending on your
+creativity and available hardware, the control system remains elegantly efficient. To facilitate wireless communication between devices, the system employs
+ESP\sphinxhyphen{}NOW , which is a lightweight and connection\sphinxhyphen{}free protocol ideal for fast, low\sphinxhyphen{}latency data transmission between ESP32 microcontrollers. Though ESP\sphinxhyphen{}NOW is used under
+the hood, the spotlight remains on the RC car itself.
+
+\sphinxAtStartPar
+An ESP\sphinxhyphen{}NOW\sphinxhyphen{}based remote controller sends control data wirelessly using the ESP\sphinxhyphen{}NOW protocol to the remote\sphinxhyphen{}controlled car. ESP\sphinxhyphen{}NOW enables fast and
+efficient communication between ESP32 devices without the need for a Wi\sphinxhyphen{}Fi router, network, or pairing. The provided tutorial demonstrates a functional
+setup where a transmitter sends data to a receiver to define the car’s speed and direction, forming the core communication loop. While the baseline
+implementation focuses on movement, additional features like lights, sensors, or telemetry can easily be integrated by expanding the source code. This
+modular design gives users the freedom to customize both the appearance and behaviour of their RC car, resulting in endless creative possibilities.
+
+
+\section{ABSTRACT}
+\label{\detokenize{intro:abstract}}
+\sphinxAtStartPar
+To enable real\sphinxhyphen{}time remote operation of the RC car, the system translates joystick x\sphinxhyphen{} and y\sphinxhyphen{} axis inputs into PWM (Pulse Width Modulation) signals that control the DC motors.
+These PWM values are stored in a predefined data structure, which is then transmitted wirelessly using ESP\sphinxhyphen{}NOW — a low\sphinxhyphen{}latency, connectionless
+communication protocol developed by Espressif. Both the transmitter and receiver modules are based on ESP32\sphinxhyphen{}C3 microcontrollers.
+
+\sphinxAtStartPar
+On the transmitter side, the joystick’s X and Y coordinates are continuously monitored and converted into PWM parameters. These values are packed into the
+data structure and sent via ESP\sphinxhyphen{}NOW to the receiver.
+
+\sphinxAtStartPar
+The receiver module listens for incoming ESP\sphinxhyphen{}NOW packets, extracts the PWM control data, and applies it directly to the DC motors. This communication flow
+allows the RC car to respond instantly to user input, managing speed and direction without any physical connection between the devices.
+
 \sphinxstepscope
 
 
@@ -101,16 +129,49 @@ documentation for details.
 \label{\detokenize{overview:how-does-it-work}}\label{\detokenize{overview::doc}}
 \sphinxAtStartPar
 The BitByteRider RC car is powered by ESP32\sphinxhyphen{}C3 Breadboard \& Power adapter developmemt board.
+The Schematic and KiCAd PCB board are available on \sphinxhref{https://github.com/alexandrebobkov/ESP32-C3\_Breadboard-Adapter}{GitHub}: \sphinxurl{https://github.com/alexandrebobkov/ESP32-C3\_Breadboard-Adapter}
 
 
-\section{Reserver Pins \& GPIOs}
-\label{\detokenize{overview:reserver-pins-gpios}}
+\section{Reserved Pins \& GPIOs}
+\label{\detokenize{overview:reserved-pins-gpios}}
 \sphinxAtStartPar
-The table below summarizes GPIOs and pins reserved for operations purposes.
+The following table summarizes GPIOs and pins reserved for operations purposes.
 
 \sphinxAtStartPar
-…existing code…
-.. image:: \_static/ESP\sphinxhyphen{}IDF\_Robot\_schematic.png
+The GPIO numbers correspond to those on the ESP32\sphinxhyphen{}C3 WROOM microcontroller. The Pin number corresponds to the pin on the Breadboard and Power adapter development board.
+
+
+\subsection{x\sphinxhyphen{} and y\sphinxhyphen{} axis}
+\label{\detokenize{overview:x-and-y-axis}}
+\sphinxAtStartPar
+The \sphinxstylestrong{GPIO0} and \sphinxstylestrong{GPIO1} assigned to measuring the voltage of x\sphinxhyphen{} and y\sphinxhyphen{} axis of the Joystick. Lastly, there is a group of GPIO pairs responsible for PWM for DC motors.
+
+
+\subsection{Direction and Speed}
+\label{\detokenize{overview:direction-and-speed}}
+\sphinxAtStartPar
+The pairs of DC motors on the left side are wired to the dedicated PWM channels. This means that \sphinxstyleemphasis{ESP32\sphinxhyphen{}C3 Breadboard DevBoard} can control rotation speed and direction of DC motors in pairs only (i.e. left and right side).
+Consequently, only four PWM channels are sufficient for controlling the direction of the RC car.
+Based on this constraint, the RC car can only move front, back, and turn/rotate left and right. Any other movements are not possible (i.e. diagonal or sideways).
+
+\begin{sphinxadmonition}{note}{What is PWM?}
+
+\sphinxAtStartPar
+\sphinxstylestrong{PWM} stands for Pulse Width Modulation. It is a technique used to simulate analog voltage levels using discrete digital signals. It works by
+rapidly switching a digital GPIO pin between HIGH (on) and LOW (off) states at a fixed frequency (often, at base frequency of 5 kHz).
+The duty cycle—the percentage of time the signal is HIGH in one cycle determines the effective voltage delivered to a device.
+A higher duty cycle increases the motor speed, and a lower duty cycle decreases the motor speed. This allows for fine\sphinxhyphen{}grained speed control
+without needing analog voltage regulators.
+\end{sphinxadmonition}
+
+\sphinxAtStartPar
+A pair of PWM channels are used per DC motor for defining their rotation speed and direction on each side.
+In particular, \sphinxstylestrong{GPIO6} and \sphinxstylestrong{GPIO5} provide PWM to the left\sphinxhyphen{} and right\sphinxhyphen{} side DC motors to rotate in a \sphinxstylestrong{clockwise} direction.
+Similarly, \sphinxstylestrong{GPIO4} and \sphinxstylestrong{GPIO7} provide PWM to the left\sphinxhyphen{} and right\sphinxhyphen{} side DC motors to rotate in a \sphinxstylestrong{counter\sphinxhyphen{}clockwise} direction.
+Changing PWM on each channel determines the speed and direction of the RC car.
+
+\sphinxAtStartPar
+The table below summarizes the GPIO pins used for PWM to control the direction of the DC motors in the remote\sphinxhyphen{}controlled car.
 
 
 \begin{savenotes}\sphinxattablestart
@@ -120,108 +181,216 @@ The table below summarizes GPIOs and pins reserved for operations purposes.
 \sphinxtoprule
 \sphinxstyletheadfamily 
 \sphinxAtStartPar
-Column 1
+GPIOs
 &\sphinxstyletheadfamily 
 \sphinxAtStartPar
-Column 2
+State
 &\sphinxstyletheadfamily 
 \sphinxAtStartPar
-Column 3
+Description
 &\sphinxstyletheadfamily 
 \sphinxAtStartPar
-Column 4
+Function
 \\
 \sphinxmidrule
 \sphinxtableatstartofbodyhook
 \sphinxAtStartPar
-Row 1
+GPIO6,
+GPIO4
 &
 \sphinxAtStartPar
-Data
+PWM
 &
 \sphinxAtStartPar
-Data
+Left \& Right DC Motors spin
+clockwise
 &
 \sphinxAtStartPar
-Data
+Forward
 \\
 \sphinxhline
 \sphinxAtStartPar
-Row 2
+GPIO5,
+GPIO7
 &
 \sphinxAtStartPar
-Data
+PWM
 &
 \sphinxAtStartPar
-Data
+Left \& Right DC Motors spin
+counterclockwise
 &
 \sphinxAtStartPar
-Data
+Reverse
 \\
 \sphinxhline
 \sphinxAtStartPar
-Row 3
+GPIO6,
+GPIO7
 &
 \sphinxAtStartPar
-Data
+PWM
 &
 \sphinxAtStartPar
-Data
+Left DC Motors spin clockwise.
+Right DC Motors spin counterclockwise
 &
 \sphinxAtStartPar
-Data
+Left
 \\
 \sphinxhline
 \sphinxAtStartPar
-Row 4
+GPIO4,
+GPIO5
 &
 \sphinxAtStartPar
-Data
+PWM
 &
 \sphinxAtStartPar
-Data
+Left DC Motors spin counterclockwise.
+Right DC Motors spin clockwise
 &
 \sphinxAtStartPar
-Data
+Right
+\\
+\sphinxbottomrule
+\end{tabulary}
+\sphinxtableafterendhook\par
+\sphinxattableend\end{savenotes}
+
+\sphinxAtStartPar
+The following images illustrate various PWM duty cycles registered by oscilloscope (duty cycles 0\%, 48\% and 91\%, resp.).
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics{{ESP-IDF_Robot_PWM_Duty-0}.bmp}
+\caption{DC Motor PWM duty cycle 0\%}\label{\detokenize{overview:id1}}\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics{{ESP-IDF_Robot_PWM_Duty-50}.bmp}
+\caption{DC Motor PWM duty cycle 47.6\%}\label{\detokenize{overview:id2}}\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics{{ESP-IDF_Robot_PWM_Duty-95}.bmp}
+\caption{DC Motor PWM duty cycle 90.8\%}\label{\detokenize{overview:id3}}\end{figure}
+
+
+
+
+\begin{savenotes}\sphinxattablestart
+\sphinxthistablewithglobalstyle
+\centering
+\begin{tabulary}{\linewidth}[t]{TTTT}
+\sphinxtoprule
+\sphinxstyletheadfamily 
+\sphinxAtStartPar
+GPIO
+&\sphinxstyletheadfamily 
+\sphinxAtStartPar
+Pin
+&\sphinxstyletheadfamily 
+\sphinxAtStartPar
+Function
+&\sphinxstyletheadfamily 
+\sphinxAtStartPar
+Notes
+\\
+\sphinxmidrule
+\sphinxtableatstartofbodyhook
+\sphinxAtStartPar
+0
+&
+\sphinxAtStartPar
+16
+&
+\sphinxAtStartPar
+Joystick x\sphinxhyphen{}axis
+&
+\sphinxAtStartPar
+ADC1\_CH0
 \\
 \sphinxhline
 \sphinxAtStartPar
-Row 5
+1
 &
 \sphinxAtStartPar
-Data
+15
 &
 \sphinxAtStartPar
-Data
+Joystick y\sphinxhyphen{}axis
 &
 \sphinxAtStartPar
-Data
+ADC1\_CH1
 \\
 \sphinxhline
 \sphinxAtStartPar
-Row 6
+8
 &
 \sphinxAtStartPar
-Data
+5
 &
 \sphinxAtStartPar
-Data
+Joystick push button
+&\\
+\sphinxhline
+\sphinxAtStartPar
+6
 &
 \sphinxAtStartPar
-Data
+4
+&
+\sphinxAtStartPar
+PWM for clockwise rotation of left\sphinxhyphen{}side motors
+&
+\sphinxAtStartPar
+LEDC\_CHANNEL\_1
 \\
 \sphinxhline
 \sphinxAtStartPar
-Row 7
+5
 &
 \sphinxAtStartPar
-Data
+3
 &
 \sphinxAtStartPar
-Data
+PWM for clockwise rotation of right\sphinxhyphen{}side motors
 &
 \sphinxAtStartPar
-Data
+LEDC\_CHANNEL\_0
+\\
+\sphinxhline
+\sphinxAtStartPar
+4
+&
+\sphinxAtStartPar
+2
+&
+\sphinxAtStartPar
+PWM for counter\sphinxhyphen{}clockwise rotation of right\sphinxhyphen{}side motors
+&
+\sphinxAtStartPar
+LEDC\_CHANNEL\_2
+\\
+\sphinxhline
+\sphinxAtStartPar
+7
+&
+\sphinxAtStartPar
+6
+&
+\sphinxAtStartPar
+PWM for counter\sphinxhyphen{}clockwise rotation of left\sphinxhyphen{}side motors
+&
+\sphinxAtStartPar
+LEDC\_CHANNEL\_3
 \\
 \sphinxbottomrule
 \end{tabulary}
@@ -229,9 +398,360 @@ Data
 \sphinxattableend\end{savenotes}
 
 
+\section{Fusion of Software with Hardware}
+\label{\detokenize{overview:fusion-of-software-with-hardware}}
+\sphinxAtStartPar
+The \sphinxstyleemphasis{struct} for storing motors PWM values.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{struct}\PYG{+w}{ }\PYG{n+nc}{motors\PYGZus{}rpm}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{motor1\PYGZus{}rpm\PYGZus{}pwm}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{motor2\PYGZus{}rpm\PYGZus{}pwm}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{motor3\PYGZus{}rpm\PYGZus{}pwm}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{motor4\PYGZus{}rpm\PYGZus{}pwm}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}\PYG{p}{;}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+The function for updating motors’ PWM values.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{// Function to send data to the receiver}
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{sendData}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{void}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n}{sensors\PYGZus{}data\PYGZus{}t}\PYG{+w}{ }\PYG{n}{buffer}\PYG{p}{;}\PYG{+w}{              }\PYG{c+c1}{// Declare data struct}
+
+\PYG{+w}{    }\PYG{n}{buffer}\PYG{p}{.}\PYG{n}{crc}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{buffer}\PYG{p}{.}\PYG{n}{x\PYGZus{}axis}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{buffer}\PYG{p}{.}\PYG{n}{y\PYGZus{}axis}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{buffer}\PYG{p}{.}\PYG{n}{nav\PYGZus{}bttn}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{buffer}\PYG{p}{.}\PYG{n}{motor1\PYGZus{}rpm\PYGZus{}pwm}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{buffer}\PYG{p}{.}\PYG{n}{motor2\PYGZus{}rpm\PYGZus{}pwm}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{buffer}\PYG{p}{.}\PYG{n}{motor3\PYGZus{}rpm\PYGZus{}pwm}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{buffer}\PYG{p}{.}\PYG{n}{motor4\PYGZus{}rpm\PYGZus{}pwm}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{c+c1}{// Display brief summary of data being sent.}
+\PYG{+w}{    }\PYG{n}{ESP\PYGZus{}LOGI}\PYG{p}{(}\PYG{n}{TAG}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{Joystick (x,y) position ( 0x\PYGZpc{}04X, 0x\PYGZpc{}04X )}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{uint8\PYGZus{}t}\PYG{p}{)}\PYG{n}{buffer}\PYG{p}{.}\PYG{n}{x\PYGZus{}axis}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{uint8\PYGZus{}t}\PYG{p}{)}\PYG{n}{buffer}\PYG{p}{.}\PYG{n}{y\PYGZus{}axis}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{ESP\PYGZus{}LOGI}\PYG{p}{(}\PYG{n}{TAG}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{pwm 1, pwm 2 [ 0x\PYGZpc{}04X, 0x\PYGZpc{}04X ]}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{uint8\PYGZus{}t}\PYG{p}{)}\PYG{n}{buffer}\PYG{p}{.}\PYG{n}{pwm}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{uint8\PYGZus{}t}\PYG{p}{)}\PYG{n}{buffer}\PYG{p}{.}\PYG{n}{pwm}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{ESP\PYGZus{}LOGI}\PYG{p}{(}\PYG{n}{TAG}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{pwm 3, pwm 4 [ 0x\PYGZpc{}04X, 0x\PYGZpc{}04X ]}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{uint8\PYGZus{}t}\PYG{p}{)}\PYG{n}{buffer}\PYG{p}{.}\PYG{n}{pwm}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{uint8\PYGZus{}t}\PYG{p}{)}\PYG{n}{buffer}\PYG{p}{.}\PYG{n}{pwm}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{c+c1}{// Call ESP\PYGZhy{}NOW function to send data (MAC address of receiver, pointer to the memory holding data \PYGZam{} data length)}
+\PYG{+w}{    }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{result}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{esp\PYGZus{}now\PYGZus{}send}\PYG{p}{(}\PYG{n}{receiver\PYGZus{}mac}\PYG{p}{,}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{buffer}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{sizeof}\PYG{p}{(}\PYG{n}{buffer}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{c+c1}{// If status is NOT OK, display error message and error code (in hexadecimal).}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{result}\PYG{+w}{ }\PYG{o}{!}\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{ESP\PYGZus{}LOGE}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{ESP\PYGZhy{}NOW}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{Error sending data! Error code: 0x\PYGZpc{}04X}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{result}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{deletePeer}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{k}{else}
+\PYG{+w}{        }\PYG{n}{ESP\PYGZus{}LOGW}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{ESP\PYGZhy{}NOW}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{Data was sent.}\PYG{l+s}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+The onDataReceived() and onDataSent() are two call\sphinxhyphen{}bacl functions that get evoked on each corresponding event.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{// Call\PYGZhy{}back for the event when data is being received}
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{onDataReceived}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{mac\PYGZus{}addr}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{data}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{data\PYGZus{}len}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{    }\PYG{n}{buf}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{sensors\PYGZus{}data\PYGZus{}t}\PYG{o}{*}\PYG{p}{)}\PYG{n}{data}\PYG{p}{;}\PYG{+w}{                            }\PYG{c+c1}{// Allocate memory for buffer to store data being received}
+\PYG{+w}{    }\PYG{n}{ESP\PYGZus{}LOGW}\PYG{p}{(}\PYG{n}{TAG}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{Data was received}\PYG{l+s}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{ESP\PYGZus{}LOGI}\PYG{p}{(}\PYG{n}{TAG}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{x\PYGZhy{}axis: 0x\PYGZpc{}04x}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{buf}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{x\PYGZus{}axis}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{ESP\PYGZus{}LOGI}\PYG{p}{(}\PYG{n}{TAG}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{x\PYGZhy{}axis: 0x\PYGZpc{}04x}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{buf}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{y\PYGZus{}axis}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{ESP\PYGZus{}LOGI}\PYG{p}{(}\PYG{n}{TAG}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{PWM 1: 0x\PYGZpc{}04x}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{buf}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{motor1\PYGZus{}rpm\PYGZus{}pwm}\PYG{p}{)}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{// Call\PYGZhy{}back for the event when data is being sent}
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{onDataSent}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{mac\PYGZus{}addr}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{esp\PYGZus{}now\PYGZus{}send\PYGZus{}status\PYGZus{}t}\PYG{+w}{ }\PYG{n}{status}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n}{ESP\PYGZus{}LOGW}\PYG{p}{(}\PYG{n}{TAG}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{Packet send status: 0x\PYGZpc{}04X}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{status}\PYG{p}{)}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+The rc\_send\_data\_task() function runs every 0.1 second to transmit the data to the receiver.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{// Continous, periodic task that sends data.}
+\PYG{k}{static}\PYG{+w}{ }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{rc\PYGZus{}send\PYGZus{}data\PYGZus{}task}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{void}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{arg}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{    }\PYG{k}{while}\PYG{+w}{ }\PYG{p}{(}\PYG{n+nb}{true}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{esp\PYGZus{}now\PYGZus{}is\PYGZus{}peer\PYGZus{}exist}\PYG{p}{(}\PYG{n}{receiver\PYGZus{}mac}\PYG{p}{)}\PYG{p}{)}
+\PYG{+w}{            }\PYG{n}{sendData}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{vTaskDelay}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mi}{100}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{n}{portTICK\PYGZus{}PERIOD\PYGZus{}MS}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+
 \section{Schematic}
 \label{\detokenize{overview:schematic}}
 \noindent\sphinxincludegraphics{{ESP-IDF_Robot_schematic}.png}
+
+\sphinxstepscope
+
+
+\chapter{DATA STRUCTS}
+\label{\detokenize{data:data-structs}}\label{\detokenize{data::doc}}
+\sphinxAtStartPar
+The struct serves as the data payload for sending control signals from the transmitting device to the receiver using ESP\sphinxhyphen{}NOW.
+In addition, it may contain additional data such as telemetry, battery status, etc. The \sphinxstyleemphasis{sensors\_data\_t} struct encapsulates all control commands and sensor states
+relevant to the vehicle’s operation. It’s intended to be sent from a transmitting device (like a remote control) to a receiver
+(such as a microcontroller on board of the vehicle).
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{typedef}\PYG{+w}{ }\PYG{k}{struct}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{         }\PYG{n}{x\PYGZus{}axis}\PYG{p}{;}\PYG{+w}{             }\PYG{c+c1}{// Joystick x\PYGZhy{}position}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{         }\PYG{n}{y\PYGZus{}axis}\PYG{p}{;}\PYG{+w}{             }\PYG{c+c1}{// Joystick y\PYGZhy{}position}
+\PYG{+w}{    }\PYG{k+kt}{bool}\PYG{+w}{        }\PYG{n}{nav\PYGZus{}bttn}\PYG{p}{;}\PYG{+w}{           }\PYG{c+c1}{// Joystick push button}
+\PYG{+w}{    }\PYG{k+kt}{bool}\PYG{+w}{        }\PYG{n}{led}\PYG{p}{;}\PYG{+w}{                }\PYG{c+c1}{// LED ON/OFF state}
+\PYG{+w}{    }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{     }\PYG{n}{motor1\PYGZus{}rpm\PYGZus{}pwm}\PYG{p}{;}\PYG{+w}{     }\PYG{c+c1}{// PWMs for 4 DC motors}
+\PYG{+w}{    }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{     }\PYG{n}{motor2\PYGZus{}rpm\PYGZus{}pwm}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{     }\PYG{n}{motor3\PYGZus{}rpm\PYGZus{}pwm}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{     }\PYG{n}{motor4\PYGZus{}rpm\PYGZus{}pwm}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{p}{(}\PYG{n}{packed}\PYG{p}{)}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{sensors\PYGZus{}data\PYGZus{}t}\PYG{p}{;}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{struct}\PYG{+w}{ }\PYG{n+nc}{motors\PYGZus{}rpm}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{motor1\PYGZus{}rpm\PYGZus{}pwm}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{motor2\PYGZus{}rpm\PYGZus{}pwm}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{motor3\PYGZus{}rpm\PYGZus{}pwm}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{motor4\PYGZus{}rpm\PYGZus{}pwm}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}\PYG{p}{;}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+When used with communication protocols like ESP\sphinxhyphen{}NOW, this struct is \sphinxstylestrong{encoded} into a byte stream, then
+\sphinxstylestrong{transmitted} at regular intervals or in response to user input, and finally
+\sphinxstylestrong{decoded} on the receiving end to control hardware.
+
+\begin{sphinxadmonition}{note}{What is struct?}
+
+\sphinxAtStartPar
+In C programming, a struct (short for structure) is a user\sphinxhyphen{}defined data type that lets you group multiple variables of different types together under a
+single name. It’s like a container that holds related information — perfect for organizing data that logically belongs together. Structs are especially
+powerful in systems programming, embedded projects, and when dealing with raw binary data — like parsing sensor input or transmitting control packets over
+ESP\sphinxhyphen{}NOW.
+\end{sphinxadmonition}
+
+
+\section{Data Payload}
+\label{\detokenize{data:data-payload}}
+\sphinxAtStartPar
+\sphinxstyleemphasis{x\_axis} and \sphinxstyleemphasis{y\_axis} fields capture analog input from a joystick, determining direction and speed.
+\sphinxstyleemphasis{nav\_bttn} represents a joystick push\sphinxhyphen{}button.
+
+\sphinxAtStartPar
+\sphinxstyleemphasis{led} allows the transmitter to toggle an onboard LED and is used for status indication (e.g. pairing, battery warning, etc).
+
+\sphinxAtStartPar
+\sphinxstyleemphasis{motor1\_rpm\_pwm} to \sphinxstyleemphasis{motor4\_rpm\_pwm} provide individual PWM signals to four DC motors.
+This enables fine\sphinxhyphen{}grained speed control, supports differential drive configurations, and even allows for maneuvering in multi\sphinxhyphen{}directional platforms like omni\sphinxhyphen{}wheel robots.
+
+
+\subsection{Why use \_\_attribute((packed))?}
+\label{\detokenize{data:why-use-attribute-packed}}
+\sphinxAtStartPar
+ESP\sphinxhyphen{}NOW uses fixed\sphinxhyphen{}size data packets (up to 250 bytes). The \sphinxstyleemphasis{\_\_attribute\_\_((packed))} removes compiler\sphinxhyphen{}added padding for precise byte alignment.
+
+\sphinxAtStartPar
+As \sphinxstyleemphasis{packed} attribute tells the compiler not to add any padding between fields in memory, this makes the struct:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Compact
+
+\item {} 
+\sphinxAtStartPar
+Predictable for serialization over protocols like UART or ESP\sphinxhyphen{}NOW
+
+\item {} 
+\sphinxAtStartPar
+Ideal for low\sphinxhyphen{}latency transmission in embedded systems
+
+\end{itemize}
+
+\sphinxAtStartPar
+This ensures the receiver interprets the exact byte layout you expect, minimizing bandwidth and maximizing compatibility across platforms.
+
+\sphinxstepscope
+
+
+\chapter{TRANSMITTER}
+\label{\detokenize{transmitter:transmitter}}\label{\detokenize{transmitter::doc}}
+
+\section{Configuration Variables}
+\label{\detokenize{transmitter:configuration-variables}}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{receiver\PYGZus{}mac}\PYG{p}{[}\PYG{n}{ESP\PYGZus{}NOW\PYGZus{}ETH\PYGZus{}ALEN}\PYG{p}{]}\PYG{+w}{  }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{l+m+mh}{0xe4}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mh}{0xb0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mh}{0x63}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mh}{0x17}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mh}{0x9e}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mh}{0x44}\PYG{p}{\PYGZcb{}}\PYG{p}{;}
+
+\PYG{k}{typedef}\PYG{+w}{ }\PYG{k}{struct}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{         }\PYG{n}{x\PYGZus{}axis}\PYG{p}{;}\PYG{+w}{             }\PYG{c+c1}{// Joystick x\PYGZhy{}position}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{         }\PYG{n}{y\PYGZus{}axis}\PYG{p}{;}\PYG{+w}{             }\PYG{c+c1}{// Joystick y\PYGZhy{}position}
+\PYG{+w}{    }\PYG{k+kt}{bool}\PYG{+w}{        }\PYG{n}{nav\PYGZus{}btn}\PYG{p}{;}\PYG{+w}{            }\PYG{c+c1}{// Joystick push button}
+\PYG{+w}{    }\PYG{k+kt}{bool}\PYG{+w}{        }\PYG{n}{led}\PYG{p}{;}\PYG{+w}{                }\PYG{c+c1}{// LED ON/OFF state}
+\PYG{+w}{    }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{     }\PYG{n}{motor1\PYGZus{}rpm\PYGZus{}pwm}\PYG{p}{;}\PYG{+w}{     }\PYG{c+c1}{// PWMs for each DC motor}
+\PYG{+w}{    }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{     }\PYG{n}{motor2\PYGZus{}rpm\PYGZus{}pwm}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{     }\PYG{n}{motor3\PYGZus{}rpm\PYGZus{}pwm}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{     }\PYG{n}{motor4\PYGZus{}rpm\PYGZus{}pwm}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{p}{(}\PYG{n}{packed}\PYG{p}{)}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{sensors\PYGZus{}data\PYGZus{}t}\PYG{p}{;}
+\end{sphinxVerbatim}
+
+
+\section{Reading Joystick x\sphinxhyphen{} and y\sphinxhyphen{} Axis Values}
+\label{\detokenize{transmitter:reading-joystick-x-and-y-axis-values}}
+
+\section{Sending \& Ecapsulating Data}
+\label{\detokenize{transmitter:sending-ecapsulating-data}}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{sendData}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{void}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{    }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}
+\PYG{+w}{    }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}
+
+\PYG{+w}{    }\PYG{n}{buffer}\PYG{p}{.}\PYG{n}{x\PYGZus{}axis}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{x\PYGZus{}axis}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{buffer}\PYG{p}{.}\PYG{n}{y\PYGZus{}axis}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{y\PYGZus{}axis}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{c+c1}{// Call ESP\PYGZhy{}NOW function to send data (MAC address of receiver, pointer to the memory holding data \PYGZam{} data length)}
+\PYG{+w}{    }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{result}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{esp\PYGZus{}now\PYGZus{}send}\PYG{p}{(}\PYG{p}{(}\PYG{k+kt}{uint8\PYGZus{}t}\PYG{o}{*}\PYG{p}{)}\PYG{n}{receiver\PYGZus{}mac}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{o}{*}\PYG{p}{)}\PYG{o}{\PYGZam{}}\PYG{n}{buffer}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{sizeof}\PYG{p}{(}\PYG{n}{buffer}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}
+\PYG{+w}{    }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}
+\PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\section{Main Function}
+\label{\detokenize{transmitter:main-function}}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}}\PYG{c+cp}{include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZdq{}freertos/FreeRTOS.h\PYGZdq{}}
+\PYG{c+cp}{\PYGZsh{}}\PYG{c+cp}{include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZdq{}nvs\PYGZus{}flash.h\PYGZdq{}}
+\PYG{c+cp}{\PYGZsh{}}\PYG{c+cp}{include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZdq{}esp\PYGZus{}err.h\PYGZdq{}}
+
+\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}
+\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}
+
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n}{app\PYGZus{}main}\PYG{p}{(}\PYG{k+kt}{void}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{    }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}
+\PYG{+w}{    }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}
+
+\PYG{+w}{    }\PYG{c+c1}{// Initialize internal temperature sensor}
+\PYG{+w}{    }\PYG{n}{chip\PYGZus{}sensor\PYGZus{}init}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{c+c1}{// Initialize NVS}
+\PYG{+w}{    }\PYG{n}{esp\PYGZus{}err\PYGZus{}t}\PYG{+w}{ }\PYG{n}{ret}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{nvs\PYGZus{}flash\PYGZus{}init}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{ret}\PYG{+w}{ }\PYG{o}{=}\PYG{o}{=}\PYG{+w}{ }\PYG{n}{ESP\PYGZus{}ERR\PYGZus{}NVS\PYGZus{}NO\PYGZus{}FREE\PYGZus{}PAGES}\PYG{+w}{ }\PYG{o}{|}\PYG{o}{|}\PYG{+w}{ }\PYG{n}{ret}\PYG{+w}{ }\PYG{o}{=}\PYG{o}{=}\PYG{+w}{ }\PYG{n}{ESP\PYGZus{}ERR\PYGZus{}NVS\PYGZus{}NEW\PYGZus{}VERSION\PYGZus{}FOUND}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{ESP\PYGZus{}ERROR\PYGZus{}CHECK}\PYG{p}{(}\PYG{+w}{ }\PYG{n}{nvs\PYGZus{}flash\PYGZus{}erase}\PYG{p}{(}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{ret}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{nvs\PYGZus{}flash\PYGZus{}init}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{n}{ESP\PYGZus{}ERROR\PYGZus{}CHECK}\PYG{p}{(}\PYG{+w}{ }\PYG{n}{ret}\PYG{+w}{ }\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{wifi\PYGZus{}init}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{joystick\PYGZus{}adc\PYGZus{}init}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{transmission\PYGZus{}init}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{system\PYGZus{}led\PYGZus{}init}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}
+\PYG{+w}{    }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}
+\PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+\sphinxstepscope
+
+
+\chapter{RECEIVER}
+\label{\detokenize{receiver:receiver}}\label{\detokenize{receiver::doc}}
+
+\section{Configuration Variables}
+\label{\detokenize{receiver:configuration-variables}}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{transmitter\PYGZus{}mac}\PYG{p}{[}\PYG{n}{ESP\PYGZus{}NOW\PYGZus{}ETH\PYGZus{}ALEN}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{l+m+mh}{0x9C}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mh}{0x9E}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mh}{0x6E}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mh}{0x14}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mh}{0xB5}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mh}{0x54}\PYG{p}{\PYGZcb{}}\PYG{p}{;}
+
+\PYG{k}{typedef}\PYG{+w}{ }\PYG{k}{struct}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{         }\PYG{n}{x\PYGZus{}axis}\PYG{p}{;}\PYG{+w}{             }\PYG{c+c1}{// Joystick x\PYGZhy{}position}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{         }\PYG{n}{y\PYGZus{}axis}\PYG{p}{;}\PYG{+w}{             }\PYG{c+c1}{// Joystick y\PYGZhy{}position}
+\PYG{+w}{    }\PYG{k+kt}{bool}\PYG{+w}{        }\PYG{n}{nav\PYGZus{}bttn}\PYG{p}{;}\PYG{+w}{           }\PYG{c+c1}{// Joystick push button}
+\PYG{+w}{    }\PYG{k+kt}{bool}\PYG{+w}{        }\PYG{n}{led}\PYG{p}{;}\PYG{+w}{                }\PYG{c+c1}{// LED ON/OFF state}
+\PYG{+w}{    }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{     }\PYG{n}{motor1\PYGZus{}rpm\PYGZus{}pwm}\PYG{p}{;}\PYG{+w}{     }\PYG{c+c1}{// PWMs for 4 DC motors}
+\PYG{+w}{    }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{     }\PYG{n}{motor2\PYGZus{}rpm\PYGZus{}pwm}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{     }\PYG{n}{motor3\PYGZus{}rpm\PYGZus{}pwm}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{     }\PYG{n}{motor4\PYGZus{}rpm\PYGZus{}pwm}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{n}{\PYGZus{}\PYGZus{}attribute\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{p}{(}\PYG{n}{packed}\PYG{p}{)}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{sensors\PYGZus{}data\PYGZus{}t}\PYG{p}{;}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{struct}\PYG{+w}{ }\PYG{n+nc}{motors\PYGZus{}rpm}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{motor1\PYGZus{}rpm\PYGZus{}pwm}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{motor2\PYGZus{}rpm\PYGZus{}pwm}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{motor3\PYGZus{}rpm\PYGZus{}pwm}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{motor4\PYGZus{}rpm\PYGZus{}pwm}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}\PYG{p}{;}
+\end{sphinxVerbatim}
+
+
+\section{Receiving \& Extracting Data}
+\label{\detokenize{receiver:receiving-extracting-data}}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{onDataReceived}\PYG{+w}{ }\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{mac\PYGZus{}addr}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{data}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{uint8\PYGZus{}t}\PYG{+w}{ }\PYG{n}{data\PYGZus{}len}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{    }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}
+\PYG{+w}{    }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}
+
+\PYG{+w}{    }\PYG{n}{ESP\PYGZus{}LOGI}\PYG{p}{(}\PYG{n}{TAG}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{Data received from: \PYGZpc{}02x:\PYGZpc{}02x:\PYGZpc{}02x:\PYGZpc{}02x:\PYGZpc{}02x:\PYGZpc{}02x, len=\PYGZpc{}d}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{mac\PYGZus{}addr}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{mac\PYGZus{}addr}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{mac\PYGZus{}addr}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{mac\PYGZus{}addr}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{]}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{mac\PYGZus{}addr}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{]}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{mac\PYGZus{}addr}\PYG{p}{[}\PYG{l+m+mi}{5}\PYG{p}{]}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{data\PYGZus{}len}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{memcpy}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{buf}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{data}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{sizeof}\PYG{p}{(}\PYG{n}{buf}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{n}{x\PYGZus{}axis}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{buf}\PYG{p}{.}\PYG{n}{x\PYGZus{}axis}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{y\PYGZus{}axis}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{buf}\PYG{p}{.}\PYG{n}{y\PYGZus{}axis}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}
+\PYG{+w}{    }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}
+\PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\section{Main Function}
+\label{\detokenize{receiver:main-function}}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}}\PYG{c+cp}{include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZlt{}string.h\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}}\PYG{c+cp}{include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZdq{}freertos/FreeRTOS.h\PYGZdq{}}
+\PYG{c+cp}{\PYGZsh{}}\PYG{c+cp}{include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZdq{}nvs\PYGZus{}flash.h\PYGZdq{}}
+\PYG{c+cp}{\PYGZsh{}}\PYG{c+cp}{include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZdq{}esp\PYGZus{}err.h\PYGZdq{}}
+
+\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}
+\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}
+
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n}{app\PYGZus{}main}\PYG{p}{(}\PYG{k+kt}{void}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{    }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}
+\PYG{+w}{    }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}
+
+\PYG{+w}{    }\PYG{c+c1}{// Initialize NVS}
+\PYG{+w}{    }\PYG{n}{esp\PYGZus{}err\PYGZus{}t}\PYG{+w}{ }\PYG{n}{ret}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{nvs\PYGZus{}flash\PYGZus{}init}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{ret}\PYG{+w}{ }\PYG{o}{=}\PYG{o}{=}\PYG{+w}{ }\PYG{n}{ESP\PYGZus{}ERR\PYGZus{}NVS\PYGZus{}NO\PYGZus{}FREE\PYGZus{}PAGES}\PYG{+w}{ }\PYG{o}{|}\PYG{o}{|}
+\PYG{+w}{        }\PYG{n}{ret}\PYG{+w}{ }\PYG{o}{=}\PYG{o}{=}\PYG{+w}{ }\PYG{n}{ESP\PYGZus{}ERR\PYGZus{}NVS\PYGZus{}NEW\PYGZus{}VERSION\PYGZus{}FOUND}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{ESP\PYGZus{}ERROR\PYGZus{}CHECK}\PYG{p}{(}\PYG{+w}{ }\PYG{n}{nvs\PYGZus{}flash\PYGZus{}erase}\PYG{p}{(}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{ret}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{nvs\PYGZus{}flash\PYGZus{}init}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{n}{ESP\PYGZus{}ERROR\PYGZus{}CHECK}\PYG{p}{(}\PYG{+w}{ }\PYG{n}{ret}\PYG{+w}{ }\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{wifi\PYGZus{}init}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{ESP\PYGZus{}ERROR\PYGZus{}CHECK}\PYG{p}{(}\PYG{n}{esp\PYGZus{}now\PYGZus{}init}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{n}{esp\PYGZus{}now\PYGZus{}peer\PYGZus{}info\PYGZus{}t}\PYG{+w}{ }\PYG{n}{transmitterInfo}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{0}\PYG{p}{\PYGZcb{}}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{memcpy}\PYG{p}{(}\PYG{n}{transmitterInfo}\PYG{p}{.}\PYG{n}{peer\PYGZus{}addr}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{transmitter\PYGZus{}mac}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{ESP\PYGZus{}NOW\PYGZus{}ETH\PYGZus{}ALEN}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{transmitterInfo}\PYG{p}{.}\PYG{n}{channel}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{// Current WiFi channel}
+\PYG{+w}{    }\PYG{n}{transmitterInfo}\PYG{p}{.}\PYG{n}{ifidx}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{ESP\PYGZus{}IF\PYGZus{}WIFI\PYGZus{}STA}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{transmitterInfo}\PYG{p}{.}\PYG{n}{encrypt}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{false}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{ESP\PYGZus{}ERROR\PYGZus{}CHECK}\PYG{p}{(}\PYG{n}{esp\PYGZus{}now\PYGZus{}add\PYGZus{}peer}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{transmitterInfo}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{n}{ESP\PYGZus{}ERROR\PYGZus{}CHECK}\PYG{p}{(}\PYG{n}{esp\PYGZus{}now\PYGZus{}register\PYGZus{}recv\PYGZus{}cb}\PYG{p}{(}\PYG{p}{(}\PYG{k+kt}{void}\PYG{o}{*}\PYG{p}{)}\PYG{n}{onDataReceived}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{n}{system\PYGZus{}led\PYGZus{}init}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}
+\PYG{+w}{    }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}
+\PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
 
 \sphinxstepscope
 
@@ -272,6 +792,20 @@ Data
 
 \noindent\sphinxincludegraphics{{motors-wiring-harness-001}.jpg}
 \caption{DC Motors wires secured inside harnes.}\label{\detokenize{progress:id3}}\end{figure}
+
+\sphinxstepscope
+
+
+\chapter{REFERENCES}
+\label{\detokenize{references:references}}\label{\detokenize{references::doc}}
+
+\section{GitHub}
+\label{\detokenize{references:github}}
+\sphinxAtStartPar
+Complete source \sphinxhref{https://github.com/alexandrebobkov/ESP-Nodes/blob/main/ESP-IDF\_Robot/README.md}{code} with README.md file: \sphinxurl{https://github.com/alexandrebobkov/ESP-Nodes/blob/main/ESP-IDF\_Robot/README.md}
+
+\sphinxAtStartPar
+KiCAd \sphinxhref{https://github.com/alexandrebobkov/ESP32-C3\_Breadboard-Adapter}{Schematic} and PCB design: \sphinxurl{https://github.com/alexandrebobkov/ESP32-C3\_Breadboard-Adapter}
 
 
 
