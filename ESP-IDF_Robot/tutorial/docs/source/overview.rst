@@ -57,6 +57,8 @@ Changing PWM on each channel determines the speed and direction of the RC car.
 
 The table below summarizes the GPIO pins used for PWM to control the direction of the DC motors in the remote-controlled car.
 
+:class: break
+
 +-----------+-------+---------------------------------------+----------+
 | GPIOs     | State | Description                           | Function |          
 +===========+=======+=======================================+==========+

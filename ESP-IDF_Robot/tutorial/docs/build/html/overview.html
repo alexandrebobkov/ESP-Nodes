@@ -12,7 +12,6 @@
     <script src="_static/documentation_options.js?v=e6ef2064"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="3. DATA STRUCTS" href="data.html" />
@@ -56,9 +55,6 @@ of DC motors in pairs only (i.e. left and right side). Consequently, this means 
 direction of the RC car.</p>
 <p>Based on this constraint, the RC car can only move front, back, and turn/rotate left and right. Any other movements are not
 possible (i.e. diagonal or sideways).</p>
-<p><span class="math notranslate nohighlight">\(PWM_{left} = PWM_{right}\)</span></p>
-<div class="math notranslate nohighlight">
-\[PWM_{left} = PWM_{right}\]</div>
 <table class="docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p>PWM of DC Motors</p></td>
@@ -88,6 +84,11 @@ In particular, <strong>GPIO6</strong> and <strong>GPIO5</strong> provide PWM to 
 Similarly, <strong>GPIO4</strong> and <strong>GPIO7</strong> provide PWM to the left- and right- side DC motors to rotate in a <strong>counter-clockwise</strong> direction.
 Changing PWM on each channel determines the speed and direction of the RC car.</p>
 <p>The table below summarizes the GPIO pins used for PWM to control the direction of the DC motors in the remote-controlled car.</p>
+<dl class="field-list simple">
+<dt class="field-odd">class<span class="colon">:</span></dt>
+<dd class="field-odd"><p>break</p>
+</dd>
+</dl>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>GPIOs</p></th>
