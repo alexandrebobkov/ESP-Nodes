@@ -98,7 +98,7 @@ The following images illustrate various PWM duty cycles registered by oscillosco
 +------+-----+---------------------------------------------------------+----------------+
 | 1    | 15  | Joystick y-axis                                         | ADC1_CH1       |
 +------+-----+---------------------------------------------------------+----------------+
-| 8    | 5   | Joystick push button                                    |                |
+| 8    | 5   | Joystick push button                                    | NC             |
 +------+-----+---------------------------------------------------------+----------------+
 | 6    | 4   | PWM for clockwise rotation of left-side motors          | LEDC_CHANNEL_1 |
 +------+-----+---------------------------------------------------------+----------------+
