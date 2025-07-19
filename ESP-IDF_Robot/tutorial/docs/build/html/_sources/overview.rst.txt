@@ -33,7 +33,7 @@ Based on this constraint, the RC car can only move front, back, and turn/rotate 
 possible (i.e. diagonal or sideways).
 
 .. math::
-    PWM_{left} = PWM_{right}
+   PWM_{left} = PWM_{right}
 
 +--------------------------+-------------------------------+
 | PWM of DC Motors         | Direction                     |
