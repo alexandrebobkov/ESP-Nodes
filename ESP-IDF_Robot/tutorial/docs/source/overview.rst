@@ -19,8 +19,8 @@ Reading x- and y- axis
 To determine the position of the Joystick, the BitRider RC car uses ADC to measure voltage on two GPIOs connected to the joystic 
 x- and y- axis potentionometers (**GPIO0** and **GPIO1**).
 
-Controlling Direction and Speed
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Controlling the Direction and Speed
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The pairs of DC motors on the left side are wired to the dedicated PWM channels. This means that *ESP32-C3 Breadboard DevBoard* can control rotation speed and direction of DC motors in pairs only (i.e. left and right side).
 Consequently, only four PWM channels are sufficient for controlling the direction of the RC car. 
