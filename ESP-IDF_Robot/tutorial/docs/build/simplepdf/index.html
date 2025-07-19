@@ -15,8 +15,6 @@
   </script>
   <script src="_static/sphinx_highlight.js?v=dc90522c">
   </script>
-  <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-  </script>
   <link href="genindex.html" rel="index" title="Index"/>
   <link href="search.html" rel="search" title="Search"/>
  </head>
@@ -359,14 +357,6 @@ direction of the RC car.
             Based on this constraint, the RC car can only move front, back, and turn/rotate left and right. Any other movements are not
 possible (i.e. diagonal or sideways).
            </p>
-           <p>
-            <span class="math notranslate nohighlight">
-             \(PWM_{left} = PWM_{right}\)
-            </span>
-           </p>
-           <div class="math notranslate nohighlight">
-            \[PWM_{left} = PWM_{right}\]
-           </div>
            <table class="docutils align-default">
             <tbody>
              <tr class="row-odd">
@@ -467,6 +457,19 @@ Changing PWM on each channel determines the speed and direction of the RC car.
            <p>
             The table below summarizes the GPIO pins used for PWM to control the direction of the DC motors in the remote-controlled car.
            </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             class
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-odd">
+             <p>
+              break
+             </p>
+            </dd>
+           </dl>
            <table class="docutils align-default">
             <thead>
              <tr class="row-odd">
