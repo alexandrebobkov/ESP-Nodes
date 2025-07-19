@@ -1,760 +1,292 @@
 <!DOCTYPE html>
-<html data-content_root="./" lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <title>
-   Byte Rider 06-2025 documentation
-  </title>
-  <link href="_static/pygments.css?v=d75fae25" rel="stylesheet" type="text/css"/>
-  <link href="_static/main.css?v=c1e0a6fc" rel="stylesheet" type="text/css"/>
-  <script src="_static/documentation_options.js?v=84c8e5cb">
-  </script>
-  <script src="_static/doctools.js?v=9bcbadda">
-  </script>
-  <script src="_static/sphinx_highlight.js?v=dc90522c">
-  </script>
-  <link href="genindex.html" rel="index" title="Index"/>
-  <link href="search.html" rel="search" title="Search"/>
- </head>
- <body>
-  <article class="dont-break" id="cover">
-   <div class="container">
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Byte Rider 06-2025 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="_static/main.css?v=c1e0a6fc" />
+    <script src="_static/documentation_options.js?v=84c8e5cb"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    
+
+  </head><body><article id="cover" class="dont-break">
+  <div class="container">
+
     <!-- Logo -->
     <div class="logo">
-     <p>
-     </p>
+      <p></p>
     </div>
+
     <!-- Cover middle -->
     <div class="cover-middle">
-     <div class="title">
-      <h1 class="title-cover">
-       Byte Rider
-      </h1>
-      <p class="subtitle-cover">
-       Version
-      </p>
-      <span class="meta">
-      </span>
-     </div>
-     <!--
+      <div class="title">
+        <h1 class="title-cover">Byte Rider</h1>
+        <p class="subtitle-cover">Version </p>
+        <span class="meta">
+          
+        </span>
+      </div>
+        <!--
       <div class="client-logo">
         <img src="../data/logo_.png" alt="Logotipo">
       </div>
       -->
     </div>
+
     <!-- Footer -->
     <div class="cover-footer">
-     <p>
-     </p>
+      <p>
+        
+      </p>
     </div>
-   </div>
-  </article>
-  <div aria-label="Main" class="sphinxsidebar" role="navigation">
-   <div class="sphinxsidebarwrapper">
-    <div>
-     <h3>
-      <a href="#">
-       Table of Contents
-      </a>
-     </h3>
-     <ul>
-      <li class="toctree-l1">
-       <a class="reference internal" href="#overview">
-        OVERVIEW
-       </a>
-       <ul>
-        <li class="toctree-l2">
-         <a class="reference internal" href="#abstract">
-          ABSTRACT
-         </a>
-        </li>
-       </ul>
-      </li>
-      <li class="toctree-l1">
-       <a class="reference internal" href="#how-does-it-work">
-        HOW DOES IT WORK?
-       </a>
-       <ul>
-        <li class="toctree-l2">
-         <a class="reference internal" href="#reserved-pins-gpios">
-          Reserved Pins &amp; GPIOs
-         </a>
-        </li>
-        <li class="toctree-l2">
-         <a class="reference internal" href="#fusion-of-software-with-hardware">
-          Fusion of Software with Hardware
-         </a>
-        </li>
-        <li class="toctree-l2">
-         <a class="reference internal" href="#schematic">
-          Schematic
-         </a>
-        </li>
-       </ul>
-      </li>
-      <li class="toctree-l1">
-       <a class="reference internal" href="#data-structs">
-        DATA STRUCTS
-       </a>
-       <ul>
-        <li class="toctree-l2">
-         <a class="reference internal" href="#data-payload">
-          Data Payload
-         </a>
-        </li>
-       </ul>
-      </li>
-      <li class="toctree-l1">
-       <a class="reference internal" href="#transmitter">
-        TRANSMITTER
-       </a>
-       <ul>
-        <li class="toctree-l2">
-         <a class="reference internal" href="#configuration-variables">
-          Configuration Variables
-         </a>
-        </li>
-        <li class="toctree-l2">
-         <a class="reference internal" href="#reading-joystick-x-and-y-axis-values">
-          Reading Joystick x- and y- Axis Values
-         </a>
-        </li>
-        <li class="toctree-l2">
-         <a class="reference internal" href="#sending-ecapsulating-data">
-          Sending &amp; Ecapsulating Data
-         </a>
-        </li>
-        <li class="toctree-l2">
-         <a class="reference internal" href="#main-function">
-          Main Function
-         </a>
-        </li>
-       </ul>
-      </li>
-      <li class="toctree-l1">
-       <a class="reference internal" href="#receiver">
-        RECEIVER
-       </a>
-       <ul>
-        <li class="toctree-l2">
-         <a class="reference internal" href="#configuration-variables">
-          Configuration Variables
-         </a>
-        </li>
-        <li class="toctree-l2">
-         <a class="reference internal" href="#receiving-extracting-data">
-          Receiving &amp; Extracting Data
-         </a>
-        </li>
-        <li class="toctree-l2">
-         <a class="reference internal" href="#main-function">
-          Main Function
-         </a>
-        </li>
-       </ul>
-      </li>
-      <li class="toctree-l1">
-       <a class="reference internal" href="#work-in-progress-walk-through">
-        WORK-IN-PROGRESS WALK THROUGH
-       </a>
-       <ul>
-        <li class="toctree-l2">
-         <a class="reference internal" href="#finished-work">
-          Finished Work
-         </a>
-        </li>
-        <li class="toctree-l2">
-         <a class="reference internal" href="#chassis">
-          Chassis
-         </a>
-        </li>
-        <li class="toctree-l2">
-         <a class="reference internal" href="#wiring">
-          Wiring
-         </a>
-        </li>
-        <li class="toctree-l2">
-         <a class="reference internal" href="#motor-wires-harness">
-          Motor Wires Harness
-         </a>
-        </li>
-       </ul>
-      </li>
-      <li class="toctree-l1">
-       <a class="reference internal" href="#references">
-        REFERENCES
-       </a>
-       <ul>
-        <li class="toctree-l2">
-         <a class="reference internal" href="#github">
-          GitHub
-         </a>
-        </li>
-       </ul>
-      </li>
-     </ul>
-    </div>
-   </div>
   </div>
-  <div class="document">
-   <div class="documentwrapper">
-    <div class="bodywrapper">
-     <div class="body" role="main">
-      <section id="byterider-documentation">
-       <h1>
-        ByteRider documentation
-        <a class="headerlink" href="#byterider-documentation" title="Link to this heading">
-         &para;
-        </a>
-       </h1>
-       <img alt="_images/ESP-IDF_Robot.jpg" src="_images/ESP-IDF_Robot.jpg"/>
-       <div class="toctree-wrapper compound">
-        <span id="document-intro">
-        </span>
-        <section id="overview">
-         <h2>
-          OVERVIEW
-          <a class="headerlink" href="#overview" title="Link to this heading">
-           &para;
-          </a>
-         </h2>
-         <p>
-          At the heart of this project is a customizable remote-controlled car that responds to real-time control inputs, capable of handling speed adjustments,
+</article>
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="#">Table of Contents</a></h3>
+    <ul>
+<li class="toctree-l1"><a class="reference internal" href="#document-intro">1. OVERVIEW</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#document-intro#abstract">1.1. ABSTRACT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#document-overview">2. HOW DOES IT WORK?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#document-overview#reserved-pins-gpios">2.1. Reserved Pins &amp; GPIOs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#document-overview#x-and-y-axis">2.1.1. x- and y- axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#document-overview#direction-and-speed">2.1.2. Direction and Speed</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#document-overview#fusion-of-software-with-hardware">2.2. Fusion of Software with Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#document-overview#schematic">2.3. Schematic</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#document-data">3. DATA STRUCTS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#document-data#data-payload">3.1. Data Payload</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#document-data#why-use-attribute-packed">3.1.1. Why use __attribute((packed))?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#document-transmitter">4. TRANSMITTER</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#document-transmitter#configuration-variables">4.1. Configuration Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#document-transmitter#reading-joystick-x-and-y-axis-values">4.2. Reading Joystick x- and y- Axis Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#document-transmitter#sending-ecapsulating-data">4.3. Sending &amp; Ecapsulating Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#document-transmitter#main-function">4.4. Main Function</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#document-receiver">5. RECEIVER</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#document-receiver#configuration-variables">5.1. Configuration Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#document-receiver#receiving-extracting-data">5.2. Receiving &amp; Extracting Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#document-receiver#main-function">5.3. Main Function</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#document-progress">6. WORK-IN-PROGRESS WALK THROUGH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#document-progress#finished-work">6.1. Finished Work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#document-progress#chassis">6.2. Chassis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#document-progress#wiring">6.3. Wiring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#document-progress#motor-wires-harness">6.4. Motor Wires Harness</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#document-references">7. REFERENCES</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#document-references#github">7.1. GitHub</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+        </div>
+      </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+    <section id="byterider-documentation">
+<h1>ByteRider documentation<a class="headerlink" href="#byterider-documentation" title="Link to this heading">¶</a></h1>
+<img alt="_images/ESP-IDF_Robot.jpg" src="_images/ESP-IDF_Robot.jpg" />
+<div class="toctree-wrapper compound">
+<span id="document-intro"></span><section id="overview">
+<h2>OVERVIEW<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<p>At the heart of this project is a customizable remote-controlled car that responds to real-time control inputs, capable of handling speed adjustments,
 directional changes, and even extended features like lights or sensors. The foundational setup uses ESP-NOW for transmitter and receiver devices,
-allowing you to wirelessly guide the car&rsquo;s behaviour. While the design and physical appearance of the RC car can vary wildly depending on your
+allowing you to wirelessly guide the car’s behaviour. While the design and physical appearance of the RC car can vary wildly depending on your
 creativity and available hardware, the control system remains elegantly efficient. To facilitate wireless communication between devices, the system employs
 ESP-NOW , which is a lightweight and connection-free protocol ideal for fast, low-latency data transmission between ESP32 microcontrollers. Though ESP-NOW is used under
-the hood, the spotlight remains on the RC car itself.
-         </p>
-         <p>
-          An ESP-NOW-based remote controller sends control data wirelessly using the ESP-NOW protocol to the remote-controlled car. ESP-NOW enables fast and
+the hood, the spotlight remains on the RC car itself.</p>
+<p>An ESP-NOW-based remote controller sends control data wirelessly using the ESP-NOW protocol to the remote-controlled car. ESP-NOW enables fast and
 efficient communication between ESP32 devices without the need for a Wi-Fi router, network, or pairing. The provided tutorial demonstrates a functional
-setup where a transmitter sends data to a receiver to define the car&rsquo;s speed and direction, forming the core communication loop. While the baseline
+setup where a transmitter sends data to a receiver to define the car’s speed and direction, forming the core communication loop. While the baseline
 implementation focuses on movement, additional features like lights, sensors, or telemetry can easily be integrated by expanding the source code. This
-modular design gives users the freedom to customize both the appearance and behaviour of their RC car, resulting in endless creative possibilities.
-         </p>
-         <section id="abstract">
-          <h3>
-           ABSTRACT
-           <a class="headerlink" href="#abstract" title="Link to this heading">
-            &para;
-           </a>
-          </h3>
-          <p>
-           To enable real-time remote operation of the RC car, the system translates joystick x- and y- axis inputs into PWM (Pulse Width Modulation) signals that control the DC motors.
-These PWM values are stored in a predefined data structure, which is then transmitted wirelessly using ESP-NOW &mdash; a low-latency, connectionless
-communication protocol developed by Espressif. Both the transmitter and receiver modules are based on ESP32-C3 microcontrollers.
-          </p>
-          <p>
-           On the transmitter side, the joystick&rsquo;s X and Y coordinates are continuously monitored and converted into PWM parameters. These values are packed into the
-data structure and sent via ESP-NOW to the receiver.
-          </p>
-          <p>
-           The receiver module listens for incoming ESP-NOW packets, extracts the PWM control data, and applies it directly to the DC motors. This communication flow
-allows the RC car to respond instantly to user input, managing speed and direction without any physical connection between the devices.
-          </p>
-         </section>
-        </section>
-        <span id="document-overview">
-        </span>
-        <section id="how-does-it-work">
-         <h2>
-          HOW DOES IT WORK?
-          <a class="headerlink" href="#how-does-it-work" title="Link to this heading">
-           &para;
-          </a>
-         </h2>
-         <p>
-          The BitByteRider RC car is powered by ESP32-C3 Breadboard &amp; Power adapter developmemt board.
-The Schematic and KiCAd PCB board are available on
-          <a class="reference external" href="https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter">
-           GitHub
-          </a>
-          :
-          <a class="reference external" href="https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter">
-           https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter
-          </a>
-         </p>
-         <section id="reserved-pins-gpios">
-          <h3>
-           Reserved Pins &amp; GPIOs
-           <a class="headerlink" href="#reserved-pins-gpios" title="Link to this heading">
-            &para;
-           </a>
-          </h3>
-          <p>
-           The following table summarizes GPIOs and pins reserved for operations purposes.
-          </p>
-          <p>
-           The GPIO numbers correspond to those on the ESP32-C3 WROOM microcontroller. The Pin number corresponds to the pin on the Breadboard and Power adapter development board.
-          </p>
-          <section id="x-and-y-axis">
-           <h4>
-            x- and y- axis
-            <a class="headerlink" href="#x-and-y-axis" title="Link to this heading">
-             &para;
-            </a>
-           </h4>
-           <p>
-            The
-            <strong>
-             GPIO0
-            </strong>
-            and
-            <strong>
-             GPIO1
-            </strong>
-            assigned to measuring the voltage of x- and y- axis of the Joystick. Lastly, there is a group of GPIO pairs responsible for PWM for DC motors.
-           </p>
-          </section>
-          <section id="direction-and-speed">
-           <h4>
-            Direction and Speed
-            <a class="headerlink" href="#direction-and-speed" title="Link to this heading">
-             &para;
-            </a>
-           </h4>
-           <p>
-            The pairs of DC motors on the left side are wired to the dedicated PWM channels. This means that
-            <em>
-             ESP32-C3 Breadboard DevBoard
-            </em>
-            can control rotation speed and direction of DC motors in pairs only (i.e. left and right side).
+modular design gives users the freedom to customize both the appearance and behaviour of their RC car, resulting in endless creative possibilities.</p>
+<section id="abstract">
+<h3>ABSTRACT<a class="headerlink" href="#abstract" title="Link to this heading">¶</a></h3>
+<p>To enable real-time remote operation of the RC car, the system translates joystick x- and y- axis inputs into PWM (Pulse Width Modulation) signals that control the DC motors.
+These PWM values are stored in a predefined data structure, which is then transmitted wirelessly using ESP-NOW — a low-latency, connectionless
+communication protocol developed by Espressif. Both the transmitter and receiver modules are based on ESP32-C3 microcontrollers.</p>
+<p>On the transmitter side, the joystick’s X and Y coordinates are continuously monitored and converted into PWM parameters. These values are packed into the
+data structure and sent via ESP-NOW to the receiver.</p>
+<p>The receiver module listens for incoming ESP-NOW packets, extracts the PWM control data, and applies it directly to the DC motors. This communication flow
+allows the RC car to respond instantly to user input, managing speed and direction without any physical connection between the devices.</p>
+</section>
+</section>
+<span id="document-overview"></span><section id="how-does-it-work">
+<h2>HOW DOES IT WORK?<a class="headerlink" href="#how-does-it-work" title="Link to this heading">¶</a></h2>
+<p>The BitByteRider RC car is powered by ESP32-C3 Breadboard &amp; Power adapter developmemt board.
+The Schematic and KiCAd PCB board are available on <a class="reference external" href="https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter">GitHub</a>: <a class="reference external" href="https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter">https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter</a></p>
+<section id="reserved-pins-gpios">
+<h3>Reserved Pins &amp; GPIOs<a class="headerlink" href="#reserved-pins-gpios" title="Link to this heading">¶</a></h3>
+<p>The following table summarizes GPIOs and pins reserved for operations purposes.</p>
+<p>The GPIO numbers correspond to those on the ESP32-C3 WROOM microcontroller. The Pin number corresponds to the pin on the Breadboard and Power adapter development board.</p>
+<section id="x-and-y-axis">
+<h4>x- and y- axis<a class="headerlink" href="#x-and-y-axis" title="Link to this heading">¶</a></h4>
+<p>The <strong>GPIO0</strong> and <strong>GPIO1</strong> assigned to measuring the voltage of x- and y- axis of the Joystick. Lastly, there is a group of GPIO pairs responsible for PWM for DC motors.</p>
+</section>
+<section id="direction-and-speed">
+<h4>Direction and Speed<a class="headerlink" href="#direction-and-speed" title="Link to this heading">¶</a></h4>
+<p>The pairs of DC motors on the left side are wired to the dedicated PWM channels. This means that <em>ESP32-C3 Breadboard DevBoard</em> can control rotation speed and direction of DC motors in pairs only (i.e. left and right side).
 Consequently, only four PWM channels are sufficient for controlling the direction of the RC car.
-Based on this constraint, the RC car can only move front, back, and turn/rotate left and right. Any other movements are not possible (i.e. diagonal or sideways).
-           </p>
-           <div class="admonition-what-is-pwm admonition">
-            <p class="admonition-title">
-             What is PWM?
-            </p>
-            <p>
-             <strong>
-              PWM
-             </strong>
-             stands for Pulse Width Modulation. It is a technique used to simulate analog voltage levels using discrete digital signals. It works by
+Based on this constraint, the RC car can only move front, back, and turn/rotate left and right. Any other movements are not possible (i.e. diagonal or sideways).</p>
+<div class="admonition-what-is-pwm admonition">
+<p class="admonition-title">What is PWM?</p>
+<p><strong>PWM</strong> stands for Pulse Width Modulation. It is a technique used to simulate analog voltage levels using discrete digital signals. It works by
 rapidly switching a digital GPIO pin between HIGH (on) and LOW (off) states at a fixed frequency (often, at base frequency of 5 kHz).
-The duty cycle&mdash;the percentage of time the signal is HIGH in one cycle determines the effective voltage delivered to a device.
+The duty cycle—the percentage of time the signal is HIGH in one cycle determines the effective voltage delivered to a device.
 A higher duty cycle increases the motor speed, and a lower duty cycle decreases the motor speed. This allows for fine-grained speed control
-without needing analog voltage regulators.
-            </p>
-           </div>
-           <p>
-            A pair of PWM channels are used per DC motor for defining their rotation speed and direction on each side.
-In particular,
-            <strong>
-             GPIO6
-            </strong>
-            and
-            <strong>
-             GPIO5
-            </strong>
-            provide PWM to the left- and right- side DC motors to rotate in a
-            <strong>
-             clockwise
-            </strong>
-            direction.
-Similarly,
-            <strong>
-             GPIO4
-            </strong>
-            and
-            <strong>
-             GPIO7
-            </strong>
-            provide PWM to the left- and right- side DC motors to rotate in a
-            <strong>
-             counter-clockwise
-            </strong>
-            direction.
-Changing PWM on each channel determines the speed and direction of the RC car.
-           </p>
-           <p>
-            The table below summarizes the GPIO pins used for PWM to control the direction of the DC motors in the remote-controlled car.
-           </p>
-           <table class="docutils align-default">
-            <thead>
-             <tr class="row-odd">
-              <th class="head">
-               <p>
-                GPIOs
-               </p>
-              </th>
-              <th class="head">
-               <p>
-                State
-               </p>
-              </th>
-              <th class="head">
-               <p>
-                Description
-               </p>
-              </th>
-              <th class="head">
-               <p>
-                Function
-               </p>
-              </th>
-             </tr>
-            </thead>
-            <tbody>
-             <tr class="row-even">
-              <td>
-               <p>
-                GPIO6,
-GPIO4
-               </p>
-              </td>
-              <td>
-               <p>
-                PWM
-               </p>
-              </td>
-              <td>
-               <p>
-                Left &amp; Right DC Motors spin
-clockwise
-               </p>
-              </td>
-              <td>
-               <p>
-                Forward
-               </p>
-              </td>
-             </tr>
-             <tr class="row-odd">
-              <td>
-               <p>
-                GPIO5,
-GPIO7
-               </p>
-              </td>
-              <td>
-               <p>
-                PWM
-               </p>
-              </td>
-              <td>
-               <p>
-                Left &amp; Right DC Motors spin
-counterclockwise
-               </p>
-              </td>
-              <td>
-               <p>
-                Reverse
-               </p>
-              </td>
-             </tr>
-             <tr class="row-even">
-              <td>
-               <p>
-                GPIO6,
-GPIO7
-               </p>
-              </td>
-              <td>
-               <p>
-                PWM
-               </p>
-              </td>
-              <td>
-               <p>
-                Left DC Motors spin clockwise.
-Right DC Motors spin counterclockwise
-               </p>
-              </td>
-              <td>
-               <p>
-                Left
-               </p>
-              </td>
-             </tr>
-             <tr class="row-odd">
-              <td>
-               <p>
-                GPIO4,
-GPIO5
-               </p>
-              </td>
-              <td>
-               <p>
-                PWM
-               </p>
-              </td>
-              <td>
-               <p>
-                Left DC Motors spin counterclockwise.
-Right DC Motors spin clockwise
-               </p>
-              </td>
-              <td>
-               <p>
-                Right
-               </p>
-              </td>
-             </tr>
-            </tbody>
-           </table>
-           <p>
-            The following images illustrate various PWM duty cycles registered by oscilloscope (duty cycles 0%, 48% and 91%, resp.).
-           </p>
-           <figure class="align-default" id="id1">
-            <img alt="_images/ESP-IDF_Robot_PWM_Duty-0.bmp" src="_images/ESP-IDF_Robot_PWM_Duty-0.bmp"/>
-            <figcaption>
-             <p>
-              <span class="caption-text">
-               DC Motor PWM duty cycle 0%
-              </span>
-              <a class="headerlink" href="#id1" title="Link to this image">
-               &para;
-              </a>
-             </p>
-            </figcaption>
-           </figure>
-           <figure class="align-default" id="id2">
-            <img alt="_images/ESP-IDF_Robot_PWM_Duty-50.bmp" src="_images/ESP-IDF_Robot_PWM_Duty-50.bmp"/>
-            <figcaption>
-             <p>
-              <span class="caption-text">
-               DC Motor PWM duty cycle 47.6%
-              </span>
-              <a class="headerlink" href="#id2" title="Link to this image">
-               &para;
-              </a>
-             </p>
-            </figcaption>
-           </figure>
-           <figure class="align-default" id="id3">
-            <img alt="_images/ESP-IDF_Robot_PWM_Duty-95.bmp" src="_images/ESP-IDF_Robot_PWM_Duty-95.bmp"/>
-            <figcaption>
-             <p>
-              <span class="caption-text">
-               DC Motor PWM duty cycle 90.8%
-              </span>
-              <a class="headerlink" href="#id3" title="Link to this image">
-               &para;
-              </a>
-             </p>
-            </figcaption>
-           </figure>
-           <br/>
-           <br/>
-           <br/>
-           <br/>
-           <table class="docutils align-default">
-            <thead>
-             <tr class="row-odd">
-              <th class="head">
-               <p>
-                GPIO
-               </p>
-              </th>
-              <th class="head">
-               <p>
-                Pin
-               </p>
-              </th>
-              <th class="head">
-               <p>
-                Function
-               </p>
-              </th>
-              <th class="head">
-               <p>
-                Notes
-               </p>
-              </th>
-             </tr>
-            </thead>
-            <tbody>
-             <tr class="row-even">
-              <td>
-               <p>
-                0
-               </p>
-              </td>
-              <td>
-               <p>
-                16
-               </p>
-              </td>
-              <td>
-               <p>
-                Joystick x-axis
-               </p>
-              </td>
-              <td>
-               <p>
-                ADC1_CH0
-               </p>
-              </td>
-             </tr>
-             <tr class="row-odd">
-              <td>
-               <p>
-                1
-               </p>
-              </td>
-              <td>
-               <p>
-                15
-               </p>
-              </td>
-              <td>
-               <p>
-                Joystick y-axis
-               </p>
-              </td>
-              <td>
-               <p>
-                ADC1_CH1
-               </p>
-              </td>
-             </tr>
-             <tr class="row-even">
-              <td>
-               <p>
-                8
-               </p>
-              </td>
-              <td>
-               <p>
-                5
-               </p>
-              </td>
-              <td>
-               <p>
-                Joystick push button
-               </p>
-              </td>
-              <td>
-              </td>
-             </tr>
-             <tr class="row-odd">
-              <td>
-               <p>
-                6
-               </p>
-              </td>
-              <td>
-               <p>
-                4
-               </p>
-              </td>
-              <td>
-               <p>
-                PWM for clockwise rotation of left-side motors
-               </p>
-              </td>
-              <td>
-               <p>
-                LEDC_CHANNEL_1
-               </p>
-              </td>
-             </tr>
-             <tr class="row-even">
-              <td>
-               <p>
-                5
-               </p>
-              </td>
-              <td>
-               <p>
-                3
-               </p>
-              </td>
-              <td>
-               <p>
-                PWM for clockwise rotation of right-side motors
-               </p>
-              </td>
-              <td>
-               <p>
-                LEDC_CHANNEL_0
-               </p>
-              </td>
-             </tr>
-             <tr class="row-odd">
-              <td>
-               <p>
-                4
-               </p>
-              </td>
-              <td>
-               <p>
-                2
-               </p>
-              </td>
-              <td>
-               <p>
-                PWM for counter-clockwise rotation of right-side motors
-               </p>
-              </td>
-              <td>
-               <p>
-                LEDC_CHANNEL_2
-               </p>
-              </td>
-             </tr>
-             <tr class="row-even">
-              <td>
-               <p>
-                7
-               </p>
-              </td>
-              <td>
-               <p>
-                6
-               </p>
-              </td>
-              <td>
-               <p>
-                PWM for counter-clockwise rotation of left-side motors
-               </p>
-              </td>
-              <td>
-               <p>
-                LEDC_CHANNEL_3
-               </p>
-              </td>
-             </tr>
-            </tbody>
-           </table>
-          </section>
-         </section>
-         <section id="fusion-of-software-with-hardware">
-          <h3>
-           Fusion of Software with Hardware
-           <a class="headerlink" href="#fusion-of-software-with-hardware" title="Link to this heading">
-            &para;
-           </a>
-          </h3>
-          <p>
-           The
-           <em>
-            struct
-           </em>
-           for storing motors PWM values.
-          </p>
-          <div class="highlight-c notranslate">
-           <div class="highlight">
-            <pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">motors_rpm</span><span class="w"> </span><span class="p">{</span>
+without needing analog voltage regulators.</p>
+</div>
+<p>A pair of PWM channels are used per DC motor for defining their rotation speed and direction on each side.
+In particular, <strong>GPIO6</strong> and <strong>GPIO5</strong> provide PWM to the left- and right- side DC motors to rotate in a <strong>clockwise</strong> direction.
+Similarly, <strong>GPIO4</strong> and <strong>GPIO7</strong> provide PWM to the left- and right- side DC motors to rotate in a <strong>counter-clockwise</strong> direction.
+Changing PWM on each channel determines the speed and direction of the RC car.</p>
+<p>The table below summarizes the GPIO pins used for PWM to control the direction of the DC motors in the remote-controlled car.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>GPIOs</p></th>
+<th class="head"><p>State</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>GPIO6,
+GPIO4</p></td>
+<td><p>PWM</p></td>
+<td><p>Left &amp; Right DC Motors spin
+clockwise</p></td>
+<td><p>Forward</p></td>
+</tr>
+<tr class="row-odd"><td><p>GPIO5,
+GPIO7</p></td>
+<td><p>PWM</p></td>
+<td><p>Left &amp; Right DC Motors spin
+counterclockwise</p></td>
+<td><p>Reverse</p></td>
+</tr>
+<tr class="row-even"><td><p>GPIO6,
+GPIO7</p></td>
+<td><p>PWM</p></td>
+<td><p>Left DC Motors spin clockwise.
+Right DC Motors spin counterclockwise</p></td>
+<td><p>Left</p></td>
+</tr>
+<tr class="row-odd"><td><p>GPIO4,
+GPIO5</p></td>
+<td><p>PWM</p></td>
+<td><p>Left DC Motors spin counterclockwise.
+Right DC Motors spin clockwise</p></td>
+<td><p>Right</p></td>
+</tr>
+</tbody>
+</table>
+<p>The following images illustrate various PWM duty cycles registered by oscilloscope (duty cycles 0%, 48% and 91%, resp.).</p>
+<figure class="align-default" id="id1">
+<img alt="_images/ESP-IDF_Robot_PWM_Duty-0.bmp" src="_images/ESP-IDF_Robot_PWM_Duty-0.bmp" />
+<figcaption>
+<p><span class="caption-text">DC Motor PWM duty cycle 0%</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id2">
+<img alt="_images/ESP-IDF_Robot_PWM_Duty-50.bmp" src="_images/ESP-IDF_Robot_PWM_Duty-50.bmp" />
+<figcaption>
+<p><span class="caption-text">DC Motor PWM duty cycle 47.6%</span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id3">
+<img alt="_images/ESP-IDF_Robot_PWM_Duty-95.bmp" src="_images/ESP-IDF_Robot_PWM_Duty-95.bmp" />
+<figcaption>
+<p><span class="caption-text">DC Motor PWM duty cycle 90.8%</span><a class="headerlink" href="#id3" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<br/><br/><br/><br/><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>GPIO</p></th>
+<th class="head"><p>Pin</p></th>
+<th class="head"><p>Function</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>16</p></td>
+<td><p>Joystick x-axis</p></td>
+<td><p>ADC1_CH0</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>15</p></td>
+<td><p>Joystick y-axis</p></td>
+<td><p>ADC1_CH1</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>5</p></td>
+<td><p>Joystick push button</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>4</p></td>
+<td><p>PWM for clockwise rotation of left-side motors</p></td>
+<td><p>LEDC_CHANNEL_1</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>3</p></td>
+<td><p>PWM for clockwise rotation of right-side motors</p></td>
+<td><p>LEDC_CHANNEL_0</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>2</p></td>
+<td><p>PWM for counter-clockwise rotation of right-side motors</p></td>
+<td><p>LEDC_CHANNEL_2</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>6</p></td>
+<td><p>PWM for counter-clockwise rotation of left-side motors</p></td>
+<td><p>LEDC_CHANNEL_3</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="fusion-of-software-with-hardware">
+<h3>Fusion of Software with Hardware<a class="headerlink" href="#fusion-of-software-with-hardware" title="Link to this heading">¶</a></h3>
+<p>The <em>struct</em> for storing motors PWM values.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">motors_rpm</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor1_rpm_pwm</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor2_rpm_pwm</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor3_rpm_pwm</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor4_rpm_pwm</span><span class="p">;</span>
 <span class="p">};</span>
-</pre>
-           </div>
-          </div>
-          <p>
-           The function for updating motors&rsquo; PWM values.
-          </p>
-          <div class="highlight-c notranslate">
-           <div class="highlight">
-            <pre><span></span><span class="c1">// Function to send data to the receiver</span>
+</pre></div>
+</div>
+<p>The function for updating motors’ PWM values.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Function to send data to the receiver</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">sendData</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">sensors_data_t</span><span class="w"> </span><span class="n">buffer</span><span class="p">;</span><span class="w">              </span><span class="c1">// Declare data struct</span>
 
@@ -768,52 +300,42 @@ Right DC Motors spin clockwise
 <span class="w">    </span><span class="n">buffer</span><span class="p">.</span><span class="n">motor4_rpm_pwm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 
 <span class="w">    </span><span class="c1">// Display brief summary of data being sent.</span>
-<span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"Joystick (x,y) position ( 0x%04X, 0x%04X )"</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">)</span><span class="n">buffer</span><span class="p">.</span><span class="n">x_axis</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">)</span><span class="n">buffer</span><span class="p">.</span><span class="n">y_axis</span><span class="p">);</span>
-<span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"pwm 1, pwm 2 [ 0x%04X, 0x%04X ]"</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">)</span><span class="n">buffer</span><span class="p">.</span><span class="n">pwm</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">)</span><span class="n">buffer</span><span class="p">.</span><span class="n">pwm</span><span class="p">);</span>
-<span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"pwm 3, pwm 4 [ 0x%04X, 0x%04X ]"</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">)</span><span class="n">buffer</span><span class="p">.</span><span class="n">pwm</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">)</span><span class="n">buffer</span><span class="p">.</span><span class="n">pwm</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Joystick (x,y) position ( 0x%04X, 0x%04X )&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">)</span><span class="n">buffer</span><span class="p">.</span><span class="n">x_axis</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">)</span><span class="n">buffer</span><span class="p">.</span><span class="n">y_axis</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pwm 1, pwm 2 [ 0x%04X, 0x%04X ]&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">)</span><span class="n">buffer</span><span class="p">.</span><span class="n">pwm</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">)</span><span class="n">buffer</span><span class="p">.</span><span class="n">pwm</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pwm 3, pwm 4 [ 0x%04X, 0x%04X ]&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">)</span><span class="n">buffer</span><span class="p">.</span><span class="n">pwm</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">)</span><span class="n">buffer</span><span class="p">.</span><span class="n">pwm</span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// Call ESP-NOW function to send data (MAC address of receiver, pointer to the memory holding data &amp; data length)</span>
 <span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">esp_now_send</span><span class="p">(</span><span class="n">receiver_mac</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">buffer</span><span class="p">));</span>
 
 <span class="w">    </span><span class="c1">// If status is NOT OK, display error message and error code (in hexadecimal).</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">ESP_LOGE</span><span class="p">(</span><span class="s">"ESP-NOW"</span><span class="p">,</span><span class="w"> </span><span class="s">"Error sending data! Error code: 0x%04X"</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">);</span>
+<span class="w">        </span><span class="n">ESP_LOGE</span><span class="p">(</span><span class="s">&quot;ESP-NOW&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Error sending data! Error code: 0x%04X&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">);</span>
 <span class="w">        </span><span class="n">deletePeer</span><span class="p">();</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="k">else</span>
-<span class="w">        </span><span class="n">ESP_LOGW</span><span class="p">(</span><span class="s">"ESP-NOW"</span><span class="p">,</span><span class="w"> </span><span class="s">"Data was sent."</span><span class="p">);</span>
+<span class="w">        </span><span class="n">ESP_LOGW</span><span class="p">(</span><span class="s">&quot;ESP-NOW&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Data was sent.&quot;</span><span class="p">);</span>
 <span class="p">}</span>
-</pre>
-           </div>
-          </div>
-          <p>
-           The onDataReceived() and onDataSent() are two call-bacl functions that get evoked on each corresponding event.
-          </p>
-          <div class="highlight-c notranslate">
-           <div class="highlight">
-            <pre><span></span><span class="c1">// Call-back for the event when data is being received</span>
+</pre></div>
+</div>
+<p>The onDataReceived() and onDataSent() are two call-bacl functions that get evoked on each corresponding event.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Call-back for the event when data is being received</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">onDataReceived</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">mac_addr</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">data_len</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="n">buf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">sensors_data_t</span><span class="o">*</span><span class="p">)</span><span class="n">data</span><span class="p">;</span><span class="w">                            </span><span class="c1">// Allocate memory for buffer to store data being received</span>
-<span class="w">    </span><span class="n">ESP_LOGW</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"Data was received"</span><span class="p">);</span>
-<span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"x-axis: 0x%04x"</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="o">-&gt;</span><span class="n">x_axis</span><span class="p">);</span>
-<span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"x-axis: 0x%04x"</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="o">-&gt;</span><span class="n">y_axis</span><span class="p">);</span>
-<span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"PWM 1: 0x%04x"</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="o">-&gt;</span><span class="n">motor1_rpm_pwm</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ESP_LOGW</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Data was received&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x-axis: 0x%04x&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="o">-&gt;</span><span class="n">x_axis</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x-axis: 0x%04x&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="o">-&gt;</span><span class="n">y_axis</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;PWM 1: 0x%04x&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="o">-&gt;</span><span class="n">motor1_rpm_pwm</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="c1">// Call-back for the event when data is being sent</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">onDataSent</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">mac_addr</span><span class="p">,</span><span class="w"> </span><span class="n">esp_now_send_status_t</span><span class="w"> </span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">ESP_LOGW</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"Packet send status: 0x%04X"</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ESP_LOGW</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Packet send status: 0x%04X&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="p">);</span>
 <span class="p">}</span>
-</pre>
-           </div>
-          </div>
-          <p>
-           The rc_send_data_task() function runs every 0.1 second to transmit the data to the receiver.
-          </p>
-          <div class="highlight-c notranslate">
-           <div class="highlight">
-            <pre><span></span><span class="c1">// Continous, periodic task that sends data.</span>
+</pre></div>
+</div>
+<p>The rc_send_data_task() function runs every 0.1 second to transmit the data to the receiver.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Continous, periodic task that sends data.</span>
 <span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">rc_send_data_task</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -822,42 +344,21 @@ Right DC Motors spin clockwise
 <span class="w">        </span><span class="n">vTaskDelay</span><span class="w"> </span><span class="p">(</span><span class="mi">100</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">portTICK_PERIOD_MS</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
-</pre>
-           </div>
-          </div>
-         </section>
-         <section id="schematic">
-          <h3>
-           Schematic
-           <a class="headerlink" href="#schematic" title="Link to this heading">
-            &para;
-           </a>
-          </h3>
-          <img alt="_images/ESP-IDF_Robot_schematic.png" src="_images/ESP-IDF_Robot_schematic.png"/>
-         </section>
-        </section>
-        <span id="document-data">
-        </span>
-        <section id="data-structs">
-         <h2>
-          DATA STRUCTS
-          <a class="headerlink" href="#data-structs" title="Link to this heading">
-           &para;
-          </a>
-         </h2>
-         <p>
-          The struct serves as the data payload for sending control signals from the transmitting device to the receiver using ESP-NOW.
-In addition, it may contain additional data such as telemetry, battery status, etc. The
-          <em>
-           sensors_data_t
-          </em>
-          struct encapsulates all control commands and sensor states
-relevant to the vehicle&rsquo;s operation. It&rsquo;s intended to be sent from a transmitting device (like a remote control) to a receiver
-(such as a microcontroller on board of the vehicle).
-         </p>
-         <div class="highlight-c notranslate">
-          <div class="highlight">
-           <pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+</pre></div>
+</div>
+</section>
+<section id="schematic">
+<h3>Schematic<a class="headerlink" href="#schematic" title="Link to this heading">¶</a></h3>
+<img alt="_images/ESP-IDF_Robot_schematic.png" src="_images/ESP-IDF_Robot_schematic.png" />
+</section>
+</section>
+<span id="document-data"></span><section id="data-structs">
+<h2>DATA STRUCTS<a class="headerlink" href="#data-structs" title="Link to this heading">¶</a></h2>
+<p>The struct serves as the data payload for sending control signals from the transmitting device to the receiver using ESP-NOW.
+In addition, it may contain additional data such as telemetry, battery status, etc. The <em>sensors_data_t</em> struct encapsulates all control commands and sensor states
+relevant to the vehicle’s operation. It’s intended to be sent from a transmitting device (like a remote control) to a receiver
+(such as a microcontroller on board of the vehicle).</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">x_axis</span><span class="p">;</span><span class="w">             </span><span class="c1">// Joystick x-position</span>
 <span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">y_axis</span><span class="p">;</span><span class="w">             </span><span class="c1">// Joystick y-position</span>
 <span class="w">    </span><span class="kt">bool</span><span class="w">        </span><span class="n">nav_bttn</span><span class="p">;</span><span class="w">           </span><span class="c1">// Joystick push button</span>
@@ -867,151 +368,53 @@ relevant to the vehicle&rsquo;s operation. It&rsquo;s intended to be sent from a
 <span class="w">    </span><span class="kt">uint8_t</span><span class="w">     </span><span class="n">motor3_rpm_pwm</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">uint8_t</span><span class="w">     </span><span class="n">motor4_rpm_pwm</span><span class="p">;</span>
 <span class="p">}</span><span class="w"> </span><span class="n">__attribute__</span><span class="p">((</span><span class="n">packed</span><span class="p">))</span><span class="w"> </span><span class="n">sensors_data_t</span><span class="p">;</span>
-</pre>
-          </div>
-         </div>
-         <div class="highlight-c notranslate">
-          <div class="highlight">
-           <pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">motors_rpm</span><span class="w"> </span><span class="p">{</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">motors_rpm</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor1_rpm_pwm</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor2_rpm_pwm</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor3_rpm_pwm</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor4_rpm_pwm</span><span class="p">;</span>
 <span class="p">};</span>
-</pre>
-          </div>
-         </div>
-         <p>
-          When used with communication protocols like ESP-NOW, this struct is
-          <strong>
-           encoded
-          </strong>
-          into a byte stream, then
-          <strong>
-           transmitted
-          </strong>
-          at regular intervals or in response to user input, and finally
-          <strong>
-           decoded
-          </strong>
-          on the receiving end to control hardware.
-         </p>
-         <div class="admonition-what-is-struct admonition">
-          <p class="admonition-title">
-           What is struct?
-          </p>
-          <p>
-           In C programming, a struct (short for structure) is a user-defined data type that lets you group multiple variables of different types together under a
-single name. It&rsquo;s like a container that holds related information &mdash; perfect for organizing data that logically belongs together. Structs are especially
-powerful in systems programming, embedded projects, and when dealing with raw binary data &mdash; like parsing sensor input or transmitting control packets over
-ESP-NOW.
-          </p>
-         </div>
-         <section id="data-payload">
-          <h3>
-           Data Payload
-           <a class="headerlink" href="#data-payload" title="Link to this heading">
-            &para;
-           </a>
-          </h3>
-          <p>
-           <em>
-            x_axis
-           </em>
-           and
-           <em>
-            y_axis
-           </em>
-           fields capture analog input from a joystick, determining direction and speed.
-           <em>
-            nav_bttn
-           </em>
-           represents a joystick push-button.
-          </p>
-          <p>
-           <em>
-            led
-           </em>
-           allows the transmitter to toggle an onboard LED and is used for status indication (e.g. pairing, battery warning, etc).
-          </p>
-          <p>
-           <em>
-            motor1_rpm_pwm
-           </em>
-           to
-           <em>
-            motor4_rpm_pwm
-           </em>
-           provide individual PWM signals to four DC motors.
-This enables fine-grained speed control, supports differential drive configurations, and even allows for maneuvering in multi-directional platforms like omni-wheel robots.
-          </p>
-          <section id="why-use-attribute-packed">
-           <h4>
-            Why use __attribute((packed))?
-            <a class="headerlink" href="#why-use-attribute-packed" title="Link to this heading">
-             &para;
-            </a>
-           </h4>
-           <p>
-            ESP-NOW uses fixed-size data packets (up to 250 bytes). The
-            <em>
-             __attribute__((packed))
-            </em>
-            removes compiler-added padding for precise byte alignment.
-           </p>
-           <p>
-            As
-            <em>
-             packed
-            </em>
-            attribute tells the compiler not to add any padding between fields in memory, this makes the struct:
-           </p>
-           <blockquote>
-            <div>
-             <ul class="simple">
-              <li>
-               <p>
-                Compact
-               </p>
-              </li>
-              <li>
-               <p>
-                Predictable for serialization over protocols like UART or ESP-NOW
-               </p>
-              </li>
-              <li>
-               <p>
-                Ideal for low-latency transmission in embedded systems
-               </p>
-              </li>
-             </ul>
-            </div>
-           </blockquote>
-           <p>
-            This ensures the receiver interprets the exact byte layout you expect, minimizing bandwidth and maximizing compatibility across platforms.
-           </p>
-          </section>
-         </section>
-        </section>
-        <span id="document-transmitter">
-        </span>
-        <section id="transmitter">
-         <h2>
-          TRANSMITTER
-          <a class="headerlink" href="#transmitter" title="Link to this heading">
-           &para;
-          </a>
-         </h2>
-         <section id="configuration-variables">
-          <h3>
-           Configuration Variables
-           <a class="headerlink" href="#configuration-variables" title="Link to this heading">
-            &para;
-           </a>
-          </h3>
-          <div class="highlight-c notranslate">
-           <div class="highlight">
-            <pre><span></span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">receiver_mac</span><span class="p">[</span><span class="n">ESP_NOW_ETH_ALEN</span><span class="p">]</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mh">0xe4</span><span class="p">,</span><span class="w"> </span><span class="mh">0xb0</span><span class="p">,</span><span class="w"> </span><span class="mh">0x63</span><span class="p">,</span><span class="w"> </span><span class="mh">0x17</span><span class="p">,</span><span class="w"> </span><span class="mh">0x9e</span><span class="p">,</span><span class="w"> </span><span class="mh">0x44</span><span class="p">};</span>
+</pre></div>
+</div>
+<p>When used with communication protocols like ESP-NOW, this struct is <strong>encoded</strong> into a byte stream, then
+<strong>transmitted</strong> at regular intervals or in response to user input, and finally
+<strong>decoded</strong> on the receiving end to control hardware.</p>
+<div class="admonition-what-is-struct admonition">
+<p class="admonition-title">What is struct?</p>
+<p>In C programming, a struct (short for structure) is a user-defined data type that lets you group multiple variables of different types together under a
+single name. It’s like a container that holds related information — perfect for organizing data that logically belongs together. Structs are especially
+powerful in systems programming, embedded projects, and when dealing with raw binary data — like parsing sensor input or transmitting control packets over
+ESP-NOW.</p>
+</div>
+<section id="data-payload">
+<h3>Data Payload<a class="headerlink" href="#data-payload" title="Link to this heading">¶</a></h3>
+<p><em>x_axis</em> and <em>y_axis</em> fields capture analog input from a joystick, determining direction and speed.
+<em>nav_bttn</em> represents a joystick push-button.</p>
+<p><em>led</em> allows the transmitter to toggle an onboard LED and is used for status indication (e.g. pairing, battery warning, etc).</p>
+<p><em>motor1_rpm_pwm</em> to <em>motor4_rpm_pwm</em> provide individual PWM signals to four DC motors.
+This enables fine-grained speed control, supports differential drive configurations, and even allows for maneuvering in multi-directional platforms like omni-wheel robots.</p>
+<section id="why-use-attribute-packed">
+<h4>Why use __attribute((packed))?<a class="headerlink" href="#why-use-attribute-packed" title="Link to this heading">¶</a></h4>
+<p>ESP-NOW uses fixed-size data packets (up to 250 bytes). The <em>__attribute__((packed))</em> removes compiler-added padding for precise byte alignment.</p>
+<p>As <em>packed</em> attribute tells the compiler not to add any padding between fields in memory, this makes the struct:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Compact</p></li>
+<li><p>Predictable for serialization over protocols like UART or ESP-NOW</p></li>
+<li><p>Ideal for low-latency transmission in embedded systems</p></li>
+</ul>
+</div></blockquote>
+<p>This ensures the receiver interprets the exact byte layout you expect, minimizing bandwidth and maximizing compatibility across platforms.</p>
+</section>
+</section>
+</section>
+<span id="document-transmitter"></span><section id="transmitter">
+<h2>TRANSMITTER<a class="headerlink" href="#transmitter" title="Link to this heading">¶</a></h2>
+<section id="configuration-variables">
+<h3>Configuration Variables<a class="headerlink" href="#configuration-variables" title="Link to this heading">¶</a></h3>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">receiver_mac</span><span class="p">[</span><span class="n">ESP_NOW_ETH_ALEN</span><span class="p">]</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mh">0xe4</span><span class="p">,</span><span class="w"> </span><span class="mh">0xb0</span><span class="p">,</span><span class="w"> </span><span class="mh">0x63</span><span class="p">,</span><span class="w"> </span><span class="mh">0x17</span><span class="p">,</span><span class="w"> </span><span class="mh">0x9e</span><span class="p">,</span><span class="w"> </span><span class="mh">0x44</span><span class="p">};</span>
 
 <span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">x_axis</span><span class="p">;</span><span class="w">             </span><span class="c1">// Joystick x-position</span>
@@ -1023,28 +426,15 @@ This enables fine-grained speed control, supports differential drive configurati
 <span class="w">    </span><span class="kt">uint8_t</span><span class="w">     </span><span class="n">motor3_rpm_pwm</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">uint8_t</span><span class="w">     </span><span class="n">motor4_rpm_pwm</span><span class="p">;</span>
 <span class="p">}</span><span class="w"> </span><span class="n">__attribute__</span><span class="p">((</span><span class="n">packed</span><span class="p">))</span><span class="w"> </span><span class="n">sensors_data_t</span><span class="p">;</span>
-</pre>
-           </div>
-          </div>
-         </section>
-         <section id="reading-joystick-x-and-y-axis-values">
-          <h3>
-           Reading Joystick x- and y- Axis Values
-           <a class="headerlink" href="#reading-joystick-x-and-y-axis-values" title="Link to this heading">
-            &para;
-           </a>
-          </h3>
-         </section>
-         <section id="sending-ecapsulating-data">
-          <h3>
-           Sending &amp; Ecapsulating Data
-           <a class="headerlink" href="#sending-ecapsulating-data" title="Link to this heading">
-            &para;
-           </a>
-          </h3>
-          <div class="highlight-c notranslate">
-           <div class="highlight">
-            <pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">sendData</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</pre></div>
+</div>
+</section>
+<section id="reading-joystick-x-and-y-axis-values">
+<h3>Reading Joystick x- and y- Axis Values<a class="headerlink" href="#reading-joystick-x-and-y-axis-values" title="Link to this heading">¶</a></h3>
+</section>
+<section id="sending-ecapsulating-data">
+<h3>Sending &amp; Ecapsulating Data<a class="headerlink" href="#sending-ecapsulating-data" title="Link to this heading">¶</a></h3>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">sendData</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
 <span class="w">    </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
@@ -1058,22 +448,14 @@ This enables fine-grained speed control, supports differential drive configurati
 <span class="w">    </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
 <span class="w">    </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
 <span class="p">}</span>
-</pre>
-           </div>
-          </div>
-         </section>
-         <section id="main-function">
-          <h3>
-           Main Function
-           <a class="headerlink" href="#main-function" title="Link to this heading">
-            &para;
-           </a>
-          </h3>
-          <div class="highlight-c notranslate">
-           <div class="highlight">
-            <pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">"freertos/FreeRTOS.h"</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">"nvs_flash.h"</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">"esp_err.h"</span>
+</pre></div>
+</div>
+</section>
+<section id="main-function">
+<h3>Main Function<a class="headerlink" href="#main-function" title="Link to this heading">¶</a></h3>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;freertos/FreeRTOS.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;nvs_flash.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;esp_err.h&quot;</span>
 
 <span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
 <span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
@@ -1101,30 +483,15 @@ This enables fine-grained speed control, supports differential drive configurati
 <span class="w">    </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
 <span class="w">    </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
 <span class="p">}</span>
-</pre>
-           </div>
-          </div>
-         </section>
-        </section>
-        <span id="document-receiver">
-        </span>
-        <section id="receiver">
-         <h2>
-          RECEIVER
-          <a class="headerlink" href="#receiver" title="Link to this heading">
-           &para;
-          </a>
-         </h2>
-         <section id="configuration-variables">
-          <h3>
-           Configuration Variables
-           <a class="headerlink" href="#configuration-variables" title="Link to this heading">
-            &para;
-           </a>
-          </h3>
-          <div class="highlight-c notranslate">
-           <div class="highlight">
-            <pre><span></span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">transmitter_mac</span><span class="p">[</span><span class="n">ESP_NOW_ETH_ALEN</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mh">0x9C</span><span class="p">,</span><span class="w"> </span><span class="mh">0x9E</span><span class="p">,</span><span class="w"> </span><span class="mh">0x6E</span><span class="p">,</span><span class="w"> </span><span class="mh">0x14</span><span class="p">,</span><span class="w"> </span><span class="mh">0xB5</span><span class="p">,</span><span class="w"> </span><span class="mh">0x54</span><span class="p">};</span>
+</pre></div>
+</div>
+</section>
+</section>
+<span id="document-receiver"></span><section id="receiver">
+<h2>RECEIVER<a class="headerlink" href="#receiver" title="Link to this heading">¶</a></h2>
+<section id="configuration-variables">
+<h3>Configuration Variables<a class="headerlink" href="#configuration-variables" title="Link to this heading">¶</a></h3>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">transmitter_mac</span><span class="p">[</span><span class="n">ESP_NOW_ETH_ALEN</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mh">0x9C</span><span class="p">,</span><span class="w"> </span><span class="mh">0x9E</span><span class="p">,</span><span class="w"> </span><span class="mh">0x6E</span><span class="p">,</span><span class="w"> </span><span class="mh">0x14</span><span class="p">,</span><span class="w"> </span><span class="mh">0xB5</span><span class="p">,</span><span class="w"> </span><span class="mh">0x54</span><span class="p">};</span>
 
 <span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">x_axis</span><span class="p">;</span><span class="w">             </span><span class="c1">// Joystick x-position</span>
@@ -1136,36 +503,25 @@ This enables fine-grained speed control, supports differential drive configurati
 <span class="w">    </span><span class="kt">uint8_t</span><span class="w">     </span><span class="n">motor3_rpm_pwm</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">uint8_t</span><span class="w">     </span><span class="n">motor4_rpm_pwm</span><span class="p">;</span>
 <span class="p">}</span><span class="w"> </span><span class="n">__attribute__</span><span class="p">((</span><span class="n">packed</span><span class="p">))</span><span class="w"> </span><span class="n">sensors_data_t</span><span class="p">;</span>
-</pre>
-           </div>
-          </div>
-          <div class="highlight-c notranslate">
-           <div class="highlight">
-            <pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">motors_rpm</span><span class="w"> </span><span class="p">{</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">motors_rpm</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor1_rpm_pwm</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor2_rpm_pwm</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor3_rpm_pwm</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor4_rpm_pwm</span><span class="p">;</span>
 <span class="p">};</span>
-</pre>
-           </div>
-          </div>
-         </section>
-         <section id="receiving-extracting-data">
-          <h3>
-           Receiving &amp; Extracting Data
-           <a class="headerlink" href="#receiving-extracting-data" title="Link to this heading">
-            &para;
-           </a>
-          </h3>
-          <div class="highlight-c notranslate">
-           <div class="highlight">
-            <pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">onDataReceived</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">mac_addr</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">data_len</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</pre></div>
+</div>
+</section>
+<section id="receiving-extracting-data">
+<h3>Receiving &amp; Extracting Data<a class="headerlink" href="#receiving-extracting-data" title="Link to this heading">¶</a></h3>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">onDataReceived</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">mac_addr</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">data_len</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
 <span class="w">    </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
 
-<span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">"Data received from: %02x:%02x:%02x:%02x:%02x:%02x, len=%d"</span><span class="p">,</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span><span class="w"> </span><span class="n">data_len</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Data received from: %02x:%02x:%02x:%02x:%02x:%02x, len=%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="w"> </span><span class="n">mac_addr</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span><span class="w"> </span><span class="n">data_len</span><span class="p">);</span>
 <span class="w">    </span><span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">buf</span><span class="p">));</span>
 
 <span class="w">    </span><span class="n">x_axis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buf</span><span class="p">.</span><span class="n">x_axis</span><span class="p">;</span>
@@ -1174,23 +530,15 @@ This enables fine-grained speed control, supports differential drive configurati
 <span class="w">    </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
 <span class="w">    </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
 <span class="p">}</span>
-</pre>
-           </div>
-          </div>
-         </section>
-         <section id="main-function">
-          <h3>
-           Main Function
-           <a class="headerlink" href="#main-function" title="Link to this heading">
-            &para;
-           </a>
-          </h3>
-          <div class="highlight-c notranslate">
-           <div class="highlight">
-            <pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">"freertos/FreeRTOS.h"</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">"nvs_flash.h"</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">"esp_err.h"</span>
+</pre></div>
+</div>
+</section>
+<section id="main-function">
+<h3>Main Function<a class="headerlink" href="#main-function" title="Link to this heading">¶</a></h3>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;freertos/FreeRTOS.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;nvs_flash.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;esp_err.h&quot;</span>
 
 <span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
 <span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
@@ -1226,160 +574,77 @@ This enables fine-grained speed control, supports differential drive configurati
 <span class="w">    </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
 <span class="w">    </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
 <span class="p">}</span>
-</pre>
-           </div>
+</pre></div>
+</div>
+</section>
+</section>
+<span id="document-progress"></span><section id="work-in-progress-walk-through">
+<h2>WORK-IN-PROGRESS WALK THROUGH<a class="headerlink" href="#work-in-progress-walk-through" title="Link to this heading">¶</a></h2>
+<section id="finished-work">
+<h3>Finished Work<a class="headerlink" href="#finished-work" title="Link to this heading">¶</a></h3>
+<img alt="_images/ESP-IDF_Robot.jpg" src="_images/ESP-IDF_Robot.jpg" />
+</section>
+<section id="chassis">
+<h3>Chassis<a class="headerlink" href="#chassis" title="Link to this heading">¶</a></h3>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="_images/chassi-progress_002d.jpg"><img alt="_images/chassi-progress_002d.jpg" src="_images/chassi-progress_002d.jpg" style="height: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Completed chassis with only DC motor controllers installed.</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="wiring">
+<h3>Wiring<a class="headerlink" href="#wiring" title="Link to this heading">¶</a></h3>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="_images/chassi-progress_003a.jpg"><img alt="_images/chassi-progress_003a.jpg" src="_images/chassi-progress_003a.jpg" style="height: 750px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Completed wiring.</span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="motor-wires-harness">
+<h3>Motor Wires Harness<a class="headerlink" href="#motor-wires-harness" title="Link to this heading">¶</a></h3>
+<figure class="align-center" id="id3">
+<img alt="_images/motors-wiring-harness-001.jpg" src="_images/motors-wiring-harness-001.jpg" />
+<figcaption>
+<p><span class="caption-text">DC Motors wires secured inside harnes.</span><a class="headerlink" href="#id3" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<span id="document-references"></span><section id="references">
+<h2>REFERENCES<a class="headerlink" href="#references" title="Link to this heading">¶</a></h2>
+<section id="github">
+<h3>GitHub<a class="headerlink" href="#github" title="Link to this heading">¶</a></h3>
+<p>Complete source <a class="reference external" href="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/ESP-IDF_Robot/README.md">code</a> with README.md file: <a class="reference external" href="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/ESP-IDF_Robot/README.md">https://github.com/alexandrebobkov/ESP-Nodes/blob/main/ESP-IDF_Robot/README.md</a></p>
+<p>KiCAd <a class="reference external" href="https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter">Schematic</a> and PCB design: <a class="reference external" href="https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter">https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter</a></p>
+</section>
+</section>
+</div>
+</section>
+
+
+            <div class="clearer"></div>
           </div>
-         </section>
-        </section>
-        <span id="document-progress">
-        </span>
-        <section id="work-in-progress-walk-through">
-         <h2>
-          WORK-IN-PROGRESS WALK THROUGH
-          <a class="headerlink" href="#work-in-progress-walk-through" title="Link to this heading">
-           &para;
-          </a>
-         </h2>
-         <section id="finished-work">
-          <h3>
-           Finished Work
-           <a class="headerlink" href="#finished-work" title="Link to this heading">
-            &para;
-           </a>
-          </h3>
-          <img alt="_images/ESP-IDF_Robot.jpg" src="_images/ESP-IDF_Robot.jpg"/>
-         </section>
-         <section id="chassis">
-          <h3>
-           Chassis
-           <a class="headerlink" href="#chassis" title="Link to this heading">
-            &para;
-           </a>
-          </h3>
-          <figure class="align-center" id="id1">
-           <a class="reference internal image-reference" href="_images/chassi-progress_002d.jpg">
-            <img alt="_images/chassi-progress_002d.jpg" src="_images/chassi-progress_002d.jpg" style="height: 300px;"/>
-           </a>
-           <figcaption>
-            <p>
-             <span class="caption-text">
-              Completed chassis with only DC motor controllers installed.
-             </span>
-             <a class="headerlink" href="#id1" title="Link to this image">
-              &para;
-             </a>
-            </p>
-           </figcaption>
-          </figure>
-         </section>
-         <section id="wiring">
-          <h3>
-           Wiring
-           <a class="headerlink" href="#wiring" title="Link to this heading">
-            &para;
-           </a>
-          </h3>
-          <figure class="align-center" id="id2">
-           <a class="reference internal image-reference" href="_images/chassi-progress_003a.jpg">
-            <img alt="_images/chassi-progress_003a.jpg" src="_images/chassi-progress_003a.jpg" style="height: 750px;"/>
-           </a>
-           <figcaption>
-            <p>
-             <span class="caption-text">
-              Completed wiring.
-             </span>
-             <a class="headerlink" href="#id2" title="Link to this image">
-              &para;
-             </a>
-            </p>
-           </figcaption>
-          </figure>
-         </section>
-         <section id="motor-wires-harness">
-          <h3>
-           Motor Wires Harness
-           <a class="headerlink" href="#motor-wires-harness" title="Link to this heading">
-            &para;
-           </a>
-          </h3>
-          <figure class="align-center" id="id3">
-           <img alt="_images/motors-wiring-harness-001.jpg" src="_images/motors-wiring-harness-001.jpg"/>
-           <figcaption>
-            <p>
-             <span class="caption-text">
-              DC Motors wires secured inside harnes.
-             </span>
-             <a class="headerlink" href="#id3" title="Link to this image">
-              &para;
-             </a>
-            </p>
-           </figcaption>
-          </figure>
-         </section>
-        </section>
-        <span id="document-references">
-        </span>
-        <section id="references">
-         <h2>
-          REFERENCES
-          <a class="headerlink" href="#references" title="Link to this heading">
-           &para;
-          </a>
-         </h2>
-         <section id="github">
-          <h3>
-           GitHub
-           <a class="headerlink" href="#github" title="Link to this heading">
-            &para;
-           </a>
-          </h3>
-          <p>
-           Complete source
-           <a class="reference external" href="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/ESP-IDF_Robot/README.md">
-            code
-           </a>
-           with README.md file:
-           <a class="reference external" href="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/ESP-IDF_Robot/README.md">
-            https://github.com/alexandrebobkov/ESP-Nodes/blob/main/ESP-IDF_Robot/README.md
-           </a>
-          </p>
-          <p>
-           KiCAd
-           <a class="reference external" href="https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter">
-            Schematic
-           </a>
-           and PCB design:
-           <a class="reference external" href="https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter">
-            https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter
-           </a>
-          </p>
-         </section>
-        </section>
-       </div>
-      </section>
-      <div class="clearer">
+        </div>
       </div>
-     </div>
+      <div class="clearer"></div>
     </div>
-   </div>
-   <div class="clearer">
-   </div>
-  </div>
-  <article id="back-cover">
-   <div class="container">
-    <div class="back-cover-footer">
-     <p>
-      &copy; Copyright 2025, Alexander B.
-     </p>
-     <p>
-      Created using
-      <a href="http://sphinx-doc.org/">
-       Sphinx
-      </a>
-      8.2.3.
-     </p>
+  
+
+<article id="back-cover">
+    <div class="container">
+        <div class="back-cover-footer">
+            <p>
+                    &#169; Copyright 2025, Alexander B.
+            </p>
+            <p>
+                  Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3.
+            </p>
+        </div>
     </div>
-   </div>
-  </article>
- </body>
+</article>
+  </body>
 </html>
