@@ -14,7 +14,7 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="OVERVIEW" href="intro.html" />
+    <link rel="next" title="1. OVERVIEW" href="intro.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -37,42 +37,49 @@
 <img alt="_images/ESP-IDF_Robot.jpg" src="_images/ESP-IDF_Robot.jpg" />
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="intro.html">OVERVIEW</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#abstract">ABSTRACT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">1. OVERVIEW</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#abstract">1.1. ABSTRACT</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">HOW DOES IT WORK?</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="overview.html#reserved-pins-gpios">Reserved Pins &amp; GPIOs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="overview.html#fusion-of-software-with-hardware">Fusion of Software with Hardware</a></li>
-<li class="toctree-l2"><a class="reference internal" href="overview.html#schematic">Schematic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">2. HOW DOES IT WORK?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#reserved-pins-gpios">2.1. Reserved Pins &amp; GPIOs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#x-and-y-axis">2.1.1. x- and y- axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#direction-and-speed">2.1.2. Direction and Speed</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="data.html">DATA STRUCTS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="data.html#data-payload">Data Payload</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#fusion-of-software-with-hardware">2.2. Fusion of Software with Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#schematic">2.3. Schematic</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="transmitter.html">TRANSMITTER</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="transmitter.html#configuration-variables">Configuration Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="transmitter.html#reading-joystick-x-and-y-axis-values">Reading Joystick x- and y- Axis Values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="transmitter.html#sending-ecapsulating-data">Sending &amp; Ecapsulating Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="transmitter.html#main-function">Main Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">3. DATA STRUCTS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="data.html#data-payload">3.1. Data Payload</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data.html#why-use-attribute-packed">3.1.1. Why use __attribute((packed))?</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="receiver.html">RECEIVER</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="receiver.html#configuration-variables">Configuration Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="receiver.html#receiving-extracting-data">Receiving &amp; Extracting Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="receiver.html#main-function">Main Function</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="progress.html">WORK-IN-PROGRESS WALK THROUGH</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="progress.html#finished-work">Finished Work</a></li>
-<li class="toctree-l2"><a class="reference internal" href="progress.html#chassis">Chassis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="progress.html#wiring">Wiring</a></li>
-<li class="toctree-l2"><a class="reference internal" href="progress.html#motor-wires-harness">Motor Wires Harness</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transmitter.html">4. TRANSMITTER</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="transmitter.html#configuration-variables">4.1. Configuration Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transmitter.html#reading-joystick-x-and-y-axis-values">4.2. Reading Joystick x- and y- Axis Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transmitter.html#sending-ecapsulating-data">4.3. Sending &amp; Ecapsulating Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transmitter.html#main-function">4.4. Main Function</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="references.html">REFERENCES</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="references.html#github">GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receiver.html">5. RECEIVER</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="receiver.html#configuration-variables">5.1. Configuration Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="receiver.html#receiving-extracting-data">5.2. Receiving &amp; Extracting Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="receiver.html#main-function">5.3. Main Function</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="progress.html">6. WORK-IN-PROGRESS WALK THROUGH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="progress.html#finished-work">6.1. Finished Work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="progress.html#chassis">6.2. Chassis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="progress.html#wiring">6.3. Wiring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="progress.html#motor-wires-harness">6.4. Motor Wires Harness</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">7. REFERENCES</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="references.html#github">7.1. GitHub</a></li>
 </ul>
 </li>
 </ul>
@@ -106,20 +113,20 @@
 </search>
 <script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="intro.html">OVERVIEW</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">HOW DOES IT WORK?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data.html">DATA STRUCTS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transmitter.html">TRANSMITTER</a></li>
-<li class="toctree-l1"><a class="reference internal" href="receiver.html">RECEIVER</a></li>
-<li class="toctree-l1"><a class="reference internal" href="progress.html">WORK-IN-PROGRESS WALK THROUGH</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references.html">REFERENCES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">1. OVERVIEW</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">2. HOW DOES IT WORK?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">3. DATA STRUCTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transmitter.html">4. TRANSMITTER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receiver.html">5. RECEIVER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="progress.html">6. WORK-IN-PROGRESS WALK THROUGH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">7. REFERENCES</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="#">Documentation overview</a><ul>
-      <li>Next: <a href="intro.html" title="next chapter">OVERVIEW</a></li>
+      <li>Next: <a href="intro.html" title="next chapter"><span class="section-number">1. </span>OVERVIEW</a></li>
   </ul></li>
 </ul>
 </div>

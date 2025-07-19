@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>TRANSMITTER &#8212; Byte Rider 06-2025 documentation</title>
+    <title>4. TRANSMITTER &#8212; Byte Rider 06-2025 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
     <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
@@ -14,8 +14,8 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="RECEIVER" href="receiver.html" />
-    <link rel="prev" title="DATA STRUCTS" href="data.html" />
+    <link rel="next" title="5. RECEIVER" href="receiver.html" />
+    <link rel="prev" title="3. DATA STRUCTS" href="data.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -34,9 +34,9 @@
           <div class="body" role="main">
             
   <section id="transmitter">
-<h1>TRANSMITTER<a class="headerlink" href="#transmitter" title="Link to this heading">¶</a></h1>
+<h1><span class="section-number">4. </span>TRANSMITTER<a class="headerlink" href="#transmitter" title="Link to this heading">¶</a></h1>
 <section id="configuration-variables">
-<h2>Configuration Variables<a class="headerlink" href="#configuration-variables" title="Link to this heading">¶</a></h2>
+<h2><span class="section-number">4.1. </span>Configuration Variables<a class="headerlink" href="#configuration-variables" title="Link to this heading">¶</a></h2>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">receiver_mac</span><span class="p">[</span><span class="n">ESP_NOW_ETH_ALEN</span><span class="p">]</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mh">0xe4</span><span class="p">,</span><span class="w"> </span><span class="mh">0xb0</span><span class="p">,</span><span class="w"> </span><span class="mh">0x63</span><span class="p">,</span><span class="w"> </span><span class="mh">0x17</span><span class="p">,</span><span class="w"> </span><span class="mh">0x9e</span><span class="p">,</span><span class="w"> </span><span class="mh">0x44</span><span class="p">};</span>
 
 <span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
@@ -53,10 +53,10 @@
 </div>
 </section>
 <section id="reading-joystick-x-and-y-axis-values">
-<h2>Reading Joystick x- and y- Axis Values<a class="headerlink" href="#reading-joystick-x-and-y-axis-values" title="Link to this heading">¶</a></h2>
+<h2><span class="section-number">4.2. </span>Reading Joystick x- and y- Axis Values<a class="headerlink" href="#reading-joystick-x-and-y-axis-values" title="Link to this heading">¶</a></h2>
 </section>
 <section id="sending-ecapsulating-data">
-<h2>Sending &amp; Ecapsulating Data<a class="headerlink" href="#sending-ecapsulating-data" title="Link to this heading">¶</a></h2>
+<h2><span class="section-number">4.3. </span>Sending &amp; Ecapsulating Data<a class="headerlink" href="#sending-ecapsulating-data" title="Link to this heading">¶</a></h2>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">sendData</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
@@ -75,7 +75,7 @@
 </div>
 </section>
 <section id="main-function">
-<h2>Main Function<a class="headerlink" href="#main-function" title="Link to this heading">¶</a></h2>
+<h2><span class="section-number">4.4. </span>Main Function<a class="headerlink" href="#main-function" title="Link to this heading">¶</a></h2>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;freertos/FreeRTOS.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;nvs_flash.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;esp_err.h&quot;</span>
@@ -138,27 +138,27 @@
 </search>
 <script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="intro.html">OVERVIEW</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">HOW DOES IT WORK?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data.html">DATA STRUCTS</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">TRANSMITTER</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#configuration-variables">Configuration Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#reading-joystick-x-and-y-axis-values">Reading Joystick x- and y- Axis Values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#sending-ecapsulating-data">Sending &amp; Ecapsulating Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#main-function">Main Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">1. OVERVIEW</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">2. HOW DOES IT WORK?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">3. DATA STRUCTS</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. TRANSMITTER</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-variables">4.1. Configuration Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reading-joystick-x-and-y-axis-values">4.2. Reading Joystick x- and y- Axis Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sending-ecapsulating-data">4.3. Sending &amp; Ecapsulating Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main-function">4.4. Main Function</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="receiver.html">RECEIVER</a></li>
-<li class="toctree-l1"><a class="reference internal" href="progress.html">WORK-IN-PROGRESS WALK THROUGH</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references.html">REFERENCES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receiver.html">5. RECEIVER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="progress.html">6. WORK-IN-PROGRESS WALK THROUGH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">7. REFERENCES</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="data.html" title="previous chapter">DATA STRUCTS</a></li>
-      <li>Next: <a href="receiver.html" title="next chapter">RECEIVER</a></li>
+      <li>Previous: <a href="data.html" title="previous chapter"><span class="section-number">3. </span>DATA STRUCTS</a></li>
+      <li>Next: <a href="receiver.html" title="next chapter"><span class="section-number">5. </span>RECEIVER</a></li>
   </ul></li>
 </ul>
 </div>

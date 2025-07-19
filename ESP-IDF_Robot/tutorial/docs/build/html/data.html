@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>DATA STRUCTS &#8212; Byte Rider 06-2025 documentation</title>
+    <title>3. DATA STRUCTS &#8212; Byte Rider 06-2025 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
     <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
@@ -14,8 +14,8 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="TRANSMITTER" href="transmitter.html" />
-    <link rel="prev" title="HOW DOES IT WORK?" href="overview.html" />
+    <link rel="next" title="4. TRANSMITTER" href="transmitter.html" />
+    <link rel="prev" title="2. HOW DOES IT WORK?" href="overview.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -34,7 +34,7 @@
           <div class="body" role="main">
             
   <section id="data-structs">
-<h1>DATA STRUCTS<a class="headerlink" href="#data-structs" title="Link to this heading">¶</a></h1>
+<h1><span class="section-number">3. </span>DATA STRUCTS<a class="headerlink" href="#data-structs" title="Link to this heading">¶</a></h1>
 <p>The struct serves as the data payload for sending control signals from the transmitting device to the receiver using ESP-NOW.
 In addition, it may contain additional data such as telemetry, battery status, etc. The <em>sensors_data_t</em> struct encapsulates all control commands and sensor states
 relevant to the vehicle’s operation. It’s intended to be sent from a transmitting device (like a remote control) to a receiver
@@ -70,14 +70,14 @@ powerful in systems programming, embedded projects, and when dealing with raw bi
 ESP-NOW.</p>
 </div>
 <section id="data-payload">
-<h2>Data Payload<a class="headerlink" href="#data-payload" title="Link to this heading">¶</a></h2>
+<h2><span class="section-number">3.1. </span>Data Payload<a class="headerlink" href="#data-payload" title="Link to this heading">¶</a></h2>
 <p><em>x_axis</em> and <em>y_axis</em> fields capture analog input from a joystick, determining direction and speed.
 <em>nav_bttn</em> represents a joystick push-button.</p>
 <p><em>led</em> allows the transmitter to toggle an onboard LED and is used for status indication (e.g. pairing, battery warning, etc).</p>
 <p><em>motor1_rpm_pwm</em> to <em>motor4_rpm_pwm</em> provide individual PWM signals to four DC motors.
 This enables fine-grained speed control, supports differential drive configurations, and even allows for maneuvering in multi-directional platforms like omni-wheel robots.</p>
 <section id="why-use-attribute-packed">
-<h3>Why use __attribute((packed))?<a class="headerlink" href="#why-use-attribute-packed" title="Link to this heading">¶</a></h3>
+<h3><span class="section-number">3.1.1. </span>Why use __attribute((packed))?<a class="headerlink" href="#why-use-attribute-packed" title="Link to this heading">¶</a></h3>
 <p>ESP-NOW uses fixed-size data packets (up to 250 bytes). The <em>__attribute__((packed))</em> removes compiler-added padding for precise byte alignment.</p>
 <p>As <em>packed</em> attribute tells the compiler not to add any padding between fields in memory, this makes the struct:</p>
 <blockquote>
@@ -119,24 +119,27 @@ This enables fine-grained speed control, supports differential drive configurati
 </search>
 <script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="intro.html">OVERVIEW</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">HOW DOES IT WORK?</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">DATA STRUCTS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#data-payload">Data Payload</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">1. OVERVIEW</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">2. HOW DOES IT WORK?</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. DATA STRUCTS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#data-payload">3.1. Data Payload</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#why-use-attribute-packed">3.1.1. Why use __attribute((packed))?</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="transmitter.html">TRANSMITTER</a></li>
-<li class="toctree-l1"><a class="reference internal" href="receiver.html">RECEIVER</a></li>
-<li class="toctree-l1"><a class="reference internal" href="progress.html">WORK-IN-PROGRESS WALK THROUGH</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references.html">REFERENCES</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transmitter.html">4. TRANSMITTER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receiver.html">5. RECEIVER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="progress.html">6. WORK-IN-PROGRESS WALK THROUGH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">7. REFERENCES</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="overview.html" title="previous chapter">HOW DOES IT WORK?</a></li>
-      <li>Next: <a href="transmitter.html" title="next chapter">TRANSMITTER</a></li>
+      <li>Previous: <a href="overview.html" title="previous chapter"><span class="section-number">2. </span>HOW DOES IT WORK?</a></li>
+      <li>Next: <a href="transmitter.html" title="next chapter"><span class="section-number">4. </span>TRANSMITTER</a></li>
   </ul></li>
 </ul>
 </div>

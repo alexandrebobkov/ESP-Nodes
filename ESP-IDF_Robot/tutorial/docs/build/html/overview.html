@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>HOW DOES IT WORK? &#8212; Byte Rider 06-2025 documentation</title>
+    <title>2. HOW DOES IT WORK? &#8212; Byte Rider 06-2025 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
     <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
@@ -14,8 +14,8 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="DATA STRUCT" href="data.html" />
-    <link rel="prev" title="OVERVIEW" href="intro.html" />
+    <link rel="next" title="3. DATA STRUCTS" href="data.html" />
+    <link rel="prev" title="1. OVERVIEW" href="intro.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -34,19 +34,19 @@
           <div class="body" role="main">
             
   <section id="how-does-it-work">
-<h1>HOW DOES IT WORK?<a class="headerlink" href="#how-does-it-work" title="Link to this heading">¶</a></h1>
+<h1><span class="section-number">2. </span>HOW DOES IT WORK?<a class="headerlink" href="#how-does-it-work" title="Link to this heading">¶</a></h1>
 <p>The BitByteRider RC car is powered by ESP32-C3 Breadboard &amp; Power adapter developmemt board.
 The Schematic and KiCAd PCB board are available on <a class="reference external" href="https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter">GitHub</a>: <a class="reference external" href="https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter">https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter</a></p>
 <section id="reserved-pins-gpios">
-<h2>Reserved Pins &amp; GPIOs<a class="headerlink" href="#reserved-pins-gpios" title="Link to this heading">¶</a></h2>
+<h2><span class="section-number">2.1. </span>Reserved Pins &amp; GPIOs<a class="headerlink" href="#reserved-pins-gpios" title="Link to this heading">¶</a></h2>
 <p>The following table summarizes GPIOs and pins reserved for operations purposes.</p>
 <p>The GPIO numbers correspond to those on the ESP32-C3 WROOM microcontroller. The Pin number corresponds to the pin on the Breadboard and Power adapter development board.</p>
 <section id="x-and-y-axis">
-<h3>x- and y- axis<a class="headerlink" href="#x-and-y-axis" title="Link to this heading">¶</a></h3>
+<h3><span class="section-number">2.1.1. </span>x- and y- axis<a class="headerlink" href="#x-and-y-axis" title="Link to this heading">¶</a></h3>
 <p>The <strong>GPIO0</strong> and <strong>GPIO1</strong> assigned to measuring the voltage of x- and y- axis of the Joystick. Lastly, there is a group of GPIO pairs responsible for PWM for DC motors.</p>
 </section>
 <section id="direction-and-speed">
-<h3>Direction and Speed<a class="headerlink" href="#direction-and-speed" title="Link to this heading">¶</a></h3>
+<h3><span class="section-number">2.1.2. </span>Direction and Speed<a class="headerlink" href="#direction-and-speed" title="Link to this heading">¶</a></h3>
 <p>The pairs of DC motors on the left side are wired to the dedicated PWM channels. This means that <em>ESP32-C3 Breadboard DevBoard</em> can control rotation speed and direction of DC motors in pairs only (i.e. left and right side).
 Consequently, only four PWM channels are sufficient for controlling the direction of the RC car.
 Based on this constraint, the RC car can only move front, back, and turn/rotate left and right. Any other movements are not possible (i.e. diagonal or sideways).</p>
@@ -170,7 +170,7 @@ Right DC Motors spin clockwise</p></td>
 </section>
 </section>
 <section id="fusion-of-software-with-hardware">
-<h2>Fusion of Software with Hardware<a class="headerlink" href="#fusion-of-software-with-hardware" title="Link to this heading">¶</a></h2>
+<h2><span class="section-number">2.2. </span>Fusion of Software with Hardware<a class="headerlink" href="#fusion-of-software-with-hardware" title="Link to this heading">¶</a></h2>
 <p>The <em>struct</em> for storing motors PWM values.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">motors_rpm</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor1_rpm_pwm</span><span class="p">;</span>
@@ -243,7 +243,7 @@ Right DC Motors spin clockwise</p></td>
 </div>
 </section>
 <section id="schematic">
-<h2>Schematic<a class="headerlink" href="#schematic" title="Link to this heading">¶</a></h2>
+<h2><span class="section-number">2.3. </span>Schematic<a class="headerlink" href="#schematic" title="Link to this heading">¶</a></h2>
 <img alt="_images/ESP-IDF_Robot_schematic.png" src="_images/ESP-IDF_Robot_schematic.png" />
 </section>
 </section>
@@ -275,26 +275,30 @@ Right DC Motors spin clockwise</p></td>
 </search>
 <script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="intro.html">OVERVIEW</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">HOW DOES IT WORK?</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#reserved-pins-gpios">Reserved Pins &amp; GPIOs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#fusion-of-software-with-hardware">Fusion of Software with Hardware</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#schematic">Schematic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">1. OVERVIEW</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. HOW DOES IT WORK?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#reserved-pins-gpios">2.1. Reserved Pins &amp; GPIOs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#x-and-y-axis">2.1.1. x- and y- axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#direction-and-speed">2.1.2. Direction and Speed</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="data.html">DATA STRUCT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transmitter.html">TRANSMITTER</a></li>
-<li class="toctree-l1"><a class="reference internal" href="receiver.html">RECEIVER</a></li>
-<li class="toctree-l1"><a class="reference internal" href="progress.html">WORK-IN-PROGRESS WALK THROUGH</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references.html">REFERENCES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fusion-of-software-with-hardware">2.2. Fusion of Software with Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#schematic">2.3. Schematic</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">3. DATA STRUCTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transmitter.html">4. TRANSMITTER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="receiver.html">5. RECEIVER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="progress.html">6. WORK-IN-PROGRESS WALK THROUGH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">7. REFERENCES</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="intro.html" title="previous chapter">OVERVIEW</a></li>
-      <li>Next: <a href="data.html" title="next chapter">DATA STRUCT</a></li>
+      <li>Previous: <a href="intro.html" title="previous chapter"><span class="section-number">1. </span>OVERVIEW</a></li>
+      <li>Next: <a href="data.html" title="next chapter"><span class="section-number">3. </span>DATA STRUCTS</a></li>
   </ul></li>
 </ul>
 </div>
