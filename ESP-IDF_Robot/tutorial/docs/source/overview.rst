@@ -166,7 +166,8 @@ to read analog values and store them in the corresponding x- and y- variables.
 | 7    | 6   | PWM for counter-clockwise rotation of left-side motors  | LEDC_CHANNEL_3 |
 +------+-----+---------------------------------------------------------+----------------+
 
-The *struct* for storing motors PWM values.
+The *struct* for storing motors PWM values is shown below. Although the direction and speed of bitByte Rider RC car can be 
+controlled using only two PWM values, the four values are used to control each DC motor separately.
 
 .. code-block:: c
 
