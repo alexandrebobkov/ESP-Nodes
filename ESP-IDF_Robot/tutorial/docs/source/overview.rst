@@ -215,7 +215,7 @@ On the transmitter`` device, the PWM values for the DC motors are send to the re
             ESP_LOGW("ESP-NOW", "Data was sent.");
     }
 
-As data is being sent, the function onDataSent() is called to display the status of the data transmission.
+As data is being sent, the function onDataSent() is called to check & display the status of the data transmission.
 
 .. code-block:: c
 
