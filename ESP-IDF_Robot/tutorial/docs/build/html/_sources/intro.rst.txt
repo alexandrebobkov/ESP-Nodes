@@ -1,12 +1,13 @@
 OVERVIEW
 ============
 
-At the heart of this project is a customizable remote-controlled car that responds to real-time control inputs, capable of handling speed adjustments, 
-directional changes, and even extended features like lights or sensors. The foundational setup uses ESP-NOW for transmitter and receiver devices, 
-allowing you to wirelessly guide the car's behaviour. While the design and physical appearance of the RC car can vary wildly depending on your 
-creativity and available hardware, the control system remains elegantly efficient. To facilitate wireless communication between devices, the system employs 
-ESP-NOW , which is a lightweight and connection-free protocol ideal for fast, low-latency data transmission between ESP32 microcontrollers. Though ESP-NOW is used under 
-the hood, the spotlight remains on the RC car itself.
+At the heart of this project is ESP32-C3 IoT Link than enables a customizable remote-controlled car to responds to real-time 
+control inputs, handle speed adjustments, directional changes, and even extend features like measuring system telemetry values
+such as voltage, current, temperature, etc. The foundational setup uses ESP-NOW for transmitter and receiver devices, 
+allowing you to wirelessly control the car's behaviour. While the design and physical appearance of the RC car can vary wildly 
+depending on your creativity and available hardware, the control system remains the same. To facilitate wireless communication 
+between devices, the system employs IoT Link powered by ESP-NOW , which is a lightweight and connection-free protocol ideal for fast, 
+low-latency data transmission between ESP32 microcontrollers.
 
 An ESP-NOW-based remote controller sends control data wirelessly using the ESP-NOW protocol to the remote-controlled car. ESP-NOW enables fast and 
 efficient communication between ESP32 devices without the need for a Wi-Fi router, network, or pairing. The provided tutorial demonstrates a functional 
