@@ -12,6 +12,16 @@ In addition to enabling real-time control, using ESP-NOW introduces key networki
 structured communication. By using data structures to group control variables, you gain hands-on experience with how information 
 is packaged and transmitted, laying the groundwork for understanding the fundamentals of network communication in embedded systems.
 
+The joystick used in the bitByteRider RC car system outputs analog voltages ranging from 0V to 3.3V on both the X and Y axes, depending on the position of the joystick. These voltage levels are read by the ESP32-C3’s ADC (Analog-to-Digital Converter) inputs.
+
+When the joystick is in its neutral (centered) position, the ADC inputs on the ESP32-C3 receive approximately 1.65V on both axes. This midpoint voltage is interpreted and interpolated as a PWM (Pulse Width Modulation) value of 0, indicating no movement or motor activity.
+
+As the joystick is pushed to its maximum positions along the X or Y axis, the voltage increases up to 3.3V. This maximum voltage is interpolated to a PWM value of 1024, which corresponds to a 100% duty cycle on the receiver side—resulting in full-speed operation of the DC motors.
+
+To transmit control data, the X and Y axis values are encapsulated in a C struct, along with the receiver’s MAC address, and sent wirelessly using ESP-NOW. This protocol enables low-latency, connectionless communication between the transmitter and receiver without requiring a Wi-Fi network or pairing.
+
+Upon reception, the RC car’s receiver decapsulates the data, extracts the joystick values, and interpolates them back into PWM signals. These signals are then used to control the rotation speeds of the DC motors, enabling smooth and responsive remote control. This process not only facilitates real-time control but also introduces students to key networking concepts such as data encapsulation, structured communication, and the fundamentals of wireless data transmission in embedded systems.
+
 .. _GitHub: https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter
 
 Reserved Pins & GPIOs
