@@ -12,7 +12,7 @@ In addition to enabling real-time control, using ESP-NOW introduces key networki
 structured communication. By using data structures to group control variables, you gain hands-on experience with how information 
 is packaged and transmitted, laying the groundwork for understanding the fundamentals of network communication in embedded systems.
 
-The joystick used in the bitByteRider RC car system outputs analog voltages ranging from 0V to 3.3V on both the X and Y axes, depending on the position of the joystick. These voltage levels are read by the ESP32-C3’s ADC (Analog-to-Digital Converter) inputs.
+The joystick used in the bitByteRider RC car remote unit outputs analog voltages ranging from 0V to 3.3V on both the x- and y- axes, depending on the position of the joystick. These voltage levels are read by the ESP32-C3’s ADC (Analog-to-Digital Converter) inputs.
 
 When the joystick is in its neutral (centered) position, the ADC inputs on the ESP32-C3 receive approximately 1.65V on both axes. This midpoint voltage is interpreted and interpolated as a PWM (Pulse Width Modulation) value of 0, indicating no movement or motor activity.
 
