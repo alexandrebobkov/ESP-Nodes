@@ -325,17 +325,17 @@ structured communication. By using data structures to group control variables, y
 is packaged and transmitted, laying the groundwork for understanding the fundamentals of network communication in embedded systems.
          </p>
          <p>
-          The joystick used in the bitByteRider RC car remote unit outputs analog voltages ranging from 0V to 3.3V on both the x- and y- axes,
+          The joystick used in the bitByteRider RC car remote unit outputs analog voltages ranging from 0V to 3.3V on both the x- and y-axes,
 depending on the position of the joystick. These voltage levels are read by the ESP32-C3&rsquo;s ADC (Analog-to-Digital Converter) inputs.
          </p>
          <p>
-          When the joystick is in its neutral (centered) position, the ADC inputs on the ESP32-C3 receive approximately 1.65V on both axes.
+          When the joystick is in its neutral (centred) position, the ADC inputs on the ESP32-C3 receive approximately 1.65V on both axes.
 This midpoint voltage is interpreted and interpolated into a PWM (Pulse Width Modulation) value of 0, indicating no movement or
 motor activity.
          </p>
          <p>
-          As the joystick is pushed to its maximum positions along the x- and y- axis, the voltage increases up to 3.3V. This maximum voltage
-is interpolated to a PWM value of 1024, which corresponds to a 100% duty cycle on the receiver side&mdash;resulting in full-speed
+          As the joystick is pushed to its maximum positions along the x- and y-axis, the voltage increases up to 3.3V. This maximum voltage
+is interpolated to a PWM value of 1024, which corresponds to a 100% duty cycle on the receiver side, resulting in full-speed
 operation of the DC motors.
          </p>
          <p>
@@ -355,6 +355,15 @@ signals. These signals are then used to control the rotation speeds of the DC mo
           This process not only facilitates real-time control but also introduces you to key networking concepts such as data
 encapsulation, data structs, and the fundamentals of wireless data transmission in embedded systems.
          </p>
+         <div class="admonition-what-is-encapsulation admonition">
+          <p class="admonition-title">
+           What is encapsulation?
+          </p>
+          <p>
+           Encapsulation refers to the process of organizing and packaging data into a structured format before it is transmitted between
+devices. This is a fundamental concept in networking and communication protocols, including those used in IoT systems.
+          </p>
+         </div>
          <section id="reserved-pins-gpios">
           <h3>
            Reserved Pins &amp; GPIOs
