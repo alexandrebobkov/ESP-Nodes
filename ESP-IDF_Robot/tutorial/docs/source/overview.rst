@@ -215,6 +215,18 @@ On the transmitter`` device, the PWM values for the DC motors are send to the re
             ESP_LOGW("ESP-NOW", "Data was sent.");
     }
 
+As data is being sent, the function onDataSent() is called to display the status of the data transmission.
+
+.. code-block:: c
+
+    // Call-back for the event when data is being sent
+    void onDataSent (uint8_t *mac_addr, esp_now_send_status_t status) {
+        ESP_LOGW(TAG, "Packet send status: 0x%04X", status);
+    }
+
+    ... ... ...
+    ... ... ...
+
 On the receiver device, the data is saved in the variables by the call-back function onDataReceived().
 
 .. code-block:: c
@@ -227,11 +239,6 @@ On the receiver device, the data is saved in the variables by the call-back func
         ESP_LOGI(TAG, "x-axis: 0x%04x", buf->x_axis);
         ESP_LOGI(TAG, "x-axis: 0x%04x", buf->y_axis);
         ESP_LOGI(TAG, "PWM 1: 0x%04x", buf->motor1_rpm_pwm);
-    }
-
-    // Call-back for the event when data is being sent
-    void onDataSent (uint8_t *mac_addr, esp_now_send_status_t status) {
-        ESP_LOGW(TAG, "Packet send status: 0x%04X", status);
     }
 
 The rc_send_data_task() function runs every 0.1 second to transmit the data to the receiver.
