@@ -4,9 +4,13 @@ HOW DOES IT WORK?
 The bitByteRider RC car is powered by ESP32-C3 bitBoard. The Schematic and KiCAd PCB board files are available 
 on GitHub_: https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter
 
-The bitByteRider RC car operates using the two main units: the transmitter, which reads and sends the joystick x- and y- values; 
-and, the receiver, which translates the received values into PWM signals for controlling the DC motors. The both units are linked
-via ESP-NOW, a low-latency, connectionless communication protocol that doesn't require a Wi-Fi network or pairing. 
+The bitByteRider RC car operates using two main units: the *transmitter*, which reads and sends the joystick's X and Y values, and 
+the *receiver*, which interprets these values and converts them into PWM signals to control the DC motors. Both units communicate 
+via **ESP-NOW**, a low-latency, connectionless wireless protocol that requires no Wi-Fi network or pairing.
+
+In addition to enabling real-time control, using ESP-NOW introduces to key networking concepts such as **data encapsulation** and 
+structured communication. By using data structures to group control variables, you gain hands-on experience with how information 
+is packaged and transmitted — laying the groundwork for understanding the fundamentals of network communication in embedded systems.
 
 .. _GitHub: https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter
 
