@@ -145,7 +145,8 @@ left turn, the receiver translates the signal into 100% PWM on the left-side mot
 to pivot. The opposite occurs for a right turn, with 100% PWM on the right and 0% on the left, enabling precise directional control.
 
 The table below summarizes the reserved GPIOs. These GPIOs are hard-wired to the corresponding components, and hard-coded in the 
-corresponding functions.
+corresponding functions. For example, the GPIOs 0 and 1 are hard-wired to the joystick x- and y- axis, respectively; and, hard-coded
+to read analog values and store them in the corresponding x- and y- variables.
 
 +------+-----+---------------------------------------------------------+----------------+
 | GPIO | Pin | Function                                                | Notes          |
