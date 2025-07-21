@@ -144,7 +144,8 @@ Similarly, when the joystick is pushed fully to the left or right, the X-axis vo
 left turn, the receiver translates the signal into 100% PWM on the left-side motors and 0% on the right-side motors, causing the car 
 to pivot. The opposite occurs for a right turn, with 100% PWM on the right and 0% on the left, enabling precise directional control.
 
-The table below summarizes the reserved GPIOs.
+The table below summarizes the reserved GPIOs. These GPIOs are hard-wired to the corresponding components, and hard-coded in the 
+corresponding functions.
 
 +------+-----+---------------------------------------------------------+----------------+
 | GPIO | Pin | Function                                                | Notes          |
