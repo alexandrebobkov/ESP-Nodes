@@ -245,7 +245,7 @@ modes, making the system more adaptable and scalable for future development.</p>
 <span class="p">};</span>
 </pre></div>
 </div>
-<p>On the transmitter`` device, the PWM values for the DC motors are send to the receover using the following function. The variable
+<p>On the transmitter device, the PWM values for the DC motors are sent to the receiver using the following function. The variable
 <strong>receiver_mac</strong> stores the MAC address of the receiver device (ESP32-C3 bitBoard on the RC car).</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Function to send data to the receiver</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">sendData</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -280,7 +280,7 @@ modes, making the system more adaptable and scalable for future development.</p>
 </div>
 <p>This function is invoked by a dedicated FreeRTOS task every 100 milliseconds, ensuring consistent and timely transmission of
 control data to the receiver device. By leveraging FreeRTOS’s precise task scheduling, the system maintains low-latency
-communication and predictable behavior—critical for real-time control in embedded applications.</p>
+communication and predictable behaviour, critical for real-time control in embedded applications.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Continous, periodic task that sends data.</span>
 <span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">rc_send_data_task</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
