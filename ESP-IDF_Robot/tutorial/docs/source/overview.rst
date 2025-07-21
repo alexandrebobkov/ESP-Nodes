@@ -128,6 +128,19 @@ The following images illustrate various PWM duty cycles registered by oscillosco
 Fusion of Software with Hardware
 --------------------------------
 
+On one hand, we have the hardware designed so that the joystic x- and y- axis, and DC motors are wired to the proper GPIOs on the
+ESP32-C3 WROOM microcontroller. On the other hand, we have the software that reads the joystick x- and y- axis, sends the data 
+to the receiver device, and converts that to PWM values on the receiver device.
+
+In essense, the direction and speed of the bitByte Rider car is controlled by the two variables. On the remote controller device, 
+the joystic x- and y- axis values are sent to the receiver device in a raw format (i.e. analog voltages, "as-is"). On the receover 
+device, these two values are converted to the two PWM values; one for each pair of DC motors on left and right side.
+
+When jostick is in the forward position, the x-axis value is at 1.65V, whule y-axis value is at 3.3V. Conseuently, the receover on RC car
+translates these values to PWM with a duty cycle of 100% on each side. Similarly, when the joystick is in left (or right position), the
+receiver translates the x-axis value to PWM of 100% on the left side DC motors, and 0% on the right side DC motors (or, opposite for the 
+right positionof the joystick).
+
 The table below summarizes the reserved GPIOs.
 
 +------+-----+---------------------------------------------------------+----------------+
