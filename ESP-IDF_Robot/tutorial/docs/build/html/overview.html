@@ -35,15 +35,21 @@
             
   <section id="how-does-it-work">
 <h1><span class="section-number">2. </span>HOW DOES IT WORK?<a class="headerlink" href="#how-does-it-work" title="Link to this heading">¶</a></h1>
-<p>The BitByteRider RC car is powered by ESP32-C3 Breadboard &amp; Power adapter developmemt board.
-The Schematic and KiCAd PCB board are available on <a class="reference external" href="https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter">GitHub</a>: <a class="reference external" href="https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter">https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter</a></p>
+<p>The bitByteRider RC car is powered by ESP32-C3 bitBoard. The Schematic and KiCAd PCB board files are available
+on <a class="reference external" href="https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter">GitHub</a>: <a class="reference external" href="https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter">https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter</a></p>
+<p>The bitByteRider RC car operates using two main units: the <em>transmitter</em>, which reads and sends the joystick’s X and Y values, and
+the <em>receiver</em>, which interprets these values and converts them into PWM signals to control the DC motors. Both units communicate
+via <strong>ESP-NOW</strong>, a low-latency, connectionless wireless protocol that requires no Wi-Fi network or pairing.</p>
+<p>In addition to enabling real-time control, using ESP-NOW introduces to key networking concepts such as <strong>data encapsulation</strong> and
+structured communication. By using data structures to group control variables, you gain hands-on experience with how information
+is packaged and transmitted — laying the groundwork for understanding the fundamentals of network communication in embedded systems.</p>
 <section id="reserved-pins-gpios">
 <h2><span class="section-number">2.1. </span>Reserved Pins &amp; GPIOs<a class="headerlink" href="#reserved-pins-gpios" title="Link to this heading">¶</a></h2>
 <p>The following table summarizes GPIOs and pins reserved for operations purposes.</p>
 <p>The GPIO numbers correspond to those on the ESP32-C3 WROOM microcontroller. The Pin number corresponds to the pin on the Breadboard and Power adapter development board.</p>
 <section id="reading-the-joystick-x-and-y-axis">
 <h3><span class="section-number">2.1.1. </span>Reading the Joystick x- and y- axis<a class="headerlink" href="#reading-the-joystick-x-and-y-axis" title="Link to this heading">¶</a></h3>
-<p>To determine the position of the Joystick, the BitRider RC car uses ADC to measure voltage on two GPIOs connected to the joystic
+<p>To determine the position of the Joystick, the BitRider RC car uses ADC to measure voltage on two GPIOs connected to the joystick
 x- and y- axis potentionometers (<strong>GPIO0</strong> and <strong>GPIO1</strong>).</p>
 </section>
 <section id="controlling-the-direction-and-speed">

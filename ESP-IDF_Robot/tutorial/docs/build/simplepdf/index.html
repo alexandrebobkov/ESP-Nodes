@@ -286,8 +286,8 @@ allows the RC car to respond instantly to user input, managing speed and directi
           </a>
          </h2>
          <p>
-          The BitByteRider RC car is powered by ESP32-C3 Breadboard &amp; Power adapter developmemt board.
-The Schematic and KiCAd PCB board are available on
+          The bitByteRider RC car is powered by ESP32-C3 bitBoard. The Schematic and KiCAd PCB board files are available
+on
           <a class="reference external" href="https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter">
            GitHub
           </a>
@@ -295,6 +295,32 @@ The Schematic and KiCAd PCB board are available on
           <a class="reference external" href="https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter">
            https://github.com/alexandrebobkov/ESP32-C3_Breadboard-Adapter
           </a>
+         </p>
+         <p>
+          The bitByteRider RC car operates using two main units: the
+          <em>
+           transmitter
+          </em>
+          , which reads and sends the joystick&rsquo;s X and Y values, and
+the
+          <em>
+           receiver
+          </em>
+          , which interprets these values and converts them into PWM signals to control the DC motors. Both units communicate
+via
+          <strong>
+           ESP-NOW
+          </strong>
+          , a low-latency, connectionless wireless protocol that requires no Wi-Fi network or pairing.
+         </p>
+         <p>
+          In addition to enabling real-time control, using ESP-NOW introduces to key networking concepts such as
+          <strong>
+           data encapsulation
+          </strong>
+          and
+structured communication. By using data structures to group control variables, you gain hands-on experience with how information
+is packaged and transmitted &mdash; laying the groundwork for understanding the fundamentals of network communication in embedded systems.
          </p>
          <section id="reserved-pins-gpios">
           <h3>
@@ -317,7 +343,7 @@ The Schematic and KiCAd PCB board are available on
             </a>
            </h4>
            <p>
-            To determine the position of the Joystick, the BitRider RC car uses ADC to measure voltage on two GPIOs connected to the joystic
+            To determine the position of the Joystick, the BitRider RC car uses ADC to measure voltage on two GPIOs connected to the joystick
 x- and y- axis potentionometers (
             <strong>
              GPIO0
