@@ -215,6 +215,22 @@ On the transmitter`` device, the PWM values for the DC motors are send to the re
             ESP_LOGW("ESP-NOW", "Data was sent.");
     }
 
+This function is invoked by a dedicated FreeRTOS task every 100 milliseconds, ensuring consistent and timely transmission of 
+control data to the receiver device. By leveraging FreeRTOS's precise task scheduling, the system maintains low-latency 
+communication and predictable behavior—critical for real-time control in embedded applications.
+
+.. code-block:: c
+
+    // Continous, periodic task that sends data.
+    static void rc_send_data_task (void *arg) {
+
+        while (true) {
+            if (esp_now_is_peer_exist(receiver_mac))
+                sendData();
+            vTaskDelay (100 / portTICK_PERIOD_MS);
+        }
+    }
+
 As data is being sent, the function onDataSent() is called to check & display the status of the data transmission.
 
 .. code-block:: c
@@ -243,17 +259,6 @@ On the receiver device, the data is saved in the variables by the call-back func
 
 The rc_send_data_task() function runs every 0.1 second to transmit the data to the receiver.
 
-.. code-block:: c
-
-    // Continous, periodic task that sends data.
-    static void rc_send_data_task (void *arg) {
-
-        while (true) {
-            if (esp_now_is_peer_exist(receiver_mac))
-                sendData();
-            vTaskDelay (100 / portTICK_PERIOD_MS);
-        }
-    }
 
 Schematic
 ---------

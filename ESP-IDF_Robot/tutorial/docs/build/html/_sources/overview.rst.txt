@@ -144,7 +144,9 @@ Similarly, when the joystick is pushed fully to the left or right, the X-axis vo
 left turn, the receiver translates the signal into 100% PWM on the left-side motors and 0% on the right-side motors, causing the car 
 to pivot. The opposite occurs for a right turn, with 100% PWM on the right and 0% on the left, enabling precise directional control.
 
-The table below summarizes the reserved GPIOs.
+The table below summarizes the reserved GPIOs. These GPIOs are hard-wired to the corresponding components, and hard-coded in the 
+corresponding functions. For example, the GPIOs 0 and 1 are hard-wired to the joystick x- and y- axis, respectively; and, hard-coded
+to read analog values and store them in the corresponding x- and y- variables.
 
 +------+-----+---------------------------------------------------------+----------------+
 | GPIO | Pin | Function                                                | Notes          |
@@ -164,7 +166,10 @@ The table below summarizes the reserved GPIOs.
 | 7    | 6   | PWM for counter-clockwise rotation of left-side motors  | LEDC_CHANNEL_3 |
 +------+-----+---------------------------------------------------------+----------------+
 
-The *struct* for storing motors PWM values.
+The struct used to store motor PWM values is shown below. While the bitByteRider RC car can be effectively controlled using 
+just two PWM signals—one for each side—the structure is designed to hold four values, allowing room for future enhancements. This 
+forward-thinking design supports potential upgrades such as improved maneuverability, individual wheel control, or advanced driving 
+modes, making the system more adaptable and scalable for future development.
 
 .. code-block:: c
 
@@ -175,7 +180,8 @@ The *struct* for storing motors PWM values.
         int motor4_rpm_pwm;
     };
 
-The function for updating motors' PWM values.
+On the transmitter`` device, the PWM values for the DC motors are send to the receover using the following function. The variable
+**receiver_mac** stores the MAC address of the receiver device (ESP32-C3 bitBoard on the RC car).
 
 .. code-block:: c
 
@@ -209,7 +215,35 @@ The function for updating motors' PWM values.
             ESP_LOGW("ESP-NOW", "Data was sent.");
     }
 
-The onDataReceived() and onDataSent() are two call-back functions that get evoked on each corresponding event.
+This function is invoked by a dedicated FreeRTOS task every 100 milliseconds, ensuring consistent and timely transmission of 
+control data to the receiver device. By leveraging FreeRTOS's precise task scheduling, the system maintains low-latency 
+communication and predictable behavior—critical for real-time control in embedded applications.
+
+.. code-block:: c
+
+    // Continous, periodic task that sends data.
+    static void rc_send_data_task (void *arg) {
+
+        while (true) {
+            if (esp_now_is_peer_exist(receiver_mac))
+                sendData();
+            vTaskDelay (100 / portTICK_PERIOD_MS);
+        }
+    }
+
+As data is being sent, the function onDataSent() is called to check & display the status of the data transmission.
+
+.. code-block:: c
+
+    // Call-back for the event when data is being sent
+    void onDataSent (uint8_t *mac_addr, esp_now_send_status_t status) {
+        ESP_LOGW(TAG, "Packet send status: 0x%04X", status);
+    }
+
+    ... ... ...
+    ... ... ...
+
+On the receiver device, the data is saved in the variables by the call-back function onDataReceived().
 
 .. code-block:: c
     
@@ -223,24 +257,8 @@ The onDataReceived() and onDataSent() are two call-back functions that get evoke
         ESP_LOGI(TAG, "PWM 1: 0x%04x", buf->motor1_rpm_pwm);
     }
 
-    // Call-back for the event when data is being sent
-    void onDataSent (uint8_t *mac_addr, esp_now_send_status_t status) {
-        ESP_LOGW(TAG, "Packet send status: 0x%04X", status);
-    }
-
 The rc_send_data_task() function runs every 0.1 second to transmit the data to the receiver.
 
-.. code-block:: c
-
-    // Continous, periodic task that sends data.
-    static void rc_send_data_task (void *arg) {
-
-        while (true) {
-            if (esp_now_is_peer_exist(receiver_mac))
-                sendData();
-            vTaskDelay (100 / portTICK_PERIOD_MS);
-        }
-    }
 
 Schematic
 ---------

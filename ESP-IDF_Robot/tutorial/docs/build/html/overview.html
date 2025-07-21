@@ -184,7 +184,9 @@ full speed.</p>
 <p>Similarly, when the joystick is pushed fully to the left or right, the X-axis voltage shifts while the Y-axis remains neutral. For a
 left turn, the receiver translates the signal into 100% PWM on the left-side motors and 0% on the right-side motors, causing the car
 to pivot. The opposite occurs for a right turn, with 100% PWM on the right and 0% on the left, enabling precise directional control.</p>
-<p>The table below summarizes the reserved GPIOs.</p>
+<p>The table below summarizes the reserved GPIOs. These GPIOs are hard-wired to the corresponding components, and hard-coded in the
+corresponding functions. For example, the GPIOs 0 and 1 are hard-wired to the joystick x- and y- axis, respectively; and, hard-coded
+to read analog values and store them in the corresponding x- and y- variables.</p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>GPIO</p></th>
@@ -231,7 +233,10 @@ to pivot. The opposite occurs for a right turn, with 100% PWM on the right and 0
 </tr>
 </tbody>
 </table>
-<p>The <em>struct</em> for storing motors PWM values.</p>
+<p>The struct used to store motor PWM values is shown below. While the bitByteRider RC car can be effectively controlled using
+just two PWM signals—one for each side—the structure is designed to hold four values, allowing room for future enhancements. This
+forward-thinking design supports potential upgrades such as improved maneuverability, individual wheel control, or advanced driving
+modes, making the system more adaptable and scalable for future development.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">motors_rpm</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor1_rpm_pwm</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motor2_rpm_pwm</span><span class="p">;</span>
@@ -240,7 +245,8 @@ to pivot. The opposite occurs for a right turn, with 100% PWM on the right and 0
 <span class="p">};</span>
 </pre></div>
 </div>
-<p>The function for updating motors’ PWM values.</p>
+<p>On the transmitter`` device, the PWM values for the DC motors are send to the receover using the following function. The variable
+<strong>receiver_mac</strong> stores the MAC address of the receiver device (ESP32-C3 bitBoard on the RC car).</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Function to send data to the receiver</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">sendData</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">sensors_data_t</span><span class="w"> </span><span class="n">buffer</span><span class="p">;</span><span class="w">              </span><span class="c1">// Declare data struct</span>
@@ -272,24 +278,9 @@ to pivot. The opposite occurs for a right turn, with 100% PWM on the right and 0
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The onDataReceived() and onDataSent() are two call-back functions that get evoked on each corresponding event.</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Call-back for the event when data is being received</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">onDataReceived</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">mac_addr</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">data_len</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="n">buf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">sensors_data_t</span><span class="o">*</span><span class="p">)</span><span class="n">data</span><span class="p">;</span><span class="w">                            </span><span class="c1">// Allocate memory for buffer to store data being received</span>
-<span class="w">    </span><span class="n">ESP_LOGW</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Data was received&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x-axis: 0x%04x&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="o">-&gt;</span><span class="n">x_axis</span><span class="p">);</span>
-<span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x-axis: 0x%04x&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="o">-&gt;</span><span class="n">y_axis</span><span class="p">);</span>
-<span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;PWM 1: 0x%04x&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="o">-&gt;</span><span class="n">motor1_rpm_pwm</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="c1">// Call-back for the event when data is being sent</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">onDataSent</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">mac_addr</span><span class="p">,</span><span class="w"> </span><span class="n">esp_now_send_status_t</span><span class="w"> </span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">ESP_LOGW</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Packet send status: 0x%04X&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>The rc_send_data_task() function runs every 0.1 second to transmit the data to the receiver.</p>
+<p>This function is invoked by a dedicated FreeRTOS task every 100 milliseconds, ensuring consistent and timely transmission of
+control data to the receiver device. By leveraging FreeRTOS’s precise task scheduling, the system maintains low-latency
+communication and predictable behavior—critical for real-time control in embedded applications.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Continous, periodic task that sends data.</span>
 <span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">rc_send_data_task</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
@@ -301,6 +292,29 @@ to pivot. The opposite occurs for a right turn, with 100% PWM on the right and 0
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>As data is being sent, the function onDataSent() is called to check &amp; display the status of the data transmission.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Call-back for the event when data is being sent</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">onDataSent</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">mac_addr</span><span class="p">,</span><span class="w"> </span><span class="n">esp_now_send_status_t</span><span class="w"> </span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">ESP_LOGW</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Packet send status: 0x%04X&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
+<span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">...</span>
+</pre></div>
+</div>
+<p>On the receiver device, the data is saved in the variables by the call-back function onDataReceived().</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Call-back for the event when data is being received</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">onDataReceived</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">mac_addr</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">data_len</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="n">buf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">sensors_data_t</span><span class="o">*</span><span class="p">)</span><span class="n">data</span><span class="p">;</span><span class="w">                            </span><span class="c1">// Allocate memory for buffer to store data being received</span>
+<span class="w">    </span><span class="n">ESP_LOGW</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Data was received&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x-axis: 0x%04x&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="o">-&gt;</span><span class="n">x_axis</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x-axis: 0x%04x&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="o">-&gt;</span><span class="n">y_axis</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;PWM 1: 0x%04x&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="o">-&gt;</span><span class="n">motor1_rpm_pwm</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The rc_send_data_task() function runs every 0.1 second to transmit the data to the receiver.</p>
 </section>
 <section id="schematic">
 <h2><span class="section-number">2.3. </span>Schematic<a class="headerlink" href="#schematic" title="Link to this heading">¶</a></h2>
