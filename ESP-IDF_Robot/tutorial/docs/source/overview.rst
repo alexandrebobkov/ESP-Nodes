@@ -180,7 +180,7 @@ modes, making the system more adaptable and scalable for future development.
         int motor4_rpm_pwm;
     };
 
-On the transmitter`` device, the PWM values for the DC motors are send to the receover using the following function. The variable
+On the transmitter device, the PWM values for the DC motors are sent to the receiver using the following function. The variable
 **receiver_mac** stores the MAC address of the receiver device (ESP32-C3 bitBoard on the RC car).
 
 .. code-block:: c
