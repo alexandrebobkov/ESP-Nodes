@@ -180,7 +180,8 @@ modes, making the system more adaptable and scalable for future development.
         int motor4_rpm_pwm;
     };
 
-On the transmitter`` device, the PWM values for the DC motors are send to the receover using the following function:
+On the transmitter`` device, the PWM values for the DC motors are send to the receover using the following function. The variable
+**receiver_mac** stores the MAC address of the receiver device (ESP32-C3 bitBoard on the RC car).
 
 .. code-block:: c
 
@@ -214,7 +215,7 @@ On the transmitter`` device, the PWM values for the DC motors are send to the re
             ESP_LOGW("ESP-NOW", "Data was sent.");
     }
 
-The onDataReceived() and onDataSent() are two call-back functions that get evoked on each corresponding event.
+On the receiver device, the data is saved in the variables by the call-back function onDataReceived().
 
 .. code-block:: c
     
