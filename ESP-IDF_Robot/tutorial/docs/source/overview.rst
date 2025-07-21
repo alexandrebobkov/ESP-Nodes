@@ -136,10 +136,13 @@ In essense, the direction and speed of the bitByte Rider car is controlled by th
 the joystic x- and y- axis values are sent to the receiver device in a raw format (i.e. analog voltages, "as-is"). On the receover 
 device, these two values are converted to the two PWM values; one for each pair of DC motors on left and right side.
 
-When jostick is in the forward position, the x-axis value is at 1.65V, whule y-axis value is at 3.3V. Conseuently, the receover on RC car
-translates these values to PWM with a duty cycle of 100% on each side. Similarly, when the joystick is in left (or right position), the
-receiver translates the x-axis value to PWM of 100% on the left side DC motors, and 0% on the right side DC motors (or, opposite for the 
-right positionof the joystick).
+When the joystick is pushed forward, the X-axis voltage remains at 1.65V (neutral), while the Y-axis voltage rises to 3.3V. The 
+receiver on the RC car interprets this input and generates 100% PWM duty cycle signals on both sides, driving the car forward at 
+full speed.
+
+Similarly, when the joystick is pushed fully to the left or right, the X-axis voltage shifts while the Y-axis remains neutral. For a 
+left turn, the receiver translates the signal into 100% PWM on the left-side motors and 0% on the right-side motors, causing the car 
+to pivot. The opposite occurs for a right turn, with 100% PWM on the right and 0% on the left, enabling precise directional control.
 
 The table below summarizes the reserved GPIOs.
 
