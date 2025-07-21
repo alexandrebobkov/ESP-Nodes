@@ -217,7 +217,7 @@ On the transmitter`` device, the PWM values for the DC motors are send to the re
 
 This function is invoked by a dedicated FreeRTOS task every 100 milliseconds, ensuring consistent and timely transmission of 
 control data to the receiver device. By leveraging FreeRTOS's precise task scheduling, the system maintains low-latency 
-communication and predictable behavior—critical for real-time control in embedded applications.
+communication and predictable behaviour, critical for real-time control in embedded applications.
 
 .. code-block:: c
 
