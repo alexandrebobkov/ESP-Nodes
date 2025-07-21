@@ -257,9 +257,6 @@ On the receiver device, the data is saved in the variables by the call-back func
         ESP_LOGI(TAG, "PWM 1: 0x%04x", buf->motor1_rpm_pwm);
     }
 
-The rc_send_data_task() function runs every 0.1 second to transmit the data to the receiver.
-
-
 Schematic
 ---------
 
