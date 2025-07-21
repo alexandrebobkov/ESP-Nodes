@@ -125,6 +125,11 @@ The following images illustrate various PWM duty cycles registered by oscillosco
 
    <br/><br/><br/><br/>
 
+Fusion of Software with Hardware
+--------------------------------
+
+The table below summarizes the reserved GPIOs.
+
 +------+-----+---------------------------------------------------------+----------------+
 | GPIO | Pin | Function                                                | Notes          |
 +======+=====+=========================================================+================+
@@ -142,9 +147,6 @@ The following images illustrate various PWM duty cycles registered by oscillosco
 +------+-----+---------------------------------------------------------+----------------+
 | 7    | 6   | PWM for counter-clockwise rotation of left-side motors  | LEDC_CHANNEL_3 |
 +------+-----+---------------------------------------------------------+----------------+
-
-Fusion of Software with Hardware
---------------------------------
 
 The *struct* for storing motors PWM values.
 
