@@ -180,7 +180,7 @@ modes, making the system more adaptable and scalable for future development.
         int motor4_rpm_pwm;
     };
 
-On the receiver device, the PWM values for the DC motors are updated using the following function:
+On the transmitter`` device, the PWM values for the DC motors are send to the receover using the following function:
 
 .. code-block:: c
 
