@@ -56,6 +56,7 @@
 #include "esp_now.h"
 #include "esp_mac.h"
 #include "esp_wifi.h"
+#include "nvs_flash.h"
 #include "esp_system.h"
 #include "espnow_config.h"
 
@@ -280,7 +281,17 @@ static void wifi_init()
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
     ESP_ERROR_CHECK( esp_wifi_init(&cfg) );
     ESP_ERROR_CHECK( esp_wifi_set_storage(WIFI_STORAGE_RAM) );
-    ESP_ERROR_CHECK( esp_wifi_set_mode(ESPNOW_WIFI_MODE) );
+    //ESP_ERROR_CHECK( esp_wifi_set_mode(ESPNOW_WIFI_MODE) );
+    ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_STA) );
+    wifi_config_t wifi_config = {
+        .sta = {
+            .ssid = WIFI_SSID,
+            .password = WIFI_PASSWORD,
+            .channel = CONFIG_ESPNOW_CHANNEL,
+            .listen_interval = 0, // Disable listen interval
+        }
+    };
+    ESP_ERROR_CHECK( esp_wifi_set_config(ESPNOW_WIFI_IF, &wifi_config) );
     //ESP_ERROR_CHECK( esp_wifi_set_mode(CONFIG_ESPNOW_WIFI_MODE_STATION_SOFTAP) );
     ESP_ERROR_CHECK( esp_wifi_start());
     ESP_ERROR_CHECK( esp_wifi_set_channel(CONFIG_ESPNOW_CHANNEL, WIFI_SECOND_CHAN_NONE));
@@ -401,6 +412,18 @@ void task(void *pvParameters)
 
 void app_main(void)
 {
+    
+    esp_err_t wifi_ret = nvs_flash_init();
+    if (wifi_ret == ESP_ERR_NVS_NO_FREE_PAGES || wifi_ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
+        ESP_ERROR_CHECK(nvs_flash_erase());
+        wifi_ret = nvs_flash_init();
+    }
+    ESP_ERROR_CHECK(wifi_ret);
+
+    wifi_init();
+    //sta_wifi_init();
+    mqtt_app_start();
+
     // Initialize internal temperature sensor
     chip_sensor_init();
     xTaskCreate(temp_sensor_task, "ESP32C3 Sensor", 2048, NULL, 15, NULL);
@@ -462,7 +485,7 @@ void app_main(void)
     buf.x_axis = 0;
     buf.y_axis = 0;
     buf.motor1_rpm_pcm = 0;
-    wifi_init();
+    //wifi_init();
     esp_now_init();
     esp_now_register_recv_cb((void*)onDataReceived);   // Callback function for receiving data
 

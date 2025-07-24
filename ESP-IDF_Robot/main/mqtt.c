@@ -27,7 +27,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
     }
 }
 
-static void mqtt_app_start(void) {
+void mqtt_app_start(void) {
     esp_mqtt_client_config_t mqtt_cfg = {
         .broker.address.uri = MQTT_BROKER_URI,
     };
@@ -37,7 +37,7 @@ static void mqtt_app_start(void) {
     esp_mqtt_client_start(client);
 }
 
-static void wifi_init(void) {
+void sta_wifi_init(void) {
     esp_netif_init();
     esp_event_loop_create_default();
     esp_netif_create_default_wifi_sta();

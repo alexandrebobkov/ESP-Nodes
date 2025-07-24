@@ -12,7 +12,7 @@ static const char* MQTT_BROKER_URI;
 static const char* MQTT_TAG;
 
 static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data);
-static void mqtt_app_start(void);
-static void wifi_init(void);
+void mqtt_app_start(void);
+void sta_wifi_init(void);
 
 #endif
