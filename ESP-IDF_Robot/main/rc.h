@@ -90,7 +90,6 @@ static void update_pwm (int rc_x, int rc_y) {
         s++;*/
 
     // FORWARD AND REVERSE
-    // x > 5000 & ( y > 2000 && y < 2250 )
     if ((x > 1500) && (y > 700 && y < 850)) {
         //ESP_LOGW("ESP-NOW", "FORWARD");
         // Both sides rotate in forward direction.
