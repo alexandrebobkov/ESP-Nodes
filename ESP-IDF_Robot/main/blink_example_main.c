@@ -424,7 +424,7 @@ void app_main(void)
 
     wifi_init();
     //sta_wifi_init();
-    mqtt_app_start();
+    //mqtt_app_start();
 
     // Initialize internal temperature sensor
     chip_sensor_init();
@@ -506,4 +506,6 @@ void app_main(void)
     xTaskCreate(task, "test", configMINIMAL_STACK_SIZE * 8, NULL, 5, NULL);
     
     xTaskCreate(display_xy, "coordinates", configMINIMAL_STACK_SIZE * 8, NULL, 4, NULL);
+
+    mqtt_app_start();
 }
