@@ -431,7 +431,7 @@ static void wifi_event_handler(void* arg, esp_event_base_t event_base, int32_t e
     }
 }
 
-static void wifi_init_sta(void) {
+/*static void wifi_init_sta(void) {
     wifi_event_group = xEventGroupCreate();
     ESP_ERROR_CHECK(esp_netif_init());
     ESP_ERROR_CHECK(esp_event_loop_create_default());
@@ -451,7 +451,7 @@ static void wifi_init_sta(void) {
     ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
     //ESP_ERROR_CHECK(esp_wifi_set_channel(66, WIFI_SECOND_CHAN_NONE));
     ESP_ERROR_CHECK(esp_wifi_start());
-}
+}*/
 
 void app_main(void)
 {
