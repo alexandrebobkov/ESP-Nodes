@@ -280,31 +280,12 @@ static void wifi_init()
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
     ESP_ERROR_CHECK( esp_wifi_init(&cfg) );
     ESP_ERROR_CHECK( esp_wifi_set_storage(WIFI_STORAGE_RAM) );
-    ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_STA) );
+    ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_STA));//ESPNOW_WIFI_MODE));
     ESP_ERROR_CHECK( esp_wifi_start());
     ESP_ERROR_CHECK( esp_wifi_set_channel(CONFIG_ESPNOW_CHANNEL, WIFI_SECOND_CHAN_NONE));
-    
-    
-    
-    //ESP_ERROR_CHECK( esp_wifi_set_mode(ESPNOW_WIFI_MODE) );
-    
-
-        
-    wifi_config_t wifi_config = {
-        .sta = {
-            .ssid = "IoT_bots",//WIFI_SSID,
-            .password = "208208208",//WIFI_PASSWORD,
-            //.channel = CONFIG_ESPNOW_CHANNEL,
-            //.listen_interval = 0, // Disable listen interval
-        }
-    };
-    // ESP_ERROR_CHECK( esp_wifi_init(wifi_config) );
-    //ESP_ERROR_CHECK( esp_wifi_set_config(ESPNOW_WIFI_IF, &wifi_config) );
-    
-    
-    //ESP_ERROR_CHECK( esp_wifi_set_mode(CONFIG_ESPNOW_WIFI_MODE_STATION_SOFTAP) );
-    //
-    ////ESP_ERROR_CHECK( esp_wifi_connect() );
+    #if CONFIG_ESPNOW_ENABLE_LONG_RANGE
+    ESP_ERROR_CHECK( esp_wifi_set_protocol(ESPNOW_WIFI_IF, WIFI_PROTOCOL_11B|WIFI_PROTOCOL_11G|WIFI_PROTOCOL_11N|WIFI_PROTOCOL_LR) );
+    #endif
 }
 
 static void led_task (void *arg) {
