@@ -287,7 +287,7 @@ static void wifi_init()
         .sta = {
             .ssid = "IoT_bots",//WIFI_SSID,
             .password = "208208208",//WIFI_PASSWORD,
-            .channel = CONFIG_ESPNOW_CHANNEL,
+            //.channel = CONFIG_ESPNOW_CHANNEL,
             //.listen_interval = 0, // Disable listen interval
         }
     };
@@ -295,7 +295,7 @@ static void wifi_init()
     
     //ESP_ERROR_CHECK( esp_wifi_set_mode(CONFIG_ESPNOW_WIFI_MODE_STATION_SOFTAP) );
     ESP_ERROR_CHECK( esp_wifi_start());
-    ESP_ERROR_CHECK( esp_wifi_set_channel(CONFIG_ESPNOW_CHANNEL, WIFI_SECOND_CHAN_NONE));
+    //ESP_ERROR_CHECK( esp_wifi_set_channel(CONFIG_ESPNOW_CHANNEL, WIFI_SECOND_CHAN_NONE));
     //ESP_ERROR_CHECK( esp_wifi_connect() );
 }
 
@@ -459,8 +459,8 @@ void app_main(void)
     }
     ESP_ERROR_CHECK(wifi_ret);
 
-    wifi_init_sta();
-    //wifi_init();
+    //wifi_init_sta();
+    wifi_init();
     // Wait for Wi-Fi connection
     xEventGroupWaitBits(wifi_event_group, WIFI_CONNECTED_BIT, pdFALSE, pdTRUE, portMAX_DELAY);
     mqtt_app_start();
