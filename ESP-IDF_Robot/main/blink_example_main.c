@@ -296,9 +296,6 @@ static void wifi_init()
     ESP_ERROR_CHECK( esp_wifi_start());
     ESP_ERROR_CHECK( esp_wifi_set_channel(CONFIG_ESPNOW_CHANNEL, WIFI_SECOND_CHAN_NONE));
     ESP_ERROR_CHECK( esp_wifi_connect() );
-    ESP_LOGI(TAG, "Wi-Fi initialized in %s mode", CONFIG_ESPNOW_WIFI_MODE_STATION_SOFTAP ? "Station" : "SoftAP");
-    ESP_LOGI(TAG, "Wi-Fi channel set to %d", CONFIG_ESPNOW_CHANNEL);
-    ESP_LOGI(TAG, "Wi-Fi SSID: %s", wifi_config.sta.ssid);
 }
 
 static void led_task (void *arg) {
