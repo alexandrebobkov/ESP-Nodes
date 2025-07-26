@@ -441,12 +441,12 @@ static void wifi_init_sta(void) {
         .sta = {
             .ssid = "IoT_bots",
             .password = "208208208",
-            .channel = 66,
+            //.channel = 66,
         },
     };
     ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
     ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
-    ESP_ERROR_CHECK( esp_wifi_set_channel(66, WIFI_SECOND_CHAN_NONE));
+    ESP_ERROR_CHECK(esp_wifi_set_channel(66, WIFI_SECOND_CHAN_NONE));
     ESP_ERROR_CHECK(esp_wifi_start());
 }
 
