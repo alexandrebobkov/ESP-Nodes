@@ -38,7 +38,7 @@ void mqtt_app_start(void) {
     esp_mqtt_client_start(client);
 }
 
-void sta_wifi_init(void) {
+/*void sta_wifi_init(void) {
     esp_netif_init();
     esp_event_loop_create_default();
     esp_netif_create_default_wifi_sta();
@@ -57,4 +57,4 @@ void sta_wifi_init(void) {
     esp_wifi_set_config(WIFI_IF_STA, &wifi_config);
     esp_wifi_start();
     esp_wifi_connect();
-}
+}*/
