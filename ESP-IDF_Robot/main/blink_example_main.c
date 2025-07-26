@@ -281,7 +281,7 @@ static void wifi_init()
     ESP_ERROR_CHECK( esp_wifi_init(&cfg) );
     ESP_ERROR_CHECK( esp_wifi_set_storage(WIFI_STORAGE_RAM) );
     //ESP_ERROR_CHECK( esp_wifi_set_mode(ESPNOW_WIFI_MODE) );
-    ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_STA) );
+    ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_PASTA) );
     
     wifi_config_t wifi_config = {
         .sta = {
