@@ -420,8 +420,8 @@ void app_main(void)
     }
     ESP_ERROR_CHECK(wifi_ret);
 
-    //wifi_init();
-    sta_wifi_init();
+    wifi_init();
+    //sta_wifi_init();
     mqtt_app_start();
 
     // Initialize internal temperature sensor
