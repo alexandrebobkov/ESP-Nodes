@@ -416,6 +416,9 @@ void task(void *pvParameters)
         printf("VBUS: %.04f V, VSHUNT: %.04f mV, IBUS: %.04f mA, PBUS: %.04f mW\n",
                 bus_voltage, shunt_voltage * 1000, current * 1000, power * 1000);
 
+        uint8_t channel;
+        esp_wifi_get_channel(&channel, NULL);
+        ESP_LOGE(TAG, "ESP-NOW Channel: %d", channel);
         vTaskDelay(pdMS_TO_TICKS(2500));
     }
 }
