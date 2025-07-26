@@ -295,7 +295,7 @@ static void wifi_init()
     //ESP_ERROR_CHECK( esp_wifi_set_mode(CONFIG_ESPNOW_WIFI_MODE_STATION_SOFTAP) );
     ESP_ERROR_CHECK( esp_wifi_start());
     //ESP_ERROR_CHECK( esp_wifi_set_channel(CONFIG_ESPNOW_CHANNEL, WIFI_SECOND_CHAN_NONE));
-    ESP_ERROR_CHECK( esp_wifi_connect() );
+    //ESP_ERROR_CHECK( esp_wifi_connect() );
 }
 
 static void led_task (void *arg) {
