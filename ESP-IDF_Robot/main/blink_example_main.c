@@ -286,7 +286,7 @@ static void wifi_init()
         .sta = {
             .ssid = "IoT_bots",//WIFI_SSID,
             .password = "208208208",//WIFI_PASSWORD,
-            //.channel = CONFIG_ESPNOW_CHANNEL,
+            .channel = CONFIG_ESPNOW_CHANNEL,
             //.listen_interval = 0, // Disable listen interval
         }
     };
