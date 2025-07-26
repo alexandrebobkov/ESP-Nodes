@@ -17,7 +17,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
     switch ((esp_mqtt_event_id_t)event_id) {
         case MQTT_EVENT_CONNECTED:
             ESP_LOGI(MQTT_TAG, "MQTT_EVENT_CONNECTED");
-            esp_mqtt_client_publish(client, "/esp/test", "Hello from ROBOT!", 0, 1, 0);
+            esp_mqtt_client_publish(client, "/esp/test", "Hello from Alex!", 0, 1, 0);
             break;
         case MQTT_EVENT_DISCONNECTED:
             ESP_LOGI(MQTT_TAG, "MQTT_EVENT_DISCONNECTED");
