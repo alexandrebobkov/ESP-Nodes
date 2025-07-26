@@ -287,7 +287,7 @@ static void wifi_init()
         .sta = {
             .ssid = "IoT_bots",//WIFI_SSID,
             .password = "208208208",//WIFI_PASSWORD,
-            //.channel = CONFIG_ESPNOW_CHANNEL,
+            .channel = CONFIG_ESPNOW_CHANNEL,
             //.listen_interval = 0, // Disable listen interval
         }
     };
@@ -328,6 +328,9 @@ static void rc_task (void *arg) {
 static void display_xy() {
     while (true) {
         ESP_LOGI("x,y", "( %d, %d ) [ %d, %d] ", rc_x, rc_y, x, y);
+        uint8_t channel;
+        esp_wifi_get_channel(&channel, NULL);
+        ESP_LOGE(TAG, "ESP-NOW Channel: %d", channel);
         vTaskDelay (1000 / portTICK_PERIOD_MS);
     }
 }
@@ -425,7 +428,7 @@ static void wifi_event_handler(void* arg, esp_event_base_t event_base, int32_t e
     }
 }
 
-static void wifi_init_sta(void) {
+/*static void wifi_init_sta(void) {
     wifi_event_group = xEventGroupCreate();
     ESP_ERROR_CHECK(esp_netif_init());
     ESP_ERROR_CHECK(esp_event_loop_create_default());
@@ -443,7 +446,7 @@ static void wifi_init_sta(void) {
     ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
     ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
     ESP_ERROR_CHECK(esp_wifi_start());
-}
+}*/
 
 void app_main(void)
 {
