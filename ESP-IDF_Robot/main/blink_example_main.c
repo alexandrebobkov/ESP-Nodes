@@ -460,7 +460,7 @@ void app_main(void)
     ESP_ERROR_CHECK(wifi_ret);
 
     //wifi_init_sta();
-    wifi_init();
+    //wifi_init();
     // Wait for Wi-Fi connection
     xEventGroupWaitBits(wifi_event_group, WIFI_CONNECTED_BIT, pdFALSE, pdTRUE, portMAX_DELAY);
     mqtt_app_start();
