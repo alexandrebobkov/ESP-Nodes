@@ -449,7 +449,6 @@ static void wifi_init_sta(void) {
         .sta = {
             .ssid = "IoT_bots",
             .password = "208208208",
-            .channel = 66,
         },
     };
     ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
