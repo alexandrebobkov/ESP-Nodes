@@ -14,9 +14,6 @@
 # EXTERNAL cache entries
 ########################
 
-//No help, variable specified on the command line.
-CCACHE_ENABLE:UNINITIALIZED=0
-
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/home/alex/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20241119/riscv32-esp-elf/bin/riscv32-esp-elf-addr2line
 
@@ -359,10 +356,10 @@ Mbed TLS_IS_TOP_LEVEL:STATIC=OFF
 Mbed TLS_SOURCE_DIR:STATIC=/home/alex/esp/v5.4.1/esp-idf/components/mbedtls/mbedtls
 
 //No help, variable specified on the command line.
-PYTHON:UNINITIALIZED=/home/alex/.espressif/python_env/idf5.4_py3.12_env/bin/python
+PYTHON_DEPS_CHECKED:UNINITIALIZED=1
 
 //No help, variable specified on the command line.
-PYTHON_DEPS_CHECKED:UNINITIALIZED=1
+SDKCONFIG:UNINITIALIZED=/home/alex/MyProjects/ESP-Nodes/ESP-IDF_Robot/sdkconfig
 
 //Allow unsafe builds. These builds ARE NOT SECURE.
 UNSAFE_BUILD:BOOL=OFF
