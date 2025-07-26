@@ -533,7 +533,7 @@ void app_main(void)
     buf.x_axis = 0;
     buf.y_axis = 0;
     buf.motor1_rpm_pcm = 0;
-    //wifi_init();
+    wifi_init();
     esp_now_init();
     esp_now_register_recv_cb((void*)onDataReceived);   // Callback function for receiving data
 
