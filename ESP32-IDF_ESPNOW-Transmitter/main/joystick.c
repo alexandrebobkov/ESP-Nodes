@@ -101,7 +101,7 @@ static void sendData (void)
         ESP_LOGE(TAG, "Ensure that received MAC is: %02X:%02X:%02X:%02X:%02X:%02X",
                  receiver_mac[0], receiver_mac[1], receiver_mac[2],
                  receiver_mac[3], receiver_mac[4], receiver_mac[5]);
-        ESP_LOGE(TAG, "ESP-NOW Channel: ", esp_wifi_get_channel());
+        ESP_LOGE(TAG, "ESP-NOW Channel: %d", (int)esp_wifi_get_channel());
         deletePeer();
     }
 }
