@@ -287,8 +287,8 @@ static void wifi_init()
         .sta = {
             .ssid = "IoT_bots",//WIFI_SSID,
             .password = "208208208",//WIFI_PASSWORD,
-            //.channel = CONFIG_ESPNOW_CHANNEL,
-            .listen_interval = 0, // Disable listen interval
+            .channel = CONFIG_ESPNOW_CHANNEL,
+            //.listen_interval = 0, // Disable listen interval
         }
     };
     ESP_ERROR_CHECK( esp_wifi_set_config(ESPNOW_WIFI_IF, &wifi_config) );
