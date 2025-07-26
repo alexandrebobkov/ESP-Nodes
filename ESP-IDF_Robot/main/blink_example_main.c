@@ -407,53 +407,18 @@ void task(void *pvParameters)
     }
 }
 
-static EventGroupHandle_t wifi_event_group;
-#define WIFI_CONNECTED_BIT BIT0
-
-static void wifi_event_handler(void* arg, esp_event_base_t event_base, int32_t event_id, void* event_data) {
-    if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START) {
-        esp_wifi_connect();
-    } else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED) {
-        esp_wifi_connect();
-    } else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
-        xEventGroupSetBits(wifi_event_group, WIFI_CONNECTED_BIT);
-    }
-}
-
-static void wifi_init_sta(void) {
-    wifi_event_group = xEventGroupCreate();
-    ESP_ERROR_CHECK(esp_netif_init());
-    ESP_ERROR_CHECK(esp_event_loop_create_default());
-    esp_netif_create_default_wifi_sta();
-    wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
-    ESP_ERROR_CHECK(esp_wifi_init(&cfg));
-    ESP_ERROR_CHECK(esp_event_handler_instance_register(WIFI_EVENT, ESP_EVENT_ANY_ID, &wifi_event_handler, NULL, NULL));
-    ESP_ERROR_CHECK(esp_event_handler_instance_register(IP_EVENT, IP_EVENT_STA_GOT_IP, &wifi_event_handler, NULL, NULL));
-    wifi_config_t wifi_config = {
-        .sta = {
-            .ssid = "IoT_bots",
-            .password = "208208208",
-        },
-    };
-    ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
-    ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
-    //ESP_ERROR_CHECK( esp_wifi_set_channel(CONFIG_ESPNOW_CHANNEL, WIFI_SECOND_CHAN_NONE));
-    ESP_ERROR_CHECK(esp_wifi_start());
-}
-
 void app_main(void)
 {
-    /*esp_err_t wifi_ret = nvs_flash_init();
-    if (wifi_ret == ESP_ERR_NVS_NO_FREE_PAGES || wifi_ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
+    // Initialize NVS before Wi-Fi
+    esp_err_t ret = nvs_flash_init();
+    if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
         ESP_ERROR_CHECK(nvs_flash_erase());
-        wifi_ret = nvs_flash_init();
+        ret = nvs_flash_init();
     }
-    ESP_ERROR_CHECK(wifi_ret);*/
+    ESP_ERROR_CHECK(ret);
 
-    //wifi_init_sta();
-    //wifi_init();
-    // Wait for Wi-Fi connection
-    xEventGroupWaitBits(wifi_event_group, WIFI_CONNECTED_BIT, pdFALSE, pdTRUE, portMAX_DELAY);
+    // Use wifi_init() for ESP-NOW and Wi-Fi setup
+    wifi_init();
     mqtt_app_start();
 
     // Initialize internal temperature sensor
@@ -461,15 +426,11 @@ void app_main(void)
     xTaskCreate(temp_sensor_task, "ESP32C3 Sensor", 2048, NULL, 15, NULL);
 
     // Initialize LED
-    // Used to control the DC motor
     ledc_init();
     int var = 8191;
-    // Initialize the config structure.
     gpio_config_t io_conf = {};
 
-    /* 
-        Configure on-board LED
-    */
+    // Configure on-board LED
     gpio_reset_pin(BLINK_GPIO);
     gpio_set_direction(BLINK_GPIO, GPIO_MODE_OUTPUT);
     xTaskCreate(led_task, "LED", 2048, NULL, 15, NULL);
@@ -480,8 +441,7 @@ void app_main(void)
     io_conf.mode = GPIO_MODE_INPUT;
     io_conf.pull_up_en = 1;
     gpio_config(&io_conf);
-    // Set push button interrupt
-    gpio_set_intr_type(PUSH_BTN_GPIO, GPIO_INTR_NEGEDGE);//ANYEDGE);
+    gpio_set_intr_type(PUSH_BTN_GPIO, GPIO_INTR_NEGEDGE);
     gpio_evt_queue = xQueueCreate(10, sizeof(uint32_t));
     xTaskCreate(gpio_task, "GPIO task", 2048, NULL, 10, NULL);
     gpio_install_isr_service(ESP_INTR_FLAG_DEFAULT);
@@ -493,47 +453,29 @@ void app_main(void)
     io_conf.mode = GPIO_MODE_INPUT;
     io_conf.pull_up_en = 1;
     gpio_config(&io_conf);
-    // Set navigation button interrupt
-    gpio_set_intr_type(NAV_BTN, GPIO_INTR_NEGEDGE);//ANYEDGE);
+    gpio_set_intr_type(NAV_BTN, GPIO_INTR_NEGEDGE);
     gpio_evt_queue = xQueueCreate(10, sizeof(uint32_t));
     xTaskCreate(nav_key_task, "NAV Keys task", 2048, NULL, 10, NULL);
-    //gpio_install_isr_service(ESP_INTR_FLAG_DEFAULT);
     gpio_isr_handler_add(NAV_BTN, gpio_isr_handler, (void*) NAV_BTN);
 
     configure_button();
-    //configure_dc_mc();
     printf("Added button interrupt");
-
-    // ESP-NOW
-    // Initialize NVS
-    esp_err_t ret = nvs_flash_init();
-    if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
-        ESP_ERROR_CHECK( nvs_flash_erase() );
-        ret = nvs_flash_init();
-    }
-    ESP_ERROR_CHECK( ret );
 
     // Initialize buffer with 0s
     buf.x_axis = 0;
     buf.y_axis = 0;
     buf.motor1_rpm_pcm = 0;
-    wifi_init();
     esp_now_init();
-    esp_now_register_recv_cb((void*)onDataReceived);   // Callback function for receiving data
+    esp_now_register_recv_cb((void*)onDataReceived);
 
-    /*
-        ADC
-    */
+    // ADC
     rc_adc_init();
     xTaskCreate(rc_task, "RC", 2048, NULL, 5, NULL);
 
-    /*
-        MOTORS
-    */
+    // MOTORS
     motors_init();
 
     ESP_ERROR_CHECK(i2cdev_init());
     xTaskCreate(task, "test", configMINIMAL_STACK_SIZE * 8, NULL, 5, NULL);
-    
     xTaskCreate(display_xy, "coordinates", configMINIMAL_STACK_SIZE * 8, NULL, 4, NULL);
 }
