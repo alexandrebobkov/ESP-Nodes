@@ -287,7 +287,7 @@ static void wifi_init()
         .sta = {
             .ssid = WIFI_SSID,
             .password = WIFI_PASSWORD,
-            .channel = CONFIG_ESPNOW_CHANNEL,
+            //.channel = CONFIG_ESPNOW_CHANNEL,
             .listen_interval = 0, // Disable listen interval
         }
     };
