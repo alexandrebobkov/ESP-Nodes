@@ -8,6 +8,17 @@
 //static const char WIFI_PASSWORD =      "208208208";
 static const char* MQTT_BROKER_URI = "mqtt://10.100.50.16:1883";//74.14.210.168";//"mqtt://mqtt.techquadbit.net";
 static const char* MQTT_TAG = "MQTT_Robot";
+static esp_mqtt_client_handle_t mqtt_client = NULL;
+
+static void mqtt_publish_task(void *arg) {
+    esp_mqtt_client_handle_t client = (esp_mqtt_client_handle_t)arg;
+    
+    while (1) {
+        // Publish a message every 5 seconds
+        esp_mqtt_client_publish(mqtt_client, "/esp/test", "Hello!", 0, 1, 0);
+        vTaskDelay(pdMS_TO_TICKS(1000));
+    }
+}
 
 static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data) {
     
@@ -18,6 +29,8 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
         case MQTT_EVENT_CONNECTED:
             ESP_LOGI(MQTT_TAG, "MQTT_EVENT_CONNECTED");
             esp_mqtt_client_publish(client, "/esp/test", "Hello from Alex!", 0, 1, 0);
+            mqtt_client = client;
+            xTaskCreate(mqtt_publish_task, "mqtt_publish_task", 2048, NULL, 5, NULL);
             break;
         case MQTT_EVENT_DISCONNECTED:
             ESP_LOGI(MQTT_TAG, "MQTT_EVENT_DISCONNECTED");
