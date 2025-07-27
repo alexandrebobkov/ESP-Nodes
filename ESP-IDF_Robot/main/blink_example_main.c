@@ -275,6 +275,9 @@ static void ledc_init (void) {
 // Wi-Fi should start before using ESP-NOW
 static void wifi_init()
 {
+    /*
+    * WI-FI
+    */
     ESP_ERROR_CHECK(esp_netif_init());
     ESP_ERROR_CHECK(esp_event_loop_create_default());
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
