@@ -294,13 +294,13 @@ static void wifi_init()
     };
     ESP_ERROR_CHECK (esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
     ESP_ERROR_CHECK( esp_wifi_start());
-    //ESP_ERROR_CHECK( esp_wifi_connect() );
+    ESP_ERROR_CHECK( esp_wifi_connect() );
     // ----------------------
     //ESP_ERROR_CHECK( esp_wifi_set_channel(CONFIG_ESPNOW_CHANNEL, WIFI_SECOND_CHAN_NONE));
     // ----------------------
-    #if CONFIG_ESPNOW_ENABLE_LONG_RANGE
-    ESP_ERROR_CHECK( esp_wifi_set_protocol(ESPNOW_WIFI_IF, WIFI_PROTOCOL_11B|WIFI_PROTOCOL_11G|WIFI_PROTOCOL_11N|WIFI_PROTOCOL_LR) );
-    #endif
+    //#if CONFIG_ESPNOW_ENABLE_LONG_RANGE
+    //ESP_ERROR_CHECK( esp_wifi_set_protocol(ESPNOW_WIFI_IF, WIFI_PROTOCOL_11B|WIFI_PROTOCOL_11G|WIFI_PROTOCOL_11N|WIFI_PROTOCOL_LR) );
+    //#endif
 }
 
 static void led_task (void *arg) {
