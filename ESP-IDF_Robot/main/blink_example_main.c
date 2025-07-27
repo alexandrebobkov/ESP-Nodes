@@ -306,6 +306,7 @@ static void wifi_init()
         },
     };
     ESP_ERROR_CHECK (esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
+    ESP_ERROR_CHECK( esp_wifi_set_channel(CONFIG_ESPNOW_CHANNEL, WIFI_SECOND_CHAN_NONE));
     ESP_ERROR_CHECK( esp_wifi_start());
     ESP_ERROR_CHECK( esp_wifi_connect() );
 }
@@ -332,8 +333,8 @@ static void rc_task (void *arg) {
     while (true) {
         update_pwm (rc_x, rc_y);
         //ESP_LOGI("x,y", "( %d, %d ) [ %d, %d] ", rc_x, rc_y, x, y);
-        vTaskDelay (100 / portTICK_PERIOD_MS);  // Determines responsiveness  
-        //vTaskDelay (1000 / portTICK_PERIOD_MS); 
+        vTaskDelay (100 / portTICK_PERIOD_MS);  // Determines responsiveness
+        //vTaskDelay (1000 / portTICK_PERIOD_MS);
     }
 }
 static void display_xy() {
@@ -370,7 +371,7 @@ void onDataReceived (const uint8_t *mac_addr, const uint8_t *data, uint8_t data_
     memcpy(&buf, data, sizeof(buf));    // Write buffer into the struct
     rc_x = buf.x_axis;                  // Save joystic x-axis value
     rc_y = buf.y_axis;                  // Save joystic y-axis value
-    update_pwm(rc_x, rc_y);    
+    update_pwm(rc_x, rc_y);
 }
 
 void ultrasonic_task (void *arg) {
