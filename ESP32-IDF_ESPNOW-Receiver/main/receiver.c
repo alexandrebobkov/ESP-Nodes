@@ -45,7 +45,7 @@ void wifi_init()
     ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_STA));//ESPNOW_WIFI_MODE));
         wifi_config_t wifi_config = {
         .sta = {
-            .ssid = WIFI_SSID,
+            .ssid = :,
             .password = WIFI_PASSWORD,
         },
     };
