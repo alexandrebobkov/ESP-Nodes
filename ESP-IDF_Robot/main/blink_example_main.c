@@ -489,6 +489,7 @@ void app_main(void)
     configure_button();
     printf("Added button interrupt");
 
+    mqtt_app_start();
     // Initialize buffer with 0s
     buf.x_axis = 0;
     buf.y_axis = 0;
@@ -506,6 +507,4 @@ void app_main(void)
     ESP_ERROR_CHECK(i2cdev_init());
     xTaskCreate(task, "test", configMINIMAL_STACK_SIZE * 8, NULL, 5, NULL);
     xTaskCreate(display_xy, "coordinates", configMINIMAL_STACK_SIZE * 8, NULL, 4, NULL);
-
-    mqtt_app_start();
 }
