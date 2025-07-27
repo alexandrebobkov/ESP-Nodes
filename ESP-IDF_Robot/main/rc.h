@@ -97,7 +97,7 @@ static void update_pwm (int rc_x, int rc_y) {
     }
     // FORWARD AND REVERSE
     //if ((x > 1500) && (y > 700 && y < 850)) {
-    if ((x > 1500) && (y > -2500 && y < 2500)) {
+    else if ((x > 1500) && (y > -2500 && y < 2500)) {
         //ESP_LOGW("ESP-NOW", "FORWARD");
         // Both sides rotate in forward direction.
         m.motor1_rpm_pcm = x;   // left, forward
