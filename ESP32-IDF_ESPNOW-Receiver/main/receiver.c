@@ -19,6 +19,7 @@ static sensors_data_t buf;
 /* WiFi should start before using ESPNOW */
 void wifi_init()
 {
+    // The two sections below were added. Check these lines first if there is connection issues.
     /*
     * STAND-ALONE ESP-NOW
     */
