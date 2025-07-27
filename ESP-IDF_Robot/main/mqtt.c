@@ -27,6 +27,19 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
     }
 }
 
+void mqtt_publish() {
+    esp_mqtt_client_handle_t client = esp_mqtt_client_init(NULL);
+    esp_mqtt_client_register_event(client, ESP_EVENT_ANY_ID, mqtt_event_handler, NULL);
+    
+    esp_mqtt_client_start(client);
+    
+    // Publish a message
+    esp_mqtt_client_publish(client, "/esp/test", "Hello from Alex!", 0, 1, 0);
+    
+    // Stop the client
+    esp_mqtt_client_stop(client);
+}
+
 void mqtt_app_start(void) {
     esp_mqtt_client_config_t mqtt_cfg = {
         .broker.address.uri = MQTT_BROKER_URI,
