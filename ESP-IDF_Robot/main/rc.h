@@ -97,7 +97,7 @@ static void update_pwm (int rc_x, int rc_y) {
     }
     else if (x == 8190 && y == 8190) {
         m.motor1_rpm_pcm = 8190;
-        m.motor2_rpm_pcm = 0;
+        m.motor2_rpm_pcm = 7100;
 
     }
     // FORWARD AND REVERSE
