@@ -442,7 +442,6 @@ void app_main(void)
 
     // Use wifi_init() for ESP-NOW and Wi-Fi setup
     wifi_init();
-    mqtt_app_start();
 
     // Initialize internal temperature sensor
     chip_sensor_init();
