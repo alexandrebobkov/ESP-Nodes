@@ -303,8 +303,6 @@ static void wifi_init()
         .sta = {
             .ssid = WIFI_SSID,
             .password = WIFI_PASSWORD,
-            //.channel = CONFIG_ESPNOW_CHANNEL,
-            //.listen_interval = 0, // Disable listen interval
         },
     };
     ESP_ERROR_CHECK (esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
