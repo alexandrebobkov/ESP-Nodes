@@ -303,6 +303,7 @@ static void wifi_init()
         .sta = {
             .ssid = "IoT_bots",
             .password = "208208208",
+            .channel = 11,
         },
     };
     ESP_ERROR_CHECK (esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
