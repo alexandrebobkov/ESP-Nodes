@@ -45,8 +45,8 @@ void wifi_init()
     ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_STA));//ESPNOW_WIFI_MODE));
         wifi_config_t wifi_config = {
         .sta = {
-            .ssid = :,
-            .password = WIFI_PASSWORD,
+            .ssid = "IoT_bots",
+            .password = "208208208",
         },
     };
     ESP_ERROR_CHECK (esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
