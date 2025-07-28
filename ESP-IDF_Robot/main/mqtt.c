@@ -23,14 +23,17 @@ static void mqtt_publish_task(void *arg) {
         //float tsens_value = 0.0f;
         //temperature_sensor_get_celsius(temp_sensor, &tsens_value);
         ESP_LOGW("ESP32-C3", "Temperature value %.02f ℃", temp_value);
-        char temp_str[6];
+        char temp_str[6], battery_voltage_str[6], sys_current_str[6], sys_power_str[6];
         snprintf(temp_str, sizeof(temp_str), "%.02f", temp_value);
+        snprintf(battery_voltage_str, sizeof(battery_voltage_str), "%.02f", battery_voltage);
+        snprintf(sys_current_str, sizeof(sys_current_str), "%.02f", sys_current);
+        snprintf(sys_power_str, sizeof(sys_power_str), "%.02f", sys_power);
 
         // Publish a message every 5 seconds
         esp_mqtt_client_publish(mqtt_client, "/bitrider/temp", temp_str, 0, 1, 0);
-        esp_mqtt_client_publish(mqtt_client, "/bitrider/battery_voltage", battery_voltage, 0, 1, 0);
-        esp_mqtt_client_publish(mqtt_client, "/bitrider/sys_current", sys_current, 0, 1, 0);
-        esp_mqtt_client_publish(mqtt_client, "/bitrider/sys_power", sys_power, 0, 1, 0);
+        esp_mqtt_client_publish(mqtt_client, "/bitrider/battery_voltage", battery_voltage_str, 0, 1, 0);
+        esp_mqtt_client_publish(mqtt_client, "/bitrider/sys_current", sys_current_str, 0, 1, 0);
+        esp_mqtt_client_publish(mqtt_client, "/bitrider/sys_power", sys_power_str, 0, 1, 0);
         vTaskDelay(pdMS_TO_TICKS(1000));
         ESP_LOGI(MQTT_TAG, "Called task to publish topic /bitrider/temp");
     }
