@@ -302,7 +302,7 @@ static void wifi_init()
     ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_STA));//ESPNOW_WIFI_MODE));
     wifi_config_t wifi_config = {
         .sta = {
-            .ssid = "IoT_bots",
+            .ssid = "IoT_bots2",
             .password = "208208208",
         },
     };
