@@ -117,7 +117,7 @@ static sensors_data_t buf;
 #define ESPNOW_WIFI_IF   ESP_IF_WIFI_AP
 #endif
 
-temperature_sensor_handle_t temp_sensor;
+static temperature_sensor_handle_t temp_sensor;
 static temperature_sensor_config_t temp_sensor_config;
 static float tsens_value;
 static QueueHandle_t gpio_evt_queue = NULL;
