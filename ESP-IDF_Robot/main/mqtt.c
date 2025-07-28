@@ -30,7 +30,12 @@ static void mqtt_publish_task(void *arg) {
     }
 }
 
-void mqtt_publish_temp () {}
+void mqtt_publish_temp (float temp) {
+    esp_mqtt_client_handle_t client = (esp_mqtt_client_handle_t);
+    char temp_str[6];
+    snprintf(temp_str, sizeof(temp_str), "%.02f", temp);
+    esp_mqtt_client_publish(mqtt_client, "/bitrider/temp", temp_str, 0, 1, 0);_
+}
 
 static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data) {
     
