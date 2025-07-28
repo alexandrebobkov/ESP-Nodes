@@ -28,6 +28,9 @@ static void mqtt_publish_task(void *arg) {
 
         // Publish a message every 5 seconds
         esp_mqtt_client_publish(mqtt_client, "/bitrider/temp", temp_str, 0, 1, 0);
+        esp_mqtt_client_publish(mqtt_client, "/bitrider/battery_voltage", battery_voltage, 0, 1, 0);
+        esp_mqtt_client_publish(mqtt_client, "/bitrider/sys_current", sys_current, 0, 1, 0);
+        esp_mqtt_client_publish(mqtt_client, "/bitrider/sys_power", sys_power, 0, 1, 0);
         vTaskDelay(pdMS_TO_TICKS(1000));
         ESP_LOGI(MQTT_TAG, "Called task to publish topic /bitrider/temp");
     }
