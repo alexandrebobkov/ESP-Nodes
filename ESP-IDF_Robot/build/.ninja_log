@@ -1,0 +1,25 @@
+# ninja log v6
+60	64	1753737032672379810	project_elf_src_esp32c3.c	188673f5f8655ee0
+60	64	1753737032672379810	/home/alex/github/ESP-Nodes/ESP-IDF_Robot/build/project_elf_src_esp32c3.c	188673f5f8655ee0
+51	80	1753737032687379992	esp-idf/esp_system/ld/memory.ld	88a7058657fe2138
+51	80	1753737032687379992	/home/alex/github/ESP-Nodes/ESP-IDF_Robot/build/esp-idf/esp_system/ld/memory.ld	88a7058657fe2138
+52	96	1753737032703380186	esp-idf/esp_system/ld/sections.ld.in	798b3408b0925bdf
+52	96	1753737032703380186	/home/alex/github/ESP-Nodes/ESP-IDF_Robot/build/esp-idf/esp_system/ld/sections.ld.in	798b3408b0925bdf
+57	251	1753737032742512545	partition_table/partition-table.bin	b715dd13cfe1ba3c
+57	251	1753737032742512545	/home/alex/github/ESP-Nodes/ESP-IDF_Robot/build/partition_table/partition-table.bin	b715dd13cfe1ba3c
+252	454	1753737032861382104	esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_uri.c.obj	94e04f01be942204
+454	584	1753737033064760158	esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_ws.c.obj	33cf2e6d07a2bd74
+584	777	1753737033193386134	esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.obj	67e0c7201ae72d8c
+99	1268	1753737032709734413	esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_sess.c.obj	da26e372109b608c
+101	1273	1753737032710380271	esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_txrx.c.obj	fe078921749022fc
+99	1388	1753737032708380247	esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_parse.c.obj	7771745c8a7e8a97
+1273	1479	1753737033882394494	esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/lib/http_header.c.obj	800d51fc537276f
+97	1483	1753737032706695429	esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/src/esp_https_ota.c.obj	3cdb6c3e40c8c0eb
+98	1519	1753737032707380235	esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_main.c.obj	d6dd10d727240cb6
+1483	1530	1753737034093397054	esp-idf/esp_https_ota/libesp_https_ota.a	5080d20115b92769
+1531	1573	1753737034140397624	esp-idf/esp_http_server/libesp_http_server.a	a69da1dbfefd3756
+1388	1864	1753737033997395889	esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/lib/http_utils.c.obj	b16ef727cf63d126
+1519	1867	1753737034128397478	esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/transport_ssl.c.obj	e4ff0a234fd71718
+1269	1915	1753737033878394446	esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/lib/http_auth.c.obj	eddffc72ab1f3f87
+1573	2034	1753737034182398133	esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/transport_internal.c.obj	16ee603ac5fbdaf3
+777	2132	1753737033386388476	esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/esp_http_client.c.obj	ef0f52859ce44741
