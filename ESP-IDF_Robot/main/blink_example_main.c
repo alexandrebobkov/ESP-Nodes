@@ -436,6 +436,9 @@ void task(void *pvParameters)
         esp_wifi_get_band(&band);
         printf("Wi-Fi Channel: %d, Band:%d\n", channel, band);
         //ESP_LOGE(TAG, "Wi-Fi Channel: %d, Band: %d", channel, band);
+        mqtt_update_battery_voltage(bus_voltage);
+        mqtt_update_sys_current(current);
+        mqtt_update_sys_power(power);
 
         vTaskDelay(pdMS_TO_TICKS(2500));
     }
