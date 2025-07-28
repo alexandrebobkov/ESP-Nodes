@@ -19,7 +19,7 @@ static void mqtt_publish_task(void *arg) {
     while (1) {
         //float tsens_value = 0.0f;
         //temperature_sensor_get_celsius(temp_sensor, &tsens_value);
-        ESP_LOGW("ESP32-C3", "Temperature value %.02f ℃", tsens_value);
+        ESP_LOGW("ESP32-C3", "Temperature value %.02f ℃", temp_value);
         char temp_str[6];
         snprintf(temp_str, sizeof(temp_str), "%.02f", temp_value);
 
