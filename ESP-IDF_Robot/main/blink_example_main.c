@@ -119,7 +119,7 @@ static sensors_data_t buf;
 
 static temperature_sensor_handle_t temp_sensor;
 static temperature_sensor_config_t temp_sensor_config;
-static float tsens_value;
+float tsens_value;
 static QueueHandle_t gpio_evt_queue = NULL;
 static uint8_t s_led_state = 1;
 
