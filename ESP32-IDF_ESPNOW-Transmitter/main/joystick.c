@@ -90,7 +90,7 @@ static void sendData (void)
     ESP_LOGI(TAG, "pwm 1, pwm 2 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor1_rpm_pwm, (uint8_t)buffer.motor2_rpm_pwm);
     ESP_LOGI(TAG, "pwm 3, pwm 4 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor3_rpm_pwm, (uint8_t)buffer.motor4_rpm_pwm);
 
-    ESP_LOGI(TAG, "ESP-NOW Channel: %d", devices.channel);
+    //ESP_LOGI(TAG, "ESP-NOW Channel: %d", devices.channel);
     //ESP_LOGI(TAG, "Wi-Fi Channel: %d", );
     uint8_t channel;
     esp_wifi_get_channel(&channel, NULL);
