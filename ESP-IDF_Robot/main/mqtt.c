@@ -4,8 +4,6 @@
 
 #include "mqtt.h"
 
-//static const char WIFI_SSID =            "IoT_bots";
-//static const char WIFI_PASSWORD =      "208208208";
 //static const char* MQTT_BROKER_URI = "mqtt://10.100.50.16:1883";//74.14.210.168";//"mqtt://mqtt.techquadbit.net";
 static const char* MQTT_BROKER_URI = "mqtt://mqtt.techquadbit.net";//74.14.210.168";//"mqtt://mqtt.techquadbit.net";
 
