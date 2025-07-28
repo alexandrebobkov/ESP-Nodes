@@ -12,6 +12,9 @@ static const char* MQTT_TAG = "MQTT_Robot";
 static esp_mqtt_client_handle_t mqtt_client = NULL;
 
 static float temp_value = 0.0f;
+static float battery_voltage = 0.0f;
+static float sys_current = 0.0f;
+static float sys_power = 0.0f;
 
 static void mqtt_publish_task(void *arg) {
     esp_mqtt_client_handle_t client = (esp_mqtt_client_handle_t)arg;
