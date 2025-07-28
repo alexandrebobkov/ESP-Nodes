@@ -16,8 +16,11 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
 static void mqtt_publish_task(void *arg);
 void mqtt_app_start(void);
 void mqtt_publish(void);
-static float temp_value;
+static float temp_value, battery_voltage, sys_current, sys_power;
 void mqtt_update_temp (float temp);
+void mqtt_update_battery_voltage (float voltage);
+void mqtt_update_sys_current (float current);
+void mqtt_update_sys_power (float power);
 void sta_wifi_init(void);
 
 #endif
