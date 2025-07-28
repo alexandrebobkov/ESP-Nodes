@@ -344,7 +344,7 @@ static void display_xy() {
     while (true) {
         ESP_LOGI("x,y", "( %d, %d ) [ %d, %d] ", rc_x, rc_y, x, y);
         uint8_t channel;
-        wifi_band_t *band;
+        wifi_band_t band;
         esp_wifi_get_channel(&channel, NULL);
         esp_wifi_get_band(&band);
         ESP_LOGI(TAG, "Wi-Fi Channel: %d, Band: %d", channel, band);
