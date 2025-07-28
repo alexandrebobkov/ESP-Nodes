@@ -11,7 +11,7 @@ static const char* MQTT_BROKER_URI = "mqtt://mqtt.techquadbit.net";//74.14.210.1
 static const char* MQTT_TAG = "MQTT_Robot";
 static esp_mqtt_client_handle_t mqtt_client = NULL;
 
-float temp_value = 0.0f;
+static float temp_value = 0.0f;
 
 static void mqtt_publish_task(void *arg) {
     esp_mqtt_client_handle_t client = (esp_mqtt_client_handle_t)arg;
