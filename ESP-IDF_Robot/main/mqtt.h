@@ -17,7 +17,7 @@ static void mqtt_publish_task(void *arg);
 void mqtt_app_start(void);
 void mqtt_publish(void);
 float temp_value;
-void mqtt_publish_temp (float temp);
+void mqtt_update_temp (float temp);
 void sta_wifi_init(void);
 
 #endif
