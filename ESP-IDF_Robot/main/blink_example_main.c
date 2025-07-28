@@ -433,8 +433,8 @@ void task(void *pvParameters)
         wifi_band_t band;
         esp_wifi_get_channel(&channel, NULL);
         esp_wifi_get_band(&band);
-        printf()
-        ESP_LOGE(TAG, "Wi-Fi Channel: %d, Band: %d", channel, band);
+        printf("Wi-Fi Channel: %d, Band:%d\n", channel, band);
+        //ESP_LOGE(TAG, "Wi-Fi Channel: %d, Band: %d", channel, band);
 
         vTaskDelay(pdMS_TO_TICKS(2500));
     }
