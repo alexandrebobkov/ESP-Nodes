@@ -16,7 +16,7 @@ static void mqtt_publish_task(void *arg) {
     
     while (1) {
         float tsens_value;
-        ESP_ERROR_CHECK(temperature_sensor_get_celsius(temp_sensor, &tsens_value));
+        temperature_sensor_get_celsius(temp_sensor, &tsens_value);
         ESP_LOGW("ESP32-C3", "Temperature value %.02f ℃", tsens_value);
 
         // Publish a message every 5 seconds
