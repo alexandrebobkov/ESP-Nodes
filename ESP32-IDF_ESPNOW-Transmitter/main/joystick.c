@@ -204,7 +204,7 @@ void transmission_init()
 
     // Set ESP-NOW receiver device configuration values
     memcpy(devices.peer_addr, receiver_mac, 6);
-    devices.channel = 0;//1;
+    devices.channel = 1;
     devices.encrypt = false;
     esp_now_add_peer(&devices);
 
