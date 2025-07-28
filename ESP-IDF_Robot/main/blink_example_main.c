@@ -430,8 +430,11 @@ void task(void *pvParameters)
                 bus_voltage, shunt_voltage * 1000, current * 1000, power * 1000);
 
         uint8_t channel;
+        wifi_band_t band;
         esp_wifi_get_channel(&channel, NULL);
-        ESP_LOGE(TAG, "ESP-NOW Channel: %d", channel);
+        esp_wifi_get_band(&band);
+        ESP_LOGE(TAG, "Wi-Fi Channel: %d, Band: %d", channel, band);
+
         vTaskDelay(pdMS_TO_TICKS(2500));
     }
 }
