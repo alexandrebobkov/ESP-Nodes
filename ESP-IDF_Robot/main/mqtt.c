@@ -33,9 +33,10 @@ static void mqtt_publish_task(void *arg) {
     }
 }
 
-void mqtt_update_temp (float temp) {
-    temp_value = temp;
-}
+void mqtt_update_temp (float temp) { temp_value = temp; }
+void mqtt_update_battery_voltage (float voltage) { battery_voltage = voltage; }
+void mqtt_update_sys_current (float current) { sys_current = current; }
+void mqtt_update_sys_power (float power) { sys_power = power; }
 
 static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data) {
     
