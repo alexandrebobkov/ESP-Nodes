@@ -11,7 +11,7 @@ static const char* MQTT_BROKER_URI = "mqtt://mqtt.techquadbit.net";//74.14.210.1
 static const char* MQTT_TAG = "MQTT_Robot";
 static esp_mqtt_client_handle_t mqtt_client = NULL;
 
-extern float tsens_value;
+float temp_value = 0.0f;
 
 static void mqtt_publish_task(void *arg) {
     esp_mqtt_client_handle_t client = (esp_mqtt_client_handle_t)arg;
@@ -21,7 +21,7 @@ static void mqtt_publish_task(void *arg) {
         //temperature_sensor_get_celsius(temp_sensor, &tsens_value);
         ESP_LOGW("ESP32-C3", "Temperature value %.02f ℃", tsens_value);
         char temp_str[6];
-        snprintf(temp_str, sizeof(temp_str), "%.02f", tsens_value);
+        snprintf(temp_str, sizeof(temp_str), "%.02f", temp_value);
 
         // Publish a message every 5 seconds
         esp_mqtt_client_publish(mqtt_client, "/bitrider/temp", temp_str, 0, 1, 0);
