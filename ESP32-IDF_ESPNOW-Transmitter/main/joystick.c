@@ -114,6 +114,12 @@ static void sendData (void)
         ESP_LOGE(TAG, "ESP-NOW Channel: %d", channel);
         deletePeer();
         vTaskDelay(pdMS_TO_TICKS(5000));
+        if (espnow_channel < 11) {
+            espnow_channel++;
+        } else {
+            espnow_channel = 1;
+        }
+        transmission_init();
     }
 }
 
