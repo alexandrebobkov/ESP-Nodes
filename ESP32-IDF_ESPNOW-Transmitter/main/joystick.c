@@ -19,7 +19,7 @@ static adc_oneshot_unit_handle_t adc_xy_handle;
 sensors_data_t buffer;
 static int x, y; // Joystick x- and y- axis positions
 static int espnow_channel = 1;
-transmission_init();
+void transmission_init();
 
 esp_err_t joystick_adc_init(void) 
 {
