@@ -183,9 +183,7 @@ void wifi_init()
     ESP_ERROR_CHECK( esp_wifi_set_channel(espnow_channel, WIFI_SECOND_CHAN_NONE)); // 2
     #if CONFIG_ESPNOW_ENABLE_LONG_RANGE
     ESP_ERROR_CHECK( esp_wifi_set_protocol(ESPNOW_WIFI_IF, WIFI_PROTOCOL_11B|WIFI_PROTOCOL_11G|WIFI_PROTOCOL_11N|WIFI_PROTOCOL_LR) );
-    #endif
-    
-
+    #endif  
     /*
     * WI-FI
     */
