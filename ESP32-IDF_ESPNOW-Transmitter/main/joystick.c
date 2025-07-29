@@ -18,7 +18,7 @@ esp_now_peer_info_t devices;
 static adc_oneshot_unit_handle_t adc_xy_handle;
 sensors_data_t buffer;
 static int x, y; // Joystick x- and y- axis positions
-static int espnow_channel = 1;
+static int espnow_channel = 0;
 void transmission_init();
 void wifi_init();
 
