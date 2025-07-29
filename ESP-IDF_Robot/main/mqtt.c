@@ -15,6 +15,7 @@ static float temp_value = 0.0f;
 static float battery_voltage = 0.0f;
 static float sys_current = 0.0f;
 static float sys_power = 0.0f;
+static int pwm_1 = 0, pwm_2 = 0, pwm_3 = 0, pwm_4 = 0;
 
 static void mqtt_publish_task(void *arg) {
     esp_mqtt_client_handle_t client = (esp_mqtt_client_handle_t)arg;
@@ -34,6 +35,10 @@ static void mqtt_publish_task(void *arg) {
         esp_mqtt_client_publish(mqtt_client, "/bitrider/battery_voltage", battery_voltage_str, 0, 1, 0);
         esp_mqtt_client_publish(mqtt_client, "/bitrider/sys_current", sys_current_str, 0, 1, 0);
         esp_mqtt_client_publish(mqtt_client, "/bitrider/sys_power", sys_power_str, 0, 1, 0);
+        esp_mqtt_client_publish(mqtt_client, "/bitrider/pwm_1", (const char*)&pwm_1, 4, 1, 0);
+        esp_mqtt_client_publish(mqtt_client, "/bitrider/pwm_2", (const char*)&pwm_2, 4, 1, 0);
+        esp_mqtt_client_publish(mqtt_client, "/bitrider/pwm_3", (const char*)&pwm_3, 4, 1, 0);
+        esp_mqtt_client_publish(mqtt_client, "/bitrider/pwm_4", (const char*)&pwm_4, 4, 1, 0);
         vTaskDelay(pdMS_TO_TICKS(1000));
         ESP_LOGI(MQTT_TAG, "Called task to publish topic /bitrider/temp");
     }
