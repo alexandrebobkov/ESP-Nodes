@@ -110,9 +110,7 @@ static void sendData (void)
                  receiver_mac[0], receiver_mac[1], receiver_mac[2],
                  receiver_mac[3], receiver_mac[4], receiver_mac[5]);
         
-        uint8_t channel;
-        esp_wifi_get_channel(&channel, NULL);
-        ESP_LOGE(TAG, "ESP-NOW Channel: %d", channel);
+        
         deletePeer();
         vTaskDelay(pdMS_TO_TICKS(5000));
         if (espnow_channel < 11) {
