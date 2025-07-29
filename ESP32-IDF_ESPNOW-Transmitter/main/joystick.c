@@ -18,7 +18,7 @@ esp_now_peer_info_t devices;
 static adc_oneshot_unit_handle_t adc_xy_handle;
 sensors_data_t buffer;
 static int x, y; // Joystick x- and y- axis positions
-static int espnow_channel = 11;
+static int espnow_channel = 1;//11;
 void transmission_init();
 void wifi_init();
 
@@ -114,11 +114,11 @@ static void sendData (void)
         
         deletePeer();
         vTaskDelay(pdMS_TO_TICKS(5000));
-        if (espnow_channel < 11) {
+        /*if (espnow_channel < 11) {
             espnow_channel++;
         } else {
             espnow_channel = 1;
-        }
+        }*/
         ESP_LOGI(TAG, "Channel is set at %d", espnow_channel);
         transmission_init();
     }
@@ -142,11 +142,7 @@ static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status
         deletePeer();
         
         //esp_restart();
-        if (espnow_channel < 11) {
-            espnow_channel++;
-        } else {
-            esp_restart();
-        }
+        
 
         esp_now_del_peer(receiver_mac);
         esp_now_deinit();
@@ -156,6 +152,11 @@ static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status
         devices.channel = espnow_channel;
         devices.encrypt = false;
         esp_now_add_peer(&devices);
+        if (espnow_channel < 11) {
+            espnow_channel++;
+        } else {
+            esp_restart();
+        }
 
         //esp_now_deinit();  // Stop ESP-NOW
         //wifi_init();
