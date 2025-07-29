@@ -18,6 +18,7 @@ esp_now_peer_info_t devices;
 static adc_oneshot_unit_handle_t adc_xy_handle;
 sensors_data_t buffer;
 static int x, y; // Joystick x- and y- axis positions
+static espnow_channel = 1;
 
 esp_err_t joystick_adc_init(void) 
 {
@@ -131,7 +132,13 @@ static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status
         ESP_LOGE(TAG, "Ensure that receiver is powered-on and MAC is correct.");
         deletePeer();
         vTaskDelay(pdMS_TO_TICKS(5000)); // Wait for a second before restarting
-        esp_restart();
+        //esp_restart();
+        if (espnow_channel < 11) {
+            espnow_channel++;
+        } else {
+            espnow_channel = 1;
+        }
+        transmission_init();
     }
 }
 
@@ -207,7 +214,7 @@ void transmission_init()
 
     // Set ESP-NOW receiver device configuration values
     memcpy(devices.peer_addr, receiver_mac, 6);
-    devices.channel = 2;
+    devices.channel = espnow_channel;
     devices.encrypt = false;
     esp_now_add_peer(&devices);
 
