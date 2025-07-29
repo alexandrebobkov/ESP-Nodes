@@ -99,6 +99,7 @@ static void sendData (void)
     ESP_LOGE(TAG, "ESP-NOW Channel: %d", channel);
     // Call ESP-NOW function to send data (MAC address of receiver, pointer to the memory holding data & data length)
     uint8_t result = esp_now_send((uint8_t*)receiver_mac, (uint8_t *)&buffer, sizeof(buffer));
+    ESP_LOGI(TAG, "Channel is set at %d", espnow_channel);
 
     // If status is NOT OK, display error message and error code (in hexadecimal).
     if (result != 0) {
