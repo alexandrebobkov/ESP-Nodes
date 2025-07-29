@@ -154,7 +154,7 @@ static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status
 
     }
 
-    vTaskDelay(pdMS_TO_TICKS(5000));
+    //vTaskDelay(pdMS_TO_TICKS(5000));
 }
 
 /* WiFi should start before using ESPNOW */
