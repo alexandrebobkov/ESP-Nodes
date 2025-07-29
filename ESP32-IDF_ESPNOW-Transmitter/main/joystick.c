@@ -150,6 +150,7 @@ static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status
 
         esp_now_del_peer(receiver_mac);
         esp_now_deinit();
+        esp_wifi_set_channel(espnow_channel, WIFI_SECOND_CHAN_NONE);
         esp_now_init();
         memcpy(devices.peer_addr, receiver_mac, 6);
         devices.channel = espnow_channel;
