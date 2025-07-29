@@ -20,7 +20,7 @@ sensors_data_t buffer;
 static int x, y; // Joystick x- and y- axis positions
 static int espnow_channel = 1;
 void transmission_init();
-void wifi_init(;
+void wifi_init();
 
 esp_err_t joystick_adc_init(void) 
 {
