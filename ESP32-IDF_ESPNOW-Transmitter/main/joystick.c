@@ -148,8 +148,8 @@ static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status
             esp_restart();
         }
 
-        devices.channel = espnow_channel;
         esp_now_del_peer(receiver_mac);
+        devices.channel = espnow_channel;
         esp_now_add_peer(&devices);
 
         //esp_now_deinit();  // Stop ESP-NOW
