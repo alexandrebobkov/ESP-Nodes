@@ -21,6 +21,10 @@ void mqtt_update_temp (float temp);
 void mqtt_update_battery_voltage (float voltage);
 void mqtt_update_sys_current (float current);
 void mqtt_update_sys_power (float power);
+void mqtt_update_pwm_1 (int pwm);
+void mqtt_update_pwm_2 (int pwm);
+void mqtt_update_pwm_3 (int pwm);
+void mqtt_update_pwm_4 (int pwm);
 void sta_wifi_init(void);
 
 #endif
