@@ -302,8 +302,8 @@ static void wifi_init()
     ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_STA));//ESPNOW_WIFI_MODE));
     wifi_config_t wifi_config = {
         .sta = {
-            .ssid = "IoT_bots2",
-            .password = "208208208",
+            .ssid = WIFI_SSID,//"IoT_bots2",
+            .password = WIFI_PASSWORD,// "208208208",
         },
     };
     ESP_ERROR_CHECK (esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
@@ -379,6 +379,8 @@ void onDataReceived (const uint8_t *mac_addr, const uint8_t *data, uint8_t data_
     rc_x = buf.x_axis;                  // Save joystic x-axis value
     rc_y = buf.y_axis;                  // Save joystic y-axis value
     update_pwm(rc_x, rc_y);
+    mqtt_update_pwm_1(rc_x);
+    mqtt_update_pwm_2(rc_y);
 }
 
 void ultrasonic_task (void *arg) {
@@ -438,7 +440,7 @@ void task(void *pvParameters)
         //ESP_LOGE(TAG, "Wi-Fi Channel: %d, Band: %d", channel, band);
         mqtt_update_battery_voltage(bus_voltage);
         mqtt_update_sys_current(1000.00*current);
-        mqtt_update_sys_power(1000.00*power);
+        mqtt_update_sys_power(power);
 
         vTaskDelay(pdMS_TO_TICKS(2500));
     }
