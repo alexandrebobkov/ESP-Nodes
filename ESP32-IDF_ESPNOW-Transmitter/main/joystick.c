@@ -146,7 +146,11 @@ static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status
         } else {
             espnow_channel = 1;
         }
-        transmission_init();
+
+        esp_now_deinit();  // Stop ESP-NOW
+        esp_wifi_set_channel(newChannel, WIFI_SECOND_CHAN_NONE);  // Change channel
+        esp_now_init();
+
     }
 
     vTaskDelay(pdMS_TO_TICKS(5000));
