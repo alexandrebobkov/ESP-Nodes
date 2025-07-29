@@ -139,10 +139,8 @@ static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status
         ESP_LOGE(TAG, "Error sending data. Error code: 0x%04X", status);
         ESP_LOGE(TAG, "esp_now_send() failed: %s", esp_err_to_name(status));
         ESP_LOGE(TAG, "Ensure that receiver is powered-on and MAC is correct.");
-        deletePeer();
-        
-        //esp_restart();
-        
+        //deletePeer();        
+        //esp_restart();       
 
         esp_now_del_peer(receiver_mac);
         esp_now_deinit();
