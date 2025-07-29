@@ -150,6 +150,7 @@ static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status
         devices.channel = espnow_channel;
         devices.encrypt = false;
         esp_now_add_peer(&devices);
+        esp_now_register_send_cb(statusDataSend);
         if (espnow_channel < 11) {
             espnow_channel++;
         } else {
