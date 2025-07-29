@@ -112,7 +112,7 @@ static void sendData (void)
         uint8_t channel;
         esp_wifi_get_channel(&channel, NULL);
         ESP_LOGE(TAG, "ESP-NOW Channel: %d", channel);
-        deletePeer();
+        //deletePeer();
     }
 }
 
