@@ -25,20 +25,25 @@ static void mqtt_publish_task(void *arg) {
         //temperature_sensor_get_celsius(temp_sensor, &tsens_value);
         ESP_LOGW("ESP32-C3", "Temperature value %.02f ℃", temp_value);
         char temp_str[6], battery_voltage_str[8], sys_current_str[8], sys_power_str[8];
+        char pwm_1_str[5], pwm_2_str[5], pwm_3_str[5], pwm_4_str[5];
         snprintf(temp_str, sizeof(temp_str), "%.02f", temp_value);
         snprintf(battery_voltage_str, sizeof(battery_voltage_str), "%.02f", battery_voltage);
         snprintf(sys_current_str, sizeof(sys_current_str), "%.02f", sys_current);
         snprintf(sys_power_str, sizeof(sys_power_str), "%.02f", sys_power);
+        snprintf(pwm_1_str, sizeof(pwm_1_str), "%d", pwm_1);
+        snprintf(pwm_2_str, sizeof(pwm_2_str), "%d", pwm_2);
+        snprintf(pwm_3_str, sizeof(pwm_3_str), "%d", pwm_3);
+        snprintf(pwm_4_str, sizeof(pwm_4_str), "%d", pwm_4);
 
         // Publish a message every 5 seconds
         esp_mqtt_client_publish(mqtt_client, "/bitrider/temp", temp_str, 0, 1, 0);
         esp_mqtt_client_publish(mqtt_client, "/bitrider/battery_voltage", battery_voltage_str, 0, 1, 0);
         esp_mqtt_client_publish(mqtt_client, "/bitrider/sys_current", sys_current_str, 0, 1, 0);
         esp_mqtt_client_publish(mqtt_client, "/bitrider/sys_power", sys_power_str, 0, 1, 0);
-        esp_mqtt_client_publish(mqtt_client, "/bitrider/pwm_1", (const char*)&pwm_1, 4, 1, 0);
-        esp_mqtt_client_publish(mqtt_client, "/bitrider/pwm_2", (const char*)&pwm_2, 4, 1, 0);
-        esp_mqtt_client_publish(mqtt_client, "/bitrider/pwm_3", (const char*)&pwm_3, 4, 1, 0);
-        esp_mqtt_client_publish(mqtt_client, "/bitrider/pwm_4", (const char*)&pwm_4, 4, 1, 0);
+        esp_mqtt_client_publish(mqtt_client, "/bitrider/pwm_1", pwm_1_str, 0, 1, 0);
+        esp_mqtt_client_publish(mqtt_client, "/bitrider/pwm_2", pwm_2_str, 0, 1, 0);
+        esp_mqtt_client_publish(mqtt_client, "/bitrider/pwm_3", pwm_3_str, 0, 1, 0);
+        esp_mqtt_client_publish(mqtt_client, "/bitrider/pwm_4", pwm_4_str, 0, 1, 0);
         vTaskDelay(pdMS_TO_TICKS(1000));
         ESP_LOGI(MQTT_TAG, "Called task to publish topic /bitrider/temp");
     }
