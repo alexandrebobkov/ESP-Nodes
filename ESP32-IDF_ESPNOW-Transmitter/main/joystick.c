@@ -119,6 +119,7 @@ static void sendData (void)
         } else {
             espnow_channel = 1;
         }
+        ESP_LOGI(TAG, "Channel is set at %d", espnow_channel);
         transmission_init();
     }
 }
