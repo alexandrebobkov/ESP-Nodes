@@ -1,11 +1,19 @@
 {
     "version":            "1.2",
     "project_name":       "espnow_transmitter",
+<<<<<<< HEAD
+    "project_version":    "ESP32-Node_Switch-v2.7-8659-g48b16684d-dirty",
+    "project_path":       "/home/alex/github/ESP-Nodes/ESP32-IDF_ESPNOW-Transmitter",
+    "idf_path":           "/home/alex/esp/v5.4.1/esp-idf",
+    "build_dir":          "/home/alex/github/ESP-Nodes/ESP32-IDF_ESPNOW-Transmitter/build",
+    "config_file":        "/home/alex/github/ESP-Nodes/ESP32-IDF_ESPNOW-Transmitter/sdkconfig",
+=======
     "project_version":    "ESP32-Node_Switch-v2.7-8831-g79db0e783-dirty",
     "project_path":       "/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_ESPNOW-Transmitter",
     "idf_path":           "/home/abobkov/esp/v5.4.1/esp-idf",
     "build_dir":          "/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_ESPNOW-Transmitter/build",
     "config_file":        "/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_ESPNOW-Transmitter/sdkconfig",
+>>>>>>> refs/remotes/origin/main
     "config_defaults":    "",
     "bootloader_elf":     "/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_ESPNOW-Transmitter/build/bootloader/bootloader.elf",
     "app_elf":            "espnow_transmitter.elf",
