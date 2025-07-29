@@ -18,6 +18,9 @@ esp_now_peer_info_t devices;
 static adc_oneshot_unit_handle_t adc_xy_handle;
 sensors_data_t buffer;
 static int x, y; // Joystick x- and y- axis positions
+static int espnow_channel = 1;
+void transmission_init();
+void wifi_init();
 
 esp_err_t joystick_adc_init(void) 
 {
@@ -97,20 +100,27 @@ static void sendData (void)
     ESP_LOGE(TAG, "ESP-NOW Channel: %d", channel);
     // Call ESP-NOW function to send data (MAC address of receiver, pointer to the memory holding data & data length)
     uint8_t result = esp_now_send((uint8_t*)receiver_mac, (uint8_t *)&buffer, sizeof(buffer));
+    ESP_LOGI(TAG, "Channel is set at %d", espnow_channel);
 
     // If status is NOT OK, display error message and error code (in hexadecimal).
     if (result != 0) {
         ESP_LOGE(TAG, "Error sending data! Error code: 0x%04X", result);
         ESP_LOGE(TAG, "esp_now_send() failed: %s", esp_err_to_name(result));
-        ESP_LOGE(TAG, "Ensure that receiver is powered-on.");
+        ESP_LOGE(TAG, "==========================");
         ESP_LOGE(TAG, "Ensure that received MAC is: %02X:%02X:%02X:%02X:%02X:%02X",
                  receiver_mac[0], receiver_mac[1], receiver_mac[2],
                  receiver_mac[3], receiver_mac[4], receiver_mac[5]);
         
-        uint8_t channel;
-        esp_wifi_get_channel(&channel, NULL);
-        ESP_LOGE(TAG, "ESP-NOW Channel: %d", channel);
+        
         deletePeer();
+        vTaskDelay(pdMS_TO_TICKS(5000));
+        if (espnow_channel < 11) {
+            espnow_channel++;
+        } else {
+            espnow_channel = 1;
+        }
+        ESP_LOGI(TAG, "Channel is set at %d", espnow_channel);
+        transmission_init();
     }
 }
 
@@ -122,7 +132,7 @@ static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status
         ESP_LOGI(TAG, "Data sent successfully to: %02X:%02X:%02X:%02X:%02X:%02X",
                  mac_addr[0], mac_addr[1], mac_addr[2],
                  mac_addr[3], mac_addr[4], mac_addr[5]);
-    } else {
+    } else if (status == ESP_NOW_SEND_FAIL) {
         ESP_LOGE(TAG, "Error sending data to: %02X:%02X:%02X:%02X:%02X:%02X",
                  mac_addr[0], mac_addr[1], mac_addr[2],
                  mac_addr[3], mac_addr[4], mac_addr[5]);
@@ -130,9 +140,29 @@ static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status
         ESP_LOGE(TAG, "esp_now_send() failed: %s", esp_err_to_name(status));
         ESP_LOGE(TAG, "Ensure that receiver is powered-on and MAC is correct.");
         deletePeer();
-        vTaskDelay(pdMS_TO_TICKS(5000)); // Wait for a second before restarting
-        esp_restart();
+        
+        //esp_restart();
+        if (espnow_channel < 11) {
+            espnow_channel++;
+        } else {
+            esp_restart();
+        }
+
+        esp_now_del_peer(receiver_mac);
+        esp_now_deinit();
+        esp_wifi_set_channel(espnow_channel, WIFI_SECOND_CHAN_NONE);
+        esp_now_init();
+        memcpy(devices.peer_addr, receiver_mac, 6);
+        devices.channel = espnow_channel;
+        devices.encrypt = false;
+        esp_now_add_peer(&devices);
+        //esp_now_deinit();  // Stop ESP-NOW
+        //wifi_init();
+        //esp_now_init();
+
     }
+
+    //vTaskDelay(pdMS_TO_TICKS(5000));
 }
 
 /* WiFi should start before using ESPNOW */
@@ -149,7 +179,7 @@ void wifi_init()
     ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_STA));//ESPNOW_WIFI_MODE));
     ESP_ERROR_CHECK( esp_wifi_start());
     //ESP_ERROR_CHECK( esp_wifi_set_channel(CONFIG_ESPNOW_CHANNEL, WIFI_SECOND_CHAN_NONE));
-    ESP_ERROR_CHECK( esp_wifi_set_channel(2, WIFI_SECOND_CHAN_NONE));
+    ESP_ERROR_CHECK( esp_wifi_set_channel(espnow_channel, WIFI_SECOND_CHAN_NONE)); // 2
     #if CONFIG_ESPNOW_ENABLE_LONG_RANGE
     ESP_ERROR_CHECK( esp_wifi_set_protocol(ESPNOW_WIFI_IF, WIFI_PROTOCOL_11B|WIFI_PROTOCOL_11G|WIFI_PROTOCOL_11N|WIFI_PROTOCOL_LR) );
     #endif
@@ -187,7 +217,7 @@ static void rc_send_data_task()
         if (esp_now_is_peer_exist((uint8_t*)receiver_mac)) {
             sendData();
         }
-        vTaskDelay (100 / portTICK_PERIOD_MS);
+        vTaskDelay (1000 / portTICK_PERIOD_MS);
         /*if (esp_now_is_peer_exist((uint8_t*)receiver_2_mac)) {
             sendData();
         }
@@ -207,7 +237,7 @@ void transmission_init()
 
     // Set ESP-NOW receiver device configuration values
     memcpy(devices.peer_addr, receiver_mac, 6);
-    devices.channel = 2;
+    devices.channel = espnow_channel;
     devices.encrypt = false;
     esp_now_add_peer(&devices);
 
