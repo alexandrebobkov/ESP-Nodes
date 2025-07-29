@@ -53,6 +53,10 @@ void mqtt_update_temp (float temp) { temp_value = temp; }
 void mqtt_update_battery_voltage (float voltage) { battery_voltage = voltage; }
 void mqtt_update_sys_current (float current) { sys_current = current; }
 void mqtt_update_sys_power (float power) { sys_power = power; }
+void mqtt_update_pwm_1 (int pwm) { pwm_1 = pwm; }
+void mqtt_update_pwm_2 (int pwm) { pwm_2 = pwm; }
+void mqtt_update_pwm_3 (int pwm) { pwm_3 = pwm; }
+void mqtt_update_pwm_4 (int pwm) { pwm_4 = pwm; }
 
 static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data) {
     
