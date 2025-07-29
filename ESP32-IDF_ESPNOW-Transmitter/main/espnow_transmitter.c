@@ -2,6 +2,7 @@
     by: Alexander Bobkov
     Date Created:   June 17, 2025
     Updated:        June 18, 2025
+                    July 29, 2025 (added automatic channel selection in case of ESPNOW transmission failure)
     SDK:            ESP-IDF v.5.4.1
 
     Modification:   added boolean variable LED to the struct 'buffer'
