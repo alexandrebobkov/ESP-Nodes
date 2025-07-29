@@ -105,7 +105,7 @@ static void sendData (void)
     if (result != 0) {
         ESP_LOGE(TAG, "Error sending data! Error code: 0x%04X", result);
         ESP_LOGE(TAG, "esp_now_send() failed: %s", esp_err_to_name(result));
-        ESP_LOGE(TAG, "Ensure that receiver is powered-on.");
+        ESP_LOGE(TAG, "==========================");
         ESP_LOGE(TAG, "Ensure that received MAC is: %02X:%02X:%02X:%02X:%02X:%02X",
                  receiver_mac[0], receiver_mac[1], receiver_mac[2],
                  receiver_mac[3], receiver_mac[4], receiver_mac[5]);
