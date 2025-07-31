@@ -144,10 +144,10 @@ static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status
         esp_now_register_send_cb(statusDataSend);
         if (espnow_channel < 11) {
             espnow_channel++;
-        } else {
+        }/* else {
             esp_restart();
             //espnow_channel = 1; // Reset to channel 1 if it exceeds 11
-        }
+        }*/
     }
 }
 
