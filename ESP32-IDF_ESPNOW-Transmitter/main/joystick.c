@@ -69,6 +69,25 @@ static void deletePeer (void)
         ESP_LOGE(TAG, "Could not delete peer");
     }
 }
+
+static void espnow_update_channel(void) {
+
+    esp_now_del_peer(receiver_mac);
+    esp_now_deinit();
+    esp_wifi_set_channel(espnow_channel, WIFI_SECOND_CHAN_NONE);
+    esp_now_init();
+    memcpy(devices.peer_addr, receiver_mac, 6);
+    devices.channel = espnow_channel;
+    devices.encrypt = false;
+    esp_now_add_peer(&devices);
+    esp_now_register_send_cb(statusDataSend);
+    if (espnow_channel < 11) {
+        espnow_channel++;
+    } else {
+        esp_restart();
+    }
+}
+
 static void sendData (void)
 {
     buffer.crc = 0;
@@ -111,7 +130,9 @@ static void sendData (void)
                  receiver_mac[0], receiver_mac[1], receiver_mac[2],
                  receiver_mac[3], receiver_mac[4], receiver_mac[5]);
         
-        deletePeer();
+        //deletePeer();
+
+        espnow_update_channel();
         //vTaskDelay(pdMS_TO_TICKS(5000));
         
         /*if (espnow_channel < 11) {
@@ -141,9 +162,11 @@ static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status
         ESP_LOGE(TAG, "esp_now_send() failed: %s", esp_err_to_name(status));
         ESP_LOGE(TAG, "Ensure that receiver is powered-on and MAC is correct.");
         //deletePeer();        
-        //esp_restart();       
+        //esp_restart();    
+        
+        espnow_update_channel();
 
-        esp_now_del_peer(receiver_mac);
+        /*esp_now_del_peer(receiver_mac);
         esp_now_deinit();
         esp_wifi_set_channel(espnow_channel, WIFI_SECOND_CHAN_NONE);
         esp_now_init();
@@ -156,7 +179,7 @@ static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status
             espnow_channel++;
         } else {
             esp_restart();
-        }
+        }*/
 
         //esp_now_deinit();  // Stop ESP-NOW
         //wifi_init();
