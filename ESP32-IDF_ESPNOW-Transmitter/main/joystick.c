@@ -22,6 +22,8 @@ static int espnow_channel = 1;//11;
 void transmission_init();
 void wifi_init();
 
+static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status);
+
 esp_err_t joystick_adc_init(void) 
 {
     adc_oneshot_unit_init_cfg_t adc_init_config_xy = {
