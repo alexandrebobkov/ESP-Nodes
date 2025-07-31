@@ -112,14 +112,16 @@ static void sendData (void)
                  receiver_mac[3], receiver_mac[4], receiver_mac[5]);
         
         deletePeer();
-        vTaskDelay(pdMS_TO_TICKS(5000));
+        //vTaskDelay(pdMS_TO_TICKS(5000));
+        
         /*if (espnow_channel < 11) {
             espnow_channel++;
         } else {
             espnow_channel = 1;
         }*/
-        ESP_LOGI(TAG, "Channel is set at %d", espnow_channel);
-        transmission_init();
+        
+        //ESP_LOGI(TAG, "Channel is set at %d", espnow_channel);
+        //transmission_init();
     }
 }
 
@@ -215,7 +217,16 @@ static void rc_send_data_task()
         if (esp_now_is_peer_exist((uint8_t*)receiver_mac)) {
             sendData();
         }
-        vTaskDelay (100 / portTICK_PERIOD_MS);
+        vTaskDelay (1000 / portTICK_PERIOD_MS);
+    }
+}
+
+static void rc_display_data_task()
+{
+    while (true) {
+        joystick_show_raw_xy();
+        ESP_LOGI(TAG, "Channel is set at %d", espnow_channel);
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
     }
 }
 
@@ -240,4 +251,6 @@ void transmission_init()
 
     // Defince a task for periodically sending ESPNOW remote control data
     xTaskCreate(rc_send_data_task, "RC", 2048, NULL, 4, NULL);
+
+    xTaskCreate(rc_display_data_task, "RC Display", 2048, NULL, 5, NULL);
 }
