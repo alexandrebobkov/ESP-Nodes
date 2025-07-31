@@ -166,7 +166,7 @@ static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status
         //deletePeer();        
         //esp_restart();    
         
-        espnow_update_channel();
+        //espnow_update_channel();
 
         /*esp_now_del_peer(receiver_mac);
         esp_now_deinit();
