@@ -72,24 +72,6 @@ static void deletePeer (void)
     }
 }
 
-static void espnow_update_channel(void) {
-
-    esp_now_del_peer(receiver_mac);
-    esp_now_deinit();
-    esp_wifi_set_channel(espnow_channel, WIFI_SECOND_CHAN_NONE);
-    esp_now_init();
-    memcpy(devices.peer_addr, receiver_mac, 6);
-    devices.channel = espnow_channel;
-    devices.encrypt = false;
-    esp_now_add_peer(&devices);
-    esp_now_register_send_cb(statusDataSend);
-    if (espnow_channel < 11) {
-        espnow_channel++;
-    } else {
-        esp_restart();
-    }
-}
-
 static void sendData (void)
 {
     buffer.crc = 0;
@@ -131,20 +113,6 @@ static void sendData (void)
         ESP_LOGE(TAG, "Ensure that received MAC is: %02X:%02X:%02X:%02X:%02X:%02X",
                  receiver_mac[0], receiver_mac[1], receiver_mac[2],
                  receiver_mac[3], receiver_mac[4], receiver_mac[5]);
-        
-        //deletePeer();
-
-        espnow_update_channel();
-        //vTaskDelay(pdMS_TO_TICKS(5000));
-        
-        /*if (espnow_channel < 11) {
-            espnow_channel++;
-        } else {
-            espnow_channel = 1;
-        }*/
-        
-        //ESP_LOGI(TAG, "Channel is set at %d", espnow_channel);
-        //transmission_init();
     }
 }
 
@@ -164,11 +132,8 @@ static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status
         ESP_LOGE(TAG, "esp_now_send() failed: %s", esp_err_to_name(status));
         ESP_LOGE(TAG, "Ensure that receiver is powered-on and MAC is correct.");
         //deletePeer();        
-        //esp_restart();    
-        
-        //espnow_update_channel();
 
-        /*esp_now_del_peer(receiver_mac);
+        esp_now_del_peer(receiver_mac);
         esp_now_deinit();
         esp_wifi_set_channel(espnow_channel, WIFI_SECOND_CHAN_NONE);
         esp_now_init();
@@ -181,15 +146,9 @@ static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status
             espnow_channel++;
         } else {
             esp_restart();
-        }*/
-
-        //esp_now_deinit();  // Stop ESP-NOW
-        //wifi_init();
-        //esp_now_init();
-
+            //espnow_channel = 1; // Reset to channel 1 if it exceeds 11
+        }
     }
-
-    //vTaskDelay(pdMS_TO_TICKS(5000));
 }
 
 /* WiFi should start before using ESPNOW */
@@ -270,9 +229,6 @@ void transmission_init()
     devices.channel = espnow_channel;
     devices.encrypt = false;
     esp_now_add_peer(&devices);
-
-    //memcpy(devices.peer_addr, receiver_2_mac, 6);
-    //esp_now_add_peer(&devices);
 
     // Defince a task for periodically sending ESPNOW remote control data
     xTaskCreate(rc_send_data_task, "RC", 2048, NULL, 4, NULL);
