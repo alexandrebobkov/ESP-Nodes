@@ -10,7 +10,7 @@ typedef struct {
     int         sensor1;            
     int         sensor2;             
     bool        sensor3;          
-    float        sensor4;              
+    float       sensor4;              
     uint8_t     motor1_rpm_pwm;     
     uint8_t     motor2_rpm_pwm;
     uint8_t     motor3_rpm_pwm;

@@ -25,39 +25,6 @@ void wifi_init();
 
 static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status);
 
-/*esp_err_t joystick_adc_init(void) 
-{
-    adc_oneshot_unit_init_cfg_t adc_init_config_xy = {
-        .unit_id = ADC_UNIT_1,
-        .ulp_mode = ADC_ULP_MODE_DISABLE,
-    };
-    ESP_ERROR_CHECK(adc_oneshot_new_unit(&adc_init_config_xy, &adc_xy_handle));
-
-    adc_oneshot_chan_cfg_t config_x = {
-        .bitwidth = SOC_ADC_DIGI_MAX_BITWIDTH,
-        //.atten = ADC_ATTEN_DB_0,      //  800mV
-        //.atten = ADC_ATTEN_DB_2_5,    //  1.1V
-        //.atten = ADC_ATTEN_DB_6,      //  1.3V
-        //.atten = ADC_ATTEN_DB_12,     //  2.6V
-        .atten = ADC_ATTEN_DB_12,
-    };
-    adc_oneshot_chan_cfg_t config_y = {
-        .bitwidth = SOC_ADC_DIGI_MAX_BITWIDTH,
-        .atten = ADC_ATTEN_DB_12,
-    };
-    ESP_ERROR_CHECK(adc_oneshot_config_channel(adc_xy_handle, ADC_CHANNEL_0, &config_x));
-    ESP_ERROR_CHECK(adc_oneshot_config_channel(adc_xy_handle, ADC_CHANNEL_1, &config_y));
-
-    return ESP_OK;
-}
-
-void joystick_show_raw_xy()
-{
-    ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC_CHANNEL_0, &x));
-    ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC_CHANNEL_1, &y));
-    ESP_LOGI("(x,y)", "( %d, %d )", x, y);
-}*/
-
 static void get_joystick_xy(int *x_axis, int *y_axis)
 {
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC_CHANNEL_0, x_axis));
@@ -79,18 +46,14 @@ static void sendData (void)
     buffer.sensor1 = 0;
     buffer.sensor2 = 0;
     buffer.sensor3 = false;
-    buffer.sensor4 = false;
+    buffer.sensor4 = 0.0;
     buffer.motor1_rpm_pwm = 0;
     buffer.motor2_rpm_pwm = 0;
     buffer.motor3_rpm_pwm = 0;
     buffer.motor4_rpm_pwm = 0;
 
-    //joystick_show_raw_xy();
-    //get_joystick_xy(&x, &y);
-    get_joystick_xy(&y, &x);
-    //ESP_LOGI("(x, y)", "[ %d, %d ]", x, y);
-    buffer.x_axis = x;
-    buffer.y_axis = y;
+    get_chip_temperature(&temperature_value);
+    buffer.sensor4 = temperature_value;
 
     // Call ESP-NOW function to send data (MAC address of receiver, pointer to the memory holding data & data length)
     uint8_t result = esp_now_send((uint8_t*)receiver_mac, (uint8_t *)&buffer, sizeof(buffer));
