@@ -10,13 +10,6 @@
 
 #define SYS_LED_GPIO  (10)  // 10 GPIO of on-board LED
 
-/*  ============================
-    Joystick
-    ============================ 
-*/
-#define PROJ_X                      (1)                     // ADC1_CH1; 0 GPIO joystick, x-axis
-#define PROJ_Y                      (0)                     // ADC1_CH0; 1 GPIO joystick, y-axis
-#define NAV_BTN                     (8)                     // 8 GPIO joystick button
 
 /*  ============================
             ESP NOW

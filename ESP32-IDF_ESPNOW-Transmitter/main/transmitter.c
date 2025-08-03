@@ -20,11 +20,6 @@ static sensors_data_t buffer;
 static float temperature_value = 0.0;
 static int espnow_channel = 1;
 
-//void transmission_init();
-//void wifi_init();
-
-//static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status);
-
 // Function to delete peer (i.e. when communication error occurs)
 static void deletePeer (void) 
 {
