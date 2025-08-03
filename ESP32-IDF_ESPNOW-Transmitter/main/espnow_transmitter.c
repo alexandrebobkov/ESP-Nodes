@@ -37,7 +37,6 @@ void app_main(void)
     }
     ESP_ERROR_CHECK( ret );
     wifi_init();
-    //joystick_adc_init();
     transmission_init();
 
     system_led_init();

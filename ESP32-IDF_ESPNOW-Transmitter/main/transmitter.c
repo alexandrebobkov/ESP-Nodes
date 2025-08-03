@@ -16,21 +16,14 @@
 #include "config.h"
 
 esp_now_peer_info_t devices;
-static adc_oneshot_unit_handle_t adc_xy_handle;
 static sensors_data_t buffer;
-static int x, y; // Joystick x- and y- axis positions
 static float temperature_value = 0.0;
-static int espnow_channel = 1;//11;
-void transmission_init();
-void wifi_init();
+static int espnow_channel = 1;
 
-static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status);
+//void transmission_init();
+//void wifi_init();
 
-static void get_joystick_xy(int *x_axis, int *y_axis)
-{
-    ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC_CHANNEL_0, x_axis));
-    ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC_CHANNEL_1, y_axis));
-}
+//static void statusDataSend(const uint8_t *mac_addr, esp_now_send_status_t status);
 
 // Function to delete peer (i.e. when communication error occurs)
 static void deletePeer (void) 
