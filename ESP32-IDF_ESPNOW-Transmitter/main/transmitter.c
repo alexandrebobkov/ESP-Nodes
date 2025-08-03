@@ -18,6 +18,7 @@ esp_now_peer_info_t devices;
 static adc_oneshot_unit_handle_t adc_xy_handle;
 static sensors_data_t buffer;
 static int x, y; // Joystick x- and y- axis positions
+static float temperature_value = 0.0;
 static int espnow_channel = 1;//11;
 void transmission_init();
 void wifi_init();
@@ -55,13 +56,13 @@ void joystick_show_raw_xy()
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC_CHANNEL_0, &x));
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC_CHANNEL_1, &y));
     ESP_LOGI("(x,y)", "( %d, %d )", x, y);
-}
+}*/
 
 static void get_joystick_xy(int *x_axis, int *y_axis)
 {
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC_CHANNEL_0, x_axis));
     ESP_ERROR_CHECK(adc_oneshot_read(adc_xy_handle, ADC_CHANNEL_1, y_axis));
-}*/
+}
 
 // Function to delete peer (i.e. when communication error occurs)
 static void deletePeer (void) 
@@ -75,10 +76,10 @@ static void deletePeer (void)
 static void sendData (void)
 {
     buffer.crc = 0;
-    buffer.x_axis = 240;
-    buffer.y_axis = 256;
-    buffer.nav_bttn = 0;
-    buffer.led = 0;
+    buffer.sensor1 = 0;
+    buffer.sensor2 = 0;
+    buffer.sensor3 = false;
+    buffer.sensor4 = false;
     buffer.motor1_rpm_pwm = 0;
     buffer.motor2_rpm_pwm = 0;
     buffer.motor3_rpm_pwm = 0;
@@ -91,20 +92,9 @@ static void sendData (void)
     buffer.x_axis = x;
     buffer.y_axis = y;
 
-    // Display brief summary of data being sent.
-    ESP_LOGI(TAG, "Joystick (x,y) position ( %d, %d )", buffer.x_axis, buffer.y_axis);
-    ESP_LOGI(TAG, "pwm 1, pwm 2 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor1_rpm_pwm, (uint8_t)buffer.motor2_rpm_pwm);
-    ESP_LOGI(TAG, "pwm 3, pwm 4 [ 0x%04X, 0x%04X ]", (uint8_t)buffer.motor3_rpm_pwm, (uint8_t)buffer.motor4_rpm_pwm);
-
-    //ESP_LOGI(TAG, "ESP-NOW Channel: %d", devices.channel);
-    //ESP_LOGI(TAG, "Wi-Fi Channel: %d", );
-    uint8_t channel;
-    esp_wifi_get_channel(&channel, NULL);
-    ESP_LOGE(TAG, "ESP-NOW Channel: %d", channel);
     // Call ESP-NOW function to send data (MAC address of receiver, pointer to the memory holding data & data length)
     uint8_t result = esp_now_send((uint8_t*)receiver_mac, (uint8_t *)&buffer, sizeof(buffer));
-    ESP_LOGI(TAG, "Channel is set at %d", espnow_channel);
-
+    
     // If status is NOT OK, display error message and error code (in hexadecimal).
     if (result != 0) {
         ESP_LOGE(TAG, "Error sending data! Error code: 0x%04X", result);
