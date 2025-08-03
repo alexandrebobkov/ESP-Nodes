@@ -89,6 +89,15 @@ static void update_pwm (int rc_x, int rc_y) {
         y = y_sum / sample;
         s++;*/
 
+    /*
+    
+    (+, +0)     (+, +)      (+0, +)
+    (-, +)      (0, 0)      (+, -)
+    (-, -0)     (-, -)      (-0, -)
+    
+    if (1024 < x < 2048 && 1024 < y < 2048) {
+    }*/
+
     // Turn Left
     if (x == 8190 && y == -8190) {
         m.motor1_rpm_pcm = 6172;
