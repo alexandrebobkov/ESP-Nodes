@@ -12,6 +12,7 @@
 #include "esp_now.h"
 
 #include "sensors_data.h"
+#include "system_health.h"
 #include "config.h"
 
 esp_now_peer_info_t devices;

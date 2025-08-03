@@ -610,3 +610,33 @@ events:
         C:/Users/alex/esp/tools/riscv32-esp-elf/esp-14.2.0_20241119/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/14.2.0/../../../../riscv32-esp-elf/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 00010094\x0d
         
       exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Users/alex/esp/tools/cmake/3.30.2/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Users/alex/esp/tools/cmake/3.30.2/share/cmake-3.30/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Users/alex/esp/tools/cmake/3.30.2/share/cmake-3.30/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "C:/Users/alex/esp/v5.4/esp-idf/components/mbedtls/mbedtls/CMakeLists.txt:219 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS"
+    directories:
+      source: "C:/Users/alex/github/ESP-Nodes/ESP32-IDF_ESPNOW-Transmitter/build/CMakeFiles/CMakeScratch/TryCompile-etlo5p"
+      binary: "C:/Users/alex/github/ESP-Nodes/ESP32-IDF_ESPNOW-Transmitter/build/CMakeFiles/CMakeScratch/TryCompile-etlo5p"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-march=rv32imc_zicsr_zifencei  -Wall -Wextra -Wwrite-strings -Wmissing-prototypes -Wformat=2 -Wno-format-nonliteral -Wvla -Wlogical-op -Wshadow"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-nostartfiles -march=rv32imc_zicsr_zifencei --specs=nosys.specs "
+      CMAKE_MODULE_PATH: "C:/Users/alex/esp/v5.4/esp-idf/tools/cmake;C:/Users/alex/esp/v5.4/esp-idf/tools/cmake/third_party"
+    buildResult:
+      variable: "C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/alex/github/ESP-Nodes/ESP32-IDF_ESPNOW-Transmitter/build/CMakeFiles/CMakeScratch/TryCompile-etlo5p'
+        
+        Run Build Command(s): C:/Users/alex/esp/tools/ninja/1.12.1/ninja.exe -v cmTC_8ae8d
+        [1/2] C:\\Users\\alex\\esp\\tools\\riscv32-esp-elf\\esp-14.2.0_20241119\\riscv32-esp-elf\\bin\\riscv32-esp-elf-gcc.exe -DC_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS  -march=rv32imc_zicsr_zifencei  -Wall -Wextra -Wwrite-strings -Wmissing-prototypes -Wformat=2 -Wno-format-nonliteral -Wvla -Wlogical-op -Wshadow    -Wformat-signedness -o CMakeFiles/cmTC_8ae8d.dir/src.c.obj -c C:/Users/alex/github/ESP-Nodes/ESP32-IDF_ESPNOW-Transmitter/build/CMakeFiles/CMakeScratch/TryCompile-etlo5p/src.c
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Users\\alex\\esp\\tools\\riscv32-esp-elf\\esp-14.2.0_20241119\\riscv32-esp-elf\\bin\\riscv32-esp-elf-gcc.exe -march=rv32imc_zicsr_zifencei  -Wall -Wextra -Wwrite-strings -Wmissing-prototypes -Wformat=2 -Wno-format-nonliteral -Wvla -Wlogical-op -Wshadow -nostartfiles -march=rv32imc_zicsr_zifencei --specs=nosys.specs CMakeFiles/cmTC_8ae8d.dir/src.c.obj -o cmTC_8ae8d   && cd ."
+        C:/Users/alex/esp/tools/riscv32-esp-elf/esp-14.2.0_20241119/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/14.2.0/../../../../riscv32-esp-elf/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 00010094\x0d
+        
+      exitCode: 0
+...

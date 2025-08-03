@@ -9,7 +9,12 @@
 
 static uint8_t sys_led_state = 1; // LED state variable
 static temperature_sensor_handle_t temp_sensor;
-//static const char *TAG = "SystemHealth"; 
+//static const char *TAG = "SystemHealth";
+
+void get_chip_temperature(float *temperature_value) {
+    ESP_ERROR_CHECK(temperature_sensor_get_celsius(temp_sensor, temperature_value));
+    ESP_LOGI(TAG, "Temperature value %.02f ℃", *temperature_value);
+}
 
 /*
     EXP32-C3 Chip built-in temprature sensor
