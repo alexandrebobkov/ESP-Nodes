@@ -90,7 +90,7 @@ void app_main(void)
 
 
 void task1(void *pvParameters) {
-    int x = 0;
+    uint32_t x = 0;
 
     while (1) {
         if (xSemaphoreTake(xMutex, 1500)) {
@@ -102,7 +102,7 @@ void task1(void *pvParameters) {
                 .num3 = 0,
             };
             xQueueSend(xQueue1, &data, 0);
-            printf("Task 1 sent data.\n");
+            printf("Task 1 sent x=%" PRIu32 "\n");
             x++;
 
             vTaskDelay((500)); // Delay for 1 second
@@ -116,7 +116,7 @@ void task1(void *pvParameters) {
 }
 
 void task2(void *pvParameters) {
-    int y = 0;
+    uint32_t y = 0;
 
     while (1) {
         if (xSemaphoreTake(xMutex, 1500)) {
@@ -128,7 +128,7 @@ void task2(void *pvParameters) {
                 .num3 = 0,
             };
             xQueueSend(xQueue2, &data, 0);
-            printf("Task 2 sent data.\n");
+            printf("Task 2 sent y=%" PRIu32 "\n");
             y++;
 
             vTaskDelay((2000)); // Delay for 2 seconds
