@@ -104,20 +104,20 @@ void task1(void *pvParameters) {
 }
 
 void task2(void *pvParameters) {
-    int x = 0;
+    int y = 0;
 
     while (1) {
         if (xSemaphoreTake(xMutex, 1500)) {
             printf("Task 2 is running\n");
 
-            data data = {
-                .num1 = x,
-                .num2 = 0,
+            SensorsData data = {
+                .num1 = 0,
+                .num2 = y,
                 .num3 = 0,
             };
             xQueueSend(xQueue1, &data, 0);
             printf("Task 1 sent data");
-            x++;
+            y++;
 
             printf("This is Task #2\n\n");
             vTaskDelay((2000)); // Delay for 2 seconds
