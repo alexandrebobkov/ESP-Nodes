@@ -77,6 +77,7 @@ void app_main(void)
         printf("Failed to create mutex\n");
         return;
     }
+    xQueue = xQueueCreate(10, sizeof(SensorsData));
     xQueue1 = xQueueCreate(10, sizeof(SensorsData));
     xQueue2 = xQueueCreate(10, sizeof(SensorsData));
     if (xQueue1 == NULL || xQueue2 == NULL) {
