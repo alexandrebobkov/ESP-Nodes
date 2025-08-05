@@ -88,9 +88,13 @@ void task1(void *pvParameters) {
 
 void task2(void *pvParameters) {
     while (1) {
-        printf("Task 2 is running\n");
-        printf("This is Task #2\n\n");
-        vTaskDelay((2000)); // Delay for 2 seconds
+        if (xSemaphoreTake(xMutex, portMAX_DELAY)) {
+            printf("Task 2 is running\n");
+            printf("This is Task #2\n\n");
+            vTaskDelay((2000)); // Delay for 2 seconds
+            xSemaphoreGive(xMutex);
+        }
+        vTaskDelay((100));
     }
 }
 
