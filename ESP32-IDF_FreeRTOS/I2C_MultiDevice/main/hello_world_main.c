@@ -76,13 +76,13 @@ void app_main(void)
     xTaskCreate(task_restart, "TaskRestart", 2048, NULL, 2, NULL);
 
 
-    for (int i = 10; i >= 0; i--) {
+    /*for (int i = 10; i >= 0; i--) {
         printf("Restarting in %d seconds...\n", i);
         vTaskDelay(1000);
     }
     printf("Restarting now.\n");
     fflush(stdout);
-    esp_restart();
+    esp_restart();*/
 }
 
 
@@ -119,7 +119,7 @@ void task2(void *pvParameters) {
 void task_restart(void *pvParameters) {
     while (1) {
         vTaskDelay(10000); // Delay for 10 seconds
-        printf("Restarting system...\n");
+        printf("Restarting system in %d seconds...\n", cntdn);
         esp_restart();
     }
 }
