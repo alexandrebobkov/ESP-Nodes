@@ -84,14 +84,6 @@ void app_main(void)
     xTaskCreate(task2, "Task2", 2048, NULL, 5, NULL);
     xTaskCreate(task_restart, "TaskRestart", 2048, NULL, 20, NULL);
 
-
-    /*for (int i = 10; i >= 0; i--) {
-        printf("Restarting in %d seconds...\n", i);
-        vTaskDelay(1000);
-    }
-    printf("Restarting now.\n");
-    fflush(stdout);
-    esp_restart();*/
 }
 
 
