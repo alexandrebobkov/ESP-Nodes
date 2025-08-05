@@ -120,7 +120,7 @@ void task2(void *pvParameters) {
 
 void task_restart(void *pvParameters) {
     while (1) {
-        vTaskDelay(10000); // Delay for 10 seconds
+        vTaskDelay(cntdn * 1000); // Delay for 10 seconds
         printf("Restarting system in %d seconds...\n", cntdn);
         esp_restart();
     }
