@@ -136,7 +136,9 @@ void task2(void *pvParameters) {
                 .num2 = y,
                 .num3 = 0,
             };
+            s_data.num2 = y;
             xQueueSend(xQueue2, &data, 0);
+            xQueueSend(xQueue2, &s_data, 0);
             printf("Task 2 sent y=%" PRIu32 "\n", y);
             y++;
 
