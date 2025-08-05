@@ -18,6 +18,8 @@
 #include "esp_flash.h"
 #include "esp_system.h"
 
+SemaphoreHandle_t xMutex;
+
 void task1(void *pvParameters);
 void task2(void *pvParameters);
 
