@@ -2,6 +2,8 @@
 #define I2C_IO_H
 
 #include <stdio.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/semphr.h"
 #include "driver/i2c_master.h"
 
 typedef struct {
@@ -13,10 +15,10 @@ typedef struct {
 i2c_master_bus_config_t bus_config = {
     .clk_source = I2C_CLK_SRC_DEFAULT,
     .i2c_port = I2C_NUM_0,               // Use I2C_NUM_1 for second port
-    .scl_io_num = GPIO_NUM_22,           // Your SCL pin
-    .sda_io_num = GPIO_NUM_21,           // Your SDA pin
+    .scl_io_num = 22,           // Your SCL pin
+    .sda_io_num = 21,           // Your SDA pin
     .glitch_ignore_cnt = 7,
-    .flags.enable_internal_pullup = true
+    .flags.enable_internal_pullup = true,
 };
 
 #endif

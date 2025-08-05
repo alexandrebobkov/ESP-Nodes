@@ -20,6 +20,8 @@
 #include "esp_flash.h"
 #include "esp_system.h"
 
+#include "i2c_io.h"
+
 SemaphoreHandle_t xMutex;
 QueueHandle_t xQueue, xQueue1, xQueue2;
 typedef struct {
