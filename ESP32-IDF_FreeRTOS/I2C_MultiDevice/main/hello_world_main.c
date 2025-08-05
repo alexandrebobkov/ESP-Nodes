@@ -153,10 +153,10 @@ void display_task(void *pvParameters) {
     SensorsData data;
     while (1) {
         if (xQueueReceive(xQueue1, &data, 500)) {
-            printf("Display Task received from Task 1: num1=%d, num2=%d, num3=%d\n", data.num1, data.num2, data.num3);
+            printf("Display Task received from Task 1: num1=%" PRIu32 ", num2=%" PRIu32 ", num3=%" PRIu32 "\n", data.num1, data.num2, data.num3);
         }
         if (xQueueReceive(xQueue2, &data, 500)) {
-            printf("Display Task received from Task 2: num1=%d, num2=%d, num3=%d\n", data.num1, data.num2, data.num3);
+            printf("Display Task received from Task 2: num1=%" PRIu32 ", num2=%" PRIu32 ", num3=%" PRIu32 "\n", data.num1, data.num2, data.num3);
         }
         vTaskDelay(500);
     }
