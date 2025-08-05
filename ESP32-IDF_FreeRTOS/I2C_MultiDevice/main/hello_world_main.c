@@ -39,7 +39,7 @@ void restart_task(void *pvParameters);
 
 void app_main(void)
 {
-    cntdn = 10;
+    cntdn = 20;
     s_data = (SensorsData) {
         .num1 = 0,
         .num2 = 0,
@@ -142,7 +142,7 @@ void task2(void *pvParameters) {
             printf("Task 2 sent y=%" PRIu32 "\n", y);
             y++;
 
-            vTaskDelay((2000)); // Delay for 2 seconds
+            vTaskDelay((500)); // Delay for 2 seconds
             xSemaphoreGive(xMutex);
         }
         else {
