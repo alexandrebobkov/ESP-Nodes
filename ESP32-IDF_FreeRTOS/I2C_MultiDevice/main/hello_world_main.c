@@ -95,6 +95,11 @@ void app_main(void)
 // Task #1; increments num1, sends data to queue1
 void task1(void *pvParameters) {
     uint32_t x = 0;
+    SensorsData task1_data {
+        .num1 = 0,
+        .num2 = 0,
+        .num3 = 0,
+    };
 
     while (1) {
         if (xSemaphoreTake(xMutex, 1500)) {
