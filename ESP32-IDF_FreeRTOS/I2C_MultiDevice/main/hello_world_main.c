@@ -21,8 +21,13 @@ void app_main(void)
     esp_chip_info_t chip_info;
     uint32_t flash_size;
     esp_chip_info(&chip_info);
-    printf("This is %d chip with %d CPU core(s), %s%s%s%s, ",
-           (chip_info.model),
+    printf("This is ESP chip model # %d with %d CPU core(s), %s%s%s%s, ",
+           (chip_info.model & CHIP_ESP32) ? "ESP32" : "",
+           (chip_info.model & CHIP_ESP32S2) ? 32 : "",
+           (chip_info.model & CHIP_ESP32S3) ? 32 : "",
+           (chip_info.model & CHIP_ESP32C3) ? 32 : "",
+           (chip_info.model & CHIP_ESP32C2) ? 32 : "",
+           (chip_info.model & CHIP_ESP32C6) ? 32 : "",
            chip_info.cores,
            (chip_info.features & CHIP_FEATURE_WIFI_BGN) ? "WiFi/" : "",
            (chip_info.features & CHIP_FEATURE_BT) ? "BT" : "",
