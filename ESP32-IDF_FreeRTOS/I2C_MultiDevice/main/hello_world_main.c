@@ -73,8 +73,8 @@ void app_main(void)
         return;
     }
 
-    xQueue1 = xQueueCreate(10, sizeof(int));
-    xQueue2 = xQueueCreate(10, sizeof(int));
+    xQueue1 = xQueueCreate(10, sizeof(data));
+    xQueue2 = xQueueCreate(10, sizeof(data));
     if (xQueue1 == NULL || xQueue2 == NULL) {
         printf("Failed to create queues\n");
         return;
