@@ -100,7 +100,7 @@ void task1(void *pvParameters) {
         if (xSemaphoreTake(xMutex, 1500)) {
             printf("Task 1 is running\n");
             s_data.num1 = x;
-            xQueueSend(xQueue1, &s_data, 0);
+            xQueueSend(xQueue, &s_data, 0);
             printf("Task 1 sent x=%" PRIu32 "\n", x);
             x+=2;
             vTaskDelay((500));
@@ -121,7 +121,7 @@ void task2(void *pvParameters) {
         if (xSemaphoreTake(xMutex, 1500)) {
             printf("Task 2 is running\n");
             s_data.num2 = y;
-            xQueueSend(xQueue2, &s_data, 0);
+            xQueueSend(xQueue, &s_data, 0);
             printf("Task 2 sent y=%" PRIu32 "\n", y);
             y++;
             vTaskDelay((250)); 
