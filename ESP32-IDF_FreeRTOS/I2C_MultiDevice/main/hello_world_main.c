@@ -22,7 +22,7 @@ void app_main(void)
     uint32_t flash_size;
     esp_chip_info(&chip_info);
     printf("This is %s chip with %d CPU core(s), %s%s%s%s, ",
-           CONFIG_IDF_TARGET,
+           chip_info.model,
            chip_info.cores,
            (chip_info.features & CHIP_FEATURE_WIFI_BGN) ? "WiFi/" : "",
            (chip_info.features & CHIP_FEATURE_BT) ? "BT" : "",
@@ -44,7 +44,7 @@ void app_main(void)
 
     for (int i = 10; i >= 0; i--) {
         printf("Restarting in %d seconds...\n", i);
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
+        vTaskDelay(1000);
     }
     printf("Restarting now.\n");
     fflush(stdout);
