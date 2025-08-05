@@ -73,6 +73,7 @@ void task1(void *pvParameters) {
             printf("Task 1 is running\n");
             printf("This is Task #1\n\n");
             vTaskDelay((500)); // Delay for 1 second
+            xSemaphoreGive(xMutex);
         }
     }
 }
