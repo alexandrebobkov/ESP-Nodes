@@ -82,6 +82,9 @@ void task1(void *pvParameters) {
             vTaskDelay((500)); // Delay for 1 second
             xSemaphoreGive(xMutex);
         }
+        else {
+            printf("Task 1 timed out waiting for mutex\n");
+        }
         vTaskDelay((100));
     }
 }
@@ -93,6 +96,9 @@ void task2(void *pvParameters) {
             printf("This is Task #2\n\n");
             vTaskDelay((2000)); // Delay for 2 seconds
             xSemaphoreGive(xMutex);
+        }
+        else {
+            printf("Task 2 timed out waiting for mutex\n");
         }
         vTaskDelay((100));
     }
