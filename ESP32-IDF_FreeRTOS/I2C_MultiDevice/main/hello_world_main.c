@@ -154,7 +154,7 @@ void display_task(void *pvParameters) {
             printf("Display Task received sensors_data from Task 2: num1=%" PRIu32 ", num2=%" PRIu32 ", num3=%" PRIu32 "\n", s_data.num1, s_data.num2, s_data.num3);
         }
         if (xQueueReceive(xQueue, &s_data, 500)) {
-            printf("Display Task received sensors_data from Task 1:\nnum1=%" PRIu32 "\nnum2=%" PRIu32 "\nnum3=%" PRIu32 "\n", 
+            printf("\n\nDisplay Task received sensors_data\nnum1=%" PRIu32 "\nnum2=%" PRIu32 "\nnum3=%" PRIu32 "\n", 
                 s_data.num1, s_data.num2, s_data.num3);
         }
         vTaskDelay(50);
