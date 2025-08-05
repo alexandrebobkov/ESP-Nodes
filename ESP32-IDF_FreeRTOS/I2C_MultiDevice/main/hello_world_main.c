@@ -100,7 +100,7 @@ void task1(void *pvParameters) {
                 .num2 = 0,
                 .num3 = 0,
             };
-            xQueueSend(xQueue1 &data, 1);
+            xQueueSend(xQueue1, &data, 0);
             printf("Task 1 sent data");
             x++;
 
