@@ -67,14 +67,14 @@ void app_main(void)
 void task1(void *pvParameters) {
     while (1) {
         printf("Task 1 is running\n");
-        vTaskDelay(pdMS_TO_TICKS(1000)); // Delay for 1 second
+        vTaskDelay((1000)); // Delay for 1 second
     }
 }
 
 void task2(void *pvParameters) {
     while (1) {
         printf("Task 2 is running\n");
-        vTaskDelay(pdMS_TO_TICKS(2000)); // Delay for 2 seconds
+        vTaskDelay((2000)); // Delay for 2 seconds
     }
 }
 
