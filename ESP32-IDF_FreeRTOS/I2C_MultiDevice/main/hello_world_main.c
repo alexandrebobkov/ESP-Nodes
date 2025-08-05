@@ -45,7 +45,7 @@ void app_main(void)
         .num2 = 0,
         .num3 = 0,
     };
-    
+
     printf("Hello world!\n");
 
     /* Print chip information */
@@ -108,7 +108,9 @@ void task1(void *pvParameters) {
                 .num2 = 0,
                 .num3 = 0,
             };
+            s_data.num1 = x;
             xQueueSend(xQueue1, &data, 0);
+            xQueueSend(xQueue1, &s_data, 0);
             printf("Task 1 sent x=%" PRIu32 "\n", x);
             x++;
 
