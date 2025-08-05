@@ -1,4 +1,4 @@
-/* * Data converted from /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_FreeRTOS/I2C_MultiDevice/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from /home/alex/MyProjects/ESP-Nodes/ESP32-IDF_FreeRTOS/I2C_MultiDevice/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 #if !defined (__APPLE__) && !defined (__linux__)
