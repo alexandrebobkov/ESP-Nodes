@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "I2C_MultiDevice",
-    "project_version":    "ESP32-Node_Switch-v2.7-9215-gc04a0f33c-dirty",
+    "project_version":    "ESP32-Node_Switch-v2.7-9216-g5c3f9d029-dirty",
     "project_path":       "/home/alex/MyProjects/ESP-Nodes/ESP32-IDF_FreeRTOS/I2C_MultiDevice",
     "idf_path":           "/home/alex/esp/v5.4.1/esp-idf",
     "build_dir":          "/home/alex/MyProjects/ESP-Nodes/ESP32-IDF_FreeRTOS/I2C_MultiDevice/build",
@@ -1195,7 +1195,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "/home/alex/MyProjects/ESP-Nodes/ESP32-IDF_FreeRTOS/I2C_MultiDevice/build/esp-idf/main/libmain.a",
-            "sources": [ "/home/alex/MyProjects/ESP-Nodes/ESP32-IDF_FreeRTOS/I2C_MultiDevice/main/hello_world_main.c" ],
+            "sources": [ "/home/alex/MyProjects/ESP-Nodes/ESP32-IDF_FreeRTOS/I2C_MultiDevice/main/i2c_multidevice.c" ],
             "include_dirs": []
         },
         "mbedtls": {
