@@ -33,6 +33,7 @@ static int cntdn;
 
 void task1(void *pvParameters);
 void task2(void *pvParameters);
+void display_task(void *pvParameters);
 void task_restart(void *pvParameters);
 
 void app_main(void)
@@ -136,4 +137,19 @@ void task_restart(void *pvParameters) {
         esp_restart();
     }
 }
+
+
+void display_task(void *pvParameters) {
+    TaskData data;
+    while (1) {
+        if (xQueueReceive(xQueue1, &data, pdMS_TO_TICKS(500))) {
+            printf("Display Task received from Task 1: id=%d, message=%s\n", data.id, data.message);
+        }
+        if (xQueueReceive(xQueue2, &data, pdMS_TO_TICKS(500))) {
+            printf("Display Task received from Task 2: id=%d, message=%s\n", data.id, data.message);
+        }
+        vTaskDelay(pdMS_TO_TICKS(200));
+    }
+}
+
 
