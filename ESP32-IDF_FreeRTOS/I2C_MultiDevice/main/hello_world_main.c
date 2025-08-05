@@ -159,11 +159,11 @@ void display_task(void *pvParameters) {
     while (1) {
         if (xQueueReceive(xQueue1, &rx_data, 500)) {
             printf("Received sensors_data from Queue 1: num1=%" PRIu32 ", num2=%" PRIu32 ", num3=%" PRIu32 "\n",
-                s_data.num1, s_data.num2, s_data.num3);
+                rx_data.num1, rx_data.num2, rx_data.num3);
         }
         if (xQueueReceive(xQueue2, &rx_data, 500)) {
             printf("Received sensors_data from Queue 2: num1=%" PRIu32 ", num2=%" PRIu32 ", num3=%" PRIu32 "\n",
-                s_data.num1, s_data.num2, s_data.num3);
+                rx_data.num1, rx_data.num2, rx_data.num3);
         }
         
             printf("\n\nsensors_data\nnum1=%" PRIu32 "\nnum2=%" PRIu32 "\nnum3=%" PRIu32 "\n", 
