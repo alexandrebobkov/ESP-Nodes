@@ -102,7 +102,7 @@ void task1(void *pvParameters) {
                 .num3 = 0,
             };
             xQueueSend(xQueue1, &data, 0);
-            printf("Task 1 sent x=%" PRIu32 "\n");
+            printf("Task 1 sent x=%" PRIu32 "\n", x);
             x++;
 
             vTaskDelay((500)); // Delay for 1 second
@@ -128,7 +128,7 @@ void task2(void *pvParameters) {
                 .num3 = 0,
             };
             xQueueSend(xQueue2, &data, 0);
-            printf("Task 2 sent y=%" PRIu32 "\n");
+            printf("Task 2 sent y=%" PRIu32 "\n", y);
             y++;
 
             vTaskDelay((2000)); // Delay for 2 seconds
