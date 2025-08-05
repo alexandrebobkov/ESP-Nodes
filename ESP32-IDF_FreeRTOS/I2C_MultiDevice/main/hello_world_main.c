@@ -34,7 +34,7 @@ static int cntdn;
 void task1(void *pvParameters);
 void task2(void *pvParameters);
 void display_task(void *pvParameters);
-void task_restart(void *pvParameters);
+void restart_task(void *pvParameters);
 
 void app_main(void)
 {
@@ -83,7 +83,7 @@ void app_main(void)
 
     xTaskCreate(task1, "Task1", 2048, NULL, 5, NULL);
     xTaskCreate(task2, "Task2", 2048, NULL, 5, NULL);
-    xTaskCreate(task_restart, "TaskRestart", 2048, NULL, 20, NULL);
+    xTaskCreate(restart_task, "TaskRestart", 2048, NULL, 20, NULL);
 
 }
 
@@ -130,7 +130,7 @@ void task2(void *pvParameters) {
     }
 }
 
-void task_restart(void *pvParameters) {
+void restart_task(void *pvParameters) {
     printf("Restarting system in %d seconds...\n", cntdn);
     while (1) {
         vTaskDelay(cntdn * 1000); // Delay for 10 seconds
