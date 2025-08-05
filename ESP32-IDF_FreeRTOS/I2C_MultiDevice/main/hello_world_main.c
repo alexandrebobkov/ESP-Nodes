@@ -95,7 +95,7 @@ void app_main(void)
 // Task #1; increments num1, sends data to queue1
 void task1(void *pvParameters) {
     uint32_t x = 0;
-    SensorsData task1_data = {
+    SensorsData task_data = {
         .num1 = 0,
         .num2 = 0,
         .num3 = 0,
@@ -104,8 +104,8 @@ void task1(void *pvParameters) {
     while (1) {
         if (xSemaphoreTake(xMutex, 1500)) {
             printf("Task 1 is running\n");
-            task1_data.num1 = x;
-            xQueueSend(xQueue1, &task1_data, 0);
+            task_data.num1 = x;
+            xQueueSend(xQueue1, &task_data, 0);
             printf("Task 1 sent x=%" PRIu32 "\n", x);
             x+=2;
             vTaskDelay((500));
@@ -121,12 +121,17 @@ void task1(void *pvParameters) {
 // Task #2; increments num2, sends data to queue2
 void task2(void *pvParameters) {
     uint32_t y = 0;
+    SensorsData task_data = {
+        .num1 = 0,
+        .num2 = 0,
+        .num3 = 0,
+    };
 
     while (1) {
         if (xSemaphoreTake(xMutex, 1500)) {
             printf("Task 2 is running\n");
-            s_data.num2 = y;
-            xQueueSend(xQueue2, &s_data, 0);
+            task_data.num2 = y;
+            xQueueSend(xQueue2, &task_data, 0);
             printf("Task 2 sent y=%" PRIu32 "\n", y);
             y++;
             vTaskDelay((250)); 
