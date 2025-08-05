@@ -456,6 +456,9 @@ void app_main(void)
     }
     ESP_ERROR_CHECK(ret);
 
+    // MOTORS
+    motors_init();
+
     // Use wifi_init() for ESP-NOW and Wi-Fi setup
     wifi_init();
 
@@ -510,9 +513,6 @@ void app_main(void)
     // ADC
     rc_adc_init();
     xTaskCreate(rc_task, "RC", 2048, NULL, 5, NULL);
-
-    // MOTORS
-    motors_init();
 
     ESP_ERROR_CHECK(i2cdev_init());
     xTaskCreate(task, "test", configMINIMAL_STACK_SIZE * 8, NULL, 5, NULL);
