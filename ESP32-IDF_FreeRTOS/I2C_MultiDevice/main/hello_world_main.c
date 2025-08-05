@@ -89,6 +89,8 @@ void app_main(void)
 
 
 void task1(void *pvParameters) {
+    int x = 0;
+    
     while (1) {
         if (xSemaphoreTake(xMutex, 1500)) {
             printf("Task 1 is running\n");
