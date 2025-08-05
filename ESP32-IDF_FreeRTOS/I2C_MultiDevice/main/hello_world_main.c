@@ -112,7 +112,7 @@ void task1(void *pvParameters) {
             xQueueSend(xQueue1, &data, 0);
             xQueueSend(xQueue1, &s_data, 0);
             printf("Task 1 sent x=%" PRIu32 "\n", x);
-            x++;
+            x+=2;
 
             vTaskDelay((500)); // Delay for 1 second
             xSemaphoreGive(xMutex);
