@@ -67,6 +67,7 @@ void app_main(void)
 void task1(void *pvParameters) {
     while (1) {
         printf("Task 1 is running\n");
+        ESP_LOGI("Task1", "This is Task #1");
         vTaskDelay((1000)); // Delay for 1 second
     }
 }
@@ -74,6 +75,7 @@ void task1(void *pvParameters) {
 void task2(void *pvParameters) {
     while (1) {
         printf("Task 2 is running\n");
+        ESP_LOGI("Task2", "This is Task #2");
         vTaskDelay((2000)); // Delay for 2 seconds
     }
 }
