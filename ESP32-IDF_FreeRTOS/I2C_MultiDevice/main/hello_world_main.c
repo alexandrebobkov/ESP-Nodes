@@ -150,15 +150,15 @@ void restart_task(void *pvParameters) {
 
 
 void display_task(void *pvParameters) {
-    TaskData data;
+    SensorsData data;
     while (1) {
-        if (xQueueReceive(xQueue1, &data, pdMS_TO_TICKS(500))) {
-            printf("Display Task received from Task 1: id=%d, message=%s\n", data.id, data.message);
+        if (xQueueReceive(xQueue1, &data, 500)) {
+            printf("Display Task received from Task 1: num1=%d, num2=%d, num3=%d\n", data.num1, data.num2, data.num3);
         }
-        if (xQueueReceive(xQueue2, &data, pdMS_TO_TICKS(500))) {
-            printf("Display Task received from Task 2: id=%d, message=%s\n", data.id, data.message);
+        if (xQueueReceive(xQueue2, &data, 500)) {
+            printf("Display Task received from Task 2: num1=%d, num2=%d, num3=%d\n", data.num1, data.num2, data.num3);
         }
-        vTaskDelay(pdMS_TO_TICKS(200));
+        vTaskDelay(500);
     }
 }
 
