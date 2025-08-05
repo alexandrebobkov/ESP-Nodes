@@ -21,11 +21,11 @@
 
 SemaphoreHandle_t xMutex;
 QueueHandle_t xQueue1;
-QueueHandle_t xQueue2
-
+QueueHandle_t xQueue2;
 
 void task1(void *pvParameters);
 void task2(void *pvParameters);
+void task_restart(void *pvParameters);
 
 void app_main(void)
 {
@@ -66,12 +66,10 @@ void app_main(void)
 
     xQueue1 = xQueueCreate(10, sizeof(int));
     xQueue2 = xQueueCreate(10, sizeof(int));
-
     if (xQueue1 == NULL || xQueue2 == NULL) {
         printf("Failed to create queues\n");
         return;
     }
-
 
     xTaskCreate(task1, "Task1", 2048, NULL, 5, NULL);
     xTaskCreate(task2, "Task2", 2048, NULL, 5, NULL);
