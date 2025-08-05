@@ -17,6 +17,9 @@
 #include "esp_flash.h"
 #include "esp_system.h"
 
+void task1(void *pvParameters);
+void task2(void *pvParameters);
+
 void app_main(void)
 {
     printf("Hello world!\n");
