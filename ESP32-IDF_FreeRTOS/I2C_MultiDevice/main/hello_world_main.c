@@ -27,7 +27,7 @@ typedef struct {
     uint32_t num1;
     uint32_t num2;
     uint32_t num3;
-} data;
+} SensorsData;
 
 static int cntdn;
 
@@ -74,8 +74,8 @@ void app_main(void)
         return;
     }
 
-    xQueue1 = xQueueCreate(10, sizeof(data));
-    xQueue2 = xQueueCreate(10, sizeof(data));
+    xQueue1 = xQueueCreate(10, sizeof(SensorsData));
+    xQueue2 = xQueueCreate(10, sizeof(SensorsData));
     if (xQueue1 == NULL || xQueue2 == NULL) {
         printf("Failed to create queues\n");
         return;
