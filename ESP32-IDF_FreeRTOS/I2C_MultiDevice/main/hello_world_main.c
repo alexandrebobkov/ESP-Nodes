@@ -160,7 +160,6 @@ void restart_task(void *pvParameters) {
     }
 }
 
-
 void display_task(void *pvParameters) {
     SensorsData data;
     while (1) {
