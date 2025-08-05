@@ -1,7 +1,11 @@
 /*
- * SPDX-FileCopyrightText: 2010-2022 Espressif Systems (Shanghai) CO LTD
- *
- * SPDX-License-Identifier: CC0-1.0
+ * freeRTOS simultaneous tasks.
+ * Created on: Aug 5, 2025
+ * Updated on:
+ * 
+ * By: Alexander Bobkov
+ * 
+ * ESP-IDF version: 5.4.1
  */
 
 #include <stdio.h>
