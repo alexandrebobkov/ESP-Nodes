@@ -40,6 +40,7 @@ void app_main(void)
 {
     // Initialize the variables values
     cntdn = 20;
+    // Initialize data struct
     s_data = (SensorsData) {
         .num1 = 0,
         .num2 = 0,
@@ -111,9 +112,8 @@ void task1(void *pvParameters) {
             vTaskDelay(500);
             xSemaphoreGive(xMutex);
         }
-        else {
+        else
             printf("Task 1 timed out waiting for mutex\n");
-        }
         vTaskDelay(100);
     }
 }
@@ -137,9 +137,8 @@ void task2(void *pvParameters) {
             vTaskDelay(250); 
             xSemaphoreGive(xMutex);
         }
-        else {
+        else
             printf("Task 2 timed out waiting for mutex\n");
-        }
         vTaskDelay(100);
     }
 }
