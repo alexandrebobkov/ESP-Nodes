@@ -88,7 +88,7 @@ void app_main(void)
     // Create tasks
     xTaskCreate(task1, "Task1", 2048, NULL, 15, NULL);
     xTaskCreate(task2, "Task2", 2048, NULL, 15, NULL);
-    xTaskCreate(display_task, "DisplayTask", 2048, NULL, 25, NULL);
+    xTaskCreate(display_task, "DisplayTask", 2048, NULL, 5, NULL);
     xTaskCreate(restart_task, "TaskRestart", 2048, NULL, 20, NULL);
 }
 
