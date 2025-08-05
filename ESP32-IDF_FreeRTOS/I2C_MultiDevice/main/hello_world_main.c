@@ -128,7 +128,7 @@ void task2(void *pvParameters) {
                 .num3 = 0,
             };
             xQueueSend(xQueue2, &data, 0);
-            printf("Task 1 sent data");
+            printf("Task 2 sent data.\n");
             y++;
 
             vTaskDelay((2000)); // Delay for 2 seconds
