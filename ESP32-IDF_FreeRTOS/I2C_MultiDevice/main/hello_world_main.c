@@ -46,6 +46,12 @@ void app_main(void)
 
     printf("Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());
 
+
+    xTaskCreate(task1, "Task1", 2048, NULL, 5, NULL);
+    xTaskCreate(task2, "Task2", 2048, NULL, 5, NULL);
+}
+
+
     for (int i = 10; i >= 0; i--) {
         printf("Restarting in %d seconds...\n", i);
         vTaskDelay(1000);
@@ -54,3 +60,19 @@ void app_main(void)
     fflush(stdout);
     esp_restart();
 }
+
+
+void task1(void *pvParameters) {
+    while (1) {
+        printf("Task 1 is running\n");
+        vTaskDelay(pdMS_TO_TICKS(1000)); // Delay for 1 second
+    }
+}
+
+void task2(void *pvParameters) {
+    while (1) {
+        printf("Task 2 is running\n");
+        vTaskDelay(pdMS_TO_TICKS(2000)); // Delay for 2 seconds
+    }
+}
+
