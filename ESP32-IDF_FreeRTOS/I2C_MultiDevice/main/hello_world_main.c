@@ -135,6 +135,7 @@ void task2(void *pvParameters) {
     }
 }
 
+// Task to restart the system after a countdown
 void restart_task(void *pvParameters) {
     printf("Restarting system in %d seconds...\n", cntdn);
     while (1) {
@@ -143,6 +144,7 @@ void restart_task(void *pvParameters) {
     }
 }
 
+// Display task; receives data from both queues and prints it
 void display_task(void *pvParameters) {
     SensorsData data;
     while (1) {
