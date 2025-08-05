@@ -22,6 +22,7 @@
 SemaphoreHandle_t xMutex;
 QueueHandle_t xQueue1;
 QueueHandle_t xQueue2;
+static int cntdn;
 
 void task1(void *pvParameters);
 void task2(void *pvParameters);
@@ -29,6 +30,7 @@ void task_restart(void *pvParameters);
 
 void app_main(void)
 {
+    cntdn = 10;
     printf("Hello world!\n");
 
     /* Print chip information */
