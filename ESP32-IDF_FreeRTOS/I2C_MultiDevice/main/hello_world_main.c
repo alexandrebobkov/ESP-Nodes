@@ -81,8 +81,9 @@ void app_main(void)
         return;
     }
 
-    xTaskCreate(task1, "Task1", 2048, NULL, 5, NULL);
-    xTaskCreate(task2, "Task2", 2048, NULL, 5, NULL);
+    xTaskCreate(task1, "Task1", 2048, NULL, 15, NULL);
+    xTaskCreate(task2, "Task2", 2048, NULL, 15, NULL);
+    xTaskCreate(display_task, "DisplayTask", 2048, NULL, 5, NULL);
     xTaskCreate(restart_task, "TaskRestart", 2048, NULL, 20, NULL);
 
 }
@@ -101,7 +102,7 @@ void task1(void *pvParameters) {
                 .num3 = 0,
             };
             xQueueSend(xQueue1, &data, 0);
-            printf("Task 1 sent data");
+            printf("Task 1 sent data.\n");
             x++;
 
             vTaskDelay((500)); // Delay for 1 second
