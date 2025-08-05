@@ -52,7 +52,6 @@ void app_main(void)
 
     xTaskCreate(task1, "Task1", 2048, NULL, 5, NULL);
     xTaskCreate(task2, "Task2", 2048, NULL, 5, NULL);
-}
 
 
     for (int i = 10; i >= 0; i--) {
