@@ -69,7 +69,7 @@ void app_main(void)
     printf("%" PRIu32 "MB %s flash\n", flash_size / (uint32_t)(1024 * 1024),
            (chip_info.features & CHIP_FEATURE_EMB_FLASH) ? "embedded" : "external");
 
-    printf("Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());
+    printf("Minimum free heap size: %" PRIu32 " Kbytes\n", esp_get_minimum_free_heap_size() / (uint32_t)(1024));
 
     // Create mutex and queues
     xMutex = xSemaphoreCreateMutex();
@@ -109,13 +109,13 @@ void task1(void *pvParameters) {
             xQueueSend(xQueue1, &task_data, 0);
             printf("Task 1 sent x=%" PRIu32 "\n", x);
             x+=2;
-            vTaskDelay((500));
+            vTaskDelay(500);
             xSemaphoreGive(xMutex);
         }
         else {
             printf("Task 1 timed out waiting for mutex\n");
         }
-        vTaskDelay((100));
+        vTaskDelay(100);
     }
 }
 
@@ -136,13 +136,13 @@ void task2(void *pvParameters) {
             xQueueSend(xQueue2, &task_data, 0);
             printf("Task 2 sent y=%" PRIu32 "\n", y);
             y++;
-            vTaskDelay((250)); 
+            vTaskDelay(250); 
             xSemaphoreGive(xMutex);
         }
         else {
             printf("Task 2 timed out waiting for mutex\n");
         }
-        vTaskDelay((100));
+        vTaskDelay(100);
     }
 }
 
