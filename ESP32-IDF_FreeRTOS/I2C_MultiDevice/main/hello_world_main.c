@@ -75,6 +75,7 @@ void task1(void *pvParameters) {
             vTaskDelay((500)); // Delay for 1 second
             xSemaphoreGive(xMutex);
         }
+        vTaskDelay((100));
     }
 }
 
