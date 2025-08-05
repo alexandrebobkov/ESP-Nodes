@@ -155,7 +155,6 @@ void restart_task(void *pvParameters) {
 
 // Display task; receives data from both queues and prints it
 void display_task(void *pvParameters) {
-    SensorsData data;
     while (1) {
         if (xQueueReceive(xQueue1, &s_data, 500)) {
             printf("Display Task received sensors_data from Queue 1: num1=%" PRIu32 ", num2=%" PRIu32 ", num3=%" PRIu32 "\n", s_data.num1, s_data.num2, s_data.num3);
