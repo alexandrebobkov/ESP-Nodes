@@ -93,6 +93,7 @@ void app_main(void)
     xTaskCreate(restart_task, "TaskRestart", 2048, NULL, 20, NULL);
 }
 
+// Task #1; increments num1, sends data to queue1
 void task1(void *pvParameters) {
     uint32_t x = 0;
 
@@ -113,6 +114,7 @@ void task1(void *pvParameters) {
     }
 }
 
+// Task #2; increments num2, sends data to queue2
 void task2(void *pvParameters) {
     uint32_t y = 0;
 
