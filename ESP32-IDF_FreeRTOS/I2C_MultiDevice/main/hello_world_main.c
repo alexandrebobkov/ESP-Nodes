@@ -30,6 +30,7 @@ typedef struct {
 } SensorsData;
 
 static int cntdn;
+static SensorsData s_data;
 
 void task1(void *pvParameters);
 void task2(void *pvParameters);
@@ -39,6 +40,12 @@ void restart_task(void *pvParameters);
 void app_main(void)
 {
     cntdn = 10;
+    s_data = (SensorsData) {
+        .num1 = 0,
+        .num2 = 0,
+        .num3 = 0,
+    };
+    
     printf("Hello world!\n");
 
     /* Print chip information */
