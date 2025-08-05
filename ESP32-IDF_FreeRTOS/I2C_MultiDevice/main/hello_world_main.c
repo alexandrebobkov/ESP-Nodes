@@ -48,8 +48,6 @@ void app_main(void)
         .num3 = 0,
     };
 
-    printf("Hello world!\n");
-
     /* Print chip information */
     esp_chip_info_t chip_info;
     uint32_t flash_size;
@@ -75,12 +73,12 @@ void app_main(void)
 
     printf("Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());
 
+    // Create mutex and queues
     xMutex = xSemaphoreCreateMutex();
     if (xMutex == NULL) {
         printf("Failed to create mutex\n");
         return;
     }
-
     xQueue1 = xQueueCreate(10, sizeof(SensorsData));
     xQueue2 = xQueueCreate(10, sizeof(SensorsData));
     if (xQueue1 == NULL || xQueue2 == NULL) {
@@ -88,6 +86,7 @@ void app_main(void)
         return;
     }
 
+    // Create tasks
     xTaskCreate(task1, "Task1", 2048, NULL, 15, NULL);
     xTaskCreate(task2, "Task2", 2048, NULL, 15, NULL);
     xTaskCreate(display_task, "DisplayTask", 2048, NULL, 5, NULL);
