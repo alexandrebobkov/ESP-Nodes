@@ -22,6 +22,13 @@
 SemaphoreHandle_t xMutex;
 QueueHandle_t xQueue1;
 QueueHandle_t xQueue2;
+
+typedef struct {
+    uint32_t num1;
+    uint32_t num2;
+    uint32_t num3;
+} data;
+
 static int cntdn;
 
 void task1(void *pvParameters);
