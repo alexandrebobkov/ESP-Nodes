@@ -142,7 +142,7 @@ void task2(void *pvParameters) {
             printf("Task 2 sent y=%" PRIu32 "\n", y);
             y++;
 
-            vTaskDelay((500)); // Delay for 2 seconds
+            vTaskDelay((250)); // Delay for 2 seconds
             xSemaphoreGive(xMutex);
         }
         else {
