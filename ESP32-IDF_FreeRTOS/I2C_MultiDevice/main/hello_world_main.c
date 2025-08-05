@@ -21,7 +21,7 @@ void app_main(void)
     esp_chip_info_t chip_info;
     uint32_t flash_size;
     esp_chip_info(&chip_info);
-    printf("ESP Module ID: %d with %d CPU core(s),\n %s%s%s%s, ",
+    printf("ESP Module ID: %d with %d CPU core(s),\n %s%s%s%s, \n",
            chip_info.model,
            chip_info.cores,
            (chip_info.features & CHIP_FEATURE_WIFI_BGN) ? "WiFi/" : "",
@@ -31,7 +31,7 @@ void app_main(void)
 
     unsigned major_rev = chip_info.revision / 100;
     unsigned minor_rev = chip_info.revision % 100;
-    printf("silicon revision v%d.%d, ", major_rev, minor_rev);
+    printf("silicon revision v%d.%d, \n", major_rev, minor_rev);
     if(esp_flash_get_size(NULL, &flash_size) != ESP_OK) {
         printf("Get flash size failed");
         return;
