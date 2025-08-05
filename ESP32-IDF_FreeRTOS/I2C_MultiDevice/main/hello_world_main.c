@@ -120,7 +120,7 @@ void task2(void *pvParameters) {
     while (1) {
         if (xSemaphoreTake(xMutex, 1500)) {
             printf("Task 2 is running\n");
-            //s_data.num2 = y;
+            s_data.num2 = y;
             xQueueSend(xQueue2, &s_data, 0);
             printf("Task 2 sent y=%" PRIu32 "\n", y);
             y++;
