@@ -53,6 +53,13 @@ void app_main(void)
     printf("Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());
 
 
+
+    xMutex = xSemaphoreCreateMutex();
+    if (xMutex == NULL) {
+        printf("Failed to create mutex\n");
+        return;
+    }
+
     xTaskCreate(task1, "Task1", 2048, NULL, 5, NULL);
     xTaskCreate(task2, "Task2", 2048, NULL, 5, NULL);
 
