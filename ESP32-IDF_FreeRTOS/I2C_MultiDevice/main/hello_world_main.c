@@ -1,5 +1,6 @@
 /*
- * freeRTOS simultaneous tasks.
+ * FreeRTOS simultaneous tasks.
+ * The two tasks increment data struct variables, one task at a time, and send them to a display task.
  * Created on: Aug 5, 2025
  * Updated on:
  * 
