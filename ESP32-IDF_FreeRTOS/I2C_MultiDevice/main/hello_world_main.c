@@ -40,6 +40,7 @@ void restart_task(void *pvParameters);
 
 void app_main(void)
 {
+    // Initialize the variables values
     cntdn = 20;
     s_data = (SensorsData) {
         .num1 = 0,
