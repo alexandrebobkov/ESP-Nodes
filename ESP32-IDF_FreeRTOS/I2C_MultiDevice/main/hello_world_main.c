@@ -14,11 +14,15 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/semphr.h"
+#include "freertos/queue.h"
 #include "esp_chip_info.h"
 #include "esp_flash.h"
 #include "esp_system.h"
 
 SemaphoreHandle_t xMutex;
+QueueHandle_t xQueue1;
+QueueHandle_t xQueue2
+
 
 void task1(void *pvParameters);
 void task2(void *pvParameters);
@@ -59,6 +63,15 @@ void app_main(void)
         printf("Failed to create mutex\n");
         return;
     }
+
+    xQueue1 = xQueueCreate(10, sizeof(int));
+    xQueue2 = xQueueCreate(10, sizeof(int));
+
+    if (xQueue1 == NULL || xQueue2 == NULL) {
+        printf("Failed to create queues\n");
+        return;
+    }
+
 
     xTaskCreate(task1, "Task1", 2048, NULL, 5, NULL);
     xTaskCreate(task2, "Task2", 2048, NULL, 5, NULL);
