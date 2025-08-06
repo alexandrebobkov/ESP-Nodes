@@ -116,9 +116,15 @@ static void update_pwm (int rc_x, int rc_y) {
     // ROTATIONS
     // Rotate right
     if ((y < 1500) && (y > 1500)) && (x > 8000) {
-        m.motor1_rpm_pcm = 0;
+        m.motor1_rpm_pcm = y - x;
         m.motor2_rpm_pcm = 0;
-        m.motor3_rpm_pcm = 0;
+        m.motor3_rpm_pcm = -(y - x);
+        m.motor4_rpm_pcm = 0;
+    }
+    if ((y < 1500) && (y > 1500)) && (x < 8000) {
+        m.motor1_rpm_pcm = y - x;
+        m.motor2_rpm_pcm = 0;
+        m.motor3_rpm_pcm = -(y - x);
         m.motor4_rpm_pcm = 0;
     }
     // -------------
