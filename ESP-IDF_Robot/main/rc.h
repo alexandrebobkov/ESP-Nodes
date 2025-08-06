@@ -115,7 +115,7 @@ static void update_pwm (int rc_x, int rc_y) {
     }
     // ROTATIONS
     // Rotate right
-    if ((y < 1500) && (y > 1500)) && (x > 8000) {
+    if ((y < 1500) && (y > 1500) && (x > 8000) {
         m.motor1_rpm_pcm = (y - x);
         m.motor2_rpm_pcm = 0;
         m.motor3_rpm_pcm = -(y - x);
@@ -199,7 +199,7 @@ static void update_pwm (int rc_x, int rc_y) {
         m.motor4_rpm_pcm = 0;
     }
     */
-    
+
     ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, m.motor1_rpm_pcm);
     ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT);
     ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT, m.motor2_rpm_pcm);
