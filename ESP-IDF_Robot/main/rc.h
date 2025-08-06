@@ -304,7 +304,7 @@ static bool adc_calibration_init(adc_unit_t unit, adc_channel_t channel, adc_att
     esp_err_t ret = ESP_FAIL;
     bool calibrated = false;
 
-#if ADC_CALI_SCHEME_CURVE_FITTING_SUPPORTED
+    #if ADC_CALI_SCHEME_CURVE_FITTING_SUPPORTED
     if (!calibrated) {
         ESP_LOGI("ESP IDF Robot", "calibration scheme version is %s", "Curve Fitting");
         adc_cali_curve_fitting_config_t cali_config = {
