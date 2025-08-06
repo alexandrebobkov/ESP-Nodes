@@ -97,7 +97,7 @@ static void update_pwm (int rc_x, int rc_y) {
     // ADDED ON AUG 6, 2025: to be tested!
     // CONTINOUS UPDATE
     // All forward directions
-    if (x >= 3500) {
+    if (x >= 3500 && y >= 700 && y <= 1000) {
         m.motor1_rpm_pcm = x;   // Left side motors, forward
         m.motor2_rpm_pcm = x;   // Right side motors, forward
         m.motor3_rpm_pcm = 0;
