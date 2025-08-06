@@ -26,6 +26,7 @@ static void adc_calibration_deinit(adc_cali_handle_t handle);
 adc_cali_handle_t adc1_cali_chan0_handle, adc1_cali_chan1_handle;
 adc_oneshot_unit_handle_t adc1_handle;
 bool do_calibration1_chan0, do_calibration1_chan1;
+
 static int interpolate_raw_val (int raw);
 static int rescale_raw_val (int raw);
 
