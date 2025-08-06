@@ -318,7 +318,7 @@ static bool adc_calibration_init(adc_unit_t unit, adc_channel_t channel, adc_att
             calibrated = true;
         }
     }
-#endif
+    #endif
 
     #if ADC_CALI_SCHEME_LINE_FITTING_SUPPORTED
     if (!calibrated) {
