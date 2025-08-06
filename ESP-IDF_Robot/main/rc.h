@@ -18,8 +18,6 @@
 
 //static const char *TAG = "ESP IDF Robot"
 struct motors_rpm m;
-
-
 static int adc_raw[2][10];
 static int voltage[2][10];
 static int s = 0, sample = 5, x = 0, y = 0, x_sum = 0, y_sum = 0;
