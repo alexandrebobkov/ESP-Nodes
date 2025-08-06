@@ -26,7 +26,6 @@ static int s = 0, sample = 5, x = 0, y = 0, x_sum = 0, y_sum = 0;
 static bool adc_calibration_init(adc_unit_t unit, adc_channel_t channel, adc_atten_t atten, adc_cali_handle_t *out_handle);
 static void adc_calibration_deinit(adc_cali_handle_t handle);
 adc_cali_handle_t adc1_cali_chan0_handle, adc1_cali_chan1_handle;
-
 adc_oneshot_unit_handle_t adc1_handle;
 bool do_calibration1_chan0, do_calibration1_chan1;
 
