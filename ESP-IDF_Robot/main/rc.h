@@ -95,8 +95,8 @@ static void update_pwm (int rc_x, int rc_y) {
     (-, +)      (0, 0)      (+, -)
     (-, -0)     (-, -)      (-0, -)
     
-    if (1024 < x < 2048 && 1024 < y < 2048) {
-    }*/
+    if (1024 < x < 2048 && 1024 < y < 2048) {}
+    */
 
     // ADDED ON AUG 6, 2025
     // CONTINOUS UPDATE
