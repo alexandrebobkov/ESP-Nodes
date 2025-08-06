@@ -98,14 +98,14 @@ static void update_pwm (int rc_x, int rc_y) {
     // CONTINOUS UPDATE
     // All forward directions
     if (x >= 3500 && y >= 500 && y <= 1000) {
-        m.motor1_rpm_pcm = x;   // Left side motors, forward
-        m.motor2_rpm_pcm = x;   // Right side motors, forward
+        m.motor1_rpm_pcm = 8190;   // Left side motors, forward
+        m.motor2_rpm_pcm = 8190;   // Right side motors, forward
         m.motor3_rpm_pcm = 0;
         m.motor4_rpm_pcm = 0;
     }
-    if (x >= 1500 && y >= -8190 && y < 500) {
-        m.motor1_rpm_pcm = x;
-        m.motor2_rpm_pcm = 0;
+    else if (x >= 1500 && y >= -8190 && y < 500) {
+        m.motor1_rpm_pcm = 6142;
+        m.motor2_rpm_pcm = 8190;
         m.motor3_rpm_pcm = 0;
         m.motor4_rpm_pcm = 0;
     }
