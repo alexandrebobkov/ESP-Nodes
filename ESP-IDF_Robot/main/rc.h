@@ -97,14 +97,14 @@ static void update_pwm (int rc_x, int rc_y) {
     // ADDED ON AUG 6, 2025: to be tested!
     // CONTINOUS UPDATE
     // All forward directions
-    if (y >= 1500) {
+    if (x >= 1500) {
         m.motor1_rpm_pcm = (y - x);   // Left side motors, forward
         m.motor2_rpm_pcm = (y + x);   // Right side motors, forward
         m.motor3_rpm_pcm = 0;
         m.motor4_rpm_pcm = 0;
     }
     // All reverse directions
-    if (y <= -1500) {
+    /*if (y <= -1500) {
         m.motor1_rpm_pcm = 0;   
         m.motor2_rpm_pcm = 0;   
         m.motor3_rpm_pcm = -(y - x);   // Left side motors, reverse
@@ -124,7 +124,7 @@ static void update_pwm (int rc_x, int rc_y) {
         m.motor2_rpm_pcm = (y + x);
         m.motor3_rpm_pcm = -(y - x);
         m.motor4_rpm_pcm = 0;
-    }
+    }*/
     // -------------
 
     /*
