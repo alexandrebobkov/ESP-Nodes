@@ -103,6 +103,12 @@ static void update_pwm (int rc_x, int rc_y) {
         m.motor3_rpm_pcm = 0;
         m.motor4_rpm_pcm = 0;
     }
+    else {
+        m.motor1_rpm_pcm = 0;
+        m.motor2_rpm_pcm = 0;
+        m.motor3_rpm_pcm = 0;
+        m.motor4_rpm_pcm = 0;
+    }
     // All reverse directions
     /*if (y <= -1500) {
         m.motor1_rpm_pcm = 0;   
