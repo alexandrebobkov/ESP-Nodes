@@ -357,6 +357,6 @@ static void adc_calibration_deinit(adc_cali_handle_t handle)
     ESP_LOGI("ESP IDF Robot", "deregister %s calibration scheme", "Line Fitting");
     ESP_ERROR_CHECK(adc_cali_delete_scheme_line_fitting(handle));
 #endif
-}
+}*/
 
 #endif
