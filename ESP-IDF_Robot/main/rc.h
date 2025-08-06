@@ -94,7 +94,7 @@ static void update_pwm (int rc_x, int rc_y) {
     if (1024 < x < 2048 && 1024 < y < 2048) {}
     */
 
-    // ADDED ON AUG 6, 2025
+    // ADDED ON AUG 6, 2025: to be tested!
     // CONTINOUS UPDATE
     // All forward directions
     if (y >= 1500) {
