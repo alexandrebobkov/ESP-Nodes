@@ -48,8 +48,7 @@ static esp_err_t rc_adc_init (void) {
     ESP_ERROR_CHECK(adc_oneshot_config_channel(adc1_handle, ADC1_CHAN0, &config));
     ESP_ERROR_CHECK(adc_oneshot_config_channel(adc1_handle, ADC1_CHAN1, &config));
 
-    //-------------ADC1 Calibration Init---------------//
-    
+    //-------------ADC1 Calibration Init---------------//    
     adc1_cali_chan0_handle = NULL;
     adc1_cali_chan1_handle = NULL;
     do_calibration1_chan0 = adc_calibration_init(ADC_UNIT_1, ADC1_CHAN0, ADC_ATTEN, &adc1_cali_chan0_handle);
