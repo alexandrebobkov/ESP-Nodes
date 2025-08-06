@@ -333,7 +333,7 @@ static bool adc_calibration_init(adc_unit_t unit, adc_channel_t channel, adc_att
             calibrated = true;
         }
     }
-#endif
+    #endif
 
     *out_handle = handle;
     if (ret == ESP_OK) {
