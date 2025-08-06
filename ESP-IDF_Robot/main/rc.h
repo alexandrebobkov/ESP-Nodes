@@ -345,7 +345,7 @@ static bool adc_calibration_init(adc_unit_t unit, adc_channel_t channel, adc_att
     }
 
     return calibrated;
-}
+}*/
 
 static void adc_calibration_deinit(adc_cali_handle_t handle)
 {
