@@ -111,7 +111,7 @@ static void update_pwm (int rc_x, int rc_y) {
         m.motor4_rpm_pcm = 0;
     }
     // Forward & Turn Right
-    else if (y >= 15000 && x >= 1000 && x < 8190) {
+    else if (y >= 1500 && x >= 1000 && x < 8190) {
         m.motor1_rpm_pcm = 8190;
         m.motor2_rpm_pcm = x;
         m.motor3_rpm_pcm = 0;
