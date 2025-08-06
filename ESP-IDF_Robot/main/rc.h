@@ -98,6 +98,13 @@ static void update_pwm (int rc_x, int rc_y) {
     if (1024 < x < 2048 && 1024 < y < 2048) {
     }*/
 
+    // Smooth update
+    if (y >= 1500) {
+        m.motor1_rpm_pcm = y - x;
+        m.motor2_rpm_pcm = ;
+    }
+    // -------------
+
     // Turn Left
     if (x == 8190 && y == -8190) {
         m.motor1_rpm_pcm = 6172;
