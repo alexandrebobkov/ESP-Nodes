@@ -320,7 +320,7 @@ static bool adc_calibration_init(adc_unit_t unit, adc_channel_t channel, adc_att
     }
 #endif
 
-#if ADC_CALI_SCHEME_LINE_FITTING_SUPPORTED
+    #if ADC_CALI_SCHEME_LINE_FITTING_SUPPORTED
     if (!calibrated) {
         ESP_LOGI("ESP IDF Robot", "calibration scheme version is %s", "Line Fitting");
         adc_cali_line_fitting_config_t cali_config = {
