@@ -7,7 +7,7 @@
     Updated:    Jan 10, 2025
                 Jun 26, 2025
                 Jul 26, 2025 (ESP-IDF + MQTT + WiFi)
-                Aug 6 , 2025
+                Aug 6 , 2025 C
 
     built-in LED GPIO:          10
     build-in push button GPIO:  3
