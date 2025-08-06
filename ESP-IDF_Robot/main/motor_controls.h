@@ -1,5 +1,5 @@
 #ifndef MOTOR_CONTROLS_H
-#define MOTOR_CONTROLSC_H
+#define MOTOR_CONTROLS_H
 
 // Interpolate value (x) based on raw reading, min/max limits.
 /*
