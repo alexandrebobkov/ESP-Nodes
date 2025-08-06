@@ -125,7 +125,7 @@ static void update_pwm (int rc_x, int rc_y) {
         m.motor4_rpm_pcm = 0;
     }*/
 
-    /*
+    
     // Turn Left
     if (x == 8190 && y == -8190) {
         m.motor1_rpm_pcm = 6172;
@@ -193,7 +193,7 @@ static void update_pwm (int rc_x, int rc_y) {
         m.motor2_rpm_pcm = 0;
         m.motor3_rpm_pcm = 0;
         m.motor4_rpm_pcm = 0;
-    }*/
+    }
 
     ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, m.motor1_rpm_pcm);
     ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT);
