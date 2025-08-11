@@ -117,12 +117,14 @@ static void update_pwm (int rc_x, int rc_y) {
     //set_motor_speed();
     // Pass PWM values to the proper DC motors depending on the joystick y-axis position
     // Forward
-    if (y_val > y_centered) {}
+    if (y_val > y_centered) {
+
+    }
     // Reverse
     if (y_val < y_centered) {}
 
 
-    
+    /*
     // Turn Left
     if (x == 8190 && y == -8190) {
         m.motor1_rpm_pcm = 6172;
@@ -147,7 +149,7 @@ static void update_pwm (int rc_x, int rc_y) {
         m.motor2_rpm_pcm = 0;
         m.motor3_rpm_pcm = 8190;
         m.motor4_rpm_pcm = 6172;
-    }
+    }*/
     // FORWARD AND REVERSE
     //if ((x > 1500) && (y > 700 && y < 850)) {
     else if ((x > 1500) && (y > -2500 && y < 2500)) {
