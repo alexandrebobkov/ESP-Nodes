@@ -103,11 +103,11 @@ static void update_pwm (int rc_x, int rc_y) {
     // Map joystick to motor direction from y-axis
     int motor_a_dir = y_centered >= 0 ? 1 : -1;
     int motor_b_dir = y_centered >= 0 ? 1 : -1;
-    int motor_a_speed = abs(y_centered) * 255 / 2048;
-    int motor_b_speed = abs(y_centered) * 255 / 2048;
+    int motor_a_speed = abs(y_centered) * 8192 / 2048;
+    int motor_b_speed = abs(y_centered) * 8192 / 2048;
     // Add turning effect from x-axis
-    motor_a_speed -= x_centered * 255 / 2048;
-    motor_b_speed += x_centered * 255 / 2048;
+    motor_a_speed -= x_centered * 8192 / 2048;
+    motor_b_speed += x_centered * 8192 / 2048;
     // Clamp speeds
     if (motor_a_speed < 0) motor_a_speed = 0;
     if (motor_b_speed < 0) motor_b_speed = 0;
