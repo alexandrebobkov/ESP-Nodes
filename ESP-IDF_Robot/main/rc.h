@@ -115,6 +115,7 @@ static void update_pwm (int rc_x, int rc_y) {
     if (motor_b_speed > 255) motor_b_speed = 255;
     //set_motor_direction();
     //set_motor_speed();
+    // Pass PWM values to the proper DC motors depending on the joystick y-axis position
 
 
     
