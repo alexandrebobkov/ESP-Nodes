@@ -108,6 +108,9 @@ static void update_pwm (int rc_x, int rc_y) {
     // Add turning effect from x-axis
     motor_a_speed -= x_centered * 255 / 2048;
     motor_b_speed += x_centered * 255 / 2048;
+    // Clamp speeds
+    if (motor_a_speed < 0) motor_a_speed = 0;
+    if (motor_b_speed < 0) motor_b_speed = 0;
 
 
     
