@@ -97,7 +97,6 @@ static void update_pwm (int rc_x, int rc_y) {
     // ADDED ON AUG 6, 2025: to be tested!
     // CONTINOUS UPDATE
     
-    }*/
 
     
     // Turn Left

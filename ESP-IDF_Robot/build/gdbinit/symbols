@@ -18,8 +18,8 @@ end
 
 # Load bootloader symbols
 set confirm off
-    add-symbol-file /home/alex/github/ESP-Nodes/ESP-IDF_Robot/build/bootloader/bootloader.elf
+    add-symbol-file /home/alex/MyProjects/ESP-Nodes/ESP-IDF_Robot/build/bootloader/bootloader.elf
 set confirm on
 
 # Load application symbols
-file /home/alex/github/ESP-Nodes/ESP-IDF_Robot/build/ESP-IDF_Robot.elf
+file /home/alex/MyProjects/ESP-Nodes/ESP-IDF_Robot/build/ESP-IDF_Robot.elf
