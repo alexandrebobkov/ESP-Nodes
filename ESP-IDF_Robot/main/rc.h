@@ -111,8 +111,8 @@ static void update_pwm (int rc_x, int rc_y) {
     // Clamp speeds
     if (motor_a_speed < 0) motor_a_speed = 0;
     if (motor_b_speed < 0) motor_b_speed = 0;
-    if (motor_a_speed > 255) motor_a_speed = 255;
-    if (motor_b_speed > 255) motor_b_speed = 255;
+    if (motor_a_speed > 8192) motor_a_speed = 8192;
+    if (motor_b_speed > 8192) motor_b_speed = 8192;
     //set_motor_direction();
     //set_motor_speed();
     // Pass PWM values to the proper DC motors depending on the joystick y-axis position
