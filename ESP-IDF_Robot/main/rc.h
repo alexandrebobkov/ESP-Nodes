@@ -100,10 +100,15 @@ static void update_pwm (int rc_x, int rc_y) {
     int y_val = y;
     int x_centered = x_val - 2048;
     int y_centered = x_val - 2048;
+    // Map joystick to motor direction from y-axis
     int motor_a_dir = y_centered >= 0 ? 1 : -1;
     int motor_b_dir = y_centered >= 0 ? 1 : -1;
     int motor_a_speed = abs(y_centered) * 255 / 2048;
     int motor_a_speed = abs(y_centered) * 255 / 2048;
+    // Add turning effect from x-axis
+    motor_a_speed -= x_centered * 255 / 2048;
+    motor_b_speed += x_centered * 255 / 2048;
+
 
     
     // Turn Left
