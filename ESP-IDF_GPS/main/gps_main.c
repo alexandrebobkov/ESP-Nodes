@@ -14,6 +14,13 @@
 #include "esp_system.h"
 
 #include "nmea.h"
+#include "gpgll.h"
+#include "gpgga.h"
+#include "gprmc.h"
+#include "gpgsa.h"
+#include "gpvtg.h"
+#include "gptxt.h"
+#include "gpgsv.h"
 
 void app_main(void)
 {
