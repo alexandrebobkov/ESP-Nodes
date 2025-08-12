@@ -544,6 +544,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/home/alex/github/ESP-Nodes/ESP-IDF_GPS/build/esp-idf/igrr__libnmea/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/home/alex/github/ESP-Nodes/ESP-IDF_GPS/build/esp-idf/main/cmake_install.cmake")
 endif()
 
