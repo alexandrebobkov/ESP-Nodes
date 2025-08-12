@@ -54,7 +54,7 @@ void app_main(void)
 
     printf("Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());
 
-    nmea_example_init_interface();
+    //nmea_example_init_interface();
     read_and_parse_nmea();
 
     for (int i = 10; i >= 0; i--) {
