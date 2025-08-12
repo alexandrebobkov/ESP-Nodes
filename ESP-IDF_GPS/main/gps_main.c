@@ -13,6 +13,8 @@
 #include "esp_flash.h"
 #include "esp_system.h"
 
+#include "nmea.h"
+
 void app_main(void)
 {
     printf("Hello world!\n");
