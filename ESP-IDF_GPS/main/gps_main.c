@@ -85,7 +85,6 @@ static void read_and_parse_nmea()
 
 	if(NULL == data) {
 		printf("Failed to parse sentence!\n");
-		return -1;
 	}
 
 	if (NMEA_GPGLL == data->type) {
