@@ -13,6 +13,7 @@
 #include "esp_flash.h"
 #include "esp_system.h"
 
+#include "nmea_example.h"
 #include "nmea.h"
 #include "gpgll.h"
 #include "gpgga.h"
