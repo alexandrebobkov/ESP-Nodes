@@ -9480,6 +9480,8 @@ LOAD esp-idf/perfmon/libperfmon.a
 LOAD esp-idf/rt/librt.a
 LOAD esp-idf/spiffs/libspiffs.a
 LOAD esp-idf/wifi_provisioning/libwifi_provisioning.a
+LOAD esp-idf/espressif__i2c_bus/libespressif__i2c_bus.a
+LOAD esp-idf/espressif__bme280/libespressif__bme280.a
 LOAD esp-idf/main/libmain.a
 LOAD esp-idf/app_trace/libapp_trace.a
 LOAD esp-idf/unity/libunity.a
@@ -9489,6 +9491,8 @@ LOAD esp-idf/protocomm/libprotocomm.a
 LOAD esp-idf/console/libconsole.a
 LOAD esp-idf/protobuf-c/libprotobuf-c.a
 LOAD esp-idf/json/libjson.a
+LOAD esp-idf/espressif__bme280/libespressif__bme280.a
+LOAD esp-idf/espressif__i2c_bus/libespressif__i2c_bus.a
 LOAD esp-idf/xtensa/libxtensa.a
 LOAD esp-idf/esp_driver_gpio/libesp_driver_gpio.a
 LOAD esp-idf/esp_pm/libesp_pm.a
