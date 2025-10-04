@@ -56,7 +56,7 @@ void app_main(void)
     bme280 = bme280_create(i2c_bus, BME280_I2C_ADDRESS_DEFAULT);
     bme280_default_init(bme280);
 
-    bme280_set_sampling(bme280, BME280_OVERSAMPLING_1X); 
+    bme280_set_sampling(bme280, BME280_SAMPLING_1X); 
 
     while (true) {
 
