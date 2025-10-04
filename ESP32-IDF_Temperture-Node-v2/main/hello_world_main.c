@@ -26,7 +26,7 @@
 #define I2C_ACKM                    0x0
 #define I2C_NOACKM                  0x1                         // I2C NACK value
 #define I2C_WRITE_BIT               I2C_MASTER_WRITE
-#define I2C_RED_BIT                 I2C_MASTER_READ
+#define I2C_READ_BIT                I2C_MASTER_READ
 
 #define MPU9250_SENSOR_ADDR                 0x76        /*!< Slave address of the MPU9250 sensor */
 
