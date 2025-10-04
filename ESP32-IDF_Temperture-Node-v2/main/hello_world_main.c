@@ -31,7 +31,7 @@
 #include "bme280.h"
 
 static const char *TAG = "i2c-simple-example";
-float temperature = 0.0f;
+float temperature = 0.0f, humidity = 0.0f, pressure = 0.0f;
 
 int i2c_master_port = 0;
 static i2c_bus_handle_t i2c_bus = NULL;
@@ -54,7 +54,12 @@ void app_main(void)
     bme280 = bme280_create(i2c_bus, BME280_I2C_ADDRESS_DEFAULT);
     bme280_default_init(bme280);
     bme280_read_temperature(bme280, &temperature);
+    bme280_read_temperature(bme280, &temperature);
+    bme280_read_humidity(bme280, &humidity);
+    bme280_read_pressure(bme280, &pressure);
     printf("Temperature: %.2f C\n", temperature);
+    printf("Temperature: %.2f %\n", humidity);
+    printf("Temperature: %.2f kPa\n", pressure);
     
 }
 
