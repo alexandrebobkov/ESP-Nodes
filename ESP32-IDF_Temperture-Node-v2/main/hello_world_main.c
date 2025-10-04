@@ -56,6 +56,8 @@ void app_main(void)
     bme280 = bme280_create(i2c_bus, BME280_I2C_ADDRESS_DEFAULT);
     bme280_default_init(bme280);
 
+    bme280_set_sampling(bme280, BME_OVERSAMPLING_1X);
+
     while (true) {
 
         bme280_take_forced_measurement(bme280);
