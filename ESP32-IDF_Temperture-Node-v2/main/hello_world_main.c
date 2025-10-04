@@ -77,6 +77,7 @@ void app_main(void)
 
     printf("Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());
 
+    ESP_ERROR_CHECK(i2cdev_init());
     bmp280_params_t params;
     bmp280_init_default_params(&params);
     bmp280_t dev;
