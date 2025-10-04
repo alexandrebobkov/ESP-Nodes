@@ -44,6 +44,22 @@ static esp_err_t bme280_read_raw_temperature(uint8_t device_address, uint8_t *ra
     command_result = i2c_master_write_read_device(0, device_address, *raw_temperature, BME280_TEMPERATURE_DATA_SIZE, BME280_TEMPERATURE_REGISTER, 1, I2C_MASTER_TIMEOUT_MS / portTICK_PERIOD_MS);
     return command_result;
 }
+static esp_err_t i2c_driver_initialize(void)
+{
+    int i2c_master_port = 0;
+
+    i2c_config_t conf = {
+        .mode = I2C_MODE_MASTER,
+        .sda_io_num = GPIO_NUM_21,
+        .sda_pullup_en = GPIO_PULLUP_ENABLE,
+        .scl_io_num = GPIO_NUM_22,
+        .sda_pullup_en = GPIO_PULLUP_ENABLE,
+        .master.clk_speed = I2C_MASTER_FREQ_HZ,
+        .clk_flags= 0,
+    };
+
+    return i2c_param_config(i2c_master_port, &conf);
+}
 
 void app_main(void)
 {
