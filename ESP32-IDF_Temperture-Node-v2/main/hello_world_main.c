@@ -42,7 +42,7 @@ static const char *TAG = "i2c-simple-example";
 #define I2C_ACKM                    0x0
 #define I2C_NOACKM                  0x1                         // I2C NACK value
 #define I2C_WRITE_BIT               I2C_MASTER_WRITE
-#define I2C_RED_BIT                 I2C_MASTER_READ
+#define I2C_READ_BIT                 I2C_MASTER_READ
 
 #define MPU9250_SENSOR_ADDR                 0x76        /*!< Slave address of the MPU9250 sensor */
 #define MPU9250_WHO_AM_I_REG_ADDR           0xD0        /*!< Register addresses of the "who am I" register */
