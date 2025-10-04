@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "ESP32-IDF_Temperture-Node-v2",
-    "project_version":    "ESP32-Node_Switch-v2.7-9691-g7593e878a-dirty",
+    "project_version":    "ESP32-Node_Switch-v2.7-9700-g2fd7de96b-dirty",
     "project_path":       "/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Temperture-Node-v2",
     "idf_path":           "/home/abobkov/esp/v5.4.1/esp-idf",
     "build_dir":          "/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Temperture-Node-v2/build",
@@ -1196,7 +1196,7 @@
             "managed_priv_reqs": [],
             "file": "/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Temperture-Node-v2/build/esp-idf/main/libmain.a",
             "sources": [ "/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Temperture-Node-v2/main/hello_world_main.c" ],
-            "include_dirs": []
+            "include_dirs": [ "." ]
         },
         "mbedtls": {
             "alias": "idf::mbedtls",
@@ -2845,7 +2845,7 @@
             "priv_reqs": [ "spi_flash" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": []
+            "include_dirs": [ "." ]
         }
     },
     "debug_prefix_map_gdbinit": "",
