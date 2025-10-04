@@ -13,7 +13,7 @@
 #include "esp_flash.h"
 #include "esp_system.h"
 
-static bme280_handle_t bme280 = NULL;
+static bme280_handle_t sensor = NULL;
 
 void app_main(void)
 {
