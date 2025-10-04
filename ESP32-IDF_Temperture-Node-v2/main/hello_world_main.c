@@ -30,6 +30,7 @@
 #define MPU9250_SENSOR_ADDR                 0x76        /*!< Slave address of the MPU9250 sensor */
 
 static bme280_handle_t sensor = NULL;
+float *temperature = 0.0;
 
 void app_main(void)
 {
@@ -61,6 +62,7 @@ void app_main(void)
     printf("Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());
 
     ESP_ERROR_CHECK(bme280_default_init(sensor));
+    ESP_ERROR_CHECK(esp_err_t bme280_read_temperature(sensor, *temperature));
 
     for (int i = 10; i >= 0; i--) {
         printf("Restarting in %d seconds...\n", i);
