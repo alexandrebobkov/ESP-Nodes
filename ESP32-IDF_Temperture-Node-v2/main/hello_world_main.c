@@ -46,6 +46,6 @@ i2c_config_t conf = {
 
 void app_main(void)
 {
-    i2c_bus = i2c_bus_create(I2C_MASTER_NUM, &conf);
+    i2c_bus = i2c_bus_create(0, &conf);
     
 }
