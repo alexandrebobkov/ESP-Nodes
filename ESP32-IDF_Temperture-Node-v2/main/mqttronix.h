@@ -1,18 +1,11 @@
 #ifndef __MQTTRONIX_H__
 #define __MQTTRONIX_H__
 
-#include "mqtt_client.h"
-#include "esp_wifi.h"
+static const char* MQTT_BROKER_URI = "mqtt://74.14.210.168";    // "mqtt://10.100.50.16:1883";"mqtt://mqtt.techquadbit.net";
+static const char* MQTT_TAG = "MQTTronix";
+//static esp_mqtt_client_handle_t mqtt_client = NULL;
 
-//static const char WIFI_SSID;
-#define WIFI_SSID "IoT_bots"
-//static const char WIFI_PASSWORD;
-#define WIFI_PASSWORD "208208208"
-static const char* MQTT_BROKER_URI;
-static const char* MQTT_TAG;
-static esp_mqtt_client_handle_t mqtt_client;;
-
-static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data);
+/*static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data);
 static void mqtt_publish_task(void *arg);
 void mqtt_app_start(void);
 void mqtt_publish(void);
@@ -25,6 +18,6 @@ void mqtt_update_pwm_1 (int pwm);
 void mqtt_update_pwm_2 (int pwm);
 void mqtt_update_pwm_3 (int pwm);
 void mqtt_update_pwm_4 (int pwm);
-void sta_wifi_init(void);
+void sta_wifi_init(void);*/
 
 #endif
