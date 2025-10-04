@@ -49,7 +49,7 @@ i2c_config_t conf = {
 void app_main(void)
 {
     i2c_bus = i2c_bus_create(i2c_master_port, &conf);
-    bme280 = bme280_create(i2c_bus, 0x77);
+    bme280 = bme280_create(i2c_bus, 0x76);
     bme280_default_init(bme280);
     
 }
