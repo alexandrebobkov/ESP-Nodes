@@ -30,6 +30,7 @@ static i2c_bus_handle_t i2c_bus = NULL;
 // BME280 device handle
 static bme280_handle_t bme280 = NULL;
 
+// I2C bus configuration struct
 i2c_config_t conf = {
     .mode = I2C_MODE_MASTER,
     .sda_io_num = SDA_PIN,
@@ -39,7 +40,6 @@ i2c_config_t conf = {
     .master.clk_speed = I2C_FREQ_HZ,
     .clk_flags= 0,
 };
-
 
 void app_main(void)
 {
