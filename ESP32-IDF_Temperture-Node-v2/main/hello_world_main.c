@@ -67,6 +67,7 @@ void app_main(void)
         printf("Temperature: %.1f C\n", temperature);
         printf("Humidity: %.2f %%\n", humidity);
         printf("Pressure: %.2f kPa\n", pressure);
+        printf("\n");
 
         vTaskDelay(2000/portTICK_PERIOD_MS);
     }
