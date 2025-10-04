@@ -30,7 +30,7 @@
 #define MPU9250_SENSOR_ADDR                 0x76        /*!< Slave address of the MPU9250 sensor */
 
 static bme280_handle_t sensor = NULL;
-float *temperature = 0.0;
+float *temperature;
 
 void app_main(void)
 {
