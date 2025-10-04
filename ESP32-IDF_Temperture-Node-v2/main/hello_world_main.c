@@ -12,7 +12,7 @@
 #include "esp_chip_info.h"
 #include "esp_flash.h"
 #include "esp_system.h"
-//#include "driver/i2c.h"
+#include "i2c_bus.h"
 #include "bme280.h"
 
 #define I2C_MASTER_SCL_IO           22      /*!< GPIO number used for I2C master clock */
