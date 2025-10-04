@@ -1,9 +1,10 @@
+/*  ESP32 Temperature Node
 
-/*  ESP32 Module I2C Master Device
+    BME280 I2C Slave Device
 
     Author:     Alexander Bobkov
-    Date:       July 3, 2024
-    Modified:   July 9, 2024
+    Date:       October 4, 2025
+    Modified:   October 4, 2025
     
     
     Adopted from i2c - Simple example
@@ -72,13 +73,3 @@ void app_main(void)
         vTaskDelay(2000/portTICK_PERIOD_MS);
     }
 }
-
-/*
-#include <stdio.h>
-#include "esp_log.h"
-
-void app_main(void)
-{
-    
-}
-*/
