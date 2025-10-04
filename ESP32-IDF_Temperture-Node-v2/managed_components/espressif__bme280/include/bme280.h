@@ -10,7 +10,7 @@
 #include "i2c_bus.h"
 
 #define BME280_I2C_ADDRESS_DEFAULT   (0x76)     /*The device's I2C address is either 0x76 or 0x77.*/
-#define BME280_DEFAULT_CHIPID        (0x58)     //(0x60)
+#define BME280_DEFAULT_CHIPID        (0x60)     //(0x60)
 
 #define WRITE_BIT      I2C_MASTER_WRITE         /*!< I2C master write */
 #define READ_BIT       I2C_MASTER_READ          /*!< I2C master read */
