@@ -58,6 +58,7 @@ void app_main(void)
 
     while (true) {
 
+        bme280_take_forced_measurement(bme280);
         bme280_read_temperature(bme280, &temperature);
         bme280_read_humidity(bme280, &humidity);
         bme280_read_pressure(bme280, &pressure);
