@@ -1,53 +1,77 @@
 dependencies:
-  espressif/bme280:
-    component_hash: 873d97d0bd30004f45d1653f078a4bafe39c1767e57d4bae0f0a13bc3a4d5e3d
+  esp-idf-lib/bmp280:
+    component_hash: 82b01a37c200ed66a6c451026e2afdbe8046c6f702d41085e5a1d83aec3a90d8
     dependencies:
-    - name: espressif/cmake_utilities
+    - name: esp-idf-lib/esp_idf_lib_helpers
       registry_url: https://components.espressif.com
       require: private
-      version: 0.*
-    - name: espressif/i2c_bus
-      registry_url: https://components.espressif.com
-      require: public
       version: '*'
-    - name: idf
+    - name: esp-idf-lib/i2cdev
+      registry_url: https://components.espressif.com
       require: private
-      version: '>=4.4'
+      version: '*'
     source:
       registry_url: https://components.espressif.com/
       type: service
-    version: 0.1.1
-  espressif/cmake_utilities:
-    component_hash: 351350613ceafba240b761b4ea991e0f231ac7a9f59a9ee901f751bddc0bb18f
-    dependencies:
-    - name: idf
-      require: private
-      version: '>=4.1'
+    targets:
+    - esp32
+    - esp32c2
+    - esp32c3
+    - esp32c5
+    - esp32c6
+    - esp32c61
+    - esp32h2
+    - esp32p4
+    - esp32s2
+    - esp32s3
+    version: 1.0.7
+  esp-idf-lib/esp_idf_lib_helpers:
+    component_hash: a8049b1e609679fb54b2d57b0399dd29c4d1fda09a797edac9926f7810aa5703
+    dependencies: []
     source:
       registry_url: https://components.espressif.com
       type: service
-    version: 0.5.3
-  espressif/i2c_bus:
-    component_hash: fe8f85b3859544fabb960d7bcec24278cd3c88e3f1777e8a2075b0aca202fd9f
+    targets:
+    - esp32
+    - esp32c2
+    - esp32c3
+    - esp32c5
+    - esp32c6
+    - esp32c61
+    - esp32h2
+    - esp32p4
+    - esp32s2
+    - esp32s3
+    version: 1.3.10
+  esp-idf-lib/i2cdev:
+    component_hash: 11c08f9e1a7d346b5dd763196dc2567cf2209ae49042402c2c2d296624601c14
     dependencies:
-    - name: espressif/cmake_utilities
+    - name: esp-idf-lib/esp_idf_lib_helpers
       registry_url: https://components.espressif.com
       require: private
-      version: 0.*
-    - name: idf
-      require: private
-      version: '>=4.0'
+      version: '*'
     source:
       registry_url: https://components.espressif.com
       type: service
-    version: 1.4.2
+    targets:
+    - esp32
+    - esp32c2
+    - esp32c3
+    - esp32c5
+    - esp32c6
+    - esp32c61
+    - esp32h2
+    - esp32p4
+    - esp32s2
+    - esp32s3
+    version: 2.0.8
   idf:
     source:
       type: idf
     version: 5.4.1
 direct_dependencies:
-- espressif/bme280
+- esp-idf-lib/bmp280
 - idf
-manifest_hash: 56655df8035b9ce03ff888e9decae7c9c07a8c31eb7c6c080e638f76e687b00e
+manifest_hash: e5b353f83f43430179cf9837b6b7ee3eb33da51487567f027a1c3646c2f1958f
 target: esp32
 version: 2.0.0
