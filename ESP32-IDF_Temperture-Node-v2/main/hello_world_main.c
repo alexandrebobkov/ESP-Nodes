@@ -38,9 +38,9 @@ static bme280_handle_t bme280 = NULL;
 
 i2c_config_t conf = {
     .mode = I2C_MODE_MASTER,
-    .sda_io_num = 22,
+    .sda_io_num = 21,
     .sda_pullup_en = GPIO_PULLUP_ENABLE,
-    .scl_io_num = 21,
+    .scl_io_num = 22,
     .sda_pullup_en = GPIO_PULLUP_ENABLE,
     .master.clk_speed = 400000,
     .clk_flags= 0,
