@@ -30,6 +30,7 @@
 
 #define BME280_SENSOR_ADDR          0x77        /*!< Slave address of the MPU9250 sensor */
 
+static i2c_bus_handle_t i2c_bus = NULL;
 static bme280_handle_t sensor = NULL;
 float temperature = 0.0f;
 
@@ -75,7 +76,7 @@ void app_main(void)
     printf("Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());
 
     //i2c_master_init();
-    i2c_bus_handle_t i2c_bus = i2c_bus_create(I2C_MASTER_NUM, &conf);
+    i2c_bus = i2c_bus_create(I2C_MASTER_NUM, &conf);
     sensor = bme280_create(i2c_bus, BME280_SENSOR_ADDR);
     ESP_ERROR_CHECK(bme280_default_init(sensor));
     ESP_ERROR_CHECK(bme280_read_temperature(sensor, &temperature));
