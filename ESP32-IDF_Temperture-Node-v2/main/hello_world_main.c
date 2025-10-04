@@ -28,7 +28,7 @@
 #define I2C_WRITE_BIT               I2C_MASTER_WRITE
 #define I2C_READ_BIT                I2C_MASTER_READ
 
-#define BME280_SENSOR_ADDR          0x77        /*!< Slave address of the MPU9250 sensor */
+#define BME280_SENSOR_ADDR          0x76        /*!< Slave address of the MPU9250 sensor */
 
 static i2c_bus_handle_t i2c_bus = NULL;
 static bme280_handle_t sensor = NULL;
