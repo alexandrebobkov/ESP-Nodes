@@ -14,7 +14,7 @@
 #include "esp_system.h"
 //#include "i2c_bus.h"
 #include "bme280.h"
-#include "bmp280.h"
+//#include "bmp280.h"
 
 #define I2C_MASTER_SCL_IO           22      /*!< GPIO number used for I2C master clock */
 #define I2C_MASTER_SDA_IO           21      /*!< GPIO number used for I2C master data  */
@@ -77,7 +77,7 @@ void app_main(void)
     printf("Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());
 
     //i2c_master_init();
-    i2c_bus = i2c_bus_create(I2C_MASTER_NUM, &conf);
+    i2c_bus = i2c_bus_create(I2C_MASTER_NUM, conf);
     //i2c_bus = i2c_bus_create(I2C_MASTER_NUM, I2C_MASTER_SDA_IO, I2C_MASTER_SCL_IO, I2C_MASTER_FREQ_HZ);
     sensor = bme280_create(i2c_bus, BME280_SENSOR_ADDR);
     if(!sensor) {
