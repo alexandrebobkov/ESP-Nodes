@@ -27,6 +27,7 @@
 
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
 #include "esp_log.h"
 #include "i2c_bus.h"
 #include "bme280.h"
