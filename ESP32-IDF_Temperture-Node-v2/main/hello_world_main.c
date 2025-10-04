@@ -82,8 +82,8 @@ void app_main(void)
     bmp280_t dev;
     memset(&dev, 0, sizeof(bmp280_t));
 
-    ESP_ERROR_CHECK(bmp280_init_desc(&dev, BMP280_I2C_ADDRESS_0, 0, I2C_MASTER_SDA_IO, I2C_MASTER_SCL_IO));
-    ESP_ERROR_CHECK(bmp280_init(&dev, &params));
+    //ESP_ERROR_CHECK(bmp280_init_desc(&dev, BMP280_I2C_ADDRESS_0, 0, I2C_MASTER_SDA_IO, I2C_MASTER_SCL_IO));
+    //ESP_ERROR_CHECK(bmp280_init(&dev, &params));
 
     //bool bme280p = dev.id == BME280_CHIP_ID;
     //printf("BMP280: found %s\n", bme280p ? "BME280" : "BMP280");
