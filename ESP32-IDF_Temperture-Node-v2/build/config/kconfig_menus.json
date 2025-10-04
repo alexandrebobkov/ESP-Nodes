@@ -30103,82 +30103,191 @@
             {
                 "children": [
                     {
-                        "children": [],
-                        "depends_on": null,
-                        "help": "Select this option to use the older ESP-IDF I2C driver API (driver/i2c.h)\ninstead of the newer driver API (driver/i2c_master.h).\n\nThis is automatically determined by the build system based on your ESP-IDF version.\nFor ESP-IDF versions prior to v5.3, the legacy driver will be used automatically.\nYou can manually override this setting if needed.",
-                        "id": "I2CDEV_USE_LEGACY_DRIVER",
-                        "name": "I2CDEV_USE_LEGACY_DRIVER",
-                        "range": null,
-                        "title": "Use Legacy I2C Driver API",
-                        "type": "bool"
-                    },
-                    {
-                        "children": [],
-                        "depends_on": "!IDF_TARGET_ESP8266",
-                        "help": "When enabled, internal pullup resistors are automatically enabled\nwhen both sda_pullup_en and scl_pullup_en are false (default state).\n\nUseful for development and prototyping. Disable for production \nsystems with external pullups to avoid interference.\n\nConsiderations:\n- May increase power consumption slightly\n- Could interfere with carefully tuned external pullups\n- Not recommended for battery-powered applications\n\nNote: This option only affects the modern i2cdev driver (ESP32 family).\nLegacy driver behavior is unchanged for compatibility.",
-                        "id": "I2CDEV_AUTO_ENABLE_PULLUPS",
-                        "name": "I2CDEV_AUTO_ENABLE_PULLUPS",
-                        "range": null,
-                        "title": "Automatically enable internal I2C pullups when not configured",
-                        "type": "bool"
-                    },
-                    {
-                        "children": [],
-                        "depends_on": null,
-                        "help": "Default SDA pin for I2C devices.",
-                        "id": "I2CDEV_DEFAULT_SDA_PIN",
-                        "name": "I2CDEV_DEFAULT_SDA_PIN",
-                        "range": null,
-                        "title": "Default I2C SDA pin",
-                        "type": "int"
-                    },
-                    {
-                        "children": [],
-                        "depends_on": null,
-                        "help": "Default SCL pin for I2C devices.",
-                        "id": "I2CDEV_DEFAULT_SCL_PIN",
-                        "name": "I2CDEV_DEFAULT_SCL_PIN",
-                        "range": null,
-                        "title": "Default I2C SCL pin",
-                        "type": "int"
-                    },
-                    {
-                        "children": [],
-                        "depends_on": null,
-                        "help": "Maximum number of devices that can be registered on a single I2C port.",
-                        "id": "I2CDEV_MAX_DEVICES_PER_PORT",
-                        "name": "I2CDEV_MAX_DEVICES_PER_PORT",
-                        "range": null,
-                        "title": "Maximum number of devices per I2C port",
-                        "type": "int"
-                    },
-                    {
-                        "children": [],
-                        "depends_on": null,
-                        "help": null,
-                        "id": "I2CDEV_TIMEOUT",
-                        "name": "I2CDEV_TIMEOUT",
-                        "range": [
-                            10,
-                            5000
+                        "children": [
+                            {
+                                "children": [],
+                                "depends_on": "CU_RELINKER_ENABLE",
+                                "help": "\"Enable this option to print error information instead of\n    throwing exception when missing function\"",
+                                "id": "CU_RELINKER_ENABLE_PRINT_ERROR_INFO_WHEN_MISSING_FUNCTION",
+                                "name": "CU_RELINKER_ENABLE_PRINT_ERROR_INFO_WHEN_MISSING_FUNCTION",
+                                "range": null,
+                                "title": "Print error information when missing function",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depends_on": "CU_RELINKER_ENABLE_CUSTOMIZED_CONFIGURATION_FILES && CU_RELINKER_ENABLE",
+                                        "help": "\"Customized relinker configuration files path. This path is\nevaluated relative to the project root directory.\"",
+                                        "id": "CU_RELINKER_CUSTOMIZED_CONFIGURATION_FILES_PATH",
+                                        "name": "CU_RELINKER_CUSTOMIZED_CONFIGURATION_FILES_PATH",
+                                        "range": null,
+                                        "title": "Customized relinker configuration files path",
+                                        "type": "string"
+                                    }
+                                ],
+                                "depends_on": "CU_RELINKER_ENABLE",
+                                "help": "\"Enable this option to use customized relinker configuration\nfiles instead of default ones\"",
+                                "id": "CU_RELINKER_ENABLE_CUSTOMIZED_CONFIGURATION_FILES",
+                                "name": "CU_RELINKER_ENABLE_CUSTOMIZED_CONFIGURATION_FILES",
+                                "range": null,
+                                "title": "Enable customized relinker configuration files",
+                                "type": "bool"
+                            }
                         ],
-                        "title": "I2C transaction timeout, milliseconds",
-                        "type": "int"
+                        "depends_on": null,
+                        "help": "\"Enable relinker to linker some IRAM functions to Flash\"",
+                        "id": "CU_RELINKER_ENABLE",
+                        "name": "CU_RELINKER_ENABLE",
+                        "range": null,
+                        "title": "Enable relinker",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depends_on": "<choice CU_DIAGNOSTICS_COLOR>",
+                                "help": null,
+                                "id": "CU_DIAGNOSTICS_COLOR_NEVER",
+                                "name": "CU_DIAGNOSTICS_COLOR_NEVER",
+                                "range": null,
+                                "title": "never",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "<choice CU_DIAGNOSTICS_COLOR>",
+                                "help": null,
+                                "id": "CU_DIAGNOSTICS_COLOR_ALWAYS",
+                                "name": "CU_DIAGNOSTICS_COLOR_ALWAYS",
+                                "range": null,
+                                "title": "always",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "<choice CU_DIAGNOSTICS_COLOR>",
+                                "help": null,
+                                "id": "CU_DIAGNOSTICS_COLOR_AUTO",
+                                "name": "CU_DIAGNOSTICS_COLOR_AUTO",
+                                "range": null,
+                                "title": "auto",
+                                "type": "bool"
+                            }
+                        ],
+                        "depends_on": null,
+                        "help": "Use color in diagnostics. \"never\", \"always\", or \"auto\". If \"always\", GCC will output\nwith color defined in GCC_COLORS environment variable. If \"never\", only output plain\ntext. If \"auto\", only output with color when the standard error is a terminal and when\nnot executing in an emacs shell.",
+                        "id": "component-config-cmake-utilities-color-in-diagnostics",
+                        "name": "CU_DIAGNOSTICS_COLOR",
+                        "title": "Color in diagnostics",
+                        "type": "choice"
                     },
                     {
                         "children": [],
                         "depends_on": null,
-                        "help": "Attention! After enabling this option, all I2C device\ndrivers will become non-thread safe. \nUse this option if you need to access your I2C devices\nfrom interrupt handlers.",
-                        "id": "I2CDEV_NOLOCK",
-                        "name": "I2CDEV_NOLOCK",
+                        "help": "\"Enable this option, users can enable GCC link time optimization(LTO)\n feature for target components or dependencies.",
+                        "id": "CU_GCC_LTO_ENABLE",
+                        "name": "CU_GCC_LTO_ENABLE",
                         "range": null,
-                        "title": "Disable the use of mutexes",
+                        "title": "Enable GCC link time optimization(LTO)",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "\"Enable this option, user can make string in designated components align\n by 1-byte instead 1-word(4-byte), this can reduce unnecessary filled data\n so that to reduce firmware size.\"",
+                        "id": "CU_GCC_STRING_1BYTE_ALIGN",
+                        "name": "CU_GCC_STRING_1BYTE_ALIGN",
+                        "range": null,
+                        "title": "GCC string 1-byte align",
                         "type": "bool"
                     }
                 ],
                 "depends_on": null,
-                "id": "component-config-i2c-device-library",
-                "title": "I2C Device Library",
+                "id": "component-config-cmake-utilities",
+                "title": "CMake Utilities",
+                "type": "menu"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": "If enable, i2c_bus will dynamically check configs and re-install i2c driver before each transfer,\nhence multiple devices with different configs on a single bus can be supported.",
+                                "id": "I2C_BUS_DYNAMIC_CONFIG",
+                                "name": "I2C_BUS_DYNAMIC_CONFIG",
+                                "range": null,
+                                "title": "enable dynamic configuration",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": "task block time when try to take the bus, unit:milliseconds",
+                                "id": "I2C_MS_TO_WAIT",
+                                "name": "I2C_MS_TO_WAIT",
+                                "range": [
+                                    50,
+                                    5000
+                                ],
+                                "title": "mutex block time",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": "Enable this option for backward compatibility with the old I2C driver (only valid in IDF v5.3 and above).",
+                                "id": "I2C_BUS_BACKWARD_CONFIG",
+                                "name": "I2C_BUS_BACKWARD_CONFIG",
+                                "range": null,
+                                "title": "Enable backward compatibility for the I2C driver (force use of the old i2c_driver above v5.3)",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depends_on": "I2C_BUS_SUPPORT_SOFTWARE",
+                                        "help": "Set the maximum number of software I2C ports that can be used. This option is only applicable when\nsoftware I2C support is enabled.",
+                                        "id": "I2C_BUS_SOFTWARE_MAX_PORT",
+                                        "name": "I2C_BUS_SOFTWARE_MAX_PORT",
+                                        "range": null,
+                                        "title": "Maximum number of software I2C ports",
+                                        "type": "int"
+                                    }
+                                ],
+                                "depends_on": null,
+                                "help": "Enable this option to use a software-implemented I2C driver. This can be useful for scenarios where\nhardware I2C is unavailable or additional I2C buses are needed beyond the hardware support.",
+                                "id": "I2C_BUS_SUPPORT_SOFTWARE",
+                                "name": "I2C_BUS_SUPPORT_SOFTWARE",
+                                "range": null,
+                                "title": "Enable software I2C support",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": "Enable this option to disable NULL_MEM_ADDR. This allows any register address to be sent.",
+                                "id": "I2C_BUS_REMOVE_NULL_MEM_ADDR",
+                                "name": "I2C_BUS_REMOVE_NULL_MEM_ADDR",
+                                "range": null,
+                                "title": "Remove the limitation of NULL_MEM_ADDR, any register address will be sent",
+                                "type": "bool"
+                            }
+                        ],
+                        "depends_on": null,
+                        "id": "component-config-bus-options-i2c-bus-options",
+                        "title": "I2C Bus Options",
+                        "type": "menu"
+                    }
+                ],
+                "depends_on": null,
+                "id": "component-config-bus-options",
+                "title": "Bus Options",
                 "type": "menu"
             }
         ],
