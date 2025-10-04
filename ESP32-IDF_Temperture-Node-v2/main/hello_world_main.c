@@ -64,10 +64,10 @@ void app_main(void)
         bme280_read_temperature(bme280, &temperature);
         bme280_read_humidity(bme280, &humidity);
         bme280_read_pressure(bme280, &pressure);
-        printf("Temperature: %.1f C\n", temperature);
-        printf("Humidity: %.2f %%\n", humidity);
-        printf("Pressure: %.2f kPa\n", pressure);
-        //printf("\n");
+        //printf("Temperature: %.1f C\n", temperature);
+        //printf("Humidity: %.2f %%\n", humidity);
+        //printf("Pressure: %.2f kPa\n", pressure);
+        printf(" %.1f, %.2f, %.2f \n", temperature, humidity, pressure);
 
         vTaskDelay(2000/portTICK_PERIOD_MS);
     }
