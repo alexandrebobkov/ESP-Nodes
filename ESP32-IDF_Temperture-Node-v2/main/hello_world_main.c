@@ -13,6 +13,8 @@
 #include "esp_flash.h"
 #include "esp_system.h"
 
+static bme280_handle_t bme280 = NULL;
+
 void app_main(void)
 {
     printf("Hello world!\n");
