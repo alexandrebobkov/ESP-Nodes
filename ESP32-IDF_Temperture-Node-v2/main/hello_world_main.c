@@ -8,6 +8,9 @@
     
     Sensor device uses BME280 to measure temperature, pressure and humidity and 
     outputs it to the serial port and publishes values to the MQTT topics.
+
+    Built and Compiled with ESP-IDF v5.4.1
+    Uses Espressif BME280 component: espressif/bme280: ^0.1.1
 */
 
 #include <stdio.h>
