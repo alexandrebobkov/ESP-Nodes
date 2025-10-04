@@ -53,6 +53,8 @@ void app_main(void)
     i2c_bus = i2c_bus_create(i2c_master_port, &conf);
     bme280 = bme280_create(i2c_bus, BME280_I2C_ADDRESS_DEFAULT);
     bme280_default_init(bme280);
+    bme280_read_temperature(bme280, &temperature);
+    printf("Temperature: %.2f C\n", temperature);
     
 }
 
