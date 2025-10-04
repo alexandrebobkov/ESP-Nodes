@@ -23,7 +23,7 @@
     Unless required by applicable law or agreed to in writing, this
     software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
     CONDITIONS OF ANY KIND, either express or implied.
-*/
+
 #include <stdio.h>
 #include "esp_log.h"
 #include "i2c_bus.h"
@@ -51,5 +51,14 @@ void app_main(void)
     i2c_bus = i2c_bus_create(i2c_master_port, &conf);
     bme280 = bme280_create(i2c_bus, BME280_I2C_ADDRESS_DEFAULT);
     bme280_default_init(bme280);
+    
+}
+*/
+
+#include <stdio.h>
+#include "esp_log.h"
+
+void app_main(void)
+{
     
 }
