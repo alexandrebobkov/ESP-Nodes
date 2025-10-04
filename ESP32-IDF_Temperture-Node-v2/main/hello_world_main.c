@@ -62,7 +62,7 @@ void app_main(void)
         bme280_read_humidity(bme280, &humidity);
         bme280_read_pressure(bme280, &pressure);
         printf("Temperature: %.2f C\n", temperature);
-        printf("Temperature: %.2f %\n", humidity);
+        printf("Temperature: %.2f \n", humidity);
         printf("Temperature: %.2f kPa\n", pressure);
 
         vTaskDelay(2000);
