@@ -33,6 +33,16 @@
 static bme280_handle_t sensor = NULL;
 float temperature = 0.0f;
 
+i2c_config_t conf = {
+        .mode = I2C_MODE_MASTER,
+        .sda_io_num = GPIO_NUM_21,
+        .sda_pullup_en = GPIO_PULLUP_ENABLE,
+        .scl_io_num = GPIO_NUM_22,
+        .sda_pullup_en = GPIO_PULLUP_ENABLE,
+        .master.clk_speed = I2C_MASTER_FREQ_HZ,
+        .clk_flags= 0,
+    };
+
 
 
 void app_main(void)
@@ -65,7 +75,7 @@ void app_main(void)
     printf("Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());
 
     //i2c_master_init();
-    i2c_bus_handle_t i2c_bus = i2c_bus_create(I2C_MASTER_NUM, I2C_MASTER_SDA_IO, I2C_MASTER_SCL_IO);
+    i2c_bus_handle_t i2c_bus = i2c_bus_create(I2C_MASTER_NUM, &conf);
     sensor = bme280_create(i2c_bus, BME280_SENSOR_ADDR);
     ESP_ERROR_CHECK(bme280_default_init(sensor));
     ESP_ERROR_CHECK(bme280_read_temperature(sensor, &temperature));
