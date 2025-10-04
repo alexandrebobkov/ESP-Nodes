@@ -65,7 +65,8 @@ void app_main(void)
     printf("Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());
 
     //i2c_master_init();
-    sensor = bme280_create(I2C_MASTER_NUM, BME280_SENSOR_ADDR);
+    i2c_bus_handle_t i2c_bus = i2c_bus_create(I2C_MASTER_NUM, I2C_MASTER_SDA_IO, I2C_MASTER_SCL_IO, I2C_MASTER_FREQ_HZ);
+    sensor = bme280_create(i2c_bus, BME280_SENSOR_ADDR);
     ESP_ERROR_CHECK(bme280_default_init(sensor));
     ESP_ERROR_CHECK(bme280_read_temperature(sensor, &temperature));
 
