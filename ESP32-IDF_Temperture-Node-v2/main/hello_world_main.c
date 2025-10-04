@@ -31,6 +31,7 @@
 #include "bme280.h"
 
 static const char *TAG = "i2c-simple-example";
+float temperature = 0.0f;
 
 int i2c_master_port = 0;
 static i2c_bus_handle_t i2c_bus = NULL;
