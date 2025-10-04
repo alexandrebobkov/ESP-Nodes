@@ -43,18 +43,23 @@ i2c_config_t conf = {
 
 void app_main(void)
 {
+    // Create the I2C bus and BME280 device handles
     i2c_bus = i2c_bus_create(i2c_master_port, &conf);
     bme280 = bme280_create(i2c_bus, BME280_I2C_ADDRESS_DEFAULT);
+    // Initialize the BME280 device
     bme280_default_init(bme280);
 
+    // Set the BME280 sampling parameters
     bme280_set_sampling(bme280, BME280_MODE_NORMAL, BME280_SAMPLING_X1, BME280_SAMPLING_X1, BME280_SAMPLING_X1, BME280_FILTER_OFF, BME280_STANDBY_MS_1000); 
 
+    // Main loop to read and print the sensor values every 2 seconds
     while (true) {
 
         bme280_take_forced_measurement(bme280);
         bme280_read_temperature(bme280, &temperature);
         bme280_read_humidity(bme280, &humidity);
         bme280_read_pressure(bme280, &pressure);
+        // Print the values to the serial console
         printf(" %.1f, %.2f, %.2f \n", temperature, humidity, pressure);
 
         vTaskDelay(2000/portTICK_PERIOD_MS);
