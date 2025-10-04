@@ -13,8 +13,8 @@
 #include "esp_flash.h"
 #include "esp_system.h"
 //#include "i2c_bus.h"
-#include "bme280.h"
-//#include "bmp280.h"
+//#include "bme280.h"
+#include "bmp280.h"
 
 #define I2C_MASTER_SCL_IO           22      /*!< GPIO number used for I2C master clock */
 #define I2C_MASTER_SDA_IO           21      /*!< GPIO number used for I2C master data  */
@@ -31,8 +31,8 @@
 
 #define BME280_SENSOR_ADDR          0x76        /*!< Slave address of the MPU9250 sensor */
 
-static i2c_bus_handle_t i2c_bus = NULL;
-static bme280_handle_t sensor = NULL;
+//static i2c_bus_handle_t i2c_bus = NULL;
+//static bme280_handle_t sensor = NULL;
 float temperature = 0.0f;
 
 i2c_config_t conf = {
@@ -76,14 +76,17 @@ void app_main(void)
 
     printf("Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());
 
+    bmp280_params_t params;
+    bmp280_init_default_params(&params);
+
     //i2c_master_init();
-    i2c_bus = i2c_bus_create(I2C_MASTER_NUM, &conf);
+    //i2c_bus = i2c_bus_create(I2C_MASTER_NUM, &conf);
     //i2c_bus = i2c_bus_create(I2C_MASTER_NUM, I2C_MASTER_SDA_IO, I2C_MASTER_SCL_IO, I2C_MASTER_FREQ_HZ);
-    sensor = bme280_create(i2c_bus, BME280_SENSOR_ADDR);
-    if(!sensor) {
-        printf("Failed to create BME280 sensor\n");
-        return;
-    }
+    //sensor = bme280_create(i2c_bus, BME280_SENSOR_ADDR);
+    //if(!sensor) {
+    //    printf("Failed to create BME280 sensor\n");
+    //    return;
+   // }
     //ESP_ERROR_CHECK(bme280_default_init(sensor));
     //ESP_ERROR_CHECK(bme280_read_temperature(sensor, &temperature));
 
