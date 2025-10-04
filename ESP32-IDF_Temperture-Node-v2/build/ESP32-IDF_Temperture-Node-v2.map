@@ -9801,6 +9801,8 @@ LOAD esp-idf/perfmon/libperfmon.a
 LOAD esp-idf/rt/librt.a
 LOAD esp-idf/spiffs/libspiffs.a
 LOAD esp-idf/wifi_provisioning/libwifi_provisioning.a
+LOAD esp-idf/esp-idf-lib__i2cdev/libesp-idf-lib__i2cdev.a
+LOAD esp-idf/esp-idf-lib__bmp280/libesp-idf-lib__bmp280.a
 LOAD esp-idf/espressif__i2c_bus/libespressif__i2c_bus.a
 LOAD esp-idf/espressif__bme280/libespressif__bme280.a
 LOAD esp-idf/main/libmain.a
@@ -9812,6 +9814,8 @@ LOAD esp-idf/protocomm/libprotocomm.a
 LOAD esp-idf/console/libconsole.a
 LOAD esp-idf/protobuf-c/libprotobuf-c.a
 LOAD esp-idf/json/libjson.a
+LOAD esp-idf/esp-idf-lib__bmp280/libesp-idf-lib__bmp280.a
+LOAD esp-idf/esp-idf-lib__i2cdev/libesp-idf-lib__i2cdev.a
 LOAD esp-idf/espressif__bme280/libespressif__bme280.a
 LOAD esp-idf/espressif__i2c_bus/libespressif__i2c_bus.a
 LOAD esp-idf/xtensa/libxtensa.a
