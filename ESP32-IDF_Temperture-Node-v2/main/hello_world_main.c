@@ -17,6 +17,7 @@
 #include "esp_log.h"
 #include "i2c_bus.h"
 #include "bme280.h"
+#include "config.h"
 
 static const char *TAG = "esp32 node";
 float temperature = 0.0f, humidity = 0.0f, pressure = 0.0f;
@@ -27,11 +28,11 @@ static bme280_handle_t bme280 = NULL;
 
 i2c_config_t conf = {
     .mode = I2C_MODE_MASTER,
-    .sda_io_num = 21,
+    .sda_io_num = SDA_PIN,
     .sda_pullup_en = GPIO_PULLUP_ENABLE,
-    .scl_io_num = 22,
+    .scl_io_num = SCL_PIN,
     .sda_pullup_en = GPIO_PULLUP_ENABLE,
-    .master.clk_speed = 100000,
+    .master.clk_speed = I2C_FREQ_HZ,
     .clk_flags= 0,
 };
 
