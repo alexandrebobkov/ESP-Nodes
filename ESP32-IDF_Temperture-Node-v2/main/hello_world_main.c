@@ -31,22 +31,18 @@
 
 static const char *TAG = "i2c-simple-example";
 
-static esp_err_t i2c_driver_initialize(void)
-{
-    int i2c_master_port = 0;
+int i2c_master_port = 0;
 
-    i2c_config_t conf = {
-        .mode = I2C_MODE_MASTER,
-        .sda_io_num = 21,
-        .sda_pullup_en = GPIO_PULLUP_ENABLE,
-        .scl_io_num = 22,
-        .sda_pullup_en = GPIO_PULLUP_ENABLE,
-        .master.clk_speed = I2C_MASTER_FREQ_HZ,
-        .clk_flags= 0,
-    };
+i2c_config_t conf = {
+    .mode = I2C_MODE_MASTER,
+    .sda_io_num = 21,
+    .sda_pullup_en = GPIO_PULLUP_ENABLE,
+    .scl_io_num = 22,
+    .sda_pullup_en = GPIO_PULLUP_ENABLE,
+    .master.clk_speed = I2C_MASTER_FREQ_HZ,
+    .clk_flags= 0,
+};
 
-    return i2c_param_config(i2c_master_port, &conf);
-}
 
 void app_main(void)
 {
