@@ -32,6 +32,8 @@
 static const char *TAG = "i2c-simple-example";
 
 int i2c_master_port = 0;
+static i2c_bus_handle_t i2c_bus = NULL;
+static bme280_handle_t bme280 = NULL;
 
 i2c_config_t conf = {
     .mode = I2C_MODE_MASTER,
@@ -46,6 +48,6 @@ i2c_config_t conf = {
 
 void app_main(void)
 {
-    i2c_bus = i2c_bus_create(0, &conf);
+    i2c_bus = i2c_bus_create(i2c_master_port, &conf);
     
 }
