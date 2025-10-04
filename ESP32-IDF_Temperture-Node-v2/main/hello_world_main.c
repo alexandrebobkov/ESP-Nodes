@@ -31,6 +31,20 @@
 
 static bme280_handle_t sensor = NULL;
 
+static esp_err_t bme280_read_raw_temperature(uint8_t device_address, uint8_t *raw_temperature) {
+    // BME280_INIT_VALUE LN 136
+    // BME280_TEMPERATURE_MSB_REG 0xFA
+    // BME280_TEMPERATURE_DATA_LENGTH
+    // BME280_TEMPERATURE_DATA_SIZE
+    // I2C_MASTER_TIMEOUT_MS / portTICK_PERIOD_MS
+
+    esp_err_t command_result;
+    //unsigned char raw_temperature[BME280_TEMPERATURE_DATA_SIZE] = {0, 0, 0};
+    //command_result = i2c_master_read_from_device(0, BME280_I2C_ADDRESS1, *raw_temperature, BME280_TEMPERATURE_DATA_SIZE, I2C_MASTER_TIMEOUT_MS / portTICK_PERIOD_MS);
+    command_result = i2c_master_write_read_device(0, device_address, *raw_temperature, BME280_TEMPERATURE_DATA_SIZE, BME280_TEMPERATURE_REGISTER, 1, I2C_MASTER_TIMEOUT_MS / portTICK_PERIOD_MS);
+    return command_result;
+}
+
 void app_main(void)
 {
     printf("Hello world!\n");
