@@ -43,7 +43,7 @@ i2c_config_t conf = {
     .clk_flags= 0,
 };
 
-// Task to read sensor values
+// Task to read sensors values
 void read_sensors_task(void *arg)
 {
     while (1) {
@@ -57,7 +57,7 @@ void read_sensors_task(void *arg)
     }
 }
 
-// Task to print sensor values
+// Task to print sensors values
 void print_sensors_task(void *arg)
 {
     while (1) {
