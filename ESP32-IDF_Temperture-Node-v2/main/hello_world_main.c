@@ -76,7 +76,8 @@ void app_main(void)
     bme280_default_init(bme280);
 
     // Set the BME280 sampling parameters
-    bme280_set_sampling(bme280, BME280_MODE_NORMAL, BME280_SAMPLING_X1, BME280_SAMPLING_X1, BME280_SAMPLING_X1, BME280_FILTER_OFF, BME280_STANDBY_MS_1000); 
+    bme280_set_sampling(bme280, BME280_MODE_NORMAL, BME280_SAMPLING_X1, BME280_SAMPLING_X1, BME280_SAMPLING_X1, 
+        BME280_FILTER_OFF, BME280_STANDBY_MS_1000); 
 
     // Create FreeRTOS tasks for reading and printing sensor values
     xTaskCreate(read_sensor_task, "read_sensor_task", 2048, NULL, 5, NULL);
