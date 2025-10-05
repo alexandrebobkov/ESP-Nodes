@@ -49,7 +49,7 @@ void read_sensor_task(void *arg)
     while (1) {
         // Take a forced measurement
         bme280_take_forced_measurement(bme280);
-        // Read temperature, humidity, and pressure values
+        // Read temperature, humidity, and pressure values and save them into the variables
         bme280_read_temperature(bme280, &temperature);
         bme280_read_humidity(bme280, &humidity);
         bme280_read_pressure(bme280, &pressure);
