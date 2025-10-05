@@ -81,8 +81,8 @@ void app_main(void)
         BME280_FILTER_OFF, BME280_STANDBY_MS_1000); 
 
     // Create FreeRTOS tasks for reading and printing sensor values
-    xTaskCreate(read_sensor_task, "read_sensor_task", 2048, NULL, 5, NULL);
-    xTaskCreate(print_sensor_task, "print_sensor_task", 2048, NULL, 5, NULL);
+    xTaskCreate(read_sensors_task, "read_sensors_task", 2048, NULL, 5, NULL);
+    xTaskCreate(print_sensors_task, "print_sensors_task", 2048, NULL, 5, NULL);
 
     // Main loop to read and print the sensor values every 2 seconds
     /*while (true) {
