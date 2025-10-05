@@ -53,7 +53,6 @@ void read_sensor_task(void *arg)
         bme280_read_temperature(bme280, &temperature);
         bme280_read_humidity(bme280, &humidity);
         bme280_read_pressure(bme280, &pressure);
-
         vTaskDelay(2000/portTICK_PERIOD_MS);
     }
 }
@@ -79,8 +78,12 @@ void app_main(void)
     // Set the BME280 sampling parameters
     bme280_set_sampling(bme280, BME280_MODE_NORMAL, BME280_SAMPLING_X1, BME280_SAMPLING_X1, BME280_SAMPLING_X1, BME280_FILTER_OFF, BME280_STANDBY_MS_1000); 
 
+    // Create FreeRTOS tasks for reading and printing sensor values
+    xTaskCreate(read_sensor_task, "read_sensor_task", 2048, NULL, 5, NULL);
+    xTaskCreate(print_sensor_task, "print_sensor_task", 2048, NULL, 5, NULL);
+
     // Main loop to read and print the sensor values every 2 seconds
-    while (true) {
+    /*while (true) {
 
         bme280_take_forced_measurement(bme280);
         bme280_read_temperature(bme280, &temperature);
@@ -90,5 +93,5 @@ void app_main(void)
         printf(" %.1f, %.2f, %.2f \n", temperature, humidity, pressure);
 
         vTaskDelay(2000/portTICK_PERIOD_MS);
-    }
+    }*/
 }
