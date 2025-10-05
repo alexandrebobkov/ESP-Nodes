@@ -43,6 +43,31 @@ i2c_config_t conf = {
     .clk_flags= 0,
 };
 
+// Task to read sensor values
+void read_sensor_task(void *arg)
+{
+    while (1) {
+        // Take a forced measurement
+        bme280_take_forced_measurement(bme280);
+        // Read temperature, humidity, and pressure values
+        bme280_read_temperature(bme280, &temperature);
+        bme280_read_humidity(bme280, &humidity);
+        bme280_read_pressure(bme280, &pressure);
+
+        vTaskDelay(2000/portTICK_PERIOD_MS);
+    }
+}
+
+// Task to print sensor values
+void print_sensor_task(void *arg)
+{
+    while (1) {
+        // Print the values to the serial console
+        printf(" %.1f, %.2f, %.2f \n", temperature, humidity, pressure);
+        vTaskDelay(2500/portTICK_PERIOD_MS);
+    }
+}   
+
 void app_main(void)
 {
     // Create the I2C bus and BME280 device handles
