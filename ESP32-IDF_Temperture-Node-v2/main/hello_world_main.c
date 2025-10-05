@@ -44,7 +44,7 @@ i2c_config_t conf = {
 };
 
 // Task to read sensor values
-void read_sensor_task(void *arg)
+void read_sensors_task(void *arg)
 {
     while (1) {
         // Take a forced measurement
@@ -58,7 +58,7 @@ void read_sensor_task(void *arg)
 }
 
 // Task to print sensor values
-void print_sensor_task(void *arg)
+void print_sensors_task(void *arg)
 {
     while (1) {
         // Print the values to the serial console
