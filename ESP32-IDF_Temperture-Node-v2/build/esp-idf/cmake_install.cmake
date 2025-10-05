@@ -504,11 +504,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Temperture-Node-v2/build/esp-idf/mqtt/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
   include("/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Temperture-Node-v2/build/esp-idf/nvs_sec_provider/cmake_install.cmake")
 endif()
 
@@ -560,6 +555,11 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
   include("/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Temperture-Node-v2/build/esp-idf/espressif__bme280/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Temperture-Node-v2/build/esp-idf/espressif__mqtt/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
