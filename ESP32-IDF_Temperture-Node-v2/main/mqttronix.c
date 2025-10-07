@@ -12,7 +12,7 @@
 #include "mqtt_client.h"
 #include "mqttronix.h"
 
-const char* MQTT_TAG = "MQTTronix";
+//const char* MQTT_TAG = "MQTTronix";
 
 static void mqtt_publish_task(void *arg) {
     esp_mqtt_client_handle_t client = (esp_mqtt_client_handle_t)arg;
@@ -42,7 +42,7 @@ static void mqtt_publish_task(void *arg) {
         /*esp_mqtt_client_publish(mqtt_client, "/bitrider/pwm-3", pwm_3_str, 0, 1, 0);
         esp_mqtt_client_publish(mqtt_client, "/bitrider/pwm-4", pwm_4_str, 0, 1, 0);*/
         vTaskDelay(pdMS_TO_TICKS(1000));
-        ESP_LOGI(MQTT_TAG, "Called task to publish topic /bitrider/temp");
+        ESP_LOGI("MQTTronix", "Called task to publish topic /bitrider/temp");
     }
 }
 
@@ -53,13 +53,13 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
 
     switch ((esp_mqtt_event_id_t)event_id) {
         case MQTT_EVENT_CONNECTED:
-            ESP_LOGI(MQTT_TAG, "MQTT_EVENT_CONNECTED");
+            ESP_LOGI("MQTTronix", "MQTT_EVENT_CONNECTED");
             esp_mqtt_client_publish(client, "nodes/outdoor/foxie2/temperature", "1.0", 0, 1, 0);
             mqtt_client = client;
             xTaskCreate(mqtt_publish_task, "mqtt_publish_task", 8192, NULL, 5, NULL);
             break;
         case MQTT_EVENT_DISCONNECTED:
-            ESP_LOGI(MQTT_TAG, "MQTT_EVENT_DISCONNECTED");
+            ESP_LOGI("MQTTronix", "MQTT_EVENT_DISCONNECTED");
             break;
         default:
             break;
