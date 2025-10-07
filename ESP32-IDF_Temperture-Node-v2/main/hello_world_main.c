@@ -21,6 +21,8 @@
 #include "bme280.h"
 #include "config.h"
 
+#include "mqttronix.h"
+
 static const char *TAG = "esp32 node";
 
 // The three variables for storing the sensor readings (float for decimals)
