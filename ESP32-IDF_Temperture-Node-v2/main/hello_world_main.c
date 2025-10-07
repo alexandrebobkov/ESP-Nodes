@@ -63,7 +63,7 @@ void print_sensors_task(void *arg)
     while (1) {
         // Print the values to the serial console
         printf(" %.1f, %.2f, %.2f \n", temperature, humidity, pressure);
-        mqttronix_update_temp (temperature);)
+        mqttronix_update_temp (temperature);
         vTaskDelay(2500/portTICK_PERIOD_MS);
     }
 }   
