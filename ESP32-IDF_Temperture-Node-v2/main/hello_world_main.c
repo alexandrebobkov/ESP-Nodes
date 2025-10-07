@@ -4,7 +4,7 @@
 
     Author:     Alexander Bobkov
     Date:       October 4, 2025
-    Updated:    October 5, 2025
+    Updated:    October 7, 2025
     
     Sensor device uses BME280 to measure temperature, pressure and humidity and 
     outputs it to the serial port and publishes values to the MQTT topics.
