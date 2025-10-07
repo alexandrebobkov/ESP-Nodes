@@ -9,6 +9,7 @@
     Uses Espressif mqtt component: espressif/mqtt^1.0.0
 */
 
+#include "esp_log.h"
 #include "mqtt_client.h"
 #include "mqttronix.h"
 
