@@ -13,7 +13,9 @@
 #include "mqtt_client.h"
 #include "mqttronix.h"
 
-//static const char* MQTT_TAG = "MQTTronix";
+static float temp_value = 0.0f;
+static float battery_voltage = 0.0f;
+static float sys_current = 0.0f;
 
 static void mqtt_publish_task(void *arg) {
     esp_mqtt_client_handle_t client = (esp_mqtt_client_handle_t)arg;
@@ -76,3 +78,5 @@ void mqttronix_start(void) {
     esp_mqtt_client_register_event(client, ESP_EVENT_ANY_ID, mqtt_event_handler, NULL);
     esp_mqtt_client_start(client);
 }
+
+void mqttronix_update_temp (float temp) { temp_value = temp; }
