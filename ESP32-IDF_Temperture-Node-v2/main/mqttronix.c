@@ -19,6 +19,8 @@ static float humidity_value = 0.0f;
 
 static char temp_str[6];
 
+static esp_mqtt_client_handle_t mqtt_client = NULL;
+
 static void mqtt_publish_task(void *arg) {
     esp_mqtt_client_handle_t client = (esp_mqtt_client_handle_t)arg;
     
