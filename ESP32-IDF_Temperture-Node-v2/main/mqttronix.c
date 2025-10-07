@@ -82,4 +82,7 @@ void mqttronix_start(void) {
     esp_mqtt_client_start(client);
 }
 
-void mqttronix_update_temp (float temp) { temp_value = temp; }
+void mqttronix_update_temp (float temp) { 
+    temp_value = temp; 
+    snprintf(temp_str, sizeof(temp_str), "%.02f", temp_value);
+}
