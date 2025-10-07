@@ -13,7 +13,8 @@
 #include "mqtt_client.h"
 #include "mqttronix.h"
 
-static const char* MQTT_TAG = "MQTTronix";
+//static const char* 
+MQTT_TAG = "MQTTronix";
 
 static void mqtt_publish_task(void *arg) {
     esp_mqtt_client_handle_t client = (esp_mqtt_client_handle_t)arg;
