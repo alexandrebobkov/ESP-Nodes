@@ -3,6 +3,13 @@
 
 static const char* MQTT_BROKER_URI = "mqtt://mqtt.techquadbit.net";
 static const char* MQTT_TAG = "MQTTronix";
+//static const char WIFI_SSID;
+#define WIFI_SSID "IoT_bots"
+//static const char WIFI_PASSWORD;
+#define WIFI_PASSWORD "208208208"
+static const char* MQTT_BROKER_URI;
+static const char* MQTT_TAG;
+static esp_mqtt_client_handle_t mqtt_client = NULL;
 //static esp_mqtt_client_handle_t mqtt_client = NULL;
 
 /*static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data);
