@@ -44,7 +44,7 @@ static void mqtt_publish_task(void *arg) {
         esp_mqtt_client_publish(mqtt_client, "/bitrider/pwm-2", pwm_2_str, 0, 1, 0);
         //esp_mqtt_client_publish(mqtt_client, "/bitrider/pwm-3", pwm_3_str, 0, 1, 0);
         //esp_mqtt_client_publish(mqtt_client, "/bitrider/pwm-4", pwm_4_str, 0, 1, 0);*/
-        esp_mqtt_client_publish(mqtt_client, "nodes/outdoors/foxie2/temperature", temp_str, 0, 1, 0);
+        esp_mqtt_client_publish(mqtt_client, "nodes/outdoors/foxie2/sensors/temperature", temp_str, 0, 1, 0);
         vTaskDelay(pdMS_TO_TICKS(1000));
         ESP_LOGI(MQTT_TAG, "Called task to publish topic /bitrider/temp");
     }
