@@ -1,7 +1,7 @@
 #ifndef __MQTTRONIX_H__
 #define __MQTTRONIX_H__
 
-static const char* MQTT_BROKER_URI = "mqtt://74.14.210.168";    // "mqtt://10.100.50.16:1883";"mqtt://mqtt.techquadbit.net";
+static const char* MQTT_BROKER_URI = "mqtt://mqtt.techquadbit.net";
 static const char* MQTT_TAG = "MQTTronix";
 //static esp_mqtt_client_handle_t mqtt_client = NULL;
 
