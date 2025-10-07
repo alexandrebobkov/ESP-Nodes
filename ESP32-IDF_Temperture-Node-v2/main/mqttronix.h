@@ -8,7 +8,7 @@ static const char* MQTT_TAG = "MQTTronix";
 //static const char WIFI_PASSWORD;
 #define WIFI_PASSWORD "208208208"
 static const char* MQTT_BROKER_URI;
-//static const char* MQTT_TAG;
+static const char* MQTT_TAG;
 static esp_mqtt_client_handle_t mqtt_client = NULL;
 //static esp_mqtt_client_handle_t mqtt_client = NULL;
 
