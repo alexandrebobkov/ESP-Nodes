@@ -85,7 +85,7 @@ void app_main(void)
         ret = nvs_flash_init();
     }
     ESP_ERROR_CHECK(ret);
-    
+
     // Create the I2C bus and BME280 device handles
     i2c_bus = i2c_bus_create(i2c_master_port, &conf);
     bme280 = bme280_create(i2c_bus, BME280_I2C_ADDRESS_DEFAULT);
@@ -101,6 +101,8 @@ void app_main(void)
     xTaskCreate(read_sensors_task, "read_sensors_task", 2048, NULL, 5, NULL);
     xTaskCreate(print_sensors_task, "print_sensors_task", 2048, NULL, 5, NULL);
 
+    // Use wifi_init() for ESP-NOW and Wi-Fi setup
+    wifi_init();
     mqttronix_start();
 
     // Main loop to read and print the sensor values every 2 seconds
