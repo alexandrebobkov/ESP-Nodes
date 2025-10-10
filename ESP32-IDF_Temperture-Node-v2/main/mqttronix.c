@@ -143,3 +143,7 @@ void mqttronix_update_humidity (float humidity) {
     humidity_value = humidity;
     snprintf(humidity_str, sizeof(humidity_str), "%.02f", humidity_value);
 }
+void mqttronix_update_pressure (float pressure) { 
+    pressure_value = pressure;
+    snprintf(pressure_str, sizeof(pressure_str), "%.02f", pressure_str);
+}
