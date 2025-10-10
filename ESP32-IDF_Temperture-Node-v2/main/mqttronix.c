@@ -82,7 +82,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
 
 /* ESP-NOW */
 // Wi-Fi should start before using ESP-NOW
-static void wifi_init()
+void wifi_init()
 {
     /*
     * STAND-ALONE
