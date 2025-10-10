@@ -12,6 +12,8 @@ static const char* MQTT_BROKER_URI;
 //static esp_mqtt_client_handle_t mqtt_client = NULL;
 
 void mqttronix_update_temp (float temp);
+void mqttronix_update_humidity (float humidity);
+void mqttronix_update_pressure (float pressure);
 void mqttronix_start(void);
 void wifi_init(void);
 
