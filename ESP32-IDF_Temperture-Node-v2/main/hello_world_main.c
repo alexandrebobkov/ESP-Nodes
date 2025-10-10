@@ -21,8 +21,12 @@
 #include "esp_log.h"
 #include "i2c_bus.h"
 #include "bme280.h"
-#include "config.h"
+#include "esp_netif.h"
+#include "esp_now.h"
+#include "esp_mac.h"
+#include "esp_wifi.h"
 
+#include "config.h"
 #include "mqttronix.h"
 
 static const char *TAG = "esp32 node";
