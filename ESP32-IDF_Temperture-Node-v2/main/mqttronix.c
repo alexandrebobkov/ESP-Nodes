@@ -10,6 +10,12 @@
 */
 
 #include "esp_log.h"
+#include "esp_crc.h"
+#include "esp_netif.h"
+#include "esp_now.h"
+#include "esp_mac.h"
+#include "esp_wifi.h"
+#include "esp_system.h"
 #include "mqtt_client.h"
 #include "mqttronix.h"
 
