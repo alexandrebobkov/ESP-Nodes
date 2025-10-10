@@ -78,6 +78,14 @@ void print_sensors_task(void *arg)
 
 void app_main(void)
 {
+    // Initialize NVS before Wi-Fi
+    esp_err_t ret = nvs_flash_init();
+    if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
+        ESP_ERROR_CHECK(nvs_flash_erase());
+        ret = nvs_flash_init();
+    }
+    ESP_ERROR_CHECK(ret);
+    
     // Create the I2C bus and BME280 device handles
     i2c_bus = i2c_bus_create(i2c_master_port, &conf);
     bme280 = bme280_create(i2c_bus, BME280_I2C_ADDRESS_DEFAULT);
