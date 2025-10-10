@@ -68,6 +68,7 @@ void read_sensors_task(void *arg)
         bme280_read_temperature(bme280, &temperature);
         bme280_read_humidity(bme280, &humidity);
         bme280_read_pressure(bme280, &pressure);
+        mqttronix_update_temp (temperature);
         vTaskDelay(1000/portTICK_PERIOD_MS);
     }
 }
@@ -78,7 +79,7 @@ void print_sensors_task(void *arg)
     while (1) {
         // Print the values to the serial console
         printf(" %.1f, %.2f, %.2f \n", temperature, humidity, pressure);
-        mqttronix_update_temp (temperature);
+        
         vTaskDelay(2500/portTICK_PERIOD_MS);
     }
 }   
