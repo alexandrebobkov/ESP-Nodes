@@ -25,6 +25,7 @@
 #include "esp_now.h"
 #include "esp_mac.h"
 #include "esp_wifi.h"
+#include "esp_system.h"
 
 #include "config.h"
 #include "mqttronix.h"
