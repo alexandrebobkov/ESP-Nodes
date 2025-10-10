@@ -24,6 +24,8 @@ static float pressure_value = 0.0f;
 static float humidity_value = 0.0f;
 
 static char temp_str[6];
+static char humidity_str[6];
+static char pressure_str[6];
 
 static esp_mqtt_client_handle_t mqtt_client = NULL;
 
@@ -137,7 +139,7 @@ void mqttronix_update_temp (float temp) {
     temp_value = temp; 
     snprintf(temp_str, sizeof(temp_str), "%.02f", temp_value);
 }
-void mqttronix_update_humidity (float temp) { 
+void mqttronix_update_humidity (float humidity) { 
     humidity_value = humidity;
-    snprintf(temp_str, sizeof(temp_str), "%.02f", temp_value);
+    snprintf(humidity_str, sizeof(humidity_str), "%.02f", humidity_value);
 }
