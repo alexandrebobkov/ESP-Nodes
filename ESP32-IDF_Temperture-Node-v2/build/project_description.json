@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "ESP32-IDF_Temperture-Node-v2",
-    "project_version":    "ESP32-Node_Switch-v2.7-10069-ga197e017e",
+    "project_version":    "ESP32-Node_Switch-v2.7-10089-g89dbf942c-dirty",
     "project_path":       "/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Temperture-Node-v2",
     "idf_path":           "/home/abobkov/esp/v5.4.1/esp-idf",
     "build_dir":          "/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Temperture-Node-v2/build",
@@ -1251,7 +1251,7 @@
             "type": "LIBRARY",
             "lib": "__idf_main",
             "reqs": [],
-            "priv_reqs": [ "spi_flash", "espressif__bme280", "espressif__mqtt" ],
+            "priv_reqs": [ "spi_flash", "esp_netif", "espressif__bme280", "espressif__mqtt" ],
             "managed_reqs": [],
             "managed_priv_reqs": [ "espressif__bme280", "espressif__mqtt" ],
             "file": "/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Temperture-Node-v2/build/esp-idf/main/libmain.a",
@@ -2887,7 +2887,7 @@
             "dir": "/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Temperture-Node-v2/main",
             "lib": "__idf_main",
             "reqs": [],
-            "priv_reqs": [ "spi_flash", "espressif__bme280", "espressif__mqtt" ],
+            "priv_reqs": [ "spi_flash", "esp_netif", "espressif__bme280", "espressif__mqtt" ],
             "managed_reqs": [],
             "managed_priv_reqs": [ "espressif__bme280", "espressif__mqtt" ],
             "include_dirs": [ "." ]
