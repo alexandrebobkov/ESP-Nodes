@@ -89,6 +89,8 @@ void app_main(void)
     xTaskCreate(read_sensors_task, "read_sensors_task", 2048, NULL, 5, NULL);
     xTaskCreate(print_sensors_task, "print_sensors_task", 2048, NULL, 5, NULL);
 
+    mqttronix_start();
+
     // Main loop to read and print the sensor values every 2 seconds
     /*while (true) {
 

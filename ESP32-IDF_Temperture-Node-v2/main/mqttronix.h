@@ -12,6 +12,7 @@ static const char* MQTT_BROKER_URI;
 //static esp_mqtt_client_handle_t mqtt_client = NULL;
 
 void mqttronix_update_temp (float temp);
+void mqttronix_start(void);
 
 /*static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data);
 static void mqtt_publish_task(void *arg);
