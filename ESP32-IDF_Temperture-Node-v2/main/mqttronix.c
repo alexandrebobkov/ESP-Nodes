@@ -20,7 +20,7 @@
 #include "mqttronix.h"
 
 static float temp_value = 0.0f;
-static float pressure_voltage = 0.0f;
+static float pressure_value = 0.0f;
 static float humidity_value = 0.0f;
 
 static char temp_str[6];
@@ -135,5 +135,9 @@ void mqttronix_start(void) {
 
 void mqttronix_update_temp (float temp) { 
     temp_value = temp; 
+    snprintf(temp_str, sizeof(temp_str), "%.02f", temp_value);
+}
+void mqttronix_update_humidity (float temp) { 
+    humidity_value = humidity;
     snprintf(temp_str, sizeof(temp_str), "%.02f", temp_value);
 }
