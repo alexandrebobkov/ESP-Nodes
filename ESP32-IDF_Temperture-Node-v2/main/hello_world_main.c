@@ -4,7 +4,7 @@
 
     Author:     Alexander Bobkov
     Date:       October 4, 2025
-    Updated:    October 7, 2025
+    Updated:    October 10, 2025
 
     TO-DO: add Wi-Fi connection for MQTT publishing
     
@@ -30,7 +30,11 @@
 #include "freertos/task.h"
 #include "esp_log.h"
 #include "i2c_bus.h"
+// BME280 sensor: Temperature, Humidity, Pressure
 #include "bme280.h"
+// BMP280 sensor: Temperature, Pressure
+//#include "bmp280.h"
+
 
 
 #include "config.h"
@@ -46,6 +50,9 @@ int i2c_master_port = 0;
 static i2c_bus_handle_t i2c_bus = NULL;
 // BME280 device handle
 static bme280_handle_t bme280 = NULL;
+
+// BMP280 device handle
+static bmp280_handle_t bmp280 = NULL;
 
 // I2C bus configuration struct
 i2c_config_t conf = {
