@@ -34,6 +34,7 @@
 #include "bme280.h"
 // BMP280 sensor: Temperature, Pressure
 //#include "bmp280.h"
+#include "i2c_bmp280.h"
 
 
 
