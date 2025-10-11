@@ -116,7 +116,7 @@ void mqttronix_start(void) {
 
 void mqttronix_update_temp (float temp) { 
     //temp_value = temp; 
-    snprintf(temp_str, sizeof(temp_str), "%.0f", temp);
+    snprintf(temp_str, sizeof(temp_str), "%.1f", temp);
 }
 void mqttronix_update_humidity (float humidity) { 
     //humidity_value = humidity;
