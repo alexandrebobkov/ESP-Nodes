@@ -81,7 +81,7 @@ void print_sensors_task(void *arg)
 {
     while (1) {
         // Print the values to the serial console
-        printf(" Temp: %.1f, Humidity: %.2f, Pressure: %.2f \n", temperature, humidity, pressure);
+        printf(" Temp: %.1f, Humidity: %.1f, Pressure: %.0f \n", temperature, humidity, pressure);
         
         vTaskDelay(2500/portTICK_PERIOD_MS);
     }
