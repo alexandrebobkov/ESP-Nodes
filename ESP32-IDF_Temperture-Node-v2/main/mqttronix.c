@@ -37,7 +37,7 @@ static void mqtt_publish_task(void *arg) {
         esp_mqtt_client_publish(mqtt_client, "nodes/indoors/foxie3/sensors/humidity", humidity_str, 0, 1, 0);
         esp_mqtt_client_publish(mqtt_client, "nodes/indoors/foxie3/sensors/pressure", pressure_str, 0, 1, 0);
         vTaskDelay(pdMS_TO_TICKS(1500));
-        ESP_LOGI(MQTT_TAG, "Called task to publish topic \"nodes/outdoors/foxie2/#\"");
+        ESP_LOGI(MQTT_TAG, "Called task to publish topic \"nodes/indoors/foxie3/#\"");
     }
 }
 
