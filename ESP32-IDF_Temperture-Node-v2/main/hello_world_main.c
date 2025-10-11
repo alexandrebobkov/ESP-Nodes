@@ -53,7 +53,7 @@ static i2c_bus_handle_t i2c_bus = NULL;
 static bme280_handle_t bme280 = NULL;
 
 // BMP280 device handle
-static bmp280_handle_t bmp280 = NULL;
+//static bmp280_handle_t bmp280 = NULL;
 
 // I2C bus configuration struct
 i2c_config_t conf = {
