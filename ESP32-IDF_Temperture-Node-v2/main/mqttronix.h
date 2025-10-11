@@ -1,7 +1,8 @@
 #ifndef __MQTTRONIX_H__
 #define __MQTTRONIX_H__
 
-static const char* MQTT_BROKER_URI = "mqtt://techquadbit.net";
+static const char* MQTT_BROKER_URI = "mqtt://techquadbit.net:1883";
+//static const char* MQTT_BROKER_URI = "mqtt://10.100.50.16:1883";
 static const char* MQTT_TAG = "MQTTronix";
 //static const char WIFI_SSID;
 #define WIFI_SSID "IoT_bots"
