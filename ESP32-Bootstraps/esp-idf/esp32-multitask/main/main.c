@@ -1,4 +1,7 @@
 /*
+ *  Author:     Alexander Bobkov
+ *  Created:    2025-10-12
+ *  Modified:   2025-10-12
  * SPDX-FileCopyrightText: 2010-2022 Espressif Systems (Shanghai) CO LTD
  *
  * SPDX-License-Identifier: CC0-1.0
