@@ -32,14 +32,14 @@ static const char *TAG = "cmd_i2ctools";
 static gpio_num_t i2c_gpio_sda = 1;
 static gpio_num_t i2c_gpio_scl = 2;
 #elif CONFIG_IDF_TARGET_ESP32C3 || CONFIG_IDF_TARGET_ESP32C2
-static gpio_num_t i2c_gpio_sda = 5;
-static gpio_num_t i2c_gpio_scl = 6;
+static gpio_num_t i2c_gpio_sda = 8;
+static gpio_num_t i2c_gpio_scl = 9;
 #else
 static gpio_num_t i2c_gpio_sda = 21; //21
 static gpio_num_t i2c_gpio_scl = 22; //22
 #endif
 
-static uint32_t i2c_frequency = 100000;
+static uint32_t i2c_frequency = 50000;
 static i2c_port_t i2c_port = I2C_NUM_0;
 
 static esp_err_t i2c_get_port(int port, i2c_port_t *i2c_port)
@@ -57,9 +57,9 @@ static esp_err_t i2c_master_driver_initialize(void)
     i2c_config_t conf = {
         .mode = I2C_MODE_MASTER,
         .sda_io_num = i2c_gpio_sda,
-        .sda_pullup_en = GPIO_PULLUP_ENABLE,
+        .sda_pullup_en = GPIO_PULLUP_DISABLE,//ENABLE,
         .scl_io_num = i2c_gpio_scl,
-        .scl_pullup_en = GPIO_PULLUP_ENABLE,
+        .scl_pullup_en = GPIO_PULLUP_DISABLE,//ENABLE,
         .master.clk_speed = i2c_frequency,
         // .clk_flags = 0,          /*!< Optional, you can use I2C_SCLK_SRC_FLAG_* flags to choose i2c source clock here. */
     };
