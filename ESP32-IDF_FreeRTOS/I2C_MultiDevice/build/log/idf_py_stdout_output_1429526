@@ -1,0 +1,4 @@
+esptool.py --chip esp32c3 merge_bin -o merged-flash.bin -f raw --flash_mode dio --flash_freq 80m --flash_size 2MB 0x0 bootloader/bootloader.bin 0x10000 I2C_MultiDevice.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.10.0
+SHA digest in image updated
+Wrote 0x3c480 bytes to file merged-flash.bin, ready to flash to offset 0x0

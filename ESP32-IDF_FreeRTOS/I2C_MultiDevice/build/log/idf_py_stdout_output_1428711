@@ -1,0 +1,17 @@
+[1/9] Performing build step for 'bootloader'
+[1/1] cd /home/alex/MyProjects/ESP-Nodes/ESP32-IDF_FreeRTOS/I2C_MultiDevice/build/bootloader/esp-idf/esptool_py && /home/alex/.espressif/python_env/idf5.4_py3.12_env/bin/python /home/alex/esp/v5.4.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/alex/MyProjects/ESP-Nodes/ESP32-IDF_FreeRTOS/I2C_MultiDevice/build/bootloader/bootloader.bin
+Bootloader binary size 0x5160 bytes. 0x2ea0 bytes (36%) free.
+[2/9] No install step for 'bootloader'
+[3/9] Completed 'bootloader'
+[4/9] Building C object esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj
+[5/9] Linking C static library esp-idf/esp_app_format/libesp_app_format.a
+[6/9] Generating ld/sections.ld
+[7/9] Linking CXX executable I2C_MultiDevice.elf
+[8/9] Generating binary image from built executable
+esptool.py v4.10.0
+Creating esp32c3 image...
+Merged 1 ELF section
+Successfully created esp32c3 image.
+Generated /home/alex/MyProjects/ESP-Nodes/ESP32-IDF_FreeRTOS/I2C_MultiDevice/build/I2C_MultiDevice.bin
+[9/9] cd /home/alex/MyProjects/ESP-Nodes/ESP32-IDF_FreeRTOS/I2C_MultiDevice/build/esp-idf/esptool_py && /home/alex/.espressif/python_env/idf5.4_py3.12_env/bin/python /home/alex/esp/v5.4.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/alex/MyProjects/ESP-Nodes/ESP32-IDF_FreeRTOS/I2C_MultiDevice/build/partition_table/partition-table.bin /home/alex/MyProjects/ESP-Nodes/ESP32-IDF_FreeRTOS/I2C_MultiDevice/build/I2C_MultiDevice.bin
+I2C_MultiDevice.bin binary size 0x2c480 bytes. Smallest app partition is 0x100000 bytes. 0xd3b80 bytes (83%) free.

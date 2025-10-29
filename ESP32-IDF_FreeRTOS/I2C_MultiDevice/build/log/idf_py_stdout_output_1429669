@@ -1,0 +1,7 @@
+esptool.py --chip esp32c3 merge_bin -o merged-flash.bin -f uf2 --flash_mode dio --flash_freq 80m --flash_size 2MB 0x0 bootloader/bootloader.bin 0x10000 I2C_MultiDevice.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.10.0
+Adding bootloader/bootloader.bin at 0x0
+SHA digest in image updated
+Adding partition_table/partition-table.bin at 0x8000
+Adding I2C_MultiDevice.bin at 0x10000
+Wrote 0x39000 bytes to file merged-flash.bin, ready to be flashed with any ESP USB Bridge
