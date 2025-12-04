@@ -501,3 +501,67 @@ events:
         implicit fwks: []
       
       
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.31/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/usr/share/cmake-3.31/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "/home/abobkov/esp/v5.4.1/esp-idf/components/mbedtls/mbedtls/CMakeLists.txt:136 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/CMakeFiles/CMakeScratch/TryCompile-x13rku"
+      binary: "/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/CMakeFiles/CMakeScratch/TryCompile-x13rku"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/abobkov/esp/v5.4.1/esp-idf/tools/cmake;/home/abobkov/esp/v5.4.1/esp-idf/tools/cmake/third_party"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/CMakeFiles/CMakeScratch/TryCompile-x13rku'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_a5f3d
+        [1/2] /home/abobkov/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -DCMAKE_HAVE_LIBC_PTHREAD  -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o CMakeFiles/cmTC_a5f3d.dir/src.c.obj -c /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/CMakeFiles/CMakeScratch/TryCompile-x13rku/src.c
+        [2/2] : && /home/abobkov/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy  CMakeFiles/cmTC_a5f3d.dir/src.c.obj -o cmTC_a5f3d   && :
+        /home/abobkov/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/ld: CMakeFiles/cmTC_a5f3d.dir/src.c.obj:(.literal+0x14): warning: pthread_atfork is not implemented and will always fail
+        /home/abobkov/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/ld: CMakeFiles/cmTC_a5f3d.dir/src.c.obj:(.literal+0xc): warning: pthread_cancel is not implemented and will always fail
+        /home/abobkov/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/ld: CMakeFiles/cmTC_a5f3d.dir/src.c.obj:(.literal+0x4): warning: pthread_create is not implemented and will always fail
+        /home/abobkov/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/ld: CMakeFiles/cmTC_a5f3d.dir/src.c.obj:(.literal+0x8): warning: pthread_detach is not implemented and will always fail
+        /home/abobkov/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/ld: CMakeFiles/cmTC_a5f3d.dir/src.c.obj:(.literal+0x18): warning: pthread_exit is not implemented and will always fail
+        /home/abobkov/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/ld: CMakeFiles/cmTC_a5f3d.dir/src.c.obj:(.literal+0x10): warning: pthread_join is not implemented and will always fail
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/home/abobkov/esp/v5.4.1/esp-idf/components/mbedtls/mbedtls/CMakeLists.txt:219 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS"
+    directories:
+      source: "/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/CMakeFiles/CMakeScratch/TryCompile-WVCVPb"
+      binary: "/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/CMakeFiles/CMakeScratch/TryCompile-WVCVPb"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -Wall -Wextra -Wwrite-strings -Wmissing-prototypes -Wformat=2 -Wno-format-nonliteral -Wvla -Wlogical-op -Wshadow"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/abobkov/esp/v5.4.1/esp-idf/tools/cmake;/home/abobkov/esp/v5.4.1/esp-idf/tools/cmake/third_party"
+    buildResult:
+      variable: "C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/CMakeFiles/CMakeScratch/TryCompile-WVCVPb'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_bdc6e
+        [1/2] /home/abobkov/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -DC_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS  -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -Wall -Wextra -Wwrite-strings -Wmissing-prototypes -Wformat=2 -Wno-format-nonliteral -Wvla -Wlogical-op -Wshadow    -Wformat-signedness -o CMakeFiles/cmTC_bdc6e.dir/src.c.obj -c /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/CMakeFiles/CMakeScratch/TryCompile-WVCVPb/src.c
+        [2/2] : && /home/abobkov/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -Wall -Wextra -Wwrite-strings -Wmissing-prototypes -Wformat=2 -Wno-format-nonliteral -Wvla -Wlogical-op -Wshadow  CMakeFiles/cmTC_bdc6e.dir/src.c.obj -o cmTC_bdc6e   && :
+        
+      exitCode: 0
+...
