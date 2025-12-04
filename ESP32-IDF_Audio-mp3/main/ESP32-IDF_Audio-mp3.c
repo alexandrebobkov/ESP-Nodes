@@ -26,7 +26,7 @@
 #define WIFI_PASS "208208208"
 
 // Audio Stream URL (example: MP3 stream)
-#define AUDIO_STREAM_URL "http://stream.example.com:8000/stream.mp3"
+#define AUDIO_STREAM_URL "http://jking.cdnstream1.com/b75154_128mp3"
 
 // I2S Configuration for ESP32-C3
 #define I2S_BCK_IO      GPIO_NUM_4  // Bit Clock
