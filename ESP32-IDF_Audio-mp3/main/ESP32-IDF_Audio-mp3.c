@@ -22,8 +22,8 @@
 // --- Configuration ---
 
 // Wi-Fi Credentials
-#define WIFI_SSID      "YOUR_WIFI_SSID"
-#define WIFI_PASSWORD  "YOUR_WIFI_PASSWORD"
+#define WIFI_SSID      "IoT_bots"
+#define WIFI_PASSWORD  "208208208"
 
 // I2S Configuration (Modify GPIOs for your specific board/DAC)
 #define I2S_PORT            I2S_NUM_0
