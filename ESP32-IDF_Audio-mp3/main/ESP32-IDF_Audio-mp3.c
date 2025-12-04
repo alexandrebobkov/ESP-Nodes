@@ -46,6 +46,7 @@ const int WIFI_CONNECTED_BIT = BIT0;
 
 // --- Function Prototypes ---
 void wifi_init_sta(void);
+static void event_handler(void *arg, esp_event_base_t event_base, int32_t event_id, void *event_data);
 void i2s_init(void);
 void audio_player_task(void *pvParameter);
 
