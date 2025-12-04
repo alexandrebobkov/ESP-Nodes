@@ -100,6 +100,38 @@ static void event_handler(void *arg, esp_event_base_t event_base, int32_t event_
     }
 }
 
+void i2s_init(void) {
+    // 1. I2S Configuration
+    i2s_config_t i2s_config = {
+        .mode = I2S_MODE_MASTER | I2S_MODE_TX, // Master mode, Transmitter
+        .sample_rate = SAMPLE_RATE,
+        .bits_per_sample = BITS_PER_SAMPLE,
+        .channel_format = I2S_CHANNEL_FMT_RIGHT_LEFT, // Stereo
+        .communication_format = I2S_COMM_FORMAT_STAND_I2S, // Standard I2S format
+        .intr_alloc_flags = ESP_INTR_FLAG_LEVEL1, // Interrupt level 1
+        .dma_buf_count = DMA_BUF_COUNT,
+        .dma_buf_len = DMA_BUF_LEN,
+        .use_apll = false, // ESP32-C3 does not have APLL, use default clock
+        .tx_desc_auto_clear = true, // Clear TX DMA descriptors on underflow
+    };
+
+
+    // 2. I2S Pin Configuration
+    i2s_pin_config_t pin_config = {
+        .mck_io_num = I2S_PIN_NO_CHANGE, // Not always needed in master mode
+        .bck_io_num = I2S_BCK_IO_NUM,
+        .ws_io_num = I2S_WS_IO_NUM,
+        .data_out_num = I2S_DOUT_IO_NUM,
+        .data_in_num = I2S_PIN_NO_CHANGE // Not used for playback
+    };
+
+    // 3. Install and set pins
+    ESP_LOGI(TAG, "Initializing I2S driver...");
+    ESP_ERROR_CHECK(i2s_driver_install(I2S_PORT, &i2s_config, 0, NULL));
+    ESP_ERROR_CHECK(i2s_set_pin(I2S_PORT, &pin_config));
+    ESP_LOGI(TAG, "I2S driver initialized.");
+}
+
 void app_main(void)
 {
 
