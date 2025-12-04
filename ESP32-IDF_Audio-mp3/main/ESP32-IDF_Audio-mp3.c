@@ -24,6 +24,7 @@
 // Wi-Fi Credentials
 #define WIFI_SSID      "IoT_bots"
 #define WIFI_PASSWORD  "208208208"
+#define RADIO_STREAM_URL "http://icecast.somewhere.net:8000/stream.mp3"
 
 // I2S Configuration (Modify GPIOs for your specific board/DAC)
 #define I2S_PORT            I2S_NUM_0
@@ -134,51 +135,20 @@ void i2s_init(void) {
 }
 
 void audio_player_task(void *pvParameter) {
-    // 1. HTTP/Network Setup (Simplified placeholder)
-    // In a real application, you would use esp_http_client_get()
-    // to open a connection to the internet radio URL (e.g., a .mp3 or .aac stream).
-    // The streaming URL would be passed as a parameter or defined globally.
-    // const char *stream_url = "http://internet.radio.stream:port/stream";
+    // 1. HTTP/Network Setup
 
-    // 2. Main Stream Loop
+    // Configure the HTTP client
+    esp_http_client_config_t config = {
+        .url = RADIO_STREAM_URL, // <-- URL is used here
+        .event_handler = _http_event_handler, // Your event handler function
+        // ... other configuration ...
+    };
+
+    esp_http_client_handle_t client = esp_http_client_init(&config);
+    // ... rest of the streaming logic ...
+
     while (1) {
-        // --- Step A: Get Raw Audio Data ---
-        // * Perform HTTP GET request for audio data chunks.
-        // * Pass the received data to an audio decoder (MP3, AAC, etc.).
-        // * The decoder output is raw PCM audio data (e.g., 16-bit stereo samples).
-
-        // This is a dummy buffer for raw 16-bit stereo PCM data
-        // Buffer size should match your DMA buffer configuration
-        int16_t pcm_data[DMA_BUF_COUNT * DMA_BUF_LEN / sizeof(int16_t)];
-        size_t pcm_data_size = sizeof(pcm_data);
-        size_t bytes_written;
-
-        // In the real code, 'decode_audio_stream_to_pcm(pcm_data, pcm_data_size)'
-        // would replace the dummy delay below.
-
-        // --- Simulated Data for testing the I2S setup ---
-        // Dummy block to simulate a decoder providing PCM data
-        // vTaskDelay(pdMS_TO_TICKS(100)); // Simulate decode and fetch time
-        // for(size_t i = 0; i < pcm_data_size / sizeof(int16_t); i++) {
-        //     // Generate a simple sine wave or fill with zeros
-        //     pcm_data[i] = (i % 200) < 100 ? 5000 : -5000;
-        // }
-
-
-        // --- Step B: Write to I2S ---
-        if (/* decoder successfully provided pcm_data */ 1) {
-            // Write the raw PCM data to the I2S port
-            esp_err_t err = i2s_write(I2S_PORT, pcm_data, pcm_data_size, &bytes_written, portMAX_DELAY);
-
-            if (err != ESP_OK) {
-                ESP_LOGE(TAG, "I2S Write failed: %s", esp_err_to_name(err));
-            } else if (bytes_written != pcm_data_size) {
-                ESP_LOGW(TAG, "I2S wrote %d bytes, expected %d", bytes_written, pcm_data_size);
-            }
-        } else {
-            // Handle stream end, error, or buffer underflow
-            vTaskDelay(pdMS_TO_TICKS(1000));
-        }
+        // ... streaming loop ...
     }
 }
 
