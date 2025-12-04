@@ -1170,3 +1170,23 @@ In file included from /home/abobkov/esp/v5.4.1/esp-idf/components/driver/depreca
 [108/111] Linking C static library esp-idf/main/libmain.a
 [109/111] Linking C executable bootloader.elf
 [110/111] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/bootloader/bootloader.bin
+[111/111] cd /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/bootloader/esp-idf/esptool_py && /home/abobkov/.espressif/python_env/idf5.4_py3.13_env/bin/python /home/abobkov/esp/v5.4.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/bootloader/bootloader.bin
+Bootloader binary size 0x6580 bytes. 0xa80 bytes (9%) free.
+[991/998] No install step for 'bootloader'
+[992/998] Completed 'bootloader'
+[993/998] Generating ld/sections.ld
+[994/998] Building C object CMakeFiles/ESP32-IDF_Audio-mp3.elf.dir/project_elf_src_esp32.c.obj
+[995/998] Linking CXX executable ESP32-IDF_Audio-mp3.elf
+[996/998] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/ESP32-IDF_Audio-mp3.bin
+[997/998] cd /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/esp-idf/esptool_py && /home/abobkov/.espressif/python_env/idf5.4_py3.13_env/bin/python /home/abobkov/esp/v5.4.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/partition_table/partition-table.bin /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/ESP32-IDF_Audio-mp3.bin
+ESP32-IDF_Audio-mp3.bin binary size 0x2b9c0 bytes. Smallest app partition is 0x100000 bytes. 0xd4640 bytes (83%) free.
