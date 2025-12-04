@@ -22,8 +22,8 @@
 #include "driver/gpio.h"
 
 // WiFi Configuration
-#define WIFI_SSID "YOUR_WIFI_SSID"
-#define WIFI_PASS "YOUR_WIFI_PASSWORD"
+#define WIFI_SSID "IoT_bots"
+#define WIFI_PASS "208208208"
 
 // Audio Stream URL (example: MP3 stream)
 #define AUDIO_STREAM_URL "http://stream.example.com:8000/stream.mp3"
