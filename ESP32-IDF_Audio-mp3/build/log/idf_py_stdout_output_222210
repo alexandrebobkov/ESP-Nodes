@@ -19,3 +19,33 @@
 -- Configuring done (3.5s)
 -- Generating done (0.6s)
 -- Build files have been written to: /home/alex/github/ESP-Nodes/ESP32-IDF_Audio-mp3/build
+[1/11] Performing build step for 'bootloader'
+[1/1] cd /home/alex/github/ESP-Nodes/ESP32-IDF_Audio-mp3/build/bootloader/esp-idf/esptool_py && /home/alex/.espressif/python_env/idf5.4_py3.13_env/bin/python /home/alex/esp/esp-idf/v5.4.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/alex/github/ESP-Nodes/ESP32-IDF_Audio-mp3/build/bootloader/bootloader.bin
+Bootloader binary size 0x5160 bytes. 0x2ea0 bytes (36%) free.
+[2/11] No install step for 'bootloader'
+[3/11] Completed 'bootloader'
+[4/11] Building C object esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj
+[5/11] Linking C static library esp-idf/esp_app_format/libesp_app_format.a
+[6/11] Generating ld/sections.ld
+[7/11] Linking CXX executable ESP32-IDF_Audio-mp3.elf
+[8/11] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32c3 image...
+Merged 1 ELF section
+Successfully created esp32c3 image.
+Generated /home/alex/github/ESP-Nodes/ESP32-IDF_Audio-mp3/build/ESP32-IDF_Audio-mp3.bin
+[9/11] cd /home/alex/github/ESP-Nodes/ESP32-IDF_Audio-mp3/build/esp-idf/esptool_py && /home/alex/.espressif/python_env/idf5.4_py3.13_env/bin/python /home/alex/esp/esp-idf/v5.4.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/alex/github/ESP-Nodes/ESP32-IDF_Audio-mp3/build/partition_table/partition-table.bin /home/alex/github/ESP-Nodes/ESP32-IDF_Audio-mp3/build/ESP32-IDF_Audio-mp3.bin
+ESP32-IDF_Audio-mp3.bin binary size 0xe8f40 bytes. Smallest app partition is 0x100000 bytes. 0x170c0 bytes (9%) free.
+[9/11] cd /home/alex/esp/esp-idf/v5.4.1/components/esptool_py && /home/alex/.espressif/tools/cmake/3.30.2/bin/cmake -D IDF_PATH=/home/alex/esp/esp-idf/v5.4.1 -D "SERIAL_TOOL=/home/alex/.espressif/python_env/idf5.4_py3.13_env/bin/python;;/home/alex/esp/esp-idf/v5.4.1/components/esptool_py/esptool/esptool.py;--chip;esp32c3" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/alex/github/ESP-Nodes/ESP32-IDF_Audio-mp3/build -P /home/alex/esp/esp-idf/v5.4.1/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32c3 -p ttyACM2 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 2MB 0x0 bootloader/bootloader.bin 0x10000 ESP32-IDF_Audio-mp3.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.8.1
+Serial port ttyACM2
+
+A fatal error occurred: Could not open ttyACM2, the port is busy or doesn't exist.
+([Errno 2] could not open port ttyACM2: [Errno 2] No such file or directory: 'ttyACM2')
+
+Hint: Check if the port is correct and ESP connected
+
+FAILED: CMakeFiles/flash /home/alex/github/ESP-Nodes/ESP32-IDF_Audio-mp3/build/CMakeFiles/flash 
+cd /home/alex/esp/esp-idf/v5.4.1/components/esptool_py && /home/alex/.espressif/tools/cmake/3.30.2/bin/cmake -D IDF_PATH=/home/alex/esp/esp-idf/v5.4.1 -D "SERIAL_TOOL=/home/alex/.espressif/python_env/idf5.4_py3.13_env/bin/python;;/home/alex/esp/esp-idf/v5.4.1/components/esptool_py/esptool/esptool.py;--chip;esp32c3" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/alex/github/ESP-Nodes/ESP32-IDF_Audio-mp3/build -P /home/alex/esp/esp-idf/v5.4.1/components/esptool_py/run_serial_tool.cmake
+ninja: build stopped: subcommand failed.
