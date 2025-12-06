@@ -272,17 +272,17 @@ void decode_and_play_task(void *pvParameters)
             if (samples > 0) {
                 frames_decoded++;
                 
-                // Log first frame info
+                // Log first frame info only
                 if (first_frame) {
                     ESP_LOGI(TAG, "First frame decoded: %d samples, %d Hz, %d channels, %d kbps", 
                              samples, info.hz, info.channels, info.bitrate_kbps);
                     first_frame = false;
                 }
                 
-                // Write PCM data to I2S - use a reasonable timeout
+                // Write PCM data to I2S - blocking write for smooth playback
                 size_t bytes_to_write = samples * info.channels * sizeof(int16_t);
                 esp_err_t ret = i2s_channel_write(tx_handle, pcm, bytes_to_write, 
-                                                  &bytes_written, pdMS_TO_TICKS(100));
+                                                  &bytes_written, portMAX_DELAY);
                 
                 if (ret == ESP_OK) {
                     total_bytes_written += bytes_written;
@@ -290,16 +290,15 @@ void decode_and_play_task(void *pvParameters)
                     ESP_LOGE(TAG, "I2S write failed: %s", esp_err_to_name(ret));
                 }
                 
-                // Log every 200 frames
-                if (frames_decoded % 200 == 0) {
-                    ESP_LOGI(TAG, "Playing: Frame %lu | I2S: %lu bytes | Buffer: %d/%d bytes | Free heap: %lu", 
-                             frames_decoded, total_bytes_written, stream_buffer_fill, 
-                             STREAM_BUFFER_SIZE, esp_get_free_heap_size());
+                // Log every 500 frames (reduce logging overhead)
+                if (frames_decoded % 500 == 0) {
+                    ESP_LOGI(TAG, "Playing: Frame %lu | Buffer: %d bytes | Free heap: %lu", 
+                             frames_decoded, stream_buffer_fill, esp_get_free_heap_size());
                 }
                 
                 stream_buffer_pos += info.frame_bytes;
                 
-                // Reset buffer when half consumed to prevent excessive memory moves
+                // Reset buffer when half consumed
                 if (stream_buffer != NULL && stream_buffer_pos >= STREAM_BUFFER_SIZE / 2) {
                     size_t remaining = stream_buffer_fill - stream_buffer_pos;
                     if (remaining > 0) {
@@ -314,13 +313,12 @@ void decode_and_play_task(void *pvParameters)
                 // Skip byte and retry
                 stream_buffer_pos += 1;
             } else {
-                ESP_LOGW(TAG, "Decode error: %d, skipping", samples);
+                // Decode error - skip byte
                 stream_buffer_pos += 1;
             }
         } else {
             // Not enough data, wait for more
-            ESP_LOGW(TAG, "Buffer low (%d bytes), waiting...", stream_buffer_fill - stream_buffer_pos);
-            vTaskDelay(50 / portTICK_PERIOD_MS);
+            vTaskDelay(10 / portTICK_PERIOD_MS);
         }
     }
     
