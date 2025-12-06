@@ -398,20 +398,20 @@ void app_main(void)
     ESP_LOGI(TAG, "Creating tasks...");
     BaseType_t task_ret;
     
-    // Increase to 24KB - minimp3 uses large internal buffers on stack
-    task_ret = xTaskCreate(decode_and_play_task, "decode_play", 24576, NULL, 5, NULL);
+    // Increase to 24KB and higher priority (priority 10) - minimp3 uses large internal buffers on stack
+    task_ret = xTaskCreate(decode_and_play_task, "decode_play", 24576, NULL, 10, NULL);
     if (task_ret != pdPASS) {
         ESP_LOGE(TAG, "Failed to create decode_and_play_task");
         return;
     }
-    ESP_LOGI(TAG, "Decode task created with 24KB stack");
+    ESP_LOGI(TAG, "Decode task created with 24KB stack, priority 10");
     
-    task_ret = xTaskCreate(stream_mp3_task, "stream_mp3", 4096, NULL, 5, NULL);
+    task_ret = xTaskCreate(stream_mp3_task, "stream_mp3", 4096, NULL, 3, NULL);
     if (task_ret != pdPASS) {
         ESP_LOGE(TAG, "Failed to create stream_mp3_task");
         return;
     }
-    ESP_LOGI(TAG, "Stream task created");
+    ESP_LOGI(TAG, "Stream task created with priority 3");
 
     ESP_LOGI(TAG, "All tasks started successfully!");
     ESP_LOGI(TAG, "Free heap after init: %lu bytes", esp_get_free_heap_size());
