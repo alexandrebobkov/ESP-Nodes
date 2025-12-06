@@ -21,6 +21,10 @@
 #include "driver/i2s_std.h"
 #include "driver/gpio.h"
 
+#define MINIMP3_IMPLEMENTATION
+#include "minimp3.h"
+#include "minimp3_ex.h"
+
 // WiFi Configuration
 #define WIFI_SSID "IoT_bots"
 #define WIFI_PASS "208208208"
