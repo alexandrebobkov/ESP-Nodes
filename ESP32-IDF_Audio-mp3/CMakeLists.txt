@@ -9,8 +9,8 @@ cmake_minimum_required(VERSION 3.16)
 #endif()
 
 # Add all ESP-ADF component directories
-#list(APPEND EXTRA_COMPONENT_DIRS 
-#    ${ADF_PATH}/components
+list(APPEND EXTRA_COMPONENT_DIRS 
+    ${ADF_PATH}/components
 #    ${ADF_PATH}/components/audio_board
 #    ${ADF_PATH}/components/audio_hal
 #    ${ADF_PATH}/components/audio_pipeline
@@ -21,7 +21,7 @@ cmake_minimum_required(VERSION 3.16)
 #    ${ADF_PATH}/components/esp_codec
 #    ${ADF_PATH}/components/esp_dispatcher
 #    ${ADF_PATH}/components/esp_peripherals
-#)
+)
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 project(ESP32-IDF_Audio-mp3)
