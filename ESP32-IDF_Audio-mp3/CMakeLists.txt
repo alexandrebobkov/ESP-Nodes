@@ -3,7 +3,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 # Add ESP-ADF components path
-set(ADF_PATH $ENV{ADF_PATH})
+set(ADF_PATH "/home/alex/.espressif/esp-adf")  # Change this to your ESP-ADF installation path
 if(NOT ADF_PATH)
     message(FATAL_ERROR "ADF_PATH is not set. Please set it to your ESP-ADF installation directory.")
 endif()
