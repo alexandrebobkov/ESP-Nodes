@@ -42,6 +42,7 @@
 static const char *TAG = "AUDIO_STREAM";
 static EventGroupHandle_t s_wifi_event_group;
 static i2s_chan_handle_t tx_handle = NULL;
+static mp3dec_t mp3d;
 
 #define WIFI_CONNECTED_BIT BIT0
 #define WIFI_FAIL_BIT      BIT1
