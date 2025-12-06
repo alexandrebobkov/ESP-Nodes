@@ -48,6 +48,12 @@ static mp3dec_t mp3d;
 #define WIFI_CONNECTED_BIT BIT0
 #define WIFI_FAIL_BIT      BIT1
 
+// Stream buffer
+#define STREAM_BUFFER_SIZE (32 * 1024)
+static uint8_t *stream_buffer = NULL;
+static size_t stream_buffer_pos = 0;
+static size_t stream_buffer_fill = 0;
+
 // WiFi event handler
 static void event_handler(void* arg, esp_event_base_t event_base,
                          int32_t event_id, void* event_data)
