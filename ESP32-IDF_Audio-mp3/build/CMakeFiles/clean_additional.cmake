@@ -3,8 +3,6 @@ cmake_minimum_required(VERSION 3.16)
 
 if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "")
   file(REMOVE_RECURSE
-  "ESP32-IDF_Audio-mp3.bin"
-  "ESP32-IDF_Audio-mp3.map"
   "bootloader/bootloader.bin"
   "bootloader/bootloader.elf"
   "bootloader/bootloader.map"
@@ -12,6 +10,8 @@ if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "")
   "config/sdkconfig.h"
   "esp-idf/esptool_py/flasher_args.json.in"
   "esp-idf/mbedtls/x509_crt_bundle"
+  "esp32_mp3_streamer.bin"
+  "esp32_mp3_streamer.map"
   "flash_app_args"
   "flash_bootloader_args"
   "flash_project_args"
