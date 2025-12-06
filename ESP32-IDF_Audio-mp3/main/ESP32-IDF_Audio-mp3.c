@@ -25,6 +25,8 @@
 #include "minimp3/minimp3.h"
 #include "minimp3/minimp3_ex.h"
 
+static const char *TAG = "MP3_STREAM";
+
 // WiFi Configuration
 #define WIFI_SSID "IoT_bots"
 #define WIFI_PASS "208208208"
