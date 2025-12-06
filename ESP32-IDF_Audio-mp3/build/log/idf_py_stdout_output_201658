@@ -1,0 +1,158 @@
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40384ce4
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1820
+load:0x403cc710,len:0xbcc
+load:0x403ce710,len:0x2f5c
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.3.2-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan  5 2025 20:54:12[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (32) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (37) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (52) boot: Partition Table:[0m
+[0;32mI (56) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (63) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (70) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (78) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (85) boot: End of partition table[0m
+[0;32mI (89) esp_image: segment 0: paddr=00010020 vaddr=3c090020 size=183c4h ( 99268) map[0m
+[0;32mI (114) esp_image: segment 1: paddr=000283ec vaddr=3fc93400 size=02e28h ( 11816) load[0m
+[0;32mI (117) esp_image: segment 2: paddr=0002b21c vaddr=40380000 size=04dfch ( 19964) load[0m
+[0;32mI (124) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=8d2ach (578220) map[0m
+[0;32mI (222) esp_image: segment 4: paddr=000bd2d4 vaddr=40384dfc size=0e5e0h ( 58848) load[0m
+[0;32mI (234) esp_image: segment 5: paddr=000cb8bc vaddr=50000200 size=00004h (     4) load[0m
+[0;32mI (239) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (240) boot: Disabling RNG early entropy source...[0m
+[0;32mI (254) cpu_start: Unicore app[0m
+[0;32mI (262) cpu_start: Pro cpu start user code[0m
+[0;32mI (262) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (263) app_init: Application information:[0m
+[0;32mI (265) app_init: Project name:     ESP-IDF_Robot_RC[0m
+[0;32mI (271) app_init: App version:      ESP32-Node_Switch-v2.7-3119-g80[0m
+[0;32mI (278) app_init: Compile time:     Jan  5 2025 21:01:28[0m
+[0;32mI (284) app_init: ELF file SHA256:  52f7fc08d...[0m
+[0;32mI (289) app_init: ESP-IDF:          v5.3.2-dirty[0m
+[0;32mI (295) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (299) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (304) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (309) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (316) heap_init: At 3FC9A500 len 00025B00 (150 KiB): RAM[0m
+[0;32mI (322) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (329) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (336) heap_init: At 50000204 len 00001DE4 (7 KiB): RTCRAM[0m
+[0;32mI (344) spi_flash: detected chip: generic[0m
+[0;32mI (347) spi_flash: flash io: dio[0m
+[0;33mW (351) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (365) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (371) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (378) main_task: Started on CPU0[0m
+[0;32mI (378) main_task: Calling app_main()[0m
+[0;32mI (378) gpio: GPIO[0]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (388) gpio: GPIO[1]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (408) pp: pp rom version: 9387209[0m
+[0;32mI (408) net80211: net80211 rom version: 9387209[0m
+[0;32mI (418) wifi:wifi driver task: 3fca2d28, prio:23, stack:6656, core=0[0m
+[0;32mI (418) wifi:wifi firmware version: b0fd6006b[0m
+[0;32mI (418) wifi:wifi certification version: v7.0[0m
+[0;32mI (428) wifi:config NVS flash: enabled[0m
+[0;32mI (428) wifi:config nano formating: disabled[0m
+[0;32mI (428) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (438) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (438) wifi:Init management short buffer num: 32[0m
+[0;32mI (448) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (448) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (448) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (458) wifi:Init static rx buffer num: 10[0m
+[0;32mI (458) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (468) wifi_init: rx ba win: 6[0m
+[0;32mI (468) wifi_init: accept mbox: 6[0m
+[0;32mI (468) wifi_init: tcpip mbox: 32[0m
+[0;32mI (478) wifi_init: udp mbox: 6[0m
+[0;32mI (478) wifi_init: tcp mbox: 6[0m
+[0;32mI (488) wifi_init: tcp tx win: 5760[0m
+[0;32mI (488) wifi_init: tcp rx win: 5760[0m
+[0;32mI (488) wifi_init: tcp mss: 1440[0m
+[0;32mI (498) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (498) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (508) phy_init: phy_version 1180,01f2a49,Jun  4 2024,16:34:25[0m
+[0;33mW (548) phy_init: saving new calibration data because of checksum failure, mode(0)[0m
+[0;32mI (618) wifi:mode : sta (ec:da:3b:ab:1b:10)[0m
+[0;32mI (618) wifi:enable tsf[0m
+[0;32mI (618) ESPNOW: espnow [version: 1.0] init[0m
+[0;32mI (618) (x,y): ( 728, 793 )[0m
+[0;32mI (618) main_task: Returned from app_main()[0m
+[0;32mI (628) (x,y): ( 650, 701 )[0m
+[0;32mI (638) (x,y): ( 649, 684 )[0m
+[0;32mI (648) (x,y): ( 634, 667 )[0m
+[0;32mI (658) (x,y): ( 635, 665 )[0m
+[0;32mI (668) (x,y): ( 649, 698 )[0m
+[0;32mI (678) (x,y): ( 650, 700 )[0m
+[0;32mI (688) (x,y): ( 638, 680 )[0m
+[0;32mI (698) (x,y): ( 617, 637 )[0m
+[0;32mI (708) (x,y): ( 634, 667 )[0m
+[0;32mI (718) (x,y): ( 632, 664 )[0m
+[0;32mI (728) (x,y): ( 621, 649 )[0m
+[0;32mI (738) (x,y): ( 630, 663 )[0m
+[0;32mI (748) (x,y): ( 617, 633 )[0m
+[0;32mI (758) (x,y): ( 606, 621 )[0m
+[0;32mI (768) (x,y): ( 600, 607 )[0m
+[0;32mI (778) (x,y): ( 622, 650 )[0m
+[0;32mI (788) (x,y): ( 617, 637 )[0m
+[0;32mI (798) (x,y): ( 590, 590 )[0m
+[0;32mI (808) (x,y): ( 618, 639 )[0m
+[0;32mI (818) (x,y): ( 649, 684 )[0m
+[0;32mI (828) (x,y): ( 622, 652 )[0m
+[0;32mI (838) (x,y): ( 648, 685 )[0m
+[0;32mI (848) (x,y): ( 648, 699 )[0m
+[0;32mI (858) (x,y): ( 646, 696 )[0m
+[0;32mI (868) (x,y): ( 653, 711 )[0m
+[0;32mI (878) (x,y): ( 640, 685 )[0m
+[0;32mI (888) (x,y): ( 619, 649 )[0m
+[0;32mI (898) (x,y): ( 603, 621 )[0m
+[0;32mI (908) (x,y): ( 607, 633 )[0m
+[0;32mI (918) (x,y): ( 634, 670 )[0m
+[0;32mI (928) (x,y): ( 635, 680 )[0m
+[0;32mI (938) (x,y): ( 623, 651 )[0m
+[0;32mI (948) (x,y): ( 590, 615 )[0m
+[0;32mI (958) (x,y): ( 574, 569 )[0m
+[0;32mI (968) (x,y): ( 603, 607 )[0m
+[0;32mI (978) (x,y): ( 605, 619 )[0m
+[0;32mI (988) (x,y): ( 634, 666 )[0m
+[0;31mE (998) ESP-NOW: Error sending data! Error code: 0x0067[0m
+[0;32mI (998) (x,y): ( 619, 633 )[0m
+[0;32mI (1008) (x,y): ( 649, 666 )[0m
+[0;32mI (1018) (x,y): ( 652, 668 )[0m
+[0;32mI (1028) (x,y): ( 694, 719 )[0m
+[0;32mI (1038) (x,y): ( 669, 680 )[0m
+[0;32mI (1048) (x,y): ( 666, 680 )[0m
+[0;32mI (1058) (x,y): ( 664, 670 )[0m
+[0;32mI (1068) (x,y): ( 667, 680 )[0m
+[0;32mI (1078) (x,y): ( 654, 656 )[0m
+[0;32mI (1088) (x,y): ( 664, 669 )[0m
+[0;32mI (1098) (x,y): ( 684, 714 )[0m
+[0;32mI (1108) (x,y): ( 637, 619 )[0m
+[0;32mI (1118) (x,y): ( 680, 699 )[0m
+[0;32mI (1128) (x,y): ( 680, 712 )[0m
+[0;32mI (1138) (x,y): ( 680, 687 )[0m
+[0;32mI (1148) (x,y): ( 683, 716 )[0m
+[0;32mI (1158) (x,y): ( 651, 655 )[0m
+[0;32mI (1168) (x,y): ( 653, 653 )[0m
+[0;32mI (1178) (x,y): ( 669, 681 )[0m
+[0;32mI (1188) (x,y): ( 668, 687 )[0m
+[0;32mI (1198) (x,y): ( 670, 684 )[0m
+[0;32mI (1208) (x,y): ( 652, 638 )[0m
+[0;32mI (1218) (x,y): ( 680, 698 )[0m
+[0;32mI (1228) (x,y): ( 687, 720 )[0m
+[0;32mI (1238) (x,y): ( 697, 730 )[0m
+[0;32mI (1248) (x,y): ( 701, 746 )[0m
+[0;32mI (1258) (x,y): ( 664, 671 )[0m
+[0;32mI (1268) (x,y): ( 651, 640 )[0m
+[0;32mI (1278) (x,y): ( 666, 669 )[0m
+[0;
