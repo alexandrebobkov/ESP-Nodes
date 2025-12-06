@@ -348,16 +348,17 @@ void app_main(void)
     }
     ESP_LOGI(TAG, "I2S initialized successfully");
 
-    // Create tasks with smaller stacks
+    // Create tasks with larger stacks (MP3 decoder needs significant stack space)
     ESP_LOGI(TAG, "Creating tasks...");
     BaseType_t task_ret;
     
-    task_ret = xTaskCreate(decode_and_play_task, "decode_play", 4096, NULL, 5, NULL);
+    // MP3 decoder needs at least 16KB stack due to internal buffers
+    task_ret = xTaskCreate(decode_and_play_task, "decode_play", 16384, NULL, 5, NULL);
     if (task_ret != pdPASS) {
         ESP_LOGE(TAG, "Failed to create decode_and_play_task");
         return;
     }
-    ESP_LOGI(TAG, "Decode task created");
+    ESP_LOGI(TAG, "Decode task created with 16KB stack");
     
     task_ret = xTaskCreate(stream_mp3_task, "stream_mp3", 4096, NULL, 5, NULL);
     if (task_ret != pdPASS) {
