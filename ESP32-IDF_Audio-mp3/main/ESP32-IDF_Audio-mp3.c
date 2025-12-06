@@ -35,8 +35,7 @@ static const char *TAG = "MP3_STREAM";
 #define WIFI_MAXIMUM_RETRY  5
 
 // MP3 Stream URL
-#define MP3_STREAM_URL "http://stream9.slowradio.com"
-//http://jking.cdnstream1.com/b75154_128mp3"
+#define MP3_STREAM_URL "http://jking.cdnstream1.com/b75154_128mp3"
 
 // I2S Configuration for ESP32-C3 with PCM5100
 #define I2S_NUM         I2S_NUM_0
