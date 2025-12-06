@@ -207,19 +207,20 @@ esp_err_t http_event_handler(esp_http_client_event_t *evt)
 void decode_and_play_task(void *pvParameters)
 {
     mp3dec_frame_info_t info;
+    // Reduce PCM buffer size - only need max for one frame
     int16_t *pcm = NULL;
     size_t bytes_written;
     
-    ESP_LOGI(TAG, "Decode and play task started");
+    ESP_LOGI(TAG, "Decode and play task started, free heap: %lu", esp_get_free_heap_size());
     
-    // Allocate PCM buffer on heap instead of stack
-    pcm = (int16_t *)malloc(MINIMP3_MAX_SAMPLES_PER_FRAME * sizeof(int16_t));
+    // Allocate smaller PCM buffer - 4608 samples max for MP3
+    pcm = (int16_t *)heap_caps_malloc(4608 * sizeof(int16_t), MALLOC_CAP_8BIT);
     if (pcm == NULL) {
         ESP_LOGE(TAG, "Failed to allocate PCM buffer");
         vTaskDelete(NULL);
         return;
     }
-    ESP_LOGI(TAG, "PCM buffer allocated");
+    ESP_LOGI(TAG, "PCM buffer allocated, free heap: %lu", esp_get_free_heap_size());
     
     // Wait for buffer to be allocated
     while (stream_buffer == NULL) {
@@ -228,7 +229,7 @@ void decode_and_play_task(void *pvParameters)
     ESP_LOGI(TAG, "Stream buffer ready");
 
     while (1) {
-        if (stream_buffer != NULL && stream_buffer_fill - stream_buffer_pos > 1024) {
+        if (stream_buffer != NULL && stream_buffer_fill - stream_buffer_pos > 512) {
             int samples = mp3dec_decode_frame(&mp3d, 
                                              stream_buffer + stream_buffer_pos,
                                              stream_buffer_fill - stream_buffer_pos,
@@ -347,18 +348,18 @@ void app_main(void)
     }
     ESP_LOGI(TAG, "I2S initialized successfully");
 
-    // Create tasks
+    // Create tasks with smaller stacks
     ESP_LOGI(TAG, "Creating tasks...");
     BaseType_t task_ret;
     
-    task_ret = xTaskCreate(decode_and_play_task, "decode_play", 8192, NULL, 5, NULL);
+    task_ret = xTaskCreate(decode_and_play_task, "decode_play", 4096, NULL, 5, NULL);
     if (task_ret != pdPASS) {
         ESP_LOGE(TAG, "Failed to create decode_and_play_task");
         return;
     }
     ESP_LOGI(TAG, "Decode task created");
     
-    task_ret = xTaskCreate(stream_mp3_task, "stream_mp3", 8192, NULL, 5, NULL);
+    task_ret = xTaskCreate(stream_mp3_task, "stream_mp3", 4096, NULL, 5, NULL);
     if (task_ret != pdPASS) {
         ESP_LOGE(TAG, "Failed to create stream_mp3_task");
         return;
