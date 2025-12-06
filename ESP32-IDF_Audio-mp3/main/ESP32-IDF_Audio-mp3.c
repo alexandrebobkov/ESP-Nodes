@@ -226,6 +226,86 @@ static void stream_audio_task(void *pvParameters)
     vTaskDelete(NULL);
 }
 
+// Decode and play MP3
+void decode_and_play_task(void *pvParameters)
+{
+    mp3dec_frame_info_t info;
+    int16_t pcm[MINIMP3_MAX_SAMPLES_PER_FRAME];
+    size_t bytes_written;
+    
+    ESP_LOGI(TAG, "Decode and play task started");
+
+    while (1) {
+        if (stream_buffer_fill - stream_buffer_pos > 1024) {
+            int samples = mp3dec_decode_frame(&mp3d, 
+                                             stream_buffer + stream_buffer_pos,
+                                             stream_buffer_fill - stream_buffer_pos,
+                                             pcm, &info);
+            
+            if (samples > 0) {
+                ESP_LOGI(TAG, "Decoded %d samples, %d Hz, %d channels, bitrate: %d", 
+                         samples, info.hz, info.channels, info.bitrate_kbps);
+                
+                // Write PCM data to I2S (samples * channels * bytes_per_sample)
+                size_t bytes_to_write = samples * info.channels * sizeof(int16_t);
+                esp_err_t ret = i2s_channel_write(tx_handle, pcm, bytes_to_write, 
+                                                  &bytes_written, portMAX_DELAY);
+                
+                if (ret != ESP_OK) {
+                    ESP_LOGE(TAG, "I2S write failed: %s", esp_err_to_name(ret));
+                } else {
+                    ESP_LOGD(TAG, "Wrote %d bytes to I2S", bytes_written);
+                }
+                
+                stream_buffer_pos += info.frame_bytes;
+                
+                // Reset buffer when consumed
+                if (stream_buffer_pos >= stream_buffer_fill / 2) {
+                    memmove(stream_buffer, 
+                           stream_buffer + stream_buffer_pos,
+                           stream_buffer_fill - stream_buffer_pos);
+                    stream_buffer_fill -= stream_buffer_pos;
+                    stream_buffer_pos = 0;
+                }
+            } else if (samples == 0) {
+                ESP_LOGW(TAG, "No samples decoded, skipping frame");
+                stream_buffer_pos += 1;  // Skip one byte and try again
+            } else {
+                ESP_LOGE(TAG, "Decode error: %d", samples);
+                vTaskDelay(10 / portTICK_PERIOD_MS);
+            }
+        } else {
+            vTaskDelay(50 / portTICK_PERIOD_MS);
+        }
+    }
+}
+
+// Stream MP3 from internet
+void stream_mp3_task(void *pvParameters)
+{
+    esp_http_client_config_t config = {
+        .url = MP3_STREAM_URL,
+        .event_handler = http_event_handler,
+        .buffer_size = 4096,
+        .timeout_ms = 5000,
+    };
+
+    esp_http_client_handle_t client = esp_http_client_init(&config);
+    
+    ESP_LOGI(TAG, "Starting MP3 stream from: %s", MP3_STREAM_URL);
+    
+    esp_err_t err = esp_http_client_perform(client);
+    
+    if (err == ESP_OK) {
+        ESP_LOGI(TAG, "HTTP Stream completed");
+    } else {
+        ESP_LOGE(TAG, "HTTP Stream failed: %s", esp_err_to_name(err));
+    }
+
+    esp_http_client_cleanup(client);
+    vTaskDelete(NULL);
+}
+
 void app_main(void)
 {
     ESP_LOGI(TAG, "Starting ESP32-C3 Internet Audio Streamer");
