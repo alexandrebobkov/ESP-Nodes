@@ -207,10 +207,19 @@ esp_err_t http_event_handler(esp_http_client_event_t *evt)
 void decode_and_play_task(void *pvParameters)
 {
     mp3dec_frame_info_t info;
-    int16_t pcm[MINIMP3_MAX_SAMPLES_PER_FRAME];
+    int16_t *pcm = NULL;
     size_t bytes_written;
     
     ESP_LOGI(TAG, "Decode and play task started");
+    
+    // Allocate PCM buffer on heap instead of stack
+    pcm = (int16_t *)malloc(MINIMP3_MAX_SAMPLES_PER_FRAME * sizeof(int16_t));
+    if (pcm == NULL) {
+        ESP_LOGE(TAG, "Failed to allocate PCM buffer");
+        vTaskDelete(NULL);
+        return;
+    }
+    ESP_LOGI(TAG, "PCM buffer allocated");
     
     // Wait for buffer to be allocated
     while (stream_buffer == NULL) {
@@ -264,6 +273,9 @@ void decode_and_play_task(void *pvParameters)
             vTaskDelay(50 / portTICK_PERIOD_MS);
         }
     }
+    
+    // Cleanup (never reached but good practice)
+    free(pcm);
 }
 
 // Stream MP3 from internet
@@ -339,7 +351,7 @@ void app_main(void)
     ESP_LOGI(TAG, "Creating tasks...");
     BaseType_t task_ret;
     
-    task_ret = xTaskCreate(decode_and_play_task, "decode_play", 4096, NULL, 5, NULL);
+    task_ret = xTaskCreate(decode_and_play_task, "decode_play", 8192, NULL, 5, NULL);
     if (task_ret != pdPASS) {
         ESP_LOGE(TAG, "Failed to create decode_and_play_task");
         return;
