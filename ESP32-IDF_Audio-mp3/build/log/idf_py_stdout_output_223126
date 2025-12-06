@@ -19,3 +19,87 @@
 -- Configuring done (3.6s)
 -- Generating done (0.7s)
 -- Build files have been written to: /home/alex/github/ESP-Nodes/ESP32-IDF_Audio-mp3/build
+[1/11] Performing build step for 'bootloader'
+[1/1] cd /home/alex/github/ESP-Nodes/ESP32-IDF_Audio-mp3/build/bootloader/esp-idf/esptool_py && /home/alex/.espressif/python_env/idf5.4_py3.13_env/bin/python /home/alex/esp/esp-idf/v5.4.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/alex/github/ESP-Nodes/ESP32-IDF_Audio-mp3/build/bootloader/bootloader.bin
+Bootloader binary size 0x5160 bytes. 0x2ea0 bytes (36%) free.
+[2/11] No install step for 'bootloader'
+[3/11] Completed 'bootloader'
+[4/11] Building C object esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj
+[5/11] Linking C static library esp-idf/esp_app_format/libesp_app_format.a
+[6/11] Generating ld/sections.ld
+[7/11] Linking CXX executable ESP32-IDF_Audio-mp3.elf
+[8/11] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32c3 image...
+Merged 1 ELF section
+Successfully created esp32c3 image.
+Generated /home/alex/github/ESP-Nodes/ESP32-IDF_Audio-mp3/build/ESP32-IDF_Audio-mp3.bin
+[9/11] cd /home/alex/github/ESP-Nodes/ESP32-IDF_Audio-mp3/build/esp-idf/esptool_py && /home/alex/.espressif/python_env/idf5.4_py3.13_env/bin/python /home/alex/esp/esp-idf/v5.4.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/alex/github/ESP-Nodes/ESP32-IDF_Audio-mp3/build/partition_table/partition-table.bin /home/alex/github/ESP-Nodes/ESP32-IDF_Audio-mp3/build/ESP32-IDF_Audio-mp3.bin
+ESP32-IDF_Audio-mp3.bin binary size 0xe8f40 bytes. Smallest app partition is 0x100000 bytes. 0x170c0 bytes (9%) free.
+[9/11] cd /home/alex/esp/esp-idf/v5.4.1/components/esptool_py && /home/alex/.espressif/tools/cmake/3.30.2/bin/cmake -D IDF_PATH=/home/alex/esp/esp-idf/v5.4.1 -D "SERIAL_TOOL=/home/alex/.espressif/python_env/idf5.4_py3.13_env/bin/python;;/home/alex/esp/esp-idf/v5.4.1/components/esptool_py/esptool/esptool.py;--chip;esp32c3" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/alex/github/ESP-Nodes/ESP32-IDF_Audio-mp3/build -P /home/alex/esp/esp-idf/v5.4.1/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32c3 -p /dev/ttyACM2 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 2MB 0x0 bootloader/bootloader.bin 0x10000 ESP32-IDF_Audio-mp3.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.8.1
+Serial port /dev/ttyACM2
+Connecting...
+Chip is ESP32-C3 (QFN32) (revision v0.4)
+Features: WiFi, BLE, Embedded Flash 4MB (XMC)
+Crystal is 40MHz
+MAC: ec:da:3b:ab:1b:10
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x000f8fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 20832 bytes to 13053...
+Writing at 0x00000000... (100 %)
+Wrote 20832 bytes (13053 compressed) at 0x00000000 in 0.4 seconds (effective 471.8 kbit/s)...
+Hash of data verified.
+Compressed 954176 bytes to 543661...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001c21a... (5 %)
+Writing at 0x00026217... (8 %)
+Writing at 0x000307b7... (11 %)
+Writing at 0x00037109... (14 %)
+Writing at 0x0003ecda... (17 %)
+Writing at 0x0004602e... (20 %)
+Writing at 0x0004ccaa... (23 %)
+Writing at 0x00053278... (26 %)
+Writing at 0x00059a02... (29 %)
+Writing at 0x00060406... (32 %)
+Writing at 0x000662e4... (35 %)
+Writing at 0x0006c629... (38 %)
+Writing at 0x00072bf8... (41 %)
+Writing at 0x00078f2e... (44 %)
+Writing at 0x0007eed2... (47 %)
+Writing at 0x00085130... (50 %)
+Writing at 0x0008bf6d... (52 %)
+Writing at 0x00092d88... (55 %)
+Writing at 0x00099f71... (58 %)
+Writing at 0x000a0fa7... (61 %)
+Writing at 0x000a76e2... (64 %)
+Writing at 0x000ad586... (67 %)
+Writing at 0x000b3c8f... (70 %)
+Writing at 0x000bb141... (73 %)
+Writing at 0x000c1803... (76 %)
+Writing at 0x000c7e0a... (79 %)
+Writing at 0x000ce1ff... (82 %)
+Writing at 0x000d4317... (85 %)
+Writing at 0x000dccbc... (88 %)
+Writing at 0x000e3bfc... (91 %)
+Writing at 0x000ea79e... (94 %)
+Writing at 0x000f16a2... (97 %)
+Writing at 0x000f78f9... (100 %)
+Wrote 954176 bytes (543661 compressed) at 0x00010000 in 7.1 seconds (effective 1080.2 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 533.7 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
