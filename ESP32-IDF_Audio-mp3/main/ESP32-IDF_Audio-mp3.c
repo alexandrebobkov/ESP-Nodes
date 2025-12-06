@@ -10,30 +10,28 @@
 #include <string.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "freertos/event_groups.h"
-#include "esp_system.h"
-#include "esp_wifi.h"
-#include "esp_event.h"
 #include "esp_log.h"
 #include "nvs_flash.h"
-#include "esp_netif.h"
-#include "esp_http_client.h"
-#include "driver/i2s_std.h"
-#include "driver/gpio.h"
 
-#define MINIMP3_IMPLEMENTATION
-#include "minimp3/minimp3.h"
-#include "minimp3/minimp3_ex.h"
+#include "audio_element.h"
+#include "audio_pipeline.h"
+#include "audio_event_iface.h"
+#include "audio_common.h"
+#include "i2s_stream.h"
+#include "mp3_decoder.h"
+#include "http_stream.h"
+
+#include "esp_peripherals.h"
+#include "periph_wifi.h"
+#include "board.h"
 
 static const char *TAG = "MP3_STREAM";
 
 // WiFi Configuration
 #define WIFI_SSID "IoT_bots"
 #define WIFI_PASS "208208208"
-#define WIFI_MAXIMUM_RETRY  5
 
 // Audio Stream URL (example: MP3 stream)
-#define AUDIO_STREAM_URL "http://jking.cdnstream1.com/b75154_128mp3"
 #define MP3_STREAM_URL  "http://jking.cdnstream1.com/b75154_128mp3"
 
 // I2S Configuration for ESP32-C3 with PCM5100
