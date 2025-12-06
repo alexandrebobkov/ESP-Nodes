@@ -10,20 +10,17 @@
 #include <string.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include "freertos/event_groups.h"
 #include "esp_log.h"
+#include "esp_wifi.h"
+#include "esp_event.h"
 #include "nvs_flash.h"
-
-#include "audio_element.h"
-#include "audio_pipeline.h"
-#include "audio_event_iface.h"
-#include "audio_common.h"
-#include "i2s_stream.h"
-#include "mp3_decoder.h"
-#include "http_stream.h"
-
-#include "esp_peripherals.h"
-#include "periph_wifi.h"
-#include "board.h"
+#include "esp_http_client.h"
+#include "esp_netif.h"
+#include "driver/i2s_std.h"
+#include "driver/gpio.h"
+#include "minimp3/minimp3.h"
+#include "minimp3/minimp3_ex.h"
 
 static const char *TAG = "MP3_STREAM";
 
