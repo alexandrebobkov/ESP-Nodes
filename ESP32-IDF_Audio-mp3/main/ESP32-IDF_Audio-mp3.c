@@ -331,7 +331,7 @@ void stream_mp3_task(void *pvParameters)
     esp_http_client_config_t config = {
         .url = MP3_STREAM_URL,
         .event_handler = http_event_handler,
-        .buffer_size = 4096,
+        .buffer_size = 8192,//4096,
         .timeout_ms = 5000,
     };
 
