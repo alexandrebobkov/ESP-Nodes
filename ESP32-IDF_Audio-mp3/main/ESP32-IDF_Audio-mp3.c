@@ -48,7 +48,7 @@ static const char *TAG = "MP3_STREAM";
 #define I2S_BUFFER_SIZE 8192//2048
 
 // Stream buffer - increase for smoother playback
-#define STREAM_BUFFER_SIZE (256 * 1024)  // 128KB buffer for better buffering
+#define STREAM_BUFFER_SIZE (128 * 1024)  // 128KB buffer for better buffering
 static uint8_t *stream_buffer = NULL;
 static size_t stream_buffer_pos = 0;
 static size_t stream_buffer_fill = 0;
