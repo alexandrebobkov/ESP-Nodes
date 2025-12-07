@@ -43,10 +43,10 @@ static const char *TAG = "MP3_STREAM";
 #define I2S_WS_IO       GPIO_NUM_5   // LRCK (Word Select) -> PCM5100 LRCK pin
 #define I2S_DO_IO       GPIO_NUM_6   // DIN (Data) -> PCM5100 DIN pin
 #define I2S_SAMPLE_RATE 44100
-#define I2S_BUFFER_SIZE 2048
+#define I2S_BUFFER_SIZE 8192//2048
 
 // Stream buffer - increase for smoother playback
-#define STREAM_BUFFER_SIZE (64 * 1024)  // 32KB buffer for better buffering
+#define STREAM_BUFFER_SIZE (128 * 1024)  // 32KB buffer for better buffering
 static uint8_t *stream_buffer = NULL;
 static size_t stream_buffer_pos = 0;
 static size_t stream_buffer_fill = 0;
