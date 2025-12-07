@@ -4,6 +4,8 @@
  * Author:          Alexander Bobkov
  * Date Created:    Dec 3, 2025
  * Date Updated:    Dec 6, 2025
+ * 
+ * Use ESP32-S3 for quality sound.
  *
 */
 
