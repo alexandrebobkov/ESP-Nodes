@@ -1,5 +1,5 @@
 /*
- * Internet stream player.
+ * Internet stream player using libhelix MP3 decoder.
  *
  * Author:          Alexander Bobkov
  * Date Created:    Dec 3, 2025
@@ -20,18 +20,14 @@
 #include "driver/i2s_std.h"
 #include "driver/gpio.h"
 
-// Third-party MP3 decoder (minimp3)
-#define MINIMP3_ONLY_MP3
-#define MINIMP3_NO_SIMD
-#define MINIMP3_IMPLEMENTATION
-#include "minimp3/minimp3.h"
-#include "minimp3/minimp3_ex.h"
+// Helix MP3 decoder
+#include "mp3dec.h"
 
 static const char *TAG = "MP3_STREAM";
 
 // WiFi Configuration
-#define WIFI_SSID      "activcount"
-#define WIFI_PASS      "l0ve2c0unt"
+#define WIFI_SSID      "IoT_bots"
+#define WIFI_PASS      "208208208"
 #define WIFI_MAXIMUM_RETRY  5
 
 // MP3 Stream URL
@@ -39,18 +35,22 @@ static const char *TAG = "MP3_STREAM";
 
 // I2S Configuration for ESP32-C3 with PCM5100
 #define I2S_NUM         I2S_NUM_0
-#define I2S_BCK_IO      GPIO_NUM_4   // BCK (Bit Clock) -> PCM5100 BCK pin
-#define I2S_WS_IO       GPIO_NUM_5   // LRCK (Word Select) -> PCM5100 LRCK pin
-#define I2S_DO_IO       GPIO_NUM_6   // DIN (Data) -> PCM5100 DIN pin
+#define I2S_BCK_IO      GPIO_NUM_4
+#define I2S_WS_IO       GPIO_NUM_5
+#define I2S_DO_IO       GPIO_NUM_6
 #define I2S_SAMPLE_RATE 44100
-#define I2S_BUFFER_SIZE 2048
 
-// Stream buffer - increase for smoother playback
-#define STREAM_BUFFER_SIZE (32 * 1024)  // 32KB buffer for better buffering
+// Helix decoder constants
+#define MAINBUF_SIZE    (1940)  // Size of main buffer for MP3 data
+#define MAX_NGRAN       2
+#define MAX_NCHAN       2
+#define MAX_NSAMP       (MAX_NGRAN * MAX_NCHAN * 576)  // Max samples per frame
+
+// Stream buffer
+#define STREAM_BUFFER_SIZE (32 * 1024)
 static uint8_t *stream_buffer = NULL;
 static size_t stream_buffer_pos = 0;
 static size_t stream_buffer_fill = 0;
-static bool stream_paused = false;  // Pause flag to control streaming
 
 // WiFi event group
 static EventGroupHandle_t s_wifi_event_group;
@@ -59,7 +59,7 @@ static EventGroupHandle_t s_wifi_event_group;
 
 static int s_retry_num = 0;
 static i2s_chan_handle_t tx_handle = NULL;
-static mp3dec_t mp3d;
+static HMP3Decoder hMP3Decoder = NULL;
 
 // WiFi event handler
 static void event_handler(void* arg, esp_event_base_t event_base,
@@ -141,9 +141,9 @@ void wifi_init_sta(void)
 esp_err_t i2s_init(void)
 {
     i2s_chan_config_t chan_cfg = I2S_CHANNEL_DEFAULT_CONFIG(I2S_NUM, I2S_ROLE_MASTER);
-    chan_cfg.auto_clear = true;  // Auto clear DMA buffer
-    chan_cfg.dma_desc_num = 16;  // Increase DMA descriptors for smoother playback
-    chan_cfg.dma_frame_num = 240;  // Increase frame size
+    chan_cfg.auto_clear = true;
+    chan_cfg.dma_desc_num = 8;
+    chan_cfg.dma_frame_num = 240;
     ESP_ERROR_CHECK(i2s_new_channel(&chan_cfg, &tx_handle, NULL));
 
     i2s_std_config_t std_cfg = {
@@ -163,7 +163,6 @@ esp_err_t i2s_init(void)
         },
     };
     
-    // Configure for best quality
     std_cfg.clk_cfg.clk_src = I2S_CLK_SRC_DEFAULT;
     std_cfg.slot_cfg.slot_mode = I2S_SLOT_MODE_STEREO;
     std_cfg.slot_cfg.slot_mask = I2S_STD_SLOT_BOTH;
@@ -171,19 +170,8 @@ esp_err_t i2s_init(void)
     ESP_ERROR_CHECK(i2s_channel_init_std_mode(tx_handle, &std_cfg));
     ESP_ERROR_CHECK(i2s_channel_enable(tx_handle));
 
-    ESP_LOGI(TAG, "I2S initialized successfully");
-    ESP_LOGI(TAG, "I2S Pins - BCK: GPIO%d, WS: GPIO%d, DOUT: GPIO%d", I2S_BCK_IO, I2S_WS_IO, I2S_DO_IO);
-    ESP_LOGI(TAG, "I2S Config - Sample Rate: %d Hz, Bits: 16, Channels: Stereo", I2S_SAMPLE_RATE);
-    
-    // Test I2S by sending silent data
-    int16_t test_data[128] = {0};
-    size_t written;
-    esp_err_t ret = i2s_channel_write(tx_handle, test_data, sizeof(test_data), &written, 1000);
-    if (ret == ESP_OK) {
-        ESP_LOGI(TAG, "I2S test write successful: %d bytes written", written);
-    } else {
-        ESP_LOGE(TAG, "I2S test write failed: %s", esp_err_to_name(ret));
-    }
+    ESP_LOGI(TAG, "I2S initialized - BCK:%d WS:%d DOUT:%d @ %dHz", 
+             I2S_BCK_IO, I2S_WS_IO, I2S_DO_IO, I2S_SAMPLE_RATE);
     
     return ESP_OK;
 }
@@ -195,29 +183,11 @@ esp_err_t http_event_handler(esp_http_client_event_t *evt)
         case HTTP_EVENT_ON_CONNECTED:
             ESP_LOGI(TAG, "HTTP Connected");
             break;
-        case HTTP_EVENT_HEADERS_SENT:
-            ESP_LOGI(TAG, "HTTP Headers sent");
-            break;
-        case HTTP_EVENT_ON_HEADER:
-            ESP_LOGD(TAG, "Header: %s: %s", evt->header_key, evt->header_value);
-            break;
         case HTTP_EVENT_ON_DATA:
-            // Add data to buffer with flow control
-            if (stream_buffer != NULL && !stream_paused) {
-                if (stream_buffer_fill + evt->data_len <= STREAM_BUFFER_SIZE) {
-                    memcpy(stream_buffer + stream_buffer_fill, evt->data, evt->data_len);
-                    stream_buffer_fill += evt->data_len;
-                    ESP_LOGD(TAG, "Received %d bytes, buffer: %d/%d", 
-                            evt->data_len, stream_buffer_fill, STREAM_BUFFER_SIZE);
-                } else {
-                    // Buffer almost full, slow down
-                    ESP_LOGD(TAG, "Buffer full, pausing...");
-                    vTaskDelay(5 / portTICK_PERIOD_MS);
-                }
+            if (stream_buffer != NULL && stream_buffer_fill + evt->data_len <= STREAM_BUFFER_SIZE) {
+                memcpy(stream_buffer + stream_buffer_fill, evt->data, evt->data_len);
+                stream_buffer_fill += evt->data_len;
             }
-            break;
-        case HTTP_EVENT_ON_FINISH:
-            ESP_LOGI(TAG, "HTTP Finished");
             break;
         case HTTP_EVENT_DISCONNECTED:
             ESP_LOGI(TAG, "HTTP Disconnected");
@@ -228,101 +198,112 @@ esp_err_t http_event_handler(esp_http_client_event_t *evt)
     return ESP_OK;
 }
 
-// Decode and play MP3
+// Decode and play MP3 using Helix
 void decode_and_play_task(void *pvParameters)
 {
-    mp3dec_frame_info_t info;
-    int16_t *pcm = NULL;
+    int err, offset, bytes_left;
+    unsigned char *read_ptr;
+    short *pcm_buffer = NULL;
+    MP3FrameInfo mp3_frame_info;
     size_t bytes_written;
     uint32_t frames_decoded = 0;
-    uint32_t total_bytes_written = 0;
     bool first_frame = true;
     
-    ESP_LOGI(TAG, "Decode and play task started, free heap: %lu", esp_get_free_heap_size());
+    ESP_LOGI(TAG, "Decode task started, free heap: %lu", esp_get_free_heap_size());
     
     // Allocate PCM buffer
-    pcm = (int16_t *)heap_caps_malloc(4608 * sizeof(int16_t), MALLOC_CAP_8BIT);
-    if (pcm == NULL) {
+    pcm_buffer = (short *)heap_caps_malloc(MAX_NSAMP * sizeof(short), MALLOC_CAP_8BIT);
+    if (pcm_buffer == NULL) {
         ESP_LOGE(TAG, "Failed to allocate PCM buffer");
         vTaskDelete(NULL);
         return;
     }
-    ESP_LOGI(TAG, "PCM buffer allocated, free heap: %lu", esp_get_free_heap_size());
     
-    // Wait for buffer to be allocated and fill with some data before starting
+    // Initialize Helix decoder
+    hMP3Decoder = MP3InitDecoder();
+    if (hMP3Decoder == NULL) {
+        ESP_LOGE(TAG, "Failed to initialize Helix decoder");
+        free(pcm_buffer);
+        vTaskDelete(NULL);
+        return;
+    }
+    
+    ESP_LOGI(TAG, "Helix decoder initialized, free heap: %lu", esp_get_free_heap_size());
+    
+    // Wait for buffer
     while (stream_buffer == NULL) {
         vTaskDelay(100 / portTICK_PERIOD_MS);
     }
     
-    // Wait for buffer to fill up a bit before starting playback
-    ESP_LOGI(TAG, "Waiting for initial buffer fill...");
-    while (stream_buffer_fill < 8192) {
+    // Wait for initial buffer fill
+    ESP_LOGI(TAG, "Waiting for buffer fill...");
+    while (stream_buffer_fill < 16384) {
         vTaskDelay(100 / portTICK_PERIOD_MS);
     }
-    ESP_LOGI(TAG, "Stream buffer ready with %d bytes, starting playback", stream_buffer_fill);
+    ESP_LOGI(TAG, "Buffer ready (%d bytes), starting playback", stream_buffer_fill);
 
     while (1) {
-        // Make sure we have enough data in buffer before decoding
-        if (stream_buffer != NULL && stream_buffer_fill - stream_buffer_pos > 2048) {
-            int samples = mp3dec_decode_frame(&mp3d, 
-                                             stream_buffer + stream_buffer_pos,
-                                             stream_buffer_fill - stream_buffer_pos,
-                                             pcm, &info);
+        bytes_left = stream_buffer_fill - stream_buffer_pos;
+        
+        if (bytes_left >= MAINBUF_SIZE) {
+            read_ptr = stream_buffer + stream_buffer_pos;
             
-            if (samples > 0) {
+            // Find sync word
+            offset = MP3FindSyncWord(read_ptr, bytes_left);
+            if (offset < 0) {
+                // No sync found, skip some data
+                stream_buffer_pos += (bytes_left > 100) ? 100 : bytes_left;
+                continue;
+            }
+            
+            read_ptr += offset;
+            bytes_left -= offset;
+            stream_buffer_pos += offset;
+            
+            // Decode frame
+            err = MP3Decode(hMP3Decoder, &read_ptr, &bytes_left, pcm_buffer, 0);
+            
+            if (err == ERR_MP3_NONE) {
+                // Get frame info
+                MP3GetLastFrameInfo(hMP3Decoder, &mp3_frame_info);
+                
                 frames_decoded++;
                 
-                // Log first frame info only
                 if (first_frame) {
-                    ESP_LOGI(TAG, "First frame decoded: %d samples, %d Hz, %d channels, %d kbps", 
-                             samples, info.hz, info.channels, info.bitrate_kbps);
+                    ESP_LOGI(TAG, "Decoding: %d Hz, %d ch, %d kbps, %d samples/frame",
+                             mp3_frame_info.samprate, mp3_frame_info.nChans,
+                             mp3_frame_info.bitrate / 1000, mp3_frame_info.outputSamps);
                     first_frame = false;
                 }
                 
-                // Write PCM data to I2S - blocking write for smooth playback
-                size_t bytes_to_write = samples * info.channels * sizeof(int16_t);
-                esp_err_t ret = i2s_channel_write(tx_handle, pcm, bytes_to_write, 
-                                                  &bytes_written, portMAX_DELAY);
+                // Write to I2S
+                size_t bytes_to_write = mp3_frame_info.outputSamps * sizeof(short);
+                i2s_channel_write(tx_handle, pcm_buffer, bytes_to_write, &bytes_written, portMAX_DELAY);
                 
-                if (ret == ESP_OK) {
-                    total_bytes_written += bytes_written;
-                } else {
-                    ESP_LOGE(TAG, "I2S write failed: %s", esp_err_to_name(ret));
-                }
+                // Update position
+                stream_buffer_pos = (read_ptr - stream_buffer);
                 
-                // Log every 500 frames (reduce logging overhead)
-                if (frames_decoded % 500 == 0) {
-                    ESP_LOGI(TAG, "Playing: Frame %lu | Buffer: %d bytes | Free heap: %lu", 
-                             frames_decoded, stream_buffer_fill, esp_get_free_heap_size());
-                }
-                
-                stream_buffer_pos += info.frame_bytes;
-                
-                // Reset buffer when half consumed
-                if (stream_buffer != NULL && stream_buffer_pos >= STREAM_BUFFER_SIZE / 2) {
+                // Manage buffer
+                if (stream_buffer_pos >= (STREAM_BUFFER_SIZE * 3 / 4)) {
                     size_t remaining = stream_buffer_fill - stream_buffer_pos;
                     if (remaining > 0) {
-                        memmove(stream_buffer, 
-                               stream_buffer + stream_buffer_pos,
-                               remaining);
+                        memmove(stream_buffer, stream_buffer + stream_buffer_pos, remaining);
                     }
                     stream_buffer_fill = remaining;
                     stream_buffer_pos = 0;
                 }
-            } else if (samples == 0) {
-                // Skip byte and retry
-                stream_buffer_pos += 1;
             } else {
-                // Decode error - skip byte
+                // Decode error, skip ahead
                 stream_buffer_pos += 1;
             }
         } else {
-            // Not enough data, wait for more
+            // Not enough data
             vTaskDelay(10 / portTICK_PERIOD_MS);
         }
     }
     
-    free(pcm);
+    MP3FreeDecoder(hMP3Decoder);
+    free(pcm_buffer);
 }
 
 // Stream MP3 from internet
@@ -353,19 +334,14 @@ void stream_mp3_task(void *pvParameters)
 
 void app_main(void)
 {
-    // Initialize NVS
     esp_err_t ret = nvs_flash_init();
     if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
-        ESP_LOGI(TAG, "Erasing NVS flash...");
         ESP_ERROR_CHECK(nvs_flash_erase());
         ret = nvs_flash_init();
     }
-    if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "Failed to initialize NVS: %s", esp_err_to_name(ret));
-        return;
-    }
+    ESP_ERROR_CHECK(ret);
 
-    ESP_LOGI(TAG, "ESP32-C3 MP3 Streamer Starting...");
+    ESP_LOGI(TAG, "ESP32-C3 MP3 Streamer with Helix decoder");
     ESP_LOGI(TAG, "Free heap: %lu bytes", esp_get_free_heap_size());
 
     // Allocate stream buffer
@@ -376,50 +352,21 @@ void app_main(void)
     }
     ESP_LOGI(TAG, "Stream buffer allocated: %d bytes", STREAM_BUFFER_SIZE);
 
-    // Initialize MP3 decoder
-    mp3dec_init(&mp3d);
-    ESP_LOGI(TAG, "MP3 decoder initialized");
-
     // Initialize WiFi
     ESP_LOGI(TAG, "Initializing WiFi...");
     wifi_init_sta();
-    ESP_LOGI(TAG, "WiFi connected successfully");
 
     // Initialize I2S
     ESP_LOGI(TAG, "Initializing I2S...");
-    ret = i2s_init();
-    if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "Failed to initialize I2S: %s", esp_err_to_name(ret));
-        return;
-    }
-    ESP_LOGI(TAG, "I2S initialized successfully");
+    i2s_init();
 
-    // Create tasks with very large stack for MP3 decoder (it needs ~20KB internally)
-    ESP_LOGI(TAG, "Creating tasks...");
-    BaseType_t task_ret;
-    
-    // Increase to 24KB and higher priority (priority 10) - minimp3 uses large internal buffers on stack
-    task_ret = xTaskCreate(decode_and_play_task, "decode_play", 24576, NULL, 10, NULL);
-    if (task_ret != pdPASS) {
-        ESP_LOGE(TAG, "Failed to create decode_and_play_task");
-        return;
-    }
-    ESP_LOGI(TAG, "Decode task created with 24KB stack, priority 10");
-    
-    task_ret = xTaskCreate(stream_mp3_task, "stream_mp3", 4096, NULL, 3, NULL);
-    if (task_ret != pdPASS) {
-        ESP_LOGE(TAG, "Failed to create stream_mp3_task");
-        return;
-    }
-    ESP_LOGI(TAG, "Stream task created with priority 3");
+    // Create tasks
+    xTaskCreate(decode_and_play_task, "decode_play", 8192, NULL, 10, NULL);
+    xTaskCreate(stream_mp3_task, "stream_mp3", 4096, NULL, 3, NULL);
 
-    ESP_LOGI(TAG, "All tasks started successfully!");
-    ESP_LOGI(TAG, "Free heap after init: %lu bytes", esp_get_free_heap_size());
+    ESP_LOGI(TAG, "Tasks started, free heap: %lu", esp_get_free_heap_size());
     
-    // Keep main task alive
     while (1) {
         vTaskDelay(pdMS_TO_TICKS(10000));
-        ESP_LOGI(TAG, "Status - Buffer fill: %d bytes, Free heap: %lu", 
-                 stream_buffer_fill, esp_get_free_heap_size());
     }
 }
