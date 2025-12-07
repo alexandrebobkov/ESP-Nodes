@@ -32,8 +32,8 @@
 static const char *TAG = "MP3_STREAM";
 
 // WiFi Configuration
-#define WIFI_SSID      "activcount"
-#define WIFI_PASS      "l0ve2c0unt"
+#define WIFI_SSID      "IoT_bots"
+#define WIFI_PASS      "208208208"
 #define WIFI_MAXIMUM_RETRY  5
 
 // MP3 Stream URL
