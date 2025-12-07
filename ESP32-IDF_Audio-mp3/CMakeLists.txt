@@ -22,7 +22,7 @@ set(helix_sources
 )
 
 idf_component_register(
-    SRCS "main.c" ${helix_sources}
+    SRCS "ESP32-IDF_Audio-mp3.c" ${helix_sources}
     INCLUDE_DIRS "." "helix"
     REQUIRES esp_http_client nvs_flash esp_wifi driver
 )
