@@ -10,7 +10,7 @@
 #include <string.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "freertos/event_groups.h"
+#include "freertos/queue.h"
 #include "esp_log.h"
 #include "esp_wifi.h"
 #include "esp_event.h"
@@ -19,9 +19,6 @@
 #include "esp_netif.h"
 #include "driver/i2s_std.h"
 #include "driver/gpio.h"
-
-// Helix MP3 decoder
-#include "mp3dec.h"
 
 static const char *TAG = "MP3_STREAM";
 
@@ -47,10 +44,11 @@ static const char *TAG = "MP3_STREAM";
 #define MAX_NSAMP       (MAX_NGRAN * MAX_NCHAN * 576)  // Max samples per frame
 
 // Stream buffer
-#define STREAM_BUFFER_SIZE (32 * 1024)
+#define STREAM_BUFFER_SIZE (64 * 1024)
 static uint8_t *stream_buffer = NULL;
 static size_t stream_buffer_pos = 0;
 static size_t stream_buffer_fill = 0;
+#define AUDIO_QUEUE_SIZE 10
 
 // WiFi event group
 static EventGroupHandle_t s_wifi_event_group;
@@ -61,9 +59,23 @@ static int s_retry_num = 0;
 static i2s_chan_handle_t tx_handle = NULL;
 static HMP3Decoder hMP3Decoder = NULL;
 
-// WiFi event handler
-static void event_handler(void* arg, esp_event_base_t event_base,
-                         int32_t event_id, void* event_data)
+typedef struct {
+    uint8_t *data;
+    size_t len;
+} audio_frame_t;
+
+static EventGroupHandle_t s_wifi_event_group;
+#define WIFI_CONNECTED_BIT BIT0
+#define WIFI_FAIL_BIT      BIT1
+
+static int s_retry_num = 0;
+static i2s_chan_handle_t tx_handle = NULL;
+static QueueHandle_t audio_queue = NULL;
+static bool stream_running = false;
+
+// WiFi Event Handler
+static void wifi_event_handler(void* arg, esp_event_base_t event_base,
+                               int32_t event_id, void* event_data)
 {
     if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START) {
         esp_wifi_connect();
@@ -71,11 +83,11 @@ static void event_handler(void* arg, esp_event_base_t event_base,
         if (s_retry_num < WIFI_MAXIMUM_RETRY) {
             esp_wifi_connect();
             s_retry_num++;
-            ESP_LOGI(TAG, "Retry to connect to the AP");
+            ESP_LOGI(TAG, "retry to connect to the AP");
         } else {
             xEventGroupSetBits(s_wifi_event_group, WIFI_FAIL_BIT);
         }
-        ESP_LOGI(TAG,"Connect to the AP fail");
+        ESP_LOGI(TAG, "connect to the AP fail");
     } else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
         ip_event_got_ip_t* event = (ip_event_got_ip_t*) event_data;
         ESP_LOGI(TAG, "got ip:" IPSTR, IP2STR(&event->ip_info.ip));
@@ -100,12 +112,12 @@ void wifi_init_sta(void)
     esp_event_handler_instance_t instance_got_ip;
     ESP_ERROR_CHECK(esp_event_handler_instance_register(WIFI_EVENT,
                                                         ESP_EVENT_ANY_ID,
-                                                        &event_handler,
+                                                        &wifi_event_handler,
                                                         NULL,
                                                         &instance_any_id));
     ESP_ERROR_CHECK(esp_event_handler_instance_register(IP_EVENT,
                                                         IP_EVENT_STA_GOT_IP,
-                                                        &event_handler,
+                                                        &wifi_event_handler,
                                                         NULL,
                                                         &instance_got_ip));
 
@@ -113,12 +125,11 @@ void wifi_init_sta(void)
         .sta = {
             .ssid = WIFI_SSID,
             .password = WIFI_PASS,
-            .threshold.authmode = WIFI_AUTH_WPA2_PSK,
         },
     };
-    ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
-    ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
-    ESP_ERROR_CHECK(esp_wifi_start());
+    ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA) );
+    ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config) );
+    ESP_ERROR_CHECK(esp_wifi_start() );
 
     ESP_LOGI(TAG, "wifi_init_sta finished.");
 
@@ -131,7 +142,7 @@ void wifi_init_sta(void)
     if (bits & WIFI_CONNECTED_BIT) {
         ESP_LOGI(TAG, "connected to ap SSID:%s", WIFI_SSID);
     } else if (bits & WIFI_FAIL_BIT) {
-        ESP_LOGI(TAG, "Failed to connect to SSID:%s", WIFI_SSID);
+        ESP_LOGI(TAG, "Failed to connect to SSID:%s, password:%s", WIFI_SSID, WIFI_PASS);
     } else {
         ESP_LOGE(TAG, "UNEXPECTED EVENT");
     }
@@ -148,7 +159,7 @@ esp_err_t i2s_init(void)
 
     i2s_std_config_t std_cfg = {
         .clk_cfg = I2S_STD_CLK_DEFAULT_CONFIG(I2S_SAMPLE_RATE),
-        .slot_cfg = I2S_STD_PHILIPS_SLOT_DEFAULT_CONFIG(I2S_DATA_BIT_WIDTH_16BIT, I2S_SLOT_MODE_STEREO),
+        .slot_cfg = I2S_STD_STEREO_SLOTS_DEFAULT_CONFIG(I2S_BITS_PER_SAMPLE, I2S_SLOT_MODE_STEREO),
         .gpio_cfg = {
             .mclk = I2S_GPIO_UNUSED,
             .bclk = I2S_BCK_IO,
@@ -162,10 +173,6 @@ esp_err_t i2s_init(void)
             },
         },
     };
-    
-    std_cfg.clk_cfg.clk_src = I2S_CLK_SRC_DEFAULT;
-    std_cfg.slot_cfg.slot_mode = I2S_SLOT_MODE_STEREO;
-    std_cfg.slot_cfg.slot_mask = I2S_STD_SLOT_BOTH;
 
     ESP_ERROR_CHECK(i2s_channel_init_std_mode(tx_handle, &std_cfg));
     ESP_ERROR_CHECK(i2s_channel_enable(tx_handle));
@@ -176,134 +183,49 @@ esp_err_t i2s_init(void)
     return ESP_OK;
 }
 
-// HTTP event handler
+// HTTP Event Handler
 esp_err_t http_event_handler(esp_http_client_event_t *evt)
 {
     switch(evt->event_id) {
-        case HTTP_EVENT_ON_CONNECTED:
-            ESP_LOGI(TAG, "HTTP Connected");
-            break;
-        case HTTP_EVENT_ON_DATA:
-            if (stream_buffer != NULL && stream_buffer_fill + evt->data_len <= STREAM_BUFFER_SIZE) {
-                memcpy(stream_buffer + stream_buffer_fill, evt->data, evt->data_len);
-                stream_buffer_fill += evt->data_len;
+    case HTTP_EVENT_ERROR:
+        ESP_LOGD(TAG, "HTTP_EVENT_ERROR");
+        break;
+    case HTTP_EVENT_ON_CONNECTED:
+        ESP_LOGD(TAG, "HTTP_EVENT_ON_CONNECTED");
+        break;
+    case HTTP_EVENT_HEADER_SENT:
+        ESP_LOGD(TAG, "HTTP_EVENT_HEADER_SENT");
+        break;
+    case HTTP_EVENT_ON_HEADER:
+        ESP_LOGD(TAG, "HTTP_EVENT_ON_HEADER, key=%s, value=%s", evt->header_key, evt->header_value);
+        break;
+    case HTTP_EVENT_ON_DATA:
+        if (!stream_running) break;
+        
+        // Queue audio data for playback
+        if (evt->data_len > 0) {
+            audio_frame_t frame = {
+                .data = (uint8_t *)malloc(evt->data_len),
+                .len = evt->data_len
+            };
+            if (frame.data) {
+                memcpy(frame.data, evt->data, evt->data_len);
+                if (xQueueSend(audio_queue, &frame, 0) != pdPASS) {
+                    ESP_LOGW(TAG, "Audio queue full, dropping frame");
+                    free(frame.data);
+                }
             }
-            break;
-        case HTTP_EVENT_DISCONNECTED:
-            ESP_LOGI(TAG, "HTTP Disconnected");
-            break;
-        default:
-            break;
+        }
+        break;
+    case HTTP_EVENT_ON_FINISH:
+        ESP_LOGD(TAG, "HTTP_EVENT_ON_FINISH");
+        stream_running = false;
+        break;
+    case HTTP_EVENT_DISCONNECTED:
+        ESP_LOGD(TAG, "HTTP_EVENT_DISCONNECTED");
+        break;
     }
     return ESP_OK;
-}
-
-// Decode and play MP3 using Helix
-void decode_and_play_task(void *pvParameters)
-{
-    int err, offset, bytes_left;
-    unsigned char *read_ptr;
-    short *pcm_buffer = NULL;
-    MP3FrameInfo mp3_frame_info;
-    size_t bytes_written;
-    uint32_t frames_decoded = 0;
-    bool first_frame = true;
-    
-    ESP_LOGI(TAG, "Decode task started, free heap: %lu", esp_get_free_heap_size());
-    
-    // Allocate PCM buffer
-    pcm_buffer = (short *)heap_caps_malloc(MAX_NSAMP * sizeof(short), MALLOC_CAP_8BIT);
-    if (pcm_buffer == NULL) {
-        ESP_LOGE(TAG, "Failed to allocate PCM buffer");
-        vTaskDelete(NULL);
-        return;
-    }
-    
-    // Initialize Helix decoder
-    hMP3Decoder = MP3InitDecoder();
-    if (hMP3Decoder == NULL) {
-        ESP_LOGE(TAG, "Failed to initialize Helix decoder");
-        free(pcm_buffer);
-        vTaskDelete(NULL);
-        return;
-    }
-    
-    ESP_LOGI(TAG, "Helix decoder initialized, free heap: %lu", esp_get_free_heap_size());
-    
-    // Wait for buffer
-    while (stream_buffer == NULL) {
-        vTaskDelay(100 / portTICK_PERIOD_MS);
-    }
-    
-    // Wait for initial buffer fill
-    ESP_LOGI(TAG, "Waiting for buffer fill...");
-    while (stream_buffer_fill < 16384) {
-        vTaskDelay(100 / portTICK_PERIOD_MS);
-    }
-    ESP_LOGI(TAG, "Buffer ready (%d bytes), starting playback", stream_buffer_fill);
-
-    while (1) {
-        bytes_left = stream_buffer_fill - stream_buffer_pos;
-        
-        if (bytes_left >= MAINBUF_SIZE) {
-            read_ptr = stream_buffer + stream_buffer_pos;
-            
-            // Find sync word
-            offset = MP3FindSyncWord(read_ptr, bytes_left);
-            if (offset < 0) {
-                // No sync found, skip some data
-                stream_buffer_pos += (bytes_left > 100) ? 100 : bytes_left;
-                continue;
-            }
-            
-            read_ptr += offset;
-            bytes_left -= offset;
-            stream_buffer_pos += offset;
-            
-            // Decode frame
-            err = MP3Decode(hMP3Decoder, &read_ptr, &bytes_left, pcm_buffer, 0);
-            
-            if (err == ERR_MP3_NONE) {
-                // Get frame info
-                MP3GetLastFrameInfo(hMP3Decoder, &mp3_frame_info);
-                
-                frames_decoded++;
-                
-                if (first_frame) {
-                    ESP_LOGI(TAG, "Decoding: %d Hz, %d ch, %d kbps, %d samples/frame",
-                             mp3_frame_info.samprate, mp3_frame_info.nChans,
-                             mp3_frame_info.bitrate / 1000, mp3_frame_info.outputSamps);
-                    first_frame = false;
-                }
-                
-                // Write to I2S
-                size_t bytes_to_write = mp3_frame_info.outputSamps * sizeof(short);
-                i2s_channel_write(tx_handle, pcm_buffer, bytes_to_write, &bytes_written, portMAX_DELAY);
-                
-                // Update position
-                stream_buffer_pos = (read_ptr - stream_buffer);
-                
-                // Manage buffer
-                if (stream_buffer_pos >= (STREAM_BUFFER_SIZE * 3 / 4)) {
-                    size_t remaining = stream_buffer_fill - stream_buffer_pos;
-                    if (remaining > 0) {
-                        memmove(stream_buffer, stream_buffer + stream_buffer_pos, remaining);
-                    }
-                    stream_buffer_fill = remaining;
-                    stream_buffer_pos = 0;
-                }
-            } else {
-                // Decode error, skip ahead
-                stream_buffer_pos += 1;
-            }
-        } else {
-            // Not enough data
-            vTaskDelay(10 / portTICK_PERIOD_MS);
-        }
-    }
-    
-    MP3FreeDecoder(hMP3Decoder);
-    free(pcm_buffer);
 }
 
 // Stream MP3 from internet
@@ -313,23 +235,47 @@ void stream_mp3_task(void *pvParameters)
         .url = MP3_STREAM_URL,
         .event_handler = http_event_handler,
         .buffer_size = 4096,
-        .timeout_ms = 5000,
+        .timeout_ms = 10000,
     };
 
     esp_http_client_handle_t client = esp_http_client_init(&config);
     
     ESP_LOGI(TAG, "Starting MP3 stream from: %s", MP3_STREAM_URL);
+    stream_running = true;
     
     esp_err_t err = esp_http_client_perform(client);
     
     if (err == ESP_OK) {
-        ESP_LOGI(TAG, "HTTP Stream completed");
+        ESP_LOGI(TAG, "HTTP Stream completed, Status: %d", esp_http_client_get_status_code(client));
     } else {
-        ESP_LOGE(TAG, "HTTP Stream failed: %s", esp_err_to_name(err));
+        ESP_LOGE(TAG, "HTTP request failed: %s", esp_err_to_name(err));
     }
 
+    stream_running = false;
     esp_http_client_cleanup(client);
     vTaskDelete(NULL);
+}
+
+// Play audio from queue
+void audio_playback_task(void *pvParameters)
+{
+    audio_frame_t frame;
+    size_t bytes_written;
+
+    ESP_LOGI(TAG, "Audio playback task started");
+
+    while (1) {
+        if (xQueueReceive(audio_queue, &frame, portMAX_DELAY) == pdPASS) {
+            // Write to I2S
+            esp_err_t err = i2s_channel_write(tx_handle, frame.data, frame.len, &bytes_written, portMAX_DELAY);
+            
+            if (err != ESP_OK) {
+                ESP_LOGE(TAG, "I2S write error: %s", esp_err_to_name(err));
+            }
+            
+            free(frame.data);
+        }
+    }
 }
 
 void app_main(void)
@@ -341,16 +287,15 @@ void app_main(void)
     }
     ESP_ERROR_CHECK(ret);
 
-    ESP_LOGI(TAG, "ESP32-C3 MP3 Streamer with Helix decoder");
+    ESP_LOGI(TAG, "ESP32-C3 MP3 Streamer");
     ESP_LOGI(TAG, "Free heap: %lu bytes", esp_get_free_heap_size());
 
-    // Allocate stream buffer
-    stream_buffer = (uint8_t *)malloc(STREAM_BUFFER_SIZE);
-    if (stream_buffer == NULL) {
-        ESP_LOGE(TAG, "Failed to allocate stream buffer");
+    // Create audio queue
+    audio_queue = xQueueCreate(AUDIO_QUEUE_SIZE, sizeof(audio_frame_t));
+    if (audio_queue == NULL) {
+        ESP_LOGE(TAG, "Failed to create audio queue");
         return;
     }
-    ESP_LOGI(TAG, "Stream buffer allocated: %d bytes", STREAM_BUFFER_SIZE);
 
     // Initialize WiFi
     ESP_LOGI(TAG, "Initializing WiFi...");
@@ -361,12 +306,6 @@ void app_main(void)
     i2s_init();
 
     // Create tasks
-    xTaskCreate(decode_and_play_task, "decode_play", 8192, NULL, 10, NULL);
-    xTaskCreate(stream_mp3_task, "stream_mp3", 4096, NULL, 3, NULL);
-
-    ESP_LOGI(TAG, "Tasks started, free heap: %lu", esp_get_free_heap_size());
-    
-    while (1) {
-        vTaskDelay(pdMS_TO_TICKS(10000));
-    }
+    xTaskCreate(audio_playback_task, "audio_play", 4096, NULL, 10, NULL);
+    xTaskCreate(stream_mp3_task, "stream_mp3", 4096, NULL, 5, NULL);
 }
