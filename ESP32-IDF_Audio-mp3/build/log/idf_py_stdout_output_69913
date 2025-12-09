@@ -14,3 +14,91 @@
 -- Adding linker script /home/abobkov/esp/v5.4.1/esp-idf/components/soc/esp32s2/ld/esp32s2.peripherals.ld
 -- Components: app_trace app_update bootloader bootloader_support bt cmock console cxx driver efuse esp-tls esp_adc esp_app_format esp_bootloader_format esp_coex esp_common esp_driver_ana_cmpr esp_driver_cam esp_driver_dac esp_driver_gpio esp_driver_gptimer esp_driver_i2c esp_driver_i2s esp_driver_isp esp_driver_jpeg esp_driver_ledc esp_driver_mcpwm esp_driver_parlio esp_driver_pcnt esp_driver_ppa esp_driver_rmt esp_driver_sdio esp_driver_sdm esp_driver_sdmmc esp_driver_sdspi esp_driver_spi esp_driver_touch_sens esp_driver_tsens esp_driver_uart esp_driver_usb_serial_jtag esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_security esp_system esp_timer esp_vfs_console esp_wifi espcoredump esptool_py fatfs freertos hal heap http_parser idf_test ieee802154 json log lwip main mbedtls mqtt newlib nvs_flash nvs_sec_provider openthread partition_table perfmon protobuf-c protocomm pthread rt sdmmc soc spi_flash spiffs tcp_transport touch_element ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant xtensa
 -- Component paths: /home/abobkov/esp/v5.4.1/esp-idf/components/app_trace /home/abobkov/esp/v5.4.1/esp-idf/components/app_update /home/abobkov/esp/v5.4.1/esp-idf/components/bootloader /home/abobkov/esp/v5.4.1/esp-idf/components/bootloader_support /home/abobkov/esp/v5.4.1/esp-idf/components/bt /home/abobkov/esp/v5.4.1/esp-idf/components/cmock /home/abobkov/esp/v5.4.1/esp-idf/components/console /home/abobkov/esp/v5.4.1/esp-idf/components/cxx /home/abobkov/esp/v5.4.1/esp-idf/components/driver /home/abobkov/esp/v5.4.1/esp-idf/components/efuse /home/abobkov/esp/v5.4.1/esp-idf/components/esp-tls /home/abobkov/esp/v5.4.1/esp-idf/components/esp_adc /home/abobkov/esp/v5.4.1/esp-idf/components/esp_app_format /home/abobkov/esp/v5.4.1/esp-idf/components/esp_bootloader_format /home/abobkov/esp/v5.4.1/esp-idf/components/esp_coex /home/abobkov/esp/v5.4.1/esp-idf/components/esp_common /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_ana_cmpr /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_cam /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_dac /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_gpio /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_gptimer /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_i2c /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_i2s /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_isp /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_jpeg /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_ledc /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_mcpwm /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_parlio /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_pcnt /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_ppa /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_rmt /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_sdio /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_sdm /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_sdmmc /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_sdspi /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_spi /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_touch_sens /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_tsens /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_uart /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_usb_serial_jtag /home/abobkov/esp/v5.4.1/esp-idf/components/esp_eth /home/abobkov/esp/v5.4.1/esp-idf/components/esp_event /home/abobkov/esp/v5.4.1/esp-idf/components/esp_gdbstub /home/abobkov/esp/v5.4.1/esp-idf/components/esp_hid /home/abobkov/esp/v5.4.1/esp-idf/components/esp_http_client /home/abobkov/esp/v5.4.1/esp-idf/components/esp_http_server /home/abobkov/esp/v5.4.1/esp-idf/components/esp_https_ota /home/abobkov/esp/v5.4.1/esp-idf/components/esp_https_server /home/abobkov/esp/v5.4.1/esp-idf/components/esp_hw_support /home/abobkov/esp/v5.4.1/esp-idf/components/esp_lcd /home/abobkov/esp/v5.4.1/esp-idf/components/esp_local_ctrl /home/abobkov/esp/v5.4.1/esp-idf/components/esp_mm /home/abobkov/esp/v5.4.1/esp-idf/components/esp_netif /home/abobkov/esp/v5.4.1/esp-idf/components/esp_netif_stack /home/abobkov/esp/v5.4.1/esp-idf/components/esp_partition /home/abobkov/esp/v5.4.1/esp-idf/components/esp_phy /home/abobkov/esp/v5.4.1/esp-idf/components/esp_pm /home/abobkov/esp/v5.4.1/esp-idf/components/esp_psram /home/abobkov/esp/v5.4.1/esp-idf/components/esp_ringbuf /home/abobkov/esp/v5.4.1/esp-idf/components/esp_rom /home/abobkov/esp/v5.4.1/esp-idf/components/esp_security /home/abobkov/esp/v5.4.1/esp-idf/components/esp_system /home/abobkov/esp/v5.4.1/esp-idf/components/esp_timer /home/abobkov/esp/v5.4.1/esp-idf/components/esp_vfs_console /home/abobkov/esp/v5.4.1/esp-idf/components/esp_wifi /home/abobkov/esp/v5.4.1/esp-idf/components/espcoredump /home/abobkov/esp/v5.4.1/esp-idf/components/esptool_py /home/abobkov/esp/v5.4.1/esp-idf/components/fatfs /home/abobkov/esp/v5.4.1/esp-idf/components/freertos /home/abobkov/esp/v5.4.1/esp-idf/components/hal /home/abobkov/esp/v5.4.1/esp-idf/components/heap /home/abobkov/esp/v5.4.1/esp-idf/components/http_parser /home/abobkov/esp/v5.4.1/esp-idf/components/idf_test /home/abobkov/esp/v5.4.1/esp-idf/components/ieee802154 /home/abobkov/esp/v5.4.1/esp-idf/components/json /home/abobkov/esp/v5.4.1/esp-idf/components/log /home/abobkov/esp/v5.4.1/esp-idf/components/lwip /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/main /home/abobkov/esp/v5.4.1/esp-idf/components/mbedtls /home/abobkov/esp/v5.4.1/esp-idf/components/mqtt /home/abobkov/esp/v5.4.1/esp-idf/components/newlib /home/abobkov/esp/v5.4.1/esp-idf/components/nvs_flash /home/abobkov/esp/v5.4.1/esp-idf/components/nvs_sec_provider /home/abobkov/esp/v5.4.1/esp-idf/components/openthread /home/abobkov/esp/v5.4.1/esp-idf/components/partition_table /home/abobkov/esp/v5.4.1/esp-idf/components/perfmon /home/abobkov/esp/v5.4.1/esp-idf/components/protobuf-c /home/abobkov/esp/v5.4.1/esp-idf/components/protocomm /home/abobkov/esp/v5.4.1/esp-idf/components/pthread /home/abobkov/esp/v5.4.1/esp-idf/components/rt /home/abobkov/esp/v5.4.1/esp-idf/components/sdmmc /home/abobkov/esp/v5.4.1/esp-idf/components/soc /home/abobkov/esp/v5.4.1/esp-idf/components/spi_flash /home/abobkov/esp/v5.4.1/esp-idf/components/spiffs /home/abobkov/esp/v5.4.1/esp-idf/components/tcp_transport /home/abobkov/esp/v5.4.1/esp-idf/components/touch_element /home/abobkov/esp/v5.4.1/esp-idf/components/ulp /home/abobkov/esp/v5.4.1/esp-idf/components/unity /home/abobkov/esp/v5.4.1/esp-idf/components/usb /home/abobkov/esp/v5.4.1/esp-idf/components/vfs /home/abobkov/esp/v5.4.1/esp-idf/components/wear_levelling /home/abobkov/esp/v5.4.1/esp-idf/components/wifi_provisioning /home/abobkov/esp/v5.4.1/esp-idf/components/wpa_supplicant /home/abobkov/esp/v5.4.1/esp-idf/components/xtensa
+-- Configuring done (7.3s)
+-- Generating done (1.6s)
+-- Build files have been written to: /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build
+[1/1004] Generating project_elf_src_esp32s2.c
+[2/1004] Generating /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/esp-idf/esp_system/ld/memory.ld linker script...
+[3/1004] Generating /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/esp-idf/esp_system/ld/sections.ld.in linker script...
+[4/1004] Generating ../../partition_table/partition-table.bin
+Partition table binary generated. Contents:
+*******************************************************************************
+# ESP-IDF Partition Table
+# Name, Type, SubType, Offset, Size, Flags
+nvs,data,nvs,0x9000,24K,
+phy_init,data,phy,0xf000,4K,
+factory,app,factory,0x10000,1M,
+*******************************************************************************
+[5/1004] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_main.c.obj
+[6/1004] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_sess.c.obj
+[7/1004] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_uri.c.obj
+[8/1004] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_txrx.c.obj
+[9/1004] Building C object esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/src/esp_https_ota.c.obj
+[10/1004] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_parse.c.obj
+[11/1004] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_ws.c.obj
+[12/1004] Linking C static library esp-idf/esp_https_ota/libesp_https_ota.a
+[13/1004] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.obj
+[14/1004] Linking C static library esp-idf/esp_http_server/libesp_http_server.a
+[15/1004] Building C object esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/lib/http_utils.c.obj
+[16/1004] Building C object esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/lib/http_header.c.obj
+[17/1004] Building C object esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/lib/http_auth.c.obj
+[18/1004] Building C object esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/transport.c.obj
+[19/1004] Building C object esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/transport_socks_proxy.c.obj
+[20/1004] Building C object esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/transport_ssl.c.obj
+[21/1004] Building C object esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/transport_internal.c.obj
+[22/1004] Building C object esp-idf/esp_gdbstub/CMakeFiles/__idf_esp_gdbstub.dir/src/gdbstub_transport.c.obj
+[23/1004] Building ASM object esp-idf/esp_gdbstub/CMakeFiles/__idf_esp_gdbstub.dir/src/port/xtensa/gdbstub-entry.S.obj
+[24/1004] Building C object esp-idf/esp_gdbstub/CMakeFiles/__idf_esp_gdbstub.dir/src/packet.c.obj
+[25/1004] Building C object esp-idf/esp_gdbstub/CMakeFiles/__idf_esp_gdbstub.dir/src/gdbstub.c.obj
+[26/1004] Building ASM object esp-idf/esp_gdbstub/CMakeFiles/__idf_esp_gdbstub.dir/src/port/xtensa/xt_debugexception.S.obj
+[27/1004] Building C object esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/esp_http_client.c.obj
+[28/1004] Building C object esp-idf/esp_gdbstub/CMakeFiles/__idf_esp_gdbstub.dir/src/port/xtensa/gdbstub_xtensa.c.obj
+[29/1004] Linking C static library esp-idf/esp_http_client/libesp_http_client.a
+[30/1004] Building C object esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_cali.c.obj
+[31/1004] Building C object esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_cali_curve_fitting.c.obj
+[32/1004] Building C object esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/deprecated/esp_adc_cal_common_legacy.c.obj
+[33/1004] Building C object esp-idf/tcp_transport/CMakeFiles/__idf_tcp_transport.dir/transport_ws.c.obj
+[34/1004] Building C object esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_oneshot.c.obj
+[35/1004] Linking C static library esp-idf/tcp_transport/libtcp_transport.a
+[36/1004] Building C object esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_common.c.obj
+[37/1004] Building C object esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_monitor.c.obj
+[38/1004] Building C object esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32s2/adc_cali_line_fitting.c.obj
+[39/1004] Building C object esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/esp32s2/adc_dma.c.obj
+[40/1004] Linking C static library esp-idf/esp_gdbstub/libesp_gdbstub.a
+[41/1004] Building C object esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_filter.c.obj
+[42/1004] Building C object esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/esp_tls_platform_port.c.obj
+[43/1004] Building C object esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/esp-tls-crypto/esp_tls_crypto.c.obj
+[44/1004] Building C object esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/esp_tls_error_capture.c.obj
+[45/1004] Building C object esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/deprecated/esp32s2/esp_adc_cal_legacy.c.obj
+[46/1004] Building C object esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir/adc_continuous.c.obj
+[47/1004] Building C object esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/src/lib_printf.c.obj
+[48/1004] Linking C static library esp-idf/esp_adc/libesp_adc.a
+[49/1004] Building C object esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/src/mesh_event.c.obj
+[50/1004] Building C object esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/src/smartconfig.c.obj
+[51/1004] Building C object esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/src/wifi_init.c.obj
+[52/1004] Building C object esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/src/wifi_default_ap.c.obj
+[53/1004] Building C object esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/src/wifi_netif.c.obj
+[54/1004] Building C object esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/src/wifi_default.c.obj
+[55/1004] Building C object esp-idf/http_parser/CMakeFiles/__idf_http_parser.dir/http_parser.c.obj
+[56/1004] Building C object esp-idf/esp_coex/CMakeFiles/__idf_esp_coex.dir/src/coexist_debug_diagram.c.obj
+[57/1004] Building C object esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/esp_tls_mbedtls.c.obj
+[58/1004] Building C object esp-idf/esp-tls/CMakeFiles/__idf_esp-tls.dir/esp_tls.c.obj
+[59/1004] Linking C static library esp-idf/esp-tls/libesp-tls.a
+[60/1004] Building C object esp-idf/esp_coex/CMakeFiles/__idf_esp_coex.dir/src/coexist_debug.c.obj
+[61/1004] Building C object esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/esp32s2/esp_adapter.c.obj
+[62/1004] Linking C static library esp-idf/http_parser/libhttp_parser.a
+[63/1004] Building C object esp-idf/esp_coex/CMakeFiles/__idf_esp_coex.dir/esp32s2/esp_coex_adapter.c.obj
+[64/1004] Building C object esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/src/smartconfig_ack.c.obj
+[65/1004] Building C object esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/port/os_xtensa.c.obj
+[66/1004] Linking C static library esp-idf/esp_wifi/libesp_wifi.a
+[67/1004] Building C object esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/src/ap/ieee802_1x.c.obj
+[68/1004] Building C object esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/port/eloop.c.obj
+[69/1004] Building C object esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/src/ap/ap_config.c.obj
+[70/1004] Building C object esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/src/ap/pmksa_cache_auth.c.obj
+[71/1004] Building C object esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/src/ap/sta_info.c.obj
+[72/1004] Building C object esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/src/ap/comeback_token.c.obj
+[73/1004] Building C object esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/src/ap/wpa_auth_ie.c.obj
+[74/1004] Building C object esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/src/ap/ieee802_11.c.obj
+[75/1004] Building C object esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/src/common/dragonfly.c.obj
+[76/1004] Building C object esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/src/ap/wpa_auth.c.obj
+[77/1004] Building C object esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/src/utils/bitfield.c.obj
