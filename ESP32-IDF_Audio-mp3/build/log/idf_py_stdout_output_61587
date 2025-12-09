@@ -14,3 +14,199 @@
 -- Adding linker script /home/abobkov/esp/v5.4.1/esp-idf/components/soc/esp32s2/ld/esp32s2.peripherals.ld
 -- Components: app_trace app_update bootloader bootloader_support bt cmock console cxx driver efuse esp-tls esp_adc esp_app_format esp_bootloader_format esp_coex esp_common esp_driver_ana_cmpr esp_driver_cam esp_driver_dac esp_driver_gpio esp_driver_gptimer esp_driver_i2c esp_driver_i2s esp_driver_isp esp_driver_jpeg esp_driver_ledc esp_driver_mcpwm esp_driver_parlio esp_driver_pcnt esp_driver_ppa esp_driver_rmt esp_driver_sdio esp_driver_sdm esp_driver_sdmmc esp_driver_sdspi esp_driver_spi esp_driver_touch_sens esp_driver_tsens esp_driver_uart esp_driver_usb_serial_jtag esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_security esp_system esp_timer esp_vfs_console esp_wifi espcoredump esptool_py fatfs freertos hal heap http_parser idf_test ieee802154 json log lwip main mbedtls mqtt newlib nvs_flash nvs_sec_provider openthread partition_table perfmon protobuf-c protocomm pthread rt sdmmc soc spi_flash spiffs tcp_transport touch_element ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant xtensa
 -- Component paths: /home/abobkov/esp/v5.4.1/esp-idf/components/app_trace /home/abobkov/esp/v5.4.1/esp-idf/components/app_update /home/abobkov/esp/v5.4.1/esp-idf/components/bootloader /home/abobkov/esp/v5.4.1/esp-idf/components/bootloader_support /home/abobkov/esp/v5.4.1/esp-idf/components/bt /home/abobkov/esp/v5.4.1/esp-idf/components/cmock /home/abobkov/esp/v5.4.1/esp-idf/components/console /home/abobkov/esp/v5.4.1/esp-idf/components/cxx /home/abobkov/esp/v5.4.1/esp-idf/components/driver /home/abobkov/esp/v5.4.1/esp-idf/components/efuse /home/abobkov/esp/v5.4.1/esp-idf/components/esp-tls /home/abobkov/esp/v5.4.1/esp-idf/components/esp_adc /home/abobkov/esp/v5.4.1/esp-idf/components/esp_app_format /home/abobkov/esp/v5.4.1/esp-idf/components/esp_bootloader_format /home/abobkov/esp/v5.4.1/esp-idf/components/esp_coex /home/abobkov/esp/v5.4.1/esp-idf/components/esp_common /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_ana_cmpr /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_cam /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_dac /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_gpio /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_gptimer /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_i2c /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_i2s /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_isp /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_jpeg /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_ledc /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_mcpwm /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_parlio /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_pcnt /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_ppa /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_rmt /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_sdio /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_sdm /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_sdmmc /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_sdspi /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_spi /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_touch_sens /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_tsens /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_uart /home/abobkov/esp/v5.4.1/esp-idf/components/esp_driver_usb_serial_jtag /home/abobkov/esp/v5.4.1/esp-idf/components/esp_eth /home/abobkov/esp/v5.4.1/esp-idf/components/esp_event /home/abobkov/esp/v5.4.1/esp-idf/components/esp_gdbstub /home/abobkov/esp/v5.4.1/esp-idf/components/esp_hid /home/abobkov/esp/v5.4.1/esp-idf/components/esp_http_client /home/abobkov/esp/v5.4.1/esp-idf/components/esp_http_server /home/abobkov/esp/v5.4.1/esp-idf/components/esp_https_ota /home/abobkov/esp/v5.4.1/esp-idf/components/esp_https_server /home/abobkov/esp/v5.4.1/esp-idf/components/esp_hw_support /home/abobkov/esp/v5.4.1/esp-idf/components/esp_lcd /home/abobkov/esp/v5.4.1/esp-idf/components/esp_local_ctrl /home/abobkov/esp/v5.4.1/esp-idf/components/esp_mm /home/abobkov/esp/v5.4.1/esp-idf/components/esp_netif /home/abobkov/esp/v5.4.1/esp-idf/components/esp_netif_stack /home/abobkov/esp/v5.4.1/esp-idf/components/esp_partition /home/abobkov/esp/v5.4.1/esp-idf/components/esp_phy /home/abobkov/esp/v5.4.1/esp-idf/components/esp_pm /home/abobkov/esp/v5.4.1/esp-idf/components/esp_psram /home/abobkov/esp/v5.4.1/esp-idf/components/esp_ringbuf /home/abobkov/esp/v5.4.1/esp-idf/components/esp_rom /home/abobkov/esp/v5.4.1/esp-idf/components/esp_security /home/abobkov/esp/v5.4.1/esp-idf/components/esp_system /home/abobkov/esp/v5.4.1/esp-idf/components/esp_timer /home/abobkov/esp/v5.4.1/esp-idf/components/esp_vfs_console /home/abobkov/esp/v5.4.1/esp-idf/components/esp_wifi /home/abobkov/esp/v5.4.1/esp-idf/components/espcoredump /home/abobkov/esp/v5.4.1/esp-idf/components/esptool_py /home/abobkov/esp/v5.4.1/esp-idf/components/fatfs /home/abobkov/esp/v5.4.1/esp-idf/components/freertos /home/abobkov/esp/v5.4.1/esp-idf/components/hal /home/abobkov/esp/v5.4.1/esp-idf/components/heap /home/abobkov/esp/v5.4.1/esp-idf/components/http_parser /home/abobkov/esp/v5.4.1/esp-idf/components/idf_test /home/abobkov/esp/v5.4.1/esp-idf/components/ieee802154 /home/abobkov/esp/v5.4.1/esp-idf/components/json /home/abobkov/esp/v5.4.1/esp-idf/components/log /home/abobkov/esp/v5.4.1/esp-idf/components/lwip /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/main /home/abobkov/esp/v5.4.1/esp-idf/components/mbedtls /home/abobkov/esp/v5.4.1/esp-idf/components/mqtt /home/abobkov/esp/v5.4.1/esp-idf/components/newlib /home/abobkov/esp/v5.4.1/esp-idf/components/nvs_flash /home/abobkov/esp/v5.4.1/esp-idf/components/nvs_sec_provider /home/abobkov/esp/v5.4.1/esp-idf/components/openthread /home/abobkov/esp/v5.4.1/esp-idf/components/partition_table /home/abobkov/esp/v5.4.1/esp-idf/components/perfmon /home/abobkov/esp/v5.4.1/esp-idf/components/protobuf-c /home/abobkov/esp/v5.4.1/esp-idf/components/protocomm /home/abobkov/esp/v5.4.1/esp-idf/components/pthread /home/abobkov/esp/v5.4.1/esp-idf/components/rt /home/abobkov/esp/v5.4.1/esp-idf/components/sdmmc /home/abobkov/esp/v5.4.1/esp-idf/components/soc /home/abobkov/esp/v5.4.1/esp-idf/components/spi_flash /home/abobkov/esp/v5.4.1/esp-idf/components/spiffs /home/abobkov/esp/v5.4.1/esp-idf/components/tcp_transport /home/abobkov/esp/v5.4.1/esp-idf/components/touch_element /home/abobkov/esp/v5.4.1/esp-idf/components/ulp /home/abobkov/esp/v5.4.1/esp-idf/components/unity /home/abobkov/esp/v5.4.1/esp-idf/components/usb /home/abobkov/esp/v5.4.1/esp-idf/components/vfs /home/abobkov/esp/v5.4.1/esp-idf/components/wear_levelling /home/abobkov/esp/v5.4.1/esp-idf/components/wifi_provisioning /home/abobkov/esp/v5.4.1/esp-idf/components/wpa_supplicant /home/abobkov/esp/v5.4.1/esp-idf/components/xtensa
+-- Configuring done (7.2s)
+-- Generating done (1.2s)
+-- Build files have been written to: /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build
+[1/11] Building C object esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj
+[2/11] Performing build step for 'bootloader'
+[1/1] cd /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/bootloader/esp-idf/esptool_py && /home/abobkov/.espressif/python_env/idf5.4_py3.13_env/bin/python /home/abobkov/esp/v5.4.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/bootloader/bootloader.bin
+Bootloader binary size 0x5540 bytes. 0x1ac0 bytes (24%) free.
+[3/11] Linking C static library esp-idf/esp_app_format/libesp_app_format.a
+[4/11] No install step for 'bootloader'
+[5/11] Completed 'bootloader'
+[6/11] Generating ld/sections.ld
+[7/11] Linking CXX executable esp32_mp3_streamer.elf
+[8/11] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32s2 image...
+Merged 2 ELF sections
+Successfully created esp32s2 image.
+Generated /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/esp32_mp3_streamer.bin
+[9/11] cd /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/esp-idf/esptool_py && /home/abobkov/.espressif/python_env/idf5.4_py3.13_env/bin/python /home/abobkov/esp/v5.4.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/partition_table/partition-table.bin /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/esp32_mp3_streamer.bin
+esp32_mp3_streamer.bin binary size 0xd7430 bytes. Smallest app partition is 0x100000 bytes. 0x28bd0 bytes (16%) free.
+[9/11] cd /home/abobkov/esp/v5.4.1/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/abobkov/esp/v5.4.1/esp-idf -D "SERIAL_TOOL=/home/abobkov/.espressif/python_env/idf5.4_py3.13_env/bin/python;;/home/abobkov/esp/v5.4.1/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32s2" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build -P /home/abobkov/esp/v5.4.1/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32s2 -p /dev/ttyACM0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 esp32_mp3_streamer.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.8.1
+Serial port /dev/ttyACM0
+Connecting...
+Chip is ESP32-S2FNR2 (revision v1.0)
+Features: WiFi, Embedded Flash 4MB, Embedded PSRAM 2MB, ADC and temperature sensor calibration in BLK2 of efuse V2
+Crystal is 40MHz
+MAC: 80:65:99:4f:7b:6c
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00006fff...
+Flash will be erased from 0x00010000 to 0x000e7fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 21824 bytes to 13809...
+Writing at 0x00001000... (14 %)
+Writing at 0x0000235e... (28 %)
+Writing at 0x00002ff9... (42 %)
+Writing at 0x00003bba... (57 %)
+Writing at 0x00004696... (71 %)
+Writing at 0x0000508d... (85 %)
+Writing at 0x00005bf0... (100 %)
+Wrote 21824 bytes (13809 compressed) at 0x00001000 in 0.3 seconds (effective 689.9 kbit/s)...
+Hash of data verified.
+Compressed 881712 bytes to 555524...
+Writing at 0x00010000... (0 %)
+Writing at 0x0001112b... (0 %)
+Writing at 0x00012cee... (1 %)
+Writing at 0x0001456d... (1 %)
+Writing at 0x00015d2e... (1 %)
+Writing at 0x000176d8... (2 %)
+Writing at 0x0001948b... (2 %)
+Writing at 0x0001ab9e... (2 %)
+Writing at 0x0001c40d... (3 %)
+Writing at 0x0001df80... (3 %)
+Writing at 0x0001f645... (4 %)
+Writing at 0x000216ef... (4 %)
+Writing at 0x00022744... (4 %)
+Writing at 0x000236cc... (5 %)
+Writing at 0x00024311... (5 %)
+Writing at 0x00024f80... (5 %)
+Writing at 0x000264a2... (6 %)
+Writing at 0x00026ea4... (6 %)
+Writing at 0x00027aa8... (6 %)
+Writing at 0x00028be5... (7 %)
+Writing at 0x0002a0d4... (7 %)
+Writing at 0x0002b353... (8 %)
+Writing at 0x0002c864... (8 %)
+Writing at 0x0002de32... (8 %)
+Writing at 0x0002f89d... (9 %)
+Writing at 0x00030e6a... (9 %)
+Writing at 0x00032d6f... (9 %)
+Writing at 0x00034197... (10 %)
+Writing at 0x00035389... (10 %)
+Writing at 0x00035f3a... (11 %)
+Writing at 0x000369d6... (11 %)
+Writing at 0x000375b1... (11 %)
+Writing at 0x00038124... (12 %)
+Writing at 0x00038cf1... (12 %)
+Writing at 0x000397af... (12 %)
+Writing at 0x0003a4aa... (13 %)
+Writing at 0x0003b116... (13 %)
+Writing at 0x0003bd15... (13 %)
+Writing at 0x0003ca81... (14 %)
+Writing at 0x0003d630... (14 %)
+Writing at 0x0003e1bd... (15 %)
+Writing at 0x0003ed60... (15 %)
+Writing at 0x0003fc43... (15 %)
+Writing at 0x0004081a... (16 %)
+Writing at 0x00041458... (16 %)
+Writing at 0x00042044... (16 %)
+Writing at 0x00042b25... (17 %)
+Writing at 0x0004365a... (17 %)
+Writing at 0x00044051... (18 %)
+Writing at 0x00044c32... (18 %)
+Writing at 0x00045925... (18 %)
+Writing at 0x00046392... (19 %)
+Writing at 0x00046f52... (19 %)
+Writing at 0x00047ac2... (19 %)
+Writing at 0x0004871b... (20 %)
+Writing at 0x00049500... (20 %)
+Writing at 0x0004a05b... (20 %)
+Writing at 0x0004ac31... (21 %)
+Writing at 0x0004b873... (21 %)
+Writing at 0x0004c299... (22 %)
+Writing at 0x0004cf37... (22 %)
+Writing at 0x0004d9fa... (22 %)
+Writing at 0x0004e438... (23 %)
+Writing at 0x0004f13d... (23 %)
+Writing at 0x0004fd07... (23 %)
+Writing at 0x00050983... (24 %)
+Writing at 0x00051511... (24 %)
+Writing at 0x000521af... (25 %)
+Writing at 0x00052d11... (25 %)
+Writing at 0x000538b1... (25 %)
+Writing at 0x000543a7... (26 %)
+Writing at 0x00054ff8... (26 %)
+Writing at 0x00055a6d... (26 %)
+Writing at 0x0005663e... (27 %)
+Writing at 0x00057162... (27 %)
+Writing at 0x00057c9b... (27 %)
+Writing at 0x00058885... (28 %)
+Writing at 0x00059484... (28 %)
+Writing at 0x0005a006... (29 %)
+Writing at 0x0005acd8... (29 %)
+Writing at 0x0005b9d8... (29 %)
+Writing at 0x0005c557... (30 %)
+Writing at 0x0005d0b9... (30 %)
+Writing at 0x0005dd3a... (30 %)
+Writing at 0x0005e935... (31 %)
+Writing at 0x0005f5df... (31 %)
+Writing at 0x000600ca... (31 %)
+Writing at 0x00060be7... (32 %)
+Writing at 0x0006176a... (32 %)
+Writing at 0x00062368... (33 %)
+Writing at 0x00062f5f... (33 %)
+Writing at 0x00063bb7... (33 %)
+Writing at 0x00064661... (34 %)
+Writing at 0x00065250... (34 %)
+Writing at 0x00066200... (34 %)
+Writing at 0x00066ef3... (35 %)
+Writing at 0x000678de... (35 %)
+Writing at 0x0006825f... (36 %)
+Writing at 0x00068bea... (36 %)
+Writing at 0x0006963a... (36 %)
+Writing at 0x00069fed... (37 %)
+Writing at 0x0006a94b... (37 %)
+Writing at 0x0006b324... (37 %)
+Writing at 0x0006bcf1... (38 %)
+Writing at 0x0006c68b... (38 %)
+Writing at 0x0006d0b2... (38 %)
+Writing at 0x0006dac0... (39 %)
+Writing at 0x0006e4e8... (39 %)
+Writing at 0x0006ef08... (40 %)
+Writing at 0x0006f908... (40 %)
+Writing at 0x000702b6... (40 %)
+Writing at 0x00070c8e... (41 %)
+Writing at 0x000716a0... (41 %)
+Writing at 0x00072075... (41 %)
+Writing at 0x00072c6e... (42 %)
+Writing at 0x00073805... (42 %)
+Writing at 0x000742aa... (43 %)
+Writing at 0x00074d45... (43 %)
+Writing at 0x000756ff... (43 %)
+Writing at 0x0007612a... (44 %)
+Writing at 0x00076a7b... (44 %)
+Writing at 0x00077721... (44 %)
+Writing at 0x000781d9... (45 %)
+Writing at 0x00078d13... (45 %)
+Writing at 0x000796ff... (45 %)
+Writing at 0x0007a1e1... (46 %)
+Writing at 0x0007ac72... (46 %)
+Writing at 0x0007b63c... (47 %)
+Writing at 0x0007c0b2... (47 %)
+Writing at 0x0007ca0f... (47 %)
+Writing at 0x0007d3ae... (48 %)
+Writing at 0x0007dd52... (48 %)
+Writing at 0x0007e7e5... (48 %)
+Writing at 0x0007f285... (49 %)
+Writing at 0x0007fc7d... (49 %)
+Writing at 0x00080659... (50 %)
+Writing at 0x0008103e... (50 %)
+Writing at 0x00081ad1... (50 %)
+Writing at 0x00082428... (51 %)
+Writing at 0x00082e53... (51 %)
+Writing at 0x00083a36... (51 %)
+Writing at 0x00084429... (52 %)
+Writing at 0x00084e5c... (52 %)
+Writing at 0x0008597c... (52 %)
+Writing at 0x000863cd... (53 %)
+Writing at 0x00086e63... (53 %)
