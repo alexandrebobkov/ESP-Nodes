@@ -355,6 +355,9 @@ PYTHON:UNINITIALIZED=/home/alex/.espressif/python_env/idf5.4_py3.13_env/bin/pyth
 //No help, variable specified on the command line.
 PYTHON_DEPS_CHECKED:UNINITIALIZED=1
 
+//No help, variable specified on the command line.
+SDKCONFIG:UNINITIALIZED=/home/alex/github/ESP-Nodes/ESP32-IDF_Audio-mp3/sdkconfig
+
 //Allow unsafe builds. These builds ARE NOT SECURE.
 UNSAFE_BUILD:BOOL=OFF
 
