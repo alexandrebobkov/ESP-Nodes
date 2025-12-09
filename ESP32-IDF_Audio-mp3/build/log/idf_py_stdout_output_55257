@@ -1145,3 +1145,26 @@ factory,app,factory,0x10000,1M,
 [109/115] Linking C static library esp-idf/micro-ecc/libmicro-ecc.a
 [110/115] Linking C static library esp-idf/soc/libsoc.a
 [111/115] Linking C static library esp-idf/xtensa/libxtensa.a
+[112/115] Linking C static library esp-idf/main/libmain.a
+[113/115] Linking C executable bootloader.elf
+[114/115] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32s2 image...
+Merged 2 ELF sections
+Successfully created esp32s2 image.
+Generated /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/bootloader/bootloader.bin
+[115/115] cd /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/bootloader/esp-idf/esptool_py && /home/abobkov/.espressif/python_env/idf5.4_py3.13_env/bin/python /home/abobkov/esp/v5.4.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/bootloader/bootloader.bin
+Bootloader binary size 0x5540 bytes. 0x1ac0 bytes (24%) free.
+[997/1003] No install step for 'bootloader'
+[998/1003] Completed 'bootloader'
+[999/1003] Generating ld/sections.ld
+[1000/1003] Building C object CMakeFiles/esp32_mp3_streamer.elf.dir/project_elf_src_esp32s2.c.obj
+[1001/1003] Linking CXX executable esp32_mp3_streamer.elf
+[1002/1003] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32s2 image...
+Merged 2 ELF sections
+Successfully created esp32s2 image.
+Generated /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/esp32_mp3_streamer.bin
+[1003/1003] cd /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/esp-idf/esptool_py && /home/abobkov/.espressif/python_env/idf5.4_py3.13_env/bin/python /home/abobkov/esp/v5.4.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/partition_table/partition-table.bin /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Audio-mp3/build/esp32_mp3_streamer.bin
+esp32_mp3_streamer.bin binary size 0xd7430 bytes. Smallest app partition is 0x100000 bytes. 0x28bd0 bytes (16%) free.
