@@ -122,7 +122,9 @@ void mqttronix_update_temp (float temp) {
 }
 void mqttronix_update_humidity (float humidity) { 
     //humidity_value = humidity;
-    snprintf(humidity_str, sizeof(humidity_str), "%.0f", humidity);
+    if (humidity >= 0.0f && humidity <= 100.0f) {
+        snprintf(humidity_str, sizeof(humidity_str), "%.0f", humidity);
+    }
 }
 void mqttronix_update_pressure (float pressure) { 
     //pressure_value = pressure;
