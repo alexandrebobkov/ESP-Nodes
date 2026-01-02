@@ -80,7 +80,7 @@ void read_sensors_task(void *arg)
         mqttronix_update_humidity (humidity);
         mqttronix_update_pressure (pressure);
         //printf("read_sensors_task %.1f, %.2f, %.2f \n", temperature, humidity, pressure);
-        vTaskDelay(1000/portTICK_PERIOD_MS);
+        vTaskDelay(5000/portTICK_PERIOD_MS);
     }
 }
 
