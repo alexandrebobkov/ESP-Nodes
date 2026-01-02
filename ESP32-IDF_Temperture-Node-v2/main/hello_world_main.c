@@ -72,6 +72,7 @@ void read_sensors_task(void *arg)
     while (1) {
         // Take a forced measurement
         bme280_take_forced_measurement(bme280);
+        vTaskDelay(250 / portTICK_PERIOD_MS);
         // Read temperature, humidity, and pressure values and save them into the variables
         bme280_read_temperature(bme280, &temperature);
         bme280_read_humidity(bme280, &humidity);
