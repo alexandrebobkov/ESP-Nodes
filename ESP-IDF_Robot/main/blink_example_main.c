@@ -351,6 +351,9 @@ static void rc_task (void *arg) {
 static float clampf (float val, float min, float max) {
     return (val < min) ? min : (val > max) ? max : val;
 }
+void joystick_mix (int X_raw, int Y_raw, int *pwm_a, int *pwm_b) {
+    
+}
 static void display_xy() {
     while (true) {
         ESP_LOGI("x,y", "( %d, %d ) [ %d, %d] ", rc_x, rc_y, x, y);
