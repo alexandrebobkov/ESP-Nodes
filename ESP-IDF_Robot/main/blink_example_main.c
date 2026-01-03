@@ -347,12 +347,17 @@ static void rc_task (void *arg) {
         //vTaskDelay (1000 / portTICK_PERIOD_MS);
     }
 }
+/* UPDATED MOTOR LOGIC */
+static float clampf (float val, float min, float max) {
+    return (val < min) ? min : (val > max) ? max : val;
+}
 static void display_xy() {
     while (true) {
         ESP_LOGI("x,y", "( %d, %d ) [ %d, %d] ", rc_x, rc_y, x, y);
         ESP_LOGI("PWM", "M1: %d, M2: %d, M3: %d, M4: %d", 
             m.motor1_rpm_pcm, m.motor2_rpm_pcm, 
             m.motor3_rpm_pcm, m.motor4_rpm_pcm);
+        
         uint8_t channel;
         wifi_band_t band;
         esp_wifi_get_channel(&channel, NULL);
