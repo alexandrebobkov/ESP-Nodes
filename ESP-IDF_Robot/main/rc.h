@@ -160,7 +160,7 @@ static void update_pwm (int rc_x, int rc_y) {
     }*/
     // FORWARD AND REVERSE
     //if ((x > 1500) && (y > 700 && y < 850)) {
-    /*/*modified Jan 3*/
+    /*/*modified Jan 3
     else if ((x > 1500) && (y > -2500 && y < 2500)) {
         //ESP_LOGW("ESP-NOW", "FORWARD");
         // Both sides rotate in forward direction.
