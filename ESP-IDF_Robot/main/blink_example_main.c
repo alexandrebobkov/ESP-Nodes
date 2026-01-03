@@ -383,6 +383,7 @@ void onDataReceived (const uint8_t *mac_addr, const uint8_t *data, uint8_t data_
     memcpy(&buf, data, sizeof(buf));    // Write buffer into the struct
     rc_x = buf.x_axis;                  // Save joystic x-axis value
     rc_y = buf.y_axis;                  // Save joystic y-axis value
+    // Update motors PWM values
     m.motor1_rpm_pcm = buf.motor1_rpm_pcm;
     m.motor2_rpm_pcm = buf.motor2_rpm_pcm;
     m.motor3_rpm_pcm = buf.motor3_rpm_pcm;
