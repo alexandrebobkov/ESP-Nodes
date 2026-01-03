@@ -202,6 +202,12 @@ static void update_pwm (int rc_x, int rc_y) {
         m.motor4_rpm_pcm = 0;
     }
 
+    /* UPDATED MOTOR LOGOC */
+    m.motor1_rpm_pcm = 0;
+    m.motor2_rpm_pcm = 0;
+    m.motor3_rpm_pcm = 0;
+    m.motor4_rpm_pcm = 0;
+
     ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, m.motor1_rpm_pcm);
     ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT);
     ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT, m.motor2_rpm_pcm);
