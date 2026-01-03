@@ -379,6 +379,7 @@ void onDataReceived (const uint8_t *mac_addr, const uint8_t *data, uint8_t data_
     memcpy(&buf, data, sizeof(buf));    // Write buffer into the struct
     rc_x = buf.x_axis;                  // Save joystic x-axis value
     rc_y = buf.y_axis;                  // Save joystic y-axis value
+    
     update_pwm(rc_x, rc_y);
     mqtt_update_pwm_1(rc_x);            // Publish PWM-1 on MQTT Broker
     mqtt_update_pwm_2(rc_y);            // Publish PWM-2 on MQTT Broker
