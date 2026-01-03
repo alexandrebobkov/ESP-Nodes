@@ -339,17 +339,6 @@ static void temp_sensor_task (void *arg) {
         vTaskDelay(5000 / portTICK_PERIOD_MS);
     }
 }
-// Task function to read joystick values and update motors rotation speeds.
-static void rc_task (void *arg) {
-    while (true) {
-        // update_pwm (rc_x, rc_y);     // Orginal motor update logic
-        joystick_mix (rc_y, rc_x, &pwm_motor_1, &pwm_motor_2);
-        update_motors_pwm (pwm_motor_1, pwm_motor_2);   // Revised motor update logic
-        //ESP_LOGI("x,y", "( %d, %d ) [ %d, %d] ", rc_x, rc_y, x, y);
-        vTaskDelay (100 / portTICK_PERIOD_MS);  // Determines responsiveness
-        //vTaskDelay (1000 / portTICK_PERIOD_MS);
-    }
-}
 /* UPDATED MOTOR LOGIC */
 static float clampf (float val, float min, float max) {
     return (val < min) ? min : (val > max) ? max : val;
@@ -377,6 +366,17 @@ void joystick_mix (int X_raw, int Y_raw, int *pwm_a, int *pwm_b) {
     // 6. Clamp and output as integers
     *pwm_a = (int)clampf(L_scaled, -8191.0f, 8190.0f);
     *pwm_b = (int)clampf(R_scaled, -8191.0f, 8190.0f);
+}
+// Task function to read joystick values and update motors rotation speeds.
+static void rc_task (void *arg) {
+    while (true) {
+        // update_pwm (rc_x, rc_y);     // Orginal motor update logic
+        joystick_mix (rc_y, rc_x, &pwm_motor_1, &pwm_motor_2);
+        update_motors_pwm (pwm_motor_1, pwm_motor_2);   // Revised motor update logic
+        //ESP_LOGI("x,y", "( %d, %d ) [ %d, %d] ", rc_x, rc_y, x, y);
+        vTaskDelay (100 / portTICK_PERIOD_MS);  // Determines responsiveness
+        //vTaskDelay (1000 / portTICK_PERIOD_MS);
+    }
 }
 static void display_xy() {
     while (true) {
