@@ -143,6 +143,10 @@ static uint8_t rc_mac[ESP_NOW_ETH_ALEN]         = {0x34, 0xB7, 0xDA, 0xF9, 0x33,
 static uint8_t espnow_seq[ESPNOW_DATA_MAX]      = {0, 0};
 
 static int rc_x = 0, rc_y = 0;
+static int pwm_motor_1 = 0;
+static int pwm_motor_2 = 0;
+static int pwm_motor_3 = 0;
+static int pwm_motor_4 = 0;
 
 //uint8_t broadcastAddress[] = {};
 //struct_message controlData;
@@ -379,7 +383,7 @@ void onDataReceived (const uint8_t *mac_addr, const uint8_t *data, uint8_t data_
     memcpy(&buf, data, sizeof(buf));    // Write buffer into the struct
     rc_x = buf.x_axis;                  // Save joystic x-axis value
     rc_y = buf.y_axis;                  // Save joystic y-axis value
-    
+    buf.motor1_rpm_pcm;
     update_pwm(rc_x, rc_y);
     mqtt_update_pwm_1(rc_x);            // Publish PWM-1 on MQTT Broker
     mqtt_update_pwm_2(rc_y);            // Publish PWM-2 on MQTT Broker
