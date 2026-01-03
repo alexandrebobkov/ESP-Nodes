@@ -343,6 +343,7 @@ static void temp_sensor_task (void *arg) {
 static void rc_task (void *arg) {
     while (true) {
         // update_pwm (rc_x, rc_y);     // Orginal motor update logic
+        joystick_mix (rc_y, rc_x, &pwm_motor_1, &pwm_motor_2);
         update_motors_pwm (pwm_motor_1, pwm_motor_2);   // Revised motor update logic
         //ESP_LOGI("x,y", "( %d, %d ) [ %d, %d] ", rc_x, rc_y, x, y);
         vTaskDelay (100 / portTICK_PERIOD_MS);  // Determines responsiveness
