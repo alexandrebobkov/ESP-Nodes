@@ -212,7 +212,7 @@ static void update_pwm (int rc_x, int rc_y) {
     ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT_REV, m.motor4_rpm_pcm);
     ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT_REV);
 
-    ESP_LOGW("UPDATED MOTORS PWMs");
+    ESP_LOGW("MTR LGC", "UPDATED MOTORS PWMs");
 }
 
 /*static void rc_get_raw_data() {
