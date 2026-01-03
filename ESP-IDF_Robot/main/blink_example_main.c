@@ -352,7 +352,6 @@ static float clampf (float val, float min, float max) {
     return (val < min) ? min : (val > max) ? max : val;
 }
 void joystick_mix (int X_raw, int Y_raw, int *pwm_a, int *pwm_b) {
-    // 1. Normalize joystick to [-1 .. +1] float x = (float)(X_raw - 1020) / 1020.0f; float y = (float)(Y_raw - 1020) / 1020.0f; // 2. Differential mix with smooth steering float L0 = y + STEERING_GAIN * x; float R0 = y - STEERING_GAIN * x; // 3. Normalize pair so neither exceeds magnitude 1 float m = fmaxf(1.0f, fmaxf(fabsf(L0), fabsf(R0))); float L = L0 / m; float R = R0 / m; // 4. Scale to signed PWM range float L_scaled = L * (float)PWM_MAX; float R_scaled = R * (float)PWM_MAX; // 5. Clamp and output *PWM_A = (int)clampf(L_scaled, (float)PWM_MIN, (float)PWM_MAX); *PWM_B = (int)clampf(R_scaled, (float)PWM_MIN, (float)PWM_MAX);
 }
 static void display_xy() {
     while (true) {
