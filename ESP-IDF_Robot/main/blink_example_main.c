@@ -26,6 +26,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <inttypes.h>
+#include <math.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/queue.h"
@@ -364,7 +365,8 @@ void joystick_mix (int X_raw, int Y_raw, int *pwm_a, int *pwm_b) {
     
     // 4. Normalize pair so neither exceeds magnitude 1
     float m = fmaxf(1.0f, fmaxf(fabsf(L0), fabsf(R0)));
-    float L = L0 / m; float R = R0 / m;
+    float L = L0 / m;
+    float R = R0 / m;
     
     // 5. Scale to signed PWM range [-8191 .. +8190]
     float L_scaled = L * 8190.0f;
