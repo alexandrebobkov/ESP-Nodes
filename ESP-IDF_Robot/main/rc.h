@@ -160,7 +160,7 @@ static void update_pwm (int rc_x, int rc_y) {
     }*/
     // FORWARD AND REVERSE
     //if ((x > 1500) && (y > 700 && y < 850)) {
-    /*/*modified Jan 3
+    
     else if ((x > 1500) && (y > -2500 && y < 2500)) {
         //ESP_LOGW("ESP-NOW", "FORWARD");
         // Both sides rotate in forward direction.
@@ -201,33 +201,21 @@ static void update_pwm (int rc_x, int rc_y) {
         m.motor2_rpm_pcm = 0;
         m.motor3_rpm_pcm = 0;
         m.motor4_rpm_pcm = 0;
-    }*/
+    }
 
-    /* UPDATED MOTOR LOGIC */
-    if (pwm_motor_1 >= 0 && pwm_motor_2 >= 0) {
-        m.motor1_rpm_pcm = pwm_motor_1;
-        m.motor2_rpm_pcm = pwm_motor_2;
-        m.motor3_rpm_pcm = 0;
-        m.motor4_rpm_pcm = 0;
-    }
-    if (pwm_motor_1 > 0 && pwm_motor_2 < 0) {
-        m.motor1_rpm_pcm = pwm_motor_1;
-        m.motor2_rpm_pcm = 0;
-        m.motor3_rpm_pcm = -pwm_motor_2;
-        m.motor4_rpm_pcm = 0;
-    }
-    if (pwm_motor_1 < 0 && pwm_motor_2 > 0) {
-        m.motor1_rpm_pcm = 0;
-        m.motor2_rpm_pcm = -pwm_motor_1;
-        m.motor3_rpm_pcm = 0;
-        m.motor4_rpm_pcm = pwm_motor_2;
-    }
-    if (pwm_motor_1 < 0 && pwm_motor_2 < 0) {
-        m.motor1_rpm_pcm = 0;
-        m.motor2_rpm_pcm = 0;
-        m.motor3_rpm_pcm = -pwm_motor_1;
-        m.motor4_rpm_pcm = -pwm_motor_2;
-    }
+    ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, m.motor1_rpm_pcm);
+    ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT);
+    ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT, m.motor2_rpm_pcm);
+    ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT);
+
+    ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT_REV, m.motor3_rpm_pcm);
+    ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT_REV);
+    ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT_REV, m.motor4_rpm_pcm);
+    ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT_REV);
+
+}
+
+static void update_motors_pwm (int rc_x, int rc_y) {
 
     ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, m.motor1_rpm_pcm);
     ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT);
