@@ -6,20 +6,16 @@
 #include "esp_wifi.h"
 
 typedef struct {
-    int x_axis;
-    int y_axis;
-    int motor1_rpm_pcm;
-    int motor2_rpm_pcm;
-    int motor3_rpm_pcm;
-    int motor4_rpm_pcm;
-} sensors_data_t;
+    int x_axis;  // Joystick X (rc_x)
+    int y_axis;  // Joystick Y (rc_y)
+} espnow_joystick_data_t;
 
 // Forward declaration
 typedef struct espnow_system_t espnow_system_t;
 
 // Struct definition
 struct espnow_system_t {
-    sensors_data_t last_data;
+    espnow_joystick_data_t last_data;
     int last_len;
 
     void (*send)(espnow_system_t *self, const uint8_t *data, int len);
