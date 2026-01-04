@@ -37,6 +37,21 @@ static void telemetry_bridge_task(void *arg) {
     }
 }
 
+// Display task to show current joystick values
+static void display_joystick_task(void *arg) {
+    espnow_system_t *espnow = (espnow_system_t *)arg;
+
+    while (1) {
+        ESP_LOGI("DISPLAY", "╔════════════════════════════════════╗");
+        ESP_LOGI("DISPLAY", "║   CURRENT JOYSTICK VALUES          ║");
+        ESP_LOGI("DISPLAY", "║   X-axis: %-8d                ║", espnow->last_data.x_axis);
+        ESP_LOGI("DISPLAY", "║   Y-axis: %-8d                ║", espnow->last_data.y_axis);
+        ESP_LOGI("DISPLAY", "╚════════════════════════════════════╝");
+
+        vTaskDelay(pdMS_TO_TICKS(2000));  // Display every 2 seconds
+    }
+}
+
 void app_main(void)
 {
     // System-level initialization
