@@ -52,5 +52,5 @@ void espnow_system_init(espnow_system_t *sys)
     ESP_ERROR_CHECK(esp_now_init());
     ESP_ERROR_CHECK(esp_now_register_recv_cb(espnow_recv_cb));
 
-    ESP_LOGI(TAG, "ESP-NOW initialized");
+    ESP_LOGI(TAG, "ESP-NOW initialized and waiting for data...");
 }
