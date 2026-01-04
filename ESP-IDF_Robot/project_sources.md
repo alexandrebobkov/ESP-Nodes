@@ -1,4 +1,4 @@
 # Project Source Archive
 
-Generated for analysis.
+Generated automatically for analysis.
 
