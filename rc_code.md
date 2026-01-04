@@ -105,7 +105,7 @@ void system_init(void) {
 }
 ```
 
-## scheduled.h
+## scheduler.h
 
 ``` c
 #pragma once
@@ -131,6 +131,7 @@ void scheduler_init(scheduler_t *sched);
 void scheduler_start(scheduler_t *sched);
 ```
 
+## scheduler.c
 
 ## blink_example_main.c
 
