@@ -3,4 +3,5 @@ idf_component_register(
         "ina219_sensor.c"
         "ultrasonic_sensor.c"
     INCLUDE_DIRS "."
+    REQUIRES driver esp_adc
 )
