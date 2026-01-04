@@ -9,4 +9,5 @@ idf_component_register(
         adc
         wifi_sys
         mqtt_sys
+        espnow_sys
         sensors)
