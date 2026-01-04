@@ -99,7 +99,8 @@ void app_main(void)
         .motors = &motors,
         .espnow = &espnow,
         .temp = &temp,
-        .ina = &ina
+        .ina = &ina,
+        .ultrasonic = &ultra
     };
     dashboard_task_start(&dash_ctx);
 
