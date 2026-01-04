@@ -9,6 +9,4 @@ idf_component_register(
         adc
         wifi_sys
         mqtt_sys
-        espnow_sys
-        ina219_sensor
-        ultrasonic_sensor)
+        sensors)
