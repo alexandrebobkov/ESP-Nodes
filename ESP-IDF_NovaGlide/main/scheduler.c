@@ -11,12 +11,12 @@ static void scheduler_task(void *arg)
         TickType_t now = xTaskGetTickCount();
 
         // --- Call each subsystem's update() if it exists ---
-        if (sched->adc    && sched->adc->update)    sched->adc->update(sched->adc, now);
-        if (sched->motors && sched->motors->update) sched->motors->update(sched->motors, now);
-        if (sched->mqtt   && sched->mqtt->update)   sched->mqtt->update(sched->mqtt, now);
-        if (sched->temp   && sched->temp->update)   sched->temp->update(sched->temp, now);
-        if (sched->ina    && sched->ina->update)    sched->ina->update(sched->ina, now);
-        if (sched->ultra  && sched->ultra->update)  sched->ultra->update(sched->ultra, now);
+        //if (sched->adc    && sched->adc->update)    sched->adc->update(sched->adc, now);
+        //if (sched->motors && sched->motors->update) sched->motors->update(sched->motors, now);
+        //if (sched->mqtt   && sched->mqtt->update)   sched->mqtt->update(sched->mqtt, now);
+        //if (sched->temp   && sched->temp->update)   sched->temp->update(sched->temp, now);
+        //if (sched->ina    && sched->ina->update)    sched->ina->update(sched->ina, now);
+        //if (sched->ultra  && sched->ultra->update)  sched->ultra->update(sched->ultra, now);
 
         // --- Loop at 100 Hz ---
         vTaskDelayUntil(&last, pdMS_TO_TICKS(10));
