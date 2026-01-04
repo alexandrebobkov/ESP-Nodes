@@ -41,7 +41,7 @@ static void telemetry_bridge_task(void *arg) {
 }
 
 // Display task to show current joystick values
-/*static void display_joystick_task(void *arg) {
+static void display_joystick_task(void *arg) {
     espnow_system_t *espnow = (espnow_system_t *)arg;
 
     while (1) {
@@ -53,7 +53,7 @@ static void telemetry_bridge_task(void *arg) {
 
         vTaskDelay(pdMS_TO_TICKS(2000));  // Display every 2 seconds
     }
-}*/
+}
 
 void app_main(void)
 {
@@ -88,6 +88,15 @@ void app_main(void)
 
     // Start control task (joystick -> motors)
     control_task_start(&motors, &espnow);
+
+    // Start dashboard display
+        static dashboard_context_t dash_ctx = {
+            .motors = &motors,
+            .espnow = &espnow,
+            .temp = &temp,
+            .ina = &ina
+        };
+        dashboard_task_start(&dash_ctx);
 
     // Create data bridge task for MQTT telemetry
     static telemetry_context_t telem_ctx = {
