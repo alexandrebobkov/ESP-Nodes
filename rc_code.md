@@ -54,6 +54,16 @@ set(EXTRA_COMPONENT_DIRS "subsystems")
 project(robot_firmware)
 ```
 
+## /main/CMakeLists.txt
+
+``` cmake
+idf_component_register(
+    SRCS "app_main.c" "system_init.c" "scheduler.c"
+    INCLUDE_DIRS "."
+    REQUIRES motors adc sensors connectivity ui
+)
+```
+
 
 ## blink_example_main.c
 
