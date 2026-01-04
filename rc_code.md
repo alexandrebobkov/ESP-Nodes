@@ -45,7 +45,7 @@ CMakeLists.txt
 /main/CMakeLists.txt
 /subsystems/CMakeLists.txt
 
-## Top-level CMakeLists.txt
+### Top-level CMakeLists.txt
 
 ``` text
 cmake_minimum_required(VERSION 3.16)
@@ -54,7 +54,7 @@ set(EXTRA_COMPONENT_DIRS "subsystems")
 project(robot_firmware)
 ```
 
-## /main/CMakeLists.txt
+### /main/CMakeLists.txt
 
 ``` cmake
 idf_component_register(
@@ -64,7 +64,7 @@ idf_component_register(
 )
 ```
 
-## /subsystems/CMakeLists.txt
+### /subsystems/CMakeLists.txt
 
 ``` text
 # subsystems/motors/CMakeLists.txt
@@ -74,6 +74,8 @@ idf_component_register(
     REQUIRES driver
 )
 ```
+
+## CORE
 
 ### system_init.h
 
@@ -105,7 +107,7 @@ void system_init(void) {
 }
 ```
 
-## scheduler.h
+### scheduler.h
 
 ``` c
 #pragma once
@@ -131,7 +133,305 @@ void scheduler_init(scheduler_t *sched);
 void scheduler_start(scheduler_t *sched);
 ```
 
-## scheduler.c
+### scheduler.c
+
+``` c
+#include "scheduler.h"
+#include "freertos/task.h"
+
+static void scheduler_task(void *arg) {
+    scheduler_t *sched = (scheduler_t *)arg;
+    TickType_t last = xTaskGetTickCount();
+
+    while (1) {
+        TickType_t now = xTaskGetTickCount();
+
+        if (sched->adc && sched->adc->update)       sched->adc->update(sched->adc, now);
+        if (sched->motors && sched->motors->update) sched->motors->update(sched->motors, now);
+        if (sched->mqtt && sched->mqtt->update)     sched->mqtt->update(sched->mqtt, now);
+        if (sched->temp && sched->temp->update)     sched->temp->update(sched->temp, now);
+        if (sched->ina && sched->ina->update)       sched->ina->update(sched->ina, now);
+        if (sched->ultra && sched->ultra->update)   sched->ultra->update(sched->ultra, now);
+
+        vTaskDelayUntil(&last, pdMS_TO_TICKS(10)); // 100 Hz
+    }
+}
+
+void scheduler_init(scheduler_t *sched) {
+    (void)sched;
+}
+
+void scheduler_start(scheduler_t *sched) {
+    xTaskCreate(scheduler_task, "scheduler", 4096, sched, 5, NULL);
+}
+```
+
+### app_main.c
+
+``` c
+#include "system_init.h"
+#include "scheduler.h"
+
+#include "motors.h"
+#include "adc.h"
+#include "temp_sensor.h"
+#include "ina219_sensor.h"
+#include "ultrasonic_sensor.h"
+#include "wifi_sys.h"
+#include "espnow_sys.h"
+#include "mqtt_sys.h"
+#include "ui_led.h"
+#include "ui_buttons.h"
+
+void app_main(void) {
+    system_init();
+
+    static motor_system_t       motors;
+    static adc_system_t         adc;
+    static temp_sensor_system_t temp;
+    static ina219_system_t      ina;
+    static ultrasonic_system_t  ultra;
+    static mqtt_system_t        mqtt;
+    static scheduler_t          sched;
+
+    motor_system_init(&motors);
+    adc_system_init(&adc);
+    temp_sensor_system_init(&temp);
+    ina219_system_init(&ina);
+    ultrasonic_system_init(&ultra);
+
+    wifi_system_init();      // no struct needed
+    espnow_system_init(&adc, &motors); // pass references if needed
+    mqtt_system_init(&mqtt);
+
+    ui_led_init();
+    ui_buttons_init();
+
+    sched.motors = &motors;
+    sched.adc    = &adc;
+    sched.temp   = &temp;
+    sched.ina    = &ina;
+    sched.ultra  = &ultra;
+    sched.mqtt   = &mqtt;
+
+    scheduler_init(&sched);
+    scheduler_start(&sched);
+}
+```
+
+## Motors Subsystem
+
+### motors.h
+
+``` c
+#pragma once
+#include "freertos/FreeRTOS.h"
+#include "driver/ledc.h"
+
+typedef struct motor_system_t motor_system_t;
+
+struct motor_system_t {
+    int pwm_left;
+    int pwm_right;
+
+    void (*set)(motor_system_t *self, int left, int right);
+    void (*stop)(motor_system_t *self);
+    void (*update)(motor_system_t *self, TickType_t now);
+};
+
+void motor_system_init(motor_system_t *sys);
+```
+
+### motors.c
+
+``` c
+#include "motors.h"
+#include "config.h"
+#include "esp_log.h"
+
+static const char *TAG = "MOTORS";
+
+static void motor_hw_init(void) {
+    // LEDC timers + channels using your config.h constants
+    // (MTR_FREQUENCY, MTR_MODE, MTR_DUTY_RES, etc.)
+}
+
+static void motor_apply_pwm(motor_system_t *self) {
+    // Map self->pwm_left / pwm_right to LEDC duty
+    // Use ledc_set_duty + ledc_update_duty
+}
+
+static void motor_set_impl(motor_system_t *self, int left, int right) {
+    self->pwm_left  = left;
+    self->pwm_right = right;
+    motor_apply_pwm(self);
+}
+
+static void motor_stop_impl(motor_system_t *self) {
+    motor_set_impl(self, 0, 0);
+}
+
+static void motor_update_impl(motor_system_t *self, TickType_t now) {
+    (void)now;
+    // Optional: ramping, safety, timeouts
+}
+
+void motor_system_init(motor_system_t *sys) {
+    motor_hw_init();
+    sys->pwm_left  = 0;
+    sys->pwm_right = 0;
+    sys->set    = motor_set_impl;
+    sys->stop   = motor_stop_impl;
+    sys->update = motor_update_impl;
+}
+
+```
+
+### adc.h
+
+``` c
+#pragma once
+#include "freertos/FreeRTOS.h"
+
+typedef struct adc_system_t adc_system_t;
+
+struct adc_system_t {
+    int x_raw;
+    int y_raw;
+
+    void (*read)(adc_system_t *self);
+    void (*update)(adc_system_t *self, TickType_t now);
+};
+
+void adc_system_init(adc_system_t *sys);
+
+```
+
+### acd.c
+
+``` c
+#include "adc.h"
+#include "driver/adc.h"
+#include "esp_adc/adc_oneshot.h"
+#include "esp_log.h"
+
+static const char *TAG = "ADC";
+
+static adc_oneshot_unit_handle_t adc1_handle;
+
+static void adc_hw_init(void) {
+    adc_oneshot_unit_init_cfg_t init_config = {
+        .unit_id = ADC_UNIT_1,
+    };
+    ESP_ERROR_CHECK(adc_oneshot_new_unit(&init_config, &adc1_handle));
+
+    adc_oneshot_chan_cfg_t cfg = {
+        .bitwidth = SOC_ADC_DIGI_MAX_BITWIDTH,
+        .atten = ADC_ATTEN_DB_11,
+    };
+    ESP_ERROR_CHECK(adc_oneshot_config_channel(adc1_handle, ADC_CHANNEL_0, &cfg));
+    ESP_ERROR_CHECK(adc_oneshot_config_channel(adc1_handle, ADC_CHANNEL_1, &cfg));
+}
+
+static void adc_read_impl(adc_system_t *self) {
+    int x = 0, y = 0;
+    ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, ADC_CHANNEL_0, &x));
+    ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, ADC_CHANNEL_1, &y));
+    self->x_raw = x;
+    self->y_raw = y;
+}
+
+static void adc_update_impl(adc_system_t *self, TickType_t now) {
+    (void)now;
+    adc_read_impl(self);
+}
+
+void adc_system_init(adc_system_t *sys) {
+    adc_hw_init();
+    sys->x_raw = 0;
+    sys->y_raw = 0;
+    sys->read   = adc_read_impl;
+    sys->update = adc_update_impl;
+}
+
+```
+
+### joystick.h
+
+``` c
+#pragma once
+
+void joystick_mix(int x_raw, int y_raw, int *pwm_left, int *pwm_right);
+
+```
+
+### joystick.c
+
+``` c
+#include "joystick.h"
+#include <math.h>
+
+static float clampf(float v, float min, float max) {
+    return v < min ? min : (v > max ? max : v);
+}
+
+void joystick_mix(int X_raw, int Y_raw, int *pwm_a, int *pwm_b) {
+    float x = (float)(X_raw - 1020) / 1020.0f;
+    float y = (float)(Y_raw - 1020) / 1020.0f;
+
+    const float k = 0.4f;
+
+    float L0 = y + k * x;
+    float R0 = y - k * x;
+
+    float m = fmaxf(1.0f, fmaxf(fabsf(L0), fabsf(R0)));
+    float L = L0 / m;
+    float R = R0 / m;
+
+    float L_scaled = L * 8190.0f;
+    float R_scaled = R * 8190.0f;
+
+    *pwm_a = (int)clampf(L_scaled, -8191.0f, 8190.0f);
+    *pwm_b = (int)clampf(R_scaled, -8191.0f, 8190.0f);
+}
+
+```
+
+### wifi_sys.h
+
+``` c
+#pragma once
+
+void wifi_system_init(void);
+```
+
+### wifi_sys.c
+
+``` c
+#include "wifi_sys.h"
+#include "esp_wifi.h"
+#include "esp_netif.h"
+#include "esp_log.h"
+#include "mqtt_sys.h" // for SSID/PASS if you keep them there or in config.h
+
+static const char *TAG = "WIFI_SYS";
+
+void wifi_system_init(void) {
+    esp_netif_create_default_wifi_sta();
+    wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
+    ESP_ERROR_CHECK(esp_wifi_init(&cfg));
+    wifi_config_t wifi_config = {
+        .sta = {
+            .ssid = WIFI_SSID,
+            .password = WIFI_PASSWORD,
+        },
+    };
+    ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
+    ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
+    ESP_ERROR_CHECK(esp_wifi_start());
+    ESP_ERROR_CHECK(esp_wifi_connect());
+}
+```
 
 ## blink_example_main.c
 
