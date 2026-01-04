@@ -1,3 +1,4 @@
+#include "esp_log_level.h"
 #include "espnow_sys.h"
 #include "esp_log.h"
 #include "system_init.h"
@@ -61,7 +62,7 @@ void app_main(void)
     system_init();
 
     // Set log levels to WARNING or ERROR only
-    esp_log_level_set("*", ESP_LOG_WARN);  // Global default
+    esp_log_level_set("*", ESP_LOG_ERROR);//_WARN);  // Global default
     esp_log_level_set("DASHBOARD", ESP_LOG_INFO);  // Allow dashboard
 
     // Subsystem instances
