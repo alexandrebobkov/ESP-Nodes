@@ -23,6 +23,7 @@ void app_main(void)
     static ina219_system_t      ina;
     static ultrasonic_system_t  ultra;
     static mqtt_system_t        mqtt;
+    static espnow_system_t      espnow;
 
     // --- Initialize subsystems (you will add these one by one) ---
     motor_system_init(&motors);
@@ -32,7 +33,7 @@ void app_main(void)
     ultrasonic_system_init(&ultra);
 
     wifi_system_init();                 // stateless
-    espnow_system_init(&adc, &motors);  // passes references
+    espnow_system_init(&espnow);  // passes references
     mqtt_system_init(&mqtt);
     //ui_led_init();
     //ui_buttons_init();
