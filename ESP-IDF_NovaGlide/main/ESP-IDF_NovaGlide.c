@@ -90,13 +90,13 @@ void app_main(void)
     control_task_start(&motors, &espnow);
 
     // Start dashboard display
-        static dashboard_context_t dash_ctx = {
-            .motors = &motors,
-            .espnow = &espnow,
-            .temp = &temp,
-            .ina = &ina
-        };
-        dashboard_task_start(&dash_ctx);
+    static dashboard_context_t dash_ctx = {
+        .motors = &motors,
+        .espnow = &espnow,
+        .temp = &temp,
+        .ina = &ina
+    };
+    dashboard_task_start(&dash_ctx);
 
     // Create data bridge task for MQTT telemetry
     static telemetry_context_t telem_ctx = {
