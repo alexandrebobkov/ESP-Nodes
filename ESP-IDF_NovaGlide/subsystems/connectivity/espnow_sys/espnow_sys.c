@@ -17,13 +17,13 @@ static void espnow_recv_cb(const esp_now_recv_info_t *recv_info,
     //ESP_LOGI(TAG, "ESP-NOW RX: X:%d Y:%d",
              g_sys->last_data.x_axis,
              g_sys->last_data.y_axis);
-             // Enhanced logging with separator for clarity
-                 ESP_LOGI(TAG, "========================================");
-                 ESP_LOGI(TAG, "ESP-NOW DATA RECEIVED");
-                 ESP_LOGI(TAG, "X-axis (rc_x): %d", g_sys->last_data.x_axis);
-                 ESP_LOGI(TAG, "Y-axis (rc_y): %d", g_sys->last_data.y_axis);
-                 ESP_LOGI(TAG, "Data length: %d bytes", len);
-                 ESP_LOGI(TAG, "========================================");
+    // Enhanced logging with separator for clarity
+    ESP_LOGI(TAG, "========================================");
+    ESP_LOGI(TAG, "ESP-NOW DATA RECEIVED");
+    ESP_LOGI(TAG, "X-axis (rc_x): %d", g_sys->last_data.x_axis);
+    ESP_LOGI(TAG, "Y-axis (rc_y): %d", g_sys->last_data.y_axis);
+    ESP_LOGI(TAG, "Data length: %d bytes", len);
+    ESP_LOGI(TAG, "========================================");
 }
 
 static void espnow_send_impl(espnow_system_t *self,
