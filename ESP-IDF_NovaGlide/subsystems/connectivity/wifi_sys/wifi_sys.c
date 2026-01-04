@@ -25,5 +25,21 @@ void wifi_system_init(void) {
     ESP_ERROR_CHECK(esp_wifi_start());
     ESP_ERROR_CHECK(esp_wifi_connect());
 
-    ESP_LOGI(TAG, "WiFi initialized and connecting to %s", WIFI_SSID);
+    // Give WiFi time to connect
+        vTaskDelay(pdMS_TO_TICKS(3000));
+
+        // Log connection info
+        uint8_t channel;
+        wifi_second_chan_t second;
+        esp_wifi_get_channel(&channel, &second);
+
+        uint8_t mac[6];
+        esp_wifi_get_mac(WIFI_IF_STA, mac);
+
+        ESP_LOGI(TAG, "WiFi initialized and connecting...");
+        ESP_LOGI(TAG, "SSID: %s", WIFI_SSID);
+        ESP_LOGW(TAG, "WiFi Channel: %d", channel);
+        ESP_LOGW(TAG, "Receiver MAC: %02X:%02X:%02X:%02X:%02X:%02X",
+                 mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
+        ESP_LOGW(TAG, "Transmitter will scan channels to find receiver");
 }
