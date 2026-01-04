@@ -218,7 +218,7 @@ static void update_pwm (int rc_x, int rc_y) {
 static void update_motors_pwm (int pwm_motor_1, int pwm_motor_2) {
 
     /* DEAD ZONE / STAND */
-    if (pwm_motor_1 >= -500 && pwm_motor_1 <= 1000 && pwm_motor_2 >= -500 && pwm_motor_2 <= 1000)
+    if (abs(pwm_motor_1) < 300 && abs(pwm_motor_2) < 300)
     {
         m.motor1_rpm_pcm = 0;
         m.motor2_rpm_pcm = 0;
