@@ -8,7 +8,11 @@
 #define WIFI_SSID "IoT_bots"
 #define WIFI_PASSWORD "208208208"
 
-typedef struct {
+// Forward declaration
+typedef struct mqtt_system_t mqtt_system_t;
+
+// Struct definition
+struct mqtt_system_t {
     float temp_value;
     float battery_voltage;
     float sys_current;
@@ -18,14 +22,4 @@ typedef struct {
 
     esp_mqtt_client_handle_t client;
 
-    void (*update)(struct mqtt_system_t *self, TickType_t now);
-} mqtt_system_t;
-
-void mqtt_system_init(mqtt_system_t *sys);
-void mqtt_update_temp(mqtt_system_t *sys, float temp);
-void mqtt_update_battery(mqtt_system_t *sys, float voltage);
-void mqtt_update_current(mqtt_system_t *sys, float current);
-void mqtt_update_power(mqtt_system_t *sys, float power);
-void mqtt_update_pwm(mqtt_system_t *sys, int left, int right);
-
-#endif
+    void (*update)(mqtt_system_t *
