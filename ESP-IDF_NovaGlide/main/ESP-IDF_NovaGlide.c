@@ -40,7 +40,7 @@ static void telemetry_bridge_task(void *arg) {
 }
 
 // Display task to show current joystick values
-static void display_joystick_task(void *arg) {
+/*static void display_joystick_task(void *arg) {
     espnow_system_t *espnow = (espnow_system_t *)arg;
 
     while (1) {
@@ -52,7 +52,7 @@ static void display_joystick_task(void *arg) {
 
         vTaskDelay(pdMS_TO_TICKS(2000));  // Display every 2 seconds
     }
-}
+}*/
 
 void app_main(void)
 {
