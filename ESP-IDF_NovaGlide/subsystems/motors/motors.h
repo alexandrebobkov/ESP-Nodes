@@ -49,5 +49,6 @@ struct motor_system_t {
 
 void motor_system_init(motor_system_t *sys);
 void motor_set_pwm(motor_system_t *sys, int left_pwm, int right_pwm);
+void update_motors_pwm(motor_system_t *sys, int pwm_motor_1, int pwm_motor_2);  // Your function
 
 #endif
