@@ -9,7 +9,13 @@ static void temp_sensor_update_impl(temp_sensor_system_t *self, TickType_t now) 
     // Read every 5 seconds
     if ((now - last_read) >= pdMS_TO_TICKS(5000)) {
         ESP_ERROR_CHECK(temperature_sensor_get_celsius(self->handle, &self->temperature));
-        ESP_LOGI(TAG, "Temperature: %.2f°C", self->temperature);
+        //ESP_LOGI(TAG, "Temperature: %.2f°C", self->temperature);
+        // More detailed logging
+                ESP_LOGI(TAG, "==========================================");
+                ESP_LOGI(TAG, "ESP32-C3 Internal Temperature Sensor");
+                ESP_LOGI(TAG, "Current Temperature: %.2f°C", self->temperature);
+                ESP_LOGI(TAG, "==========================================");
+
         last_read = now;
     }
 }
