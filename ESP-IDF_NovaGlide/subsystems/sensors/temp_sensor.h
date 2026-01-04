@@ -1,13 +1,10 @@
 #pragma once
-
 #include "freertos/FreeRTOS.h"
 
 typedef struct temp_sensor_system_t temp_sensor_system_t;
 
 struct temp_sensor_system_t {
     float last_celsius;
-
-    // API
     void (*update)(temp_sensor_system_t *self, TickType_t now);
 };
 
