@@ -80,6 +80,9 @@ void app_main(void)
     mqtt_system_init(&mqtt);
     ui_system_init(&ui);
 
+    // Start display task
+    //xTaskCreate(display_joystick_task, "display", 2048, &espnow, 4, NULL);
+
     // Start control task (joystick -> motors)
     control_task_start(&motors, &espnow);
 
