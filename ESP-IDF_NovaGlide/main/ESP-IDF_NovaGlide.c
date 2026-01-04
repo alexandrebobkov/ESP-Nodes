@@ -1,4 +1,5 @@
 #include "system_init.h"
+#include "wifi_sys.h"
 #include "scheduler.h"
 
 // Subsystems (empty for now — you will add them gradually)
