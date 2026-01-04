@@ -1,4 +1,4 @@
 idf_component_register(
-    SRCS "motors.c"
+    SRCS "espnow_sys.c"
     INCLUDE_DIRS "."
 )
