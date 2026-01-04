@@ -104,6 +104,10 @@ static void dashboard_task(void *arg) {
         snprintf(buffer, sizeof(buffer), "%.2f mW", ctx->ina->power * 1000.0f);
         draw_line("Power", buffer, COLOR_BLUE);
 
+        draw_separator();
+
+        draw_line("Distance", buffer, COLOR_BLUE);
+
         draw_bottom();
 
         // Status bar at bottom
