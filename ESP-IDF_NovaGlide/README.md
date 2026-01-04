@@ -1,5 +1,6 @@
 # IDF_NovaGlide
 
+```
 subsystems/
 ├── motors/          ✅ LEDC PWM control with joystick mixing
 ├── adc/             ✅ Joystick ADC reading
@@ -13,6 +14,7 @@ main/
 ├── system_init.c        ✅ NVS initialization
 ├── scheduler.c          ✅ Unified update loop
 └── control_task.c       ✅ Motor control task
+```
 
 # ESP-IDF NovaGlide Robot
 
