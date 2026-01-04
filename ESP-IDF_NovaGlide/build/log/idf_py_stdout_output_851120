@@ -4262,4 +4262,967 @@ entry 0x403cc71a
 [0;32mI (93630) ESPNOW_SYS: Data length: 16 bytes[0m
 [0;32mI (93630) ESPNOW_SYS: ========================================[0m
 [0;33mW (93690) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
-[0;32mI (93690) CONTROL: RC(x,y): (63635456,66912256) -
+[0;32mI (93690) CONTROL: RC(x,y): (63635456,66912256) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (93790) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (93790) CONTROL: RC(x,y): (63635456,66912256) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (93890) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (93890) ESPNOW_SYS: ========================================[0m
+[0;32mI (93890) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (93890) ESPNOW_SYS: X-axis (rc_x): 63504384[0m
+[0;32mI (93890) ESPNOW_SYS: Y-axis (rc_y): 67502080[0m
+[0;32mI (93900) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (93900) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (93900) ESPNOW_SYS: ========================================[0m
+[0;32mI (93910) CONTROL: RC(x,y): (63635456,66912256) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (94020) MOTORS: M1: 8190, M2: 2505, M3: 0, M4: 0[0m
+[0;32mI (94020) CONTROL: RC(x,y): (63504384,67502080) -> PWM(L,R): (8190,2505)[0m
+[0;33mW (94120) MOTORS: M1: 8190, M2: 2505, M3: 0, M4: 0[0m
+[0;32mI (94120) CONTROL: RC(x,y): (63504384,67502080) -> PWM(L,R): (8190,2505)[0m
+[0;32mI (94160) ESPNOW_SYS: ========================================[0m
+[0;32mI (94160) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (94160) ESPNOW_SYS: X-axis (rc_x): 63569920[0m
+[0;32mI (94160) ESPNOW_SYS: Y-axis (rc_y): 67043328[0m
+[0;32mI (94170) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (94170) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (94180) ESPNOW_SYS: ========================================[0m
+[0;33mW (94220) MOTORS: M1: 8190, M2: 2534, M3: 0, M4: 0[0m
+[0;32mI (94220) CONTROL: RC(x,y): (63569920,67043328) -> PWM(L,R): (8190,2534)[0m
+[0;33mW (94230) ULTRASONIC: Measurement failed: 512[0m
+[0;33mW (94320) MOTORS: M1: 8190, M2: 2534, M3: 0, M4: 0[0m
+[0;32mI (94320) CONTROL: RC(x,y): (63569920,67043328) -> PWM(L,R): (8190,2534)[0m
+[0;32mI (94330) INA219: VBUS: 0.86V, I: -0.20mA, P: 0.00mW[0m
+[0;33mW (94420) MOTORS: M1: 8190, M2: 2534, M3: 0, M4: 0[0m
+[0;32mI (94420) CONTROL: RC(x,y): (63569920,67043328) -> PWM(L,R): (8190,2534)[0m
+[0;32mI (94420) ESPNOW_SYS: ========================================[0m
+[0;32mI (94420) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (94420) ESPNOW_SYS: X-axis (rc_x): 63569920[0m
+[0;32mI (94430) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (94430) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (94440) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (94440) ESPNOW_SYS: ========================================[0m
+[0;33mW (94520) MOTORS: M1: 8190, M2: 2538, M3: 0, M4: 0[0m
+[0;32mI (94520) CONTROL: RC(x,y): (63569920,66977792) -> PWM(L,R): (8190,2538)[0m
+[0;33mW (94620) MOTORS: M1: 8190, M2: 2538, M3: 0, M4: 0[0m
+[0;32mI (94620) CONTROL: RC(x,y): (63569920,66977792) -> PWM(L,R): (8190,2538)[0m
+[0;32mI (94700) ESPNOW_SYS: ========================================[0m
+[0;32mI (94700) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (94700) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (94700) ESPNOW_SYS: Y-axis (rc_y): 67043328[0m
+[0;32mI (94700) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (94710) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (94710) ESPNOW_SYS: ========================================[0m
+[0;33mW (94720) MOTORS: M1: 8190, M2: 2538, M3: 0, M4: 0[0m
+[0;32mI (94720) CONTROL: RC(x,y): (63635456,67043328) -> PWM(L,R): (8190,2538)[0m
+[0;33mW (94830) MOTORS: M1: 8190, M2: 2538, M3: 0, M4: 0[0m
+[0;32mI (94830) CONTROL: RC(x,y): (63635456,67043328) -> PWM(L,R): (8190,2538)[0m
+[0;33mW (94930) MOTORS: M1: 8190, M2: 2538, M3: 0, M4: 0[0m
+[0;32mI (94930) CONTROL: RC(x,y): (63635456,67043328) -> PWM(L,R): (8190,2538)[0m
+[0;32mI (94950) ESPNOW_SYS: ========================================[0m
+[0;32mI (94950) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (94950) ESPNOW_SYS: X-axis (rc_x): 63569920[0m
+[0;32mI (94950) ESPNOW_SYS: Y-axis (rc_y): 67043328[0m
+[0;32mI (94960) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (94960) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (94970) ESPNOW_SYS: ========================================[0m
+[0;33mW (95030) MOTORS: M1: 8190, M2: 2534, M3: 0, M4: 0[0m
+[0;32mI (95030) CONTROL: RC(x,y): (63569920,67043328) -> PWM(L,R): (8190,2534)[0m
+[0;33mW (95130) MOTORS: M1: 8190, M2: 2534, M3: 0, M4: 0[0m
+[0;32mI (95130) CONTROL: RC(x,y): (63569920,67043328) -> PWM(L,R): (8190,2534)[0m
+[0;32mI (95210) ESPNOW_SYS: ========================================[0m
+[0;32mI (95210) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (95210) ESPNOW_SYS: X-axis (rc_x): 63700992[0m
+[0;32mI (95210) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (95220) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (95220) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (95230) ESPNOW_SYS: ========================================[0m
+[0;33mW (95230) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (95240) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (95250) ULTRASONIC: Measurement failed: 512[0m
+[0;33mW (95340) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (95340) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (95440) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (95440) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (95470) ESPNOW_SYS: ========================================[0m
+[0;32mI (95470) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (95470) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (95480) ESPNOW_SYS: Y-axis (rc_y): 67043328[0m
+[0;32mI (95480) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (95480) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (95490) ESPNOW_SYS: ========================================[0m
+[0;33mW (95540) MOTORS: M1: 8190, M2: 2538, M3: 0, M4: 0[0m
+[0;32mI (95540) CONTROL: RC(x,y): (63635456,67043328) -> PWM(L,R): (8190,2538)[0m
+[0;33mW (95640) MOTORS: M1: 8190, M2: 2538, M3: 0, M4: 0[0m
+[0;32mI (95640) CONTROL: RC(x,y): (63635456,67043328) -> PWM(L,R): (8190,2538)[0m
+[0;32mI (95700) TEMP_SENSOR: ==========================================[0m
+[0;32mI (95700) TEMP_SENSOR: ESP32-C3 Internal Temperature Sensor[0m
+[0;32mI (95700) TEMP_SENSOR: Current Temperature: 50.60°C[0m
+[0;32mI (95700) TEMP_SENSOR: ==========================================[0m
+[0;32mI (95730) ESPNOW_SYS: ========================================[0m
+[0;32mI (95730) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (95730) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (95730) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (95740) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (95740) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (95740) ESPNOW_SYS: ========================================[0m
+[0;33mW (95750) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (95750) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (95860) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (95860) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (95960) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (95960) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;32mI (96000) ESPNOW_SYS: ========================================[0m
+[0;32mI (96000) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (96000) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (96000) ESPNOW_SYS: Y-axis (rc_y): 66912256[0m
+[0;32mI (96010) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (96010) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (96020) ESPNOW_SYS: ========================================[0m
+[0;33mW (96060) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (96060) CONTROL: RC(x,y): (63635456,66912256) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (96160) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (96160) CONTROL: RC(x,y): (63635456,66912256) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (96260) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (96260) CONTROL: RC(x,y): (63635456,66912256) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (96260) ESPNOW_SYS: ========================================[0m
+[0;32mI (96260) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (96260) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (96270) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (96270) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (96280) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (96280) ESPNOW_SYS: ========================================[0m
+[0;32mI (96290) ULTRASONIC: Distance: 0.00 cm[0m
+[0;33mW (96360) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (96360) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (96460) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (96460) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;32mI (96530) ESPNOW_SYS: ========================================[0m
+[0;32mI (96530) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (96530) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (96530) ESPNOW_SYS: Y-axis (rc_y): 66912256[0m
+[0;32mI (96530) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (96540) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (96540) ESPNOW_SYS: ========================================[0m
+[0;33mW (96560) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (96560) CONTROL: RC(x,y): (63635456,66912256) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (96660) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (96660) CONTROL: RC(x,y): (63635456,66912256) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (96760) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (96760) CONTROL: RC(x,y): (63635456,66912256) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (96780) ESPNOW_SYS: ========================================[0m
+[0;32mI (96780) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (96780) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (96780) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (96790) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (96790) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (96790) ESPNOW_SYS: ========================================[0m
+[0;32mI (96850) INA219: VBUS: 0.85V, I: -0.40mA, P: 0.00mW[0m
+[0;33mW (96860) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (96860) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (96960) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (96960) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;32mI (97040) ESPNOW_SYS: ========================================[0m
+[0;32mI (97050) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (97050) ESPNOW_SYS: X-axis (rc_x): 63569920[0m
+[0;32mI (97050) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (97050) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (97060) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (97060) ESPNOW_SYS: ========================================[0m
+[0;33mW (97070) MOTORS: M1: 8190, M2: 2538, M3: 0, M4: 0[0m
+[0;32mI (97070) CONTROL: RC(x,y): (63569920,66977792) -> PWM(L,R): (8190,2538)[0m
+[0;33mW (97180) MOTORS: M1: 8190, M2: 2538, M3: 0, M4: 0[0m
+[0;32mI (97180) CONTROL: RC(x,y): (63569920,66977792) -> PWM(L,R): (8190,2538)[0m
+[0;33mW (97280) MOTORS: M1: 8190, M2: 2538, M3: 0, M4: 0[0m
+[0;32mI (97280) CONTROL: RC(x,y): (63569920,66977792) -> PWM(L,R): (8190,2538)[0m
+[0;32mI (97300) ESPNOW_SYS: ========================================[0m
+[0;32mI (97300) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (97300) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (97300) ESPNOW_SYS: Y-axis (rc_y): 66912256[0m
+[0;32mI (97300) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (97310) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (97310) ESPNOW_SYS: ========================================[0m
+[0;33mW (97330) ULTRASONIC: Measurement failed: 512[0m
+[0;33mW (97380) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (97380) CONTROL: RC(x,y): (63635456,66912256) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (97480) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (97480) CONTROL: RC(x,y): (63635456,66912256) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (97570) ESPNOW_SYS: ========================================[0m
+[0;32mI (97570) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (97570) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (97570) ESPNOW_SYS: Y-axis (rc_y): 66912256[0m
+[0;32mI (97570) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (97580) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (97580) ESPNOW_SYS: ========================================[0m
+[0;33mW (97590) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (97590) CONTROL: RC(x,y): (63635456,66912256) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (97700) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (97700) CONTROL: RC(x,y): (63635456,66912256) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (97800) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (97800) CONTROL: RC(x,y): (63635456,66912256) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (97850) ESPNOW_SYS: ========================================[0m
+[0;32mI (97850) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (97850) ESPNOW_SYS: X-axis (rc_x): 63766528[0m
+[0;32mI (97860) ESPNOW_SYS: Y-axis (rc_y): 66912256[0m
+[0;32mI (97860) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (97860) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (97870) ESPNOW_SYS: ========================================[0m
+[0;33mW (97900) MOTORS: M1: 8190, M2: 2553, M3: 0, M4: 0[0m
+[0;32mI (97900) CONTROL: RC(x,y): (63766528,66912256) -> PWM(L,R): (8190,2553)[0m
+[0;33mW (98000) MOTORS: M1: 8190, M2: 2553, M3: 0, M4: 0[0m
+[0;32mI (98000) CONTROL: RC(x,y): (63766528,66912256) -> PWM(L,R): (8190,2553)[0m
+[0;33mW (98100) MOTORS: M1: 8190, M2: 2553, M3: 0, M4: 0[0m
+[0;32mI (98100) CONTROL: RC(x,y): (63766528,66912256) -> PWM(L,R): (8190,2553)[0m
+[0;32mI (98110) ESPNOW_SYS: ========================================[0m
+[0;32mI (98110) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (98110) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (98110) ESPNOW_SYS: Y-axis (rc_y): 66912256[0m
+[0;32mI (98110) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (98120) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (98120) ESPNOW_SYS: ========================================[0m
+[0;33mW (98200) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (98200) CONTROL: RC(x,y): (63635456,66912256) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (98300) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (98300) CONTROL: RC(x,y): (63635456,66912256) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (98350) ULTRASONIC: Measurement failed: 512[0m
+[0;32mI (98370) ESPNOW_SYS: ========================================[0m
+[0;32mI (98370) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (98370) ESPNOW_SYS: X-axis (rc_x): 63700992[0m
+[0;32mI (98370) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (98370) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (98380) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (98380) ESPNOW_SYS: ========================================[0m
+[0;33mW (98400) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (98400) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (98500) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (98500) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (98600) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (98600) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (98640) ESPNOW_SYS: ========================================[0m
+[0;32mI (98640) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (98640) ESPNOW_SYS: X-axis (rc_x): 63766528[0m
+[0;32mI (98640) ESPNOW_SYS: Y-axis (rc_y): 67043328[0m
+[0;32mI (98650) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (98650) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (98650) ESPNOW_SYS: ========================================[0m
+[0;33mW (98700) MOTORS: M1: 8190, M2: 2546, M3: 0, M4: 0[0m
+[0;32mI (98700) CONTROL: RC(x,y): (63766528,67043328) -> PWM(L,R): (8190,2546)[0m
+[0;33mW (98800) MOTORS: M1: 8190, M2: 2546, M3: 0, M4: 0[0m
+[0;32mI (98800) CONTROL: RC(x,y): (63766528,67043328) -> PWM(L,R): (8190,2546)[0m
+[0;33mW (98900) MOTORS: M1: 8190, M2: 2546, M3: 0, M4: 0[0m
+[0;32mI (98900) ESPNOW_SYS: ========================================[0m
+[0;32mI (98900) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (98900) ESPNOW_SYS: X-axis (rc_x): 63700992[0m
+[0;32mI (98900) ESPNOW_SYS: Y-axis (rc_y): 66912256[0m
+[0;32mI (98910) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (98910) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (98910) ESPNOW_SYS: ========================================[0m
+[0;32mI (98920) CONTROL: RC(x,y): (63766528,67043328) -> PWM(L,R): (8190,2546)[0m
+[0;33mW (99030) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (99030) CONTROL: RC(x,y): (63700992,66912256) -> PWM(L,R): (8190,2549)[0m
+[0;33mW (99130) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (99130) CONTROL: RC(x,y): (63700992,66912256) -> PWM(L,R): (8190,2549)[0m
+[0;32mI (99170) ESPNOW_SYS: ========================================[0m
+[0;32mI (99170) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (99170) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (99170) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (99170) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (99180) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (99180) ESPNOW_SYS: ========================================[0m
+[0;33mW (99230) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (99230) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (99330) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (99330) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;32mI (99390) INA219: VBUS: 0.86V, I: -0.10mA, P: 0.00mW[0m
+[0;32mI (99390) ULTRASONIC: Distance: 0.00 cm[0m
+[0;33mW (99430) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (99430) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;32mI (99440) ESPNOW_SYS: ========================================[0m
+[0;32mI (99440) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (99440) ESPNOW_SYS: X-axis (rc_x): 63700992[0m
+[0;32mI (99440) ESPNOW_SYS: Y-axis (rc_y): 66912256[0m
+[0;32mI (99450) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (99450) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (99450) ESPNOW_SYS: ========================================[0m
+[0;33mW (99530) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (99530) CONTROL: RC(x,y): (63700992,66912256) -> PWM(L,R): (8190,2549)[0m
+[0;33mW (99630) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (99630) CONTROL: RC(x,y): (63700992,66912256) -> PWM(L,R): (8190,2549)[0m
+[0;32mI (99710) ESPNOW_SYS: ========================================[0m
+[0;32mI (99710) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (99710) ESPNOW_SYS: X-axis (rc_x): 63700992[0m
+[0;32mI (99720) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (99720) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (99720) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (99730) ESPNOW_SYS: ========================================[0m
+[0;33mW (99730) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (99740) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (99850) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (99850) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (99950) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (99950) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (99960) ESPNOW_SYS: ========================================[0m
+[0;32mI (99960) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (99960) ESPNOW_SYS: X-axis (rc_x): 63569920[0m
+[0;32mI (99960) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (99960) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (99970) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (99970) ESPNOW_SYS: ========================================[0m
+[0;33mW (100050) MOTORS: M1: 8190, M2: 2538, M3: 0, M4: 0[0m
+[0;32mI (100050) CONTROL: RC(x,y): (63569920,66977792) -> PWM(L,R): (8190,2538)[0m
+[0;33mW (100150) MOTORS: M1: 8190, M2: 2538, M3: 0, M4: 0[0m
+[0;32mI (100150) CONTROL: RC(x,y): (63569920,66977792) -> PWM(L,R): (8190,2538)[0m
+[0;32mI (100230) ESPNOW_SYS: ========================================[0m
+[0;32mI (100230) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (100230) ESPNOW_SYS: X-axis (rc_x): 63766528[0m
+[0;32mI (100230) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (100230) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (100240) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (100240) ESPNOW_SYS: ========================================[0m
+[0;33mW (100250) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (100250) CONTROL: RC(x,y): (63766528,66977792) -> PWM(L,R): (8190,2549)[0m
+[0;33mW (100360) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (100360) CONTROL: RC(x,y): (63766528,66977792) -> PWM(L,R): (8190,2549)[0m
+[0;32mI (100410) ULTRASONIC: Distance: 0.00 cm[0m
+[0;33mW (100460) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (100460) CONTROL: RC(x,y): (63766528,66977792) -> PWM(L,R): (8190,2549)[0m
+[0;32mI (100500) ESPNOW_SYS: ========================================[0m
+[0;32mI (100500) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (100500) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (100500) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (100510) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (100510) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (100510) ESPNOW_SYS: ========================================[0m
+[0;33mW (100560) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (100560) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (100660) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (100660) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;32mI (100720) TEMP_SENSOR: ==========================================[0m
+[0;32mI (100720) TEMP_SENSOR: ESP32-C3 Internal Temperature Sensor[0m
+[0;32mI (100720) TEMP_SENSOR: Current Temperature: 50.60°C[0m
+[0;32mI (100720) TEMP_SENSOR: ==========================================[0m
+[0;33mW (100760) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (100760) ESPNOW_SYS: ========================================[0m
+[0;32mI (100760) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (100760) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (100760) ESPNOW_SYS: Y-axis (rc_y): 67043328[0m
+[0;32mI (100770) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (100770) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (100780) ESPNOW_SYS: ========================================[0m
+[0;32mI (100780) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (100890) MOTORS: M1: 8190, M2: 2538, M3: 0, M4: 0[0m
+[0;32mI (100890) CONTROL: RC(x,y): (63635456,67043328) -> PWM(L,R): (8190,2538)[0m
+[0;33mW (100990) MOTORS: M1: 8190, M2: 2538, M3: 0, M4: 0[0m
+[0;32mI (100990) CONTROL: RC(x,y): (63635456,67043328) -> PWM(L,R): (8190,2538)[0m
+[0;32mI (101030) ESPNOW_SYS: ========================================[0m
+[0;32mI (101030) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (101030) ESPNOW_SYS: X-axis (rc_x): 63569920[0m
+[0;32mI (101030) ESPNOW_SYS: Y-axis (rc_y): 67043328[0m
+[0;32mI (101040) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (101040) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (101050) ESPNOW_SYS: ========================================[0m
+[0;33mW (101090) MOTORS: M1: 8190, M2: 2534, M3: 0, M4: 0[0m
+[0;32mI (101090) CONTROL: RC(x,y): (63569920,67043328) -> PWM(L,R): (8190,2534)[0m
+[0;33mW (101190) MOTORS: M1: 8190, M2: 2534, M3: 0, M4: 0[0m
+[0;32mI (101190) CONTROL: RC(x,y): (63569920,67043328) -> PWM(L,R): (8190,2534)[0m
+[0;33mW (101290) MOTORS: M1: 8190, M2: 2534, M3: 0, M4: 0[0m
+[0;32mI (101290) CONTROL: RC(x,y): (63569920,67043328) -> PWM(L,R): (8190,2534)[0m
+[0;32mI (101290) ESPNOW_SYS: ========================================[0m
+[0;32mI (101290) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (101290) ESPNOW_SYS: X-axis (rc_x): 63700992[0m
+[0;32mI (101300) ESPNOW_SYS: Y-axis (rc_y): 66912256[0m
+[0;32mI (101300) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (101310) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (101310) ESPNOW_SYS: ========================================[0m
+[0;33mW (101390) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (101390) CONTROL: RC(x,y): (63700992,66912256) -> PWM(L,R): (8190,2549)[0m
+[0;33mW (101420) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (101490) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (101490) CONTROL: RC(x,y): (63700992,66912256) -> PWM(L,R): (8190,2549)[0m
+[0;32mI (101560) ESPNOW_SYS: ========================================[0m
+[0;32mI (101560) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (101560) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (101560) ESPNOW_SYS: Y-axis (rc_y): 67043328[0m
+[0;32mI (101560) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (101570) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (101570) ESPNOW_SYS: ========================================[0m
+[0;33mW (101590) MOTORS: M1: 8190, M2: 2538, M3: 0, M4: 0[0m
+[0;32mI (101590) CONTROL: RC(x,y): (63635456,67043328) -> PWM(L,R): (8190,2538)[0m
+[0;33mW (101690) MOTORS: M1: 8190, M2: 2538, M3: 0, M4: 0[0m
+[0;32mI (101690) CONTROL: RC(x,y): (63635456,67043328) -> PWM(L,R): (8190,2538)[0m
+[0;33mW (101790) MOTORS: M1: 8190, M2: 2538, M3: 0, M4: 0[0m
+[0;32mI (101790) CONTROL: RC(x,y): (63635456,67043328) -> PWM(L,R): (8190,2538)[0m
+[0;32mI (101830) ESPNOW_SYS: ========================================[0m
+[0;32mI (101830) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (101830) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (101830) ESPNOW_SYS: Y-axis (rc_y): 67108864[0m
+[0;32mI (101840) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (101840) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (101840) ESPNOW_SYS: ========================================[0m
+[0;33mW (101890) MOTORS: M1: 8190, M2: 2534, M3: 0, M4: 0[0m
+[0;32mI (101890) CONTROL: RC(x,y): (63635456,67108864) -> PWM(L,R): (8190,2534)[0m
+[0;32mI (101930) INA219: VBUS: 0.86V, I: -0.40mA, P: 0.00mW[0m
+[0;33mW (101990) MOTORS: M1: 8190, M2: 2534, M3: 0, M4: 0[0m
+[0;32mI (101990) CONTROL: RC(x,y): (63635456,67108864) -> PWM(L,R): (8190,2534)[0m
+[0;33mW (102090) MOTORS: M1: 8190, M2: 2534, M3: 0, M4: 0[0m
+[0;32mI (102090) CONTROL: RC(x,y): (63635456,67108864) -> PWM(L,R): (8190,2534)[0m
+[0;32mI (102100) ESPNOW_SYS: ========================================[0m
+[0;32mI (102100) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (102100) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (102100) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (102100) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (102110) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (102110) ESPNOW_SYS: ========================================[0m
+[0;33mW (102190) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (102190) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (102290) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (102290) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;32mI (102360) ESPNOW_SYS: ========================================[0m
+[0;32mI (102360) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (102360) ESPNOW_SYS: X-axis (rc_x): 63700992[0m
+[0;32mI (102360) ESPNOW_SYS: Y-axis (rc_y): 66846720[0m
+[0;32mI (102360) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (102370) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (102370) ESPNOW_SYS: ========================================[0m
+[0;33mW (102390) MOTORS: M1: 8190, M2: 2553, M3: 0, M4: 0[0m
+[0;32mI (102390) CONTROL: RC(x,y): (63700992,66846720) -> PWM(L,R): (8190,2553)[0m
+[0;33mW (102430) ULTRASONIC: Measurement failed: 512[0m
+[0;33mW (102490) MOTORS: M1: 8190, M2: 2553, M3: 0, M4: 0[0m
+[0;32mI (102490) CONTROL: RC(x,y): (63700992,66846720) -> PWM(L,R): (8190,2553)[0m
+[0;33mW (102590) MOTORS: M1: 8190, M2: 2553, M3: 0, M4: 0[0m
+[0;32mI (102590) CONTROL: RC(x,y): (63700992,66846720) -> PWM(L,R): (8190,2553)[0m
+[0;32mI (102630) ESPNOW_SYS: ========================================[0m
+[0;32mI (102630) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (102630) ESPNOW_SYS: X-axis (rc_x): 63504384[0m
+[0;32mI (102630) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (102630) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (102640) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (102640) ESPNOW_SYS: ========================================[0m
+[0;33mW (102690) MOTORS: M1: 8190, M2: 2534, M3: 0, M4: 0[0m
+[0;32mI (102690) CONTROL: RC(x,y): (63504384,66977792) -> PWM(L,R): (8190,2534)[0m
+[0;33mW (102790) MOTORS: M1: 8190, M2: 2534, M3: 0, M4: 0[0m
+[0;32mI (102790) CONTROL: RC(x,y): (63504384,66977792) -> PWM(L,R): (8190,2534)[0m
+[0;33mW (102890) MOTORS: M1: 8190, M2: 2534, M3: 0, M4: 0[0m
+[0;32mI (102890) CONTROL: RC(x,y): (63504384,66977792) -> PWM(L,R): (8190,2534)[0m
+[0;32mI (102900) ESPNOW_SYS: ========================================[0m
+[0;32mI (102900) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (102900) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (102900) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (102900) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (102910) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (102910) ESPNOW_SYS: ========================================[0m
+[0;33mW (102990) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (102990) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (103090) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (103090) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;32mI (103170) ESPNOW_SYS: ========================================[0m
+[0;32mI (103170) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (103170) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (103170) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (103170) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (103180) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (103180) ESPNOW_SYS: ========================================[0m
+[0;33mW (103190) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (103190) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (103300) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (103300) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (103400) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (103400) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;32mI (103440) ESPNOW_SYS: ========================================[0m
+[0;32mI (103440) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (103440) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (103440) ESPNOW_SYS: Y-axis (rc_y): 66912256[0m
+[0;32mI (103440) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (103450) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (103450) ESPNOW_SYS: ========================================[0m
+[0;33mW (103460) ULTRASONIC: Measurement failed: 512[0m
+[0;33mW (103500) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (103500) CONTROL: RC(x,y): (63635456,66912256) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (103600) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (103600) CONTROL: RC(x,y): (63635456,66912256) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (103700) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (103700) CONTROL: RC(x,y): (63635456,66912256) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (103710) ESPNOW_SYS: ========================================[0m
+[0;32mI (103710) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (103710) ESPNOW_SYS: X-axis (rc_x): 63766528[0m
+[0;32mI (103710) ESPNOW_SYS: Y-axis (rc_y): 67043328[0m
+[0;32mI (103720) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (103720) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (103730) ESPNOW_SYS: ========================================[0m
+[0;33mW (103800) MOTORS: M1: 8190, M2: 2546, M3: 0, M4: 0[0m
+[0;32mI (103800) CONTROL: RC(x,y): (63766528,67043328) -> PWM(L,R): (8190,2546)[0m
+[0;33mW (103900) MOTORS: M1: 8190, M2: 2546, M3: 0, M4: 0[0m
+[0;32mI (103900) CONTROL: RC(x,y): (63766528,67043328) -> PWM(L,R): (8190,2546)[0m
+[0;32mI (103980) ESPNOW_SYS: ========================================[0m
+[0;32mI (103980) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (103980) ESPNOW_SYS: X-axis (rc_x): 63700992[0m
+[0;32mI (103990) ESPNOW_SYS: Y-axis (rc_y): 66912256[0m
+[0;32mI (103990) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (103990) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (104000) ESPNOW_SYS: ========================================[0m
+[0;33mW (104000) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (104010) CONTROL: RC(x,y): (63700992,66912256) -> PWM(L,R): (8190,2549)[0m
+[0;33mW (104110) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (104110) CONTROL: RC(x,y): (63700992,66912256) -> PWM(L,R): (8190,2549)[0m
+[0;33mW (104210) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (104210) CONTROL: RC(x,y): (63700992,66912256) -> PWM(L,R): (8190,2549)[0m
+[0;32mI (104230) ESPNOW_SYS: ========================================[0m
+[0;32mI (104230) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (104230) ESPNOW_SYS: X-axis (rc_x): 63569920[0m
+[0;32mI (104230) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (104240) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (104240) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (104250) ESPNOW_SYS: ========================================[0m
+[0;33mW (104310) MOTORS: M1: 8190, M2: 2538, M3: 0, M4: 0[0m
+[0;32mI (104310) CONTROL: RC(x,y): (63569920,66977792) -> PWM(L,R): (8190,2538)[0m
+[0;33mW (104410) MOTORS: M1: 8190, M2: 2538, M3: 0, M4: 0[0m
+[0;32mI (104410) CONTROL: RC(x,y): (63569920,66977792) -> PWM(L,R): (8190,2538)[0m
+[0;32mI (104460) INA219: VBUS: 0.86V, I: -0.40mA, P: 0.00mW[0m
+[0;32mI (104460) ULTRASONIC: Distance: 0.00 cm[0m
+[0;32mI (104490) ESPNOW_SYS: ========================================[0m
+[0;32mI (104490) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (104490) ESPNOW_SYS: X-axis (rc_x): 63569920[0m
+[0;32mI (104490) ESPNOW_SYS: Y-axis (rc_y): 66912256[0m
+[0;32mI (104490) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (104500) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (104500) ESPNOW_SYS: ========================================[0m
+[0;33mW (104510) MOTORS: M1: 8190, M2: 2541, M3: 0, M4: 0[0m
+[0;32mI (104510) CONTROL: RC(x,y): (63569920,66912256) -> PWM(L,R): (8190,2541)[0m
+[0;33mW (104620) MOTORS: M1: 8190, M2: 2541, M3: 0, M4: 0[0m
+[0;32mI (104620) CONTROL: RC(x,y): (63569920,66912256) -> PWM(L,R): (8190,2541)[0m
+[0;33mW (104720) MOTORS: M1: 8190, M2: 2541, M3: 0, M4: 0[0m
+[0;32mI (104720) CONTROL: RC(x,y): (63569920,66912256) -> PWM(L,R): (8190,2541)[0m
+[0;32mI (104760) ESPNOW_SYS: ========================================[0m
+[0;32mI (104760) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (104760) ESPNOW_SYS: X-axis (rc_x): 63700992[0m
+[0;32mI (104760) ESPNOW_SYS: Y-axis (rc_y): 67043328[0m
+[0;32mI (104770) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (104770) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (104780) ESPNOW_SYS: ========================================[0m
+[0;33mW (104820) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (104820) CONTROL: RC(x,y): (63700992,67043328) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (104920) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (104920) CONTROL: RC(x,y): (63700992,67043328) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (105020) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (105020) CONTROL: RC(x,y): (63700992,67043328) -> PWM(L,R): (8190,2542)[0m
+[0;32mI (105020) ESPNOW_SYS: ========================================[0m
+[0;32mI (105020) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (105030) ESPNOW_SYS: X-axis (rc_x): 63569920[0m
+[0;32mI (105030) ESPNOW_SYS: Y-axis (rc_y): 67043328[0m
+[0;32mI (105030) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (105040) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (105040) ESPNOW_SYS: ========================================[0m
+[0;33mW (105120) MOTORS: M1: 8190, M2: 2534, M3: 0, M4: 0[0m
+[0;32mI (105120) CONTROL: RC(x,y): (63569920,67043328) -> PWM(L,R): (8190,2534)[0m
+[0;33mW (105220) MOTORS: M1: 8190, M2: 2534, M3: 0, M4: 0[0m
+[0;32mI (105220) CONTROL: RC(x,y): (63569920,67043328) -> PWM(L,R): (8190,2534)[0m
+[0;32mI (105280) ESPNOW_SYS: ========================================[0m
+[0;32mI (105280) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (105280) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (105280) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (105290) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (105290) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (105290) ESPNOW_SYS: ========================================[0m
+[0;33mW (105320) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (105320) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (105420) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (105420) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (105500) ULTRASONIC: Measurement failed: 512[0m
+[0;33mW (105520) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (105520) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;32mI (105550) ESPNOW_SYS: ========================================[0m
+[0;32mI (105550) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (105550) ESPNOW_SYS: X-axis (rc_x): 63700992[0m
+[0;32mI (105550) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (105550) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (105560) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (105560) ESPNOW_SYS: ========================================[0m
+[0;33mW (105620) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (105620) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (105720) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (105720) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (105750) TEMP_SENSOR: ==========================================[0m
+[0;32mI (105750) TEMP_SENSOR: ESP32-C3 Internal Temperature Sensor[0m
+[0;32mI (105750) TEMP_SENSOR: Current Temperature: 50.60°C[0m
+[0;32mI (105750) TEMP_SENSOR: ==========================================[0m
+[0;32mI (105800) ESPNOW_SYS: ========================================[0m
+[0;32mI (105800) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (105800) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (105800) ESPNOW_SYS: Y-axis (rc_y): 66912256[0m
+[0;32mI (105800) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (105810) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (105810) ESPNOW_SYS: ========================================[0m
+[0;33mW (105820) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (105820) CONTROL: RC(x,y): (63635456,66912256) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (105930) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (105930) CONTROL: RC(x,y): (63635456,66912256) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (106030) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (106030) CONTROL: RC(x,y): (63635456,66912256) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (106070) ESPNOW_SYS: ========================================[0m
+[0;32mI (106070) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (106070) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (106070) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (106070) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (106080) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (106080) ESPNOW_SYS: ========================================[0m
+[0;33mW (106130) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (106130) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (106230) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (106230) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (106330) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (106330) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;32mI (106340) ESPNOW_SYS: ========================================[0m
+[0;32mI (106340) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (106340) ESPNOW_SYS: X-axis (rc_x): 63700992[0m
+[0;32mI (106340) ESPNOW_SYS: Y-axis (rc_y): 67043328[0m
+[0;32mI (106340) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (106350) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (106350) ESPNOW_SYS: ========================================[0m
+[0;33mW (106430) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (106430) CONTROL: RC(x,y): (63700992,67043328) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (106530) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (106530) CONTROL: RC(x,y): (63700992,67043328) -> PWM(L,R): (8190,2542)[0m
+[0;32mI (106540) ULTRASONIC: Distance: 0.02 cm[0m
+[0;32mI (106610) ESPNOW_SYS: ========================================[0m
+[0;32mI (106610) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (106610) ESPNOW_SYS: X-axis (rc_x): 63700992[0m
+[0;32mI (106610) ESPNOW_SYS: Y-axis (rc_y): 67043328[0m
+[0;32mI (106610) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (106620) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (106620) ESPNOW_SYS: ========================================[0m
+[0;33mW (106630) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (106630) CONTROL: RC(x,y): (63700992,67043328) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (106740) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (106740) CONTROL: RC(x,y): (63700992,67043328) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (106840) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (106840) CONTROL: RC(x,y): (63700992,67043328) -> PWM(L,R): (8190,2542)[0m
+[0;32mI (106880) ESPNOW_SYS: ========================================[0m
+[0;32mI (106880) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (106880) ESPNOW_SYS: X-axis (rc_x): 63700992[0m
+[0;32mI (106880) ESPNOW_SYS: Y-axis (rc_y): 66912256[0m
+[0;32mI (106890) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (106890) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (106890) ESPNOW_SYS: ========================================[0m
+[0;33mW (106940) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (106940) CONTROL: RC(x,y): (63700992,66912256) -> PWM(L,R): (8190,2549)[0m
+[0;32mI (107000) INA219: VBUS: 0.86V, I: -0.40mA, P: 0.00mW[0m
+[0;33mW (107040) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (107040) CONTROL: RC(x,y): (63700992,66912256) -> PWM(L,R): (8190,2549)[0m
+[0;33mW (107140) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (107140) CONTROL: RC(x,y): (63700992,66912256) -> PWM(L,R): (8190,2549)[0m
+[0;32mI (107140) ESPNOW_SYS: ========================================[0m
+[0;32mI (107140) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (107150) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (107150) ESPNOW_SYS: Y-axis (rc_y): 67502080[0m
+[0;32mI (107150) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (107160) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (107160) ESPNOW_SYS: ========================================[0m
+[0;33mW (107240) MOTORS: M1: 8190, M2: 2513, M3: 0, M4: 0[0m
+[0;32mI (107240) CONTROL: RC(x,y): (63635456,67502080) -> PWM(L,R): (8190,2513)[0m
+[0;33mW (107340) MOTORS: M1: 8190, M2: 2513, M3: 0, M4: 0[0m
+[0;32mI (107340) CONTROL: RC(x,y): (63635456,67502080) -> PWM(L,R): (8190,2513)[0m
+[0;32mI (107410) ESPNOW_SYS: ========================================[0m
+[0;32mI (107410) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (107410) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (107410) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (107410) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (107420) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (107420) ESPNOW_SYS: ========================================[0m
+[0;33mW (107440) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (107440) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (107540) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (107540) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (107580) ULTRASONIC: Measurement failed: 512[0m
+[0;33mW (107640) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (107640) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;32mI (107690) ESPNOW_SYS: ========================================[0m
+[0;32mI (107690) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (107690) ESPNOW_SYS: X-axis (rc_x): 63700992[0m
+[0;32mI (107690) ESPNOW_SYS: Y-axis (rc_y): 66912256[0m
+[0;32mI (107690) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (107700) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (107700) ESPNOW_SYS: ========================================[0m
+[0;33mW (107740) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (107740) CONTROL: RC(x,y): (63700992,66912256) -> PWM(L,R): (8190,2549)[0m
+[0;33mW (107840) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (107840) CONTROL: RC(x,y): (63700992,66912256) -> PWM(L,R): (8190,2549)[0m
+[0;33mW (107940) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (107940) ESPNOW_SYS: ========================================[0m
+[0;32mI (107940) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (107940) ESPNOW_SYS: X-axis (rc_x): 63700992[0m
+[0;32mI (107940) ESPNOW_SYS: Y-axis (rc_y): 66912256[0m
+[0;32mI (107950) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (107950) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (107960) ESPNOW_SYS: ========================================[0m
+[0;32mI (107960) CONTROL: RC(x,y): (63700992,66912256) -> PWM(L,R): (8190,2549)[0m
+[0;33mW (108070) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (108070) CONTROL: RC(x,y): (63700992,66912256) -> PWM(L,R): (8190,2549)[0m
+[0;33mW (108170) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (108170) CONTROL: RC(x,y): (63700992,66912256) -> PWM(L,R): (8190,2549)[0m
+[0;32mI (108210) ESPNOW_SYS: ========================================[0m
+[0;32mI (108210) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (108210) ESPNOW_SYS: X-axis (rc_x): 63766528[0m
+[0;32mI (108220) ESPNOW_SYS: Y-axis (rc_y): 67043328[0m
+[0;32mI (108220) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (108230) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (108230) ESPNOW_SYS: ========================================[0m
+[0;33mW (108270) MOTORS: M1: 8190, M2: 2546, M3: 0, M4: 0[0m
+[0;32mI (108270) CONTROL: RC(x,y): (63766528,67043328) -> PWM(L,R): (8190,2546)[0m
+[0;33mW (108370) MOTORS: M1: 8190, M2: 2546, M3: 0, M4: 0[0m
+[0;32mI (108370) CONTROL: RC(x,y): (63766528,67043328) -> PWM(L,R): (8190,2546)[0m
+[0;33mW (108470) MOTORS: M1: 8190, M2: 2546, M3: 0, M4: 0[0m
+[0;32mI (108470) CONTROL: RC(x,y): (63766528,67043328) -> PWM(L,R): (8190,2546)[0m
+[0;32mI (108470) ESPNOW_SYS: ========================================[0m
+[0;32mI (108470) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (108480) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (108480) ESPNOW_SYS: Y-axis (rc_y): 67043328[0m
+[0;32mI (108480) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (108490) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (108490) ESPNOW_SYS: ========================================[0m
+[0;33mW (108570) MOTORS: M1: 8190, M2: 2538, M3: 0, M4: 0[0m
+[0;32mI (108570) CONTROL: RC(x,y): (63635456,67043328) -> PWM(L,R): (8190,2538)[0m
+[0;33mW (108600) ULTRASONIC: Measurement failed: 512[0m
+[0;33mW (108670) MOTORS: M1: 8190, M2: 2538, M3: 0, M4: 0[0m
+[0;32mI (108670) CONTROL: RC(x,y): (63635456,67043328) -> PWM(L,R): (8190,2538)[0m
+[0;32mI (108730) ESPNOW_SYS: ========================================[0m
+[0;32mI (108730) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (108730) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (108730) ESPNOW_SYS: Y-axis (rc_y): 67043328[0m
+[0;32mI (108730) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (108740) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (108740) ESPNOW_SYS: ========================================[0m
+[0;33mW (108770) MOTORS: M1: 8190, M2: 2538, M3: 0, M4: 0[0m
+[0;32mI (108770) CONTROL: RC(x,y): (63635456,67043328) -> PWM(L,R): (8190,2538)[0m
+[0;33mW (108870) MOTORS: M1: 8190, M2: 2538, M3: 0, M4: 0[0m
+[0;32mI (108870) CONTROL: RC(x,y): (63635456,67043328) -> PWM(L,R): (8190,2538)[0m
+[0;33mW (108970) MOTORS: M1: 8190, M2: 2538, M3: 0, M4: 0[0m
+[0;32mI (108970) CONTROL: RC(x,y): (63635456,67043328) -> PWM(L,R): (8190,2538)[0m
+[0;32mI (109010) ESPNOW_SYS: ========================================[0m
+[0;32mI (109010) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (109010) ESPNOW_SYS: X-axis (rc_x): 63700992[0m
+[0;32mI (109010) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (109010) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (109020) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (109020) ESPNOW_SYS: ========================================[0m
+[0;33mW (109070) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (109070) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (109170) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (109170) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (109260) ESPNOW_SYS: ========================================[0m
+[0;32mI (109260) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (109260) ESPNOW_SYS: X-axis (rc_x): 63700992[0m
+[0;32mI (109260) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (109270) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (109270) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (109270) ESPNOW_SYS: ========================================[0m
+[0;33mW (109280) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (109280) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (109390) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (109390) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (109490) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (109490) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (109500) INA219: VBUS: 0.85V, I: -0.30mA, P: 0.00mW[0m
+[0;32mI (109550) ESPNOW_SYS: ========================================[0m
+[0;32mI (109550) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (109550) ESPNOW_SYS: X-axis (rc_x): 63700992[0m
+[0;32mI (109560) ESPNOW_SYS: Y-axis (rc_y): 67043328[0m
+[0;32mI (109560) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (109560) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (109570) ESPNOW_SYS: ========================================[0m
+[0;33mW (109590) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (109590) CONTROL: RC(x,y): (63700992,67043328) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (109600) ULTRASONIC: Measurement failed: 512[0m
+[0;33mW (109690) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (109690) CONTROL: RC(x,y): (63700992,67043328) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (109790) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (109790) CONTROL: RC(x,y): (63700992,67043328) -> PWM(L,R): (8190,2542)[0m
+[0;32mI (109790) ESPNOW_SYS: ========================================[0m
+[0;32mI (109790) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (109790) ESPNOW_SYS: X-axis (rc_x): 63766528[0m
+[0;32mI (109800) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (109800) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (109810) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (109810) ESPNOW_SYS: ========================================[0m
+[0;33mW (109890) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (109890) CONTROL: RC(x,y): (63766528,66977792) -> PWM(L,R): (8190,2549)[0m
+[0;33mW (109990) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (109990) CONTROL: RC(x,y): (63766528,66977792) -> PWM(L,R): (8190,2549)[0m
+[0;32mI (110060) ESPNOW_SYS: ========================================[0m
+[0;32mI (110060) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (110060) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (110060) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (110060) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (110070) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (110070) ESPNOW_SYS: ========================================[0m
+[0;33mW (110090) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (110090) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (110190) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (110190) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (110290) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (110290) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;32mI (110330) ESPNOW_SYS: ========================================[0m
+[0;32mI (110330) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (110330) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (110330) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (110330) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (110340) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (110340) ESPNOW_SYS: ========================================[0m
+[0;33mW (110390) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (110390) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (110490) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (110490) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (110590) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (110590) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;32mI (110600) ESPNOW_SYS: ========================================[0m
+[0;32mI (110600) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (110600) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (110600) ESPNOW_SYS: Y-axis (rc_y): 66912256[0m
+[0;32mI (110600) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (110610) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (110610) ESPNOW_SYS: ========================================[0m
+[0;33mW (110630) ULTRASONIC: Measurement failed: 512[0m
+[0;33mW (110690) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (110690) CONTROL: RC(x,y): (63635456,66912256) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (110780) TEMP_SENSOR: ==========================================[0m
+[0;32mI (110780) TEMP_SENSOR: ESP32-C3 Internal Temperature Sensor[0m
+[0;32mI (110780) TEMP_SENSOR: Current Temperature: 50.60°C[0m
+[0;32mI (110780) TEMP_SENSOR: ==========================================[0m
+[0;33mW (110790) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (110790) CONTROL: RC(x,y): (63635456,66912256) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (110870) ESPNOW_SYS: ========================================[0m
+[0;32mI (110870) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (110870) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (110870) ESPNOW_SYS: Y-axis (rc_y): 66912256[0m
+[0;32mI (110880) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (110880) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (110890) ESPNOW_SYS: ========================================[0m
+[0;33mW (110900) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (110900) CONTROL: RC(x,y): (63635456,66912256) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (111000) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (111000) CONTROL: RC(x,y): (63635456,66912256) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (111100) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (111100) CONTROL: RC(x,y): (63635456,66912256) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (111130) ESPNOW_SYS: ========================================[0m
+[0;32mI (111130) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (111130) ESPNOW_SYS: X-axis (rc_x): 63700992[0m
+[0;32mI (111130) ESPNOW_SYS: Y-axis (rc_y): 67567616[0m
+[0;32mI (111140) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (111140) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (111150) ESPNOW_SYS: ========================================[0m
+[0;33mW (111200) MOTORS: M1: 8190, M2: 2513, M3: 0, M4: 0[0m
+[0;32mI (111200) CONTROL: RC(x,y): (63700992,67567616) -> PWM(L,R): (8190,2513)[0m
+[0;33mW (111300) MOTORS: M1: 8190, M2: 2513, M3: 0, M4: 0[0m
+[0;32mI (111300) CONTROL: RC(x,y): (63700992,67567616) -> PWM(L,R): (8190,2513)[0m
+[0;32mI (111390) ESPNOW_SYS: ========================================[0m
+[0;32mI (111390) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (111390) ESPNOW_SYS: X-axis (rc_x): 63766528[0m
+[0;32mI (111400) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (111400) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (111400) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (111410) ESPNOW_SYS: ========================================[0m
+[0;33mW (111410) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (111420) CONTROL: RC(x,y): (63766528,66977792) -> PWM(L,R): (8190,2549)[0m
+[0;33mW (111520) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (111520) CONTROL: RC(x,y): (63766528,66977792) -> PWM(L,R): (8190,2549)[0m
+[0;33mW (111620) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (111620) CONTROL: RC(x,y): (63766528,66977792) -> PWM(L,R): (8190,2549)[0m
+[0;32mI (111660) ESPNOW_SYS: ========================================[0m
+[0;32mI (111660) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (111660) ESPNOW_SYS: X-axis (rc_x): 63700992[0m
+[0;32mI (111660) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (111670) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (111670) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (111680) ESPNOW_SYS: ========================================[0m
+[0;33mW (111690) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (111720) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (111720) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (111820) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (111820) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (111920) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (111920) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (111920) ESPNOW_SYS: ========================================[0m
+[0;32mI (111920) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (111930) ESPNOW_SYS: X-axis (rc_x): 63700992[0m
+[0;32mI (111930) ESPNOW_SYS: Y-axis (rc_y): 66912256[0m
+[0;32mI (111930) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (111940) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (111940) ESPNOW_SYS: ========================================[0m
+[0;32mI (112000) INA219: VBUS: 0.85V, I: -0.30mA, P: 0.00mW[0m
+[0;33mW (112020) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (112020) CONTROL: RC(x,y): (63700992,66912256) -> PWM(L,R): (8190,2549)[0m
+[0;33mW (112120) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (112120) CONTROL: RC(x,y): (63700992,66912256) -> PWM(L,R): (8190,2549)[0m
+[0;32mI (112180) ESPNOW_SYS: ========================================[0m
+[0;32mI (112180) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (112180) ESPNOW_SYS: X-axis (rc_x): 63700992[0m
+[0;32mI (112180) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (112190) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (112190) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (112190) ESPNOW_SYS: ========================================[0m
+[0;33mW (112220) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (112220) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (112320) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (112320) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (112420) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (112420) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (112440) ESPNOW_SYS: ========================================[0m
+[0;32mI (112440) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (112440) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (112440) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (112450) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (112450) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (112460) ESPNOW_SYS: ========================================[0m
+[0;33mW (112520) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (112520) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (112620) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (112620) CONTROL: RC(x,y): (63635456,66977792) -> PWM(L,R): (8190,2542)[0m
+[0;32mI (112700) ESPNOW_SYS: ========================================[0m
+[0;32mI (112700) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (112700) ESPNOW_SYS: X-axis (rc_x): 63700992[0m
+[0;32mI (112700) ESPNOW_SYS: Y-axis (rc_y): 67043328[0m
+[0;32mI (112710) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (112710) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (112720) ESPNOW_SYS: ========================================[0m
+[0;33mW (112720) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (112730) CONTROL: RC(x,y): (63700992,67043328) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (112740) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (112830) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (112830) CONTROL: RC(x,y): (63700992,67043328) -> PWM(L,R): (8190,2542)[0m
+[0;33mW (112930) MOTORS: M1: 8190, M2: 2542, M3: 0, M4: 0[0m
+[0;32mI (112930) CONTROL: RC(x,y): (63700992,67043328) -> PWM(L,R): (8190,2542)[0m
+[0;32mI (112960) ESPNOW_SYS: ========================================[0m
+[0;32mI (112960) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (112960) ESPNOW_SYS: X-axis (rc_x): 63700992[0m
+[0;32mI (112960) ESPNOW_SYS: Y-axis (rc_y): 66912256[0m
+[0;32mI (112970) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (112970) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (112970) ESPNOW_SYS: ========================================[0m
+[0;33mW (113030) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (113030) CONTROL: RC(x,y): (63700992,66912256) -> PWM(L,R): (8190,2549)[0m
+[0;33mW (113130) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (113130) CONTROL: RC(x,y): (63700992,66912256) -> PWM(L,R): (8190,2549)[0m
+[0;33mW (113230) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (113230) ESPNOW_SYS: ========================================[0m
+[0;32mI (113230) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (113230) ESPNOW_SYS: X-axis (rc_x): 63635456[0m
+[0;32mI (113230) ESPNOW_SYS: Y-axis (rc_y): 67043328[0m
+[0;32mI (113240) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (113240) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (113250) ESPNOW_SYS: ========================================[0m
+[0;32mI (113250) CONTROL: RC(x,y): (63700992,66912256) -> PWM(L,R): (8190,2549)[0m
+[0;33mW (113360) MOTORS: M1: 8190, M2: 2538, M3: 0, M4: 0[0m
+[0;32mI (113360) CONTROL: RC(x,y): (63635456,67043328) -> PWM(L,R): (8190,2538)[0m
+[0;33mW (113460) MOTORS: M1: 8190, M2: 2538, M3: 0, M4: 0[0m
+[0;32mI (113460) CONTROL: RC(x,y): (63635456,67043328) -> PWM(L,R): (8190,2538)[0m
+[0;32mI (113500) ESPNOW_SYS: ========================================[0m
+[0;32mI (113500) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (113500) ESPNOW_SYS: X-axis (rc_x): 63700992[0m
+[0;32mI (113500) ESPNOW_SYS: Y-axis (rc_y): 66912256[0m
+[0;32mI (113500) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (113510) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (113510) ESPNOW_SYS: ========================================[0m
+[0;33mW (113560) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (113560) CONTROL: RC(x,y): (63700992,66912256) -> PWM(L,R): (8190,2549)[0m
+[0;33mW (113660) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (113660) CONTROL: RC(x,y): (63700992,66912256) -> PWM(L,R): (8190,2549)[0m
+[0;33mW (113760) MOTORS: M1: 8190, M2: 2549, M3: 0, M4: 0[0m
+[0;32mI (113760) CONTROL: RC(x,y): (63700992,66912256) -> PWM(L,R): (8190,2549)[0m
+[0
