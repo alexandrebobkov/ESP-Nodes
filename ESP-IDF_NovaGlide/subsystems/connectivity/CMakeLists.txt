@@ -1,4 +1,4 @@
 idf_component_register(
-    SRCS "temp_sensor.c"
+    SRCS "wifi_sys.c"
     INCLUDE_DIRS "."
 )
