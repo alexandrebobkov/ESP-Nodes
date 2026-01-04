@@ -9,7 +9,7 @@ static void ultrasonic_update_impl(ultrasonic_system_t *self, TickType_t now) {
     // Read every 1 second
     if ((now - last_read) >= pdMS_TO_TICKS(1000)) {
         uint32_t time_us;
-        esp_err_t res = ultrasonic_measure_raw(&self->sensor, PING_TIMEOUT, &time_us);
+        esp_err_t res = ultrasonic_measure(&self->sensor, 100, &time_us);  // Changed from ultrasonic_measure_raw
 
         if (res == ESP_OK) {
             self->distance_cm = (float)time_us / ROUNDTRIP_CM;
@@ -22,8 +22,8 @@ static void ultrasonic_update_impl(ultrasonic_system_t *self, TickType_t now) {
 
 void ultrasonic_system_init(ultrasonic_system_t *sys) {
     sys->distance_cm = 0.0f;
-    sys->sensor.trigger_gpio = ULTRASONIC_TRIGGER_GPIO;
-    sys->sensor.echo_gpio = ULTRASONIC_ECHO_GPIO;
+    sys->sensor.trigger_pin = ULTRASONIC_TRIGGER_GPIO;  // Changed from trigger_gpio
+    sys->sensor.echo_pin = ULTRASONIC_ECHO_GPIO;        // Changed from echo_gpio
     sys->update = ultrasonic_update_impl;
 
     ESP_ERROR_CHECK(ultrasonic_init(&sys->sensor));
