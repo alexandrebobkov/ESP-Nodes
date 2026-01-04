@@ -1,3 +1,3 @@
 idf_component_register(SRCS "ESP-IDF_NovaGlide.c" "system_init.c" "scheduler.c"
                     INCLUDE_DIRS "."
-		    REQUIRES connectivity motors adc)
+		    REQUIRES motors adc wifi_sys mqtt_sys espnow_sys)
