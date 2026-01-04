@@ -238,9 +238,9 @@ static void update_motors_pwm (int pwm_motor_1, int pwm_motor_2) {
             m.motor4_rpm_pcm = -pwm_motor_2;
         }
         else {
-            m.motor1_rpm_pcm = -pwm_motor_1;
+            m.motor1_rpm_pcm = 0;
             m.motor2_rpm_pcm = 0;
-            m.motor3_rpm_pcm = 0;
+            m.motor3_rpm_pcm = -pwm_motor_1;
             m.motor4_rpm_pcm = 0;//pwm_motor_2;
         }
     }
