@@ -253,7 +253,7 @@ static void update_motors_pwm (int pwm_motor_1, int pwm_motor_2) {
     ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT_REV, m.motor4_rpm_pcm);
     ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT_REV);*/
 
-    ESP_LOGW("MTR LGC", "M1: %d, M2: %d, M3: %d, M4: %d \n",
+    ESP_LOGW("MTR LGC", "M1: %d, M2: %d, M3: %d, M4: %d \n ===========================",
         m.motor1_rpm_pcm,
         m.motor2_rpm_pcm,
         m.motor3_rpm_pcm,
