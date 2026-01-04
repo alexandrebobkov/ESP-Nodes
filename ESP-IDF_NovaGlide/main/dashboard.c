@@ -106,6 +106,7 @@ static void dashboard_task(void *arg) {
 
         draw_separator();
 
+        sprintf(buffer, sizeof(buffer), "%.2f cm", ctx->ultrasonic->distance);
         draw_line("Distance", buffer, COLOR_BLUE);
 
         draw_bottom();
