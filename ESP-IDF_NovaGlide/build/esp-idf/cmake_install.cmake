@@ -569,21 +569,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_NovaGlide/build/esp-idf/sensors/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_NovaGlide/build/esp-idf/controls/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_NovaGlide/build/esp-idf/ui/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
   include("/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_NovaGlide/build/esp-idf/esp-idf-lib__esp_idf_lib_helpers/cmake_install.cmake")
 endif()
 
@@ -600,6 +585,21 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
   include("/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_NovaGlide/build/esp-idf/esp-idf-lib__ultrasonic/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_NovaGlide/build/esp-idf/sensors/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_NovaGlide/build/esp-idf/controls/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_NovaGlide/build/esp-idf/ui/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)

@@ -82,10 +82,10 @@ $<TARGET_FILE:__idf_adc>
 $<TARGET_FILE:__idf_wifi_sys>
 $<TARGET_FILE:__idf_mqtt_sys>
 $<TARGET_FILE:__idf_espnow_sys>
-$<TARGET_FILE:__idf_sensors>
-$<TARGET_FILE:__idf_controls>
-$<TARGET_FILE:__idf_ui>
 $<TARGET_FILE:__idf_esp-idf-lib__i2cdev>
 $<TARGET_FILE:__idf_esp-idf-lib__ina219>
 $<TARGET_FILE:__idf_esp-idf-lib__ultrasonic>
+$<TARGET_FILE:__idf_sensors>
+$<TARGET_FILE:__idf_controls>
+$<TARGET_FILE:__idf_ui>
 $<TARGET_FILE:__idf_main>
