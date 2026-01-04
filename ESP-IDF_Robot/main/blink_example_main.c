@@ -384,7 +384,7 @@ static void display_xy() {
         ESP_LOGI("PWM", "M1: %d, M2: %d, M3: %d, M4: %d", 
             m.motor1_rpm_pcm, m.motor2_rpm_pcm, 
             m.motor3_rpm_pcm, m.motor4_rpm_pcm);
-        joystick_mix (rc_y, rc_x, &pwm_motor_1, &pwm_motor_2);
+        //joystick_mix (rc_y, rc_x, &pwm_motor_1, &pwm_motor_2);
         ESP_LOGI("Converted PWM", "M1+M2: %d, M3+M4: %d", pwm_motor_1, pwm_motor_2);
         uint8_t channel;
         wifi_band_t band;
