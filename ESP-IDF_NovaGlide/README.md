@@ -1,3 +1,5 @@
+# IDF_NovaGlide
+
 subsystems/
 ├── motors/          ✅ LEDC PWM control with joystick mixing
 ├── adc/             ✅ Joystick ADC reading
