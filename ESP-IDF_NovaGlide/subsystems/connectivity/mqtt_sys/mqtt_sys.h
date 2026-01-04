@@ -22,4 +22,14 @@ struct mqtt_system_t {
 
     esp_mqtt_client_handle_t client;
 
-    void (*update)(mqtt_system_t *
+    void (*update)(mqtt_system_t *self, TickType_t now);
+};
+
+void mqtt_system_init(mqtt_system_t *sys);
+void mqtt_update_temp(mqtt_system_t *sys, float temp);
+void mqtt_update_battery(mqtt_system_t *sys, float voltage);
+void mqtt_update_current(mqtt_system_t *sys, float current);
+void mqtt_update_power(mqtt_system_t *sys, float power);
+void mqtt_update_pwm(mqtt_system_t *sys, int left, int right);
+
+#endif  // <-- This was missing!
