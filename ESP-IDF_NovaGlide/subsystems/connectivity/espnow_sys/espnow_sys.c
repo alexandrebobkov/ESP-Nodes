@@ -9,13 +9,14 @@ static void espnow_recv_cb(const esp_now_recv_info_t *recv_info,
                            const uint8_t *data,
                            int len)
 {
-    if (!g_sys || len <= 0 || len > sizeof(sensors_data_t)) return;
+    if (!g_sys || len <= 0 || len > sizeof(espnow_joystick_data_t)) return;
 
     memcpy(&g_sys->last_data, data, len);
     g_sys->last_len = len;
 
-    ESP_LOGI(TAG, "Received %d bytes - X:%d Y:%d", len,
-             g_sys->last_data.x_axis, g_sys->last_data.y_axis);
+    ESP_LOGI(TAG, "ESP-NOW RX: X:%d Y:%d",
+             g_sys->last_data.x_axis,
+             g_sys->last_data.y_axis);
 }
 
 static void espnow_send_impl(espnow_system_t *self,
@@ -23,7 +24,7 @@ static void espnow_send_impl(espnow_system_t *self,
                              int len)
 {
     if (!data || len <= 0) return;
-    esp_now_send(NULL, data, len);  // NULL = broadcast
+    esp_now_send(NULL, data, len);
 }
 
 static void espnow_update_impl(espnow_system_t *self, TickType_t now)
