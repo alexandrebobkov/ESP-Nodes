@@ -1,5 +1,8 @@
 idf_component_register(
-    SRCS "ESP-IDF_NovaGlide.c" "system_init.c" "scheduler.c"
+    SRCS "ESP-IDF_NovaGlide.c"
+         "system_init.c"
+         "scheduler.c"
+         "control_task.c"
     INCLUDE_DIRS "."
     REQUIRES
         esp_wifi
@@ -10,4 +13,6 @@ idf_component_register(
         wifi_sys
         mqtt_sys
         espnow_sys
-        sensors)
+        sensors
+        controls
+        ui)
