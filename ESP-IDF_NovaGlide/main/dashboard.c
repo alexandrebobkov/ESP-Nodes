@@ -24,7 +24,7 @@ static void draw_box(const char *title) {
 }
 
 static void draw_line(const char *label, const char *value, const char *color) {
-    printf("║ " BOLD "%-20s" COLOR_RESET " : %s%-33s" COLOR_RESET " ║\n", label, color, value);
+    printf("║ " BOLD "%-20s" COLOR_RESET " : %s%-33s" COLOR_RESET "   ║\n", label, color, value);
 }
 
 static void draw_separator() {
