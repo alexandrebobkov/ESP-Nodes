@@ -1,3 +1,5 @@
+#include "espnow_sys.h"
+#include "esp_log.h"
 #include "system_init.h"
 #include "scheduler.h"
 #include "control_task.h"
