@@ -226,7 +226,7 @@ static void update_motors_pwm (int pwm_motor_1, int pwm_motor_2) {
         m.motor4_rpm_pcm = 0;
     }
     // FORWARD
-    else if (pwm_motor_1 > 5000 && pwm_motor_2 > 5000)
+    if (pwm_motor_1 > 5000 && pwm_motor_2 > 5000)
     {
         m.motor1_rpm_pcm = pwm_motor_1;   // left, forward
         m.motor2_rpm_pcm = pwm_motor_2;   // right, forward
@@ -234,7 +234,7 @@ static void update_motors_pwm (int pwm_motor_1, int pwm_motor_2) {
         m.motor4_rpm_pcm = 0;
     }
     // REVERSE
-    else if (pwm_motor_1 < -5000 && pwm_motor_2 < -5000)
+    if (pwm_motor_1 < -5000 && pwm_motor_2 < -5000)
     {
         m.motor1_rpm_pcm = 0;
         m.motor2_rpm_pcm = 0;
@@ -242,7 +242,7 @@ static void update_motors_pwm (int pwm_motor_1, int pwm_motor_2) {
         m.motor4_rpm_pcm = -pwm_motor_2;  // right, reverse
     }
     // TURN LEFT
-    else if (pwm_motor_1 < -2000 && pwm_motor_2 > 1500)
+    if (pwm_motor_1 < -2000 && pwm_motor_2 > 1500)
     {
         m.motor1_rpm_pcm = 0;
         m.motor2_rpm_pcm = 8190;   // right, forward
@@ -250,7 +250,7 @@ static void update_motors_pwm (int pwm_motor_1, int pwm_motor_2) {
         m.motor4_rpm_pcm = 0;
     }
     // TURN RIGHT
-    else if (pwm_motor_1 > 1500 && pwm_motor_2 < -2000)
+    if (pwm_motor_1 > 1500 && pwm_motor_2 < -2000)
     {   
         m.motor1_rpm_pcm = 8190;   // left, forward
         m.motor2_rpm_pcm = 0;
