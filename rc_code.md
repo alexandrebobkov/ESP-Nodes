@@ -45,6 +45,15 @@ CMakeLists.txt
 /main/CMakeLists.txt
 /subsystems/CMakeLists.txt
 
+## Top-level CMakeLists.txt
+
+``` text
+cmake_minimum_required(VERSION 3.16)
+include($ENV{IDF_PATH}/tools/cmake/project.cmake)
+set(EXTRA_COMPONENT_DIRS "subsystems")
+project(robot_firmware)
+```
+
 
 ## blink_example_main.c
 
