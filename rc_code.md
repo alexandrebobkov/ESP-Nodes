@@ -14,6 +14,8 @@
     /adc
         adc.c
         adc.h
+        joystick.c
+        joystick.h
     /sensors
         temp_sensor.c
         temp_sensor.h
@@ -22,12 +24,12 @@
         ultrasonic_sensor.c
         ultrasonic_sensor.h
     /connectivity
-        wifi.c
-        wifi.h
-        espnow.c
-        espnow.h
-        mqtt.c
-        mqtt.h
+        wifi_sys.c
+        wifi_sys.h
+        espnow_sys.c
+        espnow_sys.h
+        mqtt_sys.c
+        mqtt_sys.h
     /ui
         ui_led.c
         ui_led.h
@@ -39,7 +41,9 @@
     controls.h
     espnow_config.h
 
-
+CMakeLists.txt
+/main/CMakeLists.txt
+/subsystems/CMakeLists.txt
 
 
 ## blink_example_main.c
