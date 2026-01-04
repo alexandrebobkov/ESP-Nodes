@@ -10,13 +10,10 @@ static void espnow_recv_cb(const esp_now_recv_info_t *recv_info,
                            int len)
 {
     if (!g_sys || len <= 0 || len > sizeof(espnow_joystick_data_t)) return;
-
+    
     memcpy(&g_sys->last_data, data, len);
     g_sys->last_len = len;
-
-    //ESP_LOGI(TAG, "ESP-NOW RX: X:%d Y:%d",
-    //         g_sys->last_data.x_axis,
-    //         g_sys->last_data.y_axis);
+    
     // Enhanced logging with separator for clarity
     ESP_LOGI(TAG, "========================================");
     ESP_LOGI(TAG, "ESP-NOW DATA RECEIVED");
@@ -46,11 +43,11 @@ void espnow_system_init(espnow_system_t *sys)
     sys->last_len = 0;
     sys->send = espnow_send_impl;
     sys->update = espnow_update_impl;
-
+    
     g_sys = sys;
-
+    
     ESP_ERROR_CHECK(esp_now_init());
     ESP_ERROR_CHECK(esp_now_register_recv_cb(espnow_recv_cb));
-
+    
     ESP_LOGI(TAG, "ESP-NOW initialized and waiting for data...");
 }
