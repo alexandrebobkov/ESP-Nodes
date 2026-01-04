@@ -10,7 +10,7 @@ static void espnow_recv_cb(const esp_now_recv_info_t *recv_info,
                            int len)
 {
     if (!g_sys || len <= 0 || len > sizeof(sensors_data_t)) {
-        ESP_LOGW(TAG, "Invalid data: len=%d (expected %d)", len, sizeof(sensors_data_t));
+        ESP_LOGI(TAG, "Invalid data: len=%d (expected %d)", len, sizeof(sensors_data_t));
         return;
     }
 
