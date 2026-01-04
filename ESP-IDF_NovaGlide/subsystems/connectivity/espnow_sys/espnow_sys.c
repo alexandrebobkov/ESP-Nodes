@@ -15,8 +15,8 @@ static void espnow_recv_cb(const esp_now_recv_info_t *recv_info,
     g_sys->last_len = len;
 
     //ESP_LOGI(TAG, "ESP-NOW RX: X:%d Y:%d",
-             g_sys->last_data.x_axis,
-             g_sys->last_data.y_axis);
+    //         g_sys->last_data.x_axis,
+    //         g_sys->last_data.y_axis);
     // Enhanced logging with separator for clarity
     ESP_LOGI(TAG, "========================================");
     ESP_LOGI(TAG, "ESP-NOW DATA RECEIVED");
