@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "ESP-IDF_NovaGlide",
-    "project_version":    "ESP32-Node_Switch-v2.7-11715-g30fac5a3a-dirty",
+    "project_version":    "ESP32-Node_Switch-v2.7-11719-g2e48089fc-dirty",
     "project_path":       "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide",
     "idf_path":           "/home/alex/esp/esp-idf/v5.4.1",
     "build_dir":          "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build",
@@ -1300,7 +1300,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [ "esp-idf-lib__i2cdev", "esp-idf-lib__ina219", "esp-idf-lib__ultrasonic" ],
             "file": "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build/esp-idf/main/libmain.a",
-            "sources": [ "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/main/ESP-IDF_NovaGlide.c", "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/main/system_init.c", "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/main/scheduler.c", "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/main/control_task.c" ],
+            "sources": [ "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/main/ESP-IDF_NovaGlide.c", "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/main/system_init.c", "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/main/scheduler.c", "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/main/control_task.c", "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/main/dashboard.c" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {
@@ -1615,7 +1615,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build/esp-idf/ui/libui.a",
-            "sources": [ "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/subsystems/ui/ui.c", "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/subsystems/ui/dashboard.c" ],
+            "sources": [ "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/subsystems/ui/ui.c" ],
             "include_dirs": [ "." ]
         },
         "ulp": {
