@@ -1,7 +1,7 @@
 import os
 
 # Configure this to your project root
-PROJECT_ROOT = "/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_Robot"
+PROJECT_ROOT = "/home/alex/github/ESP-Nodes/ESP-IDF_Robot"
 OUTPUT_MD = "project_sources.md"
 
 # Folders to scan (relative to project root)
