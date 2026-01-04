@@ -224,7 +224,7 @@ static void update_motors_pwm (int pwm_motor_1, int pwm_motor_2) {
         m.motor3_rpm_pcm = 0;
         m.motor4_rpm_pcm = 0;
     }
-    if (pwm_motor_1 > 0 && pwm_motor_2 < 0) {
+    /*if (pwm_motor_1 > 0 && pwm_motor_2 < 0) {
         m.motor1_rpm_pcm = pwm_motor_1;
         m.motor2_rpm_pcm = 0;
         m.motor3_rpm_pcm = -pwm_motor_2;
@@ -241,7 +241,7 @@ static void update_motors_pwm (int pwm_motor_1, int pwm_motor_2) {
         m.motor2_rpm_pcm = 0;
         m.motor3_rpm_pcm = -pwm_motor_1;
         m.motor4_rpm_pcm = -pwm_motor_2;
-    }
+    }*/
 
     ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, m.motor1_rpm_pcm);
     ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT);
