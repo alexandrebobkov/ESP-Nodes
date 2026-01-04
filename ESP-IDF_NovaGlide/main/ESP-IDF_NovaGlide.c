@@ -3,16 +3,14 @@
 #include "scheduler.h"
 
 // Subsystems (empty for now — you will add them gradually)
-//#include "motors.h"
-//#include "adc.h"
+#include "motors.h"
+#include "adc.h"
 #include "temp_sensor.h"
-//#include "ina219_sensor.h"
-//#include "ultrasonic_sensor.h"
-//#include "wifi_sys.h"
-//#include "espnow_sys.h"
-//#include "mqtt_sys.h"
-//#include "ui_led.h"
-//#include "ui_buttons.h"
+#include "ina219_sensor.h"
+#include "ultrasonic_sensor.h"
+#include "wifi_sys.h"
+#include "espnow_sys.h"
+#include "mqtt_sys.h"
 
 void app_main(void)
 {
