@@ -14,13 +14,17 @@ typedef struct {
     int motor4_rpm_pcm;
 } sensors_data_t;
 
-typedef struct {
+// Forward declaration
+typedef struct espnow_system_t espnow_system_t;
+
+// Struct definition
+struct espnow_system_t {
     sensors_data_t last_data;
     int last_len;
 
-    void (*send)(struct espnow_system_t *self, const uint8_t *data, int len);
-    void (*update)(struct espnow_system_t *self, TickType_t now);
-} espnow_system_t;
+    void (*send)(espnow_system_t *self, const uint8_t *data, int len);
+    void (*update)(espnow_system_t *self, TickType_t now);
+};
 
 void espnow_system_init(espnow_system_t *sys);
 
