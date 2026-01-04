@@ -1,3 +1,51 @@
+# ESP-IDF_Robot Project Layout
+
+/main
+    app_main.c
+    system_init.c
+    system_init.h
+
+/subsystems
+    /motors
+        motor_pwm.c
+        motor_pwm.h
+        motor_controls.c
+        motor_controls.h
+
+    /adc
+        rc_adc.c
+        rc_adc.h
+        joystick.c
+        joystick.h
+
+    /sensors
+        temp_sensor.c
+        temp_sensor.h
+        ina219_sensor.c
+        ina219_sensor.h
+        ultrasonic_sensor.c
+        ultrasonic_sensor.h
+
+    /connectivity
+        wifi.c
+        wifi.h
+        espnow.c
+        espnow.h
+        mqtt.c
+        mqtt.h
+
+    /ui
+        led.c
+        led.h
+        buttons.c
+        buttons.h
+
+/include
+    config.h
+    controls.h
+    espnow_config.h
+
+
 ## blink_example_main.c
 
 /* Robot Controls
