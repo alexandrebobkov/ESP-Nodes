@@ -9,12 +9,16 @@
 #define PING_TIMEOUT 6000
 #define ROUNDTRIP_CM 58.0f
 
-typedef struct {
+// Forward declaration
+typedef struct ultrasonic_system_t ultrasonic_system_t;
+
+// Struct definition
+struct ultrasonic_system_t {
     float distance_cm;
     ultrasonic_sensor_t sensor;
 
-    void (*update)(struct ultrasonic_system_t *self, TickType_t now);
-} ultrasonic_system_t;
+    void (*update)(ultrasonic_system_t *self, TickType_t now);
+};
 
 void ultrasonic_system_init(ultrasonic_system_t *sys);
 
