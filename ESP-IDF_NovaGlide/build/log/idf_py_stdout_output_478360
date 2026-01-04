@@ -128,4 +128,127 @@ I BOD: Brownout detector was triggered
 [0;32mI (416) wifi:config nano formatting: disabled[0m
 [0;32mI (416) wifi:Init data frame dynamic rx buffer num: 32[0m
 [0;32mI (426) wifi:Init static rx mgmt buffer num: 5[0m
-[0;32mI (426) wifi:I
+[0;32mI (426) wifi:Init management short buffer num: 32[0m
+[0;32mI (436) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (436) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (446) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (446) wifi:Init static rx buffer num: 10[0m
+[0;32mI (446) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (456) wifi_init: rx ba win: 6[0m
+[0;32mI (456) wifi_init: accept mbox: 6[0m
+[0;32mI (456) wifi_init: tcpip mbox: 32[0m
+[0;32mI (466) wifi_init: udp mbox: 6[0m
+[0;32mI (466) wifi_init: tcp mbox: 6[0m
+[0;32mI (466) wifi_init: tcp tx win: 5760[0m
+[0;32mI (466) wifi_init: tcp rx win: 5760[0m
+[0;32mI (476) wifi_init: tcp mss: 1440[0m
+[0;32mI (476) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (476) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (486) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (496) phy_init: phy_version 1200,2b7123f9,Feb 18 2025,15:22:21[0m
+[0;32mI (536) wifi:mode : sta (e4:b0:63:17:9e:44)[0m
+[0;32mI (536) wifi:enable tsf[0m
+[0;32mI (536) WIFI_SYS: WiFi initialized and connecting to IoT_bots[0m
+[0;32mI (536) MOTORS: LEDC initialized for all 4 motors[0m
+[0;32mI (546) MOTORS: Motor system initialized[0m
+[0;32mI (546) gpio: GPIO[0]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (556) gpio: GPIO[1]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (566) ADC: ADC initialized[0m
+[0;32mI (566) temperature_sensor: Range [-10°C ~ 80°C], error < 1°C[0m
+[0;32mI (566) TEMP_SENSOR: Temperature sensor initialized[0m
+[0;32mI (576) i2cdev: [Port 0] First initialization. Configuring bus with SDA=3, SCL=2 (Pullups SCL:0 SDA:0)[0m
+[0;33mW (586) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (596) i2cdev: [Port 0] Successfully installed I2C master bus (Handle: 0x3fcab818).[0m
+[0;32mI (606) i2cdev: [0x40 at 0] Device added successfully (Device Handle: 0x3fcabcd0, Speed: 1000000 Hz).[0m
+[0;32mI (616) INA219: INA219 initialized[0m
+[0;32mI (616) ULTRASONIC: Ultrasonic sensor initialized[0m
+[0;32mI (626) ESPNOW: espnow [version: 2.0] init[0m
+[0;32mI (626) ESPNOW_SYS: ESP-NOW initialized[0m
+[1;31mE (636) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (636) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (646) mqtt_client: Error transport connect[0m
+[0;32mI (646) MQTT_SYS: MQTT Disconnected[0m
+[0;32mI (646) MQTT_SYS: MQTT system initialized[0m
+[0;32mI (656) gpio: GPIO[10]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (666) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (666) UI: UI system initialized[0m
+[0;32mI (676) CONTROL: Control task started[0m
+[0;33mW (676) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (676) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (686) CONTROL: Control task created[0m
+[0;32mI (686) SCHEDULER: Scheduler initialized[0m
+[0;32mI (696) SCHEDULER: Scheduler task started[0m
+[0;32mI (696) SCHEDULER: Scheduler started[0m
+[0;32mI (696) main_task: Returned from app_main()[0m
+[0;32mI (756) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (756) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (776) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (776) wifi:state: assoc -> run (0x10)[0m
+[0;33mW (786) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (786) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (806) wifi:connected with IoT_bots, aid = 3, channel 1, BW20, bssid = 62:a6:e6:79:02:ee[0m
+[0;32mI (806) wifi:security: WPA2-PSK, phy: bg, rssi: -24[0m
+[0;32mI (806) wifi:pm start, type: 1[0m
+
+[0;32mI (806) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (816) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (856) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;33mW (886) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (886) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (986) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (986) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (1086) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1086) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (1186) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1186) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (1286) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1286) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (1386) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1386) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (1396) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (1486) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1486) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (1586) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1586) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (1686) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1686) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (1786) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1786) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (1856) esp_netif_handlers: sta ip: 10.100.71.55, mask: 255.255.255.0, gw: 10.100.71.1[0m
+[0;33mW (1886) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1886) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (1986) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1986) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2086) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2086) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2186) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2186) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2286) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2286) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2386) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2386) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2396) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (2486) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2486) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2586) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2586) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2686) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2686) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2786) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2786) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2886) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2886) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (2896) INA219: VBUS: 0.83V, I: -0.40mA, P: 0.00mW[0m
+[0;33mW (2986) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2986) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (3086) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3086) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (3186) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3186) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (3286) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3286) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (3386) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3386) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (3396) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (3486) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3486) CONTROL: RC(x,y): (0,0) ->
