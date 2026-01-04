@@ -30,7 +30,11 @@
 #define MTR_FRONT_RIGHT_REV         LEDC_CHANNEL_3
 #define MTR_FRONT_RIGHT_REV_DUTY    3361
 
-typedef struct {
+// Forward declaration
+typedef struct motor_system_t motor_system_t;
+
+// Struct definition
+struct motor_system_t {
     int left_pwm;   // Signed PWM for left motors (-8191 to +8190)
     int right_pwm;  // Signed PWM for right motors (-8191 to +8190)
 
@@ -40,8 +44,8 @@ typedef struct {
     int motor3_rpm_pcm;  // Left reverse
     int motor4_rpm_pcm;  // Right reverse
 
-    void (*update)(struct motor_system_t *self, TickType_t now);
-} motor_system_t;
+    void (*update)(motor_system_t *self, TickType_t now);
+};
 
 void motor_system_init(motor_system_t *sys);
 void motor_set_pwm(motor_system_t *sys, int left_pwm, int right_pwm);
