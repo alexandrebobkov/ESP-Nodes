@@ -836,3 +836,91 @@ factory,app,factory,0x10000,1M,
 [807/964] Building C object esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/src/dedic_gpio.c.obj
 [808/964] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/esp_console_common.c.obj
 [809/964] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/split_argv.c.obj
+[810/964] Building C object esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/src/gpio.c.obj
+[811/964] Linking C static library esp-idf/esp_driver_gpio/libesp_driver_gpio.a
+[812/964] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/commands.c.obj
+[813/964] Linking C static library esp-idf/riscv/libriscv.a
+[814/964] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/arg_cmd.c.obj
+[815/964] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/esp_console_repl_chip.c.obj
+[816/964] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/arg_dbl.c.obj
+[817/964] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/arg_date.c.obj
+[818/964] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/linenoise/linenoise.c.obj
+[819/964] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/arg_dstr.c.obj
+[820/964] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/arg_end.c.obj
+[821/964] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/arg_file.c.obj
+[822/964] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/arg_lit.c.obj
+[823/964] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/arg_rem.c.obj
+[824/964] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/arg_hashtable.c.obj
+[825/964] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/arg_int.c.obj
+[826/964] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/arg_str.c.obj
+[827/964] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/arg_utils.c.obj
+[828/964] Building C object esp-idf/unity/CMakeFiles/__idf_unity.dir/unity_compat.c.obj
+[829/964] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/arg_rex.c.obj
+[830/964] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/argtable3.c.obj
+[831/964] Building C object esp-idf/unity/CMakeFiles/__idf_unity.dir/unity_runner.c.obj
+[832/964] Building C object esp-idf/unity/CMakeFiles/__idf_unity.dir/unity_utils_freertos.c.obj
+[833/964] Building C object esp-idf/unity/CMakeFiles/__idf_unity.dir/unity_utils_cache.c.obj
+[834/964] Building C object esp-idf/unity/CMakeFiles/__idf_unity.dir/unity_utils_memory.c.obj
+[835/964] Linking C static library esp-idf/console/libconsole.a
+[836/964] Building C object esp-idf/unity/CMakeFiles/__idf_unity.dir/unity_port_esp32.c.obj
+[837/964] Building C object esp-idf/unity/CMakeFiles/__idf_unity.dir/port/esp/unity_utils_memory_esp.c.obj
+[838/964] Building C object esp-idf/unity/CMakeFiles/__idf_unity.dir/unity/src/unity.c.obj
+[839/964] Building C object esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/proto-c/constants.pb-c.c.obj
+[840/964] Building C object esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/protobuf-c/protobuf-c/protobuf-c.c.obj
+[841/964] Linking C static library esp-idf/protobuf-c/libprotobuf-c.a
+[842/964] Building C object esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/proto-c/sec0.pb-c.c.obj
+[843/964] Building C object esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/src/common/protocomm.c.obj
+[844/964] Building C object esp-idf/esp_https_server/CMakeFiles/__idf_esp_https_server.dir/src/https_server.c.obj
+[845/964] Building C object esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/proto-c/sec1.pb-c.c.obj
+[846/964] Building C object esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/proto-c/session.pb-c.c.obj
+[847/964] Building C object esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/proto-c/sec2.pb-c.c.obj
+[848/964] Building C object esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/src/transports/protocomm_httpd.c.obj
+[849/964] Building C object esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/src/security/security0.c.obj
+[850/964] Building C object esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/src/transports/protocomm_console.c.obj
+[851/964] Building C object esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/src/crypto/srp6a/esp_srp.c.obj
+[852/964] Building C object esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/src/crypto/srp6a/esp_srp_mpi.c.obj
+[853/964] Building CXX object esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/Partition.cpp.obj
+[854/964] Building C object esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/src/security/security2.c.obj
+[855/964] Building C object esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/src/security/security1.c.obj
+[856/964] Building CXX object esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/crc32.cpp.obj
+[857/964] Building CXX object esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/WL_Ext_Perf.cpp.obj
+[858/964] Building CXX object esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/SPI_Flash.cpp.obj
+[859/964] Building CXX object esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/WL_Ext_Safe.cpp.obj
+[860/964] Building CXX object esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/wear_levelling.cpp.obj
+[861/964] Building C object esp-idf/app_trace/CMakeFiles/__idf_app_trace.dir/app_trace_util.c.obj
+[862/964] Building C object esp-idf/app_trace/CMakeFiles/__idf_app_trace.dir/app_trace.c.obj
+[863/964] Building C object esp-idf/app_trace/CMakeFiles/__idf_app_trace.dir/host_file_io.c.obj
+[864/964] Linking C static library esp-idf/unity/libunity.a
+[865/964] Building C object esp-idf/json/CMakeFiles/__idf_json.dir/cJSON/cJSON_Utils.c.obj
+[866/964] Building CXX object esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/WL_Flash.cpp.obj
+[867/964] Building C object esp-idf/app_trace/CMakeFiles/__idf_app_trace.dir/port/port_uart.c.obj
+[868/964] Building C object esp-idf/cmock/CMakeFiles/__idf_cmock.dir/CMock/src/cmock.c.obj
+[869/964] Building C object esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/esp_cam_ctlr.c.obj
+[870/964] Building C object esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/dvp_share_ctrl.c.obj
+[871/964] Building C object esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth_netif_glue.c.obj
+[872/964] Building C object esp-idf/esp_hid/CMakeFiles/__idf_esp_hid.dir/src/esp_hidd.c.obj
+[873/964] Building C object esp-idf/json/CMakeFiles/__idf_json.dir/cJSON/cJSON.c.obj
+[874/964] Linking C static library esp-idf/esp_https_server/libesp_https_server.a
+[875/964] Building C object esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth.c.obj
+[876/964] Building C object esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/phy/esp_eth_phy_802_3.c.obj
+[877/964] Building C object esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/src/esp_lcd_common.c.obj
+[878/964] Building C object esp-idf/esp_hid/CMakeFiles/__idf_esp_hid.dir/src/esp_hid_common.c.obj
+[879/964] Building C object esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/src/esp_lcd_panel_io.c.obj
+[880/964] Building C object esp-idf/esp_hid/CMakeFiles/__idf_esp_hid.dir/src/esp_hidh.c.obj
+[881/964] Building C object esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/src/esp_lcd_panel_ssd1306.c.obj
+[882/964] Building C object esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/src/esp_lcd_panel_nt35510.c.obj
+[883/964] Building C object esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/src/esp_lcd_panel_ops.c.obj
+[884/964] Linking C static library esp-idf/protocomm/libprotocomm.a
+[885/964] Building C object esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/src/esp_lcd_panel_st7789.c.obj
+[886/964] Building C object esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/i2c/esp_lcd_panel_io_i2c_v2.c.obj
+[887/964] Building C object esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/i2c/esp_lcd_panel_io_i2c_v1.c.obj
+[888/964] Building C object esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/spi/esp_lcd_panel_io_spi.c.obj
+[889/964] Performing configure step for 'bootloader'
+-- Found Git: /usr/bin/git (found version "2.51.0")
+-- The C compiler identification is GNU 14.2.0
+-- The CXX compiler identification is GNU 14.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: /home/abobkov/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20241119/riscv32-esp-elf/bin/riscv32-esp-elf-gcc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /home/abobkov/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20241119/riscv32-esp-elf/bin/riscv32-esp-elf-gcc - skipped
