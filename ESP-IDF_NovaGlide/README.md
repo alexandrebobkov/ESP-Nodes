@@ -1,4 +1,6 @@
-# IDF_NovaGlide
+# ESP-IDF NovaGlide RC Robot
+
+A modular robot control system for ESP32-C3 with wireless control (ESP-NOW), telemetry (MQTT), and comprehensive sensor integration.
 
 ```
 subsystems/
@@ -15,10 +17,6 @@ main/
 ├── scheduler.c          ✅ Unified update loop
 └── control_task.c       ✅ Motor control task
 ```
-
-# ESP-IDF NovaGlide Robot
-
-A modular robot control system for ESP32-C3 with wireless control (ESP-NOW), telemetry (MQTT), and comprehensive sensor integration.
 
 ## 🏗️ Project Structure
 
