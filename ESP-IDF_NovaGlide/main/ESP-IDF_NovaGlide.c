@@ -13,57 +13,6 @@
 #include "mqtt_sys.h"
 #include "ui.h"
 
-void app_main(void)
-{
-    // System-level initialization
-    system_init();
-
-    // Subsystem instances
-    static motor_system_t motors;
-    static adc_system_t adc;
-    static temp_sensor_system_t temp;
-    static ina219_system_t ina;
-    static ultrasonic_system_t ultra;
-    static mqtt_system_t mqtt;
-    static espnow_system_t espnow;
-    static ui_system_t ui;
-
-    // Initialize WiFi first (needed for ESP-NOW and MQTT)
-    wifi_system_init();
-
-    // Initialize all subsystems
-    motor_system_init(&motors);
-    adc_system_init(&adc);
-    temp_sensor_system_init(&temp);
-    ina219_system_init(&ina);
-    ultrasonic_system_init(&ultra);
-    espnow_system_init(&espnow);
-    mqtt_system_init(&mqtt);
-    ui_system_init(&ui);
-
-    // Start control task (joystick -> motors)
-    control_task_start(&motors, &espnow);
-
-    // Create data bridge task for MQTT telemetry
-    xTaskCreate(telemetry_bridge_task, "telemetry", 4096,
-                &(telemetry_context_t){&temp, &ina, &motors, &mqtt}, 5, NULL);
-
-    // Scheduler wiring
-    static scheduler_t sched = {
-        .motors = &motors,
-        .adc = &adc,
-        .temp = &temp,
-        .ina = &ina,
-        .ultra = &ultra,
-        .mqtt = &mqtt,
-        .espnow = &espnow,
-        .ui = &ui
-    };
-
-    scheduler_init(&sched);
-    scheduler_start(&sched);
-}
-
 // Telemetry bridge context
 typedef struct {
     temp_sensor_system_t *temp;
@@ -87,3 +36,10 @@ static void telemetry_bridge_task(void *arg) {
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
+
+void app_main(void)
+{
+    // System-level initialization
+    system_init();
+
+    // S
