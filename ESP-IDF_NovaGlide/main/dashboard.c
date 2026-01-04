@@ -107,7 +107,7 @@ static void dashboard_task(void *arg) {
         draw_bottom();
 
         // Status bar at bottom
-        printf("\n" COLOR_YELLOW "Press Ctrl+] to exit monitor" COLOR_RESET "\n");
+        //printf("\n" COLOR_YELLOW "Press Ctrl+] to exit monitor" COLOR_RESET "\n");
 
         // Update every 200ms for smooth display
         vTaskDelay(pdMS_TO_TICKS(200));
