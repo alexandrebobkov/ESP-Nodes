@@ -64,6 +64,17 @@ idf_component_register(
 )
 ```
 
+## /subsystems/CMakeLists.txt
+
+``` text
+# subsystems/motors/CMakeLists.txt
+idf_component_register(
+    SRCS "motors.c"
+    INCLUDE_DIRS "."
+    REQUIRES driver
+)
+```
+
 
 ## blink_example_main.c
 
