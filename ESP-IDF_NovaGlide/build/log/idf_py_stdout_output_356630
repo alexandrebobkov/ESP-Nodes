@@ -836,3 +836,104 @@ factory,app,factory,0x10000,1M,
 [807/980] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/split_argv.c.obj
 [808/980] Building C object esp-idf/riscv/CMakeFiles/__idf_riscv.dir/interrupt_intc.c.obj
 [809/980] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/commands.c.obj
+[810/980] Building C object esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/src/gpio.c.obj
+[811/980] Linking C static library esp-idf/esp_driver_gpio/libesp_driver_gpio.a
+[812/980] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/esp_console_common.c.obj
+[813/980] Linking C static library esp-idf/riscv/libriscv.a
+[814/980] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/esp_console_repl_chip.c.obj
+[815/980] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/arg_dbl.c.obj
+[816/980] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/arg_dstr.c.obj
+[817/980] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/arg_cmd.c.obj
+[818/980] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/linenoise/linenoise.c.obj
+[819/980] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/arg_end.c.obj
+[820/980] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/arg_date.c.obj
+[821/980] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/arg_rem.c.obj
+[822/980] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/arg_file.c.obj
+[823/980] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/arg_lit.c.obj
+[824/980] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/arg_hashtable.c.obj
+[825/980] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/arg_utils.c.obj
+[826/980] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/arg_rex.c.obj
+[827/980] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/arg_int.c.obj
+[828/980] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/arg_str.c.obj
+[829/980] Building C object esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/argtable3.c.obj
+[830/980] Building C object esp-idf/mqtt/CMakeFiles/__idf_mqtt.dir/esp-mqtt/lib/mqtt_outbox.c.obj
+[831/980] Building C object esp-idf/mqtt/CMakeFiles/__idf_mqtt.dir/esp-mqtt/lib/platform_esp32_idf.c.obj
+[832/980] Building C object esp-idf/unity/CMakeFiles/__idf_unity.dir/unity_compat.c.obj
+[833/980] Building C object esp-idf/mqtt/CMakeFiles/__idf_mqtt.dir/esp-mqtt/lib/mqtt_msg.c.obj
+[834/980] Building C object esp-idf/unity/CMakeFiles/__idf_unity.dir/unity_runner.c.obj
+[835/980] Building C object esp-idf/unity/CMakeFiles/__idf_unity.dir/unity_utils_freertos.c.obj
+[836/980] Building C object esp-idf/unity/CMakeFiles/__idf_unity.dir/unity_utils_cache.c.obj
+[837/980] Building C object esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/protobuf-c/protobuf-c/protobuf-c.c.obj
+[838/980] Building C object esp-idf/unity/CMakeFiles/__idf_unity.dir/unity_utils_memory.c.obj
+[839/980] Linking C static library esp-idf/console/libconsole.a
+[840/980] Building C object esp-idf/unity/CMakeFiles/__idf_unity.dir/port/esp/unity_utils_memory_esp.c.obj
+[841/980] Building C object esp-idf/unity/CMakeFiles/__idf_unity.dir/unity_port_esp32.c.obj
+[842/980] Linking C static library esp-idf/protobuf-c/libprotobuf-c.a
+[843/980] Building C object esp-idf/esp_https_server/CMakeFiles/__idf_esp_https_server.dir/src/https_server.c.obj
+[844/980] Building C object esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/proto-c/constants.pb-c.c.obj
+[845/980] Building C object esp-idf/unity/CMakeFiles/__idf_unity.dir/unity/src/unity.c.obj
+[846/980] Building C object esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/proto-c/sec0.pb-c.c.obj
+[847/980] Building C object esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/proto-c/sec2.pb-c.c.obj
+[848/980] Building C object esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/proto-c/session.pb-c.c.obj
+[849/980] Building C object esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/proto-c/sec1.pb-c.c.obj
+[850/980] Building C object esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/src/common/protocomm.c.obj
+[851/980] Building C object esp-idf/mqtt/CMakeFiles/__idf_mqtt.dir/esp-mqtt/mqtt_client.c.obj
+[852/980] Building C object esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/src/transports/protocomm_console.c.obj
+[853/980] Building C object esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/src/security/security0.c.obj
+[854/980] Building C object esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/src/crypto/srp6a/esp_srp_mpi.c.obj
+[855/980] Building C object esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/src/transports/protocomm_httpd.c.obj
+[856/980] Building C object esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/src/crypto/srp6a/esp_srp.c.obj
+[857/980] Building C object esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/src/security/security2.c.obj
+[858/980] Building CXX object esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/Partition.cpp.obj
+[859/980] Building C object esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/src/security/security1.c.obj
+[860/980] Building CXX object esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/SPI_Flash.cpp.obj
+[861/980] Building CXX object esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/crc32.cpp.obj
+[862/980] Building CXX object esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/WL_Ext_Perf.cpp.obj
+[863/980] Building CXX object esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/WL_Ext_Safe.cpp.obj
+[864/980] Linking C static library esp-idf/mqtt/libmqtt.a
+[865/980] Building C object esp-idf/motors/CMakeFiles/__idf_motors.dir/motors.c.obj
+FAILED: esp-idf/motors/CMakeFiles/__idf_motors.dir/motors.c.obj 
+/home/abobkov/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20241119/riscv32-esp-elf/bin/riscv32-esp-elf-gcc -DESP_PLATFORM -DIDF_VER=\"v5.4.1-dirty\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_NovaGlide/build/config -I/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_NovaGlide/subsystems/motors -I/home/abobkov/esp/v5.4.1/esp-idf/components/newlib/platform_include -I/home/abobkov/esp/v5.4.1/esp-idf/components/freertos/config/include -I/home/abobkov/esp/v5.4.1/esp-idf/components/freertos/config/include/freertos -I/home/abobkov/esp/v5.4.1/esp-idf/components/freertos/config/riscv/include -I/home/abobkov/esp/v5.4.1/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/home/abobkov/esp/v5.4.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/include -I/home/abobkov/esp/v5.4.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/include/freertos -I/home/abobkov/esp/v5.4.1/esp-idf/components/freertos/esp_additions/include -I/home/abobkov/esp/v5.4.1/esp-idf/components/esp_hw_support/include -I/home/abobkov/esp/v5.4.1/esp-idf/components/esp_hw_support/include/soc -I/home/abobkov/esp/v5.4.1/esp-idf/components/esp_hw_support/include/soc/esp32c3 -I/home/abobkov/esp/v5.4.1/esp-idf/components/esp_hw_support/dma/include -I/home/abobkov/esp/v5.4.1/esp-idf/components/esp_hw_support/ldo/include -I/home/abobkov/esp/v5.4.1/esp-idf/components/esp_hw_support/debug_probe/include -I/home/abobkov/esp/v5.4.1/esp-idf/components/esp_hw_support/port/esp32c3/. -I/home/abobkov/esp/v5.4.1/esp-idf/components/esp_hw_support/port/esp32c3/include -I/home/abobkov/esp/v5.4.1/esp-idf/components/heap/include -I/home/abobkov/esp/v5.4.1/esp-idf/components/heap/tlsf -I/home/abobkov/esp/v5.4.1/esp-idf/components/log/include -I/home/abobkov/esp/v5.4.1/esp-idf/components/soc/include -I/home/abobkov/esp/v5.4.1/esp-idf/components/soc/esp32c3 -I/home/abobkov/esp/v5.4.1/esp-idf/components/soc/esp32c3/include -I/home/abobkov/esp/v5.4.1/esp-idf/components/soc/esp32c3/register -I/home/abobkov/esp/v5.4.1/esp-idf/components/hal/platform_port/include -I/home/abobkov/esp/v5.4.1/esp-idf/components/hal/esp32c3/include -I/home/abobkov/esp/v5.4.1/esp-idf/components/hal/include -I/home/abobkov/esp/v5.4.1/esp-idf/components/esp_rom/include -I/home/abobkov/esp/v5.4.1/esp-idf/components/esp_rom/esp32c3/include -I/home/abobkov/esp/v5.4.1/esp-idf/components/esp_rom/esp32c3/include/esp32c3 -I/home/abobkov/esp/v5.4.1/esp-idf/components/esp_rom/esp32c3 -I/home/abobkov/esp/v5.4.1/esp-idf/components/esp_common/include -I/home/abobkov/esp/v5.4.1/esp-idf/components/esp_system/include -I/home/abobkov/esp/v5.4.1/esp-idf/components/esp_system/port/soc -I/home/abobkov/esp/v5.4.1/esp-idf/components/esp_system/port/include/riscv -I/home/abobkov/esp/v5.4.1/esp-idf/components/esp_system/port/include/private -I/home/abobkov/esp/v5.4.1/esp-idf/components/riscv/include -I/home/abobkov/esp/v5.4.1/esp-idf/components/lwip/include -I/home/abobkov/esp/v5.4.1/esp-idf/components/lwip/include/apps -I/home/abobkov/esp/v5.4.1/esp-idf/components/lwip/include/apps/sntp -I/home/abobkov/esp/v5.4.1/esp-idf/components/lwip/lwip/src/include -I/home/abobkov/esp/v5.4.1/esp-idf/components/lwip/port/include -I/home/abobkov/esp/v5.4.1/esp-idf/components/lwip/port/freertos/include -I/home/abobkov/esp/v5.4.1/esp-idf/components/lwip/port/esp32xx/include -I/home/abobkov/esp/v5.4.1/esp-idf/components/lwip/port/esp32xx/include/arch -I/home/abobkov/esp/v5.4.1/esp-idf/components/lwip/port/esp32xx/include/sys -march=rv32imc_zicsr_zifencei  -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-error=extra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -nostartfiles -Og -fno-shrink-wrap -fmacro-prefix-map=/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_NovaGlide=. -fmacro-prefix-map=/home/abobkov/esp/v5.4.1/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu17 -Wno-old-style-declaration -MD -MT esp-idf/motors/CMakeFiles/__idf_motors.dir/motors.c.obj -MF esp-idf/motors/CMakeFiles/__idf_motors.dir/motors.c.obj.d -o esp-idf/motors/CMakeFiles/__idf_motors.dir/motors.c.obj -c /home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_NovaGlide/subsystems/motors/motors.c
+/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_NovaGlide/subsystems/motors/motors.c:2:10: fatal error: driver/ledc.h: No such file or directory
+    2 | #include "driver/ledc.h"
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+[866/980] Building CXX object esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/wear_levelling.cpp.obj
+[867/980] Building C object esp-idf/json/CMakeFiles/__idf_json.dir/cJSON/cJSON_Utils.c.obj
+[868/980] Building CXX object esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/WL_Flash.cpp.obj
+[869/980] Building C object esp-idf/json/CMakeFiles/__idf_json.dir/cJSON/cJSON.c.obj
+[870/980] Performing configure step for 'bootloader'
+-- Found Git: /usr/bin/git (found version "2.51.0")
+-- The C compiler identification is GNU 14.2.0
+-- The CXX compiler identification is GNU 14.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: /home/abobkov/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20241119/riscv32-esp-elf/bin/riscv32-esp-elf-gcc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /home/abobkov/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20241119/riscv32-esp-elf/bin/riscv32-esp-elf-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /home/abobkov/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20241119/riscv32-esp-elf/bin/riscv32-esp-elf-g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Building ESP-IDF components for target esp32c3
+-- Project sdkconfig file /home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_NovaGlide/sdkconfig
+-- Adding linker script /home/abobkov/esp/v5.4.1/esp-idf/components/riscv/ld/rom.api.ld
+-- Adding linker script /home/abobkov/esp/v5.4.1/esp-idf/components/soc/esp32c3/ld/esp32c3.peripherals.ld
+-- Bootloader project name: "bootloader" version: 1
+-- Adding linker script /home/abobkov/esp/v5.4.1/esp-idf/components/esp_rom/esp32c3/ld/esp32c3.rom.ld
+-- Adding linker script /home/abobkov/esp/v5.4.1/esp-idf/components/esp_rom/esp32c3/ld/esp32c3.rom.api.ld
+-- Adding linker script /home/abobkov/esp/v5.4.1/esp-idf/components/esp_rom/esp32c3/ld/esp32c3.rom.bt_funcs.ld
+-- Adding linker script /home/abobkov/esp/v5.4.1/esp-idf/components/esp_rom/esp32c3/ld/esp32c3.rom.libgcc.ld
+-- Adding linker script /home/abobkov/esp/v5.4.1/esp-idf/components/esp_rom/esp32c3/ld/esp32c3.rom.version.ld
+-- Adding linker script /home/abobkov/esp/v5.4.1/esp-idf/components/esp_rom/esp32c3/ld/esp32c3.rom.newlib.ld
+-- Adding linker script /home/abobkov/esp/v5.4.1/esp-idf/components/bootloader/subproject/main/ld/esp32c3/bootloader.ld
+-- Adding linker script /home/abobkov/esp/v5.4.1/esp-idf/components/bootloader/subproject/main/ld/esp32c3/bootloader.rom.ld
+-- Components: bootloader bootloader_support efuse esp_app_format esp_bootloader_format esp_common esp_hw_support esp_rom esp_security esp_system esptool_py freertos hal log main micro-ecc newlib partition_table riscv soc spi_flash
+-- Component paths: /home/abobkov/esp/v5.4.1/esp-idf/components/bootloader /home/abobkov/esp/v5.4.1/esp-idf/components/bootloader_support /home/abobkov/esp/v5.4.1/esp-idf/components/efuse /home/abobkov/esp/v5.4.1/esp-idf/components/esp_app_format /home/abobkov/esp/v5.4.1/esp-idf/components/esp_bootloader_format /home/abobkov/esp/v5.4.1/esp-idf/components/esp_common /home/abobkov/esp/v5.4.1/esp-idf/components/esp_hw_support /home/abobkov/esp/v5.4.1/esp-idf/components/esp_rom /home/abobkov/esp/v5.4.1/esp-idf/components/esp_security /home/abobkov/esp/v5.4.1/esp-idf/components/esp_system /home/abobkov/esp/v5.4.1/esp-idf/components/esptool_py /home/abobkov/esp/v5.4.1/esp-idf/components/freertos /home/abobkov/esp/v5.4.1/esp-idf/components/hal /home/abobkov/esp/v5.4.1/esp-idf/components/log /home/abobkov/esp/v5.4.1/esp-idf/components/bootloader/subproject/main /home/abobkov/esp/v5.4.1/esp-idf/components/bootloader/subproject/components/micro-ecc /home/abobkov/esp/v5.4.1/esp-idf/components/newlib /home/abobkov/esp/v5.4.1/esp-idf/components/partition_table /home/abobkov/esp/v5.4.1/esp-idf/components/riscv /home/abobkov/esp/v5.4.1/esp-idf/components/soc /home/abobkov/esp/v5.4.1/esp-idf/components/spi_flash
+-- Configuring done (13.2s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_NovaGlide/build/bootloader
+ninja: build stopped: subcommand failed.
