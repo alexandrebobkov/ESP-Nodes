@@ -11,22 +11,25 @@ typedef struct {
 
 static void control_task(void *arg) {
     control_context_t *ctx = (control_context_t *)arg;
-    int pwm_left, pwm_right;
+    int pwm_motor_1, pwm_motor_2;
 
     ESP_LOGI(TAG, "Control task started");
 
     while (1) {
-        // Get joystick values from ESP-NOW
-        int x = ctx->espnow->last_data.x_axis;
-        int y = ctx->espnow->last_data.y_axis;
+        // Get joystick values from ESP-NOW (rc_x, rc_y)
+        int rc_x = ctx->espnow->last_data.x_axis;
+        int rc_y = ctx->espnow->last_data.y_axis;
 
         // Apply joystick mixing algorithm
-        joystick_mix(y, x, &pwm_left, &pwm_right);
+        joystick_mix(rc_y, rc_x, &pwm_motor_1, &pwm_motor_2);
 
-        // Update motors
-        motor_set_pwm(ctx->motors, pwm_left, pwm_right);
+        // Update motors using your proven function
+        update_motors_pwm(ctx->motors, pwm_motor_1, pwm_motor_2);
 
-        vTaskDelay(pdMS_TO_TICKS(100));  // 10Hz control rate
+        ESP_LOGI(TAG, "RC(x,y): (%d,%d) -> PWM(L,R): (%d,%d)",
+                 rc_x, rc_y, pwm_motor_1, pwm_motor_2);
+
+        vTaskDelay(pdMS_TO_TICKS(100));  // 10Hz, matches your original
     }
 }
 
