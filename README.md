@@ -289,7 +289,7 @@ BME-280 can come in a ready-to-use PCB ...
 <img alt="ESP32-Node Pinout" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/BME280.jpg" width="200px"/>
 
 > [!IMPORTANT]
-> BM**E**280[^2] and BM**P**280[^3] look almost identical. However, BME280 sensor has a square form, while BMP280 has a rectangular form. In addition, the two sensor boards can have different I<sup>2</sup>C addresses.
+> BM**E**280[^2] and BM**P**280[^3] look almost identical. However, BM**E**280 sensor has a square form (and can measure air temperature, pressure and humidity), while BM**P**280 has a rectangular form (and can only measure air temparature and pressure). In addition, the two sensor boards can have different I<sup>2</sup>C IDs (addresses). Note, that the commands (sensor registers addresses) are interchangable between BME280 and BMP280.
 >
 > <img alt="ESP32-Node Pinout" src="https://github.com/alexandrebobkov/ESP-Nodes/blob/main/assets/BME280-BMP280.jpg" width="100px"/>
 

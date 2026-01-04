@@ -1,4 +1,4 @@
-# Install script for directory: /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Temperture-Node-v2/managed_components/espressif__mqtt
+# Install script for directory: /home/alex/github/ESP-Nodes/ESP32-IDF_Temperture-Node-v2/managed_components/espressif__mqtt
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,12 +34,6 @@ endif()
 
 # Set path to fallback-tool for dependency-resolution.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/home/abobkov/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-objdump")
+  set(CMAKE_OBJDUMP "/home/alex/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-objdump")
 endif()
 
-string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
-       "${CMAKE_INSTALL_MANIFEST_FILES}")
-if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_Temperture-Node-v2/build/esp-idf/espressif__mqtt/install_local_manifest.txt"
-     "${CMAKE_INSTALL_MANIFEST_CONTENT}")
-endif()

@@ -1,4 +1,4 @@
-# Install script for directory: /home/alex/esp/v5.4.1/esp-idf/components/esp_vfs_console
+# Install script for directory: /home/alex/esp/esp-idf/v5.4.1/components/esp_vfs_console
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -33,11 +33,11 @@ static void mqtt_publish_task(void *arg) {
     esp_mqtt_client_handle_t client = (esp_mqtt_client_handle_t)arg;
     
     while (1) {
-        esp_mqtt_client_publish(mqtt_client, "nodes/indoors/foxie2/sensors/temperature", temp_str, 0, 1, 0);
-        esp_mqtt_client_publish(mqtt_client, "nodes/indoors/foxie2/sensors/humidity", humidity_str, 0, 1, 0);
-        esp_mqtt_client_publish(mqtt_client, "nodes/indoors/foxie2/sensors/pressure", pressure_str, 0, 1, 0);
+        esp_mqtt_client_publish(mqtt_client, "nodes/outdoors/foxie1/sensors/temperature", temp_str, 0, 1, 0);
+        esp_mqtt_client_publish(mqtt_client, "nodes/outdoors/foxie1/sensors/humidity", humidity_str, 0, 1, 0);
+        esp_mqtt_client_publish(mqtt_client, "nodes/outdoors/foxie1/sensors/pressure", pressure_str, 0, 1, 0);
         vTaskDelay(pdMS_TO_TICKS(1500));
-        ESP_LOGI(MQTT_TAG, "Called task to publish topic \"nodes/indoors/foxie4/#\"");
+        ESP_LOGI(MQTT_TAG, "Called task to publish topic \"nodes/outdoors/foxie1/#\"");
     }
 }
 
@@ -116,13 +116,19 @@ void mqttronix_start(void) {
 
 void mqttronix_update_temp (float temp) { 
     //temp_value = temp; 
-    snprintf(temp_str, sizeof(temp_str), "%.1f", temp);
+    if (temp >= -35.0f && temp <= 50.0f) {
+        snprintf(temp_str, sizeof(temp_str), "%.1f", temp);
+    }
 }
 void mqttronix_update_humidity (float humidity) { 
     //humidity_value = humidity;
-    snprintf(humidity_str, sizeof(humidity_str), "%.0f", humidity);
+    if (humidity >= 0.0f && humidity <= 100.0f) {
+        snprintf(humidity_str, sizeof(humidity_str), "%.0f", humidity);
+    }
 }
 void mqttronix_update_pressure (float pressure) { 
     //pressure_value = pressure;
-    snprintf(pressure_str, sizeof(pressure_str), "%.0f", pressure);
+    if (pressure >= 0.0f && pressure <= 1200.0f) {
+        snprintf(pressure_str, sizeof(pressure_str), "%.0f", pressure);
+    }
 }

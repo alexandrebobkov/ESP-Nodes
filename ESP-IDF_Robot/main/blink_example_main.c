@@ -8,6 +8,7 @@
                 Jun 26, 2025
                 Jul 26, 2025 (ESP-IDF + MQTT + WiFi)
                 Aug 6 , 2025 Continous interpolation of joystick x- and y- values
+                Jan 3,  2026 Revised motor control logic
 
     built-in LED GPIO:          10
     build-in push button GPIO:  3
@@ -25,6 +26,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <inttypes.h>
+#include <math.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/queue.h"
@@ -143,6 +145,10 @@ static uint8_t rc_mac[ESP_NOW_ETH_ALEN]         = {0x34, 0xB7, 0xDA, 0xF9, 0x33,
 static uint8_t espnow_seq[ESPNOW_DATA_MAX]      = {0, 0};
 
 static int rc_x = 0, rc_y = 0;
+static int pwm_motor_1 = 0;
+static int pwm_motor_2 = 0;
+static int pwm_motor_3 = 0;
+static int pwm_motor_4 = 0;
 
 //uint8_t broadcastAddress[] = {};
 //struct_message controlData;
@@ -333,10 +339,40 @@ static void temp_sensor_task (void *arg) {
         vTaskDelay(5000 / portTICK_PERIOD_MS);
     }
 }
+/* UPDATED MOTOR LOGIC */
+static float clampf (float val, float min, float max) {
+    return (val < min) ? min : (val > max) ? max : val;
+}
+void joystick_mix (int X_raw, int Y_raw, int *pwm_a, int *pwm_b) {
+    // 1. Normalize joystick to [-1 .. +1]
+    float x = (float)(X_raw - 1020) / 1020.0f; float y = (float)(Y_raw - 1020) / 1020.0f;
+    
+    // 2. Steering gain for smooth arcs
+    const float k = 0.4f;
+    
+    // 3. Raw differential mix
+    float L0 = y + k * x;
+    float R0 = y - k * x;
+    
+    // 4. Normalize pair so neither exceeds magnitude 1
+    float m = fmaxf(1.0f, fmaxf(fabsf(L0), fabsf(R0)));
+    float L = L0 / m;
+    float R = R0 / m;
+    
+    // 5. Scale to signed PWM range [-8191 .. +8190]
+    float L_scaled = L * 8190.0f;
+    float R_scaled = R * 8190.0f;
+    
+    // 6. Clamp and output as integers
+    *pwm_a = (int)clampf(L_scaled, -8191.0f, 8190.0f);
+    *pwm_b = (int)clampf(R_scaled, -8191.0f, 8190.0f);
+}
 // Task function to read joystick values and update motors rotation speeds.
 static void rc_task (void *arg) {
     while (true) {
-        update_pwm (rc_x, rc_y);
+        // update_pwm (rc_x, rc_y);     // Orginal motor update logic
+        joystick_mix (rc_y, rc_x, &pwm_motor_1, &pwm_motor_2);
+        update_motors_pwm (pwm_motor_1, pwm_motor_2);   // Revised motor update logic
         //ESP_LOGI("x,y", "( %d, %d ) [ %d, %d] ", rc_x, rc_y, x, y);
         vTaskDelay (100 / portTICK_PERIOD_MS);  // Determines responsiveness
         //vTaskDelay (1000 / portTICK_PERIOD_MS);
@@ -345,6 +381,11 @@ static void rc_task (void *arg) {
 static void display_xy() {
     while (true) {
         ESP_LOGI("x,y", "( %d, %d ) [ %d, %d] ", rc_x, rc_y, x, y);
+        ESP_LOGI("PWM", "M1: %d, M2: %d, M3: %d, M4: %d", 
+            m.motor1_rpm_pcm, m.motor2_rpm_pcm, 
+            m.motor3_rpm_pcm, m.motor4_rpm_pcm);
+        joystick_mix (rc_y, rc_x, &pwm_motor_1, &pwm_motor_2);
+        ESP_LOGI("Converted PWM", "M1+M2: %d, M3+M4: %d", pwm_motor_1, pwm_motor_2);
         uint8_t channel;
         wifi_band_t band;
         esp_wifi_get_channel(&channel, NULL);
@@ -379,6 +420,12 @@ void onDataReceived (const uint8_t *mac_addr, const uint8_t *data, uint8_t data_
     memcpy(&buf, data, sizeof(buf));    // Write buffer into the struct
     rc_x = buf.x_axis;                  // Save joystic x-axis value
     rc_y = buf.y_axis;                  // Save joystic y-axis value
+    // Update motors PWM values from received data
+    m.motor1_rpm_pcm = buf.motor1_rpm_pcm;
+    m.motor2_rpm_pcm = buf.motor2_rpm_pcm;
+    m.motor3_rpm_pcm = buf.motor3_rpm_pcm;
+    m.motor4_rpm_pcm = buf.motor4_rpm_pcm;
+    // Update motors PWM values using joystick x- and y-axis values
     update_pwm(rc_x, rc_y);
     mqtt_update_pwm_1(rc_x);            // Publish PWM-1 on MQTT Broker
     mqtt_update_pwm_2(rc_y);            // Publish PWM-2 on MQTT Broker

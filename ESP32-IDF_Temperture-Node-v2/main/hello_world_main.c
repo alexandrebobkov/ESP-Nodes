@@ -71,7 +71,8 @@ void read_sensors_task(void *arg)
 {
     while (1) {
         // Take a forced measurement
-        bme280_take_forced_measurement(bme280);
+        //bme280_take_forced_measurement(bme280);
+        //vTaskDelay(250 / portTICK_PERIOD_MS);
         // Read temperature, humidity, and pressure values and save them into the variables
         bme280_read_temperature(bme280, &temperature);
         bme280_read_humidity(bme280, &humidity);
@@ -80,7 +81,7 @@ void read_sensors_task(void *arg)
         mqttronix_update_humidity (humidity);
         mqttronix_update_pressure (pressure);
         //printf("read_sensors_task %.1f, %.2f, %.2f \n", temperature, humidity, pressure);
-        vTaskDelay(1000/portTICK_PERIOD_MS);
+        vTaskDelay(5000/portTICK_PERIOD_MS);
     }
 }
 
