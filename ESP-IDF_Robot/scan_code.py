@@ -4,27 +4,58 @@ import os
 PROJECT_ROOT = "/home/abobkov/MyProjects/ESP-Nodes/ESP-IDF_Robot"
 OUTPUT_MD = "project_sources.md"
 
-# Extensions to include
+# Folders to scan (relative to project root)
+TARGET_FOLDERS = [
+    "main",
+]
+
+# File extensions to include
 SOURCE_EXTENSIONS = {
     ".c", ".h", ".cpp", ".hpp",
-    ".py", ".txt", ".md", ".cmake"
+    ".py", ".txt", ".md", ".cmake",
+    ".yml", ".yaml", ".projbuild",
+}
+
+# Special filenames to include even without extension
+SPECIAL_FILES = {
+    "CMakeLists.txt",
+    "Makefile",
+    "LICENSE",
+    "README",
+    "README.md",
+    "sdkconfig",
+    "sdkconfig.old",
+    "sdkconfig.ci.led_strip_spi",
 }
 
 def is_source_file(filename):
-    # Special case: CMakeLists.txt
-    if filename == "CMakeLists.txt":
+    # Special cases
+    if filename in SPECIAL_FILES:
         return True
 
+    # Extension-based detection
     _, ext = os.path.splitext(filename)
     return ext in SOURCE_EXTENSIONS
 
 def collect_sources(root):
     sources = []
-    for dirpath, _, filenames in os.walk(root):
-        for f in filenames:
-            if is_source_file(f):
-                full_path = os.path.join(dirpath, f)
-                sources.append(full_path)
+
+    # Scan only selected folders
+    for folder in TARGET_FOLDERS:
+        full_path = os.path.join(root, folder)
+        if not os.path.exists(full_path):
+            continue
+
+        for dirpath, _, filenames in os.walk(full_path):
+            for f in filenames:
+                if is_source_file(f):
+                    sources.append(os.path.join(dirpath, f))
+
+    # Also include top-level files
+    for f in os.listdir(root):
+        if is_source_file(f):
+            sources.append(os.path.join(root, f))
+
     return sources
 
 def write_markdown(sources, output_file):
