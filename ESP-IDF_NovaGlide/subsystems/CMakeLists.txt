@@ -1,6 +1,0 @@
-add_subdirectory(adc)
-add_subdirectory(connectivity)
-add_subdirectory(espnow_sys)
-add_subdirectory(motors)
-add_subdirectory(sensors)
-add_subdirectory(ui)
