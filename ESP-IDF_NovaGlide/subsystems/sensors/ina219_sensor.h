@@ -10,7 +10,11 @@
 #define I2C_SCL_GPIO 2
 #define SHUNT_RESISTOR_MILLI_OHM 100
 
-typedef struct {
+// Forward declaration
+typedef struct ina219_system_t ina219_system_t;
+
+// Struct definition
+struct ina219_system_t {
     float bus_voltage;
     float shunt_voltage;
     float current;
@@ -18,8 +22,8 @@ typedef struct {
 
     ina219_t dev;
 
-    void (*update)(struct ina219_system_t *self, TickType_t now);
-} ina219_system_t;
+    void (*update)(ina219_system_t *self, TickType_t now);
+};
 
 void ina219_system_init(ina219_system_t *sys);
 
