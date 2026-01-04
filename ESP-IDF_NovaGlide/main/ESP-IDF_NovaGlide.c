@@ -34,7 +34,7 @@ void app_main(void)
     //ultrasonic_system_init(&ultra);
 
     wifi_system_init();                 // stateless
-    espnow_system_init(&adc, &motors);  // passes references
+    //espnow_system_init(&adc, &motors);  // passes references
     //mqtt_system_init(&mqtt);
 
     //ui_led_init();
