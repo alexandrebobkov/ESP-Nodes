@@ -12,20 +12,12 @@ TARGET_FOLDERS = [
 # File extensions to include
 SOURCE_EXTENSIONS = {
     ".c", ".h", ".cpp", ".hpp",
-    ".py", ".txt", ".md", ".cmake",
-    ".yml", ".yaml", ".projbuild",
+    ".py", ".txt", ".cmake",
 }
 
 # Special filenames to include even without extension
 SPECIAL_FILES = {
     "CMakeLists.txt",
-    "Makefile",
-    "LICENSE",
-    "README",
-    "README.md",
-    "sdkconfig",
-    "sdkconfig.old",
-    "sdkconfig.ci.led_strip_spi",
 }
 
 def is_source_file(filename):
