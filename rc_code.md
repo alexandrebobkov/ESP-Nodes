@@ -587,6 +587,64 @@ void mqtt_system_init(mqtt_system_t *sys) {
 }
 ```
 
+### temp_sensor.h
+
+``` c
+#pragma once
+
+#include "freertos/FreeRTOS.h"
+
+typedef struct temp_sensor_system_t temp_sensor_system_t;
+
+struct temp_sensor_system_t {
+    float last_celsius;
+
+    // API
+    void (*update)(temp_sensor_system_t *self, TickType_t now);
+};
+
+void temp_sensor_system_init(temp_sensor_system_t *sys);
+```
+
+### temp_sensor.c
+
+``` c
+#include "temp_sensor.h"
+#include "driver/temperature_sensor.h"
+#include "esp_log.h"
+
+static const char *TAG = "TEMP_SENSOR";
+
+static temperature_sensor_handle_t s_temp_handle = NULL;
+
+static void temp_hw_init(void) {
+    temperature_sensor_config_t cfg = TEMPERATURE_SENSOR_CONFIG_DEFAULT(10, 50);
+    ESP_ERROR_CHECK(temperature_sensor_install(&cfg, &s_temp_handle));
+    ESP_ERROR_CHECK(temperature_sensor_enable(s_temp_handle));
+    ESP_LOGI(TAG, "Temperature sensor initialized");
+}
+
+static void temp_update_impl(temp_sensor_system_t *self, TickType_t now) {
+    (void)now;
+    if (!s_temp_handle) return;
+
+    float c = 0.0f;
+    esp_err_t err = temperature_sensor_get_celsius(s_temp_handle, &c);
+    if (err == ESP_OK) {
+        self->last_celsius = c;
+        ESP_LOGD(TAG, "Temperature: %.02f C", c);
+    } else {
+        ESP_LOGW(TAG, "Failed to read temperature sensor: %s", esp_err_to_name(err));
+    }
+}
+
+void temp_sensor_system_init(temp_sensor_system_t *sys) {
+    temp_hw_init();
+    sys->last_celsius = 0.0f;
+    sys->update = temp_update_impl;
+}
+```
+
 ## blink_example_main.c
 
 /* Robot Controls
