@@ -10,7 +10,7 @@ static const char *TAG = "ESPNOW_SYS";
 // -----------------------------------------------------------------------------
 static espnow_system_t *g_sys = NULL;
 
-static void espnow_recv_cb(const uint8_t *mac_addr,
+static void espnow_recv_cb(const esp_now_recv_info_t *recv_info,
                            const uint8_t *data,
                            int len)
 {
@@ -18,6 +18,9 @@ static void espnow_recv_cb(const uint8_t *mac_addr,
 
     memcpy(g_sys->last_data, data, len);
     g_sys->last_len = len;
+
+    // Optional: You can now access additional info like RSSI
+    // const uint8_t *mac_addr = recv_info->src_addr;
 
     ESP_LOGI(TAG, "Received %d bytes via ESP-NOW", len);
 }
@@ -30,7 +33,6 @@ static void espnow_send_impl(espnow_system_t *self,
                              int len)
 {
     if (!data || len <= 0) return;
-
     esp_now_send(NULL, data, len);  // NULL = broadcast
 }
 
@@ -51,7 +53,6 @@ void espnow_system_init(espnow_system_t *sys)
 {
     memset(sys->last_data, 0, sizeof(sys->last_data));
     sys->last_len = 0;
-
     sys->send   = espnow_send_impl;
     sys->update = espnow_update_impl;
 
