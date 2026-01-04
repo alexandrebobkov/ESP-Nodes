@@ -3,6 +3,7 @@ idf_component_register(
          "system_init.c"
          "scheduler.c"
          "control_task.c"
+         "dashboard.c"
     INCLUDE_DIRS "."
     REQUIRES
         esp_wifi
