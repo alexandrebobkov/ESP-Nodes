@@ -374,6 +374,7 @@ static void rc_task (void *arg) {
         joystick_mix (rc_y, rc_x, &pwm_motor_1, &pwm_motor_2);
         update_motors_pwm (pwm_motor_1, pwm_motor_2);   // Revised motor update logic
         ESP_LOGI("x,y", "( %d, %d ) [ %d, %d] ", rc_x, rc_y, x, y);
+        ESP_LOGI("pwm_motor_1, pwm_motor_2", "( %d, %d )", pwm_motor_1, pwm_motor_2);
         vTaskDelay (100 / portTICK_PERIOD_MS);  // Determines responsiveness
         //vTaskDelay (1000 / portTICK_PERIOD_MS);
     }
