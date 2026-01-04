@@ -14,6 +14,7 @@
 #include "espnow_sys.h"
 #include "mqtt_sys.h"
 #include "ui.h"
+#include "dashboard.h"
 
 // Telemetry bridge context
 typedef struct {
