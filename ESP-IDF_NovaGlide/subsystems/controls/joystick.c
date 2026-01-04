@@ -10,7 +10,7 @@ void joystick_mix(int X_raw, int Y_raw, int *pwm_left, int *pwm_right) {
     float y = (float)(Y_raw - 1020) / 1020.0f;
 
     // 2. Steering gain for smooth arcs
-    const float k = 0.4f;
+    const float k = 0.5f;
 
     // 3. Raw differential mix
     float L0 = y + k * x;
