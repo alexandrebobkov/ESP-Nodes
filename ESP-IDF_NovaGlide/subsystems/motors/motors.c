@@ -93,50 +93,63 @@ static void ledc_init(void) {
     ESP_LOGI(TAG, "LEDC initialized for all 4 motors");
 }
 
-// Update motor PWM values
-static void motor_update_impl(motor_system_t *self, TickType_t now) {
-    (void)now;
-
-    // Apply left motor PWM (signed)
-    if (self->left_pwm >= 0) {
-        self->motor1_rpm_pcm = self->left_pwm;
-        self->motor3_rpm_pcm = 0;
-    } else {
-        self->motor1_rpm_pcm = 0;
-        self->motor3_rpm_pcm = -self->left_pwm;
+// Your proven motor update logic
+void update_motors_pwm(motor_system_t *sys, int pwm_motor_1, int pwm_motor_2) {
+    /* UPDATED MOTOR LOGIC */
+    if (pwm_motor_1 >= 0 && pwm_motor_2 >= 0) {
+        sys->motor1_rpm_pcm = pwm_motor_1;
+        sys->motor2_rpm_pcm = pwm_motor_2;
+        sys->motor3_rpm_pcm = 0;
+        sys->motor4_rpm_pcm = 0;
+    }
+    if (pwm_motor_1 > 0 && pwm_motor_2 < 0) {
+        sys->motor1_rpm_pcm = pwm_motor_1;
+        sys->motor2_rpm_pcm = 0;
+        sys->motor3_rpm_pcm = -pwm_motor_2;
+        sys->motor4_rpm_pcm = 0;
+    }
+    if (pwm_motor_1 < 0 && pwm_motor_2 > 0) {
+        sys->motor1_rpm_pcm = 0;
+        sys->motor2_rpm_pcm = -pwm_motor_1;
+        sys->motor3_rpm_pcm = 0;
+        sys->motor4_rpm_pcm = pwm_motor_2;
+    }
+    if (pwm_motor_1 < 0 && pwm_motor_2 < 0) {
+        sys->motor1_rpm_pcm = 0;
+        sys->motor2_rpm_pcm = 0;
+        sys->motor3_rpm_pcm = -pwm_motor_1;
+        sys->motor4_rpm_pcm = -pwm_motor_2;
     }
 
-    // Apply right motor PWM (signed)
-    if (self->right_pwm >= 0) {
-        self->motor2_rpm_pcm = self->right_pwm;
-        self->motor4_rpm_pcm = 0;
-    } else {
-        self->motor2_rpm_pcm = 0;
-        self->motor4_rpm_pcm = -self->right_pwm;
-    }
+    // Store the input PWM values
+    sys->left_pwm = pwm_motor_1;
+    sys->right_pwm = pwm_motor_2;
 
     // Update hardware
-    ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, self->motor1_rpm_pcm);
+    ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, sys->motor1_rpm_pcm);
     ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT);
 
-    ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT, self->motor2_rpm_pcm);
+    ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT, sys->motor2_rpm_pcm);
     ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT);
 
-    ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT_REV, self->motor3_rpm_pcm);
+    ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT_REV, sys->motor3_rpm_pcm);
     ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT_REV);
 
-    ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT_REV, self->motor4_rpm_pcm);
+    ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT_REV, sys->motor4_rpm_pcm);
     ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT_REV);
 
-    // Log every second
-    static TickType_t last_log = 0;
-    if ((now - last_log) >= pdMS_TO_TICKS(1000)) {
-        ESP_LOGI(TAG, "PWM L/R: %d/%d | M1:%d M2:%d M3:%d M4:%d",
-                 self->left_pwm, self->right_pwm,
-                 self->motor1_rpm_pcm, self->motor2_rpm_pcm,
-                 self->motor3_rpm_pcm, self->motor4_rpm_pcm);
-        last_log = now;
-    }
+    ESP_LOGW(TAG, "M1: %d, M2: %d, M3: %d, M4: %d",
+        sys->motor1_rpm_pcm,
+        sys->motor2_rpm_pcm,
+        sys->motor3_rpm_pcm,
+        sys->motor4_rpm_pcm);
+}
+
+// Update motor PWM values (unused in your case, but kept for compatibility)
+static void motor_update_impl(motor_system_t *self, TickType_t now) {
+    (void)self;
+    (void)now;
+    // Nothing to do - motors are updated directly via update_motors_pwm()
 }
 
 void motor_system_init(motor_system_t *sys) {
@@ -153,12 +166,6 @@ void motor_system_init(motor_system_t *sys) {
 }
 
 void motor_set_pwm(motor_system_t *sys, int left_pwm, int right_pwm) {
-    // Clamp values
-    if (left_pwm > 8190) left_pwm = 8190;
-    if (left_pwm < -8191) left_pwm = -8191;
-    if (right_pwm > 8190) right_pwm = 8190;
-    if (right_pwm < -8191) right_pwm = -8191;
-
-    sys->left_pwm = left_pwm;
-    sys->right_pwm = right_pwm;
+    // This is just a wrapper for update_motors_pwm
+    update_motors_pwm(sys, left_pwm, right_pwm);
 }
