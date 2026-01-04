@@ -421,10 +421,10 @@ void onDataReceived (const uint8_t *mac_addr, const uint8_t *data, uint8_t data_
     rc_x = buf.x_axis;                  // Save joystic x-axis value
     rc_y = buf.y_axis;                  // Save joystic y-axis value
     // Update motors PWM values from received data
-    m.motor1_rpm_pcm = buf.motor1_rpm_pcm;
-    m.motor2_rpm_pcm = buf.motor2_rpm_pcm;
-    m.motor3_rpm_pcm = buf.motor3_rpm_pcm;
-    m.motor4_rpm_pcm = buf.motor4_rpm_pcm;
+    //m.motor1_rpm_pcm = buf.motor1_rpm_pcm;
+    //m.motor2_rpm_pcm = buf.motor2_rpm_pcm;
+    //m.motor3_rpm_pcm = buf.motor3_rpm_pcm;
+    //m.motor4_rpm_pcm = buf.motor4_rpm_pcm;
     // Update motors PWM values using joystick x- and y-axis values
     update_pwm(rc_x, rc_y);
     mqtt_update_pwm_1(rc_x);            // Publish PWM-1 on MQTT Broker
