@@ -138,7 +138,7 @@ void update_motors_pwm(motor_system_t *sys, int pwm_motor_1, int pwm_motor_2) {
     ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT_REV, sys->motor4_rpm_pcm);
     ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT_REV);
 
-    ESP_LOGW(TAG, "M1: %d, M2: %d, M3: %d, M4: %d",
+    ESP_LOGI(TAG, "M1: %d, M2: %d, M3: %d, M4: %d",
         sys->motor1_rpm_pcm,
         sys->motor2_rpm_pcm,
         sys->motor3_rpm_pcm,
