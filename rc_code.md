@@ -433,6 +433,160 @@ void wifi_system_init(void) {
 }
 ```
 
+### espnow_sys.h
+
+``` c
+#pragma once
+#include <stdint.h>
+
+typedef struct adc_system_t adc_system_t;
+typedef struct motor_system_t motor_system_t;
+
+void espnow_system_init(adc_system_t *adc, motor_system_t *motors);
+```
+
+### espnow_sys.c
+
+``` c
+#include "espnow_sys.h"
+#include "esp_now.h"
+#include "esp_wifi.h"
+#include "esp_log.h"
+#include "controls.h" // for sensors_data_t, etc.
+
+static const char *TAG = "ESPNOW_SYS";
+
+static adc_system_t   *s_adc = NULL;
+static motor_system_t *s_motors = NULL;
+
+static void espnow_recv_cb(const uint8_t *mac_addr, const uint8_t *data, int len) {
+    if (len < sizeof(sensors_data_t)) return;
+    sensors_data_t buf;
+    memcpy(&buf, data, sizeof(buf));
+
+    if (s_adc) {
+        s_adc->x_raw = buf.x_axis;
+        s_adc->y_raw = buf.y_axis;
+    }
+
+    if (s_motors && s_motors->set) {
+        // if you still want direct PWM from RC:
+        s_motors->set(s_motors, buf.motor1_rpm_pcm, buf.motor2_rpm_pcm);
+    }
+}
+
+void espnow_system_init(adc_system_t *adc, motor_system_t *motors) {
+    s_adc = adc;
+    s_motors = motors;
+
+    ESP_ERROR_CHECK(esp_now_init());
+    ESP_ERROR_CHECK(esp_now_register_recv_cb(espnow_recv_cb));
+
+    // add peer config here if needed
+}
+```
+
+### mqtt_sys.h
+
+``` c
+#pragma once
+#include "freertos/FreeRTOS.h"
+
+typedef struct mqtt_system_t mqtt_system_t;
+
+struct mqtt_system_t {
+    float temp;
+    float battery_voltage;
+    float sys_current;
+    float sys_power;
+    int pwm_1;
+    int pwm_2;
+
+    void (*publish_temp)(mqtt_system_t *self, float temp);
+    void (*publish_pwm)(mqtt_system_t *self, int pwm1, int pwm2);
+    void (*update)(mqtt_system_t *self, TickType_t now);
+};
+
+void mqtt_system_init(mqtt_system_t *sys);
+
+#define WIFI_SSID     "IoT_bots"
+#define WIFI_PASSWORD "208208208"
+```
+
+### mqtt_sys.c
+
+``` c
+#include "mqtt_sys.h"
+#include "mqtt_client.h"
+#include "esp_log.h"
+
+static const char *TAG = "MQTT_SYS";
+static const char *MQTT_BROKER_URI = "mqtt://74.14.210.168";
+
+static esp_mqtt_client_handle_t s_client = NULL;
+
+static void mqtt_publish_temp_impl(mqtt_system_t *self, float temp) {
+    self->temp = temp;
+    if (!s_client) return;
+    char buf[16];
+    snprintf(buf, sizeof(buf), "%.02f", temp);
+    esp_mqtt_client_publish(s_client, "/bitrider/temp", buf, 0, 1, 0);
+}
+
+static void mqtt_publish_pwm_impl(mqtt_system_t *self, int pwm1, int pwm2) {
+    self->pwm_1 = pwm1;
+    self->pwm_2 = pwm2;
+    if (!s_client) return;
+    char b1[8], b2[8];
+    snprintf(b1, sizeof(b1), "%d", pwm1);
+    snprintf(b2, sizeof(b2), "%d", pwm2);
+    esp_mqtt_client_publish(s_client, "/bitrider/pwm-1", b1, 0, 1, 0);
+    esp_mqtt_client_publish(s_client, "/bitrider/pwm-2", b2, 0, 1, 0);
+}
+
+static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data) {
+    esp_mqtt_event_handle_t event = event_data;
+    switch (event->event_id) {
+        case MQTT_EVENT_CONNECTED:
+            ESP_LOGI(TAG, "MQTT connected");
+            s_client = event->client;
+            break;
+        case MQTT_EVENT_DISCONNECTED:
+            ESP_LOGI(TAG, "MQTT disconnected");
+            s_client = NULL;
+            break;
+        default:
+            break;
+    }
+}
+
+static void mqtt_update_impl(mqtt_system_t *self, TickType_t now) {
+    (void)self;
+    (void)now;
+    // could periodically republish or handle queued data
+}
+
+void mqtt_system_init(mqtt_system_t *sys) {
+    sys->temp = 0.0f;
+    sys->battery_voltage = 0.0f;
+    sys->sys_current = 0.0f;
+    sys->sys_power = 0.0f;
+    sys->pwm_1 = 0;
+    sys->pwm_2 = 0;
+
+    sys->publish_temp = mqtt_publish_temp_impl;
+    sys->publish_pwm  = mqtt_publish_pwm_impl;
+    sys->update       = mqtt_update_impl;
+
+    esp_mqtt_client_config_t cfg = {
+        .broker.address.uri = MQTT_BROKER_URI,
+    };
+    esp_mqtt_client_handle_t client = esp_mqtt_client_init(&cfg);
+    esp_mqtt_client_register_event(client, ESP_EVENT_ANY_ID, mqtt_event_handler, NULL);
+    esp_mqtt_client_start(client);
+}
+```
+
 ## blink_example_main.c
 
 /* Robot Controls
