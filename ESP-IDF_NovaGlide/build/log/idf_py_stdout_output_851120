@@ -1,0 +1,251 @@
+[0;32mI (243) esp_image: segment 4: paddr=000faa44 vaddr=4038bc70 sizeESP-ROM:esp32c3-api1-20210207[0m
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x420066a6
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f64
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan  4 2026 08:38:48[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (25) boot: efuse block revision: v1.3[0m
+[0;32mI (28) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (44) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (53) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (66) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (76) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=21510h (136464) map[0m
+[0;32mI (105) esp_image: segment 1: paddr=00031538 vaddr=3fc94200 size=02e68h ( 11880) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=000343a8 vaddr=40380000 size=0bc70h ( 48240) load[0m
+[0;32mI (117) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=baa1ch (764444) map[0m
+[0;32mI (240) esp_image: segment 4: paddr=000faa44 vaddr=4038bc70 size=08514h ( 34068) load[0m
+[0;32mI (246) esp_image: segment 5: paddr=00102f60 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (253) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (253) boot: Disabling RNG early entropy source...[0m
+[0;32mI (265) cpu_start: Unicore app[0m
+[0;32mI (273) cpu_start: Pro cpu start user code[0m
+[0;32mI (273) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (273) app_init: Application information:[0m
+[0;32mI (273) app_init: Project name:     ESP-IDF_NovaGlide[0m
+[0;32mI (278) app_init: App version:      ESP32-Node_Switch-v2.7-11602-gd[0m
+[0;32mI (284) app_init: Compile time:     Jan  4 2026 15:38:15[0m
+[0;32mI (289) app_init: ELF file SHA256:  793ecd0ea...[0m
+[0;32mI (293) app_init: ESP-IDF:          v5.4.1[0m
+[0;32mI (297) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (301) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (305) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (309) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (315) heap_init: At 3FC9BB00 len 00024500 (145 KiB): RAM[0m
+[0;32mI (320) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (326) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (332) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (339) spi_flash: detected chip: generic[0m
+[0;32mI (341) spi_flash: flash io: dio[0m
+[0;33mW (344) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (357) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (363) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (370) main_task: Started on CPU0[0m
+[0;32mI (370) main_task: Calling app_main()[0m
+[0;32mI (380) SYSTEM_INIT: System initialization complete[0m
+[0;32mI (380) pp: pp rom version: 9387209[0m
+[0;32mI (380) net80211: net80211 rom version: 9387209[0m
+[0;32mI (390) wifi:wifi driver task: 3fca45d8, prio:23, stack:6656, core=0[0m
+[0;32mI (400) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (400) wifi:wifi certification version: v7.0[0m
+[0;32mI (400) wifi:config NVS flash: enabled[0m
+[0;32mI (400) wifi:config nano formatting: disabled[0m
+[0;32mI (410) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (410) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (410) wifi:Init management short buffer num: 32[0m
+[0;32mI (420) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (420) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (430) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (430) wifi:Init static rx buffer num: 10[0m
+[0;32mI (430) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (440) wifi_init: rx ba win: 6[0m
+[0;32mI (440) wifi_init: accept mbox: 6[0m
+[0;32mI (440) wifi_init: tcpip mbox: 32[0m
+[0;32mI (450) wifi_init: udp mbox: 6[0m
+[0;32mI (450) wifi_init: tcp mbox: 6[0m
+[0;32mI (450) wifi_init: tcp tx win: 5760[0m
+[0;32mI (460) wifi_init: tcp rx win: 5760[0m
+[0;32mI (460) wifi_init: tcp mss: 1440[0m
+[0;32mI (460) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (470) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (470) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (480) phy_init: phy_version 1200,2b7123f9,Feb 18 2025,15:22:21[0m
+[0;32mI (520) wifi:mode : sta (e4:b0:63:17:9e:44)[0m
+[0;32mI (520) wifi:enable tsf[0m
+[0;32mI (650) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (650) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (670) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (680) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (730) wifi:connected with IoT_bots, aid = 3, channel 1, BW20, bssid = 62:a6:e6:79:02:ee[0m
+[0;32mI (730) wifi:security: WPA2-PSK, phy: bg, rssi: -32[0m
+[0;32mI (730) wifi:pm start, type: 1[0m
+
+[0;32mI (730) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (740) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (750) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1790) esp_netif_handlers: sta ip: 10.100.71.55, mask: 255.255.255.0, gw: 10.100.71.1[0m
+[0;32mI (3520) WIFI_SYS: WiFi initialized and connecting...[0m
+[0;32mI (3520) WIFI_SYS: SSID: IoT_bots[0m
+[0;33mW (3520) WIFI_SYS: WiFi Channel: 1[0m
+[0;33mW (3520) WIFI_SYS: Receiver MAC: E4:B0:63:17:9E:44[0m
+[0;33mW (3520) WIFI_SYS: Transmitter will scan channels to find receiver[0m
+[0;32mI (3530) MOTORS: LEDC initialized for all 4 motors[0m
+[0;32mI (3530) MOTORS: Motor system initialized[0m
+[0;32mI (3530) gpio: GPIO[0]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3540) gpio: GPIO[1]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3550) ADC: ADC initialized[0m
+[0;32mI (3550) temperature_sensor: Range [-10°C ~ 80°C], error < 1°C[0m
+[0;32mI (3560) TEMP_SENSOR: Temperature sensor initialized[0m
+[0;32mI (3560) i2cdev: [Port 0] First initialization. Configuring bus with SDA=3, SCL=2 (Pullups SCL:0 SDA:0)[0m
+[0;33mW (3570) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (3590) i2cdev: [Port 0] Successfully installed I2C master bus (Handle: 0x3fcabb7c).[0m
+[0;32mI (3600) i2cdev: [0x40 at 0] Device added successfully (Device Handle: 0x3fcac174, Speed: 1000000 Hz).[0m
+[0;32mI (3610) INA219: INA219 initialized[0m
+[0;32mI (3610) ULTRASONIC: Ultrasonic sensor initialized[0m
+[0;32mI (3610) ESPNOW_SYS: Initializing ESP-NOW...[0m
+[0;32mI (3620) ESPNOW: espnow [version: 2.0] init[0m
+[0;32mI (3620) ESPNOW_SYS: ESP-NOW init success[0m
+[0;32mI (3620) ESPNOW_SYS: ESP-NOW callback registered[0m
+[0;33mW (3630) ESPNOW_SYS: Receiver MAC: E4:B0:63:17:9E:44[0m
+[0;32mI (3630) ESPNOW_SYS: ESP-NOW initialized - waiting for data from transmitter...[0m
+[0;32mI (3640) ESPNOW_SYS: Expected data size: 24 bytes[0m
+[0;32mI (3650) MQTT_SYS: MQTT system initialized[0m
+[0;32mI (3650) gpio: GPIO[10]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (3660) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (3670) UI: UI system initialized[0m
+[0;32mI (3670) CONTROL: Control task started[0m
+[0;33mW (3670) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3680) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (3680) CONTROL: Control task created[0m
+[0;32mI (3690) SCHEDULER: Scheduler initialized[0m
+[0;32mI (3690) SCHEDULER: Scheduler task started[0m
+[0;32mI (3690) SCHEDULER: Scheduler started[0m
+[0;32mI (3690) INA219: VBUS: 0.86V, I: -0.50mA, P: 0.00mW[0m
+[0;33mW (3710) ULTRASONIC: Measurement failed: 513[0m
+[0;32mI (3710) main_task: Returned from app_main()[0m
+[0;32mI (3770) MQTT_SYS: MQTT Connected[0m
+[0;33mW (3780) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3780) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (3880) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3880) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (3980) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3980) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4080) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4080) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4180) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4180) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4280) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4280) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4380) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4380) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4480) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4480) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4580) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4580) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4680) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4680) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4710) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (4780) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4780) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4880) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4880) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4980) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4980) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5080) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5080) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5180) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5180) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5280) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5280) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5380) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5380) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (5410) TEMP_SENSOR: ==========================================[0m
+[0;32mI (5410) TEMP_SENSOR: ESP32-C3 Internal Temperature Sensor[0m
+[0;32mI (5410) TEMP_SENSOR: Current Temperature: 49.60°C[0m
+[0;32mI (5410) TEMP_SENSOR: ==========================================[0m
+[0;33mW (5480) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5480) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5580) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5580) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5680) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5680) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5720) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (5780) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5780) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5880) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5880) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5980) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5980) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6080) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6080) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6180) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6180) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (6220) INA219: VBUS: 0.86V, I: -0.30mA, P: 0.00mW[0m
+[0;33mW (6280) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6280) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6380) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6380) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6480) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6480) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6580) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6580) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6680) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6680) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6720) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (6780) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6780) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6880) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6880) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6980) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6980) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7080) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7080) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7180) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7180) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7280) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7280) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7380) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7380) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7480) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7480) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7580) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7580) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7680) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7680) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7720) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (7780) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7780) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7880) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7880) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7980) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7980) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (8080) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8080) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (8180) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8180) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (8280) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8280) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (8380) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8380) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (8480) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8480) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (8580) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8580) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (8680) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8680) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (8720) INA219: VBUS: 0.86V, I: -0.50mA, P: 0.00mW[0m
+[0;33mW (8720) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (8780) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0
