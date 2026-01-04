@@ -42,6 +42,11 @@ static void dashboard_task(void *arg) {
     // Hide cursor for cleaner display
     printf(CURSOR_HIDE);
 
+    // Print help text ONCE before the loop
+    printf("\n" COLOR_YELLOW "Dashboard Mode: Press Ctrl+] to exit monitor" COLOR_RESET "\n");
+    vTaskDelay(pdMS_TO_TICKS(2000));  // Give user time to read
+
+
     while (1) {
         // Clear screen and move cursor to home
         printf(CLEAR_SCREEN CURSOR_HOME);
