@@ -110,7 +110,7 @@ static void dashboard_task(void *arg) {
         //printf("\n" COLOR_YELLOW "Press Ctrl+] to exit monitor" COLOR_RESET "\n");
 
         // Update every 200ms for smooth display
-        vTaskDelay(pdMS_TO_TICKS(200));
+        vTaskDelay(pdMS_TO_TICKS(1000));
     }
 
     // Show cursor on exit (won't actually run due to while loop)
