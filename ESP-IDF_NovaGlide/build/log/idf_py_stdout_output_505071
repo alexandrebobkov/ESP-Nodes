@@ -1,0 +1,1730 @@
+[0;32mI (105) esp_image: segment 1: paddr=000313a0 vaddr=3fc94200 sizeESP-ROM:esp32c3-api1-20210207[0m
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x403853f4
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f64
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan  4 2026 00:51:16[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (25) boot: efuse block revision: v1.3[0m
+[0;32mI (29) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (40) boot: Enabling RNG early entropy source...[0m
+[0;32mI (44) boot: Partition Table:[0m
+[0;32mI (47) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (53) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (60) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (66) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (73) boot: End of partition table[0m
+[0;32mI (76) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=21378h (136056) map[0m
+[0;32mI (105) esp_image: segment 1: paddr=000313a0 vaddr=3fc94200 size=02e68h ( 11880) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=00034210 vaddr=40380000 size=0be08h ( 48648) load[0m
+[0;32mI (118) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=ba734h (763700) map[0m
+[0;32mI (240) esp_image: segment 4: paddr=000fa75c vaddr=4038be08 size=0837ch ( 33660) load[0m
+[0;32mI (247) esp_image: segment 5: paddr=00102ae0 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (253) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (253) boot: Disabling RNG early entropy source...[0m
+[0;32mI (265) cpu_start: Unicore app[0m
+[0;32mI (274) cpu_start: Pro cpu start user code[0m
+[0;32mI (274) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (274) app_init: Application information:[0m
+[0;32mI (274) app_init: Project name:     ESP-IDF_NovaGlide[0m
+[0;32mI (278) app_init: App version:      ESP32-Node_Switch-v2.7-11319-g4[0m
+[0;32mI (284) app_init: Compile time:     Jan  4 2026 02:32:35[0m
+[0;32mI (289) app_init: ELF file SHA256:  91ef9b1e7...[0m
+[0;32mI (294) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (298) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (302) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (306) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (310) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (316) heap_init: At 3FC9BAF0 len 00024510 (145 KiB): RAM[0m
+[0;32mI (321) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (327) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (333) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (340) spi_flash: detected chip: generic[0m
+[0;32mI (342) spi_flash: flash io: dio[0m
+[0;33mW (345) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (358) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (364) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (371) main_task: Started on CPU0[0m
+[0;32mI (371) main_task: Calling app_main()[0m
+[0;32mI (381) SYSTEM_INIT: System initialization complete[0m
+[0;32mI (381) pp: pp rom version: 9387209[0m
+[0;32mI (381) net80211: net80211 rom version: 9387209[0m
+[0;32mI (391) wifi:wifi driver task: 3fca45c8, prio:23, stack:6656, core=0[0m
+[0;32mI (401) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (401) wifi:wifi certification version: v7.0[0m
+[0;32mI (401) wifi:config NVS flash: enabled[0m
+[0;32mI (401) wifi:config nano formatting: disabled[0m
+[0;32mI (411) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (411) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (411) wifi:Init management short buffer num: 32[0m
+[0;32mI (421) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (421) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (431) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (431) wifi:Init static rx buffer num: 10[0m
+[0;32mI (431) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (441) wifi_init: rx ba win: 6[0m
+[0;32mI (441) wifi_init: accept mbox: 6[0m
+[0;32mI (441) wifi_init: tcpip mbox: 32[0m
+[0;32mI (451) wifi_init: udp mbox: 6[0m
+[0;32mI (451) wifi_init: tcp mbox: 6[0m
+[0;32mI (451) wifi_init: tcp tx win: 5760[0m
+[0;32mI (461) wifi_init: tcp rx win: 5760[0m
+[0;32mI (461) wifi_init: tcp mss: 1440[0m
+[0;32mI (461) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (471) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (471) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (481) phy_init: phy_version 1200,2b7123f9,Feb 18 2025,15:22:21[0m
+[0;32mI (521) wifi:mode : sta (e4:b0:63:17:9e:44)[0m
+[0;32mI (521) wifi:enable tsf[0m
+[0;32mI (521) WIFI_SYS: WiFi initialized and connecting to IoT_bots[0m
+[0;32mI (521) MOTORS: LEDC initialized for all 4 motors[0m
+[0;32mI (521) MOTORS: Motor system initialized[0m
+[0;32mI (531) gpio: GPIO[0]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (541) gpio: GPIO[1]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (541) ADC: ADC initialized[0m
+[0;32mI (551) temperature_sensor: Range [-10°C ~ 80°C], error < 1°C[0m
+[0;32mI (551) TEMP_SENSOR: Temperature sensor initialized[0m
+[0;32mI (561) i2cdev: [Port 0] First initialization. Configuring bus with SDA=3, SCL=2 (Pullups SCL:0 SDA:0)[0m
+[0;33mW (571) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (581) i2cdev: [Port 0] Successfully installed I2C master bus (Handle: 0x3fcab850).[0m
+[0;32mI (591) i2cdev: [0x40 at 0] Device added successfully (Device Handle: 0x3fcabcd0, Speed: 1000000 Hz).[0m
+[0;32mI (601) INA219: INA219 initialized[0m
+[0;32mI (601) ULTRASONIC: Ultrasonic sensor initialized[0m
+[0;32mI (601) ESPNOW: espnow [version: 2.0] init[0m
+[0;32mI (611) ESPNOW_SYS: ESP-NOW initialized and waiting for data...[0m
+[1;31mE (621) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (621) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (631) mqtt_client: Error transport connect[0m
+[0;32mI (631) MQTT_SYS: MQTT Disconnected[0m
+[0;32mI (631) MQTT_SYS: MQTT system initialized[0m
+[0;32mI (641) gpio: GPIO[10]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (641) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (651) UI: UI system initialized[0m
+[0;32mI (661) CONTROL: Control task started[0m
+[0;33mW (661) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (661) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (671) CONTROL: Control task created[0m
+[0;32mI (671) SCHEDULER: Scheduler initialized[0m
+[0;32mI (681) SCHEDULER: Scheduler task started[0m
+[0;32mI (681) SCHEDULER: Scheduler started[0m
+[0;32mI (681) main_task: Returned from app_main()[0m
+[0;32mI (691) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (691) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (701) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (711) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (741) wifi:connected with IoT_bots, aid = 3, channel 1, BW20, bssid = 62:a6:e6:79:02:ee[0m
+[0;32mI (741) wifi:security: WPA2-PSK, phy: bg, rssi: -25[0m
+[0;32mI (741) wifi:pm start, type: 1[0m
+
+[0;32mI (751) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (751) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;33mW (771) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (771) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (791) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;33mW (871) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (871) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (971) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (971) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (1071) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (1171) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1171) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (1271) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1271) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (1371) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1371) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (1381) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (1471) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1471) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (1571) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1571) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (1671) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1671) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (1771) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1771) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (1811) esp_netif_handlers: sta ip: 10.100.71.55, mask: 255.255.255.0, gw: 10.100.71.1[0m
+[0;33mW (1871) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1871) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (1971) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1971) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2071) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2171) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2171) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2271) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2271) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2371) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2371) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2381) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (2471) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2471) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2571) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2571) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2671) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2671) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2771) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2771) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2871) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2871) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (2881) INA219: VBUS: 0.83V, I: -0.20mA, P: 0.00mW[0m
+[0;33mW (2971) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2971) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (3071) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (3171) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3171) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (3271) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3271) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (3371) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3371) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (3381) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (3471) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3471) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (3571) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3571) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (3671) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3671) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (3771) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3771) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (3871) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3871) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (3971) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3971) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4071) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4171) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4171) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4271) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4271) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4371) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4371) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4381) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (4471) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4471) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4571) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4571) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4671) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4671) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4771) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4771) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4871) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4871) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4971) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4971) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5071) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5171) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5171) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5271) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5271) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5371) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5371) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (5381) TEMP_SENSOR: ==========================================[0m
+[0;32mI (5381) TEMP_SENSOR: ESP32-C3 Internal Temperature Sensor[0m
+[0;32mI (5381) TEMP_SENSOR: Current Temperature: 49.60°C[0m
+[0;32mI (5381) TEMP_SENSOR: ==========================================[0m
+[0;32mI (5391) INA219: VBUS: 0.83V, I: -0.20mA, P: 0.00mW[0m
+[0;33mW (5401) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (5471) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5471) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5571) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5571) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5671) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5671) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5771) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5771) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5871) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5871) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5971) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5971) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6071) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6171) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6171) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6271) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6271) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6371) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6371) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6401) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (6471) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6471) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6571) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6571) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6671) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6671) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6771) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6771) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6871) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6871) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6971) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6971) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7071) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7171) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7171) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7271) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7271) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7371) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7371) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7401) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (7471) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7471) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7571) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7571) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7671) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7671) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7771) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7771) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7871) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7871) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (7901) INA219: VBUS: 0.83V, I: -0.30mA, P: 0.00mW[0m
+[0;33mW (7971) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7971) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (8071) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (8171) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8171) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (8271) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8271) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (8371) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8371) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (8401) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (8471) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8471) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (8571) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8571) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (8671) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8671) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (8771) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8771) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (8871) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8871) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (8971) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8971) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (9071) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (9171) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9171) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (9271) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9271) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (9371) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9371) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (9401) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (9471) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9471) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (9571) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9571) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (9671) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9671) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (9771) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9771) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (9871) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9871) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (9971) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9971) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (10071) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (10171) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10171) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (10271) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10271) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (10371) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10371) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (10401) TEMP_SENSOR: ==========================================[0m
+[0;32mI (10401) TEMP_SENSOR: ESP32-C3 Internal Temperature Sensor[0m
+[0;32mI (10401) TEMP_SENSOR: Current Temperature: 49.60°C[0m
+[0;32mI (10401) TEMP_SENSOR: ==========================================[0m
+[0;32mI (10411) INA219: VBUS: 0.83V, I: -0.40mA, P: 0.00mW[0m
+[0;33mW (10421) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (10471) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10471) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (10571) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10571) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (10671) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10671) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (10771) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10771) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (10871) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10871) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (10971) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10971) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (11071) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (11171) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11171) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (11271) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11271) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (11371) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11371) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (11421) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (11471) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11471) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (11571) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11571) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (11671) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11671) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (11771) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11771) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (11871) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11871) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (11971) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11971) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (12071) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (12071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (12171) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (12171) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (12271) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (12271) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (12371) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (12371) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (12421) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (12471) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (12471) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (12571) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (12571) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (12671) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (12671) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (12771) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (12771) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (12871) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (12871) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (12921) INA219: VBUS: 0.83V, I: -0.20mA, P: 0.00mW[0m
+[0;33mW (12971) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (12971) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (13071) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (13071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (13171) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (13171) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (13271) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (13271) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (13371) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (13371) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (13421) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (13471) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (13471) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (13571) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (13571) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (13671) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (13671) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (13771) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (13771) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (13871) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (13871) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (13971) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (13971) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (14071) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (14071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (14171) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (14171) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (14271) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (14271) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (14371) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (14371) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (14421) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (14471) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (14471) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (14571) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (14571) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (14671) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (14671) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (14771) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (14771) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (14871) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (14871) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (14971) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (14971) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (15071) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (15071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (15171) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (15171) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (15271) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (15271) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (15371) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (15371) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (15421) TEMP_SENSOR: ==========================================[0m
+[0;32mI (15421) TEMP_SENSOR: ESP32-C3 Internal Temperature Sensor[0m
+[0;32mI (15421) TEMP_SENSOR: Current Temperature: 49.60°C[0m
+[0;32mI (15421) TEMP_SENSOR: ==========================================[0m
+[0;32mI (15431) INA219: VBUS: 0.83V, I: 0.00mA, P: 0.00mW[0m
+[0;33mW (15441) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (15471) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (15471) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (15571) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (15571) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (15661) MQTT_SYS: MQTT Connected[0m
+[0;33mW (15671) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (15671) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (15771) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (15771) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (15871) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (15871) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (15971) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (15971) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (16071) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (16071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (16171) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (16171) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (16271) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (16271) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (16371) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (16371) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (16441) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (16471) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (16471) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (16571) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (16571) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (16671) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (16671) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (16771) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (16771) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (16871) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (16871) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (16971) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (16971) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (17071) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (17071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (17171) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (17171) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (17271) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (17271) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (17371) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (17371) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (17441) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (17471) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (17471) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (17571) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (17571) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (17671) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (17671) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (17771) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (17771) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (17871) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (17871) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (17941) INA219: VBUS: 0.83V, I: -0.10mA, P: 0.00mW[0m
+[0;33mW (17971) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (17971) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (18071) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (18071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (18171) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (18171) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (18271) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (18271) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (18371) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (18371) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (18441) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (18471) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (18471) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (18571) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (18571) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (18671) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (18671) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (18771) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (18771) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (18871) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (18871) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (18971) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (18971) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (19071) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (19071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (19171) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (19171) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (19271) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (19271) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (19371) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (19371) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (19441) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (19471) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (19471) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (19571) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (19571) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (19671) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (19671) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (19771) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (19771) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (19871) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (19871) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (19971) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (19971) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (20071) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (20071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (20171) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (20171) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (20271) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (20271) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (20371) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (20371) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (20441) TEMP_SENSOR: ==========================================[0m
+[0;32mI (20441) TEMP_SENSOR: ESP32-C3 Internal Temperature Sensor[0m
+[0;32mI (20441) TEMP_SENSOR: Current Temperature: 49.60°C[0m
+[0;32mI (20441) TEMP_SENSOR: ==========================================[0m
+[0;32mI (20451) INA219: VBUS: 0.83V, I: -0.30mA, P: 0.00mW[0m
+[0;33mW (20461) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (20471) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (20471) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (20571) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (20571) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (20671) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (20671) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (20771) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (20771) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (20871) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (20871) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (20971) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (20971) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (21071) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (21071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (21171) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (21171) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (21271) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (21271) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (21371) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (21371) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (21461) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (21471) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (21471) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (21571) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (21571) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (21671) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (21671) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (21771) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (21771) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (21871) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (21871) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (21971) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (21971) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (22071) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (22071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (22171) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (22171) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (22271) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (22271) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (22371) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (22371) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (22461) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (22471) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (22471) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (22571) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (22571) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (22671) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (22671) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (22771) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (22771) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (22871) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (22871) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (22961) INA219: VBUS: 0.83V, I: -0.40mA, P: 0.00mW[0m
+[0;33mW (22971) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (22971) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (23071) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (23071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (23171) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (23171) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (23271) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (23271) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (23371) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (23371) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (23461) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (23471) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (23471) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (23571) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (23571) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (23671) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (23671) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (23771) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (23771) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (23871) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (23871) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (23971) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (23971) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (24071) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (24071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (24171) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (24171) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (24271) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (24271) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (24371) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (24371) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (24461) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (24471) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (24471) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (24571) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (24571) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (24671) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (24671) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (24771) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (24771) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (24871) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (24871) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (24971) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (24971) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (25071) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (25071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (25171) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (25171) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (25271) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (25271) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (25371) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (25371) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (25461) TEMP_SENSOR: ==========================================[0m
+[0;32mI (25461) TEMP_SENSOR: ESP32-C3 Internal Temperature Sensor[0m
+[0;32mI (25461) TEMP_SENSOR: Current Temperature: 49.60°C[0m
+[0;32mI (25461) TEMP_SENSOR: ==========================================[0m
+[0;33mW (25471) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (25471) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (25481) INA219: VBUS: 0.84V, I: -0.30mA, P: 0.00mW[0m
+[0;33mW (25491) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (25581) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (25581) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (25681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (25681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (25781) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (25781) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (25881) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (25881) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (25981) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (25981) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (26081) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (26081) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (26181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (26181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (26281) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (26281) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (26381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (26381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (26481) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (26481) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (26491) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (26581) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (26581) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (26681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (26681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (26781) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (26781) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (26881) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (26881) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (26981) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (26981) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (27081) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (27081) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (27181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (27181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (27281) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (27281) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (27381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (27381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (27481) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (27481) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (27491) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (27581) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (27581) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (27681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (27681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (27781) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (27781) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (27881) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (27881) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (27981) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (27981) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (27991) INA219: VBUS: 0.83V, I: -0.30mA, P: 0.00mW[0m
+[0;33mW (28081) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (28081) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (28181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (28181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (28281) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (28281) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (28381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (28381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (28481) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (28481) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (28491) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (28581) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (28581) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (28681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (28681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (28781) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (28781) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (28881) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (28881) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (28981) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (28981) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (29081) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (29081) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (29181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (29181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (29281) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (29281) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (29381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (29381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (29481) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (29481) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (29491) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (29581) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (29581) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (29681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (29681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (29781) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (29781) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (29881) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (29881) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (29981) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (29981) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (30081) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (30081) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (30181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (30181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (30281) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (30281) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (30381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (30381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (30481) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (30481) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (30491) TEMP_SENSOR: ==========================================[0m
+[0;32mI (30491) TEMP_SENSOR: ESP32-C3 Internal Temperature Sensor[0m
+[0;32mI (30491) TEMP_SENSOR: Current Temperature: 49.60°C[0m
+[0;32mI (30491) TEMP_SENSOR: ==========================================[0m
+[0;32mI (30501) INA219: VBUS: 0.83V, I: -0.20mA, P: 0.00mW[0m
+[0;33mW (30511) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (30581) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (30581) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (30681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (30681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (30781) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (30781) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (30881) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (30881) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (30981) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (30981) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (31081) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (31081) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (31181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (31181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (31281) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (31281) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (31381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (31381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (31481) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (31481) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (31511) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (31581) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (31581) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (31681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (31681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (31781) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (31781) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (31881) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (31881) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (31981) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (31981) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (32081) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (32081) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (32181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (32181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (32281) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (32281) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (32381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (32381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (32481) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (32481) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (32511) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (32581) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (32581) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (32681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (32681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (32781) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (32781) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (32881) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (32881) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (32981) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (32981) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (33011) INA219: VBUS: 0.83V, I: -0.20mA, P: 0.00mW[0m
+[0;33mW (33081) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (33081) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (33181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (33181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (33281) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (33281) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (33381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (33381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (33481) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (33481) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (33511) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (33581) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (33581) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (33681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (33681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (33781) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (33781) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (33881) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (33881) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (33981) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (33981) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (34081) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (34081) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (34181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (34181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (34281) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (34281) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (34381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (34381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (34481) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (34481) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (34511) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (34581) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (34581) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (34681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (34681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (34781) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (34781) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (34881) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (34881) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (34981) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (34981) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (35081) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (35081) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (35181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (35181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (35281) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (35281) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (35381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (35381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (35481) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (35481) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (35511) TEMP_SENSOR: ==========================================[0m
+[0;32mI (35511) TEMP_SENSOR: ESP32-C3 Internal Temperature Sensor[0m
+[0;32mI (35511) TEMP_SENSOR: Current Temperature: 49.60°C[0m
+[0;32mI (35511) TEMP_SENSOR: ==========================================[0m
+[0;32mI (35521) INA219: VBUS: 0.83V, I: -0.40mA, P: 0.00mW[0m
+[0;33mW (35531) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (35581) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (35581) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (35681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (35681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (35781) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (35781) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (35881) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (35881) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (35981) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (35981) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (36081) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (36081) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (36181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (36181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (36281) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (36281) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (36381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (36381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (36481) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (36481) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (36531) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (36581) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (36581) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (36681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (36681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (36781) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (36781) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (36881) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (36881) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (36981) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (36981) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (37081) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (37081) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (37181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (37181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (37281) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (37281) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (37381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (37381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (37481) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (37481) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (37531) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (37581) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (37581) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (37681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (37681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (37781) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (37781) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (37881) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (37881) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (37981) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (37981) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (38031) INA219: VBUS: 0.83V, I: -0.40mA, P: 0.00mW[0m
+[0;33mW (38081) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (38081) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (38181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (38181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (38281) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (38281) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (38381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (38381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (38481) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (38481) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (38531) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (38581) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (38581) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (38681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (38681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (38781) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (38781) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (38881) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (38881) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (38981) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (38981) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (39081) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (39081) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (39181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (39181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (39281) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (39281) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (39381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (39381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (39481) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (39481) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (39531) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (39581) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (39581) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (39681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (39681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (39781) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (39781) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (39881) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (39881) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (39981) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (39981) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (40081) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (40081) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (40181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (40181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (40281) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (40281) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (40381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (40381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (40481) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (40481) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (40531) TEMP_SENSOR: ==========================================[0m
+[0;32mI (40531) TEMP_SENSOR: ESP32-C3 Internal Temperature Sensor[0m
+[0;32mI (40531) TEMP_SENSOR: Current Temperature: 49.60°C[0m
+[0;32mI (40531) TEMP_SENSOR: ==========================================[0m
+[0;32mI (40541) INA219: VBUS: 0.83V, I: -0.30mA, P: 0.00mW[0m
+[0;33mW (40551) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (40581) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (40581) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (40681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (40681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (40781) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (40781) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (40881) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (40881) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (40981) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (40981) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (41081) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (41081) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (41181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (41181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (41281) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (41281) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (41381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (41381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (41481) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (41481) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (41551) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (41581) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (41581) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (41681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (41681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (41781) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (41781) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (41881) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (41881) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (41981) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (41981) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (42081) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (42081) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (42181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (42181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (42281) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (42281) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (42381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (42381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (42481) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (42481) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (42551) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (42581) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (42581) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (42681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (42681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (42781) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (42781) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (42881) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (42881) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (42981) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (42981) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (43051) INA219: VBUS: 0.83V, I: -0.50mA, P: 0.00mW[0m
+[0;33mW (43081) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (43081) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (43181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (43181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (43281) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (43281) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (43381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (43381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (43481) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (43481) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (43551) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (43581) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (43581) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (43681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (43681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (43781) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (43781) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (43881) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (43881) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (43981) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (43981) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (44081) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (44081) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (44181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (44181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (44281) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (44281) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (44381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (44381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (44481) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (44481) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (44551) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (44581) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (44581) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (44681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (44681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (44781) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (44781) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (44881) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (44881) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (44981) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (44981) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (45081) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (45081) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (45181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (45181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (45281) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (45281) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (45381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (45381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (45481) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (45481) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (45551) TEMP_SENSOR: ==========================================[0m
+[0;32mI (45551) TEMP_SENSOR: ESP32-C3 Internal Temperature Sensor[0m
+[0;32mI (45551) TEMP_SENSOR: Current Temperature: 49.60°C[0m
+[0;32mI (45551) TEMP_SENSOR: ==========================================[0m
+[0;32mI (45561) INA219: VBUS: 0.83V, I: -0.40mA, P: 0.00mW[0m
+[0;33mW (45571) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (45581) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (45581) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (45681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (45681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (45781) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (45781) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (45881) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (45881) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (45981) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (45981) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (46081) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (46081) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (46181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (46181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (46281) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (46281) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (46381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (46381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (46481) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (46481) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (46571) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (46581) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (46581) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (46681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (46681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (46781) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (46781) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (46881) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (46881) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (46981) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (46981) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (47081) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (47081) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (47181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (47181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (47281) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (47281) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (47381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (47381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (47481) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (47481) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (47571) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (47581) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (47581) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (47681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (47681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (47781) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (47781) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (47881) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (47881) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (47981) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (47981) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (48071) INA219: VBUS: 0.83V, I: -0.40mA, P: 0.00mW[0m
+[0;33mW (48081) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (48081) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (48181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (48181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (48281) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (48281) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (48381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (48381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (48481) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (48481) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (48571) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (48581) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (48581) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (48681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (48681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (48781) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (48781) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (48881) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (48881) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (48981) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (48981) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (49081) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (49081) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (49181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (49181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (49281) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (49281) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (49381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (49381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (49481) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (49481) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (49571) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (49581) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (49581) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (49681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (49681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (49781) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (49781) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (49881) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (49881) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (49981) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (49981) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (50081) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (50081) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (50181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (50181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (50281) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (50281) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (50381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (50381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+I BOD: Brownout detector was triggered
+
+
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x3 (RTC_SW_SYS_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40048b82
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+[0;32mI (419) wifi:config NVS flash: enabled[0m
+[0;32mI (419) wifi:config nano formatting: disabled[0m
+[0;32mI (419) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (429) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (429) wifi:Init management short buffer num: 32[0m
+[0;32mI (439) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (439) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (449) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (449) wifi:Init static rx buffer num: 10[0m
+[0;32mI (449) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (459) wifi_init: rx ba win: 6[0m
+[0;32mI (459) wifi_init: accept mbox: 6[0m
+[0;32mI (459) wifi_init: tcpip mbox: 32[0m
+[0;32mI (469) wifi_init: udp mbox: 6[0m
+[0;32mI (469) wifi_init: tcp mbox: 6[0m
+[0;32mI (469) wifi_init: tcp tx win: 5760[0m
+[0;32mI (469) wifi_init: tcp rx win: 5760[0m
+[0;32mI (479) wifi_init: tcp mss: 1440[0m
+[0;32mI (479) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (479) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (489) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (499) phy_init: phy_version 1200,2b7123f9,Feb 18 2025,15:22:21[0m
+[0;32mI (539) wifi:mode : sta (e4:b0:63:17:9e:44)[0m
+[0;32mI (539) wifi:enable tsf[0m
+[0;32mI (539) WIFI_SYS: WiFi initialized and connecting to IoT_bots[0m
+[0;32mI (539) MOTORS: LEDC initialized for all 4 motors[0m
+[0;32mI (549) MOTORS: Motor system initialized[0m
+[0;32mI (549) gpio: GPIO[0]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (559) gpio: GPIO[1]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (569) ADC: ADC initialized[0m
+[0;32mI (569) temperature_sensor: Range [-10°C ~ 80°C], error < 1°C[0m
+[0;32mI (569) TEMP_SENSOR: Temperature sensor initialized[0m
+[0;32mI (579) i2cdev: [Port 0] First initialization. Configuring bus with SDA=3, SCL=2 (Pullups SCL:0 SDA:0)[0m
+[0;33mW (589) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (599) i2cdev: [Port 0] Successfully installed I2C master bus (Handle: 0x3fcab818).[0m
+[0;32mI (609) i2cdev: [0x40 at 0] Device added successfully (Device Handle: 0x3fcabcd0, Speed: 1000000 Hz).[0m
+[0;32mI (619) INA219: INA219 initialized[0m
+[0;32mI (619) ULTRASONIC: Ultrasonic sensor initialized[0m
+[0;32mI (629) ESPNOW: espnow [version: 2.0] init[0m
+[0;32mI (629) ESPNOW_SYS: ESP-NOW initialized and waiting for data...[0m
+[1;31mE (639) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (639) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (649) mqtt_client: Error transport connect[0m
+[0;32mI (649) MQTT_SYS: MQTT Disconnected[0m
+[0;32mI (659) MQTT_SYS: MQTT system initialized[0m
+[0;32mI (659) gpio: GPIO[10]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (669) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (679) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (679) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (689) UI: UI system initialized[0m
+[0;32mI (689) CONTROL: Control task started[0m
+[0;33mW (689) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (689) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (699) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (709) CONTROL: Control task created[0m
+[0;32mI (709) SCHEDULER: Scheduler initialized[0m
+[0;32mI (709) SCHEDULER: Scheduler task started[0m
+[0;32mI (719) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (719) SCHEDULER: Scheduler started[0m
+[0;32mI (719) main_task: Returned from app_main()[0m
+[0;32mI (739) wifi:connected with IoT_bots, aid = 3, channel 1, BW20, bssid = 62:a6:e6:79:02:ee[0m
+[0;32mI (739) wifi:security: WPA2-PSK, phy: bg, rssi: -30[0m
+[0;32mI (749) wifi:pm start, type: 1[0m
+
+[0;32mI (749) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (759) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (779) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;33mW (809) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (809) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (909) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (909) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (1009) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1009) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (1109) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1109) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (1209) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1209) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (1309) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1309) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (1409) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1409) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (1419) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (1509) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1509) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (1609) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1609) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (1709) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1709) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (1789) esp_netif_handlers: sta ip: 10.100.71.55, mask: 255.255.255.0, gw: 10.100.71.1[0m
+[0;33mW (1809) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1809) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (1909) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (1909) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2009) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2009) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2109) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2109) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2209) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2209) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2309) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2309) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2409) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2409) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2419) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (2509) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2509) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2609) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2609) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2709) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2709) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2809) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2809) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (2909) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (2909) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (2919) INA219: VBUS: 0.83V, I: -0.40mA, P: 0.00mW[0m
+[0;33mW (3009) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3009) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (3109) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3109) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (3209) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3209) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (3309) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3309) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (3409) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3409) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (3419) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (3509) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3509) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (3609) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3609) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (3709) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3709) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (3809) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3809) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (3909) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3909) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4009) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4009) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4109) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4109) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4209) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4209) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4309) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4309) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4409) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4409) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4419) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (4509) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4509) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4609) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4609) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4709) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4709) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4809) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4809) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4909) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4909) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5009) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5009) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5109) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5109) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5209) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5209) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5309) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5309) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5409) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5409) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (5419) TEMP_SENSOR: ==========================================[0m
+[0;32mI (5419) TEMP_SENSOR: ESP32-C3 Internal Temperature Sensor[0m
+[0;32mI (5419) TEMP_SENSOR: Current Temperature: 49.60°C[0m
+[0;32mI (5419) TEMP_SENSOR: ==========================================[0m
+[0;32mI (5429) INA219: VBUS: 0.83V, I: -0.30mA, P: 0.00mW[0m
+[0;33mW (5439) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (5509) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5509) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5609) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5609) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5709) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5709) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5809) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5809) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5909) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5909) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6009) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6009) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6109) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6109) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6209) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6209) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6309) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6309) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6409) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6409) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6439) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (6509) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6509) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6609) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6609) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6709) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6709) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6809) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6809) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6909) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6909) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7009) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7009) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7109) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7109) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7209) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7209) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7309) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7309) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7409) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7409) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7439) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (7509) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7509) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7609) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7609) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7709) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7709) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7809) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7809) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7909) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7909) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (7939) INA219: VBUS: 0.83V, I: -0.40mA, P: 0.00mW[0m
+[0;33mW (8009) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8009) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (8109) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8109) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (8209) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8209) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (8309) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8309) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (8409) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8409) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (8439) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (8509) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8509) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (8609) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8609) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (8709) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8709) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (8809) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8809) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (8909) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8909) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (9009) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9009) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (9109) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9109) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (9209) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9209) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (9309) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9309) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (9409) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9409) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (9439) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (9509) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9509) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (9609) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9609) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (9709) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9709) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (9809) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9809) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (9909) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9909) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (10009) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10009) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (10109) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10109) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (10209) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10209) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (10309) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10309) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (10409) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10409) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (10439) TEMP_SENSOR: ==========================================[0m
+[0;32mI (10439) TEMP_SENSOR: ESP32-C3 Internal Temperature Sensor[0m
+[0;32mI (10439) TEMP_SENSOR: Current Temperature: 49.60°C[0m
+[0;32mI (10439) TEMP_SENSOR: ==========================================[0m
+[0;32mI (10449) INA219: VBUS: 0.83V, I: -0.50mA, P: 0.00mW[0m
+[0;33mW (10459) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (10509) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10509) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (10609) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10609) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (10689) MQTT_SYS: MQTT Connected[0m
+[0;33mW (10709) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10709) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (10809) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10809) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (10909) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10909) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (11009) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11009) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (11109) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11109) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (11209) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11209) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (11309) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11309) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (11409) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11409) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (11459) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (11509) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11509) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (11609) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11609) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (11709) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11709) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (11809) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11809) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (11909) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11909) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (12009) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (12009) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (12109) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (12109) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (12209) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (12209) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (12309) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (12309) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (12409) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (12409) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (12459) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (12509) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (12509) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (12609) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (12609) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (12709) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (12709) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (12809) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (12809) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (12909) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (12909) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (12959) INA219: VBUS: 0.83V, I: -0.40mA, P: 0.00mW[0m
+[0;33mW (13009) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (13009) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (13109) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (13109) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (13209) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (13209) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (13309) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (13309) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (13409) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (13409) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (13459) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (13509) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (13509) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (13609) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (13609) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (13709) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (13709) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (13809) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (13809) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (13909) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (13909) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (14009) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (14009) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (14109) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (14109) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (14209) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (14209) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (14309) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (14309) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (14409) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (14409) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (14459) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (14509) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (14509) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (14609) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (14609) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (14709) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (14709) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (14809) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (14809) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (14909) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (14909) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (15009) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (15009) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (15109) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (15109) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (15209) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (15209) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (15309) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (15309) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (15409) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (15409) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (15459) TEMP_SENSOR: ==========================================[0m
+[0;32mI (15459) TEMP_SENSOR: ESP32-C3 Internal Temperature Sensor[0m
+[0;32mI (15459) TEMP_SENSOR: Current Temperature: 49.60°C[0m
+[0;32mI (15459) TEMP_SENSOR: ==========================================[0m
+[0;32mI (15469) INA219: VBUS: 0.83V, I: -0.50mA, P: 0.00mW[0m
+[0;33mW (15479) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (15509) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (15509) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (15609) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (15609) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (15709) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (15709) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (15809) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (15809) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (15909) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (15909) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (16009) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (16009) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (16109) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (16109) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (16209) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (16209) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (16309) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (16309) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (16409) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (16409) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (16479) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (16509) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (16509) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (16609) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (16609) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (16709) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (16709) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (16809) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (16809) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (16909) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (16909) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (17009) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (17009) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (17109) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (17109) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (17209) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (17209) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (17309) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (17309) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (17409) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (17409) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (17479) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (17509) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (17509) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (17609) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (17609) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (17709) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (17709) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (17809) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (17809) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (17909) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (17909) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (17979) INA219: VBUS: 0.83V, I: -0.40mA, P: 0.00mW[0m
+[0;33mW (18009) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (18009) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (18109) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (18109) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (18209) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (18209) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (18309) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (18309) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (18409) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (18409) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (18479) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (18509) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (18509) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (18609) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (18609) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (18709) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (18709) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (18809) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (18809) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (18909) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (18909) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (19009) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (19009) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (19109) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (19109) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (19209) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (19209) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (19309) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (19309) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (19409) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (19409) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (19479) ULTRASONIC: Measurement failed: 513[0m
+[0;33mW (19509) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (19509) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (19609) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (19609) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (19709) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (19709) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (19809) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (19809) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (19909) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (19909) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
