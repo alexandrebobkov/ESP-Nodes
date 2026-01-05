@@ -1,4 +1,4 @@
-[0;32mI (16522) ULTRASONIC_TEST: ────────────�ESP-ROM:esp32c3-api1-20210207[0m
+[0;32mI (13612) ULTRASONIC_TEST: Cmd 0x51 → [0x00 0x00 0x00 0xFF] DiESP-ROM:esp32c3-api1-20210207[0m
 Build:Feb  7 2021
 rst:0x15 (USB_UART_CHIP_RESET),boot:0xf (SPI_FAST_FLASH_BOOT)
 Saved PC:0x40382b44
@@ -77,14 +77,14 @@ entry 0x403cc71a
 [0;32mI (1912) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
 [0;32mI (1912) ULTRASONIC_TEST: Measurement #1[0m
 [0;32mI (1912) ULTRASONIC_TEST: Testing 0x50 (cm):[0m
-[0;32mI (1982) ULTRASONIC_TEST: Cmd 0x50 → [0x05 0x72 0x88 0xFF] Distance: 1394[0m
+[0;32mI (1982) ULTRASONIC_TEST: Cmd 0x50 → [0x04 0xC0 0x90 0xFF] Distance: 1216[0m
 [0;32mI (2182) ULTRASONIC_TEST: Testing 0x51 (inch):[0m
 [0;32mI (2252) ULTRASONIC_TEST: Cmd 0x51 → [0x00 0x00 0x00 0xFF] Distance: 0[0m
 [0;32mI (2452) ULTRASONIC_TEST: Testing 0x52 (µs):[0m
 [0;32mI (2522) ULTRASONIC_TEST: Cmd 0x52 → [0x00 0x00 0x00 0xFF] Distance: 0[0m
 [0;32mI (2522) ULTRASONIC_TEST: [0m
-Results: CM=1394, INCH=0, µS=0
-[0;32mI (2522) ULTRASONIC_TEST: ✅ Got valid reading: 1394 cm[0m
+Results: CM=1216, INCH=0, µS=0
+[0;32mI (2522) ULTRASONIC_TEST: ✅ Got valid reading: 1216 cm[0m
 [0;32mI (2522) ULTRASONIC_TEST: [0m
 [0;32mI (3522) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
 [0;32mI (3522) ULTRASONIC_TEST: Measurement #2[0m
@@ -98,66 +98,3 @@ Results: CM=1394, INCH=0, µS=0
 Results: CM=0, INCH=0, µS=0
 [0;33mW (4132) ULTRASONIC_TEST: ⚠️  All zeros - sensor may be defective or not detecting[0m
 [0;32mI (4132) ULTRASONIC_TEST: [0m
-[0;32mI (5142) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
-[0;32mI (5142) ULTRASONIC_TEST: Measurement #3[0m
-[0;32mI (5142) ULTRASONIC_TEST: Testing 0x50 (cm):[0m
-[0;32mI (5212) ULTRASONIC_TEST: Cmd 0x50 → [0x00 0x00 0x00 0xFF] Distance: 0[0m
-[0;32mI (5412) ULTRASONIC_TEST: Testing 0x51 (inch):[0m
-[0;32mI (5482) ULTRASONIC_TEST: Cmd 0x51 → [0x00 0x00 0x00 0xFF] Distance: 0[0m
-[0;32mI (5682) ULTRASONIC_TEST: Testing 0x52 (µs):[0m
-[0;32mI (5752) ULTRASONIC_TEST: Cmd 0x52 → [0x00 0x00 0x00 0xFF] Distance: 0[0m
-[0;32mI (5752) ULTRASONIC_TEST: [0m
-Results: CM=0, INCH=0, µS=0
-[0;33mW (5752) ULTRASONIC_TEST: ⚠️  All zeros - sensor may be defective or not detecting[0m
-[0;32mI (5752) ULTRASONIC_TEST: [0m
-[0;32mI (6762) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
-[0;32mI (6762) ULTRASONIC_TEST: Measurement #4[0m
-[0;32mI (6762) ULTRASONIC_TEST: Testing 0x50 (cm):[0m
-[0;32mI (6832) ULTRASONIC_TEST: Cmd 0x50 → [0x00 0x00 0x00 0xFF] Distance: 0[0m
-[0;32mI (7032) ULTRASONIC_TEST: Testing 0x51 (inch):[0m
-[0;32mI (7102) ULTRASONIC_TEST: Cmd 0x51 → [0x00 0x00 0x00 0xFF] Distance: 0[0m
-[0;32mI (7302) ULTRASONIC_TEST: Testing 0x52 (µs):[0m
-[0;32mI (7372) ULTRASONIC_TEST: Cmd 0x52 → [0x00 0x00 0x00 0xFF] Distance: 0[0m
-[0;32mI (7372) ULTRASONIC_TEST: [0m
-Results: CM=0, INCH=0, µS=0
-[0;33mW (7372) ULTRASONIC_TEST: ⚠️  All zeros - sensor may be defective or not detecting[0m
-[0;32mI (7372) ULTRASONIC_TEST: [0m
-[0;32mI (8382) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
-[0;32mI (8382) ULTRASONIC_TEST: Measurement #5[0m
-[0;32mI (8382) ULTRASONIC_TEST: Testing 0x50 (cm):[0m
-[0;32mI (8452) ULTRASONIC_TEST: Cmd 0x50 → [0x00 0x00 0x00 0xFF] Distance: 0[0m
-[0;32mI (8652) ULTRASONIC_TEST: Testing 0x51 (inch):[0m
-[0;32mI (8722) ULTRASONIC_TEST: Cmd 0x51 → [0x00 0x00 0x00 0xFF] Distance: 0[0m
-[0;32mI (8922) ULTRASONIC_TEST: Testing 0x52 (µs):[0m
-[0;32mI (8992) ULTRASONIC_TEST: Cmd 0x52 → [0x00 0x00 0x00 0xFF] Distance: 0[0m
-[0;32mI (8992) ULTRASONIC_TEST: [0m
-Results: CM=0, INCH=0, µS=0
-[0;33mW (8992) ULTRASONIC_TEST: ⚠️  All zeros - sensor may be defective or not detecting[0m
-[0;32mI (8992) ULTRASONIC_TEST: [0m
-[0;32mI (10002) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
-[0;32mI (10002) ULTRASONIC_TEST: Measurement #6[0m
-[0;32mI (10002) ULTRASONIC_TEST: Testing 0x50 (cm):[0m
-[0;32mI (10082) ULTRASONIC_TEST: Cmd 0x50 → [0x00 0x00 0x00 0xFF] Distance: 0[0m
-[0;32mI (10282) ULTRASONIC_TEST: Testing 0x51 (inch):[0m
-[0;32mI (10352) ULTRASONIC_TEST: Cmd 0x51 → [0x00 0x00 0x00 0xFF] Distance: 0[0m
-[0;32mI (10552) ULTRASONIC_TEST: Testing 0x52 (µs):[0m
-[0;32mI (10622) ULTRASONIC_TEST: Cmd 0x52 → [0x00 0x00 0x00 0xFF] Distance: 0[0m
-[0;32mI (10622) ULTRASONIC_TEST: [0m
-Results: CM=0, INCH=0, µS=0
-[0;33mW (10622) ULTRASONIC_TEST: ⚠️  All zeros - sensor may be defective or not detecting[0m
-[0;32mI (10622) ULTRASONIC_TEST: [0m
-[0;32mI (11632) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
-[0;32mI (11632) ULTRASONIC_TEST: Measurement #7[0m
-[0;32mI (11632) ULTRASONIC_TEST: Testing 0x50 (cm):[0m
-[0;32mI (11712) ULTRASONIC_TEST: Cmd 0x50 → [0x00 0x00 0x00 0xFF] Distance: 0[0m
-[0;32mI (11912) ULTRASONIC_TEST: Testing 0x51 (inch):[0m
-[0;32mI (11982) ULTRASONIC_TEST: Cmd 0x51 → [0x00 0x00 0x00 0xFF] Distance: 0[0m
-[0;32mI (12182) ULTRASONIC_TEST: Testing 0x52 (µs):[0m
-[0;32mI (12252) ULTRASONIC_TEST: Cmd 0x52 → [0x00 0x00 0x00 0xFF] Distance: 0[0m
-[0;32mI (12252) ULTRASONIC_TEST: [0m
-Results: CM=0, INCH=0, µS=0
-[0;33mW (12252) ULTRASONIC_TEST: ⚠️  All zeros - sensor may be defective or not detecting[0m
-[0;32mI (12252) ULTRASONIC_TEST: [0m
-[0;32mI (13262) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
-[0;32mI (13262) ULTRASONIC_TEST: Measurement #8[0m
-[0;32mI (13262) ULTRASONIC_TEST: Testing 0x50 (cm):[0m
