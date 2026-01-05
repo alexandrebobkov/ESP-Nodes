@@ -31,7 +31,6 @@ struct ultrasonic_system_t {
     void (*update)(ultrasonic_system_t *self, TickType_t now);
 };
 
-//void ultrasonic_system_init(ultrasonic_system_t *sys);
-void ultrasonic_system_init(ultrasonic_system_t *sys, i2c_master_bus_handle_t bus_handle);
+void ultrasonic_system_init(ultrasonic_system_t *sys);
 
 #endif
