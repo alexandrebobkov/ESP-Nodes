@@ -1,5 +1,5 @@
-#ifndef ULTRASONIC_SYSTEM_H
-#define ULTRASONIC_SYSTEM_H
+#ifndef ULTRASONIC_HAL_H
+#define ULTRASONIC_HAL_H
 
 #include "driver/gpio.h"
 #include "driver/rmt_tx.h"
