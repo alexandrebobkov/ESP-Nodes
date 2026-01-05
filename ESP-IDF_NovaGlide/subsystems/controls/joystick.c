@@ -62,13 +62,14 @@ void joystick_mix(float x, float y, int *pwm_left, int *pwm_right)
     const float k = 0.8f;//0.5f;
 
     // Differential mix
-    float L0 = y + k * x;
-    float R0 = y - k * x;
+    //float L0 = y + k * x;
+    //float R0 = y - k * x;
 
     // Normalize pair
     float x_shaped = x * x * x;
     float L0 = y + k * x_shaped;
     float R0 = y - k * x_shaped;
+
     float m = fmaxf(1.0f, fmaxf(fabsf(L0), fabsf(R0)));
     float L = L0 / m;
     float R = R0 / m;
