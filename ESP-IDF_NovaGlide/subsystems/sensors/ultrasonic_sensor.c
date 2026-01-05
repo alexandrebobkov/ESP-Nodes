@@ -22,27 +22,6 @@ static const char *TAG = "ULTRASONIC";
     }
 }*/
 
-static void ultrasonic_update_impl(ultrasonic_system_t *self, TickType_t now)
-{
-    static TickType_t last_read = 0;
-
-    if ((now - last_read) >= pdMS_TO_TICKS(1000)) {
-
-        float distance;
-        esp_err_t res = ultrasonic_i2c_read(&distance);
-
-        if (res == ESP_OK) {
-            self->distance_cm = distance;
-            ESP_LOGI(TAG, "Distance: %.2f cm", distance);
-        } else {
-            ESP_LOGW(TAG, "I2C read failed: %s", esp_err_to_name(res));
-        }
-
-        last_read = now;
-    }
-}
-
-
 static esp_err_t ultrasonic_i2c_read(float *distance_cm)
 {
     uint8_t cmd = 0x01;  // start measurement
@@ -69,6 +48,26 @@ static esp_err_t ultrasonic_i2c_read(float *distance_cm)
     *distance_cm = raw / 10.0f;
 
     return ESP_OK;
+}
+
+static void ultrasonic_update_impl(ultrasonic_system_t *self, TickType_t now)
+{
+    static TickType_t last_read = 0;
+
+    if ((now - last_read) >= pdMS_TO_TICKS(1000)) {
+
+        float distance;
+        esp_err_t res = ultrasonic_i2c_read(&distance);
+
+        if (res == ESP_OK) {
+            self->distance_cm = distance;
+            ESP_LOGI(TAG, "Distance: %.2f cm", distance);
+        } else {
+            ESP_LOGW(TAG, "I2C read failed: %s", esp_err_to_name(res));
+        }
+
+        last_read = now;
+    }
 }
 
 
