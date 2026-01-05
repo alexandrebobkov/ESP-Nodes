@@ -31,37 +31,25 @@ void joystick_hal_update(joystick_hal_t *js, int32_t x_raw, int32_t y_raw)
     js->raw_x = x_raw;
     js->raw_y = y_raw;
 
-    // --- 1. Learn center for first N samples ---
-    if (js->samples_collected < js->samples_needed) {
-        js->center_x += x_raw;
-        js->center_y += y_raw;
-        js->samples_collected++;
+    // 1. Fixed center + range
+    float dx = (float)x_raw - JS_CENTER_X;
+    float dy = (float)y_raw - JS_CENTER_Y;
 
-        if (js->samples_collected == js->samples_needed) {
-            js->center_x /= js->samples_needed;
-            js->center_y /= js->samples_needed;
-        }
+    float nx = dx / JS_RANGE_X;
+    float ny = dy / JS_RANGE_Y;
 
-        js->norm_x = 0;
-        js->norm_y = 0;
-        return;
-    }
+    // 2. Clamp to [-1..+1]
+    if (nx > 1.0f) nx = 1.0f;
+    if (nx < -1.0f) nx = -1.0f;
+    if (ny > 1.0f) ny = 1.0f;
+    if (ny < -1.0f) ny = -1.0f;
 
-    // --- 2. Compute deltas ---
-    float dx = (float)x_raw - js->center_x;
-    float dy = (float)y_raw - js->center_y;
+    // 3. Strong deadband, especially on X
+    const float deadband_x = 0.15f;
+    const float deadband_y = 0.08f;
 
-    // --- 3. Learn range dynamically ---
-    js->range_x = fmaxf(js->range_x, fabsf(dx));
-    js->range_y = fmaxf(js->range_y, fabsf(dy));
-
-    // --- 4. Normalize to [-1..+1] ---
-    float nx = dx / js->range_x;
-    float ny = dy / js->range_y;
-
-    // --- 5. Apply deadband ---
-    js->norm_x = apply_deadband(nx, js->deadband);
-    js->norm_y = apply_deadband(ny, js->deadband);
+    js->norm_x = (fabsf(nx) < deadband_x) ? 0.0f : nx;
+    js->norm_y = (fabsf(ny) < deadband_y) ? 0.0f : ny;
 }
 
 static float clampf(float val, float min, float max) {
