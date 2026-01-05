@@ -1,11 +1,13 @@
 #include "i2c_bus.h"
 #include "esp_log.h"
+#include "freertos/semphr.h"
 #include <string.h>
 
 static const char *TAG = "I2C_BUS";
 
 // Global I2C bus handle
 static i2c_master_bus_handle_t bus_handle = NULL;
+static SemaphoreHandle_t bus_mutex = NULL;
 
 // Device registry
 static i2c_device_t device_registry[I2C_MAX_DEVICES];
@@ -16,6 +18,13 @@ esp_err_t i2c_bus_init(void) {
     if (bus_handle != NULL) {
         ESP_LOGW(TAG, "I2C bus already initialized");
         return ESP_OK;
+    }
+
+    // Create mutex
+    bus_mutex = xSemaphoreCreateMutex();
+    if (bus_mutex == NULL) {
+        ESP_LOGE(TAG, "Failed to create I2C mutex");
+        return ESP_ERR_NO_MEM;
     }
 
     ESP_LOGI(TAG, "Initializing I2C bus...");
@@ -35,6 +44,8 @@ esp_err_t i2c_bus_init(void) {
     esp_err_t ret = i2c_new_master_bus(&bus_config, &bus_handle);
     if (ret != ESP_OK) {
         ESP_LOGE(TAG, "Failed to initialize I2C bus: %s", esp_err_to_name(ret));
+        vSemaphoreDelete(bus_mutex);
+        bus_mutex = NULL;
         return ret;
     }
 
@@ -96,11 +107,22 @@ esp_err_t i2c_bus_add_device(uint8_t address, const char *name, i2c_master_dev_h
     return ESP_OK;
 }
 
-// Write data to device
+// Write data to device (with mutex)
 esp_err_t i2c_bus_write(i2c_master_dev_handle_t dev_handle, uint8_t reg_addr,
                         const uint8_t *data, size_t len) {
     if (dev_handle == NULL) {
         return ESP_ERR_INVALID_ARG;
+    }
+
+    if (bus_mutex == NULL) {
+        ESP_LOGE(TAG, "I2C bus not initialized");
+        return ESP_ERR_INVALID_STATE;
+    }
+
+    // Take mutex
+    if (xSemaphoreTake(bus_mutex, pdMS_TO_TICKS(100)) != pdTRUE) {
+        ESP_LOGW(TAG, "Failed to acquire I2C mutex for write");
+        return ESP_ERR_TIMEOUT;
     }
 
     uint8_t write_buf[len + 1];
@@ -112,6 +134,9 @@ esp_err_t i2c_bus_write(i2c_master_dev_handle_t dev_handle, uint8_t reg_addr,
         ESP_LOGE(TAG, "Write failed: %s", esp_err_to_name(ret));
     }
 
+    // Release mutex
+    xSemaphoreGive(bus_mutex);
+
     return ret;
 }
 
@@ -120,11 +145,22 @@ esp_err_t i2c_bus_write_byte(i2c_master_dev_handle_t dev_handle, uint8_t reg_add
     return i2c_bus_write(dev_handle, reg_addr, &value, 1);
 }
 
-// Read data from device
+// Read data from device (with mutex)
 esp_err_t i2c_bus_read(i2c_master_dev_handle_t dev_handle, uint8_t reg_addr,
                        uint8_t *data, size_t len) {
     if (dev_handle == NULL) {
         return ESP_ERR_INVALID_ARG;
+    }
+
+    if (bus_mutex == NULL) {
+        ESP_LOGE(TAG, "I2C bus not initialized");
+        return ESP_ERR_INVALID_STATE;
+    }
+
+    // Take mutex
+    if (xSemaphoreTake(bus_mutex, pdMS_TO_TICKS(100)) != pdTRUE) {
+        ESP_LOGW(TAG, "Failed to acquire I2C mutex for read");
+        return ESP_ERR_TIMEOUT;
     }
 
     esp_err_t ret = i2c_master_transmit_receive(dev_handle, &reg_addr, 1,
@@ -132,6 +168,9 @@ esp_err_t i2c_bus_read(i2c_master_dev_handle_t dev_handle, uint8_t reg_addr,
     if (ret != ESP_OK) {
         ESP_LOGE(TAG, "Read failed: %s", esp_err_to_name(ret));
     }
+
+    // Release mutex
+    xSemaphoreGive(bus_mutex);
 
     return ret;
 }
@@ -211,6 +250,11 @@ esp_err_t i2c_bus_deinit(void) {
     if (ret != ESP_OK) {
         ESP_LOGE(TAG, "Failed to deinitialize: %s", esp_err_to_name(ret));
         return ret;
+    }
+
+    if (bus_mutex != NULL) {
+        vSemaphoreDelete(bus_mutex);
+        bus_mutex = NULL;
     }
 
     bus_handle = NULL;
