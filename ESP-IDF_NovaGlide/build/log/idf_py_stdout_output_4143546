@@ -549,4 +549,185 @@ entry 0x403cc71a
 [0;32mI (64012) ULTRASONIC_TEST: Measurement #111[0m
 [0;32mI (64082) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
 [0;33mW (64082) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
-[0;32mI (64582) ULTRASONIC_TEST: ─────────────────────────────────────────
+[0;32mI (64582) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (64582) ULTRASONIC_TEST: Measurement #112[0m
+[0;32mI (64652) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (64652) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (65152) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (65152) ULTRASONIC_TEST: Measurement #113[0m
+[0;32mI (65222) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (65222) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (65722) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (65722) ULTRASONIC_TEST: Measurement #114[0m
+[1;31mE (65732) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (65732) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (65792) i2c.master: clear bus failed.[0m
+[1;31mE (65792) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (65792) ULTRASONIC_TEST: Command send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (65792) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (66302) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (66302) ULTRASONIC_TEST: Measurement #115[0m
+[1;31mE (66312) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (66312) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (66372) i2c.master: clear bus failed.[0m
+[1;31mE (66372) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (66372) ULTRASONIC_TEST: Command send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (66372) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (66882) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (66882) ULTRASONIC_TEST: Measurement #116[0m
+[1;31mE (66892) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (66892) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (66952) i2c.master: clear bus failed.[0m
+[1;31mE (66952) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (66952) ULTRASONIC_TEST: Command send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (66952) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (67462) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (67462) ULTRASONIC_TEST: Measurement #117[0m
+[1;31mE (67472) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (67472) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (67532) i2c.master: clear bus failed.[0m
+[1;31mE (67532) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (67532) ULTRASONIC_TEST: Command send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (67532) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (68042) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (68042) ULTRASONIC_TEST: Measurement #118[0m
+[1;31mE (68052) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (68052) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (68112) i2c.master: clear bus failed.[0m
+[1;31mE (68112) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (68112) ULTRASONIC_TEST: Command send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (68112) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (68622) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (68622) ULTRASONIC_TEST: Measurement #119[0m
+[1;31mE (68632) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (68632) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (68692) i2c.master: clear bus failed.[0m
+[1;31mE (68692) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (68692) ULTRASONIC_TEST: Command send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (68692) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (69202) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (69202) ULTRASONIC_TEST: Measurement #120[0m
+[1;31mE (69212) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (69212) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (69272) i2c.master: clear bus failed.[0m
+[1;31mE (69272) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (69272) ULTRASONIC_TEST: Command send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (69272) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (69782) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (69782) ULTRASONIC_TEST: Measurement #121[0m
+[1;31mE (69782) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (69792) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (69792) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (69802) ULTRASONIC_TEST: Command send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (69812) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (70312) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (70312) ULTRASONIC_TEST: Measurement #122[0m
+[0;32mI (70382) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (70382) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (70882) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (70882) ULTRASONIC_TEST: Measurement #123[0m
+[0;32mI (70952) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (70952) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (71452) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (71452) ULTRASONIC_TEST: Measurement #124[0m
+[0;32mI (71522) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (71522) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (72022) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (72022) ULTRASONIC_TEST: Measurement #125[0m
+[0;32mI (72092) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (72092) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (72592) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (72592) ULTRASONIC_TEST: Measurement #126[0m
+[0;32mI (72662) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (72662) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (73162) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (73162) ULTRASONIC_TEST: Measurement #127[0m
+[0;32mI (73232) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (73232) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (73732) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (73732) ULTRASONIC_TEST: Measurement #128[0m
+[0;32mI (73802) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (73802) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (74302) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (74302) ULTRASONIC_TEST: Measurement #129[0m
+[0;32mI (74372) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (74372) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (74872) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (74872) ULTRASONIC_TEST: Measurement #130[0m
+[0;32mI (74942) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (74942) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (75442) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (75442) ULTRASONIC_TEST: Measurement #131[0m
+[0;32mI (75512) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (75512) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (76012) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (76012) ULTRASONIC_TEST: Measurement #132[0m
+[0;32mI (76082) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (76082) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (76582) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (76582) ULTRASONIC_TEST: Measurement #133[0m
+[0;32mI (76652) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (76652) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (77152) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (77152) ULTRASONIC_TEST: Measurement #134[0m
+[0;32mI (77222) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (77222) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (77722) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (77722) ULTRASONIC_TEST: Measurement #135[0m
+[0;32mI (77792) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (77792) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (78292) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (78292) ULTRASONIC_TEST: Measurement #136[0m
+[0;32mI (78362) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (78362) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (78862) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (78862) ULTRASONIC_TEST: Measurement #137[0m
+[0;32mI (78932) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (78932) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (79432) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (79432) ULTRASONIC_TEST: Measurement #138[0m
+[0;32mI (79502) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (79502) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (80002) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (80002) ULTRASONIC_TEST: Measurement #139[0m
+[0;32mI (80072) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (80072) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (80572) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (80572) ULTRASONIC_TEST: Measurement #140[0m
+[0;32mI (80642) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (80642) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (81142) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (81142) ULTRASONIC_TEST: Measurement #141[0m
+[0;32mI (81212) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (81212) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (81712) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (81712) ULTRASONIC_TEST: Measurement #142[0m
+[0;32mI (81782) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (81782) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (82282) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (82282) ULTRASONIC_TEST: Measurement #143[0m
+[0;32mI (82352) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (82352) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (82852) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (82852) ULTRASONIC_TEST: Measurement #144[0m
+[0;32mI (82922) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (82922) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (83422) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (83422) ULTRASONIC_TEST: Measurement #145[0m
+[0;32mI (83492) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (83492) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (83992) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (83992) ULTRASONIC_TEST: Measurement #146[0m
+[0;32mI (84062) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (84062) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (84562) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (84562) ULTRASONIC_TEST: Measurement #147[0m
+[0;32mI (84632) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (84632) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (85132) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (85132) ULTRASONIC_TEST: Measurement #148[0m
+[0;32mI (85202) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (85202) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (85702) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (85702) ULTRASONIC_TEST: Measurement #149[0m
+[0;32mI (85772) ULTRASONIC_TEST: Raw: [0x
