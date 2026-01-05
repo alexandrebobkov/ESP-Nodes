@@ -64,7 +64,7 @@ void app_main(void)
     system_init();
 
     // Set log levels to WARNING or ERROR only
-    //esp_log_level_set("*", ESP_LOG_WARN);//ERROR);//_WARN);  // Global default
+    //esp_log_level_set("*", ESP_LOG_/ERROR);//_WARN);  // Global default
     //esp_log_level_set("DASHBOARD", ESP_LOG_INFO);  // Allow dashboard
 
     // Subsystem instances
