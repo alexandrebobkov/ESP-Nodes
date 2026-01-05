@@ -7,7 +7,7 @@
 #include "adc.h"
 #include "temp_sensor.h"
 #include "ina219_sensor.h"
-#include "ultrasonic_hal.h"
+#include "ultrasonic.h"
 #include "mqtt_sys.h"
 #include "espnow_sys.h"
 #include "ui.h"
