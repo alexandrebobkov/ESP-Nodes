@@ -10,7 +10,7 @@
 #include "adc.h"
 #include "temp_sensor.h"
 #include "ina219_sensor.h"
-#include "ultrasonic_sensor.h"
+//#include "ultrasonic_sensor.h"
 #include "ultrasonic_hal.h"
 #include "wifi_sys.h"
 #include "espnow_sys.h"
