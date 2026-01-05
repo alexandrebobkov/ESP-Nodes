@@ -1393,4 +1393,1064 @@ entry 0x403cc71a
 ╠════════════════════════════════════════════════════════════╣
 ║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
 ║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
-╠═════════
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.80 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-3.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.100 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (70489) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (70489) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (70489) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (70739) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (70739) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (70739) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (70749) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (70749) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (70759) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (70769) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (70769) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (70779) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (71059) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (71059) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (71059) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (71309) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (71309) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (71309) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (71319) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (71319) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (71329) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (71339) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (71339) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (71349) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.80 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-3.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.100 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (71629) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (71629) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (71629) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (71879) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (71879) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (71879) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (71899) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (71899) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (71899) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (71919) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (71919) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (71919) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (72199) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (72199) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (72199) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (72449) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (72449) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (72449) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (72459) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (72459) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (72469) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (72479) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (72479) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (72489) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.80 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-5.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[1;31mE (72769) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (72769) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (72779) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+║ [1mDistance            [0m : [34m0.100 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (73039) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (73039) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (73039) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (73049) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (73049) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (73059) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (73069) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (73069) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (73079) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (73359) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (73359) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (73359) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (73609) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (73609) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (73609) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (73619) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (73619) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (73629) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (73639) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (73639) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (73649) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+[1;31mE (73929) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (73929) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (73939) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.80 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-5.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.100 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (74199) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (74199) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (74199) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (74209) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (74209) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (74219) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (74229) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (74229) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (74239) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (74519) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (74519) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (74519) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (74769) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (74769) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (74769) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (74779) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (74779) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (74789) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (74799) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (74799) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (74809) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[1;31mE (75079) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (75089) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (75099) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.79 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-4.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.100 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (75359) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (75359) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (75359) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (75369) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (75369) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (75379) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (75389) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (75389) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (75399) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (75679) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (75679) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (75679) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (75929) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (75929) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (75929) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (75939) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (75939) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (75949) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (75959) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (75959) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (75969) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (76239) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (76239) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (76239) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.79 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-4.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.100 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (76489) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (76489) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (76489) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (76499) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (76499) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (76509) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (76519) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (76519) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (76529) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (76809) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (76809) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (76809) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (77059) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (77059) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (77059) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (77079) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (77079) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (77079) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (77099) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (77099) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (77099) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (77379) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (77379) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (77379) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.79 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-3.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[1;31mE (77629) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (77639) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (77649) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+║ [1mDistance            [0m : [34m0.100 cm                         [0m   ║
+[1;31mE (77669) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (77669) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (77679) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (77699) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (77709) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (77709) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (77989) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (77989) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (77989) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (78239) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (78239) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (78239) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (78249) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (78249) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (78259) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (78269) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (78269) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (78279) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (78559) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (78559) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (78559) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[1;31mE (78809) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (78809) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (78819) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+[1;31mE (78839) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (78849) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (78849) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+[1;31mE (78869) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (78869) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (78879) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.79 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-3.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.100 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (79159) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (79159) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (79159) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (79409) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (79409) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (79409) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (79419) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (79419) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (79429) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (79439) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (79439) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (79449) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (79729) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (79729) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (79729) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+[1;31mE (79979) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (79989) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (79989) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+[1;31mE (80009) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (80009) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (80019) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+╠════════════════════════════════════════════════════════════╣
+[1;31mE (80039) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (80049) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (80059) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.78 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-6.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.100 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (80339) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (80339) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (80339) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (80589) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (80589) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (80589) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (80599) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (80599) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (80609) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (80619) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (80619) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (80629) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (80909) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (80909) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (80909) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (81159) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (81159) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (81159) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (81169) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (81169) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (81179) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (81189) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (81189) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (81199) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.78 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-6.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.100 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (81479) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (81479) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (81479) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (81729) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (81729) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (81729) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (81739) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (81739) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (81749) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (81759) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (81759) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (81769) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (82049) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (82049) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (82049) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (82299) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (82299) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (82299) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (82319) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (82319) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (82319) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (82339) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (82339) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (82339) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.78 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-4.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[1;31mE (82619) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (82619) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (82629) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+║ [1mDistance            [0m : [34m0.100 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (82889) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (82889) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (82889) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (82899) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (82899) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (82909) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (82919) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (82919) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (82929) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (83209) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (83209) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (83209) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (83459) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (83459) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (83459) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (83469) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (83469) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (83479) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (83489) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (83489) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (83499) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+[1;31mE (83779) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (83779) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (83789) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.78 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-4.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.100 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (84049) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (84049) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (84049) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (84059) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (84059) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (84069) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (84079) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (84079) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (84089) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (84369) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (84369) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (84369) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (84619) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (84619) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (84619) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (84629) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (84629) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (84639) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (84649) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (84649) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (84659) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+[1;31mE (85019) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (85029) i2c.master: i2c_master_transmit_receive(1220): I2C transaction failed[0m
+║ [1mBattery Voltage     [0m : [31m0.78 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-4.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.100 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (85129) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (85129) i2c.master: i2c_master_transmit_receive(1220): I2C transaction failed[0m
+[1;31mE (85229) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (85229) i2c.master: i2c_master_transmit_receive(1220): I2C transaction failed[0m
+[1;31mE (85329) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (85329) i2c.master: i2c_master_transmit_receive(1220): I2C transaction failed[0m
+[1;31mE (85339) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (85339) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (85399) i2c.master: clear bus failed.[0m
+[1;31mE (85399) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (85409) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (85409) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (85469) i2c.master: clear bus failed.[0m
+[1;31mE (85469) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (85479) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (85479) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (85539) i2c.master: clear bus failed.[0m
+[1;31mE (85539) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (85789) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (85789) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (85849) i2c.master: clear bus failed.[0m
+[1;31mE (85849) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (85859) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (85859) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (85919) i2c.master: clear bus failed.[0m
+[1;31mE (85919) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (85929) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (85929) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (85989) i2c.master: clear bus failed.[0m
+[1;31mE (85989) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.78 V                           [0m   ║
+[1;31mE (86239) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (86249) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (86319) i2c.master: clear bus failed.[0m
+[1;31mE (86319) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+║ [1mCurrent             [0m : [35m-4.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[1;31mE (86329) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (86349) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (86419) i2c.master: clear bus failed.[0m
+[1;31mE (86419) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+║ [1mDistance            [0m : [34m0.100 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (86429) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (86439) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (86509) i2c.master: clear bus failed.[0m
+[1;31mE (86509) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (86759) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (86759) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (86819) i2c.master: clear bus failed.[0m
+[1;31mE (86819) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (86829) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (86829) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (86889) i2c.master: clear bus failed.[0m
+[1;31mE (86889) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (86899) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (86899) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (86959) i2c.master: clear bus failed.[0m
+[1;31mE (86959) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (87209) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (87209) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (87269) i2c.master: clear bus failed.[0m
+[1;31mE (87269) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (87279) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (87279) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (87339) i2c.master: clear bus failed.[0m
+[1;31mE (87339) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (87349) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (87349) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (87409) i2c.master: clear bus failed.[0m
+[1;31mE (87409) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.78 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-4.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.100 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (87759) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (87759) i2c.master: i2c_master_transmit_receive(1220): I2C transaction failed[0m
+[1;31mE (87859) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (87859) i2c.master: i2c_master_transmit_receive(1220): I2C transaction failed[0m
+[1;31mE (87959) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (87959) i2c.master: i2c_master_transmit_receive(1220): I2C transaction failed[0m
+[1;31mE (88059) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (88059) i2c.master: i2c_master_transmit_receive(1220): I2C transaction failed[0m
+[1;31mE (88069) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (88069) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (88129) i2c.master: clear bus failed.[0m
+[1;31mE (88129) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (88139) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (88139) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (88199) i2c.master: clear bus failed.[0m
+[1;31mE (88199) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (88209) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (88209) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (88269) i2c.master: clear bus failed.[0m
+[1;31mE (88269) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (88519) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (88519) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (88579) i2c.master: clear bus failed.[0m
+[1;31mE (88579) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (88589) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (88589) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (88649) i2c.master: clear bus failed.[0m
+[1;31mE (88649) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (88659) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (88659) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (88719) i2c.master: clear bus failed.[0m
+[1;31mE (88719) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.78 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-4.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.100 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (88969) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (88969) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (89029) i2c.master: clear bus failed.[0m
+[1;31mE (89029) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (89039) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (89039) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (89099) i2c.master: clear bus failed.[0m
+[1;31mE (89099) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (89109) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (89109) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (89169) i2c.master: clear bus failed.[0m
+[1;31mE (89169) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (89419) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (89419) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (89479) i2c.master: clear bus failed.[0m
+[1;31mE (89479) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (89489) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (89489) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (89549) i2c.master: clear bus failed.[0m
+[1;31mE (89549) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (89559) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (89559) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (89619) i2c.master: clear bus failed.[0m
+[1;31mE (89619) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (89869) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (89869) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (89929) i2c.master: clear bus failed.[0m
+[1;31mE (89929) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+[1;31mE (89939) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (89949) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (90009) i2c.master: clear bus failed.[0m
+[1;31mE (90009) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+[1;31mE (90019) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (90029) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (90099) i2c.master: clear bus failed.[0m
+[1;31mE (90099) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.78 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-4.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.100 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (90449) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (90449) i2c.master: i2c_master_transmit_receive(1220): I2C transaction failed[0m
+[1;31mE (90549) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (90549) i2c.master: i2c_master_transmit_receive(1220): I2C transaction failed[0m
+[1;31mE (90649) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (90649) i2c.master: i2c_master_transmit_receive(1220): I2C transaction failed[0m
+[1;31mE (90749) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (90749) i2c.master: i2c_master_transmit_receive(1220): I2C transaction failed[0m
+[1;31mE (90759) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (90759) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (90819) i2c.master: clear bus failed.[0m
+[1;31mE (90819) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (90829) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (90829) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (90889) i2c.master: clear bus failed.[0m
+[1;31mE (90889) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (90899) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (90899) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (90959) i2c.master: clear bus failed.[0m
+[1;31mE (90959) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (91209) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (91209) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (91269) i2c.master: clear bus failed.[0m
+[1;31mE (91269) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+[1;31mE (91279) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (91289) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (91349) i2c.master: clear bus failed.[0m
+[1;31mE (91349) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+[1;31mE (91359) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (91369) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (91439) i2c.master: clear bus failed.[0m
+[1;31mE (91439) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.78 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-4.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.100 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (91689) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (91689) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (91749) i2c.master: clear bus failed.[0m
+[1;31mE (91749) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (91759) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (91759) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (91819) i2c.master: clear bus failed.[0m
+[1;31mE (91819) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (91829) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (91829) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (91889) i2c.master: clear bus failed.[0m
+[1;31mE (91889) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (92139) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (92139) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (92139) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (92149) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (92149) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (92159) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (92179) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (92179) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (92179) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (92439) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (92439) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (92439) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (92449) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (92449) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (92459) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (92469) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (92469) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (92479) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.78 V                           [0m   ║
+[1;31mE (92759) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (92759) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (92769) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+║ [1mCurrent             [0m : [35m-4.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.100 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (93029) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (93029) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (93029) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (93049) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (93049) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (93049) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (93069) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (93069) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (93069) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (93349) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (93349) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (93349) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (93599) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (93599) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (93599) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (93609) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (93609) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (93619) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (93629) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (93629) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (93639) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[1;31mE (93919) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (93919) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (93929) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.78 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-4.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.100 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (94189) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (94189) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (94189) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (94199) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (94199) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (94209) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (94219) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (94219) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (94229) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (94509) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (94509) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (94509) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (94759) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (94759) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (94759) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (94769) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (94769) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (94779) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (94789) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (94789) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (94799) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+[1;31mE (95069) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (95079) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (95089) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.78 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-4.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.100 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (95339) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (95339) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (95339) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (95349) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (95349) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (95359) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (95369) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (95369) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (95379) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (95659) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (95659) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (95659) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (95909) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (95909) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (95909) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (95919) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (95919) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (95929) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (95939) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (95939) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (95949) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (96229) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (96229) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (96229) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.77 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-4.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.100 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (96479) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (96479) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (96479) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (96499) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (96499) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (96499) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (96519) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (96519) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (96519) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (96799) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (96799) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (96799) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (97049) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (97049) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (97049) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (97059) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (97059) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (97069) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (97089) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (97089) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (97089) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (97369) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (97369) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (97369) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
