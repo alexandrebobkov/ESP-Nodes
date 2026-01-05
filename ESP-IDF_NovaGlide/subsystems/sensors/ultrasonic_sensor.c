@@ -7,30 +7,19 @@ static const char *TAG = "ULTRASONIC";
 
 // Read distance from I2C ultrasonic sensor
 static esp_err_t ultrasonic_i2c_read(ultrasonic_system_t *self, float *distance_cm) {
-    uint8_t cmd = 0x01;
     uint8_t data[2];
 
-    // Start measurement: write cmd to register 0x00
-    esp_err_t err = i2c_bus_write_byte(self->dev, 0x00, cmd);
-    if (err != ESP_OK) {
-        return err;
-    }
-
-    // Wait for measurement to complete
-    vTaskDelay(pdMS_TO_TICKS(80));
-
-    // Read 2 bytes from register 0x00 (or 0x01/0x02 depending on variant)
-    err = i2c_bus_read(self->dev, 0x00, data, 2);
+    // Read 2 bytes from register 0x02 (distance in mm)
+    esp_err_t err = i2c_bus_read(self->dev, 0x02, data, 2);
     if (err != ESP_OK) {
         return err;
     }
 
     uint16_t raw_mm = ((uint16_t)data[0] << 8) | data[1];
-    *distance_cm = raw_mm / 10.0f;
+    *distance_cm = raw_mm / 10.0f;  // mm → cm
 
     return ESP_OK;
 }
-
 
 // Periodic update function
 static void ultrasonic_update_impl(ultrasonic_system_t *self, TickType_t now) {
