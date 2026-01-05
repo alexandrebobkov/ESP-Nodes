@@ -44,7 +44,7 @@ static void ultrasonic_update_impl(ultrasonic_system_t *self, TickType_t now) {
 // Initialize ultrasonic sensor using I2C bus manager
 void ultrasonic_system_init(ultrasonic_system_t *sys) {
     sys->distance_cm = 0.0f;
-    sys->update = ultrasonic_update_impl;
+    sys->update = NULL;//ultrasonic_update_impl;
 
     // Add device to I2C bus
     esp_err_t ret = i2c_bus_add_device(ULTRASONIC_I2C_ADDR, "HC-SR04_I2C", &sys->dev);
