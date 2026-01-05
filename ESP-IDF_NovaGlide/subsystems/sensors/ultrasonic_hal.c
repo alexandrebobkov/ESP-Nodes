@@ -95,8 +95,11 @@ void ultrasonic_hal_init(ultrasonic_hal_t *ultra,
     };
     ESP_ERROR_CHECK(rmt_new_tx_channel(&tx_cfg, &ultra->rmt_tx));
 
-    rmt_simple_encoder_config_t enc_cfg = {};
+    rmt_simple_encoder_config_t enc_cfg = {
+        .resolution_hz = RMT_RESOLUTION_HZ,   // 1 MHz, same as TX channel
+    };
     ESP_ERROR_CHECK(rmt_new_simple_encoder(&enc_cfg, &ultra->encoder));
+
 
     ESP_ERROR_CHECK(rmt_enable(ultra->rmt_tx));
 
