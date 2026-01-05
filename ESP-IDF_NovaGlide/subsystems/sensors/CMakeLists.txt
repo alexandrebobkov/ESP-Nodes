@@ -8,5 +8,4 @@ idf_component_register(
              i2c_bus
     PRIV_REQUIRES i2c_bus
                   esp-idf-lib__ina219
-                  esp-idf-lib__ultrasonic
                   esp-idf-lib__i2cdev)
