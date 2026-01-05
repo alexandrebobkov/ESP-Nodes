@@ -17,7 +17,20 @@ static bool rmt_rx_callback(rmt_channel_handle_t channel,
     ultrasonic_hal_t *self = (ultrasonic_hal_t *)user_ctx;
     BaseType_t xHigherPriorityTaskWoken = pdFALSE;
 
+    // Log callback trigger for debugging
+    ESP_LOGI(TAG, "RX callback: num_symbols=%zu", edata->num_symbols);
+
     if (edata->num_symbols > 0 && edata->received_symbols != NULL) {
+        // Log first few symbols for debugging
+        for (size_t i = 0; i < edata->num_symbols && i < 3; i++) {
+            ESP_LOGI(TAG, "  Symbol[%d]: lvl0=%d dur0=%u, lvl1=%d dur1=%u",
+                     i,
+                     edata->received_symbols[i].level0,
+                     edata->received_symbols[i].duration0,
+                     edata->received_symbols[i].level1,
+                     edata->received_symbols[i].duration1);
+        }
+
         // Copy the duration immediately while buffer is still valid
         // For HC-SR04, we want the HIGH pulse duration (echo time)
         // This is typically duration0 if the echo pulse is the first level
@@ -30,6 +43,8 @@ static bool rmt_rx_callback(rmt_channel_handle_t channel,
         // Store the result atomically
         self->last_pulse_us = duration;
         self->has_pulse = true;
+    } else {
+        ESP_LOGW(TAG, "RX callback with no symbols");
     }
 
     return xHigherPriorityTaskWoken == pdTRUE;
@@ -93,6 +108,8 @@ static void ultrasonic_update_impl(ultrasonic_hal_t *self, TickType_t now)
         ESP_LOGE(TAG, "RMT tx wait failed: %s", esp_err_to_name(ret));
         return;
     }
+
+    ESP_LOGI(TAG, "Trigger pulse sent, waiting for echo...");
 
     // --- 3. Wait for echo response (callback will set has_pulse) ---
     // HC-SR04 max range is ~4m which takes ~23ms round trip
