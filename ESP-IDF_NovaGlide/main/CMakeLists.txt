@@ -18,5 +18,4 @@ idf_component_register(
         controls
         ui
         i2c_bus
-
 )
