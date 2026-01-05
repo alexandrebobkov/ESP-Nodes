@@ -18,8 +18,9 @@ struct ultrasonic_system_t {
     void (*update)(struct ultrasonic_system_t *self, TickType_t now);
 };
 
-void ultrasonic_hal_init(ultrasonic_hal_t *ultra,
-                         gpio_num_t trig_pin,
-                         gpio_num_t echo_pin);
+void ultrasonic_system_init(ultrasonic_system_t *ultra,
+                            gpio_num_t trig_pin,
+                            gpio_num_t echo_pin);
+
 
 #endif
