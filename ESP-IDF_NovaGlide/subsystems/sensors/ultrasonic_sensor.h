@@ -20,5 +20,8 @@ struct ultrasonic_system_t {
 };
 
 void ultrasonic_system_init(ultrasonic_system_t *sys);
+void ultrasonic_system_init(ultrasonic_system_t *ultra);
+void ultrasonic_probe_registers(ultrasonic_system_t *ultra);
+
 
 #endif
