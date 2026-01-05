@@ -5,14 +5,14 @@
 #include "freertos/task.h"
 #include "esp_err.h"
 
-// I2C address for ultrasonic sensor (common addresses: 0x57, 0x70, or check your datasheet)
+// I2C address for ultrasonic sensor
 #define ULTRASONIC_I2C_ADDR 0x57
 
 typedef struct ultrasonic_system_s {
-    float distance_cm;
-    bool measurement_valid;
+    float distance_cm;           // Measured distance in centimeters
+    bool measurement_valid;      // True if last measurement was successful
     void (*update)(struct ultrasonic_system_s *self, TickType_t now);
-} ultrasonic_system_t;  // This is the type name (not the filename)
+} ultrasonic_system_t;
 
 /**
  * Initialize the I2C ultrasonic sensor system
@@ -20,4 +20,4 @@ typedef struct ultrasonic_system_s {
  */
 void ultrasonic_system_init(ultrasonic_system_t *sys);
 
-#endif // ULTRASONIC_H
+#endif // ULTRASONIC_SENSOR_H
