@@ -5,6 +5,7 @@
 #include "driver/rmt_tx.h"
 #include "driver/rmt_rx.h"
 #include "freertos/FreeRTOS.h"
+#include <stdbool.h>
 
 typedef struct ultrasonic_hal_t ultrasonic_hal_t;
 
@@ -15,6 +16,9 @@ struct ultrasonic_hal_t {
     rmt_channel_handle_t rmt_tx;
     rmt_channel_handle_t rmt_rx;
     rmt_encoder_handle_t encoder;
+
+    volatile uint32_t last_pulse_us;
+    volatile bool     has_pulse;
 
     float distance_cm;
 

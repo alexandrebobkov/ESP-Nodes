@@ -1,14 +1,25 @@
 #include "ultrasonic_hal.h"
 #include "esp_log.h"
-#include <string.h>
 
 static const char *TAG = "ULTRA_HAL";
 
 #define RMT_RESOLUTION_HZ 1000000  // 1 MHz → 1 tick = 1 µs
-#define RX_BUF_SIZE       64       // Enough for HC-SR04 echo pulse
 
-// Static RX buffer
-static uint8_t rx_buffer[RX_BUF_SIZE];
+static bool rmt_rx_callback(rmt_channel_handle_t channel,
+                            const rmt_rx_done_event_data_t *edata,
+                            void *user_ctx)
+{
+    ultrasonic_hal_t *self = (ultrasonic_hal_t *)user_ctx;
+
+    if (edata->num_symbols > 0 && edata->received_symbols != NULL) {
+        // Take the first symbol's high duration as echo time
+        self->last_pulse_us = edata->received_symbols[0].duration0;
+        self->has_pulse = true;
+    }
+
+    // No context switch needed
+    return false;
+}
 
 static void ultrasonic_update_impl(ultrasonic_hal_t *self, TickType_t now)
 {
@@ -35,34 +46,25 @@ static void ultrasonic_update_impl(ultrasonic_hal_t *self, TickType_t now)
                                  &pulse, sizeof(pulse), &tx_cfg));
     ESP_ERROR_CHECK(rmt_tx_wait_all_done(self->rmt_tx, portMAX_DELAY));
 
-    // --- 2. Receive echo pulse ---
-    memset(rx_buffer, 0, RX_BUF_SIZE);
-
+    // --- 2. Start RX (async, result via callback) ---
     rmt_receive_config_t rx_cfg = {
         .signal_range_min_ns = 1000,
         .signal_range_max_ns = 30000000
     };
 
     ESP_ERROR_CHECK(rmt_receive(self->rmt_rx,
-                                rx_buffer,
-                                RX_BUF_SIZE,
+                                NULL,   // use driver-managed buffer
+                                0,
                                 &rx_cfg));
 
-    rmt_rx_done_event_data_t rx_event = {0};
-    ESP_ERROR_CHECK(rmt_rx_wait_all_done(self->rmt_rx, &rx_event, portMAX_DELAY));
+    // --- 3. If we have a pulse from previous cycle, convert to distance ---
+    if (self->has_pulse) {
+        uint32_t us = self->last_pulse_us;
+        self->distance_cm = (float)us / 58.0f;  // HC-SR04 formula
+        self->has_pulse = false;
 
-    if (rx_event.num_symbols == 0) {
-        ESP_LOGW(TAG, "No echo received");
-        return;
+        ESP_LOGI(TAG, "Distance: %.2f cm", self->distance_cm);
     }
-
-    // Extract symbols from RX buffer
-    rmt_symbol_word_t *symbols = (rmt_symbol_word_t *)rx_buffer;
-
-    uint32_t us = symbols[0].duration0;
-    self->distance_cm = us / 58.0f;
-
-    ESP_LOGI(TAG, "Distance: %.2f cm", self->distance_cm);
 }
 
 void ultrasonic_hal_init(ultrasonic_hal_t *ultra,
@@ -72,6 +74,8 @@ void ultrasonic_hal_init(ultrasonic_hal_t *ultra,
     ultra->trig_pin = trig_pin;
     ultra->echo_pin = echo_pin;
     ultra->distance_cm = 0.0f;
+    ultra->last_pulse_us = 0;
+    ultra->has_pulse = false;
     ultra->update = ultrasonic_update_impl;
 
     // --- TX channel ---
@@ -84,7 +88,6 @@ void ultrasonic_hal_init(ultrasonic_hal_t *ultra,
     };
     ESP_ERROR_CHECK(rmt_new_tx_channel(&tx_cfg, &ultra->rmt_tx));
 
-    // --- Encoder ---
     rmt_simple_encoder_config_t enc_cfg = {};
     ESP_ERROR_CHECK(rmt_new_simple_encoder(&enc_cfg, &ultra->encoder));
 
@@ -98,6 +101,13 @@ void ultrasonic_hal_init(ultrasonic_hal_t *ultra,
         .resolution_hz = RMT_RESOLUTION_HZ
     };
     ESP_ERROR_CHECK(rmt_new_rx_channel(&rx_cfg, &ultra->rmt_rx));
+
+    // Register RX callback
+    rmt_rx_event_callbacks_t cbs = {
+        .on_recv_done = rmt_rx_callback
+    };
+    ESP_ERROR_CHECK(rmt_rx_register_event_callbacks(ultra->rmt_rx, &cbs, ultra));
+
     ESP_ERROR_CHECK(rmt_enable(ultra->rmt_rx));
 
     ESP_LOGI(TAG, "Ultrasonic HAL initialized (TRIG=%d, ECHO=%d)",
