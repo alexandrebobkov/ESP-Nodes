@@ -65,6 +65,10 @@ esp_err_t i2c_bus_init(void) {
     return ESP_OK;
 }
 
+i2c_master_bus_handle_t i2c_bus_get(void) {
+    return bus_handle;
+}
+
 // Add a device to the bus
 esp_err_t i2c_bus_add_device(uint8_t address, const char *name, i2c_master_dev_handle_t *dev_handle) {
     if (bus_handle == NULL) {
