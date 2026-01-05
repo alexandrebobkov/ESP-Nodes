@@ -70,6 +70,15 @@ void joystick_mix(float x, float y, int *pwm_left, int *pwm_right)
     float L0 = y + k * x_shaped;
     float R0 = y - k * x_shaped;
 
+    float diff = fabsf(L0 - R0);
+    // Maximum allowed difference (75%)
+    float max_diff = 0.75f * 2.0f;   // because L0 and R0 are in [-1,1]
+    if (diff > max_diff) {
+        float scale = max_diff / diff;
+        L0 *= scale;
+        R0 *= scale;
+    }
+
     float m = fmaxf(1.0f, fmaxf(fabsf(L0), fabsf(R0)));
     float L = L0 / m;
     float R = R0 / m;
