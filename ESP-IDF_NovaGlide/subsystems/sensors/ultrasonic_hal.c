@@ -54,7 +54,11 @@ static void ultrasonic_update_impl(ultrasonic_hal_t *self, TickType_t now)
     // Reset pulse flag before starting new measurement
     self->has_pulse = false;
 
-    // --- 1. Start RX first (before trigger) ---
+    // --- 1. Stop any ongoing RX, then start fresh ---
+    // Disable and re-enable to reset the channel
+    rmt_disable(self->rmt_rx);
+    rmt_enable(self->rmt_rx);
+
     rmt_receive_config_t rx_cfg = {
         .signal_range_min_ns = 1000,      // 1 µs minimum
         .signal_range_max_ns = 30000000   // 30 ms maximum
