@@ -1982,4 +1982,195 @@ entry 0x403cc71a
 [0;32mI (198422) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
 [0;32mI (198422) ULTRASONIC_TEST: Measurement #340[0m
 [0;32mI (198512) ULTRASONIC_TEST: Cmd 0x50 → [0x05 0x3A 0xC0 0xFF] Distance: 1338[0m
-[0;33mW (198512) ULTRASONIC_TEST: ⚠
+[0;33mW (198512) ULTRASONIC_TEST: ⚠️  Object detected at: 1338 cm (may be out of reliable range)[0m
+[0;32mI (198512) ULTRASONIC_TEST: [0m
+[0;32mI (199012) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (199012) ULTRASONIC_TEST: Measurement #341[0m
+[0;32mI (199102) ULTRASONIC_TEST: Cmd 0x50 → [0x05 0x30 0x20 0xFF] Distance: 1328[0m
+[0;33mW (199102) ULTRASONIC_TEST: ⚠️  Object detected at: 1328 cm (may be out of reliable range)[0m
+[0;32mI (199102) ULTRASONIC_TEST: [0m
+[0;32mI (199602) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (199602) ULTRASONIC_TEST: Measurement #342[0m
+[0;32mI (199692) ULTRASONIC_TEST: Cmd 0x50 → [0x05 0x4D 0x58 0xFF] Distance: 1357[0m
+[0;33mW (199692) ULTRASONIC_TEST: ⚠️  Object detected at: 1357 cm (may be out of reliable range)[0m
+[0;32mI (199692) ULTRASONIC_TEST: [0m
+[0;32mI (200192) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (200192) ULTRASONIC_TEST: Measurement #343[0m
+[0;32mI (200282) ULTRASONIC_TEST: Cmd 0x50 → [0x06 0x47 0x08 0xFF] Distance: 1607[0m
+[0;33mW (200282) ULTRASONIC_TEST: ⚠️  Object detected at: 1607 cm (may be out of reliable range)[0m
+[0;32mI (200282) ULTRASONIC_TEST: [0m
+[0;32mI (200782) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (200782) ULTRASONIC_TEST: Measurement #344[0m
+[0;32mI (200872) ULTRASONIC_TEST: Cmd 0x50 → [0x08 0x6A 0x38 0xFF] Distance: 2154[0m
+[0;33mW (200872) ULTRASONIC_TEST: ⚠️  Object detected at: 2154 cm (may be out of reliable range)[0m
+[0;32mI (200872) ULTRASONIC_TEST: [0m
+[0;32mI (201372) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (201372) ULTRASONIC_TEST: Measurement #345[0m
+[0;32mI (201462) ULTRASONIC_TEST: Cmd 0x50 → [0x08 0x5F 0x98 0xFF] Distance: 2143[0m
+[0;33mW (201462) ULTRASONIC_TEST: ⚠️  Object detected at: 2143 cm (may be out of reliable range)[0m
+[0;32mI (201462) ULTRASONIC_TEST: [0m
+[0;32mI (201962) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (201962) ULTRASONIC_TEST: Measurement #346[0m
+[0;32mI (202052) ULTRASONIC_TEST: Cmd 0x50 → [0x09 0x09 0x98 0xFF] Distance: 2313[0m
+[0;33mW (202052) ULTRASONIC_TEST: ⚠️  Object detected at: 2313 cm (may be out of reliable range)[0m
+[0;32mI (202052) ULTRASONIC_TEST: [0m
+[0;32mI (202552) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (202552) ULTRASONIC_TEST: Measurement #347[0m
+[0;32mI (202642) ULTRASONIC_TEST: Cmd 0x50 → [0x00 0xA2 0x08 0xFF] Distance: 162[0m
+[0;32mI (202642) ULTRASONIC_TEST: ✅ Valid distance: 162 cm[0m
+[0;32mI (202642) ULTRASONIC_TEST: [0m
+[0;32mI (203142) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (203142) ULTRASONIC_TEST: Measurement #348[0m
+[1;31mE (203162) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (203162) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (203162) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (203162) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (203172) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (203182) ULTRASONIC_TEST: [0m
+[0;32mI (203682) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (203682) ULTRASONIC_TEST: Measurement #349[0m
+[0;32mI (203772) ULTRASONIC_TEST: Cmd 0x50 → [0x00 0x97 0x68 0xFF] Distance: 151[0m
+[0;32mI (203772) ULTRASONIC_TEST: ✅ Valid distance: 151 cm[0m
+[0;32mI (203772) ULTRASONIC_TEST: [0m
+[0;32mI (204272) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (204272) ULTRASONIC_TEST: Measurement #350[0m
+[0;32mI (204362) ULTRASONIC_TEST: Cmd 0x50 → [0x00 0x97 0x68 0xFF] Distance: 151[0m
+[0;32mI (204362) ULTRASONIC_TEST: ✅ Valid distance: 151 cm[0m
+[0;32mI (204362) ULTRASONIC_TEST: [0m
+[0;32mI (204862) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (204862) ULTRASONIC_TEST: Measurement #351[0m
+[0;32mI (204952) ULTRASONIC_TEST: Cmd 0x50 → [0x00 0xB9 0xF0 0xFF] Distance: 185[0m
+[0;32mI (204952) ULTRASONIC_TEST: ✅ Valid distance: 185 cm[0m
+[0;32mI (204952) ULTRASONIC_TEST: [0m
+[0;32mI (205452) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (205452) ULTRASONIC_TEST: Measurement #352[0m
+[0;32mI (205542) ULTRASONIC_TEST: Cmd 0x50 → [0x00 0xDC 0x78 0xFF] Distance: 220[0m
+[0;32mI (205542) ULTRASONIC_TEST: ✅ Valid distance: 220 cm[0m
+[0;32mI (205542) ULTRASONIC_TEST: [0m
+[0;32mI (206042) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (206042) ULTRASONIC_TEST: Measurement #353[0m
+[1;31mE (206062) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (206062) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (206062) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (206062) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (206072) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (206082) ULTRASONIC_TEST: [0m
+[0;32mI (206582) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (206582) ULTRASONIC_TEST: Measurement #354[0m
+[1;31mE (206602) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (206602) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (206602) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (206602) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (206612) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (206622) ULTRASONIC_TEST: [0m
+[0;32mI (207122) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (207122) ULTRASONIC_TEST: Measurement #355[0m
+[1;31mE (207142) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (207142) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (207142) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (207142) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (207152) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (207162) ULTRASONIC_TEST: [0m
+[0;32mI (207662) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (207662) ULTRASONIC_TEST: Measurement #356[0m
+[1;31mE (207682) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (207682) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (207682) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (207682) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (207692) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (207702) ULTRASONIC_TEST: [0m
+[0;32mI (208202) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (208202) ULTRASONIC_TEST: Measurement #357[0m
+[1;31mE (208222) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (208222) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (208222) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (208222) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (208232) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (208242) ULTRASONIC_TEST: [0m
+[0;32mI (208742) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (208742) ULTRASONIC_TEST: Measurement #358[0m
+[1;31mE (208762) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (208762) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (208762) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (208762) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (208772) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (208782) ULTRASONIC_TEST: [0m
+[0;32mI (209282) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (209282) ULTRASONIC_TEST: Measurement #359[0m
+[1;31mE (209302) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (209302) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (209302) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (209302) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (209312) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (209322) ULTRASONIC_TEST: [0m
+[0;32mI (209822) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (209822) ULTRASONIC_TEST: Measurement #360[0m
+[1;31mE (209842) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (209842) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (209842) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (209842) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (209852) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (209862) ULTRASONIC_TEST: [0m
+[0;32mI (210362) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (210362) ULTRASONIC_TEST: Measurement #361[0m
+[1;31mE (210382) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (210382) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (210382) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (210382) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (210392) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (210402) ULTRASONIC_TEST: [0m
+[0;32mI (210902) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (210902) ULTRASONIC_TEST: Measurement #362[0m
+[1;31mE (210922) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (210922) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (210922) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (210922) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (210932) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (210942) ULTRASONIC_TEST: [0m
+[0;32mI (211442) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (211442) ULTRASONIC_TEST: Measurement #363[0m
+[1;31mE (211462) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (211462) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (211462) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (211462) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (211472) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (211482) ULTRASONIC_TEST: [0m
+[0;32mI (211982) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (211982) ULTRASONIC_TEST: Measurement #364[0m
+[1;31mE (212002) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (212002) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (212002) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (212002) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (212012) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (212022) ULTRASONIC_TEST: [0m
+[0;32mI (212522) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (212522) ULTRASONIC_TEST: Measurement #365[0m
+[0;32mI (212612) ULTRASONIC_TEST: Cmd 0x50 → [0x00 0x8A 0x20 0xFF] Distance: 138[0m
+[0;32mI (212612) ULTRASONIC_TEST: ✅ Valid distance: 138 cm[0m
+[0;32mI (212612) ULTRASONIC_TEST: [0m
+[0;32mI (213112) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (213112) ULTRASONIC_TEST: Measurement #366[0m
+[0;32mI (213202) ULTRASONIC_TEST: Cmd 0x50 → [0x00 0x8A 0x20 0xFF] Distance: 138[0m
+[0;32mI (213202) ULTRASONIC_TEST: ✅ Valid distance: 138 cm[0m
+[0;32mI (213202) ULTRASONIC_TEST: [0m
+[0;32mI (213702) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (213702) ULTRASONIC_TEST: Measurement #367[0m
+[0;32mI (213792) ULTRASONIC_TEST: Cmd 0x50 → [0x00 0x8A 0x20 0xFF] Distance: 138[0m
+[0;32mI (213792) ULTRASONIC_TEST: ✅ Valid distance: 138 cm[0m
+[0;32mI (213792) ULTRASONIC_TEST: [0m
+[0;32mI (214292) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (214292) ULTRASONIC_TEST: Measurement #368[0m
+[0;32mI (214382) ULTRASONIC_TEST: Cmd 0x50 → [0x00 0x8A 0x20 0xFF] Distance: 138[0m
+[0;32mI (214382) ULTRASONIC_TEST: ✅ Valid distance: 138 cm[0m
+[0;32mI (214382) ULTRASONIC_TEST: [0m
+[0;32mI (214882) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (214882) ULTRASONIC_TEST: Measurement #369[0m
+[0;32mI (214972) ULTRASONIC_TEST: Cmd 0x50 → [0x00 0x8A 0x20 0xFF] Distance: 138[0m
+[0;32mI (214972) ULTRASONIC_TEST: ✅ Valid distance: 138 cm[0m
+[0;32mI (214972) ULTRASONIC_TEST: [0m
+[0;32mI (215472) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (215472) ULTRASONIC_TEST: Measurement #370[0m
+[0;32mI (215562) ULTRASONIC_TEST: Cmd 0x50 → [0x00 0x8A 0x20 0xFF] Distance: 138[0m
+[0;32mI (215562) ULTRASONIC_TEST: ✅ Valid distance: 138 cm[0m
+[0;32mI (215562) ULTRASONIC_TEST: [0m
+[0;32mI (216062) ULTRASONIC_TEST: ───
