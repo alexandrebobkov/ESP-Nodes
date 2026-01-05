@@ -115,7 +115,7 @@ void app_main(void)
         .temp = &temp,
         .ina = &ina,
         .motors = &motors,
-        .mqtt = &mqtt,
+        .mqtt = &mqtt
         //.ultrasonic = &ultra
     };
     xTaskCreate(telemetry_bridge_task, "telemetry", 4096, &telem_ctx, 5, NULL);
