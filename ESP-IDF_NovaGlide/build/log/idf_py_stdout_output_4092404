@@ -130,4 +130,110 @@ entry 0x403cc71a
 [0;32mI (3659) ESPNOW_SYS: ESP-NOW initialized - waiting for data from transmitter...[0m
 [0;32mI (3669) ESPNOW_SYS: Expected data size: 24 bytes[0m
 [0;32mI (3669) MQTT_SYS: MQTT system initialized[0m
-[0;32mI (3669) gpio: GPIO[10]| In
+[0;32mI (3669) gpio: GPIO[10]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (3679) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (3689) UI: UI system initialized[0m
+[0;32mI (3689) CONTROL: Control task started[0m
+[0;32mI (3699) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3699) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (3709) MQTT_SYS: MQTT Connected[0m
+[0;32mI (3709) CONTROL: Control task created[0m
+[?25l
+[33mDashboard Mode: Press Ctrl+] to exit monitor[0m
+[0;32mI (3719) DASHBOARD: Dashboard display started[0m
+[0;32mI (3719) SCHEDULER: Scheduler initialized[0m
+[0;32mI (3729) SCHEDULER: Scheduler task started[0m
+[0;32mI (3729) INA219: VBUS: 0.00V, I: -4.00mA, P: 0.00mW[0m
+[1;31mE (3739) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (3739) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (3749) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[0;33mW (3759) ULTRASONIC: Failed to trigger measurement: ESP_ERR_INVALID_STATE[0m
+[0;32mI (3739) SCHEDULER: Scheduler started[0m
+[0;32mI (3759) main_task: Returned from app_main()[0m
+[0;32mI (3809) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3809) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (3909) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3909) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (4009) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4009) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[1;31mE (4009) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4009) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (4019) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[0;33mW (4019) ULTRASONIC: Failed to trigger measurement: ESP_ERR_INVALID_STATE[0m
+[0;32mI (4109) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4109) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (4209) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4209) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[1;31mE (4279) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4279) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (4279) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[0;33mW (4279) ULTRASONIC: Failed to trigger measurement: ESP_ERR_INVALID_STATE[0m
+[0;32mI (4309) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4309) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (4409) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4409) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (4509) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4509) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[1;31mE (4539) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4539) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (4539) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[0;33mW (4539) ULTRASONIC: Failed to trigger measurement: ESP_ERR_INVALID_STATE[0m
+[0;32mI (4609) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4609) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (4709) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4709) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[1;31mE (4799) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (4799) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (4799) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[0;33mW (4799) ULTRASONIC: Failed to trigger measurement: ESP_ERR_INVALID_STATE[0m
+[0;32mI (4809) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4819) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (4919) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4919) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (5019) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5019) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[1;31mE (5069) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5069) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (5069) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[0;33mW (5069) ULTRASONIC: Failed to trigger measurement: ESP_ERR_INVALID_STATE[0m
+[0;32mI (5119) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5119) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (5219) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5219) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (5319) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5319) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[1;31mE (5329) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5329) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (5329) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[0;33mW (5329) ULTRASONIC: Failed to trigger measurement: ESP_ERR_INVALID_STATE[0m
+[0;32mI (5419) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5419) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (5519) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5519) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (5589) TEMP_SENSOR: ==========================================[0m
+[0;32mI (5589) TEMP_SENSOR: ESP32-C3 Internal Temperature Sensor[0m
+[0;32mI (5589) TEMP_SENSOR: Current Temperature: 48.60°C[0m
+[0;32mI (5589) TEMP_SENSOR: ==========================================[0m
+[1;31mE (5599) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (5599) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (5609) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[0;32mI (5619) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5619) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5629) ULTRASONIC: Failed to trigger measurement: ESP_ERR_INVALID_STATE[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+[0;32mI (5729) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5729) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+[0;32mI (5839) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5839) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
