@@ -62,7 +62,7 @@ void joystick_mix(float x, float y, int *pwm_left, int *pwm_right)
     float x_shaped = x * x * x * x;   // soft near center, strong at edges
 
     // 2. Steering gain
-    const float k = 1.5f;
+    const float k = 0.9f;
 
     // 3. Differential mix
     float L0 = y + k * x_shaped;
