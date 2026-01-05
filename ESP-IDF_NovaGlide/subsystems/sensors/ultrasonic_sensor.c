@@ -26,33 +26,7 @@ static const char *TAG = "ULTRASONIC";
     }
 }*/
 
-static esp_err_t ultrasonic_i2c_read(float *distance_cm)
-{
-    uint8_t cmd = 0x01;  // start measurement
-    uint8_t data[2];
-
-    // Send measurement command
-    esp_err_t err = i2c_master_write_to_device(
-        I2C_PORT, ULTRASONIC_I2C_ADDR, &cmd, 1, pdMS_TO_TICKS(20)
-    );
-    if (err != ESP_OK) return err;
-
-    // Wait for measurement
-    vTaskDelay(pdMS_TO_TICKS(80));
-
-    // Read 2 bytes
-    err = i2c_master_read_from_device(
-        I2C_PORT, ULTRASONIC_I2C_ADDR, data, 2, pdMS_TO_TICKS(20)
-    );
-    if (err != ESP_OK) return err;
-
-    uint16_t raw = (data[0] << 8) | data[1];
-
-    // Most I2C HC-SR04 clones return mm
-    *distance_cm = raw / 10.0f;
-
-    return ESP_OK;
-}
+static esp_err_t ultrasonic_i2c_read(ultrasonic_system_t *self, float *distance_cm) { uint8_t cmd = 0x01; // start measurement uint8_t data[2]; // Send measurement command esp_err_t err = i2c_master_transmit(self->dev, &cmd, 1, pdMS_TO_TICKS(20)); if (err != ESP_OK) { return err; } // Wait for measurement to complete vTaskDelay(pdMS_TO_TICKS(80)); // Read 2 bytes (distance in mm) err = i2c_master_receive(self->dev, data, 2, pdMS_TO_TICKS(20)); if (err != ESP_OK) { return err; } uint16_t raw_mm = (data[0] << 8) | data[1]; *distance_cm = raw_mm / 10.0f; // mm → cm return ESP_OK; }
 
 static void ultrasonic_update_impl(ultrasonic_system_t *self, TickType_t now)
 {
@@ -86,8 +60,8 @@ static void ultrasonic_update_impl(ultrasonic_system_t *self, TickType_t now)
     ESP_LOGI(TAG, "Ultrasonic sensor initialized");
     }*/
 
-    void ultrasonic_system_init(ultrasonic_system_t *sys)
-    {
+void ultrasonic_system_init(ultrasonic_system_t *sys)
+{
         sys->distance_cm = 0.0f;
         sys->update = ultrasonic_update_impl;
 
@@ -104,4 +78,4 @@ static void ultrasonic_update_impl(ultrasonic_system_t *self, TickType_t now)
         ESP_ERROR_CHECK(i2c_driver_install(I2C_PORT, conf.mode, 0, 0, 0));
 
         ESP_LOGI(TAG, "HC-SR04 (I2C mode) initialized");
-    }
+}
