@@ -96,6 +96,7 @@ void app_main(void)
     uint8_t val = 0;
     esp_err_t ret = i2c_bus_read_byte(ultra.dev, 0x02, &val);
     ESP_LOGI("ULTRA", "reg0 = 0x%02X (ret=%s)", val, esp_err_to_name(ret));
+
     //ultrasonic_system_init(&ultra);
     //ultrasonic_probe_registers(&ultra);
 
