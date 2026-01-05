@@ -79,6 +79,8 @@ void app_main(void)
 
     // Initialize WiFi first (needed for ESP-NOW and MQTT)
     wifi_system_init();
+    // Initialize I2C bus FIRST
+    ESP_ERROR_CHECK(i2c_bus_init());
 
     // Initialize all subsystems
     motor_system_init(&motors);
