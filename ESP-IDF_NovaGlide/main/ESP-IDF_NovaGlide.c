@@ -71,8 +71,7 @@ void app_main(void)
     static adc_system_t adc;
     static temp_sensor_system_t temp;
     static ina219_system_t ina;
-    //static ultrasonic_system_t ultra; // I2C mode
-    static ultrasonic_hal_t ultra;      // GPIO mode
+    static ultrasonic_system_t ultra; // I2C mode
     static mqtt_system_t mqtt;
     static espnow_system_t espnow;
     static ui_system_t ui;
