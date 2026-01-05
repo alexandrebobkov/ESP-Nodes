@@ -1,27 +1,23 @@
-#ifndef ULTRASONIC_SENSOR_H
-#define ULTRASONIC_SENSOR_H
+#ifndef ULTRASONIC_H
+#define ULTRASONIC_H
 
 #include "freertos/FreeRTOS.h"
-#include "driver/i2c_master.h"
+#include "freertos/task.h"
+#include "esp_err.h"
 
-// I2C Configuration for HC-SR04 I2C module
-#define ULTRASONIC_I2C_ADDR         0x57    // Common I2C address for HC-SR04 I2C modules
-#define ULTRASONIC_I2C_SPEED_HZ     100000  // 100kHz
+// I2C address for ultrasonic sensor (common addresses: 0x57, 0x70, or check your datasheet)
+#define ULTRASONIC_I2C_ADDR 0x57
 
-// Forward declaration
-typedef struct ultrasonic_system_t ultrasonic_system_t;
+typedef struct ultrasonic_system_s {
+    float distance_cm;           // Measured distance in centimeters
+    bool measurement_valid;      // True if last measurement was successful
+    void (*update)(struct ultrasonic_system_s *self, TickType_t now);
+} ultrasonic_system_t;
 
-// Struct definition
-struct ultrasonic_system_t {
-    float distance_cm;
-    i2c_master_dev_handle_t dev;  // I2C device handle
-
-    void (*update)(ultrasonic_system_t *self, TickType_t now);
-};
-
+/**
+ * Initialize the I2C ultrasonic sensor system
+ * @param sys Pointer to ultrasonic system structure
+ */
 void ultrasonic_system_init(ultrasonic_system_t *sys);
-void ultrasonic_system_init(ultrasonic_system_t *ultra);
-void ultrasonic_probe_registers(ultrasonic_system_t *ultra);
 
-
-#endif
+#endif // ULTRASONIC_H
