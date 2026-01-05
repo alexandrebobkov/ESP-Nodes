@@ -59,10 +59,12 @@ static float clampf(float val, float min, float max) {
 void joystick_mix(float x, float y, int *pwm_left, int *pwm_right)
 {
     // 1. Nonlinear steering curve
-    float x_shaped = x * x * x * x;   // soft near center, strong at edges
+    //float x_shaped = x * x * x;   // soft near center, strong at edges
+    // float x_shaped = x * fabsf(x);   // quadratic expo, stronger than cubic
+    float x_shaped = x * x * x * 1.2f; // stronger expo
 
     // 2. Steering gain
-    const float k = 0.9f;
+    const float k = 1.1f;   // Stronger steering; preferred 0.9
 
     // 3. Differential mix
     float L0 = y + k * x_shaped;
@@ -70,7 +72,7 @@ void joystick_mix(float x, float y, int *pwm_left, int *pwm_right)
 
     // 4. Limit left/right difference to 75%
     float diff = fabsf(L0 - R0);
-    float max_diff = 1.1f;   // 75% of full 2.0 span
+        float max_diff = 1.8f;   // 75% of full 2.0 span // allow full spin but keep arcs smooth; had 1.2
 
     if (diff > max_diff) {
         float scale = max_diff / diff;
