@@ -1,26 +1,47 @@
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "esp_log.h"
+
+#include "system_init.h"
+#include "wifi_sys.h"
+#include "i2c_bus.h"
+#include "ina219_sensor.h"
+#include "ultrasonic_sensor.h"
+
+static const char *TAG = "ULTRA_TEST_APP";
+
 void app_main(void)
 {
+    // Basic system init (clocks, logging, etc.)
     system_init();
 
+    // Optional: WiFi (you can comment this out if you want it quieter)
+    wifi_system_init();
+
+    // Subsystem instances (only what we actually use here)
     static ina219_system_t ina;
     static ultrasonic_system_t ultra;
 
-    // WiFi only if you really want it during this test
-    wifi_system_init();
-
-    // I2C bus
+    // --- I2C BUS INIT ---
+    ESP_LOGI(TAG, "Initializing I2C bus...");
     ESP_ERROR_CHECK(i2c_bus_init());
-    i2c_bus_scan();   // should show 0x40 and 0x57
 
-    // Only init I2C-dependent subsystems you actually use here
+    ESP_LOGI(TAG, "Scanning I2C bus...");
+    i2c_bus_scan();   // should show 0x40 (INA219) and 0x57 (ultrasonic)
+
+    // --- I2C DEVICES INIT ---
+    ESP_LOGI(TAG, "Initializing INA219...");
     ina219_system_init(&ina);
+
+    ESP_LOGI(TAG, "Initializing ultrasonic (HC-SR04 I2C)...");
     ultrasonic_system_init(&ultra);
 
-    // Small power-up settle delay for the ultrasonic module
+    // Small delay to let the ultrasonic module settle after init
     vTaskDelay(pdMS_TO_TICKS(200));
 
-    // Minimal raw read loop
-    for (;;) {
+    ESP_LOGI(TAG, "Starting raw ultrasonic read loop...");
+
+    while (1) {
         uint8_t data[2] = {0};
         esp_err_t err = i2c_master_receive(ultra.dev, data, 2, pdMS_TO_TICKS(200));
 
