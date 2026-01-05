@@ -23,6 +23,10 @@ static bool rmt_rx_callback(rmt_channel_handle_t channel,
 
 static void ultrasonic_update_impl(ultrasonic_hal_t *self, TickType_t now)
 {
+    if (self->encoder == NULL) {
+        ESP_LOGE("ULTRA_HAL", "ENCODER CORRUPTED BEFORE UPDATE");
+    }
+
     static TickType_t last = 0;
 
     if ((now - last) < pdMS_TO_TICKS(100)) {
