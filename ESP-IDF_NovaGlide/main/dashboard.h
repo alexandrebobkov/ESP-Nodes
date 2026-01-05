@@ -14,7 +14,7 @@ typedef struct {
     espnow_system_t *espnow;
     temp_sensor_system_t *temp;
     ina219_system_t *ina;
-    ultrasonic_sensor_t *ultrasonic;
+    ultrasonic_system_t *ultrasonic;
 } dashboard_context_t;
 
 void dashboard_task_start(dashboard_context_t *ctx);
