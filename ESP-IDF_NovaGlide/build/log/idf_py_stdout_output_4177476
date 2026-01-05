@@ -1,0 +1,203 @@
+[0;32mI (24822) ULTRASONIC_TEST: ────────────�ESP-ROM:esp32c3-api1-20210207[0m
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40382b44
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f64
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan  4 2026 20:56:49[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (25) boot: efuse block revision: v1.3[0m
+[0;32mI (28) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (44) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (53) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (66) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (76) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0a2fch ( 41724) map[0m
+[0;32mI (90) esp_image: segment 1: paddr=0001a324 vaddr=3fc8c000 size=012ach (  4780) load[0m
+[0;32mI (91) esp_image: segment 2: paddr=0001b5d8 vaddr=40380000 size=04a40h ( 19008) load[0m
+[0;32mI (101) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1a280h (107136) map[0m
+[0;32mI (122) esp_image: segment 4: paddr=0003a2a8 vaddr=40384a40 size=074b4h ( 29876) load[0m
+[0;32mI (128) esp_image: segment 5: paddr=00041764 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (132) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (132) boot: Disabling RNG early entropy source...[0m
+[0;32mI (147) cpu_start: Unicore app[0m
+[0;32mI (156) cpu_start: Pro cpu start user code[0m
+[0;32mI (156) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (156) app_init: Application information:[0m
+[0;32mI (156) app_init: Project name:     ESP-IDF_NovaGlide[0m
+[0;32mI (161) app_init: App version:      ESP32-Node_Switch-v2.7-12313-gc[0m
+[0;32mI (167) app_init: Compile time:     Jan  5 2026 07:14:58[0m
+[0;32mI (172) app_init: ELF file SHA256:  591fcf70b...[0m
+[0;32mI (176) app_init: ESP-IDF:          v5.4.1[0m
+[0;32mI (180) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (184) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (188) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (192) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (198) heap_init: At 3FC8E180 len 00031E80 (199 KiB): RAM[0m
+[0;32mI (203) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (209) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (215) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (221) spi_flash: detected chip: generic[0m
+[0;32mI (224) spi_flash: flash io: dio[0m
+[0;33mW (227) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (239) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (245) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (252) main_task: Started on CPU0[0m
+[0;32mI (252) main_task: Calling app_main()[0m
+[0;32mI (252) ULTRASONIC_TEST: ═══════════════════════════════════════════[0m
+[0;32mI (262) ULTRASONIC_TEST:   Ultrasonic Sensor Live Test[0m
+[0;32mI (272) ULTRASONIC_TEST:   Address: 0x57 | Command: 0x50[0m
+[0;32mI (272) ULTRASONIC_TEST: ═══════════════════════════════════════════[0m
+
+[0;32mI (292) ULTRASONIC_TEST: I2C initialized. Trying initialization sequences...[0m
+
+[0;32mI (302) ULTRASONIC_TEST: Attempt 1: Sending reset/init command 0x00...[0m
+[0;32mI (702) ULTRASONIC_TEST: Attempt 2: Writing to potential config registers...[0m
+[1;31mE (702) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (702) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (702) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (812) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (812) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (812) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[0;32mI (912) ULTRASONIC_TEST: [0m
+>>> PLACE AN OBJECT 10-30cm IN FRONT OF SENSOR <<<
+
+[0;32mI (912) ULTRASONIC_TEST: Starting continuous measurements...[0m
+
+[0;32mI (1912) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (1912) ULTRASONIC_TEST: Measurement #1[0m
+[0;32mI (2002) ULTRASONIC_TEST: Cmd 0x50 → [0x08 0x4D 0x00 0xFF] Distance: 2125[0m
+[0;33mW (2002) ULTRASONIC_TEST: ⚠️  Object detected at: 2125 cm (may be out of reliable range)[0m
+[0;32mI (2002) ULTRASONIC_TEST: [0m
+[0;32mI (2502) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (2502) ULTRASONIC_TEST: Measurement #2[0m
+[0;32mI (2592) ULTRASONIC_TEST: Cmd 0x50 → [0x08 0x5F 0x98 0xFF] Distance: 2143[0m
+[0;33mW (2592) ULTRASONIC_TEST: ⚠️  Object detected at: 2143 cm (may be out of reliable range)[0m
+[0;32mI (2592) ULTRASONIC_TEST: [0m
+[0;32mI (3092) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (3092) ULTRASONIC_TEST: Measurement #3[0m
+[0;32mI (3182) ULTRASONIC_TEST: Cmd 0x50 → [0x08 0x5F 0x98 0xFF] Distance: 2143[0m
+[0;33mW (3182) ULTRASONIC_TEST: ⚠️  Object detected at: 2143 cm (may be out of reliable range)[0m
+[0;32mI (3182) ULTRASONIC_TEST: [0m
+[0;32mI (3682) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (3682) ULTRASONIC_TEST: Measurement #4[0m
+[0;32mI (3772) ULTRASONIC_TEST: Cmd 0x50 → [0x08 0x2D 0x20 0xFF] Distance: 2093[0m
+[0;33mW (3772) ULTRASONIC_TEST: ⚠️  Object detected at: 2093 cm (may be out of reliable range)[0m
+[0;32mI (3772) ULTRASONIC_TEST: [0m
+[0;32mI (4272) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (4272) ULTRASONIC_TEST: Measurement #5[0m
+[0;32mI (4362) ULTRASONIC_TEST: Cmd 0x50 → [0x08 0x5A 0x48 0xFF] Distance: 2138[0m
+[0;33mW (4362) ULTRASONIC_TEST: ⚠️  Object detected at: 2138 cm (may be out of reliable range)[0m
+[0;32mI (4362) ULTRASONIC_TEST: [0m
+[0;32mI (4862) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (4862) ULTRASONIC_TEST: Measurement #6[0m
+[0;32mI (4952) ULTRASONIC_TEST: Cmd 0x50 → [0x08 0x5A 0x48 0xFF] Distance: 2138[0m
+[0;33mW (4952) ULTRASONIC_TEST: ⚠️  Object detected at: 2138 cm (may be out of reliable range)[0m
+[0;32mI (4952) ULTRASONIC_TEST: [0m
+[0;32mI (5452) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (5452) ULTRASONIC_TEST: Measurement #7[0m
+[0;32mI (5542) ULTRASONIC_TEST: Cmd 0x50 → [0x08 0x5A 0x48 0xFF] Distance: 2138[0m
+[0;33mW (5542) ULTRASONIC_TEST: ⚠️  Object detected at: 2138 cm (may be out of reliable range)[0m
+[0;32mI (5542) ULTRASONIC_TEST: [0m
+[0;32mI (6042) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (6042) ULTRASONIC_TEST: Measurement #8[0m
+[0;32mI (6132) ULTRASONIC_TEST: Cmd 0x50 → [0x08 0x4D 0x00 0xFF] Distance: 2125[0m
+[0;33mW (6132) ULTRASONIC_TEST: ⚠️  Object detected at: 2125 cm (may be out of reliable range)[0m
+[0;32mI (6132) ULTRASONIC_TEST: [0m
+[0;32mI (6632) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (6632) ULTRASONIC_TEST: Measurement #9[0m
+[0;32mI (6722) ULTRASONIC_TEST: Cmd 0x50 → [0x08 0x4D 0x00 0xFF] Distance: 2125[0m
+[0;33mW (6722) ULTRASONIC_TEST: ⚠️  Object detected at: 2125 cm (may be out of reliable range)[0m
+[0;32mI (6722) ULTRASONIC_TEST: [0m
+[0;32mI (7222) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (7222) ULTRASONIC_TEST: Measurement #10[0m
+[0;32mI (7312) ULTRASONIC_TEST: Cmd 0x50 → [0x08 0x5F 0x98 0xFF] Distance: 2143[0m
+[0;33mW (7312) ULTRASONIC_TEST: ⚠️  Object detected at: 2143 cm (may be out of reliable range)[0m
+[0;32mI (7312) ULTRASONIC_TEST: [0m
+[0;32mI (7812) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (7812) ULTRASONIC_TEST: Measurement #11[0m
+[0;32mI (7902) ULTRASONIC_TEST: Cmd 0x50 → [0x08 0x3F 0xB8 0xFF] Distance: 2111[0m
+[0;33mW (7902) ULTRASONIC_TEST: ⚠️  Object detected at: 2111 cm (may be out of reliable range)[0m
+[0;32mI (7902) ULTRASONIC_TEST: [0m
+[0;32mI (8402) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (8402) ULTRASONIC_TEST: Measurement #12[0m
+[0;32mI (8492) ULTRASONIC_TEST: Cmd 0x50 → [0x08 0x3F 0xB8 0xFF] Distance: 2111[0m
+[0;33mW (8492) ULTRASONIC_TEST: ⚠️  Object detected at: 2111 cm (may be out of reliable range)[0m
+[0;32mI (8492) ULTRASONIC_TEST: [0m
+[0;32mI (8992) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (8992) ULTRASONIC_TEST: Measurement #13[0m
+[0;32mI (9082) ULTRASONIC_TEST: Cmd 0x50 → [0x08 0x4D 0x00 0xFF] Distance: 2125[0m
+[0;33mW (9082) ULTRASONIC_TEST: ⚠️  Object detected at: 2125 cm (may be out of reliable range)[0m
+[0;32mI (9082) ULTRASONIC_TEST: [0m
+[0;32mI (9582) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (9582) ULTRASONIC_TEST: Measurement #14[0m
+[0;32mI (9672) ULTRASONIC_TEST: Cmd 0x50 → [0x08 0x4D 0x00 0xFF] Distance: 2125[0m
+[0;33mW (9672) ULTRASONIC_TEST: ⚠️  Object detected at: 2125 cm (may be out of reliable range)[0m
+[0;32mI (9672) ULTRASONIC_TEST: [0m
+[0;32mI (10172) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (10172) ULTRASONIC_TEST: Measurement #15[0m
+[0;32mI (10262) ULTRASONIC_TEST: Cmd 0x50 → [0x08 0x5F 0x98 0xFF] Distance: 2143[0m
+[0;33mW (10262) ULTRASONIC_TEST: ⚠️  Object detected at: 2143 cm (may be out of reliable range)[0m
+[0;32mI (10262) ULTRASONIC_TEST: [0m
+[0;32mI (10762) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (10762) ULTRASONIC_TEST: Measurement #16[0m
+[0;32mI (10852) ULTRASONIC_TEST: Cmd 0x50 → [0x08 0x5F 0x98 0xFF] Distance: 2143[0m
+[0;33mW (10852) ULTRASONIC_TEST: ⚠️  Object detected at: 2143 cm (may be out of reliable range)[0m
+[0;32mI (10852) ULTRASONIC_TEST: [0m
+[0;32mI (11352) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (11352) ULTRASONIC_TEST: Measurement #17[0m
+[0;32mI (11442) ULTRASONIC_TEST: Cmd 0x50 → [0x08 0x5F 0x98 0xFF] Distance: 2143[0m
+[0;33mW (11442) ULTRASONIC_TEST: ⚠️  Object detected at: 2143 cm (may be out of reliable range)[0m
+[0;32mI (11442) ULTRASONIC_TEST: [0m
+[0;32mI (11942) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (11942) ULTRASONIC_TEST: Measurement #18[0m
+[0;32mI (12032) ULTRASONIC_TEST: Cmd 0x50 → [0x08 0x5F 0x98 0xFF] Distance: 2143[0m
+[0;33mW (12032) ULTRASONIC_TEST: ⚠️  Object detected at: 2143 cm (may be out of reliable range)[0m
+[0;32mI (12032) ULTRASONIC_TEST: [0m
+[0;32mI (12532) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (12532) ULTRASONIC_TEST: Measurement #19[0m
+[0;32mI (12622) ULTRASONIC_TEST: Cmd 0x50 → [0x08 0x5F 0x98 0xFF] Distance: 2143[0m
+[0;33mW (12622) ULTRASONIC_TEST: ⚠️  Object detected at: 2143 cm (may be out of reliable range)[0m
+[0;32mI (12622) ULTRASONIC_TEST: [0m
+[0;32mI (13122) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (13122) ULTRASONIC_TEST: Measurement #20[0m
+[0;32mI (13212) ULTRASONIC_TEST: Cmd 0x50 → [0x08 0x3F 0xB8 0xFF] Distance: 2111[0m
+[0;33mW (13212) ULTRASONIC_TEST: ⚠️  Object detected at: 2111 cm (may be out of reliable range)[0m
+[0;32mI (13212) ULTRASONIC_TEST: [0m
+[0;32mI (13712) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (13712) ULTRASONIC_TEST: Measurement #21[0m
+[0;32mI (13802) ULTRASONIC_TEST: Cmd 0x50 → [0x08 0x3F 0xB8 0xFF] Distance: 2111[0m
+[0;33mW (13802) ULTRASONIC_TEST: ⚠️  Object detected at: 2111 cm (may be out of reliable range)[0m
+[0;32mI (13802) ULTRASONIC_TEST: [0m
+[0;32mI (14302) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (14302) ULTRASONIC_TEST: Measurement #22[0m
+[0;32mI (14392) ULTRASONIC_TEST: Cmd 0x50 → [0x08 0x5F 0x98 0xFF] Distance: 2143[0m
+[0;33mW (14392) ULTRASONIC_TEST: ⚠️  Object detected at: 2143 cm (may be out of reliable range)[0m
+[0;32mI (14392) ULTRASONIC_TEST: [0m
+[0;32mI (14892) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (14892) ULTRASONIC_TEST: Measurement #23[0m
+[0;32mI (14982) ULTRASONIC_TEST: Cmd 0x50 → [0x08 0x64 0xE8 0xFF] Distance: 2148[0m
+[0;33mW (14982) ULTRASONIC_TEST: ⚠️  Object detected at: 2148 cm (may be out of reliable range)[0m
+[0;32mI (14982) ULTRASONIC_TEST: [0m
+[0;32mI (15482) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (15482) ULTRASONIC_TEST: Measurement #24[0m
+[0;32mI (15572) ULTRASONIC_TEST: Cmd 0x50 → [0x08 0x64 0xE8 0xFF] Distance: 2148[0m
+[0;33mW (15572) ULTRASONIC_TEST: ⚠️  Object detected at: 2148 cm (may be out of reliable range)[0m
+[0;32mI (15572) ULTRASONIC_TEST: [0m
+[0;32mI (16072) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (16072) ULTRASONIC_TEST: Measurement #25[0m
+[0;32mI (16162) ULTRASONIC_TEST: Cmd 0x50 → [0x08 0x64 0xE8 0xFF] Distance: 2148[0m
+[0;33mW (16162) ULTRASONIC_TEST: ⚠️  Object detected at: 2148 cm (may be out of reliable range)[0m
+[0;32mI (16162) ULTRASONIC_TEST: [0m
+[0;32mI (16662) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI
