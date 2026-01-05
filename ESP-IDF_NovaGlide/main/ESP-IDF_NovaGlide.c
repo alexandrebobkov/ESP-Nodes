@@ -26,7 +26,7 @@ typedef struct {
     ina219_system_t *ina;
     motor_system_t *motors;
     mqtt_system_t *mqtt;
-    ultrasonic_hal_t *ultrasonic;
+    ultrasonic_sensor_t *ultrasonic;
 } telemetry_context_t;
 
 // Task to bridge sensor data to MQTT
