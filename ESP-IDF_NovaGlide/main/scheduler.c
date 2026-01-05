@@ -37,7 +37,7 @@ static void scheduler_task(void *arg) {
             sched->ui->update(sched->ui, now);
         }
 
-        vTaskDelay(pdMS_TO_TICKS(50));  // 20Hz update rate
+        vTaskDelay(pdMS_TO_TICKS(250));  // 20Hz update rate
     }
 }
 
