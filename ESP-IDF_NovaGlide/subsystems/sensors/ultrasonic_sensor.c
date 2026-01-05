@@ -27,6 +27,7 @@ static esp_err_t ultrasonic_measure_distance(uint16_t *distance) {
     for (int i = 0; i < sizeof(init_cmds); i++) {
         esp_err_t ret = i2c_master_transmit(ultrasonic_handle, &init_cmds[i], 1, 500);
         if (ret != ESP_OK) {
+            // Init commands can fail during startup or when sensor is busy - this is normal
             ESP_LOGD(TAG, "Init cmd 0x%02X: %s", init_cmds[i], esp_err_to_name(ret));
         }
         vTaskDelay(pdMS_TO_TICKS(10));
@@ -36,8 +37,9 @@ static esp_err_t ultrasonic_measure_distance(uint16_t *distance) {
     uint8_t cmd = CMD_MEASURE_CM;
     esp_err_t ret = i2c_master_transmit(ultrasonic_handle, &cmd, 1, 500);
     if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "Command send failed: %s", esp_err_to_name(ret));
-        return ret;
+        // NACK during measurement command usually means sensor can't measure (too close/busy)
+        ESP_LOGD(TAG, "Measurement command failed (sensor may be too close or busy)");
+        return ESP_ERR_INVALID_RESPONSE;  // Special error code for "too close"
     }
 
     // Wait for measurement (70ms as in working code)
@@ -47,13 +49,13 @@ static esp_err_t ultrasonic_measure_distance(uint16_t *distance) {
     uint8_t data[4];
     ret = i2c_master_receive(ultrasonic_handle, data, 4, 500);
     if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "Read failed: %s", esp_err_to_name(ret));
-        return ret;
+        ESP_LOGD(TAG, "Read failed (sensor may be too close or busy)");
+        return ESP_ERR_INVALID_RESPONSE;
     }
 
-    // Extract distance from first 2 bytes
-    //*distance = (data[0] << 8) | data[1]; // big-endian (incorrect)
-    *distance = data[0] | (data[1] << 8); // little-endian (correct)
+    // Extract distance from first 2 bytes (LITTLE-ENDIAN: low byte first)
+    *distance = data[0] | (data[1] << 8);
+    //*distance = data[1] | (data[0] << 8);
 
     return ESP_OK;
 }
@@ -72,7 +74,8 @@ static void ultrasonic_update_impl(ultrasonic_system_t *self, TickType_t now) {
     esp_err_t ret = ultrasonic_measure_distance(&raw_distance);
 
     if (ret == ESP_OK) {
-        self->distance_cm = (float)raw_distance / 100.0f;
+        // Convert from mm to cm (sensor returns millimeters)
+        self->distance_cm = (float)raw_distance / 10.0f;
 
         // Check for valid range
         if (raw_distance == 0) {
@@ -80,11 +83,16 @@ static void ultrasonic_update_impl(ultrasonic_system_t *self, TickType_t now) {
             ESP_LOGW(TAG, "No object detected (distance = 0)");
         } else if (self->distance_cm >= 2.0f && self->distance_cm <= 400.0f) {
             self->measurement_valid = true;
-            ESP_LOGI(TAG, "Distance: %.2f cm", self->distance_cm);
+            ESP_LOGI(TAG, "Distance: %.2f cm (raw: %u mm)", self->distance_cm, raw_distance);
         } else {
             self->measurement_valid = false;
             ESP_LOGW(TAG, "Distance out of range: %.2f cm", self->distance_cm);
         }
+    } else if (ret == ESP_ERR_INVALID_RESPONSE) {
+        // Sensor NACKed - object is likely too close (< 2cm) or sensor is busy
+        self->measurement_valid = false;
+        self->distance_cm = 1.0f;  // Indicate "too close"
+        ESP_LOGW(TAG, "Object too close or sensor busy");
     } else {
         self->measurement_valid = false;
         ESP_LOGW(TAG, "Measurement failed");
