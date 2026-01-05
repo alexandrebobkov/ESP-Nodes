@@ -82,6 +82,10 @@ void app_main(void)
     // Initialize I2C bus FIRST
     ESP_ERROR_CHECK(i2c_bus_init());
     i2c_bus_scan();
+    uint8_t val = 0;
+    esp_err_t ret = i2c_bus_read_byte(&ultra, 0x00, &val);
+    ESP_LOGI("ULTRA", "reg0 = 0x%02X (ret=%s)", val, esp_err_to_name(ret));
+
 
     // Initialize all subsystems
     motor_system_init(&motors);
