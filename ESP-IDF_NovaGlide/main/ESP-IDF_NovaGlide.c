@@ -1,6 +1,7 @@
 #include "esp_log_level.h"
 #include "espnow_sys.h"
 #include "esp_log.h"
+#include "soc/gpio_num.h"
 #include "system_init.h"
 #include "scheduler.h"
 #include "control_task.h"
@@ -88,7 +89,7 @@ void app_main(void)
     temp_sensor_system_init(&temp);
     ina219_system_init(&ina);
     //ultrasonic_system_init(&ultra);
-    ultrasonic_system_init(&ultra, 4, 5);
+    ultrasonic_system_init(&ultra, GPIO_NUM_6, GPIO_NUM_5);
     espnow_system_init(&espnow);
     mqtt_system_init(&mqtt);
     ui_system_init(&ui);
