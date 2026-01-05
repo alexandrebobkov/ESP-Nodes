@@ -87,7 +87,7 @@ void app_main(void)
 
     while (1) {
         uint8_t data[2] = {0};
-        esp_err_t err = i2c_master_receive(ultra.dev, data, 2, pdMS_TO_TICKS(200));
+        esp_err_t err = i2c_master_receive(ultra->dev, data, 2, pdMS_TO_TICKS(200));
 
         if (err == ESP_OK) {
             uint16_t raw_mm = ((uint16_t)data[0] << 8) | data[1];
