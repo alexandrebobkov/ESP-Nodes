@@ -29,16 +29,6 @@ typedef struct {
     ultrasonic_system_t *ultrasonic;
 } telemetry_context_t;
 
-// Telemetry bridge context
-static telemetry_context_t telem_ctx = {
-    .temp = &temp,
-    .ina = &ina,
-    .motors = &motors,
-    .mqtt = &mqtt,
-    .ultrasonic = &ultra
-};
-
-
 // Task to bridge sensor data to MQTT
 static void telemetry_bridge_task(void *arg) {
     telemetry_context_t *ctx = (telemetry_context_t *)arg;
@@ -127,8 +117,8 @@ void app_main(void)
         .temp = &temp,
         .ina = &ina,
         .motors = &motors,
-        .mqtt = &mqtt
-        //.ultrasonic = &ultra
+        .mqtt = &mqtt,
+        .ultrasonic = &ultra
     };
     xTaskCreate(telemetry_bridge_task, "telemetry", 4096, &telem_ctx, 5, NULL);
 
