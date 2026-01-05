@@ -30,13 +30,14 @@ typedef struct {
 } telemetry_context_t;
 
 // Telemetry bridge context
-telemetry_context_t telem_ctx = {
+static telemetry_context_t telem_ctx = {
     .temp = &temp,
     .ina = &ina,
     .motors = &motors,
     .mqtt = &mqtt,
     .ultrasonic = &ultra
 };
+
 
 // Task to bridge sensor data to MQTT
 static void telemetry_bridge_task(void *arg) {
