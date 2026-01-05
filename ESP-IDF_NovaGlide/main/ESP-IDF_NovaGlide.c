@@ -81,6 +81,7 @@ void app_main(void)
     wifi_system_init();
     // Initialize I2C bus FIRST
     ESP_ERROR_CHECK(i2c_bus_init());
+    i2c_bus_scan();
 
     // Initialize all subsystems
     motor_system_init(&motors);
@@ -91,6 +92,8 @@ void app_main(void)
     espnow_system_init(&espnow);
     mqtt_system_init(&mqtt);
     ui_system_init(&ui);
+
+    i2c_bus_scan();
 
     // Start display task
     //xTaskCreate(display_joystick_task, "display", 2048, &espnow, 4, NULL);
