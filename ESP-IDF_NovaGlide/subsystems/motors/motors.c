@@ -93,6 +93,26 @@ static void ledc_init(void) {
     ESP_LOGI(TAG, "LEDC initialized for all 4 motors");
 }
 
+/*void update_motors_pwm(motor_system_t *motors, int left, int right)
+{
+    if (left >= 0) {
+        motors->L_fwd = left;
+        motors->L_rev = 0;
+    } else {
+        motors->L_fwd = 0;
+        motors->L_rev = -left;
+    }
+
+    if (right >= 0) {
+        motors->R_fwd = right;
+        motors->R_rev = 0;
+    } else {
+        motors->R_fwd = 0;
+        motors->R_rev = -right;
+    }
+}*/
+
+
 // Your proven motor update logic
 void update_motors_pwm(motor_system_t *sys, int pwm_motor_1, int pwm_motor_2) {
     /* UPDATED MOTOR LOGIC */
@@ -103,16 +123,16 @@ void update_motors_pwm(motor_system_t *sys, int pwm_motor_1, int pwm_motor_2) {
         sys->motor4_rpm_pcm = 0;
     }
     if (pwm_motor_1 > 0 && pwm_motor_2 < 0) {
-        sys->motor1_rpm_pcm = pwm_motor_1;
-        sys->motor2_rpm_pcm = 0;
+        sys->motor1_rpm_pcm = 0;
+        sys->motor2_rpm_pcm = pwm_motor_1;
         sys->motor3_rpm_pcm = -pwm_motor_2;
         sys->motor4_rpm_pcm = 0;
     }
     if (pwm_motor_1 < 0 && pwm_motor_2 > 0) {
         sys->motor1_rpm_pcm = 0;
         sys->motor2_rpm_pcm = -pwm_motor_1;
-        sys->motor3_rpm_pcm = 0;
-        sys->motor4_rpm_pcm = pwm_motor_2;
+        sys->motor3_rpm_pcm = pwm_motor_2;
+        sys->motor4_rpm_pcm = 0;
     }
     if (pwm_motor_1 < 0 && pwm_motor_2 < 0) {
         sys->motor1_rpm_pcm = 0;
