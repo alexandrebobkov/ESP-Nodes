@@ -52,7 +52,8 @@ static esp_err_t ultrasonic_measure_distance(uint16_t *distance) {
     }
 
     // Extract distance from first 2 bytes
-    *distance = (data[0] << 8) | data[1];
+    //*distance = (data[0] << 8) | data[1]; // big-endian (incorrect)
+    *distance = data[0] | (data[1] << 8); // little-endian (correct)
 
     return ESP_OK;
 }
@@ -71,7 +72,7 @@ static void ultrasonic_update_impl(ultrasonic_system_t *self, TickType_t now) {
     esp_err_t ret = ultrasonic_measure_distance(&raw_distance);
 
     if (ret == ESP_OK) {
-        self->distance_cm = (float)raw_distance / 100.0f;
+        self->distance_cm = (float)raw_distance / 10.0f;
 
         // Check for valid range
         if (raw_distance == 0) {
