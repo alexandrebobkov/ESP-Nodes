@@ -11,6 +11,7 @@
 #include "temp_sensor.h"
 #include "ina219_sensor.h"
 #include "ultrasonic_sensor.h"
+#include "ultrasonic_hal.h"
 #include "wifi_sys.h"
 #include "espnow_sys.h"
 #include "mqtt_sys.h"
@@ -26,6 +27,8 @@ typedef struct {
     mqtt_system_t *mqtt;
     //ultrasonic_system_t *ultrasonic;
 } telemetry_context_t;
+
+static ultrasonic_hal_t ultra;
 
 // Task to bridge sensor data to MQTT
 static void telemetry_bridge_task(void *arg) {
