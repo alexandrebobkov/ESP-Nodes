@@ -59,7 +59,7 @@ static float clampf(float val, float min, float max) {
 void joystick_mix(float x, float y, int *pwm_left, int *pwm_right)
 {
     // Steering gain
-    const float k = 0.5f;
+    const float k = 1.0f;
 
     // Differential mix
     float L0 = y + k * x;
