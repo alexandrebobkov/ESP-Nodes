@@ -236,4 +236,250 @@ entry 0x403cc71a
 ╚════════════════════════════════════════════════════════════╝
 [0;32mI (6689) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
 [0;32mI (6689) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
-
+[0;32mI (6789) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6789) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6829) ULTRASONIC: Distance out of range: 1455.00 cm[0m
+[0;32mI (6889) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6889) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (6989) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6989) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (7079) INA219: VBUS: 0.76V, I: -4.00mA, P: 0.00mW[0m
+[0;32mI (7089) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7089) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7169) ULTRASONIC: Distance out of range: 1349.00 cm[0m
+[0;32mI (7189) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7189) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (7289) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7289) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (7389) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7389) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (7489) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7489) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7509) ULTRASONIC: Distance out of range: 1383.00 cm[0m
+[0;32mI (7589) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7589) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (7689) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7699) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m47.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.76 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-4.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m1383.00 cm                       [0m   ║
+[0;32mI (7809) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7809) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+╚════════════════════════════════════════════════════════════╝
+[0;33mW (7849) ULTRASONIC: Distance out of range: 1357.00 cm[0m
+[0;32mI (7909) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7909) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (8009) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8009) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (8109) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8109) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[1;31mE (8119) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8119) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (8119) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (8119) ULTRASONIC: Command send failed: ESP_ERR_INVALID_STATE[0m
+[0;33mW (8129) ULTRASONIC: Measurement failed[0m
+[0;32mI (8209) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8209) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (8309) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8309) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[1;31mE (8399) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8399) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (8399) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (8399) ULTRASONIC: Command send failed: ESP_ERR_INVALID_STATE[0m
+[0;32mI (8409) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8409) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (8419) ULTRASONIC: Measurement failed[0m
+[0;32mI (8519) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8519) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (8619) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8619) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[1;31mE (8689) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8689) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (8689) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (8689) ULTRASONIC: Command send failed: ESP_ERR_INVALID_STATE[0m
+[0;33mW (8699) ULTRASONIC: Measurement failed[0m
+[0;32mI (8719) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8719) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (8819) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8819) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (8919) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8919) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[1;31mE (8969) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (8979) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (8979) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (8989) ULTRASONIC: Command send failed: ESP_ERR_INVALID_STATE[0m
+[0;33mW (8999) ULTRASONIC: Measurement failed[0m
+║ [1mTemperature         [0m : [36m47.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.76 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-4.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+[0;32mI (9029) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9029) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m1357.00 cm                       [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (9139) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9139) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (9239) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9239) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[1;31mE (9269) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (9269) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (9269) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (9269) ULTRASONIC: Command send failed: ESP_ERR_INVALID_STATE[0m
+[0;33mW (9279) ULTRASONIC: Measurement failed[0m
+[0;32mI (9339) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9339) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (9439) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9439) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (9539) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9539) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[1;31mE (9549) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (9549) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (9549) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (9549) ULTRASONIC: Command send failed: ESP_ERR_INVALID_STATE[0m
+[0;33mW (9559) ULTRASONIC: Measurement failed[0m
+[0;32mI (9639) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9639) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (9739) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9739) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (9809) INA219: VBUS: 0.76V, I: -6.00mA, P: 0.00mW[0m
+[0;32mI (9839) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9839) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (9899) ULTRASONIC: Distance out of range: 2154.00 cm[0m
+[0;32mI (9939) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9939) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (10039) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10039) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (10139) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10139) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[1;31mE (10169) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (10179) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (10189) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (10199) ULTRASONIC: Command send failed: ESP_ERR_INVALID_STATE[0m
+[0;33mW (10199) ULTRASONIC: Measurement failed[0m
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (10249) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10259) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+║ [1mTemperature         [0m : [36m47.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.76 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-6.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m2154.00 cm                       [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (10359) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10359) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (10459) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10459) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (10459) TEMP_SENSOR: ==========================================[0m
+[0;32mI (10459) TEMP_SENSOR: ESP32-C3 Internal Temperature Sensor[0m
+[0;32mI (10469) TEMP_SENSOR: Current Temperature: 47.60°C[0m
+[0;32mI (10469) TEMP_SENSOR: ==========================================[0m
+[1;31mE (10499) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (10499) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (10499) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (10499) ULTRASONIC: Command send failed: ESP_ERR_INVALID_STATE[0m
+[0;33mW (10509) ULTRASONIC: Measurement failed[0m
+[0;32mI (10559) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10559) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (10659) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10659) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (10759) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10759) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (10849) ULTRASONIC: Distance out of range: 2154.00 cm[0m
+[0;32mI (10859) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10859) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (10959) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10959) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (11059) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11059) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (11159) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11159) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (11189) ULTRASONIC: Distance out of range: 2154.00 cm[0m
+[0;32mI (11259) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11259) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+[0;32mI (11359) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11369) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+[1;31mE (11459) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (11459) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[0;32mI (11469) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11469) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[1;31mE (11479) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (11489) ULTRASONIC: Command send failed: ESP_ERR_INVALID_STATE[0m
+[0;33mW (11489) ULTRASONIC: Measurement failed[0m
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m47.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.76 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-6.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m2154.00 cm                       [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (11579) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11589) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (11689) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11689) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[1;31mE (11769) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (11769) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (11769) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (11769) ULTRASONIC: Command send failed: ESP_ERR_INVALID_STATE[0m
+[0;33mW (11779) ULTRASONIC: Measurement failed[0m
+[0;32mI (11789) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (11789) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
