@@ -127,6 +127,15 @@ static void ultrasonic_update_impl(ultrasonic_hal_t *self, TickType_t now)
         ESP_LOGW(TAG, "No echo received (timeout)");
         self->distance_cm = -1.0f;  // Indicate measurement failure
     }
+
+    // --- 5. Re-enable RX channel for next measurement ---
+    // After receive completes (success or timeout), channel gets disabled
+    // We need to re-enable it for the next cycle
+    rmt_disable(self->rmt_rx);
+    esp_err_t enable_ret = rmt_enable(self->rmt_rx);
+    if (enable_ret != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to re-enable RX: %s", esp_err_to_name(enable_ret));
+    }
 }
 
 void ultrasonic_hal_init(ultrasonic_hal_t *ultra,
