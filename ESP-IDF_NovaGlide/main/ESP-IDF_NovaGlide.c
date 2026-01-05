@@ -90,7 +90,7 @@ void app_main(void)
     adc_system_init(&adc);
     temp_sensor_system_init(&temp);
     ina219_system_init(&ina);
-    //ultrasonic_system_init(&ultra);
+    ultrasonic_system_init(&ultra);
     //ultrasonic_hal_init(&ultra, GPIO_NUM_9, GPIO_NUM_10);
     //ESP_LOGI("ULTRA_HAL", "Encoder init pointer = %p", (void*)ultra.encoder);
 
