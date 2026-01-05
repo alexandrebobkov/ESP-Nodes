@@ -1,0 +1,109 @@
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40382b44
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f64
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan  4 2026 20:56:49[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (25) boot: efuse block revision: v1.3[0m
+[0;32mI (28) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (44) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (53) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (66) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (76) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0a20ch ( 41484) map[0m
+[0;32mI (90) esp_image: segment 1: paddr=0001a234 vaddr=3fc8c000 size=012ach (  4780) load[0m
+[0;32mI (91) esp_image: segment 2: paddr=0001b4e8 vaddr=40380000 size=04b30h ( 19248) load[0m
+[0;32mI (101) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1a120h (106784) map[0m
+[0;32mI (122) esp_image: segment 4: paddr=0003a148 vaddr=40384b30 size=073c4h ( 29636) load[0m
+[0;32mI (128) esp_image: segment 5: paddr=00041514 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (132) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (132) boot: Disabling RNG early entropy source...[0m
+[0;32mI (147) cpu_start: Unicore app[0m
+[0;32mI (156) cpu_start: Pro cpu start user code[0m
+[0;32mI (156) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (156) app_init: Application information:[0m
+[0;32mI (156) app_init: Project name:     ESP-IDF_NovaGlide[0m
+[0;32mI (161) app_init: App version:      ESP32-Node_Switch-v2.7-12291-g5[0m
+[0;32mI (167) app_init: Compile time:     Jan  5 2026 07:00:41[0m
+[0;32mI (172) app_init: ELF file SHA256:  a4db27b9e...[0m
+[0;32mI (176) app_init: ESP-IDF:          v5.4.1[0m
+[0;32mI (180) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (184) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (188) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (192) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (198) heap_init: At 3FC8E180 len 00031E80 (199 KiB): RAM[0m
+[0;32mI (203) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (209) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (215) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (221) spi_flash: detected chip: generic[0m
+[0;32mI (224) spi_flash: flash io: dio[0m
+[0;33mW (227) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (239) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (245) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (252) main_task: Started on CPU0[0m
+[0;32mI (252) main_task: Calling app_main()[0m
+[0;32mI (252) ULTRASONIC_TEST: ═══════════════════════════════════════════[0m
+[0;32mI (262) ULTRASONIC_TEST:   Ultrasonic Sensor Live Test[0m
+[0;32mI (272) ULTRASONIC_TEST:   Address: 0x57 | Command: 0x50[0m
+[0;32mI (272) ULTRASONIC_TEST: ═══════════════════════════════════════════[0m
+
+[0;32mI (292) ULTRASONIC_TEST: I2C initialized. Starting continuous measurements...[0m
+
+[0;32mI (302) ULTRASONIC_TEST: >>> PLACE AN OBJECT 10-30cm IN FRONT OF SENSOR <<<[0m
+
+[0;32mI (1302) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (1302) ULTRASONIC_TEST: Measurement #1[0m
+[0;32mI (1372) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (1372) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (1872) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (1872) ULTRASONIC_TEST: Measurement #2[0m
+[0;32mI (1942) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (1942) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (2442) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (2442) ULTRASONIC_TEST: Measurement #3[0m
+[0;32mI (2512) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (2512) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (3012) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (3012) ULTRASONIC_TEST: Measurement #4[0m
+[0;32mI (3082) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (3082) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (3582) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (3582) ULTRASONIC_TEST: Measurement #5[0m
+[0;32mI (3652) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (3652) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (4152) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (4152) ULTRASONIC_TEST: Measurement #6[0m
+[0;32mI (4222) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (4222) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (4722) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (4722) ULTRASONIC_TEST: Measurement #7[0m
+[0;32mI (4792) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (4792) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (5292) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (5292) ULTRASONIC_TEST: Measurement #8[0m
+[0;32mI (5362) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (5362) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (5862) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (5862) ULTRASONIC_TEST: Measurement #9[0m
+[0;32mI (5932) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (5932) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (6432) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (6432) ULTRASONIC_TEST: Measurement #10[0m
+[0;32mI (6502) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (6502) ULTRASONIC_TEST: ⚠️  No object detected (0 cm)[0m
+[0;32mI (7002) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (7002) ULTRASONIC_TEST: Measurement #11[0m
+[0;32mI (7072) ULTRASONIC_TEST: Raw: [0x00 0x00 0x00 0xFF] → Distance: 0 cm[0m
+[0;33mW (7072) ULTRASONIC_TEST: ⚠️  No object detect
