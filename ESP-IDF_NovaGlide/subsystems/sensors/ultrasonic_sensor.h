@@ -5,7 +5,7 @@
 #include "driver/i2c_master.h"
 
 // I2C Configuration for HC-SR04 I2C module
-#define ULTRASONIC_I2C_ADDR         0x56    // Common I2C address for HC-SR04 I2C modules
+#define ULTRASONIC_I2C_ADDR         0x57    // Common I2C address for HC-SR04 I2C modules
 #define ULTRASONIC_I2C_SPEED_HZ     100000  // 100kHz
 
 // Forward declaration
