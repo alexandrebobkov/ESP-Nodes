@@ -2559,4 +2559,388 @@ entry 0x403cc71a
 [0;32mI (249422) ULTRASONIC_TEST: Measurement #430[0m
 [1;31mE (249442) i2c.master: I2C transaction unexpected nack detected[0m
 [1;31mE (249442) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
-[1;31mE (249442) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C 
+[1;31mE (249442) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (249442) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (249452) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (249462) ULTRASONIC_TEST: [0m
+[0;32mI (249962) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (249962) ULTRASONIC_TEST: Measurement #431[0m
+[1;31mE (249982) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (249982) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (249982) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (249982) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (249992) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (250002) ULTRASONIC_TEST: [0m
+[0;32mI (250502) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (250502) ULTRASONIC_TEST: Measurement #432[0m
+[1;31mE (250522) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (250522) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (250522) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (250522) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (250532) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (250542) ULTRASONIC_TEST: [0m
+[0;32mI (251042) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (251042) ULTRASONIC_TEST: Measurement #433[0m
+[1;31mE (251062) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (251062) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (251062) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (251062) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (251072) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (251082) ULTRASONIC_TEST: [0m
+[0;32mI (251582) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (251582) ULTRASONIC_TEST: Measurement #434[0m
+[1;31mE (251602) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (251602) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (251602) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (251602) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (251612) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (251622) ULTRASONIC_TEST: [0m
+[0;32mI (252122) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (252122) ULTRASONIC_TEST: Measurement #435[0m
+[1;31mE (252142) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (252142) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (252142) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (252142) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (252152) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (252162) ULTRASONIC_TEST: [0m
+[0;32mI (252662) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (252662) ULTRASONIC_TEST: Measurement #436[0m
+[1;31mE (252682) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (252682) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (252682) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (252682) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (252692) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (252702) ULTRASONIC_TEST: [0m
+[0;32mI (253202) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (253202) ULTRASONIC_TEST: Measurement #437[0m
+[1;31mE (253222) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (253222) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (253222) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (253222) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (253232) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (253242) ULTRASONIC_TEST: [0m
+[0;32mI (253742) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (253742) ULTRASONIC_TEST: Measurement #438[0m
+[1;31mE (253762) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (253762) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (253762) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (253762) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (253772) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (253782) ULTRASONIC_TEST: [0m
+[0;32mI (254282) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (254282) ULTRASONIC_TEST: Measurement #439[0m
+[1;31mE (254302) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (254302) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (254302) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (254302) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (254312) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (254322) ULTRASONIC_TEST: [0m
+[0;32mI (254822) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (254822) ULTRASONIC_TEST: Measurement #440[0m
+[1;31mE (254842) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (254842) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (254842) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (254842) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (254852) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (254862) ULTRASONIC_TEST: [0m
+[0;32mI (255362) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (255362) ULTRASONIC_TEST: Measurement #441[0m
+[1;31mE (255382) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (255382) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (255382) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (255382) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (255392) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (255402) ULTRASONIC_TEST: [0m
+[0;32mI (255902) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (255902) ULTRASONIC_TEST: Measurement #442[0m
+[1;31mE (255922) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (255922) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (255922) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (255922) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (255932) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (255942) ULTRASONIC_TEST: [0m
+[0;32mI (256442) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (256442) ULTRASONIC_TEST: Measurement #443[0m
+[1;31mE (256462) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (256462) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (256462) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (256462) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (256472) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (256482) ULTRASONIC_TEST: [0m
+[0;32mI (256982) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (256982) ULTRASONIC_TEST: Measurement #444[0m
+[1;31mE (257002) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (257002) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (257002) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (257002) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (257012) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (257022) ULTRASONIC_TEST: [0m
+[0;32mI (257522) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (257522) ULTRASONIC_TEST: Measurement #445[0m
+[1;31mE (257542) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (257542) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (257542) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (257542) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (257552) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (257562) ULTRASONIC_TEST: [0m
+[0;32mI (258062) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (258062) ULTRASONIC_TEST: Measurement #446[0m
+[1;31mE (258082) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (258082) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (258082) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (258082) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (258092) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (258102) ULTRASONIC_TEST: [0m
+[0;32mI (258602) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (258602) ULTRASONIC_TEST: Measurement #447[0m
+[1;31mE (258622) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (258622) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (258622) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (258622) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (258632) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (258642) ULTRASONIC_TEST: [0m
+[0;32mI (259142) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (259142) ULTRASONIC_TEST: Measurement #448[0m
+[1;31mE (259162) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (259162) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (259162) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (259162) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (259172) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (259182) ULTRASONIC_TEST: [0m
+[0;32mI (259682) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (259682) ULTRASONIC_TEST: Measurement #449[0m
+[1;31mE (259702) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (259702) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (259702) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (259702) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (259712) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (259722) ULTRASONIC_TEST: [0m
+[0;32mI (260222) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (260222) ULTRASONIC_TEST: Measurement #450[0m
+[1;31mE (260242) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (260242) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (260242) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (260242) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (260252) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (260262) ULTRASONIC_TEST: [0m
+[0;32mI (260762) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (260762) ULTRASONIC_TEST: Measurement #451[0m
+[1;31mE (260782) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (260782) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (260782) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (260782) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (260792) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (260802) ULTRASONIC_TEST: [0m
+[0;32mI (261302) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (261302) ULTRASONIC_TEST: Measurement #452[0m
+[1;31mE (261322) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (261322) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (261322) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (261322) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (261332) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (261342) ULTRASONIC_TEST: [0m
+[0;32mI (261842) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (261842) ULTRASONIC_TEST: Measurement #453[0m
+[1;31mE (261862) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (261862) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (261862) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (261862) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (261872) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (261882) ULTRASONIC_TEST: [0m
+[0;32mI (262382) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (262382) ULTRASONIC_TEST: Measurement #454[0m
+[1;31mE (262402) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (262402) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (262402) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (262402) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (262412) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (262422) ULTRASONIC_TEST: [0m
+[0;32mI (262922) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (262922) ULTRASONIC_TEST: Measurement #455[0m
+[1;31mE (262942) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (262942) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (262942) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (262942) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (262952) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (262962) ULTRASONIC_TEST: [0m
+[0;32mI (263462) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (263462) ULTRASONIC_TEST: Measurement #456[0m
+[1;31mE (263482) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (263482) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (263482) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (263482) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (263492) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (263502) ULTRASONIC_TEST: [0m
+[0;32mI (264002) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (264002) ULTRASONIC_TEST: Measurement #457[0m
+[1;31mE (264022) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (264022) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (264022) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (264022) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (264032) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (264042) ULTRASONIC_TEST: [0m
+[0;32mI (264542) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (264542) ULTRASONIC_TEST: Measurement #458[0m
+[1;31mE (264562) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (264562) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (264562) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (264562) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (264572) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (264582) ULTRASONIC_TEST: [0m
+[0;32mI (265082) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (265082) ULTRASONIC_TEST: Measurement #459[0m
+[1;31mE (265102) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (265102) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (265102) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (265102) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (265112) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (265122) ULTRASONIC_TEST: [0m
+[0;32mI (265622) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (265622) ULTRASONIC_TEST: Measurement #460[0m
+[1;31mE (265642) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (265642) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (265642) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (265642) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (265652) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (265662) ULTRASONIC_TEST: [0m
+[0;32mI (266162) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (266162) ULTRASONIC_TEST: Measurement #461[0m
+[1;31mE (266182) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (266182) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (266182) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (266182) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (266192) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (266202) ULTRASONIC_TEST: [0m
+[0;32mI (266702) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (266702) ULTRASONIC_TEST: Measurement #462[0m
+[1;31mE (266722) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (266722) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (266722) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (266722) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (266732) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (266742) ULTRASONIC_TEST: [0m
+[0;32mI (267242) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (267242) ULTRASONIC_TEST: Measurement #463[0m
+[1;31mE (267262) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (267262) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (267262) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (267262) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (267272) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (267282) ULTRASONIC_TEST: [0m
+[0;32mI (267782) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (267782) ULTRASONIC_TEST: Measurement #464[0m
+[1;31mE (267802) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (267802) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (267802) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (267802) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (267812) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (267822) ULTRASONIC_TEST: [0m
+[0;32mI (268322) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (268322) ULTRASONIC_TEST: Measurement #465[0m
+[1;31mE (268342) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (268342) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (268342) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (268342) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (268352) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (268362) ULTRASONIC_TEST: [0m
+[0;32mI (268862) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (268862) ULTRASONIC_TEST: Measurement #466[0m
+[1;31mE (268882) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (268882) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (268882) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (268882) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (268892) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (268902) ULTRASONIC_TEST: [0m
+[0;32mI (269402) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (269402) ULTRASONIC_TEST: Measurement #467[0m
+[1;31mE (269422) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (269422) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (269422) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (269422) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (269432) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (269442) ULTRASONIC_TEST: [0m
+[0;32mI (269942) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (269942) ULTRASONIC_TEST: Measurement #468[0m
+[1;31mE (269962) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (269962) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (269962) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (269962) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (269972) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (269982) ULTRASONIC_TEST: [0m
+[0;32mI (270482) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (270482) ULTRASONIC_TEST: Measurement #469[0m
+[1;31mE (270502) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (270502) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (270502) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (270502) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (270512) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (270522) ULTRASONIC_TEST: [0m
+[0;32mI (271022) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (271022) ULTRASONIC_TEST: Measurement #470[0m
+[1;31mE (271042) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (271042) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (271042) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (271042) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (271052) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (271062) ULTRASONIC_TEST: [0m
+[0;32mI (271562) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (271562) ULTRASONIC_TEST: Measurement #471[0m
+[1;31mE (271582) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (271582) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (271582) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (271582) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (271592) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (271602) ULTRASONIC_TEST: [0m
+[0;32mI (272102) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (272102) ULTRASONIC_TEST: Measurement #472[0m
+[1;31mE (272122) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (272122) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (272122) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (272122) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (272132) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (272142) ULTRASONIC_TEST: [0m
+[0;32mI (272642) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (272642) ULTRASONIC_TEST: Measurement #473[0m
+[1;31mE (272662) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (272662) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (272662) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (272662) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (272672) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (272682) ULTRASONIC_TEST: [0m
+[0;32mI (273182) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (273182) ULTRASONIC_TEST: Measurement #474[0m
+[1;31mE (273202) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (273202) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (273202) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (273202) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (273212) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (273222) ULTRASONIC_TEST: [0m
+[0;32mI (273722) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (273722) ULTRASONIC_TEST: Measurement #475[0m
+[1;31mE (273742) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (273742) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (273742) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (273742) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (273752) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (273762) ULTRASONIC_TEST: [0m
+[0;32mI (274262) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (274262) ULTRASONIC_TEST: Measurement #476[0m
+[1;31mE (274282) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (274282) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (274282) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (274282) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (274292) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (274302) ULTRASONIC_TEST: [0m
+[0;32mI (274802) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (274802) ULTRASONIC_TEST: Measurement #477[0m
+[1;31mE (274822) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (274822) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (274822) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (274822) ULTRASONIC_TEST: Command 0x50 send failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (274832) ULTRASONIC_TEST: ❌ Communication error![0m
+[0;32mI (274842) ULTRASONIC_TEST: [0m
+[0;32mI (275342) ULTRASONIC_TEST: ─────────────────────────────────────────[0m
+[0;32mI (275342) ULTRASONIC_TEST: Measurement #478[0m
+[1;31mE (275362) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (275362) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (275362) i2c.master: i2c_master_multi_buffer_tran
