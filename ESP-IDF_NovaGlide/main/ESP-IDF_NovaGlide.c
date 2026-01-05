@@ -88,17 +88,10 @@ void app_main(void)
     adc_system_init(&adc);
     temp_sensor_system_init(&temp);
     ina219_system_init(&ina);
-    ultrasonic_system_init(&ultra);
+    //ultrasonic_system_init(&ultra);
     espnow_system_init(&espnow);
     mqtt_system_init(&mqtt);
     ui_system_init(&ui);
-
-    uint8_t val = 0;
-    esp_err_t ret = i2c_bus_read_byte(ultra.dev, 0x02, &val);
-    ESP_LOGI("ULTRA", "reg0 = 0x%02X (ret=%s)", val, esp_err_to_name(ret));
-
-    //ultrasonic_system_init(&ultra);
-    //ultrasonic_probe_registers(&ultra);
 
     // Start display task
     //xTaskCreate(display_joystick_task, "display", 2048, &espnow, 4, NULL);
