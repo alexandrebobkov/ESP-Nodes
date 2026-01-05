@@ -1,17 +1,18 @@
-#include "ultrasonic_hal.h"
+#include "ultrasonic_system.h"
 #include "esp_log.h"
 
 static const char *TAG = "ULTRA_HAL";
 
-// Convert RMT ticks to microseconds (80 MHz APB clock → 1 tick = 12.5 ns)
-#define RMT_TICK_US (1.0f / 80.0f)
+// RMT resolution: 1 MHz → 1 tick = 1 µs
+#define RMT_RESOLUTION_HZ 1000000
 
-static void ultrasonic_update_impl(ultrasonic_hal_t *self, TickType_t now)
+static void ultrasonic_update_impl(ultrasonic_system_t *self, TickType_t now)
 {
     static TickType_t last = 0;
 
+    // Update at 10 Hz
     if ((now - last) < pdMS_TO_TICKS(100)) {
-        return; // 10 Hz update rate
+        return;
     }
     last = now;
 
@@ -34,26 +35,25 @@ static void ultrasonic_update_impl(ultrasonic_hal_t *self, TickType_t now)
     rmt_rx_done_event_data_t rx_data;
     size_t received = 0;
 
-    esp_err_t err = rmt_receive(self->rmt_rx, &rx_data, sizeof(rx_data), &received, 100 / portTICK_PERIOD_MS);
+    esp_err_t err = rmt_receive(self->rmt_rx, &rx_data, sizeof(rx_data), &received, 50 / portTICK_PERIOD_MS);
 
     if (err != ESP_OK || received == 0) {
         ESP_LOGW(TAG, "No echo received");
         return;
     }
 
-    // Echo high duration in ticks
-    uint32_t ticks = rx_data.symbols[0].duration0;
-    float us = ticks * RMT_TICK_US;
+    // Echo high duration in microseconds
+    uint32_t us = rx_data.symbols[0].duration0;
 
-    // Speed of sound: 343 m/s → 29.1 µs per cm round trip
+    // Convert to cm (speed of sound: 343 m/s → 29.1 µs per cm round trip)
     self->distance_cm = us / 58.0f;
 
     ESP_LOGI(TAG, "Distance: %.2f cm", self->distance_cm);
 }
 
-void ultrasonic_hal_init(ultrasonic_hal_t *ultra,
-                         gpio_num_t trig_pin,
-                         gpio_num_t echo_pin)
+void ultrasonic_system_init(ultrasonic_system_t *ultra,
+                            gpio_num_t trig_pin,
+                            gpio_num_t echo_pin)
 {
     ultra->trig_pin = trig_pin;
     ultra->echo_pin = echo_pin;
@@ -65,7 +65,7 @@ void ultrasonic_hal_init(ultrasonic_hal_t *ultra,
         .gpio_num = trig_pin,
         .clk_src = RMT_CLK_SRC_DEFAULT,
         .mem_block_symbols = 64,
-        .resolution_hz = 1e6, // 1 tick = 1 µs
+        .resolution_hz = RMT_RESOLUTION_HZ,
         .trans_queue_depth = 4
     };
     ESP_ERROR_CHECK(rmt_new_tx_channel(&tx_cfg, &ultra->rmt_tx));
@@ -76,7 +76,7 @@ void ultrasonic_hal_init(ultrasonic_hal_t *ultra,
         .gpio_num = echo_pin,
         .clk_src = RMT_CLK_SRC_DEFAULT,
         .mem_block_symbols = 64,
-        .resolution_hz = 1e6,
+        .resolution_hz = RMT_RESOLUTION_HZ,
         .signal_range_min_ns = 1000,
         .signal_range_max_ns = 30000000
     };
