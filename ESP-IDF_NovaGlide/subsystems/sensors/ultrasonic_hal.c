@@ -99,7 +99,7 @@ void ultrasonic_hal_init(ultrasonic_hal_t *ultra,
         .resolution_hz = RMT_RESOLUTION_HZ,   // 1 MHz, same as TX channel
     };
     ESP_ERROR_CHECK(rmt_new_simple_encoder(&enc_cfg, &ultra->encoder));
-
+    ESP_LOGI(TAG, "Encoder handle = %p", (void*) ultra->encoder);
 
     ESP_ERROR_CHECK(rmt_enable(ultra->rmt_tx));
 
