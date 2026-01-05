@@ -28,8 +28,6 @@ typedef struct {
     //ultrasonic_system_t *ultrasonic;
 } telemetry_context_t;
 
-static ultrasonic_hal_t ultra;
-
 // Task to bridge sensor data to MQTT
 static void telemetry_bridge_task(void *arg) {
     telemetry_context_t *ctx = (telemetry_context_t *)arg;
@@ -75,7 +73,7 @@ void app_main(void)
     static adc_system_t adc;
     static temp_sensor_system_t temp;
     static ina219_system_t ina;
-    static ultrasonic_system_t ultra;
+    //static ultrasonic_system_t ultra;
     static mqtt_system_t mqtt;
     static espnow_system_t espnow;
     static ui_system_t ui;
@@ -92,6 +90,7 @@ void app_main(void)
     temp_sensor_system_init(&temp);
     ina219_system_init(&ina);
     //ultrasonic_system_init(&ultra);
+    ultrasonic_hal_init(&ultra, GPIO_NUM_4, GPIO_NUM_5);
     espnow_system_init(&espnow);
     mqtt_system_init(&mqtt);
     ui_system_init(&ui);
