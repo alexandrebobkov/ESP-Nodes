@@ -7,7 +7,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
-typedef struct ultrasonic_hal_t ultrasonic_hal_t;
+typedef struct ultrasonic_system_t ultrasonic_system_t;
 
 struct ultrasonic_hal_t {
     gpio_num_t trig_pin;
