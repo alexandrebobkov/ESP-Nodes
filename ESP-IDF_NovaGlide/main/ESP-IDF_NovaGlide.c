@@ -130,7 +130,7 @@ void app_main(void)
         .adc = &adc,
         .temp = &temp,
         .ina = &ina,
-        .ultra = NULL,//&ultra,
+        .ultra = &ultra,
         .mqtt = &mqtt,
         .espnow = &espnow,
         .ui = &ui
