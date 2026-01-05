@@ -1,5 +1,6 @@
 // dashboard.c
 #include "dashboard.h"
+#include "ultrasonic_sensor.h"
 #include <stdio.h>
 #include "esp_log.h"
 
