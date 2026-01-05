@@ -73,7 +73,8 @@ void ultrasonic_system_init(ultrasonic_system_t *sys, i2c_master_bus_handle_t bu
     sys->update = ultrasonic_update_impl;
     i2c_device_config_t dev_cfg = {
         .device_address = ULTRASONIC_I2C_ADDR,
-        .scl_speed_hz = ULTRASONIC_I2C_SPEED_HZ, };
+        .scl_speed_hz = ULTRASONIC_I2C_SPEED_HZ,
+    };
 
     ESP_ERROR_CHECK(i2c_master_bus_add_device(bus_handle, &dev_cfg, &sys->dev));
     ESP_LOGI(TAG, "HC-SR04 (I2C mode) registered at 0x%02X", ULTRASONIC_I2C_ADDR);
