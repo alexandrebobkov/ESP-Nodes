@@ -10,7 +10,7 @@ set(EXTRA_COMPONENT_DIRS
     "subsystems/sensors"
     "subsystems/controls"
     "subsystems/ui"
-    "subsystems/i2c_bus)
+    "subsystems/i2c_bus")
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 project(ESP-IDF_NovaGlide)

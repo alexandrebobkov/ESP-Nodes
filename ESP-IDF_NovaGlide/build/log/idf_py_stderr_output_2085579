@@ -1,0 +1,9 @@
+CMake Error at /home/alex/esp/esp-idf/v5.4.1/tools/cmake/project.cmake:472 (message):
+  Directory specified in EXTRA_COMPONENT_DIRS doesn't exist:
+  /home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/subsystems/i2c_bus
+Call Stack (most recent call first):
+  /home/alex/esp/esp-idf/v5.4.1/tools/cmake/project.cmake:556 (__project_init)
+  CMakeLists.txt:16 (project)
+
+
+ninja: error: rebuilding 'build.ninja': subcommand failed
