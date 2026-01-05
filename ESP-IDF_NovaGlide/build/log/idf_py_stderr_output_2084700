@@ -1,0 +1,14 @@
+CMake Error at CMakeLists.txt:17:
+  Parse error.  Function missing ending ")".  Instead found unterminated
+  string with text "subsystems/i2c_bus)
+
+
+
+  include($ENV{IDF_PATH}/tools/cmake/project.cmake)
+
+  project(ESP-IDF_NovaGlide)
+
+  ".
+
+
+ninja: error: rebuilding 'build.ninja': subcommand failed
