@@ -1,0 +1,1089 @@
+r dump:
+MEPC    : 0x40380884  RA      : 0x40387dd0  SP      : 0x3fcde220  ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x420010b6
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f64
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan  4 2026 08:38:48[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (25) boot: efuse block revision: v1.3[0m
+[0;32mI (28) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (44) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (53) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (66) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (76) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=226dch (141020) map[0m
+[0;32mI (106) esp_image: segment 1: paddr=00032704 vaddr=3fc95800 size=02e90h ( 11920) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=0003559c vaddr=40380000 size=0aa7ch ( 43644) load[0m
+[0;32mI (117) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=bc730h (771888) map[0m
+[0;32mI (241) esp_image: segment 4: paddr=000fc758 vaddr=4038aa7c size=0aba0h ( 43936) load[0m
+[0;32mI (249) esp_image: segment 5: paddr=00107300 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (256) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (256) boot: Disabling RNG early entropy source...[0m
+[0;32mI (267) cpu_start: Unicore app[0m
+[0;32mI (275) cpu_start: Pro cpu start user code[0m
+[0;32mI (275) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (275) app_init: Application information:[0m
+[0;32mI (275) app_init: Project name:     ESP-IDF_NovaGlide[0m
+[0;32mI (280) app_init: App version:      ESP32-Node_Switch-v2.7-11809-g9[0m
+[0;32mI (286) app_init: Compile time:     Jan  4 2026 19:10:09[0m
+[0;32mI (291) app_init: ELF file SHA256:  f30332767...[0m
+[0;32mI (295) app_init: ESP-IDF:          v5.4.1[0m
+[0;32mI (299) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (303) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (307) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (311) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (317) heap_init: At 3FC9D120 len 00022EE0 (139 KiB): RAM[0m
+[0;32mI (322) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (328) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (334) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (341) spi_flash: detected chip: generic[0m
+[0;32mI (343) spi_flash: flash io: dio[0m
+[0;33mW (346) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[1;31mE (359) i2c: CONFLICT! driver_ng is not allowed to be used with this old driver[0m
+
+abort() was called at PC 0x42021591 on core 0
+Core  0 register dump:
+MEPC    : 0x40380884  RA      : 0x40387dd0  SP      : 0x3fcde220  GP      : 0x3fc96000  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x3fcde284  A0      : 0x3fcde24c  A1      : 0x3fcde282  
+A2      : 0x00000000  A3      : 0x3fcde279  A4      : 0x00000001  A5      : 0x3fc9d000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x42000000  S3      : 0x403802dc  
+S4      : 0x3fcde42c  S5      : 0x3c800000  S6      : 0x3c0c0000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+panic_abort (details=details@entry=0x3fcde24c "abort() was called at PC 0x42021591 on core 0") at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/panic.c:468
+468	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fcde24c "abort() was called at PC 0x42021591 on core 0") at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/panic.c:468
+#1  0x40387dd0 in esp_system_abort (details=details@entry=0x3fcde24c "abort() was called at PC 0x42021591 on core 0") at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/port/esp_system_chip.c:87
+#2  0x40390604 in abort () at /home/alex/esp/esp-idf/v5.4.1/components/newlib/abort.c:38
+#3  0x42021594 in check_i2c_driver_conflict () at /home/alex/esp/esp-idf/v5.4.1/components/driver/i2c/i2c.c:1723
+#4  0x420015a2 in do_global_ctors () at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/startup.c:104
+#5  0x42001658 in start_cpu0_default () at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/startup.c:206
+#6  0x403804ee in call_start_cpu0 () at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/port/cpu_start.c:849
+
+
+
+ELF file SHA256: f30332767
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038083c
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f64
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan  4 2026 08:38:48[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=226dch (141020) map[0m
+[0;32mI (105) esp_image: segment 1: paddr=00032704 vaddr=3fc95800 size=02e90h ( 11920) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=0003559c vaddr=40380000 size=0aa7ch ( 43644) load[0m
+[0;32mI (117) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=bc730h (771888) map[0m
+[0;32mI (240) esp_image: segment 4: paddr=000fc758 vaddr=4038aa7c size=0aba0h ( 43936) load[0m
+[0;32mI (249) esp_image: segment 5: paddr=00107300 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (256) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (256) boot: Disabling RNG early entropy source...[0m
+[0;32mI (266) cpu_start: Unicore app[0m
+[0;32mI (275) cpu_start: Pro cpu start user code[0m
+[0;32mI (275) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (275) app_init: Application information:[0m
+[0;32mI (275) app_init: Project name:     ESP-IDF_NovaGlide[0m
+[0;32mI (279) app_init: App version:      ESP32-Node_Switch-v2.7-11809-g9[0m
+[0;32mI (285) app_init: Compile time:     Jan  4 2026 19:10:09[0m
+[0;32mI (290) app_init: ELF file SHA256:  f30332767...[0m
+[0;32mI (295) app_init: ESP-IDF:          v5.4.1[0m
+[0;32mI (299) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (302) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (306) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (310) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (317) heap_init: At 3FC9D120 len 00022EE0 (139 KiB): RAM[0m
+[0;32mI (322) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (328) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (334) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (340) spi_flash: detected chip: generic[0m
+[0;32mI (343) spi_flash: flash io: dio[0m
+[0;33mW (346) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[1;31mE (358) i2c: CONFLICT! driver_ng is not allowed to be used with this old driver[0m
+
+abort() was called at PC 0x42021591 on core 0
+Core  0 register dump:
+MEPC    : 0x40380884  RA      : 0x40387dd0  SP      : 0x3fcde220  GP      : 0x3fc96000  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x3fcde284  A0      : 0x3fcde24c  A1      : 0x3fcde282  
+A2      : 0x00000000  A3      : 0x3fcde279  A4      : 0x00000001  A5      : 0x3fc9d000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x42000000  S3      : 0x403802dc  
+S4      : 0x3fcde42c  S5      : 0x3c800000  S6      : 0x3c0c0000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+panic_abort (details=details@entry=0x3fcde24c "abort() was called at PC 0x42021591 on core 0") at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/panic.c:468
+468	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fcde24c "abort() was called at PC 0x42021591 on core 0") at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/panic.c:468
+#1  0x40387dd0 in esp_system_abort (details=details@entry=0x3fcde24c "abort() was called at PC 0x42021591 on core 0") at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/port/esp_system_chip.c:87
+#2  0x40390604 in abort () at /home/alex/esp/esp-idf/v5.4.1/components/newlib/abort.c:38
+#3  0x42021594 in check_i2c_driver_conflict () at /home/alex/esp/esp-idf/v5.4.1/components/driver/i2c/i2c.c:1723
+#4  0x420015a2 in do_global_ctors () at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/startup.c:104
+#5  0x42001658 in start_cpu0_default () at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/startup.c:206
+#6  0x403804ee in call_start_cpu0 () at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/port/cpu_start.c:849
+
+
+
+ELF file SHA256: f30332767
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038083c
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f64
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan  4 2026 08:38:48[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=226dch (141020) map[0m
+[0;32mI (105) esp_image: segment 1: paddr=00032704 vaddr=3fc95800 size=02e90h ( 11920) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=0003559c vaddr=40380000 size=0aa7ch ( 43644) load[0m
+[0;32mI (117) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=bc730h (771888) map[0m
+[0;32mI (240) esp_image: segment 4: paddr=000fc758 vaddr=4038aa7c size=0aba0h ( 43936) load[0m
+[0;32mI (249) esp_image: segment 5: paddr=00107300 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (256) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (256) boot: Disabling RNG early entropy source...[0m
+[0;32mI (266) cpu_start: Unicore app[0m
+[0;32mI (275) cpu_start: Pro cpu start user code[0m
+[0;32mI (275) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (275) app_init: Application information:[0m
+[0;32mI (275) app_init: Project name:     ESP-IDF_NovaGlide[0m
+[0;32mI (279) app_init: App version:      ESP32-Node_Switch-v2.7-11809-g9[0m
+[0;32mI (285) app_init: Compile time:     Jan  4 2026 19:10:09[0m
+[0;32mI (291) app_init: ELF file SHA256:  f30332767...[0m
+[0;32mI (295) app_init: ESP-IDF:          v5.4.1[0m
+[0;32mI (299) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (302) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (306) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (310) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (317) heap_init: At 3FC9D120 len 00022EE0 (139 KiB): RAM[0m
+[0;32mI (322) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (328) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (334) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (340) spi_flash: detected chip: generic[0m
+[0;32mI (343) spi_flash: flash io: dio[0m
+[0;33mW (346) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[1;31mE (358) i2c: CONFLICT! driver_ng is not allowed to be used with this old driver[0m
+
+abort() was called at PC 0x42021591 on core 0
+Core  0 register dump:
+MEPC    : 0x40380884  RA      : 0x40387dd0  SP      : 0x3fcde220  GP      : 0x3fc96000  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x3fcde284  A0      : 0x3fcde24c  A1      : 0x3fcde282  
+A2      : 0x00000000  A3      : 0x3fcde279  A4      : 0x00000001  A5      : 0x3fc9d000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x42000000  S3      : 0x403802dc  
+S4      : 0x3fcde42c  S5      : 0x3c800000  S6      : 0x3c0c0000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+panic_abort (details=details@entry=0x3fcde24c "abort() was called at PC 0x42021591 on core 0") at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/panic.c:468
+468	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fcde24c "abort() was called at PC 0x42021591 on core 0") at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/panic.c:468
+#1  0x40387dd0 in esp_system_abort (details=details@entry=0x3fcde24c "abort() was called at PC 0x42021591 on core 0") at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/port/esp_system_chip.c:87
+#2  0x40390604 in abort () at /home/alex/esp/esp-idf/v5.4.1/components/newlib/abort.c:38
+#3  0x42021594 in check_i2c_driver_conflict () at /home/alex/esp/esp-idf/v5.4.1/components/driver/i2c/i2c.c:1723
+#4  0x420015a2 in do_global_ctors () at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/startup.c:104
+#5  0x42001658 in start_cpu0_default () at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/startup.c:206
+#6  0x403804ee in call_start_cpu0 () at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/port/cpu_start.c:849
+
+
+
+ELF file SHA256: f30332767
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038083c
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f64
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan  4 2026 08:38:48[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=226dch (141020) map[0m
+[0;32mI (105) esp_image: segment 1: paddr=00032704 vaddr=3fc95800 size=02e90h ( 11920) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=0003559c vaddr=40380000 size=0aa7ch ( 43644) load[0m
+[0;32mI (117) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=bc730h (771888) map[0m
+[0;32mI (240) esp_image: segment 4: paddr=000fc758 vaddr=4038aa7c size=0aba0h ( 43936) load[0m
+[0;32mI (249) esp_image: segment 5: paddr=00107300 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (256) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (256) boot: Disabling RNG early entropy source...[0m
+[0;32mI (266) cpu_start: Unicore app[0m
+[0;32mI (275) cpu_start: Pro cpu start user code[0m
+[0;32mI (275) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (275) app_init: Application information:[0m
+[0;32mI (275) app_init: Project name:     ESP-IDF_NovaGlide[0m
+[0;32mI (279) app_init: App version:      ESP32-Node_Switch-v2.7-11809-g9[0m
+[0;32mI (285) app_init: Compile time:     Jan  4 2026 19:10:09[0m
+[0;32mI (290) app_init: ELF file SHA256:  f30332767...[0m
+[0;32mI (295) app_init: ESP-IDF:          v5.4.1[0m
+[0;32mI (299) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (302) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (306) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (310) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (317) heap_init: At 3FC9D120 len 00022EE0 (139 KiB): RAM[0m
+[0;32mI (322) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (328) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (334) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (340) spi_flash: detected chip: generic[0m
+[0;32mI (343) spi_flash: flash io: dio[0m
+[0;33mW (346) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[1;31mE (358) i2c: CONFLICT! driver_ng is not allowed to be used with this old driver[0m
+
+abort() was called at PC 0x42021591 on core 0
+Core  0 register dump:
+MEPC    : 0x40380884  RA      : 0x40387dd0  SP      : 0x3fcde220  GP      : 0x3fc96000  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x3fcde284  A0      : 0x3fcde24c  A1      : 0x3fcde282  
+A2      : 0x00000000  A3      : 0x3fcde279  A4      : 0x00000001  A5      : 0x3fc9d000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x42000000  S3      : 0x403802dc  
+S4      : 0x3fcde42c  S5      : 0x3c800000  S6      : 0x3c0c0000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+panic_abort (details=details@entry=0x3fcde24c "abort() was called at PC 0x42021591 on core 0") at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/panic.c:468
+468	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fcde24c "abort() was called at PC 0x42021591 on core 0") at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/panic.c:468
+#1  0x40387dd0 in esp_system_abort (details=details@entry=0x3fcde24c "abort() was called at PC 0x42021591 on core 0") at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/port/esp_system_chip.c:87
+#2  0x40390604 in abort () at /home/alex/esp/esp-idf/v5.4.1/components/newlib/abort.c:38
+#3  0x42021594 in check_i2c_driver_conflict () at /home/alex/esp/esp-idf/v5.4.1/components/driver/i2c/i2c.c:1723
+#4  0x420015a2 in do_global_ctors () at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/startup.c:104
+#5  0x42001658 in start_cpu0_default () at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/startup.c:206
+#6  0x403804ee in call_start_cpu0 () at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/port/cpu_start.c:849
+
+
+
+ELF file SHA256: f30332767
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038083c
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f64
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan  4 2026 08:38:48[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=226dch (141020) map[0m
+[0;32mI (105) esp_image: segment 1: paddr=00032704 vaddr=3fc95800 size=02e90h ( 11920) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=0003559c vaddr=40380000 size=0aa7ch ( 43644) load[0m
+[0;32mI (117) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=bc730h (771888) map[0m
+[0;32mI (240) esp_image: segment 4: paddr=000fc758 vaddr=4038aa7c size=0aba0h ( 43936) load[0m
+[0;32mI (249) esp_image: segment 5: paddr=00107300 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (256) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (256) boot: Disabling RNG early entropy source...[0m
+[0;32mI (266) cpu_start: Unicore app[0m
+[0;32mI (275) cpu_start: Pro cpu start user code[0m
+[0;32mI (275) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (275) app_init: Application information:[0m
+[0;32mI (275) app_init: Project name:     ESP-IDF_NovaGlide[0m
+[0;32mI (279) app_init: App version:      ESP32-Node_Switch-v2.7-11809-g9[0m
+[0;32mI (285) app_init: Compile time:     Jan  4 2026 19:10:09[0m
+[0;32mI (290) app_init: ELF file SHA256:  f30332767...[0m
+[0;32mI (295) app_init: ESP-IDF:          v5.4.1[0m
+[0;32mI (299) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (302) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (306) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (310) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (317) heap_init: At 3FC9D120 len 00022EE0 (139 KiB): RAM[0m
+[0;32mI (322) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (328) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (334) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (340) spi_flash: detected chip: generic[0m
+[0;32mI (343) spi_flash: flash io: dio[0m
+[0;33mW (346) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[1;31mE (358) i2c: CONFLICT! driver_ng is not allowed to be used with this old driver[0m
+
+abort() was called at PC 0x42021591 on core 0
+Core  0 register dump:
+MEPC    : 0x40380884  RA      : 0x40387dd0  SP      : 0x3fcde220  GP      : 0x3fc96000  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x3fcde284  A0      : 0x3fcde24c  A1      : 0x3fcde282  
+A2      : 0x00000000  A3      : 0x3fcde279  A4      : 0x00000001  A5      : 0x3fc9d000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x42000000  S3      : 0x403802dc  
+S4      : 0x3fcde42c  S5      : 0x3c800000  S6      : 0x3c0c0000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+panic_abort (details=details@entry=0x3fcde24c "abort() was called at PC 0x42021591 on core 0") at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/panic.c:468
+468	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fcde24c "abort() was called at PC 0x42021591 on core 0") at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/panic.c:468
+#1  0x40387dd0 in esp_system_abort (details=details@entry=0x3fcde24c "abort() was called at PC 0x42021591 on core 0") at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/port/esp_system_chip.c:87
+#2  0x40390604 in abort () at /home/alex/esp/esp-idf/v5.4.1/components/newlib/abort.c:38
+#3  0x42021594 in check_i2c_driver_conflict () at /home/alex/esp/esp-idf/v5.4.1/components/driver/i2c/i2c.c:1723
+#4  0x420015a2 in do_global_ctors () at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/startup.c:104
+#5  0x42001658 in start_cpu0_default () at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/startup.c:206
+#6  0x403804ee in call_start_cpu0 () at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/port/cpu_start.c:849
+
+
+
+ELF file SHA256: f30332767
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038083c
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f64
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan  4 2026 08:38:48[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=226dch (141020) map[0m
+[0;32mI (105) esp_image: segment 1: paddr=00032704 vaddr=3fc95800 size=02e90h ( 11920) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=0003559c vaddr=40380000 size=0aa7ch ( 43644) load[0m
+[0;32mI (117) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=bc730h (771888) map[0m
+[0;32mI (240) esp_image: segment 4: paddr=000fc758 vaddr=4038aa7c size=0aba0h ( 43936) load[0m
+[0;32mI (249) esp_image: segment 5: paddr=00107300 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (256) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (256) boot: Disabling RNG early entropy source...[0m
+[0;32mI (266) cpu_start: Unicore app[0m
+[0;32mI (275) cpu_start: Pro cpu start user code[0m
+[0;32mI (275) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (275) app_init: Application information:[0m
+[0;32mI (275) app_init: Project name:     ESP-IDF_NovaGlide[0m
+[0;32mI (280) app_init: App version:      ESP32-Node_Switch-v2.7-11809-g9[0m
+[0;32mI (286) app_init: Compile time:     Jan  4 2026 19:10:09[0m
+[0;32mI (291) app_init: ELF file SHA256:  f30332767...[0m
+[0;32mI (295) app_init: ESP-IDF:          v5.4.1[0m
+[0;32mI (299) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (303) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (307) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (310) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (317) heap_init: At 3FC9D120 len 00022EE0 (139 KiB): RAM[0m
+[0;32mI (322) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (328) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (334) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (340) spi_flash: detected chip: generic[0m
+[0;32mI (343) spi_flash: flash io: dio[0m
+[0;33mW (346) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[1;31mE (358) i2c: CONFLICT! driver_ng is not allowed to be used with this old driver[0m
+
+abort() was called at PC 0x42021591 on core 0
+Core  0 register dump:
+MEPC    : 0x40380884  RA      : 0x40387dd0  SP      : 0x3fcde220  GP      : 0x3fc96000  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x3fcde284  A0      : 0x3fcde24c  A1      : 0x3fcde282  
+A2      : 0x00000000  A3      : 0x3fcde279  A4      : 0x00000001  A5      : 0x3fc9d000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x42000000  S3      : 0x403802dc  
+S4      : 0x3fcde42c  S5      : 0x3c800000  S6      : 0x3c0c0000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+Stack memory:
+3fcde220: 0x00000006 0x00010020 0x3fcde280 0x40390604 0x3c0c0000 0x3c800000 0x3fcde42c 0x3fc977f8
+3fcde240: 0x3fcde284 0x3fc97814 0x3fcde280 0x726f6261 0x20292874 0x20736177 0x6c6c6163 0x61206465
+3fcde260: 0x43502074 0x34783020 0x31323032 0x20313935 0x63206e6f 0x2065726f 0x00000030 0x42020000
+3fcde280: 0x00000030 0x32303234 0x31393531 0x00000000 0x3fc9dcc8 0x0000000c 0x3c0e2604 0x42021594
+3fcde2a0: 0x42000000 0x0000000c 0x3c0e260c 0x420015a2 0x00000006 0x00000050 0x00000000 0x42001658
+3fcde2c0: 0x42000000 0x0000000c 0x00300000 0x403804ee 0x00000000 0x03700000 0x1f0206e9 0x403802dc
+3fcde2e0: 0x000000ee 0x03030005 0x0000c700 0x01000000 0x3fcd0101 0x00000000 0x7fffffff 0x003802dc
+3fcde300: 0x42000000 0x420bc74f 0x3c0e26fb 0x403cf856 0xe76c7a3d 0xab157197 0x000bc730 0x00010000
+3fcde320: 0xeee1f18d 0x52402748 0x65b1cfd7 0x000c0000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcde340: 0x00000000 0x00000000 0x00000000 0x3fcdf000 0x00005138 0x3ff1c14c 0x0000ffff 0xffffffff
+3fcde360: 0xffffffff 0x3fcde4b0 0xffffffff 0x403cfd2a 0x00010000 0x00100000 0x00010000 0x1f0206e9
+3fcde380: 0x403802dc 0x000000ee 0x03030005 0x0000c700 0x01000000 0x3c0c0020 0x000226dc 0x3fc95800
+3fcde3a0: 0x00002e90 0x40380000 0x0000aa7c 0x42000020 0x000bc730 0x4038aa7c 0x0000aba0 0x50000200
+3fcde3c0: 0x0000001c 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcde3e0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcde400: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00010020 0x00032704 0x0003559c
+3fcde420: 0x00040020 0x000fc758 0x00107300 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcde440: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x000f7340 0xe76c7a3d 0xab157197
+3fcde460: 0x791fcddf 0x9004df36 0xeee1f18d 0x52402748 0x65b1cfd7 0xfed621f6 0x00000000 0x00010000
+3fcde480: 0x00005138 0x3ff1c14c 0x0000ffff 0x3fce0000 0x00000000 0x0000008f 0x00005140 0x403cc79c
+0 0xffffffff 0x00000000 0x00000000 0x00010000 0x00100000
+3fcde4c0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcde4e0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcde500: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcde520: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcde540: 0x00000000 0x00000000 0x00000000 0x00000000 0x600c5200 0x600c5200 0x00000000 0x4004a296
+3fcde560: 0x80821050 0x10500513 0x3fcde668 0x00000000 0xffffffff 0x00000000 0x00010000 0x1f0203e9
+3fcde580: 0x403cc71a 0x403ce710 0x00002f64 0x000000ee 0x03030005 0x0000c700 0x01000000 0x3c005140
+3fcde5a0: 0x7533885e 0x86d254f2 0xd12a9342 0x6cc4a1bd 0x8b18b68d 0x31cd6fee 0xbad7da43 0x5776261b
+3fcde5c0: 0x465a17ea 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcde5e0: 0x00000000 0x3fcde700 0x00000101 0x00000002 0x86d254f2 0xd12a9342 0x6cc4a1bd 0x8b18b68d
+3fcde600: 0x31cd6fee 0xbad7da43 0x5776261b 0x465a17ea 0x00000000 0x00000000 0x00000000 0x00000000
+
+
+
+ELF file SHA256: f30332767
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038083c
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f64
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan  4 2026 08:38:48[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=226dch (141020) map[0m
+[0;32mI (105) esp_image: segment 1: paddr=00032704 vaddr=3fc95800 size=02e90h ( 11920) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=0003559c vaddr=40380000 size=0aa7ch ( 43644) load[0m
+[0;32mI (117) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=bc730h (771888) map[0m
+[0;32mI (240) esp_image: segment 4: paddr=000fc758 vaddr=4038aa7c size=0aba0h ( 43936) load[0m
+[0;32mI (249) esp_image: segment 5: paddr=00107300 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (256) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (256) boot: Disabling RNG early entropy source...[0m
+[0;32mI (266) cpu_start: Unicore app[0m
+[0;32mI (275) cpu_start: Pro cpu start user code[0m
+[0;32mI (275) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (275) app_init: Application information:[0m
+[0;32mI (275) app_init: Project name:     ESP-IDF_NovaGlide[0m
+[0;32mI (279) app_init: App version:      ESP32-Node_Switch-v2.7-11809-g9[0m
+[0;32mI (285) app_init: Compile time:     Jan  4 2026 19:10:09[0m
+[0;32mI (290) app_init: ELF file SHA256:  f30332767...[0m
+[0;32mI (295) app_init: ESP-IDF:          v5.4.1[0m
+[0;32mI (299) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (302) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (306) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (310) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (317) heap_init: At 3FC9D120 len 00022EE0 (139 KiB): RAM[0m
+[0;32mI (322) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (328) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (334) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (340) spi_flash: detected chip: generic[0m
+[0;32mI (343) spi_flash: flash io: dio[0m
+[0;33mW (346) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[1;31mE (358) i2c: CONFLICT! driver_ng is not allowed to be used with this old driver[0m
+
+abort() was called at PC 0x42021591 on core 0
+Core  0 register dump:
+MEPC    : 0x40380884  RA      : 0x40387dd0  SP      : 0x3fcde220  GP      : 0x3fc96000  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x3fcde284  A0      : 0x3fcde24c  A1      : 0x3fcde282  
+A2      : 0x00000000  A3      : 0x3fcde279  A4      : 0x00000001  A5      : 0x3fc9d000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x42000000  S3      : 0x403802dc  
+S4      : 0x3fcde42c  S5      : 0x3c800000  S6      : 0x3c0c0000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+Stack memory:
+3fcde220: 0x00000006 0x00010020 0x3fcde280 0x40390604 0x3c0c0000 0x3c800000 0x3fcde42c 0x3fc977f8
+3fcde240: 0x3fcde284 0x3fc97814 0x3fcde280 0x726f6261 0x20292874 0x20736177 0x6c6c6163 0x61206465
+3fcde260: 0x43502074 0x34783020 0x31323032 0x20313935 0x63206e6f 0x2065726f 0x00000030 0x42020000
+3fcde280: 0x00000030 0x32303234 0x31393531 0x00000000 0x3fc9dcc8 0x0000000c 0x3c0e2604 0x42021594
+3fcde2a0: 0x42000000 0x0000000c 0x3c0e260c 0x420015a2 0x00000006 0x00000050 0x00000000 0x42001658
+3fcde2c0: 0x42000000 0x0000000c 0x00300000 0x403804ee 0x00000000 0x03700000 0x1f0206e9 0x403802dc
+3fcde2e0: 0x000000ee 0x03030005 0x0000c700 0x01000000 0x3fcd0101 0x00000000 0x7fffffff 0x003802dc
+3fcde300: 0x42000000 0x420bc74f 0x3c0e26fb 0x403cf856 0xe76c7a3d 0xab157197 0x000bc730 0x00010000
+3fcde320: 0xeee1f18d 0x52402748 0x65b1cfd7 0x000c0000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcde340: 0x00000000 0x00000000 0x00000000 0x3fcdf000 0x00005138 0x3ff1c14c 0x0000ffff 0xffffffff
+3fcde360: 0xffffffff 0x3fcde4b0 0xffffffff 0x403cfd2a 0x00010000 0x00100000 0x00010000 0x1f0206e9
+3fcde380: 0x403802dc 0x000000ee 0x03030005 0x0000c700 0x01000000 0x3c0c0020 0x000226dc 0x3fc95800
+0x4038aa7c 0x0000aba0 0x50000200
+3fcde3c0: 0x0000001c 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcde3e0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcde400: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00010020 0x00032704 0x0003559c
+3fcde420: 0x00040020 0x000fc758 0x00107300 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcde440: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x000f7340 0xe76c7a3d 0xab157197
+3fcde460: 0x791fcddf 0x9004df36 0xeee1f18d 0x52402748 0x65b1cfd7 0xfed621f6 0x00000000 0x00010000
+3fcde480: 0x00005138 0x3ff1c14c 0x0000ffff 0x3fce0000 0x00000000 0x0000008f 0x00005140 0x403cc79c
+3fcde4a0: 0x49f25902 0x61454a62 0x00000000 0xffffffff 0x00000000 0x00000000 0x00010000 0x00100000
+3fcde4c0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcde4e0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcde500: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcde520: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcde540: 0x00000000 0x00000000 0x00000000 0x00000000 0x600c5200 0x600c5200 0x00000000 0x4004a296
+3fcde560: 0x80821050 0x10500513 0x3fcde668 0x00000000 0xffffffff 0x00000000 0x00010000 0x1f0203e9
+3fcde580: 0x403cc71a 0x403ce710 0x00002f64 0x000000ee 0x03030005 0x0000c700 0x01000000 0x3c005140
+3fcde5a0: 0x7533885e 0x86d254f2 0xd12a9342 0x6cc4a1bd 0x8b18b68d 0x31cd6fee 0xbad7da43 0x5776261b
+3fcde5c0: 0x465a17ea 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcde5e0: 0x00000000 0x3fcde700 0x00000101 0x00000002 0x86d254f2 0xd12a9342 0x6cc4a1bd 0x8b18b68d
+3fcde600: 0x31cd6fee 0xbad7da43 0x5776261b 0x465a17ea 0x00000000 0x00000000 0x00000000 0x00000000
+
+
+
+ELF file SHA256: f30332767
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038083c
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f64
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan  4 2026 08:38:48[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=226dch (141020) map[0m
+[0;32mI (105) esp_image: segment 1: paddr=00032704 vaddr=3fc95800 size=02e90h ( 11920) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=0003559c vaddr=40380000 size=0aa7ch ( 43644) load[0m
+[0;32mI (117) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=bc730h (771888) map[0m
+[0;32mI (240) esp_image: segment 4: paddr=000fc758 vaddr=4038aa7c size=0aba0h ( 43936) load[0m
+[0;32mI (249) esp_image: segment 5: paddr=00107300 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (256) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (256) boot: Disabling RNG early entropy source...[0m
+[0;32mI (266) cpu_start: Unicore app[0m
+[0;32mI (275) cpu_start: Pro cpu start user code[0m
+[0;32mI (275) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (275) app_init: Application information:[0m
+[0;32mI (275) app_init: Project name:     ESP-IDF_NovaGlide[0m
+[0;32mI (279) app_init: App version:      ESP32-Node_Switch-v2.7-11809-g9[0m
+[0;32mI (285) app_init: Compile time:     Jan  4 2026 19:10:09[0m
+[0;32mI (290) app_init: ELF file SHA256:  f30332767...[0m
+[0;32mI (295) app_init: ESP-IDF:          v5.4.1[0m
+[0;32mI (299) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (302) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (306) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (310) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (317) heap_init: At 3FC9D120 len 00022EE0 (139 KiB): RAM[0m
+[0;32mI (322) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (328) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (334) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (340) spi_flash: detected chip: generic[0m
+[0;32mI (343) spi_flash: flash io: dio[0m
+[0;33mW (346) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[1;31mE (358) i2c: CONFLICT! driver_ng is not allowed to be used with this old driver[0m
+
+abort() was called at PC 0x42021591 on core 0
+Core  0 register dump:
+MEPC    : 0x40380884  RA      : 0x40387dd0  SP      : 0x3fcde220  GP      : 0x3fc96000  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x3fcde284  A0      : 0x3fcde24c  A1      : 0x3fcde282  
+A2      : 0x00000000  A3      : 0x3fcde279  A4      : 0x00000001  A5      : 0x3fc9d000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x42000000  S3      : 0x403802dc  
+S4      : 0x3fcde42c  S5      : 0x3c800000  S6      : 0x3c0c0000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+Stack memory:
+3fcde220: 0x00000006 0x00010020 0x3fcde280 0x40390604 0x3c0c0000 0x3c800000 0x3fcde42c 0x3fc977f8
+3fcde240: 0x3fcde284 0x3fc97814 0x3fcde280 0x726f6261 0x20292874 0x20736177 0x6c6c6163 0x61206465
+3fcde260: 0x43502074 0x34783020 0x31323032 0x20313935 0x63206e6f 0x2065726f 0x00000030 0x42020000
+3fcde280: 0x00000030 0x32303234 0x31393531 0x00000000 0x3fc9dcc8 0x0000000c 0x3c0e2604 0x42021594
+3fcde2a0: 0x42000000 0x0000000c 0x3c0e260c 0x420015a2 0x00000006 0x00000050 0x00000000 0x42001658
+3fcde2c0: 0x42000000 0x0000000c 0x00300000 0x403804ee 0x00000000 0x03700000 0x1f0206e9 0x403802dc
+3fcde2e0: 0x000000ee 0x03030005 0x0000c700 0x01000000 0x3fcd0101 0x00000000 0x7fffffff 0x003802dc
+3fcde300: 0x42000000 0x420bc74f 0x3c0e26fb 0x403cf856 0xe76c7a3d 0xab157197 0x000bc730 0x00010000
+3fcde320: 0xeee1f18d 0x52402748 0x65b1cfd7 0x000c0000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcde340: 0x00000000 0x00000000 0x00000000 0x3fcdf000 0x00005138 0x3ff1c14c 0x0000ffff 0xffffffff
+3fcde360: 0xffffffff 0x3fcde4b0 0xffffffff 0x403cfd2a 0x00010000 0x00100000 0x00010000 0x1f0206e9
+3fcde380: 0x403802dc 0x000000ee 0x03030005 0x0000c700 0x01000000 0x3c0c0020 0x000226dc 0x3fc95800
+3fcde3a0: 0x00002e90 0x40380000 0x0000aa7c 0x42000020 0x000bc730 0x4038aa7c 0x0000aba0 0x50000200
+3fcde3c0: 0x0000001c 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcde3e0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcde400: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00010020 0x00032704 0x0003559c
+3fcde420: 0x00040020 0x000fc758 0x00107300 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcde440: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x000f7340 0xe76c7a3d 0xab157197
+3fcde460: 0x791fcddf 0x9004df36 0xeee1f18d 0x52402748 0x65b1cfd7 0xfed621f6 0x00000000 0x00010000
+3fcde480: 0x00005138 0x3ff1c14c 0x0000ffff 0x3fce0000 0x00000000 0x0000008f 0x00005140 0x403cc79c
+3fcde4a0: 0x49f25902 0x61454a62 0x00000000 0xffffffff 0x00000000 0x00000000 0x00010000 0x00100000
+3fcde4c0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcde4e0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcde500: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcde520: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcde540: 0x00000000 0x00000000 0x00000000 0x00000000 0x600c5200 0x600c5200 0x00000000 0x4004a296
+3fcde560: 0x80821050 0x10500513 0x3fcde668 0x00000000 0xffffffff 0x00000000 0x00010000 0x1f0203e9
+3fcde580: 0x403cc71a 0x403ce710 0x00002f64 0x000000ee 0x03030005 0x0000c700 0x01000000 0x3c005140
+3fcde5a0: 0x7533885e 0x86d254f2 0xd12a9342 0x6cc4a1bd 0x8b18b68d 0x31cd6fee 0xbad7da43 0x5776261b
+3fcde5c0: 0x465a17ea 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+0x6cc4a1bd 0x8b18b68d
+3fcde600: 0x31cd6fee 0xbad7da43 0x5776261b 0x465a17ea 0x00000000 0x00000000 0x00000000 0x00000000
+
+
+
+ELF file SHA256: f30332767
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038083c
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f64
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan  4 2026 08:38:48[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=226dch (141020) map[0m
+[0;32mI (105) esp_image: segment 1: paddr=00032704 vaddr=3fc95800 size=02e90h ( 11920) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=0003559c vaddr=40380000 size=0aa7ch ( 43644) load[0m
+[0;32mI (117) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=bc730h (771888) map[0m
+[0;32mI (240) esp_image: segment 4: paddr=000fc758 vaddr=4038aa7c size=0aba0h ( 43936) load[0m
+[0;32mI (249) esp_image: segment 5: paddr=00107300 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (256) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (256) boot: Disabling RNG early entropy source...[0m
+[0;32mI (266) cpu_start: Unicore app[0m
+[0;32mI (275) cpu_start: Pro cpu start user code[0m
+[0;32mI (275) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (275) app_init: Application information:[0m
+[0;32mI (275) app_init: Project name:     ESP-IDF_NovaGlide[0m
+[0;32mI (279) app_init: App version:      ESP32-Node_Switch-v2.7-11809-g9[0m
+[0;32mI (285) app_init: Compile time:     Jan  4 2026 19:10:09[0m
+[0;32mI (290) app_init: ELF file SHA256:  f30332767...[0m
+[0;32mI (295) app_init: ESP-IDF:          v5.4.1[0m
+[0;32mI (299) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (302) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (306) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (310) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (317) heap_init: At 3FC9D120 len 00022EE0 (139 KiB): RAM[0m
+[0;32mI (322) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (328) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (334) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (340) spi_flash: detected chip: generic[0m
+[0;32mI (343) spi_flash: flash io: dio[0m
+[0;33mW (346) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[1;31mE (358) i2c: CONFLICT! driver_ng is not allowed to be used with this old driver[0m
+
+abort() was called at PC 0x42021591 on core 0
+Core  0 register dump:
+MEPC    : 0x40380884  RA      : 0x40387dd0  SP      : 0x3fcde220  GP      : 0x3fc96000  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x3fcde284  A0      : 0x3fcde24c  A1      : 0x3fcde282  
+A2      : 0x00000000  A3      : 0x3fcde279  A4      : 0x00000001  A5      : 0x3fc9d000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x42000000  S3      : 0x403802dc  
+S4      : 0x3fcde42c  S5      : 0x3c800000  S6      : 0x3c0c0000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+panic_abort (details=details@entry=0x3fcde24c "abort() was called at PC 0x42021591 on core 0") at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/panic.c:468
+468	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fcde24c "abort() was called at PC 0x42021591 on core 0") at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/panic.c:468
+#1  0x40387dd0 in esp_system_abort (details=details@entry=0x3fcde24c "abort() was called at PC 0x42021591 on core 0") at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/port/esp_system_chip.c:87
+#2  0x40390604 in abort () at /home/alex/esp/esp-idf/v5.4.1/components/newlib/abort.c:38
+#3  0x42021594 in check_i2c_driver_conflict () at /home/alex/esp/esp-idf/v5.4.1/components/driver/i2c/i2c.c:1723
+#4  0x420015a2 in do_global_ctors () at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/startup.c:104
+#5  0x42001658 in start_cpu0_default () at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/startup.c:206
+#6  0x403804ee in call_start_cpu0 () at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/port/cpu_start.c:849
+
+
+
+ELF file SHA256: f30332767
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038083c
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f64
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan  4 2026 08:38:48[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=226dch (141020) map[0m
+[0;32mI (105) esp_image: segment 1: paddr=00032704 vaddr=3fc95800 size=02e90h ( 11920) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=0003559c vaddr=40380000 size=0aa7ch ( 43644) load[0m
+[0;32mI (117) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=bc730h (771888) map[0m
+[0;32mI (240) esp_image: segment 4: paddr=000fc758 vaddr=4038aa7c size=0aba0h ( 43936) load[0m
+[0;32mI (249) esp_image: segment 5: paddr=00107300 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (256) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (256) boot: Disabling RNG early entropy source...[0m
+[0;32mI (266) cpu_start: Unicore app[0m
+[0;32mI (275) cpu_start: Pro cpu start user code[0m
+[0;32mI (275) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (275) app_init: Application information:[0m
+[0;32mI (275) app_init: Project name:     ESP-IDF_NovaGlide[0m
+[0;32mI (279) app_init: App version:      ESP32-Node_Switch-v2.7-11809-g9[0m
+[0;32mI (285) app_init: Compile time:     Jan  4 2026 19:10:09[0m
+[0;32mI (290) app_init: ELF file SHA256:  f30332767...[0m
+[0;32mI (295) app_init: ESP-IDF:          v5.4.1[0m
+[0;32mI (299) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (302) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (306) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (310) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (317) heap_init: At 3FC9D120 len 00022EE0 (139 KiB): RAM[0m
+[0;32mI (322) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (328) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (334) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (340) spi_flash: detected chip: generic[0m
+[0;32mI (343) spi_flash: flash io: dio[0m
+[0;33mW (346) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[1;31mE (358) i2c: CONFLICT! driver_ng is not allowed to be used with this old driver[0m
+
+abort() was called at PC 0x42021591 on core 0
+Core  0 register dump:
+MEPC    : 0x40380884  RA      : 0x40387dd0  SP      : 0x3fcde220  GP      : 0x3fc96000  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x3fcde284  A0      : 0x3fcde24c  A1      : 0x3fcde282  
+A2      : 0x00000000  A3      : 0x3fcde279  A4      : 0x00000001  A5      : 0x3fc9d000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x42000000  S3      : 0x403802dc  
+S4      : 0x3fcde42c  S5      : 0x3c800000  S6      : 0x3c0c0000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+panic_abort (details=details@entry=0x3fcde24c "abort() was called at PC 0x42021591 on core 0") at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/panic.c:468
+468	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fcde24c "abort() was called at PC 0x42021591 on core 0") at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/panic.c:468
+#1  0x40387dd0 in esp_system_abort (details=details@entry=0x3fcde24c "abort() was called at PC 0x42021591 on core 0") at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/port/esp_system_chip.c:87
+#2  0x40390604 in abort () at /home/alex/esp/esp-idf/v5.4.1/components/newlib/abort.c:38
+#3  0x42021594 in check_i2c_driver_conflict () at /home/alex/esp/esp-idf/v5.4.1/components/driver/i2c/i2c.c:1723
+#4  0x420015a2 in do_global_ctors () at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/startup.c:104
+#5  0x42001658 in start_cpu0_default () at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/startup.c:206
+#6  0x403804ee in call_start_cpu0 () at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/port/cpu_start.c:849
+
+
+
+ELF file SHA256: f30332767
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038083c
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f64
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan  4 2026 08:38:48[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=226dch (141020) map[0m
+[0;32mI (105) esp_image: segment 1: paddr=00032704 vaddr=3fc95800 size=02e90h ( 11920) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=0003559c vaddr=40380000 size=0aa7ch ( 43644) load[0m
+[0;32mI (117) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=bc730h (771888) map[0m
+[0;32mI (240) esp_image: segment 4: paddr=000fc758 vaddr=4038aa7c size=0aba0h ( 43936) load[0m
+[0;32mI (249) esp_image: segment 5: paddr=00107300 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (256) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (256) boot: Disabling RNG early entropy source...[0m
+[0;32mI (266) cpu_start: Unicore app[0m
+[0;32mI (275) cpu_start: Pro cpu start user code[0m
+[0;32mI (275) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (275) app_init: Application information:[0m
+[0;32mI (275) app_init: Project name:     ESP-IDF_NovaGlide[0m
+[0;32mI (280) app_init: App version:      ESP32-Node_Switch-v2.7-11809-g9[0m
+[0;32mI (285) app_init: Compile time:     Jan  4 2026 19:10:09[0m
+[0;32mI (291) app_init: ELF file SHA256:  f30332767...[0m
+[0;32mI (295) app_init: ESP-IDF:          v5.4.1[0m
+[0;32mI (299) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (303) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (306) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (310) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (317) heap_init: At 3FC9D120 len 00022EE0 (139 KiB): RAM[0m
+[0;32mI (322) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (328) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (334) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (340) spi_flash: detected chip: generic[0m
+[0;32mI (343) spi_flash: flash io: dio[0m
+[0;33mW (346) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[1;31mE (358) i2c: CONFLICT! driver_ng is not allowed to be used with this old driver[0m
+
+abort() was called at PC 0x42021591 on core 0
+Core  0 register dump:
+MEPC    : 0x40380884  RA      : 0x40387dd0  SP      : 0x3fcde220  GP      : 0x3fc96000  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x3fcde284  A0      : 0x3fcde24c  A1      : 0x3fcde282  
+A2      : 0x00000000  A3      : 0x3fcde279  A4      : 0x00000001  A5      : 0x3fc9d000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x42000000  S3      : 0x403802dc  
+S4      : 0x3fcde42c  S5      : 0x3c800000  S6      : 0x3c0c0000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+panic_abort (details=details@entry=0x3fcde24c "abort() was called at PC 0x42021591 on core 0") at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/panic.c:468
+468	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fcde24c "abort() was called at PC 0x42021591 on core 0") at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/panic.c:468
+#1  0x40387dd0 in esp_system_abort (details=details@entry=0x3fcde24c "abort() was called at PC 0x42021591 on core 0") at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/port/esp_system_chip.c:87
+#2  0x40390604 in abort () at /home/alex/esp/esp-idf/v5.4.1/components/newlib/abort.c:38
+#3  0x42021594 in check_i2c_driver_conflict () at /home/alex/esp/esp-idf/v5.4.1/components/driver/i2c/i2c.c:1723
+#4  0x420015a2 in do_global_ctors () at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/startup.c:104
+#5  0x42001658 in start_cpu0_default () at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/startup.c:206
+#6  0x403804ee in call_start_cpu0 () at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/port/cpu_start.c:849
+
+
+
+ELF file SHA256: f30332767
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038083c
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f64
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan  4 2026 08:38:48[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=226dch (141020) map[0m
+[0;32mI (105) esp_image: segment 1: paddr=00032704 vaddr=3fc95800 size=02e90h ( 11920) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=0003559c vaddr=40380000 size=0aa7ch ( 43644) load[0m
+[0;32mI (117) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=bc730h (771888) map[0m
+[0;32mI (240) esp_image: segment 4: paddr=000fc758 vaddr=4038aa7c size=0aba0h ( 43936) load[0m
+[0;32mI (249) esp_image: segment 5: paddr=00107300 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (256) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (256) boot: Disabling RNG early entropy source...[0m
+[0;32mI (266) cpu_start: Unicore app[0m
+[0;32mI (275) cpu_start: Pro cpu start user code[0m
+[0;32mI (275) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (275) app_init: Application information:[0m
+[0;32mI (275) app_init: Project name:     ESP-IDF_NovaGlide[0m
+[0;32mI (279) app_init: App version:      ESP32-Node_Switch-v2.7-11809-g9[0m
+[0;32mI (285) app_init: Compile time:     Jan  4 2026 19:10:09[0m
+[0;32mI (290) app_init: ELF file SHA256:  f30332767...[0m
+[0;32mI (295) app_init: ESP-IDF:          v5.4.1[0m
+[0;32mI (299) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (302) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (306) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (310) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (317) heap_init: At 3FC9D120 len 00022EE0 (139 KiB): RAM[0m
+[0;32mI (322) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (328) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (334) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (340) spi_flash: detected chip: generic[0m
+[0;32mI (343) spi_flash: flash io: dio[0m
+[0;33mW (346) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[1;31mE (358) i2c: CONFLICT! driver_ng is not allowed to be used with this old driver[0m
+
+abort() was called at PC 0x42021591 on core 0
+Core  0 register dump:
+MEPC    : 0x40380884  RA      : 0x40387dd0  SP      : 0x3fcde220  GP      : 0x3fc96000  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x3fcde284  A0      : 0x3fcde24c  A1      : 0x3fcde282  
+A2      : 0x00000000  A3      : 0x3fcde279  A4      : 0x00000001  A5      : 0x3fc9d000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x42000000  S3      : 0x403802dc  
+S4      : 0x3fcde42c  S5      : 0x3c800000  S6      : 0x3c0c0000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+panic_abort (details=details@entry=0x3fcde24c "abort() was called at PC 0x42021591 on core 0") at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/panic.c:468
+468	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fcde24c "abort() was called at PC 0x42021591 on core 0") at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/panic.c:468
+#1  0x40387dd0 in esp_system_abort (details=details@entry=0x3fcde24c "abort() was called at PC 0x42021591 on core 0") at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/port/esp_system_chip.c:87
+#2  0x40390604 in abort () at /home/alex/esp/esp-idf/v5.4.1/components/newlib/abort.c:38
+#3  0x42021594 in check_i2c_driver_conflict () at /home/alex/esp/esp-idf/v5.4.1/components/driver/i2c/i2c.c:1723
+#4  0x420015a2 in do_global_ctors () at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/startup.c:104
+#5  0x42001658 in start_cpu0_default () at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/startup.c:206
+#6  0x403804ee in call_start_cpu0 () at /home/alex/esp/esp-idf/v5.4.1/components/esp_system/port/cpu_start.c:849
+
+
+
+ELF file SHA256: f30332767
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40048b92
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f64
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan  4 2026 08:38:48[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=226dch (141020) map[0m
+[0;32mI (105) esp_image: segment 1: paddr=00032704 vaddr=3fc95800 size=02e90h ( 11920) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=0003559c vaddr=40380000 size=0aa7ch ( 43644) load[0m
+[0;32mI (117) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=bc730h (771888) map[0m
+[0;32mI (240) esp_image: segment 4: paddr=000fc758 vaddr=4038aa7c size=0aba0h ( 43936) load[0m
+[0;32mI (249) esp_image: segment 5: paddr=00107300 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (256) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (256) boot: Disabling RNG early entropy source...[0m
