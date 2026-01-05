@@ -1,0 +1,161 @@
+[0;32mI (242) esp_image: segment 4: paddr=000f9004 vaddr=4038c920 sizeESP-ROM:esp32c3-api1-20210207[0m
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x403853f4
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f64
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan  4 2026 20:56:49[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (25) boot: efuse block revision: v1.3[0m
+[0;32mI (28) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (44) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (53) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (66) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (76) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=20890h (133264) map[0m
+[0;32mI (104) esp_image: segment 1: paddr=000308b8 vaddr=3fc94200 size=02e38h ( 11832) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=000336f8 vaddr=40380000 size=0c920h ( 51488) load[0m
+[0;32mI (118) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=b8fdch (757724) map[0m
+[0;32mI (239) esp_image: segment 4: paddr=000f9004 vaddr=4038c920 size=07864h ( 30820) load[0m
+[0;32mI (245) esp_image: segment 5: paddr=00100870 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (251) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (252) boot: Disabling RNG early entropy source...[0m
+[0;32mI (264) cpu_start: Unicore app[0m
+[0;32mI (272) cpu_start: Pro cpu start user code[0m
+[0;32mI (272) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (272) app_init: Application information:[0m
+[0;32mI (273) app_init: Project name:     ESP-IDF_NovaGlide[0m
+[0;32mI (277) app_init: App version:      ESP32-Node_Switch-v2.7-11982-g5[0m
+[0;32mI (283) app_init: Compile time:     Jan  5 2026 02:58:29[0m
+[0;32mI (288) app_init: ELF file SHA256:  f5be60518...[0m
+[0;32mI (292) app_init: ESP-IDF:          v5.4.1[0m
+[0;32mI (296) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (300) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (304) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (308) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (314) heap_init: At 3FC9BB10 len 000244F0 (145 KiB): RAM[0m
+[0;32mI (319) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (325) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (331) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (338) spi_flash: detected chip: generic[0m
+[0;32mI (340) spi_flash: flash io: dio[0m
+[0;33mW (343) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (356) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (362) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (369) main_task: Started on CPU0[0m
+[0;32mI (369) main_task: Calling app_main()[0m
+[0;32mI (379) SYSTEM_INIT: System initialization complete[0m
+[0;32mI (379) pp: pp rom version: 9387209[0m
+[0;32mI (379) net80211: net80211 rom version: 9387209[0m
+[0;32mI (389) wifi:wifi driver task: 3fca45e8, prio:23, stack:6656, core=0[0m
+[0;32mI (399) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (399) wifi:wifi certification version: v7.0[0m
+[0;32mI (399) wifi:config NVS flash: enabled[0m
+[0;32mI (399) wifi:config nano formatting: disabled[0m
+[0;32mI (409) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (409) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (409) wifi:Init management short buffer num: 32[0m
+[0;32mI (419) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (419) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (429) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (429) wifi:Init static rx buffer num: 10[0m
+[0;32mI (429) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (439) wifi_init: rx ba win: 6[0m
+[0;32mI (439) wifi_init: accept mbox: 6[0m
+[0;32mI (439) wifi_init: tcpip mbox: 32[0m
+[0;32mI (449) wifi_init: udp mbox: 6[0m
+[0;32mI (449) wifi_init: tcp mbox: 6[0m
+[0;32mI (449) wifi_init: tcp tx win: 5760[0m
+[0;32mI (459) wifi_init: tcp rx win: 5760[0m
+[0;32mI (459) wifi_init: tcp mss: 1440[0m
+[0;32mI (459) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (469) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (469) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (479) phy_init: phy_version 1200,2b7123f9,Feb 18 2025,15:22:21[0m
+[0;32mI (519) wifi:mode : sta (e4:b0:63:17:9e:44)[0m
+[0;32mI (519) wifi:enable tsf[0m
+[0;32mI (649) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (649) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (659) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (669) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (709) wifi:connected with IoT_bots, aid = 3, channel 1, BW20, bssid = 62:a6:e6:79:02:ee[0m
+[0;32mI (709) wifi:security: WPA2-PSK, phy: bg, rssi: -29[0m
+[0;32mI (709) wifi:pm start, type: 1[0m
+
+[0;32mI (709) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (719) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (769) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1759) esp_netif_handlers: sta ip: 10.100.71.55, mask: 255.255.255.0, gw: 10.100.71.1[0m
+[0;32mI (3519) WIFI_SYS: WiFi initialized and connecting...[0m
+[0;32mI (3519) WIFI_SYS: SSID: IoT_bots[0m
+[0;33mW (3519) WIFI_SYS: WiFi Channel: 1[0m
+[0;33mW (3519) WIFI_SYS: Receiver MAC: E4:B0:63:17:9E:44[0m
+[0;33mW (3519) WIFI_SYS: Transmitter will scan channels to find receiver[0m
+[0;32mI (3529) I2C_BUS: Initializing I2C bus...[0m
+[0;32mI (3529) I2C_BUS:   SDA: 3[0m
+[0;32mI (3529) I2C_BUS:   SCL: 2[0m
+[0;32mI (3539) I2C_BUS: I2C bus initialized[0m
+[0;32mI (3539) I2C_BUS: Scanning I2C bus...[0m
+[0;32mI (3549) I2C_BUS:   Found device at 0x40[0m
+[0;32mI (3549) I2C_BUS:   Found device at 0x57[0m
+[0;32mI (3559) I2C_BUS: Scanning I2C bus...[0m
+[0;32mI (3559) I2C_BUS:   Found device at 0x40[0m
+[0;32mI (3569) I2C_BUS:   Found device at 0x57[0m
+[0;32mI (3569) MOTORS: LEDC initialized for all 4 motors[0m
+[0;32mI (3569) MOTORS: Motor system initialized[0m
+[0;32mI (3569) gpio: GPIO[0]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3579) gpio: GPIO[1]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3589) ADC: ADC initialized[0m
+[0;32mI (3589) temperature_sensor: Range [-10°C ~ 80°C], error < 1°C[0m
+[0;32mI (3599) TEMP_SENSOR: Temperature sensor initialized[0m
+[0;32mI (3599) I2C_BUS: Adding device 'INA219' at 0x40[0m
+[0;32mI (3599) INA219: INA219 initialized[0m
+[0;32mI (3609) I2C_BUS: Adding device 'HC-SR04_I2C' at 0x57[0m
+[0;32mI (3609) ULTRASONIC: HC-SR04 (I2C mode) initialized at 0x57[0m
+[0;32mI (3619) ESPNOW_SYS: Initializing ESP-NOW...[0m
+[0;32mI (3619) ESPNOW: espnow [version: 2.0] init[0m
+[0;32mI (3629) ESPNOW_SYS: ESP-NOW init success[0m
+[0;32mI (3629) ESPNOW_SYS: ESP-NOW callback registered[0m
+[0;33mW (3629) ESPNOW_SYS: Receiver MAC: E4:B0:63:17:9E:44[0m
+[0;32mI (3639) ESPNOW_SYS: ESP-NOW initialized - waiting for data from transmitter...[0m
+[0;32mI (3639) ESPNOW_SYS: Expected data size: 24 bytes[0m
+[0;32mI (3649) MQTT_SYS: MQTT system initialized[0m
+[0;32mI (3649) gpio: GPIO[10]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (3659) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (3669) UI: UI system initialized[0m
+[1;31mE (3679) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3679) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[0;32mI (3689) MQTT_SYS: MQTT Connected[0m
+[1;31mE (3739) i2c.master: clear bus failed.[0m
+[1;31mE (3739) i2c.master: i2c_master_transmit_receive(1220): I2C transaction failed[0m
+[0;33mW (3739) ULTRA_TEST: read failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (4739) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4739) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (4799) i2c.master: clear bus failed.[0m
+[1;31mE (4799) i2c.master: i2c_master_transmit_receive(1220): I2C transaction failed[0m
+[0;33mW (4799) ULTRA_TEST: read failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (5799) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5799) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (5859) i2c.master: clear bus failed.[0m
+[1;31mE (5859) i2c.master: i2c_master_transmit_receive(1220): I2C transaction failed[0m
+[0;33mW (5859) ULTRA_TEST: read failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (6859) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6859) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (6919) i2c.master: clear bus failed.[0m
+[1;31mE (6919) i2c.master: i2c_master_transmit_receive(1220): I2C transaction failed[0m
+[0;33mW (6919) ULTRA_TEST: read failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (7919) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (7919) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (7979) i2c.master: clear bus failed.[0m
+[1;31mE (7979) i2c.master: i2c_master_transmit_receive(1220): I2C transaction failed[0m
+[0;33mW (7979) ULTRA_TEST: read failed: ESP_ERR_INVALID_STATE[0m

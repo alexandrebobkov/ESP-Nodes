@@ -1,0 +1,76 @@
+[1/5] cd /home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build/esp-idf/esptool_py && /home/alex/.espressif/python_env/idf5.4_py3.13_env/bin/python /home/alex/esp/esp-idf/v5.4.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build/partition_table/partition-table.bin /home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build/ESP-IDF_NovaGlide.bin
+ESP-IDF_NovaGlide.bin binary size 0xf08b0 bytes. Smallest app partition is 0x100000 bytes. 0xf750 bytes (6%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cd /home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build/bootloader/esp-idf/esptool_py && /home/alex/.espressif/python_env/idf5.4_py3.13_env/bin/python /home/alex/esp/esp-idf/v5.4.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build/bootloader/bootloader.bin
+Bootloader binary size 0x5160 bytes. 0x2ea0 bytes (36%) free.
+[3/5] No install step for 'bootloader'
+[4/5] Completed 'bootloader'
+[4/5] cd /home/alex/esp/esp-idf/v5.4.1/components/esptool_py && /home/alex/.espressif/tools/cmake/3.30.2/bin/cmake -D IDF_PATH=/home/alex/esp/esp-idf/v5.4.1 -D "SERIAL_TOOL=/home/alex/.espressif/python_env/idf5.4_py3.13_env/bin/python;;/home/alex/esp/esp-idf/v5.4.1/components/esptool_py/esptool/esptool.py;--chip;esp32c3" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build -P /home/alex/esp/esp-idf/v5.4.1/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32c3 -p /dev/ttyACM0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 2MB 0x0 bootloader/bootloader.bin 0x10000 ESP-IDF_NovaGlide.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.10.0
+Serial port /dev/ttyACM0
+Connecting...
+Chip is ESP32-C3 (QFN32) (revision v0.4)
+Features: WiFi, BLE
+Crystal is 40MHz
+USB mode: USB-Serial/JTAG
+MAC: e4:b0:63:17:9e:44
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x00100fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 20832 bytes to 13051...
+Writing at 0x00000000... (100 %)
+Wrote 20832 bytes (13051 compressed) at 0x00000000 in 0.5 seconds (effective 343.8 kbit/s)...
+Hash of data verified.
+Compressed 985264 bytes to 558746...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001d46b... (5 %)
+Writing at 0x00027f64... (8 %)
+Writing at 0x00031836... (11 %)
+Writing at 0x0003888e... (14 %)
+Writing at 0x0003f6b2... (17 %)
+Writing at 0x000461b2... (20 %)
+Writing at 0x0004d7c2... (22 %)
+Writing at 0x000552f4... (25 %)
+Writing at 0x0005c983... (28 %)
+Writing at 0x00063ace... (31 %)
+Writing at 0x0006a5f7... (34 %)
+Writing at 0x00070d49... (37 %)
+Writing at 0x00077d85... (40 %)
+Writing at 0x0007e16e... (42 %)
+Writing at 0x000849c1... (45 %)
+Writing at 0x0008ac2c... (48 %)
+Writing at 0x00090ae4... (51 %)
+Writing at 0x00096e3d... (54 %)
+Writing at 0x0009d366... (57 %)
+Writing at 0x000a33f1... (60 %)
+Writing at 0x000a93d9... (62 %)
+Writing at 0x000af69c... (65 %)
+Writing at 0x000b62ac... (68 %)
+Writing at 0x000bd18a... (71 %)
+Writing at 0x000c437d... (74 %)
+Writing at 0x000cb3bb... (77 %)
+Writing at 0x000d1ac7... (80 %)
+Writing at 0x000d7981... (82 %)
+Writing at 0x000de05f... (85 %)
+Writing at 0x000e41c4... (88 %)
+Writing at 0x000ea22a... (91 %)
+Writing at 0x000f327a... (94 %)
+Writing at 0x000f99d6... (97 %)
+Writing at 0x000ffbbc... (100 %)
+Wrote 985264 bytes (558746 compressed) at 0x00010000 in 6.9 seconds (effective 1150.4 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 356.9 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
