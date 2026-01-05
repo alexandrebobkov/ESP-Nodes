@@ -93,27 +93,11 @@ void app_main(void)
     mqtt_system_init(&mqtt);
     ui_system_init(&ui);
 
-    /*uint8_t val = 0;
+    uint8_t val = 0;
     esp_err_t ret = i2c_bus_read_byte(ultra.dev, 0x02, &val);
-    ESP_LOGI("ULTRA", "reg0 = 0x%02X (ret=%s)", val, esp_err_to_name(ret));*/
+    ESP_LOGI("ULTRA", "reg0 = 0x%02X (ret=%s)", val, esp_err_to_name(ret));
     //ultrasonic_system_init(&ultra);
     //ultrasonic_probe_registers(&ultra);
-    for (;;) {
-        uint8_t data[2] = {0};
-        esp_err_t err = i2c_master_receive(ultra.dev, data, 2, pdMS_TO_TICKS(200));
-
-        if (err == ESP_OK) {
-            uint16_t raw_mm = ((uint16_t)data[0] << 8) | data[1];
-            float cm = raw_mm / 10.0f;
-            ESP_LOGI("ULTRA_RAW", "raw=%u mm, %.2f cm", raw_mm, cm);
-        } else {
-            ESP_LOGW("ULTRA_RAW", "raw read failed: %s", esp_err_to_name(err));
-        }
-
-        vTaskDelay(pdMS_TO_TICKS(1000));
-    }
-
-    i2c_bus_scan();
 
     // Start display task
     //xTaskCreate(display_joystick_task, "display", 2048, &espnow, 4, NULL);
