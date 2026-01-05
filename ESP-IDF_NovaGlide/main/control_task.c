@@ -30,7 +30,7 @@ static void control_task(void *arg) {
         js.update(&js, rc_x, rc_y);
 
         // 3. Mix normalized joystick values into motor PWM
-        joystick_mix(js.norm_x, js.norm_y, &pwm_left, &pwm_right);
+        joystick_mix(js.norm_y, js.norm_x, &pwm_left, &pwm_right);
 
         // 4. Apply PWM to motors
         update_motors_pwm(ctx->motors, pwm_left, pwm_right);
