@@ -158,8 +158,8 @@ void update_motors_pwm(motor_system_t *sys, int pwm_motor_1, int pwm_motor_2) {
     if (pwm_motor_1 < 0 && pwm_motor_2 > 0) {
         sys->motor1_rpm_pcm = -pwm_motor_1;
         sys->motor2_rpm_pcm = 0;
-        sys->motor3_rpm_pcm = pwm_motor_2;
-        sys->motor4_rpm_pcm = 0;
+        sys->motor3_rpm_pcm = 0;
+        sys->motor4_rpm_pcm = pwm_motor_2;
     }
     if (pwm_motor_1 < 0 && pwm_motor_2 < 0) {
         sys->motor1_rpm_pcm = 0;
