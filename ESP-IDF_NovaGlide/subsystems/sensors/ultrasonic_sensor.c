@@ -21,6 +21,17 @@ static esp_err_t ultrasonic_measure_distance(uint16_t *distance) {
         return ESP_ERR_INVALID_STATE;
     }
 
+    // CRITICAL: Send init commands BEFORE EVERY measurement
+    // Without this, only the first measurement works
+    uint8_t init_cmds[] = {0x00, 0x01};
+    for (int i = 0; i < sizeof(init_cmds); i++) {
+        esp_err_t ret = i2c_master_transmit(ultrasonic_handle, &init_cmds[i], 1, 500);
+        if (ret != ESP_OK) {
+            ESP_LOGD(TAG, "Init cmd 0x%02X: %s", init_cmds[i], esp_err_to_name(ret));
+        }
+        vTaskDelay(pdMS_TO_TICKS(10));
+    }
+
     // Send measurement command (0x50 = cm)
     uint8_t cmd = CMD_MEASURE_CM;
     esp_err_t ret = i2c_master_transmit(ultrasonic_handle, &cmd, 1, 500);
