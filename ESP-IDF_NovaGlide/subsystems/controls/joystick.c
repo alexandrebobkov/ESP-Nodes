@@ -61,25 +61,61 @@ void joystick_mix(float x, float y, int *pwm_left, int *pwm_right)
     // 1. Nonlinear steering curve
     // float x_shaped = x * fabsf(x);   // quadratic expo, stronger than cubic
     //float x_shaped = x * x * x * 1.2f; // stronger expo
-    float x_shaped = x * x * x;   // soft near center, strong at edges
-
+    float x_shaped = x * x * x;
+    // ^ Cubic expo curve:
+    //   - Near the joystick center (x ≈ 0), x³ becomes extremely small.
+    //     Example: 0.2³ = 0.008 → almost no steering.
+    //   - As x approaches ±1, the curve ramps up sharply.
+    //     Example: 0.8³ = 0.512 → strong steering.
+    //   This gives smooth, gentle arcs for small stick movements,
+    //   while still allowing full turning authority at full stick deflection.
+    //
+    //   The two commented alternatives:
+    //     x * fabsf(x)      → quadratic expo, softer than linear but stronger than cubic.
+    //     x³ * 1.2f         → cubic expo with extra gain, more aggressive turning.
+    //
+    //   You chose pure cubic, which gives the smoothest center feel.
 
     // 2. Steering gain
-    const float k = 0.9f;   // Stronger steering; preferred 0.9
+    const float k = 0.9f;
+    // ^ Steering gain multiplier:
+    //   - Controls how strongly the shaped X value influences turning.
+    //   - Lower values (0.5–0.7) → softer, wider arcs.
+    //   - Higher values (1.0–1.3) → more aggressive turning and faster spins.
+    //   - Your chosen 0.9 gives a balanced feel: smooth arcs but still strong spin capability.
 
     // 3. Differential mix
     float L0 = y + k * x_shaped;
     float R0 = y - k * x_shaped;
+    // ^ Classic differential drive mixing:
+    //   - y controls forward/backward speed.
+    //   - x_shaped controls turning.
+    //   - Adding to left / subtracting from right creates a turn.
+    //   - When y = 0 and x = ±1, this produces a pure spin-in-place.
+    //   - When both x and y are present, you get an arc.
 
     // 4. Limit left/right difference to 75%
     float diff = fabsf(L0 - R0);
-        float max_diff = 1.7f;   // 75% of full 2.0 span // allow full spin but keep arcs smooth; had 1.2
+    float max_diff = 1.7f;
+    // ^ Differential limiter:
+    //   - The maximum possible difference between L0 and R0 is 2.0
+    //       (L0 = +1, R0 = -1 → diff = 2)
+    //   - max_diff = 1.7 caps the turning strength to ~85% of maximum.
+    //   - This prevents the robot from snapping too aggressively into a turn.
+    //   - It also keeps arcs smooth and prevents sudden PWM drops.
+    //   - Your previous value (1.2) limited turning to ~60%, which felt too weak.
+    //   - 1.7 allows near-full spin while still smoothing out harsh transitions.
 
     if (diff > max_diff) {
         float scale = max_diff / diff;
         L0 *= scale;
         R0 *= scale;
     }
+    // ^ If the left/right difference exceeds the allowed limit,
+    //   both sides are scaled down proportionally.
+    //   This preserves the *shape* of the turn while reducing its intensity.
+    //   It prevents sudden jumps in PWM and keeps steering predictable.
+
 
     // 5. Clamp to [-1, 1] WITHOUT normalization
     if (L0 > 1.0f) L0 = 1.0f;
