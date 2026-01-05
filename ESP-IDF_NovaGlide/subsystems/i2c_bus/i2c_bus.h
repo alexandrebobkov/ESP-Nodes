@@ -6,8 +6,8 @@
 #include "esp_err.h"
 #include <stdbool.h>
 
-#define I2C_MASTER_SDA_IO 21
-#define I2C_MASTER_SCL_IO 22
+#define I2C_MASTER_SDA_IO 3
+#define I2C_MASTER_SCL_IO 2
 #define I2C_MASTER_FREQ_HZ 100000
 #define I2C_MASTER_TIMEOUT_MS 100
 
