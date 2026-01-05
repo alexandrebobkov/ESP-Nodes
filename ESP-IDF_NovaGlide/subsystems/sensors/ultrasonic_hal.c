@@ -1,4 +1,6 @@
 #include "ultrasonic_hal.h"
+#include "driver/rmt_encoder.h"
+
 #include "esp_log.h"
 
 static const char *TAG = "ULTRA_HAL";
