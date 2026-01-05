@@ -8,6 +8,7 @@ static const char *TAG = "ULTRA_HAL";
 
 #define RMT_RESOLUTION_HZ 1000000  // 1 MHz → 1 tick = 1 µs
 #define MEASUREMENT_TIMEOUT_MS 50  // Maximum time to wait for echo
+#define RMT_RX_BUFFER_SIZE 64      // Buffer for received symbols
 
 static bool rmt_rx_callback(rmt_channel_handle_t channel,
                             const rmt_rx_done_event_data_t *edata,
@@ -36,13 +37,6 @@ static bool rmt_rx_callback(rmt_channel_handle_t channel,
 
 static void ultrasonic_update_impl(ultrasonic_hal_t *self, TickType_t now)
 {
-    ESP_LOGI(TAG, "UPDATE: self=%p encoder=%p", (void*)self, (void*)self->encoder);
-
-    if (self->encoder == NULL) {
-        ESP_LOGE(TAG, "ENCODER IS NULL IN UPDATE, SKIPPING");
-        return;
-    }
-
     static TickType_t last = 0;
 
     // Rate limit to once per 100ms
@@ -51,22 +45,25 @@ static void ultrasonic_update_impl(ultrasonic_hal_t *self, TickType_t now)
     }
     last = now;
 
+    if (self->encoder == NULL) {
+        ESP_LOGE(TAG, "ENCODER IS NULL IN UPDATE, SKIPPING");
+        return;
+    }
+
     // Reset pulse flag before starting new measurement
     self->has_pulse = false;
 
-    // --- 1. Stop any ongoing RX, then start fresh ---
-    // Disable and re-enable to reset the channel
-    rmt_disable(self->rmt_rx);
-    rmt_enable(self->rmt_rx);
+    // --- 1. Start RX with our own buffer ---
+    static rmt_symbol_word_t rx_buffer[RMT_RX_BUFFER_SIZE];
 
     rmt_receive_config_t rx_cfg = {
         .signal_range_min_ns = 1000,      // 1 µs minimum
         .signal_range_max_ns = 30000000   // 30 ms maximum
     };
 
-    esp_err_t ret = rmt_receive(self->rmt_rx, NULL, 0, &rx_cfg);
+    esp_err_t ret = rmt_receive(self->rmt_rx, rx_buffer, sizeof(rx_buffer), &rx_cfg);
     if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "RMT receive failed: %s", esp_err_to_name(ret));
+        ESP_LOGE(TAG, "RMT receive failed: %s (0x%x)", esp_err_to_name(ret), ret);
         return;
     }
 
