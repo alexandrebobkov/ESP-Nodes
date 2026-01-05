@@ -1,0 +1,13 @@
+[0/1] Re-running CMake...
+-- Building ESP-IDF components for target esp32c3
+NOTICE: Processing 5 dependencies:
+NOTICE: [1/5] esp-idf-lib/esp_idf_lib_helpers (1.4.0)
+NOTICE: [2/5] esp-idf-lib/i2cdev (2.1.0)
+NOTICE: [3/5] esp-idf-lib/ina219 (1.0.7)
+NOTICE: [4/5] esp-idf-lib/ultrasonic (1.1.0)
+NOTICE: [5/5] idf (5.4.1)
+-- i2cdev: ESP-IDF v5.4 detected, using new i2c_master driver
+-- i2cdev: Compiling with new I2C master driver (i2cdev.c)
+-- Configuring incomplete, errors occurred!
+FAILED: build.ninja 
+/home/alex/.espressif/tools/cmake/3.30.2/bin/cmake --regenerate-during-build -S/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide -B/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build
