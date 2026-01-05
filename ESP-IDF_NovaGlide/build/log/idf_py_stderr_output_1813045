@@ -1,0 +1,92 @@
+[0;33m--- esp-idf-monitor 1.8.0 on /dev/ttyACM0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x403853f4: [0;33mrv_utils_wait_for_intr[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/riscv/include/riscv/rv_utils.h[0m[0m:[1;31m62[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_hw_support/cpu.c[0m[0m:[1;31m62[0m
+[0m--- 0x4201063a: [0;33mina219_update_impl[0m[0m at [0;32m/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/subsystems/sensors/ina219_sensor.c[0m[0m:[1;31m12[0m
+[0m--- 0x40386a53: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40380884: [0;33mpanic_abort[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/panic.c[0m[0m:[1;31m468[0m
+[0m--- 0x40386a5e: [0;33m__ubsan_include[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038083c: [0;33mesp_restart_noos[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m112[0m
+[0m--- 0x4201063a: [0;33mina219_update_impl[0m[0m at [0;32m/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/subsystems/sensors/ina219_sensor.c[0m[0m:[1;31m12[0m
+[0m--- 0x40386a53: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40380884: [0;33mpanic_abort[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/panic.c[0m[0m:[1;31m468[0m
+[0m--- 0x40386a5e: [0;33m__ubsan_include[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038083c: [0;33mesp_restart_noos[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m112[0m
+[0m--- 0x420107ac: [0;33mina219_system_init[0m[0m at [0;32m/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/subsystems/sensors/ina219_sensor.c[0m[0m:[1;31m36[0m
+[0m--- 0x40386a53: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40380884: [0;33mpanic_abort[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/panic.c[0m[0m:[1;31m468[0m
+[0m--- 0x40386a5e: [0;33m__ubsan_include[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038083c: [0;33mesp_restart_noos[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m112[0m
+[0m--- 0x4201063a: [0;33mina219_update_impl[0m[0m at [0;32m/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/subsystems/sensors/ina219_sensor.c[0m[0m:[1;31m12[0m
+[0m--- 0x40386a53: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40380884: [0;33mpanic_abort[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/panic.c[0m[0m:[1;31m468[0m
+[0m--- 0x40386a5e: [0;33m__ubsan_include[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038083c: [0;33mesp_restart_noos[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m112[0m
+[0m--- 0x420107ac: [0;33mina219_system_init[0m[0m at [0;32m/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/subsystems/sensors/ina219_sensor.c[0m[0m:[1;31m36[0m
+[0m--- 0x40386a53: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40380884: [0;33mpanic_abort[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/panic.c[0m[0m:[1;31m468[0m
+[0m--- 0x40386a5e: [0;33m__ubsan_include[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038083c: [0;33mesp_restart_noos[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m112[0m
+[0m--- 0x420107ac: [0;33mina219_system_init[0m[0m at [0;32m/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/subsystems/sensors/ina219_sensor.c[0m[0m:[1;31m36[0m
+[0m--- 0x40386a53: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40380884: [0;33mpanic_abort[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/panic.c[0m[0m:[1;31m468[0m
+[0m--- 0x40386a5e: [0;33m__ubsan_include[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038083c: [0;33mesp_restart_noos[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m112[0m
+[0m--- 0x4201063a: [0;33mina219_update_impl[0m[0m at [0;32m/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/subsystems/sensors/ina219_sensor.c[0m[0m:[1;31m12[0m
+[0m--- 0x40386a53: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40380884: [0;33mpanic_abort[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/panic.c[0m[0m:[1;31m468[0m
+[0m--- 0x40386a5e: [0;33m__ubsan_include[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038083c: [0;33mesp_restart_noos[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m112[0m
+[0m--- 0x4201063a: [0;33mina219_update_impl[0m[0m at [0;32m/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/subsystems/sensors/ina219_sensor.c[0m[0m:[1;31m12[0m
+[0m--- 0x40386a53: [0;33m_esp_error_check_failed[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40380884: [0;33mpanic_abort[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/panic.c[0m[0m:[1;31m468[0m
+[0m--- 0x40386a5e: [0;33m__ubsan_include[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_system/ubsan.c[0m[0m:[1;31m311[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038083c: [0;33mesp_restart_noos[0m[
