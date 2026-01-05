@@ -5,7 +5,7 @@ idf_component_register(
     INCLUDE_DIRS "."
     REQUIRES driver
              esp_adc
-             i2c_bus
-    PRIV_REQUIRES esp-idf-lib__ina219
+    PRIV_REQUIRES i2c_bus
+                  esp-idf-lib__ina219
                   esp-idf-lib__ultrasonic
                   esp-idf-lib__i2cdev)
