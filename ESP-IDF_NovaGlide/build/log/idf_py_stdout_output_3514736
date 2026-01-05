@@ -1,0 +1,70 @@
+[1/5] cd /home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build/esp-idf/esptool_py && /home/alex/.espressif/python_env/idf5.4_py3.13_env/bin/python /home/alex/esp/esp-idf/v5.4.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build/partition_table/partition-table.bin /home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build/ESP-IDF_NovaGlide.bin
+ESP-IDF_NovaGlide.bin binary size 0xc6b50 bytes. Smallest app partition is 0x100000 bytes. 0x394b0 bytes (22%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cd /home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build/bootloader/esp-idf/esptool_py && /home/alex/.espressif/python_env/idf5.4_py3.13_env/bin/python /home/alex/esp/esp-idf/v5.4.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build/bootloader/bootloader.bin
+Bootloader binary size 0x5160 bytes. 0x2ea0 bytes (36%) free.
+[3/5] No install step for 'bootloader'
+[4/5] Completed 'bootloader'
+[4/5] cd /home/alex/esp/esp-idf/v5.4.1/components/esptool_py && /home/alex/.espressif/tools/cmake/3.30.2/bin/cmake -D IDF_PATH=/home/alex/esp/esp-idf/v5.4.1 -D "SERIAL_TOOL=/home/alex/.espressif/python_env/idf5.4_py3.13_env/bin/python;;/home/alex/esp/esp-idf/v5.4.1/components/esptool_py/esptool/esptool.py;--chip;esp32c3" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build -P /home/alex/esp/esp-idf/v5.4.1/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32c3 -p /dev/ttyACM0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 2MB 0x0 bootloader/bootloader.bin 0x10000 ESP-IDF_NovaGlide.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.10.0
+Serial port /dev/ttyACM0
+Connecting...
+Chip is ESP32-C3 (QFN32) (revision v0.4)
+Features: WiFi, BLE
+Crystal is 40MHz
+USB mode: USB-Serial/JTAG
+MAC: e4:b0:63:17:9e:44
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x000d6fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 20832 bytes to 13051...
+Writing at 0x00000000... (100 %)
+Wrote 20832 bytes (13051 compressed) at 0x00000000 in 0.5 seconds (effective 344.0 kbit/s)...
+Hash of data verified.
+Compressed 813904 bytes to 466764...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001bf9b... (6 %)
+Writing at 0x00024ccc... (10 %)
+Writing at 0x0002ebea... (13 %)
+Writing at 0x0003567c... (17 %)
+Writing at 0x0003d04d... (20 %)
+Writing at 0x000441d3... (24 %)
+Writing at 0x0004b100... (27 %)
+Writing at 0x00051664... (31 %)
+Writing at 0x00057f01... (34 %)
+Writing at 0x0005e3bc... (37 %)
+Writing at 0x00064264... (41 %)
+Writing at 0x0006a612... (44 %)
+Writing at 0x00070c64... (48 %)
+Writing at 0x00076dc1... (51 %)
+Writing at 0x0007cef0... (55 %)
+Writing at 0x000835a4... (58 %)
+Writing at 0x0008a0c9... (62 %)
+Writing at 0x00091315... (65 %)
+Writing at 0x000984f6... (68 %)
+Writing at 0x0009eb2c... (72 %)
+Writing at 0x000a4978... (75 %)
+Writing at 0x000ab05b... (79 %)
+Writing at 0x000b1286... (82 %)
+Writing at 0x000b70ad... (86 %)
+Writing at 0x000bf987... (89 %)
+Writing at 0x000c6676... (93 %)
+Writing at 0x000cd221... (96 %)
+Writing at 0x000d3806... (100 %)
+Wrote 813904 bytes (466764 compressed) at 0x00010000 in 5.7 seconds (effective 1145.5 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 349.8 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
