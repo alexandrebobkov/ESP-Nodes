@@ -5,7 +5,7 @@ static const char *TAG = "ULTRA_HAL";
 
 #define RMT_RESOLUTION_HZ 1000000  // 1 MHz → 1 tick = 1 µs
 
-static void ultrasonic_update_impl(ultrasonic_system_t *self, TickType_t now)
+static void ultrasonic_update_impl(ultrasonic_hal_t *self, TickType_t now)
 {
     static TickType_t last = 0;
 
@@ -26,7 +26,8 @@ static void ultrasonic_update_impl(ultrasonic_system_t *self, TickType_t now)
         .duration1 = 10
     };
 
-    ESP_ERROR_CHECK(rmt_transmit(self->rmt_tx, self->encoder, &pulse, sizeof(pulse), &tx_cfg));
+    ESP_ERROR_CHECK(rmt_transmit(self->rmt_tx, self->encoder,
+                                 &pulse, sizeof(pulse), &tx_cfg));
     ESP_ERROR_CHECK(rmt_tx_wait_all_done(self->rmt_tx, portMAX_DELAY));
 
     // --- 2. Receive echo pulse ---
@@ -35,22 +36,27 @@ static void ultrasonic_update_impl(ultrasonic_system_t *self, TickType_t now)
         .signal_range_max_ns = 30000000
     };
 
-    rmt_rx_done_event_data_t rx_data;
-    ESP_ERROR_CHECK(rmt_receive(self->rmt_rx, &rx_data, sizeof(rx_data), &rx_cfg));
+    rmt_rx_done_event_data_t rx_data = {0};
 
-    // Extract pulse duration
-    if (rx_data.num_symbols > 0) {
-        uint32_t us = rx_data.symbols[0].duration0;
-        self->distance_cm = us / 58.0f;
-        ESP_LOGI(TAG, "Distance: %.2f cm", self->distance_cm);
-    } else {
+    ESP_ERROR_CHECK(rmt_receive(self->rmt_rx,
+                                &rx_data,
+                                sizeof(rx_data),
+                                &rx_cfg));
+
+    if (rx_data.num_symbols == 0) {
         ESP_LOGW(TAG, "No echo received");
+        return;
     }
+
+    uint32_t us = rx_data.symbols[0].duration0;
+    self->distance_cm = us / 58.0f;
+
+    ESP_LOGI(TAG, "Distance: %.2f cm", self->distance_cm);
 }
 
-void ultrasonic_system_init(ultrasonic_system_t *ultra,
-                            gpio_num_t trig_pin,
-                            gpio_num_t echo_pin)
+void ultrasonic_hal_init(ultrasonic_hal_t *ultra,
+                         gpio_num_t trig_pin,
+                         gpio_num_t echo_pin)
 {
     ultra->trig_pin = trig_pin;
     ultra->echo_pin = echo_pin;
