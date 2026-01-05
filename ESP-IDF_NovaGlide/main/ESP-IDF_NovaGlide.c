@@ -14,13 +14,12 @@ static const char *TAG = "ULTRASONIC_TEST";
 
 i2c_master_dev_handle_t dev_handle;
 
-uint16_t measure_distance(void)
+uint16_t measure_distance(uint8_t command)
 {
-    // Send 0x50 command
-    uint8_t cmd = CMD_MEASURE_CM;
-    esp_err_t ret = i2c_master_transmit(dev_handle, &cmd, 1, 500);
+    // Send command (0x50=cm, 0x51=inch, 0x52=us)
+    esp_err_t ret = i2c_master_transmit(dev_handle, &command, 1, 500);
     if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "Command send failed: %s", esp_err_to_name(ret));
+        ESP_LOGE(TAG, "Command 0x%02X send failed: %s", command, esp_err_to_name(ret));
         return 0xFFFF;
     }
 
@@ -39,8 +38,8 @@ uint16_t measure_distance(void)
     uint16_t distance = (data[0] << 8) | data[1];
 
     // Log all bytes for debugging
-    ESP_LOGI(TAG, "Raw: [0x%02X 0x%02X 0x%02X 0x%02X] → Distance: %u cm",
-             data[0], data[1], data[2], data[3], distance);
+    ESP_LOGI(TAG, "Cmd 0x%02X → [0x%02X 0x%02X 0x%02X 0x%02X] Distance: %u",
+             command, data[0], data[1], data[2], data[3], distance);
 
     return distance;
 }
@@ -73,8 +72,28 @@ void app_main(void)
 
     ESP_ERROR_CHECK(i2c_master_bus_add_device(bus_handle, &dev_cfg, &dev_handle));
 
-    ESP_LOGI(TAG, "I2C initialized. Starting continuous measurements...\n");
-    ESP_LOGI(TAG, ">>> PLACE AN OBJECT 10-30cm IN FRONT OF SENSOR <<<\n");
+    ESP_LOGI(TAG, "I2C initialized. Trying initialization sequences...\n");
+
+    // Try potential init sequences
+    ESP_LOGI(TAG, "Attempt 1: Sending reset/init command 0x00...");
+    uint8_t init_cmds[] = {0x00, 0x01, 0x02, 0xFF};
+    for (int i = 0; i < sizeof(init_cmds); i++) {
+        i2c_master_transmit(dev_handle, &init_cmds[i], 1, 500);
+        vTaskDelay(pdMS_TO_TICKS(100));
+    }
+
+    // Try writing to config register
+    ESP_LOGI(TAG, "Attempt 2: Writing to potential config registers...");
+    uint8_t cfg1[] = {0x00, 0x01}; // Write 0x01 to reg 0x00
+    i2c_master_transmit(dev_handle, cfg1, 2, 500);
+    vTaskDelay(pdMS_TO_TICKS(100));
+
+    uint8_t cfg2[] = {0x01, 0x51}; // Write 0x51 to reg 0x01
+    i2c_master_transmit(dev_handle, cfg2, 2, 500);
+    vTaskDelay(pdMS_TO_TICKS(100));
+
+    ESP_LOGI(TAG, "\n>>> PLACE AN OBJECT 10-30cm IN FRONT OF SENSOR <<<\n");
+    ESP_LOGI(TAG, "Starting continuous measurements...\n");
 
     vTaskDelay(pdMS_TO_TICKS(1000));
 
@@ -86,21 +105,32 @@ void app_main(void)
         ESP_LOGI(TAG, "─────────────────────────────────────────");
         ESP_LOGI(TAG, "Measurement #%d", measurement_count);
 
-        uint16_t distance = measure_distance();
+        // Try all three command types
+        ESP_LOGI(TAG, "Testing 0x50 (cm):");
+        uint16_t dist_cm = measure_distance(0x50);
 
-        if (distance == 0xFFFF) {
-            ESP_LOGE(TAG, "❌ Communication error!");
-        } else if (distance == 0) {
-            ESP_LOGW(TAG, "⚠️  No object detected (0 cm)");
-        } else if (distance < 2) {
-            ESP_LOGW(TAG, "⚠️  Object too close: %u cm", distance);
-        } else if (distance > 400) {
-            ESP_LOGW(TAG, "⚠️  Object too far: %u cm", distance);
-        } else {
-            ESP_LOGI(TAG, "✅ Valid distance: %u cm", distance);
+        vTaskDelay(pdMS_TO_TICKS(200));
+
+        ESP_LOGI(TAG, "Testing 0x51 (inch):");
+        uint16_t dist_in = measure_distance(0x51);
+
+        vTaskDelay(pdMS_TO_TICKS(200));
+
+        ESP_LOGI(TAG, "Testing 0x52 (µs):");
+        uint16_t dist_us = measure_distance(0x52);
+
+        // Analysis
+        ESP_LOGI(TAG, "\nResults: CM=%u, INCH=%u, µS=%u", dist_cm, dist_in, dist_us);
+
+        if (dist_cm == 0 && dist_in == 0 && dist_us == 0) {
+            ESP_LOGW(TAG, "⚠️  All zeros - sensor may be defective or not detecting");
+        } else if (dist_cm > 0) {
+            ESP_LOGI(TAG, "✅ Got valid reading: %u cm", dist_cm);
         }
 
-        // Wait 500ms between measurements
-        vTaskDelay(pdMS_TO_TICKS(500));
+        ESP_LOGI(TAG, "");
+
+        // Wait 1 second between measurement cycles
+        vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
