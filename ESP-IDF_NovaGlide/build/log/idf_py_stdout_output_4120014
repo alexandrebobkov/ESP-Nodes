@@ -102,4 +102,7 @@ entry 0x403cc71a
 [0;32mI (3142) I2C_REG_SCANNER: ╚════════════════════════════════════════════════════════╝[0m
 [0;32mI (3162) I2C_REG_SCANNER: [0m
 Scan complete! Check the logs above for working commands.
-[0;32mI (3162) I2C_REG_SCANNER: Common patterns:[0m
+[0;32mI (3162) I2C_REG_SCANNER: Common patterns:[0m
+[0;32mI (3172) I2C_REG_SCANNER:   - If Method 1 found registers: Use register-based access[0m
+[0;32mI (3182) I2C_REG_SCANNER:   - If Method 2 worked: Use direct reads[0m
+[0;32mI (3182) I2C_REG_SCANNER:   - If Method 3 worked: Note which command succeeded[0m
