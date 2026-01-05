@@ -36,5 +36,7 @@ struct joystick_hal_t {
 // Public API
 void joystick_hal_init(joystick_hal_t *js);
 void joystick_hal_update(joystick_hal_t *js, int32_t x_raw, int32_t y_raw);
+void joystick_mix(float x, float y, int *pwm_left, int *pwm_right);
+
 
 #endif
