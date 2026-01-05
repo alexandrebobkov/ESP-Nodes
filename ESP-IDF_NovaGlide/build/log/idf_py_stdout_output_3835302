@@ -1,0 +1,285 @@
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x420066b2
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f64
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan  4 2026 20:56:49[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (25) boot: efuse block revision: v1.3[0m
+[0;32mI (28) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (44) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (53) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (66) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (76) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=21c18h (138264) map[0m
+[0;32mI (105) esp_image: segment 1: paddr=00031c40 vaddr=3fc95200 size=03210h ( 12816) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=00034e58 vaddr=40380000 size=0b1c0h ( 45504) load[0m
+[0;32mI (117) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=bc9f4h (772596) map[0m
+[0;32mI (241) esp_image: segment 4: paddr=000fca1c vaddr=4038b1c0 size=09e74h ( 40564) load[0m
+[0;32mI (249) esp_image: segment 5: paddr=00106898 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (256) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (256) boot: Disabling RNG early entropy source...[0m
+[0;32mI (266) cpu_start: Unicore app[0m
+[0;32mI (274) cpu_start: Pro cpu start user code[0m
+[0;32mI (275) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (275) app_init: Application information:[0m
+[0;32mI (275) app_init: Project name:     ESP-IDF_NovaGlide[0m
+[0;32mI (279) app_init: App version:      ESP32-Node_Switch-v2.7-12148-g5[0m
+[0;32mI (285) app_init: Compile time:     Jan  5 2026 05:09:50[0m
+[0;32mI (290) app_init: ELF file SHA256:  00d127b4c...[0m
+[0;32mI (295) app_init: ESP-IDF:          v5.4.1[0m
+[0;32mI (299) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (302) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (306) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (310) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (317) heap_init: At 3FC9D010 len 00022FF0 (139 KiB): RAM[0m
+[0;32mI (322) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (328) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (334) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (340) spi_flash: detected chip: generic[0m
+[0;32mI (343) spi_flash: flash io: dio[0m
+[0;33mW (346) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (358) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (364) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (371) main_task: Started on CPU0[0m
+[0;32mI (371) main_task: Calling app_main()[0m
+[0;32mI (381) SYSTEM_INIT: System initialization complete[0m
+[0;32mI (381) pp: pp rom version: 9387209[0m
+[0;32mI (381) net80211: net80211 rom version: 9387209[0m
+[0;32mI (391) wifi:wifi driver task: 3fca5ae8, prio:23, stack:6656, core=0[0m
+[0;32mI (401) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (401) wifi:wifi certification version: v7.0[0m
+[0;32mI (401) wifi:config NVS flash: enabled[0m
+[0;32mI (401) wifi:config nano formatting: disabled[0m
+[0;32mI (411) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (411) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (411) wifi:Init management short buffer num: 32[0m
+[0;32mI (421) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (421) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (431) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (431) wifi:Init static rx buffer num: 10[0m
+[0;32mI (431) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (441) wifi_init: rx ba win: 6[0m
+[0;32mI (441) wifi_init: accept mbox: 6[0m
+[0;32mI (441) wifi_init: tcpip mbox: 32[0m
+[0;32mI (451) wifi_init: udp mbox: 6[0m
+[0;32mI (451) wifi_init: tcp mbox: 6[0m
+[0;32mI (451) wifi_init: tcp tx win: 5760[0m
+[0;32mI (461) wifi_init: tcp rx win: 5760[0m
+[0;32mI (461) wifi_init: tcp mss: 1440[0m
+[0;32mI (461) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (471) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (471) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (481) phy_init: phy_version 1200,2b7123f9,Feb 18 2025,15:22:21[0m
+[0;32mI (521) wifi:mode : sta (e4:b0:63:17:9e:44)[0m
+[0;32mI (521) wifi:enable tsf[0m
+[0;32mI (651) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (651) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (661) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (671) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (701) wifi:connected with IoT_bots, aid = 3, channel 1, BW20, bssid = 62:a6:e6:79:02:ee[0m
+[0;32mI (701) wifi:security: WPA2-PSK, phy: bg, rssi: -29[0m
+[0;32mI (701) wifi:pm start, type: 1[0m
+
+[0;32mI (701) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (711) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (761) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1741) esp_netif_handlers: sta ip: 10.100.71.55, mask: 255.255.255.0, gw: 10.100.71.1[0m
+[0;32mI (3531) WIFI_SYS: WiFi initialized and connecting...[0m
+[0;32mI (3531) WIFI_SYS: SSID: IoT_bots[0m
+[0;33mW (3531) WIFI_SYS: WiFi Channel: 1[0m
+[0;33mW (3531) WIFI_SYS: Receiver MAC: E4:B0:63:17:9E:44[0m
+[0;33mW (3531) WIFI_SYS: Transmitter will scan channels to find receiver[0m
+[0;32mI (3541) I2C_BUS: Initializing I2C bus...[0m
+[0;32mI (3541) I2C_BUS:   SDA: 3[0m
+[0;32mI (3541) I2C_BUS:   SCL: 2[0m
+[0;32mI (3541) I2C_BUS: I2C bus initialized[0m
+[0;32mI (3551) I2C_BUS: Scanning I2C bus...[0m
+[0;32mI (3561) I2C_BUS:   Found device at 0x40[0m
+[0;32mI (3571) I2C_BUS: Scanning I2C bus...[0m
+[0;32mI (3571) I2C_BUS:   Found device at 0x40[0m
+[0;32mI (3581) MOTORS: LEDC initialized for all 4 motors[0m
+[0;32mI (3581) MOTORS: Motor system initialized[0m
+[0;32mI (3581) gpio: GPIO[0]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3591) gpio: GPIO[1]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3601) ADC: ADC initialized[0m
+[0;32mI (3601) temperature_sensor: Range [-10°C ~ 80°C], error < 1°C[0m
+[0;32mI (3601) TEMP_SENSOR: Temperature sensor initialized[0m
+[0;32mI (3611) I2C_BUS: Adding device 'INA219' at 0x40[0m
+[0;32mI (3611) INA219: INA219 initialized[0m
+[0;32mI (3621) ULTRA_HAL: Created encoder: 0x3fcad950[0m
+[0;32mI (3621) ULTRA_HAL: Ultrasonic HAL initialized (TRIG=9, ECHO=10)[0m
+[0;32mI (3631) ULTRA_HAL: Encoder init pointer = 0x3fcad950[0m
+[0;32mI (3631) ESPNOW_SYS: Initializing ESP-NOW...[0m
+[0;32mI (3641) ESPNOW: espnow [version: 2.0] init[0m
+[0;32mI (3641) ESPNOW_SYS: ESP-NOW init success[0m
+[0;32mI (3641) ESPNOW_SYS: ESP-NOW callback registered[0m
+[0;33mW (3651) ESPNOW_SYS: Receiver MAC: E4:B0:63:17:9E:44[0m
+[0;32mI (3651) ESPNOW_SYS: ESP-NOW initialized - waiting for data from transmitter...[0m
+[0;32mI (3661) ESPNOW_SYS: Expected data size: 24 bytes[0m
+[0;32mI (3671) MQTT_SYS: MQTT system initialized[0m
+[0;32mI (3671) gpio: GPIO[10]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (3681) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (3681) UI: UI system initialized[0m
+[0;32mI (3691) CONTROL: Control task started[0m
+[0;32mI (3691) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3701) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (3701) MQTT_SYS: MQTT Connected[0m
+[0;32mI (3711) CONTROL: Control task created[0m
+[?25l
+[33mDashboard Mode: Press Ctrl+] to exit monitor[0m
+[0;32mI (3721) DASHBOARD: Dashboard display started[0m
+[0;32mI (3721) SCHEDULER: Scheduler initialized[0m
+[0;32mI (3721) SCHEDULER: Scheduler task started[0m
+[0;32mI (3721) SCHEDULER: Scheduler started[0m
+[0;32mI (3731) INA219: VBUS: 0.78V, I: -5.00mA, P: 0.00mW[0m
+[0;33mW (3781) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (3781) main_task: Returned from app_main()[0m
+[0;32mI (3801) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3801) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (3901) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3901) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (4001) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4001) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4081) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (4101) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4101) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (4201) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4201) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (4301) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4301) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4381) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (4401) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4401) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (4501) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4501) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (4601) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4601) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4681) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (4701) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4701) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (4801) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4801) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (4901) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4901) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (4981) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (5001) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5001) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (5101) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5101) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (5201) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5201) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (5281) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (5301) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5301) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (5401) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5401) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (5501) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5501) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (5531) TEMP_SENSOR: ==========================================[0m
+[0;32mI (5531) TEMP_SENSOR: ESP32-C3 Internal Temperature Sensor[0m
+[0;32mI (5531) TEMP_SENSOR: Current Temperature: 48.60°C[0m
+[0;32mI (5531) TEMP_SENSOR: ==========================================[0m
+[0;33mW (5591) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (5601) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5601) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (5701) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5701) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (5801) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5801) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+[0;33mW (5891) ULTRA_HAL: No echo received (timeout)[0m
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m48.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.78 V                           [0m   ║
+[0;32mI (5911) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5911) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+║ [1mCurrent             [0m : [35m-5.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m-1.00 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (6021) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6021) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (6121) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6121) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6191) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (6221) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6221) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (6321) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6321) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (6421) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6421) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (6441) INA219: VBUS: 0.78V, I: -1.00mA, P: 0.00mW[0m
+[0;33mW (6491) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (6521) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6521) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (6621) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6621) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (6721) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6721) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (6791) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (6821) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6821) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (6921) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6921) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (7021) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7031) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7091) ULTRA_HAL: No echo received (timeout)[0m
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+[0;32mI (7141) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7141) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m48.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.78 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-1.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m-1.00 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (7251) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7251) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (7351) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7351) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (7391) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (7451) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7451) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (7551) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7551) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (7651) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7651) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
