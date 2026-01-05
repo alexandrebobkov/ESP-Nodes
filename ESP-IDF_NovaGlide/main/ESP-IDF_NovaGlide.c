@@ -87,7 +87,7 @@ void app_main(void)
     motor_system_init(&motors);
     adc_system_init(&adc);
     temp_sensor_system_init(&temp);
-    //ina219_system_init(&ina);
+    ina219_system_init(&ina);
     ultrasonic_system_init(&ultra);
     espnow_system_init(&espnow);
     mqtt_system_init(&mqtt);
