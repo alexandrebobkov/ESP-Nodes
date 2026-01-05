@@ -16,6 +16,7 @@
 #include "mqtt_sys.h"
 #include "ui.h"
 #include "dashboard.h"
+#include "i2c_bus.h"
 
 // Telemetry bridge context
 typedef struct {
