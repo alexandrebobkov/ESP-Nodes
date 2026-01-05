@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "ESP-IDF_NovaGlide",
-    "project_version":    "ESP32-Node_Switch-v2.7-12031-g470061c366-dirty",
+    "project_version":    "ESP32-Node_Switch-v2.7-12035-g3a6459457b-dirty",
     "project_path":       "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide",
     "idf_path":           "/home/alex/esp/esp-idf/v5.4.1",
     "build_dir":          "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build",
@@ -1555,7 +1555,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build/esp-idf/sensors/libsensors.a",
-            "sources": [ "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/subsystems/sensors/ina219_sensor.c", "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/subsystems/sensors/temp_sensor.c", "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/subsystems/sensors/ultrasonic_sensor.c", "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/subsystems/sensors/ultrasonic_hal.c" ],
+            "sources": [ "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/subsystems/sensors/ina219_sensor.c", "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/subsystems/sensors/temp_sensor.c", "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/subsystems/sensors/ultrasonic_hal.c" ],
             "include_dirs": [ "." ]
         },
         "soc": {

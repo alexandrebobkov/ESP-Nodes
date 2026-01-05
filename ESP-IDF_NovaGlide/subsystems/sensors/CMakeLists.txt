@@ -1,7 +1,6 @@
 idf_component_register(
     SRCS "ina219_sensor.c"
          "temp_sensor.c"
-         "ultrasonic_sensor.c"
          "ultrasonic_hal.c"
     INCLUDE_DIRS "."
     REQUIRES driver
