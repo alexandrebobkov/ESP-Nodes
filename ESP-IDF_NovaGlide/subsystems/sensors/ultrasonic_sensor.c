@@ -1,5 +1,9 @@
 #include "ultrasonic_sensor.h"
 #include "esp_log.h"
+#include "driver/i2c.h"
+#include "esp_err.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
 
 static const char *TAG = "ULTRASONIC";
 
