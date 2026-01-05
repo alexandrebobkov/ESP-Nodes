@@ -9,10 +9,10 @@
 #define ULTRASONIC_I2C_ADDR 0x57
 
 typedef struct ultrasonic_system_s {
-    float distance_cm;           // Measured distance in centimeters
-    bool measurement_valid;      // True if last measurement was successful
+    float distance_cm;
+    bool measurement_valid;
     void (*update)(struct ultrasonic_system_s *self, TickType_t now);
-} ultrasonic_system_t;
+} ultrasonic_system_t;  // This is the type name (not the filename)
 
 /**
  * Initialize the I2C ultrasonic sensor system
