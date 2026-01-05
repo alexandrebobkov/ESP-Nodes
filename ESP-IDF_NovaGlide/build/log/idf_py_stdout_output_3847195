@@ -1088,4 +1088,1114 @@ entry 0x403cc71a
 [0;32mI (25761) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
 [0;33mW (25811) ULTRA_HAL: No echo received (timeout)[0m
 [0;32mI (25841) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
-[0;32mI (25
+[0;32mI (25841) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+[0;32mI (25941) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (25951) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (26051) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (26061) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (26061) TEMP_SENSOR: ==========================================[0m
+[0;32mI (26071) TEMP_SENSOR: ESP32-C3 Internal Temperature Sensor[0m
+[0;32mI (26071) TEMP_SENSOR: Current Temperature: 49.60°C[0m
+[0;32mI (26081) TEMP_SENSOR: ==========================================[0m
+[0;32mI (26081) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (26141) ULTRA_HAL: No echo received (timeout)[0m
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.80 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-3.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+[0;32mI (26161) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (26161) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m-1.00 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (26271) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (26271) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (26371) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (26371) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (26391) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (26441) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (26471) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (26471) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (26571) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (26571) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (26671) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (26671) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (26691) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (26741) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (26771) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (26771) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (26871) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (26871) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (26971) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (26971) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (26991) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (27041) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (27071) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (27071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (27171) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (27171) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (27271) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (27271) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+[0;32mI (27291) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (27351) ULTRA_HAL: No echo received (timeout)[0m
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+[0;32mI (27381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (27381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.80 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-3.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m-1.00 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (27491) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (27491) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (27591) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (27591) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (27601) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (27651) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (27691) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (27691) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (27791) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (27791) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (27891) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (27891) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (27901) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (27951) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (27991) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (27991) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (28091) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (28091) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (28191) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (28191) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (28201) INA219: VBUS: 0.79V, I: -3.00mA, P: 0.00mW[0m
+[0;32mI (28201) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (28251) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (28291) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (28291) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (28391) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (28391) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+[0;32mI (28491) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (28491) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (28501) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (28551) ULTRA_HAL: No echo received (timeout)[0m
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+[0;32mI (28601) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (28601) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.79 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-3.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (28711) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (28721) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+║ [1mDistance            [0m : [34m-1.00 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (28801) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (28831) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (28831) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (28851) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (28931) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (28931) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (29031) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (29031) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (29101) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (29131) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (29131) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (29151) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (29231) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (29231) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (29331) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (29331) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (29401) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (29431) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (29431) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (29451) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (29531) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (29531) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (29631) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (29631) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (29701) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (29731) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (29731) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (29751) ULTRA_HAL: No echo received (timeout)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (29831) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (29851) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.79 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-3.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m-1.00 cm                         [0m   ║
+[0;32mI (29951) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (29951) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (30001) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (30051) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (30061) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (30061) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+I (30161) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730
+[0;32mI (30161) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (30261) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (30261) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (30301) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (30351) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (30361) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (30361) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (30461) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (30461) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (30561) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (30561) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (30601) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (30651) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (30661) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (30661) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (30761) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (30761) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (30861) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (30861) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (30901) INA219: VBUS: 0.79V, I: -2.00mA, P: 0.00mW[0m
+[0;32mI (30901) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (30951) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (30961) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (30961) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (31061) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (31071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.79 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-2.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m-1.00 cm                         [0m   ║
+[0;32mI (31181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (31181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (31201) TEMP_SENSOR: ==========================================[0m
+[0;32mI (31211) TEMP_SENSOR: ESP32-C3 Internal Temperature Sensor[0m
+[0;32mI (31211) TEMP_SENSOR: Current Temperature: 49.60°C[0m
+[0;32mI (31221) TEMP_SENSOR: ==========================================[0m
+[0;32mI (31221) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (31281) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (31291) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (31291) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (31391) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (31391) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (31491) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (31491) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (31531) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (31581) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (31591) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (31591) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (31691) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (31691) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (31791) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (31791) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (31831) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (31881) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (31891) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (31891) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (31991) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (31991) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (32091) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (32091) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (32131) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (32181) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (32191) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (32191) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+[0;32mI (32291) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (32291) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+[0;32mI (32401) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (32401) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (32431) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (32491) ULTRA_HAL: No echo received (timeout)[0m
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.79 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-2.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+[0;32mI (32511) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (32511) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m-1.00 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (32621) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (32621) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (32721) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (32721) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (32741) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (32791) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (32821) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (32821) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (32921) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (32921) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (33021) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (33021) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (33041) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (33091) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (33121) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (33121) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (33221) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (33221) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (33321) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (33321) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (33341) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (33391) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (33421) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (33421) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (33521) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (33521) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (33621) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (33621) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+[0;32mI (33641) INA219: VBUS: 0.79V, I: -4.00mA, P: 0.00mW[0m
+[0;32mI (33641) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (33701) ULTRA_HAL: No echo received (timeout)[0m
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+[0;32mI (33731) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (33731) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.79 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-4.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m-1.00 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (33841) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (33841) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (33941) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (33941) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (33951) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (34001) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (34041) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (34041) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (34141) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (34141) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (34241) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (34241) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (34251) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (34301) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (34341) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (34341) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (34441) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (34441) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (34541) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (34541) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (34551) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (34601) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (34641) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (34641) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (34741) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (34741) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+[0;32mI (34841) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (34841) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (34851) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (34901) ULTRA_HAL: No echo received (timeout)[0m
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+[0;32mI (34951) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (34951) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.79 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-4.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (35061) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (35071) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+║ [1mDistance            [0m : [34m-1.00 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (35151) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (35181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (35181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (35201) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (35281) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (35281) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (35381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (35381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (35451) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (35481) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (35481) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (35501) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (35581) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (35581) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (35681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (35681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (35751) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (35781) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (35781) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (35801) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (35881) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (35881) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (35981) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (35981) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (36051) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (36081) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (36081) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (36101) ULTRA_HAL: No echo received (timeout)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (36181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (36201) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.79 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-4.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m-1.00 cm                         [0m   ║
+[0;32mI (36301) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (36301) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (36351) TEMP_SENSOR: ==========================================[0m
+[0;32mI (36351) TEMP_SENSOR: ESP32-C3 Internal Temperature Sensor[0m
+[0;32mI (36351) TEMP_SENSOR: Current Temperature: 49.60°C[0m
+[0;32mI (36351) TEMP_SENSOR: ==========================================[0m
+[0;32mI (36361) INA219: VBUS: 0.79V, I: -3.00mA, P: 0.00mW[0m
+[0;32mI (36361) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (36411) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (36411) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (36421) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (36511) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (36511) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (36611) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (36611) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (36671) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (36711) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (36711) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (36721) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (36811) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (36811) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (36911) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (36911) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (36971) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (37011) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (37011) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (37021) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (37111) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (37111) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (37211) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (37211) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (37271) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (37311) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (37311) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;33mW (37321) ULTRA_HAL: No echo received (timeout)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (37411) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (37421) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.79 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-3.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m-1.00 cm                         [0m   ║
+[0;32mI (37531) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (37531) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (37571) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (37621) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (37641) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (37641) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (37741) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (37741) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (37841) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (37841) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (37871) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (37921) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (37941) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (37941) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (38041) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (38041) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (38141) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (38141) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (38171) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (38221) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (38241) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (38241) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (38341) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (38341) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (38441) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (38441) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (38471) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (38521) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (38541) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (38541) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+[0;32mI (38611) ESPNOW_SYS: ========================================[0m
+[0;32mI (38621) ESPNOW_SYS: ESP-NOW DATA RECEIVED[0m
+[0;32mI (38621) ESPNOW_SYS: X-axis (rc_x): 63700992[0m
+[0;32mI (38631) ESPNOW_SYS: Y-axis (rc_y): 66977792[0m
+[0;32mI (38631) ESPNOW_SYS: M1: 0, M2: 0, M3: 0, M4: 0[0m
+[0;32mI (38631) ESPNOW_SYS: Data length: 16 bytes[0m
+[0;32mI (38641) ESPNOW_SYS: ========================================[0m
+[0;32mI (38641) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (38651) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+║ [1mPWM Right           [0m : [33m2545                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [32m8190                             [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [32m2545                             [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [0m0                                [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [0m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.79 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-3.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (38761) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (38771) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (38781) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (38841) ULTRA_HAL: No echo received (timeout)[0m
+║ [1mDistance            [0m : [34m-1.00 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (38881) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (38881) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (38981) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (38981) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (39081) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (39081) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (39091) INA219: VBUS: 0.79V, I: -5.00mA, P: 0.00mW[0m
+[0;32mI (39091) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (39141) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (39181) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (39181) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (39281) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (39281) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (39381) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (39381) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (39391) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (39441) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (39481) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (39481) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (39581) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (39581) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (39681) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (39681) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (39691) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (39741) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (39781) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (39781) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m63700992                         [0m   ║
+[0;32mI (39881) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (39891) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+║ [1mJoystick Y          [0m : [32m66977792                         [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m8190                             [0m   ║
+║ [1mPWM Right           [0m : [33m2545                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [32m8190                             [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [32m2545                             [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [0m0                                [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [0m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (39991) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (40001) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (40001) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (40061) ULTRA_HAL: No echo received (timeout)[0m
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.79 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-5.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m-1.00 cm                         [0m   ║
+[0;32mI (40101) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (40111) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (40211) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (40211) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (40311) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (40311) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (40311) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (40361) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (40411) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (40411) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (40511) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (40511) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (40611) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (40611) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (40611) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (40661) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (40711) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (40711) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (40811) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (40811) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (40911) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (40911) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (40911) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (40961) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (41011) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (41011) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (41111) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (41111) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m63700992                         [0m   ║
+║ [1mJoystick Y          [0m : [32m66977792                         [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m8190                             [0m   ║
+║ [1mPWM Right           [0m : [33m2545                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (41211) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (41221) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (41231) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (41281) ULTRA_HAL: No echo received (timeout)[0m
+║ [1mMotor 1 (L-Fwd)     [0m : [32m8190                             [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [32m2545                             [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [0m0                                [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [0m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.79 V                           [0m   ║
+[0;32mI (41331) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (41331) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+║ [1mCurrent             [0m : [35m-5.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m-1.00 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (41441) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (41441) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (41531) TEMP_SENSOR: ==========================================[0m
+[0;32mI (41531) TEMP_SENSOR: ESP32-C3 Internal Temperature Sensor[0m
+[0;32mI (41531) TEMP_SENSOR: Current Temperature: 49.60°C[0m
+[0;32mI (41531) TEMP_SENSOR: ==========================================[0m
+[0;32mI (41541) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (41541) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (41551) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (41601) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (41651) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (41651) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (41751) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (41751) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (41851) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (41851) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (41851) INA219: VBUS: 0.78V, I: -5.00mA, P: 0.00mW[0m
+[0;32mI (41851) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (41911) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (41951) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (41951) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (42051) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (42051) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (42151) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (42151) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (42161) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (42211) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (42251) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (42251) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (42351) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (42351) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m63700992                         [0m   ║
+║ [1mJoystick Y          [0m : [32m66977792                         [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (42451) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (42451) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (42461) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (42511) ULTRA_HAL: No echo received (timeout)[0m
+║ [1mPWM Left            [0m : [33m8190                             [0m   ║
+║ [1mPWM Right           [0m : [33m2545                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [32m8190                             [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [32m2545                             [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [0m0                                [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [0m0                                [0m   ║
+[0;32mI (42561) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (42561) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.78 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-5.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m-1.00 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (42671) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (42671) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (42761) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (42771) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (42771) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (42811) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (42871) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (42871) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (42971) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (42971) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (43061) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (43071) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (43071) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (43111) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (43171) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (43171) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (43271) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (43271) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (43361) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (43371) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (43371) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (43411) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (43471) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (43471) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (43571) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (43571) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (43661) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (43671) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (43671) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (43711) ULTRA_HAL: No echo received (timeout)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m63700992                         [0m   ║
+║ [1mJoystick Y          [0m : [32m66977792                         [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (43771) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (43771) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+║ [1mPWM Left            [0m : [33m8190                             [0m   ║
+║ [1mPWM Right           [0m : [33m2545                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [32m8190                             [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [32m2545                             [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [0m0                                [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [0m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.78 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-5.00 mA                         [0m   ║
+[0;32mI (43881) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (43881) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m-1.00 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (43961) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (43991) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (43991) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (44011) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (44091) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (44091) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (44191) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (44191) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (44261) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (44291) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (44291) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (44311) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (44391) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (44391) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (44491) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (44491) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (44561) INA219: VBUS: 0.78V, I: -3.00mA, P: 0.00mW[0m
+[0;32mI (44561) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (44591) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (44591) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (44611) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (44691) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (44691) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (44791) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (44791) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (44861) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (44891) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (44891) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (44911) ULTRA_HAL: No echo received (timeout)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m63700992                         [0m   ║
+║ [1mJoystick Y          [0m : [32m66977792                         [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (44991) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (45001) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+║ [1mPWM Left            [0m : [33m8190                             [0m   ║
+║ [1mPWM Right           [0m : [33m2545                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [32m8190                             [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [32m2545                             [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [0m0                                [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [0m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.78 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-3.00 mA                         [0m   ║
+[0;32mI (45111) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (45111) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m-1.00 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (45161) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (45221) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (45221) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (45221) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (45321) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (45321) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (45421) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (45421) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (45471) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (45521) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (45521) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (45521) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (45621) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (45621) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (45721) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (45721) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (45771) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (45821) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (45821) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (45821) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (45921) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (45921) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (46021) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (46021) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (46071) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (46121) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (46121) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (46121) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (46221) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (46221) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m63700992                         [0m   ║
+║ [1mJoystick Y          [0m : [32m66977792                         [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m8190                             [0m   ║
+║ [1mPWM Right           [0m : [33m2545                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (46321) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (46321) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+║ [1mMotor 1 (L-Fwd)     [0m : [32m8190                             [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [32m2545                             [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [0m0                                [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [0m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (46371) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (46431) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (46431) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (46431) ULTRA_HAL: No echo received (timeout)[0m
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.78 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-3.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m-1.00 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (46531) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (46531) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (46631) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (46631) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (46681) TEMP_SENSOR: ==========================================[0m
+[0;32mI (46681) TEMP_SENSOR: ESP32-C3 Internal Temperature Sensor[0m
+[0;32mI (46681) TEMP_SENSOR: Current Temperature: 49.60°C[0m
+[0;32mI (46681) TEMP_SENSOR: ==========================================[0m
+[0;32mI (46691) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (46731) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (46731) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (46741) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (46831) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (46831) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (46931) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (46931) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (46991) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (47031) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (47031) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (47041) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (47131) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (47131) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (47231) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (47231) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (47291) INA219: VBUS: 0.78V, I: -5.00mA, P: 0.00mW[0m
+[0;32mI (47291) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (47331) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (47331) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (47341) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (47431) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (47431) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m63700992                         [0m   ║
+[0;32mI (47531) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (47541) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+║ [1mJoystick Y          [0m : [32m66977792                         [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m8190                             [0m   ║
+║ [1mPWM Right           [0m : [33m2545                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (47591) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (47641) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (47641) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (47651) ULTRA_HAL: No echo received (timeout)[0m
+║ [1mMotor 1 (L-Fwd)     [0m : [32m8190                             [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [32m2545                             [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [0m0                                [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [0m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.78 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-5.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m-1.00 cm                         [0m   ║
+[0;32mI (47741) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (47741) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (47851) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (47851) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (47901) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (47951) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (47951) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (47951) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (48051) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (48051) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (48151) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (48151) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (48201) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (48251) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (48251) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (48251) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (48351) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (48351) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (48451) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (48451) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (48501) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (48551) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (48551) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (48551) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (48651) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (48651) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (48751) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (48751) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m63700992                         [0m   ║
+[0;32mI (48801) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (48851) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (48851) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (48861) ULTRA_HAL: No echo received (timeout)[0m
+║ [1mJoystick Y          [0m : [32m66977792                         [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m8190                             [0m   ║
+║ [1mPWM Right           [0m : [33m2545                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [32m8190                             [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [32m2545                             [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [0m0                                [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [0m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (48951) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (48951) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.78 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-5.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m-1.00 cm                         [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (49061) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (49061) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (49111) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (49161) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (49161) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (49161) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (49261) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (49261) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (49361) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (49361) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (49411) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (49461) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (49461) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (49461) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (49561) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (49561) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (49661) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (49661) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (49711) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (49761) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (49761) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (49761) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (49861) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (49861) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (49961) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (49961) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (50011) INA219: VBUS: 0.78V, I: -6.00mA, P: 0.00mW[0m
+[0;32mI (50011) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;32mI (50061) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (50061) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;33mW (50061) ULTRA_HAL: No echo received (timeout)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m63700992                         [0m   ║
+║ [1mJoystick Y          [0m : [32m66977792                         [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m8190                             [0m   ║
+║ [1mPWM Right           [0m : [33m2545                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (50161) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (50171) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+║ [1mMotor 1 (L-Fwd)     [0m : [32m8190                             [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [32m2545                             [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [0m0                                [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [0m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.78 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-6.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m-1.00 cm                         [0m   ║
+[0;32mI (50271) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (50281) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (50311) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (50361) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (50381) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (50381) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (50481) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (50481) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (50581) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (50581) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (50611) ULTRA_HAL: Trigger pulse sent, waiting for echo...[0m
+[0;33mW (50661) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (50681) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (50681) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (50781) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (50781) CONTROL: RC(x,y): (63700992,66977792) -> PWM(L,R): (8190,2545)[0m
+[0;32mI (50881) MOTORS: M1: 8190, M2: 2545, M3: 0, M4: 0[0m
+[0;32mI (50881) CONTROL: RC(x,y): (63
