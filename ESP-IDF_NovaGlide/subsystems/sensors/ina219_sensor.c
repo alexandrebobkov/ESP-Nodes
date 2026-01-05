@@ -42,7 +42,7 @@ static void ina219_update_impl(ina219_system_t *self, TickType_t now) {
         }
 
         if (ina219_read_reg(INA219_REG_SHUNTVOLTAGE, &shunt_raw) == ESP_OK) {
-            self->shunt_voltage = (int16_t)shunt_raw * 0.00001f;  // 10µV per bit
+            self->shunt_voltage = (int16_t)shunt_raw * 0.00001f;  // 10uV per bit
         }
 
         if (ina219_read_reg(INA219_REG_CURRENT, &current_raw) == ESP_OK) {
@@ -78,7 +78,7 @@ void ina219_system_init(ina219_system_t *sys) {
     uint16_t config = 0x399F;  // 16V range, 320mV shunt range, 12-bit, continuous
     ina219_write_reg(INA219_REG_CONFIG, config);
 
-    // Calibration for 100mΩ shunt: Cal = 0.04096 / (Current_LSB * Rshunt)
+    // Calibration for 100mOhm shunt: Cal = 0.04096 / (Current_LSB * Rshunt)
     uint16_t cal = 4096;
     ina219_write_reg(INA219_REG_CALIBRATION, cal);
 
