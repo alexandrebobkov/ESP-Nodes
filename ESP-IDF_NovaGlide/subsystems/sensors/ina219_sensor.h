@@ -4,7 +4,7 @@
 #include "freertos/FreeRTOS.h"
 #include "ina219.h"
 
-#define I2C_PORT 0
+//#define I2C_PORT 0
 #define I2C_ADDR 0x40
 #define I2C_SDA_GPIO 3
 #define I2C_SCL_GPIO 2
