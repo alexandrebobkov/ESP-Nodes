@@ -8,4 +8,5 @@ idf_component_register(
              esp_adc
              esp-idf-lib__ina219
              esp-idf-lib__ultrasonic
-             esp-idf-lib__i2cdev)
+             esp-idf-lib__i2cdev
+             i2c_bus)
