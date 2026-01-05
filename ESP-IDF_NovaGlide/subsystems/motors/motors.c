@@ -93,24 +93,51 @@ static void ledc_init(void) {
     ESP_LOGI(TAG, "LEDC initialized for all 4 motors");
 }
 
-/*void update_motors_pwm(motor_system_t *motors, int left, int right)
+/*
+void update_motors_pwm(motor_system_t *sys, int pwm_left, int pwm_right)
 {
-    if (left >= 0) {
-        motors->L_fwd = left;
-        motors->L_rev = 0;
+    // LEFT MOTOR
+    if (pwm_left >= 0) {
+        sys->motor1_rpm_pcm = pwm_left;     // L-FWD
+        sys->motor3_rpm_pcm = 0;            // L-REV
     } else {
-        motors->L_fwd = 0;
-        motors->L_rev = -left;
+        sys->motor1_rpm_pcm = 0;
+        sys->motor3_rpm_pcm = -pwm_left;
     }
 
-    if (right >= 0) {
-        motors->R_fwd = right;
-        motors->R_rev = 0;
+    // RIGHT MOTOR
+    if (pwm_right >= 0) {
+        sys->motor2_rpm_pcm = pwm_right;    // R-FWD
+        sys->motor4_rpm_pcm = 0;            // R-REV
     } else {
-        motors->R_fwd = 0;
-        motors->R_rev = -right;
+        sys->motor2_rpm_pcm = 0;
+        sys->motor4_rpm_pcm = -pwm_right;
     }
-}*/
+
+    // Store signed values
+    sys->left_pwm = pwm_left;
+    sys->right_pwm = pwm_right;
+
+    // Update hardware
+    ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT,      sys->motor1_rpm_pcm);
+    ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT);
+
+    ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT,     sys->motor2_rpm_pcm);
+    ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT);
+
+    ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT_REV,  sys->motor3_rpm_pcm);
+    ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT_REV);
+
+    ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT_REV, sys->motor4_rpm_pcm);
+    ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT_REV);
+
+    ESP_LOGI(TAG, "M1(L-FWD): %d, M2(R-FWD): %d, M3(L-REV): %d, M4(R-REV): %d",
+             sys->motor1_rpm_pcm,
+             sys->motor2_rpm_pcm,
+             sys->motor3_rpm_pcm,
+             sys->motor4_rpm_pcm);
+}
+*/
 
 
 // Your proven motor update logic
