@@ -58,36 +58,33 @@ static float clampf(float val, float min, float max) {
 
 void joystick_mix(float x, float y, int *pwm_left, int *pwm_right)
 {
-    // Steering gain
-    const float k = 1.0f;//0.5f;
+    // 1. Nonlinear steering curve
+    float x_shaped = x * x * x;   // soft near center, strong at edges
 
-    // Differential mix
-    //float L0 = y + k * x;
-    //float R0 = y - k * x;
+    // 2. Steering gain
+    const float k = 1.0f;
 
-    // Normalize pair
-    float x_shaped = x * x * x;
+    // 3. Differential mix
     float L0 = y + k * x_shaped;
     float R0 = y - k * x_shaped;
 
+    // 4. Limit left/right difference to 75%
     float diff = fabsf(L0 - R0);
-    // Maximum allowed difference (75%)
-    float max_diff = 0.75f * 2.0f;   // because L0 and R0 are in [-1,1]
+    float max_diff = 1.5f;   // 75% of full 2.0 span
+
     if (diff > max_diff) {
         float scale = max_diff / diff;
         L0 *= scale;
         R0 *= scale;
     }
 
-    float m = fmaxf(1.0f, fmaxf(fabsf(L0), fabsf(R0)));
-    float L = L0 / m;
-    float R = R0 / m;
+    // 5. Clamp to [-1, 1] WITHOUT normalization
+    if (L0 > 1.0f) L0 = 1.0f;
+    if (L0 < -1.0f) L0 = -1.0f;
+    if (R0 > 1.0f) R0 = 1.0f;
+    if (R0 < -1.0f) R0 = -1.0f;
 
-    // Scale to PWM range
-    float L_scaled = L * 8190.0f;
-    float R_scaled = R * 8190.0f;
-
-    // Clamp and output
-    *pwm_left  = (int)clampf(L_scaled, -8191.0f, 8190.0f);
-    *pwm_right = (int)clampf(R_scaled, -8191.0f, 8190.0f);
+    // 6. Scale to PWM
+    *pwm_left  = (int)(L0 * 8190.0f);
+    *pwm_right = (int)(R0 * 8190.0f);
 }
