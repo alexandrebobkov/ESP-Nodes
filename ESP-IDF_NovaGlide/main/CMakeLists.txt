@@ -16,4 +16,6 @@ idf_component_register(
         espnow_sys
         sensors
         controls
-        ui)
+        ui
+        i2c_bus
+)
