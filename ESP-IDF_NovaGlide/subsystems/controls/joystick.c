@@ -63,3 +63,30 @@ void joystick_hal_update(joystick_hal_t *js, int32_t x_raw, int32_t y_raw)
     js->norm_x = apply_deadband(nx, js->deadband);
     js->norm_y = apply_deadband(ny, js->deadband);
 }
+
+static float clampf(float val, float min, float max) {
+    return (val < min) ? min : (val > max) ? max : val;
+}
+
+void joystick_mix(float x, float y, int *pwm_left, int *pwm_right)
+{
+    // Steering gain
+    const float k = 0.5f;
+
+    // Differential mix
+    float L0 = y + k * x;
+    float R0 = y - k * x;
+
+    // Normalize pair
+    float m = fmaxf(1.0f, fmaxf(fabsf(L0), fabsf(R0)));
+    float L = L0 / m;
+    float R = R0 / m;
+
+    // Scale to PWM range
+    float L_scaled = L * 8190.0f;
+    float R_scaled = R * 8190.0f;
+
+    // Clamp and output
+    *pwm_left  = (int)clampf(L_scaled, -8191.0f, 8190.0f);
+    *pwm_right = (int)clampf(R_scaled, -8191.0f, 8190.0f);
+}
