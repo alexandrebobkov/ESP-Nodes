@@ -1,9 +1,14 @@
 #include "ultrasonic_hal.h"
 #include "esp_log.h"
+#include <string.h>
 
 static const char *TAG = "ULTRA_HAL";
 
 #define RMT_RESOLUTION_HZ 1000000  // 1 MHz → 1 tick = 1 µs
+#define RX_BUF_SIZE       64       // Enough for HC-SR04 echo pulse
+
+// Static RX buffer
+static uint8_t rx_buffer[RX_BUF_SIZE];
 
 static void ultrasonic_update_impl(ultrasonic_hal_t *self, TickType_t now)
 {
@@ -21,7 +26,7 @@ static void ultrasonic_update_impl(ultrasonic_hal_t *self, TickType_t now)
 
     rmt_symbol_word_t pulse = {
         .level0 = 1,
-        .duration0 = 10,
+        .duration0 = 10,   // 10 µs
         .level1 = 0,
         .duration1 = 10
     };
@@ -31,24 +36,30 @@ static void ultrasonic_update_impl(ultrasonic_hal_t *self, TickType_t now)
     ESP_ERROR_CHECK(rmt_tx_wait_all_done(self->rmt_tx, portMAX_DELAY));
 
     // --- 2. Receive echo pulse ---
+    memset(rx_buffer, 0, RX_BUF_SIZE);
+
     rmt_receive_config_t rx_cfg = {
         .signal_range_min_ns = 1000,
         .signal_range_max_ns = 30000000
     };
 
-    rmt_rx_done_event_data_t rx_data = {0};
-
     ESP_ERROR_CHECK(rmt_receive(self->rmt_rx,
-                                &rx_data,
-                                sizeof(rx_data),
+                                rx_buffer,
+                                RX_BUF_SIZE,
                                 &rx_cfg));
 
-    if (rx_data.num_symbols == 0) {
+    rmt_rx_done_event_data_t rx_event = {0};
+    ESP_ERROR_CHECK(rmt_rx_wait_all_done(self->rmt_rx, &rx_event, portMAX_DELAY));
+
+    if (rx_event.num_symbols == 0) {
         ESP_LOGW(TAG, "No echo received");
         return;
     }
 
-    uint32_t us = rx_data.symbols[0].duration0;
+    // Extract symbols from RX buffer
+    rmt_symbol_word_t *symbols = (rmt_symbol_word_t *)rx_buffer;
+
+    uint32_t us = symbols[0].duration0;
     self->distance_cm = us / 58.0f;
 
     ESP_LOGI(TAG, "Distance: %.2f cm", self->distance_cm);
