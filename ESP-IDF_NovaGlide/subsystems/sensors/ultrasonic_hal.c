@@ -1,7 +1,6 @@
 #include "ultrasonic_hal.h"
-#include "driver/rmt_encoder.h"
-
 #include "esp_log.h"
+#include "driver/rmt_encoder.h"
 
 static const char *TAG = "ULTRA_HAL";
 
@@ -30,7 +29,6 @@ static void ultrasonic_update_impl(ultrasonic_hal_t *self, TickType_t now)
         ESP_LOGE("ULTRA_HAL", "ENCODER IS NULL IN UPDATE, SKIPPING");
         return;
     }
-    ESP_LOGE("ULTRA_HAL", "update() called, now=%lu", (unsigned long) now);
 
     static TickType_t last = 0;
 
@@ -46,9 +44,9 @@ static void ultrasonic_update_impl(ultrasonic_hal_t *self, TickType_t now)
 
     rmt_symbol_word_t pulse = {
         .level0 = 1,
-        .duration0 = 10,   // 10 µs
+        .duration0 = 10,   // 10 µs high
         .level1 = 0,
-        .duration1 = 10
+        .duration1 = 10    // 10 µs low
     };
 
     ESP_ERROR_CHECK(rmt_transmit(self->rmt_tx, self->encoder,
@@ -97,11 +95,9 @@ void ultrasonic_hal_init(ultrasonic_hal_t *ultra,
     };
     ESP_ERROR_CHECK(rmt_new_tx_channel(&tx_cfg, &ultra->rmt_tx));
 
-    rmt_simple_encoder_config_t enc_cfg = {
-        .resolution_hz = RMT_RESOLUTION_HZ,   // 1 MHz, same as TX channel
-    };
-    ESP_ERROR_CHECK(rmt_new_simple_encoder(&enc_cfg, &ultra->encoder));
-    ESP_LOGI(TAG, "Encoder handle = %p", (void*) ultra->encoder);
+    // Use copy encoder (simpler, very robust)
+    rmt_copy_encoder_config_t enc_cfg = {};
+    ESP_ERROR_CHECK(rmt_new_copy_encoder(&enc_cfg, &ultra->encoder));
 
     ESP_ERROR_CHECK(rmt_enable(ultra->rmt_tx));
 
