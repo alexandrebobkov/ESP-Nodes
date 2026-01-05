@@ -1,0 +1,5 @@
+[0;33m--- esp-idf-monitor 1.8.0 on /dev/ttyACM0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x420066b2: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/hal/esp32c3/include/hal/uart_ll.h[0m[0m:[1;31m406[0m
+[0m--- (inlined by) [0;33muart_tx_char[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m190[0m
+[0m
