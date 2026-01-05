@@ -1,0 +1,560 @@
+[0;32mI (245) esp_image: segment 4: paddr=000fc940 vaddr=4038b1b8 sizec7fdb 0x0ESP-ROM:esp32c3-api1-20210207[0m
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x420010b2
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f64
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan  4 2026 20:56:49[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (25) boot: efuse block revision: v1.3[0m
+[0;32mI (28) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (44) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (53) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (66) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (76) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=21c20h (138272) map[0m
+[0;32mI (105) esp_image: segment 1: paddr=00031c48 vaddr=3fc95200 size=03210h ( 12816) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=00034e60 vaddr=40380000 size=0b1b8h ( 45496) load[0m
+[0;32mI (117) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=bc918h (772376) map[0m
+[0;32mI (241) esp_image: segment 4: paddr=000fc940 vaddr=4038b1b8 size=09f38h ( 40760) load[0m
+[0;32mI (248) esp_image: segment 5: paddr=00106880 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (255) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (256) boot: Disabling RNG early entropy source...[0m
+[0;32mI (266) cpu_start: Unicore app[0m
+[0;32mI (274) cpu_start: Pro cpu start user code[0m
+[0;32mI (274) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (275) app_init: Application information:[0m
+[0;32mI (275) app_init: Project name:     ESP-IDF_NovaGlide[0m
+[0;32mI (279) app_init: App version:      ESP32-Node_Switch-v2.7-12130-gb[0m
+[0;32mI (285) app_init: Compile time:     Jan  5 2026 04:48:34[0m
+[0;32mI (290) app_init: ELF file SHA256:  7cfad2674...[0m
+[0;32mI (295) app_init: ESP-IDF:          v5.4.1[0m
+[0;32mI (298) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (302) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (306) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (310) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (316) heap_init: At 3FC9CF10 len 000230F0 (140 KiB): RAM[0m
+[0;32mI (322) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (328) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (334) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (340) spi_flash: detected chip: generic[0m
+[0;32mI (343) spi_flash: flash io: dio[0m
+[0;33mW (346) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (358) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (364) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (371) main_task: Started on CPU0[0m
+[0;32mI (371) main_task: Calling app_main()[0m
+[0;32mI (381) SYSTEM_INIT: System initialization complete[0m
+[0;32mI (381) pp: pp rom version: 9387209[0m
+[0;32mI (381) net80211: net80211 rom version: 9387209[0m
+[0;32mI (391) wifi:wifi driver task: 3fca59e8, prio:23, stack:6656, core=0[0m
+[0;32mI (401) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (401) wifi:wifi certification version: v7.0[0m
+[0;32mI (401) wifi:config NVS flash: enabled[0m
+[0;32mI (401) wifi:config nano formatting: disabled[0m
+[0;32mI (411) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (411) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (411) wifi:Init management short buffer num: 32[0m
+[0;32mI (421) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (421) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (431) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (431) wifi:Init static rx buffer num: 10[0m
+[0;32mI (431) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (441) wifi_init: rx ba win: 6[0m
+[0;32mI (441) wifi_init: accept mbox: 6[0m
+[0;32mI (441) wifi_init: tcpip mbox: 32[0m
+[0;32mI (451) wifi_init: udp mbox: 6[0m
+[0;32mI (451) wifi_init: tcp mbox: 6[0m
+[0;32mI (451) wifi_init: tcp tx win: 5760[0m
+[0;32mI (461) wifi_init: tcp rx win: 5760[0m
+[0;32mI (461) wifi_init: tcp mss: 1440[0m
+[0;32mI (461) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (471) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (471) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (481) phy_init: phy_version 1200,2b7123f9,Feb 18 2025,15:22:21[0m
+[0;32mI (521) wifi:mode : sta (e4:b0:63:17:9e:44)[0m
+[0;32mI (521) wifi:enable tsf[0m
+[0;32mI (651) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (651) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (671) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (671) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (701) wifi:connected with IoT_bots, aid = 3, channel 1, BW20, bssid = 62:a6:e6:79:02:ee[0m
+[0;32mI (701) wifi:security: WPA2-PSK, phy: bg, rssi: -32[0m
+[0;32mI (711) wifi:pm start, type: 1[0m
+
+[0;32mI (711) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (721) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (721) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1761) esp_netif_handlers: sta ip: 10.100.71.55, mask: 255.255.255.0, gw: 10.100.71.1[0m
+[0;32mI (3521) WIFI_SYS: WiFi initialized and connecting...[0m
+[0;32mI (3521) WIFI_SYS: SSID: IoT_bots[0m
+[0;33mW (3521) WIFI_SYS: WiFi Channel: 1[0m
+[0;33mW (3521) WIFI_SYS: Receiver MAC: E4:B0:63:17:9E:44[0m
+[0;33mW (3521) WIFI_SYS: Transmitter will scan channels to find receiver[0m
+[0;32mI (3531) I2C_BUS: Initializing I2C bus...[0m
+[0;32mI (3531) I2C_BUS:   SDA: 3[0m
+[0;32mI (3531) I2C_BUS:   SCL: 2[0m
+[0;32mI (3541) I2C_BUS: I2C bus initialized[0m
+[0;32mI (3541) I2C_BUS: Scanning I2C bus...[0m
+[0;32mI (3551) I2C_BUS:   Found device at 0x40[0m
+[0;32mI (3561) I2C_BUS: Scanning I2C bus...[0m
+[0;32mI (3561) I2C_BUS:   Found device at 0x40[0m
+[0;32mI (3571) MOTORS: LEDC initialized for all 4 motors[0m
+[0;32mI (3571) MOTORS: Motor system initialized[0m
+[0;32mI (3571) gpio: GPIO[0]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3581) gpio: GPIO[1]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3591) ADC: ADC initialized[0m
+[0;32mI (3591) temperature_sensor: Range [-10°C ~ 80°C], error < 1°C[0m
+[0;32mI (3591) TEMP_SENSOR: Temperature sensor initialized[0m
+[0;32mI (3601) I2C_BUS: Adding device 'INA219' at 0x40[0m
+[0;32mI (3601) INA219: INA219 initialized[0m
+[0;32mI (3611) ULTRA_HAL: Ultrasonic HAL initialized (TRIG=9, ECHO=10)[0m
+[0;32mI (3611) ULTRA_HAL: Encoder init pointer = 0x3fcad850[0m
+[0;32mI (3621) ESPNOW_SYS: Initializing ESP-NOW...[0m
+[0;32mI (3621) ESPNOW: espnow [version: 2.0] init[0m
+[0;32mI (3621) ESPNOW_SYS: ESP-NOW init success[0m
+[0;32mI (3631) ESPNOW_SYS: ESP-NOW callback registered[0m
+[0;33mW (3631) ESPNOW_SYS: Receiver MAC: E4:B0:63:17:9E:44[0m
+[0;32mI (3641) ESPNOW_SYS: ESP-NOW initialized - waiting for data from transmitter...[0m
+[0;32mI (3641) ESPNOW_SYS: Expected data size: 24 bytes[0m
+[0;32mI (3651) MQTT_SYS: MQTT system initialized[0m
+[0;32mI (3651) gpio: GPIO[10]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (3661) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (3671) UI: UI system initialized[0m
+[0;32mI (3671) CONTROL: Control task started[0m
+[0;32mI (3681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (3691) MQTT_SYS: MQTT Connected[0m
+[0;32mI (3691) CONTROL: Control task created[0m
+[?25l
+[33mDashboard Mode: Press Ctrl+] to exit monitor[0m
+[0;32mI (3701) DASHBOARD: Dashboard display started[0m
+[0;32mI (3701) SCHEDULER: Scheduler initialized[0m
+[0;32mI (3711) SCHEDULER: Scheduler task started[0m
+[0;32mI (3711) INA219: VBUS: 0.78V, I: -4.00mA, P: 0.00mW[0m
+[0;32mI (3711) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (3721) ULTRA_HAL: update() called, now=334[0m
+Guru Meditation Error: Core  0 panic'ed (Instruction access fault). Exception was unhandled.
+
+Core  0 register dump:
+MEPC    : 0x00000000  RA      : 0x403835e6  SP      : 0x3fcb7990  GP      : 0x3fc95a00  
+TP      : 0x3fcb7ab0  T0      : 0x4005890e  T1      : 0x0000000f  T2      : 0x00000000  
+S0/FP   : 0x3fcad850  S1      : 0x3fcad554  A0      : 0x3fcb7a54  A1      : 0x00000004  
+A2      : 0x00000000  A3      : 0x00000060  A4      : 0x60016400  A5      : 0x3fcb799f  
+A6      : 0x00000000  A7      : 0x00000000  S2      : 0x00000000  S3      : 0x60016400  
+S4      : 0x3fcb7a54  S5      : 0x00000004  S6      : 0x00000000  S7      : 0x3fcb79dc  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x00000000  T4      : 0x00000000  T5      : 0x00000000  T6      : 0x00000000  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000001  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+Stack memory:
+3fcb7990: 0x00000000 0x3c0c69c8 0x3c0c69c0 0x00000000 0x3fcb7a2c 0x3c0c6c44 0x3c0c4e28 0x00000000
+3fcb79b0: 0x00000000 0xffffffff 0x00000004 0x3fcad7ec 0x3fcad554 0x3fcad554 0x3fcad5d8 0x40383b94
+3fcb79d0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x3fcad554 0x3fcad5d8 0x40383d4a
+3fcb79f0: 0x00000000 0x0000014e 0x3fc98ed4 0x3fcb7a54 0x3fcad850 0x3fcb7a58 0x3fcad554 0x4201c896
+3fcb7a10: 0x3c0c69c0 0x40100000 0x00000003 0x3fcad5d8 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb7a30: 0x00000000 0x0000014e 0x3fc98ed4 0x42010aaa 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb7a50: 0x00000000 0x000a800a 0x00000000 0x00000000 0x00000000 0x0000014e 0x3fc95500 0x4200aee4
+3fcb7a70: 0x00000000 0x00000000 0x00000000 0x40388992 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb7a90: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5
+3fcb7ab0: 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5 0x0000853d 0x3fc9cf24 0x3fc9cf24 0x3fcb7af0 0x00000001
+3fcb7ad0: 0x3fcb7b20 0x003a001a 0x00070000 0x00000007 0x00000000 0x3fcac9c8 0x00000000 0x3fcb7afc
+3fcb7af0: 0x00088640 0x3fcb7b20 0x00000000 0x00000100 0x0038a6ae 0x00000001 0x00000000 0x00000000
+3fcb7b10: 0x00000000 0x00000000 0x00000000 0x00000000 0x10620ce6 0x00000000 0x21010000 0x0038a6ae
+3fcb7b30: 0x9c0fcff3 0x13e3a4a0 0x3b29c136 0x74900000 0x00000000 0x0038a6d6 0x00000012 0x0005a062
+3fcb7b50: 0x002c4288 0x1763b0e4 0xa662449e 0xee0279e6 0x9797af54 0x00704f3e 0x000a0000 0x1763b0e4
+3fcb7b70: 0xaf54449e 0x4f3e9797 0x00450008 0x110b2c00 0x063c0040 0x0e4a69c5 0x640aa8d2 0x075b3747
+90: 0xb91cd743 0x1a525d43 0x185050b7 0x595cfa2c 0x02400000 0x0000e64a 0x3fc9cf24 0x3fc9cf24
+3fcb7bb0: 0x9900b82c 0x4cf9a8be 0xcbb1b4e9 0x90f0bdb7 0x71d79158 0x78ff9b45 0x48019229 0x7c5c1766
+3fcb7bd0: 0x925c4414 0x4024a6b4 0xd7e47fec 0x19491e6d 0x1133be5e 0x1e0c7fdb 0x0e2a58b8 0x71337fd6
+3fcb7bf0: 0x44300438 0x010e846c 0xebff77bc 0xa2b4945a 0x7bef7c97 0xc6619e83 0x404c993e 0x5a8cd69f
+3fcb7c10: 0x690342ea 0x761030ed 0x2f7c98bb 0xd2f56c41 0xebe15feb 0x13a3d8be 0x0120a40a 0xf31d7b6c
+3fcb7c30: 0x2104705d 0x573435c3 0x1ed474f8 0x000607b1 0x17cfa95b 0x0b829ac8 0x15500822 0x459a0dee
+3fcb7c50: 0x78222061 0x643c2920 0xebe6f7de 0x6c0a2427 0x7563feda 0x58771ab6 0x1a800740 0xac73fcf7
+3fcb7c70: 0x520410a6 0x06c60602 0x51fa9b44 0xcb95391c 0x496c866a 0xf2dd31c1 0x57318ca8 0x2f799dbf
+3fcb7c90: 0xc015df41 0x81239c1b 0x6ee1f8ba 0xf8149fc8 0xf33613cb 0x3efc7fa5 0x55e208d2 0x5b1b928f
+3fcb7cb0: 0x71082c45 0x06048265 0xfafef103 0x4a4c9509 0xe06a4add 0xca46beba 0x893d965d 0xc4b6f74d
+3fcb7cd0: 0x20ef0280 0xa21741c1 0x7adeab7b 0xe15bf0ce 0x9f656c3d 0x8791caa9 0xdf7cbc45 0xdbde999d
+3fcb7cf0: 0x4f522f93 0x4c435dea 0x5b5f69da 0xfcc6811c 0x6f1d6f94 0x81c0d273 0x2050fc3d 0x0264bb7b
+3fcb7d10: 0xc01a8093 0x054e9c8a 0x75bd6fde 0xd19c5001 0xd1f9f607 0x3af7f35b 0x38a80942 0x3bdd35cd
+3fcb7d30: 0x48c02592 0x9915af12 0xc6f8ee35 0xa0705409 0xed9ad2ef 0x7af7de6b 0xf02d0aab 0xc6e752ef
+3fcb7d50: 0xd846bbab 0x2a21a434 0x8828a3ee 0x51bc2191 0xa82eed17 0xf568c6fd 0x2f922ae1 0xbb7238dd
+3fcb7d70: 0x58120214 0xcc355576 0x79e0b3f6 0xa2814f5f 0x513a7cef 0x5e2235cc 0x89029d13 0x6b92f8ff
+
+
+
+ELF file SHA256: 7cfad2674
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038083c
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f64
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan  4 2026 20:56:49[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=21c20h (138272) map[0m
+[0;32mI (105) esp_image: segment 1: paddr=00031c48 vaddr=3fc95200 size=03210h ( 12816) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=00034e60 vaddr=40380000 size=0b1b8h ( 45496) load[0m
+[0;32mI (117) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=bc918h (772376) map[0m
+[0;32mI (240) esp_image: segment 4: paddr=000fc940 vaddr=4038b1b8 size=09f38h ( 40760) load[0m
+[0;32mI (248) esp_image: segment 5: paddr=00106880 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (255) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (255) boot: Disabling RNG early entropy source...[0m
+[0;32mI (265) cpu_start: Unicore app[0m
+[0;32mI (274) cpu_start: Pro cpu start user code[0m
+[0;32mI (274) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (274) app_init: Application information:[0m
+[0;32mI (274) app_init: Project name:     ESP-IDF_NovaGlide[0m
+[0;32mI (279) app_init: App version:      ESP32-Node_Switch-v2.7-12130-gb[0m
+[0;32mI (285) app_init: Compile time:     Jan  5 2026 04:48:34[0m
+[0;32mI (290) app_init: ELF file SHA256:  7cfad2674...[0m
+[0;32mI (294) app_init: ESP-IDF:          v5.4.1[0m
+[0;32mI (298) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (302) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (306) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (310) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (316) heap_init: At 3FC9CF10 len 000230F0 (140 KiB): RAM[0m
+[0;32mI (321) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (327) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (333) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (339) spi_flash: detected chip: generic[0m
+[0;32mI (342) spi_flash: flash io: dio[0m
+[0;33mW (345) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (358) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (363) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (370) main_task: Started on CPU0[0m
+[0;32mI (370) main_task: Calling app_main()[0m
+[0;32mI (380) SYSTEM_INIT: System initialization complete[0m
+[0;32mI (380) pp: pp rom version: 9387209[0m
+[0;32mI (380) net80211: net80211 rom version: 9387209[0m
+[0;32mI (390) wifi:wifi driver task: 3fca59e8, prio:23, stack:6656, core=0[0m
+[0;32mI (400) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (400) wifi:wifi certification version: v7.0[0m
+[0;32mI (400) wifi:config NVS flash: enabled[0m
+[0;32mI (400) wifi:config nano formatting: disabled[0m
+[0;32mI (410) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (410) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (410) wifi:Init management short buffer num: 32[0m
+[0;32mI (420) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (420) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (430) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (430) wifi:Init static rx buffer num: 10[0m
+[0;32mI (430) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (440) wifi_init: rx ba win: 6[0m
+[0;32mI (440) wifi_init: accept mbox: 6[0m
+[0;32mI (440) wifi_init: tcpip mbox: 32[0m
+[0;32mI (450) wifi_init: udp mbox: 6[0m
+[0;32mI (450) wifi_init: tcp mbox: 6[0m
+[0;32mI (450) wifi_init: tcp tx win: 5760[0m
+[0;32mI (460) wifi_init: tcp rx win: 5760[0m
+[0;32mI (460) wifi_init: tcp mss: 1440[0m
+[0;32mI (460) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (470) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (470) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (480) phy_init: phy_version 1200,2b7123f9,Feb 18 2025,15:22:21[0m
+[0;32mI (520) wifi:mode : sta (e4:b0:63:17:9e:44)[0m
+[0;32mI (520) wifi:enable tsf[0m
+[0;32mI (650) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (650) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (660) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (670) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (710) wifi:connected with IoT_bots, aid = 3, channel 1, BW20, bssid = 62:a6:e6:79:02:ee[0m
+[0;32mI (710) wifi:security: WPA2-PSK, phy: bg, rssi: -31[0m
+[0;32mI (710) wifi:pm start, type: 1[0m
+
+[0;32mI (710) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (720) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (810) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1760) esp_netif_handlers: sta ip: 10.100.71.55, mask: 255.255.255.0, gw: 10.100.71.1[0m
+[0;32mI (3520) WIFI_SYS: WiFi initialized and connecting...[0m
+[0;32mI (3520) WIFI_SYS: SSID: IoT_bots[0m
+[0;33mW (3520) WIFI_SYS: WiFi Channel: 1[0m
+[0;33mW (3520) WIFI_SYS: Receiver MAC: E4:B0:63:17:9E:44[0m
+[0;33mW (3520) WIFI_SYS: Transmitter will scan channels to find receiver[0m
+[0;32mI (3530) I2C_BUS: Initializing I2C bus...[0m
+[0;32mI (3530) I2C_BUS:   SDA: 3[0m
+[0;32mI (3530) I2C_BUS:   SCL: 2[0m
+[0;32mI (3540) I2C_BUS: I2C bus initialized[0m
+[0;32mI (3540) I2C_BUS: Scanning I2C bus...[0m
+[0;32mI (3550) I2C_BUS:   Found device at 0x40[0m
+[0;32mI (3560) I2C_BUS: Scanning I2C bus...[0m
+[0;32mI (3560) I2C_BUS:   Found device at 0x40[0m
+[0;32mI (3570) MOTORS: LEDC initialized for all 4 motors[0m
+[0;32mI (3570) MOTORS: Motor system initialized[0m
+[0;32mI (3570) gpio: GPIO[0]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3580) gpio: GPIO[1]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3590) ADC: ADC initialized[0m
+[0;32mI (3590) temperature_sensor: Range [-10°C ~ 80°C], error < 1°C[0m
+[0;32mI (3600) TEMP_SENSOR: Temperature sensor initialized[0m
+[0;32mI (3600) I2C_BUS: Adding device 'INA219' at 0x40[0m
+[0;32mI (3610) INA219: INA219 initialized[0m
+[0;32mI (3610) ULTRA_HAL: Ultrasonic HAL initialized (TRIG=9, ECHO=10)[0m
+[0;32mI (3610) ULTRA_HAL: Encoder init pointer = 0x3fcad850[0m
+[0;32mI (3620) ESPNOW_SYS: Initializing ESP-NOW...[0m
+[0;32mI (3620) ESPNOW: espnow [version: 2.0] init[0m
+[0;32mI (3630) ESPNOW_SYS: ESP-NOW init success[0m
+[0;32mI (3630) ESPNOW_SYS: ESP-NOW callback registered[0m
+[0;33mW (3630) ESPNOW_SYS: Receiver MAC: E4:B0:63:17:9E:44[0m
+[0;32mI (3640) ESPNOW_SYS: ESP-NOW initialized - waiting for data from transmitter...[0m
+[0;32mI (3650) ESPNOW_SYS: Expected data size: 24 bytes[0m
+[0;32mI (3650) MQTT_SYS: MQTT system initialized[0m
+[0;32mI (3650) gpio: GPIO[10]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (3660) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (3670) UI: UI system initialized[0m
+[0;32mI (3670) MQTT_SYS: MQTT Connected[0m
+[0;32mI (3680) CONTROL: Control task started[0m
+[0;32mI (3680) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3680) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (3690) CONTROL: Control task created[0m
+[?25l
+[33mDashboard Mode: Press Ctrl+] to exit monitor[0m
+[0;32mI (3700) DASHBOARD: Dashboard display started[0m
+[0;32mI (3700) SCHEDULER: Scheduler initialized[0m
+[0;32mI (3710) SCHEDULER: Scheduler task started[0m
+[0;32mI (3710) SCHEDULER: Scheduler started[0m
+[0;32mI (3710) INA219: VBUS: 0.78V, I: -4.00mA, P: 0.00mW[0m
+[0;32mI (3720) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (3720) ULTRA_HAL: update() called, now=334[0m
+Guru Meditation Error: Core  0 panic'ed (Instruction access fault). Exception was unhandled.
+
+Core  0 register dump:
+MEPC    : 0x00000000  RA      : 0x403835e6  SP      : 0x3fcb77d0  GP      : 0x3fc95a00  
+TP      : 0x3fcb78f0  T0      : 0x4005890e  T1      : 0x0000000f  T2      : 0x00000000  
+S0/FP   : 0x3fcad850  S1      : 0x3fcad554  A0      : 0x3fcb7894  A1      : 0x00000004  
+A2      : 0x00000000  A3      : 0x00000060  A4      : 0x60016400  A5      : 0x3fcb77df  
+A6      : 0x00000000  A7      : 0x00000000  S2      : 0x00000000  S3      : 0x60016400  
+S4      : 0x3fcb7894  S5      : 0x00000004  S6      : 0x00000000  S7      : 0x3fcb781c  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x00000000  T4      : 0x00000000  T5      : 0x00000000  T6      : 0x00000000  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000001  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+Stack memory:
+3fcb77d0: 0x00000000 0x3c0c69c8 0x3c0c69c0 0x00000000 0x3fcb786c 0x3c0c6c44 0x3c0c4e28 0x00000000
+3fcb77f0: 0x00000000 0xffffffff 0x00000004 0x3fcad7ec 0x3fcad554 0x3fcad554 0x3fcad5d8 0x40383b94
+3fcb7810: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x3fcad554 0x3fcad5d8 0x40383d4a
+3fcb7830: 0x00000000 0x0000014e 0x3fc98ed4 0x3fcb7894 0x3fcad850 0x3fcb7898 0x3fcad554 0x4201c896
+3fcb7850: 0x3c0c69c0 0x40100000 0x00000003 0x3fcad5d8 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb7870: 0x00000000 0x0000014e 0x3fc98ed4 0x42010aaa 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb7890: 0x00000000 0x000a800a 0x00000000 0x00000000 0x00000000 0x0000014e 0x3fc95500 0x4200aee4
+3fcb78b0: 0x00000000 0x00000000 0x00000000 0x40388992 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb78d0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5
+3fcb78f0: 0xa5a5a5a5 0x00008705 0x3fc9cf24 0x3fc9cf24 0x3fcb7ab0 0x4005890e 0x0000000f 0x00000000
+3fcb7910: 0x3fcad850 0x3fcad554 0x3fcb7a54 0x00000004 0x00000000 0x00000060 0x60016400 0x3fcb799f
+3fcb7930: 0x00000000 0x00000000 0x00000000 0x60016400 0x3fcb7a54 0x00000004 0x00000000 0x3fcb79dc
+3fcb7950: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb7970: 0x00001881 0x40380001 0x00000001 0x00000000 0x00000000 0x3c0c69c8 0x3c0c69c0 0x00000001
+3fcb7990: 0x00000000 0x3c0c69c8 0x3c0c69c0 0x00000000 0x3fcb7a2c 0x3c0c6c44 0x3c0c4e28 0x00000000
+3fcb79b0: 0x00000000 0xffffffff 0x00000004 0x3fcad7ec 0x3fcad554 0x3fcad554 0x3fcad5d8 0x40383b94
+d0: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x3fcad554 0x3fcad5d8 0x40383d4a
+3fcb79f0: 0x00000000 0x0000014e 0x3fc98ed4 0x3fcb7a54 0x3fcad850 0x3fcb7a58 0x3fcad554 0x4201c896
+3fcb7a10: 0x3c0c69c0 0x40100000 0x00000003 0x3fcad5d8 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb7a30: 0x00000000 0x0000014e 0x3fc98ed4 0x42010aaa 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb7a50: 0x00000000 0x000a800a 0x00000000 0x00000000 0x00000000 0x0000014e 0x3fc95500 0x4200aee4
+3fcb7a70: 0x00000000 0x00000000 0x00000000 0x40388992 0x00000000 0x00000000 0x00000000 0x00000000
+3fcb7a90: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5
+3fcb7ab0: 0xa5a5a5a5 0xa5a5a5a5 0xa5a5a5a5 0x0000853d 0x3fc9cf24 0x3fc9cf24 0x3fcb7af0 0x00000001
+3fcb7ad0: 0x3fcb7b20 0x003a001a 0x00070000 0x00000007 0x00000000 0x3fcac9c8 0x00000000 0x3fcb7afc
+3fcb7af0: 0x00088640 0x3fcb7b20 0x00000000 0x00000100 0x0038a6ae 0x00000001 0x00000000 0x00000000
+3fcb7b10: 0x00000000 0x00000000 0x00000000 0x00000000 0x10620ce6 0x00000000 0x21010000 0x0038a6ae
+3fcb7b30: 0x9c0fcff3 0x13e3a4a0 0x3b29c136 0x74900000 0x00000000 0x0038a6d6 0x00000012 0x0005a062
+3fcb7b50: 0x002c4288 0x1763b0e4 0xa662449e 0xee0279e6 0x9797af54 0x00704f3e 0x000a0000 0x1763b0e4
+3fcb7b70: 0xaf54449e 0x4f3e9797 0x00450008 0x110b2c00 0x063c0040 0x0e4a69c5 0x640aa8d2 0x075b3747
+3fcb7b90: 0xb91cd743 0x1a525d43 0x185050b7 0x595cfa2c 0x02400000 0x0000e64a 0x3fc9cf24 0x3fc9cf24
+3fcb7bb0: 0x9900b82c 0x4cf9a8be 0xcbb1b4e9 0x90f0bdb7 0x71d79158 0x78ff9b45 0x48019229 0x7c5c1766
+
+
+
+ELF file SHA256: 7cfad2674
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038083c
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f64
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan  4 2026 20:56:49[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=21c20h (138272) map[0m
+[0;32mI (105) esp_image: segment 1: paddr=00031c48 vaddr=3fc95200 size=03210h ( 12816) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=00034e60 vaddr=40380000 size=0b1b8h ( 45496) load[0m
+[0;32mI (117) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=bc918h (772376) map[0m
+[0;32mI (240) esp_image: segment 4: paddr=000fc940 vaddr=4038b1b8 size=09f38h ( 40760) load[0m
+[0;32mI (248) esp_image: segment 5: paddr=00106880 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (255) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (255) boot: Disabling RNG early entropy source...[0m
+[0;32mI (265) cpu_start: Unicore app[0m
+[0;32mI (274) cpu_start: Pro cpu start user code[0m
+[0;32mI (274) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (274) app_init: Application information:[0m
+[0;32mI (274) app_init: Project name:     ESP-IDF_NovaGlide[0m
+[0;32mI (279) app_init: App version:      ESP32-Node_Switch-v2.7-12130-gb[0m
+[0;32mI (285) app_init: Compile time:     Jan  5 2026 04:48:34[0m
+[0;32mI (290) app_init: ELF file SHA256:  7cfad2674...[0m
+[0;32mI (294) app_init: ESP-IDF:          v5.4.1[0m
+[0;32mI (298) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (302) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (306) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (310) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (316) heap_init: At 3FC9CF10 len 000230F0 (140 KiB): RAM[0m
+[0;32mI (321) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (327) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (333) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (339) spi_flash: detected chip: generic[0m
+[0;32mI (342) spi_flash: flash io: dio[0m
+[0;33mW (345) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (358) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (364) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (370) main_task: Started on CPU0[0m
+[0;32mI (370) main_task: Calling app_main()[0m
+[0;32mI (380) SYSTEM_INIT: System initialization complete[0m
+[0;32mI (380) pp: pp rom version: 9387209[0m
+[0;32mI (380) net80211: net80211 rom version: 9387209[0m
+[0;32mI (390) wifi:wifi driver task: 3fca59e8, prio:23, stack:6656, core=0[0m
+[0;32mI (400) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (400) wifi:wifi certification version: v7.0[0m
+[0;32mI (400) wifi:config NVS flash: enabled[0m
+[0;32mI (400) wifi:config nano formatting: disabled[0m
+[0;32mI (410) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (410) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (410) wifi:Init management short buffer num: 32[0m
+[0;32mI (420) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (420) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (430) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (430) wifi:Init static rx buffer num: 10[0m
+[0;32mI (430) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (440) wifi_init: rx ba win: 6[0m
+[0;32mI (440) wifi_init: accept mbox: 6[0m
+[0;32mI (440) wifi_init: tcpip mbox: 32[0m
+[0;32mI (450) wifi_init: udp mbox: 6[0m
+[0;32mI (450) wifi_init: tcp mbox: 6[0m
+[0;32mI (450) wifi_init: tcp tx win: 5760[0m
+[0;32mI (460) wifi_init: tcp rx win: 5760[0m
+[0;32mI (460) wifi_init: tcp mss: 1440[0m
+[0;32mI (460) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (470) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (470) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (480) phy_init: phy_version 1200,2b7123f9,Feb 18 2025,15:22:21[0m
+[0;32mI (520) wifi:mode : sta (e4:b0:63:17:9e:44)[0m
+[0;32mI (520) wifi:enable tsf[0m
+[0;32mI (650) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (650) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (660) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (680) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (710) wifi:connected with IoT_bots, aid = 3, channel 1, BW20, bssid = 62:a6:e6:79:02:ee[0m
+[0;32mI (710) wifi:security: WPA2-PSK, phy: bg, rssi: -31[0m
+[0;32mI (710) wifi:pm start, type: 1[0m
+
+[0;32mI (720) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (720) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (790) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1770) esp_netif_handlers: sta ip: 10.100.71.55, mask: 255.255.255.0, gw: 10.100.71.1[0m
+[0;32mI (3520) WIFI_SYS: WiFi initialized and connecting...[0m
+[0;32mI (3520) WIFI_SYS: SSID: IoT_bots[0m
+[0;33mW (3520) WIFI_SYS: WiFi Channel: 1[0m
+[0;33mW (3520) WIFI_SYS: Receiver MAC: E4:B0:63:17:9E:44[0m
+[0;33mW (3520) WIFI_SYS: Transmitter will scan channels to find receiver[0m
+[0;32mI (3530) I2C_BUS: Initializing I2C bus...[0m
+[0;32mI (3530) I2C_BUS:   SDA: 3[0m
+[0;32mI (3530) I2C_BUS:   SCL: 2[0m
+[0;32mI (3540) I2C_BUS: I2C bus initialized[0m
+[0;32mI (3540) I2C_BUS: Scanning I2C bus...[0m
+[0;32mI (3550) I2C_BUS:   Found device at 0x40[0m
+[0;32mI (3560) I2C_BUS: Scanning I2C bus...[0m
+[0;32mI (3560) I2C_BUS:   Found device at 0x40[0m
+[0;32mI (3570) MOTORS: LEDC initialized for all 4 motors[0m
+[0;32mI (3570) MOTORS: Motor system initialized[0m
+[0;32mI (3570) gpio: GPIO[0]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3580) gpio: GPIO[1]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3590) ADC: ADC initialized[0m
+[0;32mI (3590) temperature_sensor: Range [-10°C ~ 80°C], error < 1°C[0m
+[0;32mI (3600) TEMP_SENSOR: Temperature sensor initialized[0m
+[0;32mI (3600) I2C_BUS: Adding device 'INA219' at 0x40[0m
+[0;32mI (3610) INA219: INA219 initialized[0m
+[0;32mI (3610) ULTRA_HAL: Ultrasonic HAL initialized (TRIG=9, ECHO=10)[0m
+[0;32mI (3610) ULTRA_HAL: Encoder init pointer = 0x3fcad850[0m
+[0;32mI (3620) ESPNOW_SYS: Initializing ESP-NOW...[0m
+[0;32mI (3620) ESPNOW: espnow [version: 2.0] init[0m
+[0;32mI (3630) ESPNOW_SYS: ESP-NOW init success[0m
+[0;32mI (3630) ESPNOW_SYS: ESP-NOW callback registered[0m
+[0;33mW (3630) ESPNOW_SYS: Receiver MAC: E4:B0:63:17:9E:44[0m
+[0;32mI (3640) ESPNOW_SYS: ESP-NOW initialized - waiting for data from transmitter...[0m
+[0;32mI (3650) ESPNOW_SYS: Expected data size: 24 bytes[0m
+[0;32mI (3650) MQTT_SYS: MQTT system initialized[0m
+[0;32mI (3650) gpio: GPIO[10]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (3660) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (3670) UI: UI system initialized[0m
+[0;32mI (3680) CONTROL: Control task started[0m
+[0;32mI (3680) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3680) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (3690) MQTT_SYS: MQTT Connected[0m
+[0;32mI (3690) CONTROL: Control task created[0m
+[?25l
+[33mDashboard Mode: Press Ctrl+] to exit monitor[0m
+[0;32mI (3700) DASHBOARD: Dashboard display started[0m
+[0;32mI (3700) SCHEDULER: Scheduler initialized[0m
+[0;32mI (3710) SCHEDULER: Scheduler task started[0m
+[0;32mI (3710) SCHEDULER: Scheduler started[0m
+[0;32mI (3710) INA219: VBUS: 0.78V, I: -4.00mA, P: 0.00mW[0m
+[0;32mI (3720) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (3720) ULTRA_HAL: update() called, now=334[0m
+Guru Meditation Error: Core  0 panic'ed (Instruction access fault). Exception was unhandled.
+
+Core  0 register dump:
+MEPC    : 0x00000000  RA      : 0x403835e6  SP      : 0x3fcb7a00  GP      : 0x3fc95a00  
+TP      : 0x3fcb7b20  T0      : 0x4005890e  T1      : 0x0000000f  T2      : 0x00000000  
+S0/FP   : 0x3fcad850  S1      : 0x3fcad554  A0      : 0x3fcb7ac4  A1      : 0x00000004  
+A2      : 0x00000000  A3      : 0x00000060  A4      : 0x60016400  A5      : 0x3fcb7a0f  
+A6      : 0x00000000  A7      : 0x00000000  S2      : 0x00000000  S3      : 0x60016400  
+S4      : 0x3fcb7ac4  S5      : 0x00000004  S6      : 0x00000000  S7      : 0x3fcb7a4c  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x00000000  T4      : 0x00000000  T5      : 0x00000000  T6      : 0x00000000  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000001  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
