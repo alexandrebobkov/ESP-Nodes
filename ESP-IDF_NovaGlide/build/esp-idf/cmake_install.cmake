@@ -569,6 +569,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build/esp-idf/i2c_bus/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build/esp-idf/esp-idf-lib__esp_idf_lib_helpers/cmake_install.cmake")
 endif()
 
@@ -585,11 +590,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
   include("/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build/esp-idf/esp-idf-lib__ultrasonic/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build/esp-idf/i2c_bus/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
