@@ -17,7 +17,7 @@ typedef struct {
     adc_system_t *adc;
     temp_sensor_system_t *temp;
     ina219_system_t *ina;
-    ultrasonic_hal_t *ultra;
+    ultrasonic_sensor_t *ultra;
     mqtt_system_t *mqtt;
     espnow_system_t *espnow;
     ui_system_t *ui;
