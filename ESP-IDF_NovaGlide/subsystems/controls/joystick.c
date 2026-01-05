@@ -64,7 +64,7 @@ void joystick_mix(float x, float y, int *pwm_left, int *pwm_right)
     float x_shaped = x * x * x * 1.2f; // stronger expo
 
     // 2. Steering gain
-    const float k = 1.1f;   // Stronger steering; preferred 0.9
+    const float k = 0.9f;   // Stronger steering; preferred 0.9
 
     // 3. Differential mix
     float L0 = y + k * x_shaped;
