@@ -1,0 +1,180 @@
+[0;32mI (245) esp_image: segment 4: paddr=000fc98c vaddr=4038b1f0 sizeESP-ROM:esp32c3-api1-20210207[0m
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40385fbc
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f64
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan  4 2026 20:56:49[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (25) boot: efuse block revision: v1.3[0m
+[0;32mI (28) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (44) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (53) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (66) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (76) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=21be8h (138216) map[0m
+[0;32mI (105) esp_image: segment 1: paddr=00031c10 vaddr=3fc95200 size=03210h ( 12816) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=00034e28 vaddr=40380000 size=0b1f0h ( 45552) load[0m
+[0;32mI (117) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=bc964h (772452) map[0m
+[0;32mI (241) esp_image: segment 4: paddr=000fc98c vaddr=4038b1f0 size=09e44h ( 40516) load[0m
+[0;32mI (248) esp_image: segment 5: paddr=001067d8 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (256) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (256) boot: Disabling RNG early entropy source...[0m
+[0;32mI (266) cpu_start: Unicore app[0m
+[0;32mI (274) cpu_start: Pro cpu start user code[0m
+[0;32mI (274) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (275) app_init: Application information:[0m
+[0;32mI (275) app_init: Project name:     ESP-IDF_NovaGlide[0m
+[0;32mI (279) app_init: App version:      ESP32-Node_Switch-v2.7-12145-g9[0m
+[0;32mI (285) app_init: Compile time:     Jan  5 2026 05:08:36[0m
+[0;32mI (290) app_init: ELF file SHA256:  c98f3a138...[0m
+[0;32mI (295) app_init: ESP-IDF:          v5.4.1[0m
+[0;32mI (298) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (302) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (306) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (310) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (316) heap_init: At 3FC9D010 len 00022FF0 (139 KiB): RAM[0m
+[0;32mI (322) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (328) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (334) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (340) spi_flash: detected chip: generic[0m
+[0;32mI (343) spi_flash: flash io: dio[0m
+[0;33mW (346) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (358) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (364) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (371) main_task: Started on CPU0[0m
+[0;32mI (371) main_task: Calling app_main()[0m
+[0;32mI (381) SYSTEM_INIT: System initialization complete[0m
+[0;32mI (381) pp: pp rom version: 9387209[0m
+[0;32mI (381) net80211: net80211 rom version: 9387209[0m
+[0;32mI (391) wifi:wifi driver task: 3fca5ae8, prio:23, stack:6656, core=0[0m
+[0;32mI (401) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (401) wifi:wifi certification version: v7.0[0m
+[0;32mI (401) wifi:config NVS flash: enabled[0m
+[0;32mI (401) wifi:config nano formatting: disabled[0m
+[0;32mI (411) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (411) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (411) wifi:Init management short buffer num: 32[0m
+[0;32mI (421) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (421) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (431) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (431) wifi:Init static rx buffer num: 10[0m
+[0;32mI (431) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (441) wifi_init: rx ba win: 6[0m
+[0;32mI (441) wifi_init: accept mbox: 6[0m
+[0;32mI (441) wifi_init: tcpip mbox: 32[0m
+[0;32mI (451) wifi_init: udp mbox: 6[0m
+[0;32mI (451) wifi_init: tcp mbox: 6[0m
+[0;32mI (451) wifi_init: tcp tx win: 5760[0m
+[0;32mI (461) wifi_init: tcp rx win: 5760[0m
+[0;32mI (461) wifi_init: tcp mss: 1440[0m
+[0;32mI (461) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (471) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (471) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (481) phy_init: phy_version 1200,2b7123f9,Feb 18 2025,15:22:21[0m
+[0;32mI (521) wifi:mode : sta (e4:b0:63:17:9e:44)[0m
+[0;32mI (521) wifi:enable tsf[0m
+[0;32mI (651) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (651) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (651) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (661) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (691) wifi:connected with IoT_bots, aid = 3, channel 1, BW20, bssid = 62:a6:e6:79:02:ee[0m
+[0;32mI (691) wifi:security: WPA2-PSK, phy: bg, rssi: -31[0m
+[0;32mI (691) wifi:pm start, type: 1[0m
+
+[0;32mI (701) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (701) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (781) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1751) esp_netif_handlers: sta ip: 10.100.71.55, mask: 255.255.255.0, gw: 10.100.71.1[0m
+[0;32mI (3521) WIFI_SYS: WiFi initialized and connecting...[0m
+[0;32mI (3521) WIFI_SYS: SSID: IoT_bots[0m
+[0;33mW (3521) WIFI_SYS: WiFi Channel: 1[0m
+[0;33mW (3521) WIFI_SYS: Receiver MAC: E4:B0:63:17:9E:44[0m
+[0;33mW (3521) WIFI_SYS: Transmitter will scan channels to find receiver[0m
+[0;32mI (3531) I2C_BUS: Initializing I2C bus...[0m
+[0;32mI (3531) I2C_BUS:   SDA: 3[0m
+[0;32mI (3531) I2C_BUS:   SCL: 2[0m
+[0;32mI (3541) I2C_BUS: I2C bus initialized[0m
+[0;32mI (3541) I2C_BUS: Scanning I2C bus...[0m
+[0;32mI (3551) I2C_BUS:   Found device at 0x40[0m
+[0;32mI (3561) I2C_BUS: Scanning I2C bus...[0m
+[0;32mI (3571) I2C_BUS:   Found device at 0x40[0m
+[0;32mI (3571) MOTORS: LEDC initialized for all 4 motors[0m
+[0;32mI (3571) MOTORS: Motor system initialized[0m
+[0;32mI (3571) gpio: GPIO[0]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3581) gpio: GPIO[1]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3591) ADC: ADC initialized[0m
+[0;32mI (3591) temperature_sensor: Range [-10°C ~ 80°C], error < 1°C[0m
+[0;32mI (3601) TEMP_SENSOR: Temperature sensor initialized[0m
+[0;32mI (3601) I2C_BUS: Adding device 'INA219' at 0x40[0m
+[0;32mI (3611) INA219: INA219 initialized[0m
+[0;32mI (3611) ULTRA_HAL: Created encoder: 0x3fcad950[0m
+[0;32mI (3611) ULTRA_HAL: Ultrasonic HAL initialized (TRIG=9, ECHO=10)[0m
+[0;32mI (3621) ULTRA_HAL: Encoder init pointer = 0x3fcad950[0m
+[0;32mI (3621) ESPNOW_SYS: Initializing ESP-NOW...[0m
+[0;32mI (3631) ESPNOW: espnow [version: 2.0] init[0m
+[0;32mI (3631) ESPNOW_SYS: ESP-NOW init success[0m
+[0;32mI (3631) ESPNOW_SYS: ESP-NOW callback registered[0m
+[0;33mW (3641) ESPNOW_SYS: Receiver MAC: E4:B0:63:17:9E:44[0m
+[0;32mI (3641) ESPNOW_SYS: ESP-NOW initialized - waiting for data from transmitter...[0m
+[0;32mI (3651) ESPNOW_SYS: Expected data size: 24 bytes[0m
+[0;32mI (3661) MQTT_SYS: MQTT system initialized[0m
+[0;32mI (3661) gpio: GPIO[10]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (3671) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (3681) UI: UI system initialized[0m
+[0;32mI (3681) CONTROL: Control task started[0m
+[0;32mI (3681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3691) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (3691) MQTT_SYS: MQTT Connected[0m
+[0;32mI (3701) CONTROL: Control task created[0m
+[?25l
+[33mDashboard Mode: Press Ctrl+] to exit monitor[0m
+[0;32mI (3711) DASHBOARD: Dashboard display started[0m
+[0;32mI (3711) SCHEDULER: Scheduler initialized[0m
+[0;32mI (3711) SCHEDULER: Scheduler task started[0m
+[0;32mI (3721) SCHEDULER: Scheduler started[0m
+[0;32mI (3721) INA219: VBUS: 0.79V, I: -6.00mA, P: 0.00mW[0m
+[0;33mW (3771) ULTRA_HAL: No echo received (timeout)[0m
+[0;32mI (3771) main_task: Returned from app_main()[0m
+[0;32mI (3791) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3791) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (3891) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3891) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (3991) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3991) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[1;31mE (4021) rmt: rmt_receive(419): channel not in enable state[0m
+[1;31mE (4021) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_STATE (0x103)[0m
+[0;32mI (4091) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4091) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (4191) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4191) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[1;31mE (4271) rmt: rmt_receive(419): channel not in enable state[0m
+[1;31mE (4271) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_STATE (0x103)[0m
+[0;32mI (4291) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4291) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (4391) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4391) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (4491) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4491) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[1;31mE (4521) rmt: rmt_receive(419): channel not in enable state[0m
+[1;31mE (4521) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_STATE (0x103)[0m
+[0;32mI (4591) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4591) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (4691) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4691) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[1;31mE (4771) rmt: rmt_receive(419): channel not in enable state[0m
+[1;31mE (4771) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_STATE (0x103)[0m
+[0;32mI (4791) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4791) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (4891) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4891) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
