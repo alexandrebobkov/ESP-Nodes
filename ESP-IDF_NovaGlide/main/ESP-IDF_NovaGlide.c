@@ -16,15 +16,7 @@ i2c_master_dev_handle_t dev_handle;
 
 uint16_t measure_distance(uint8_t command)
 {
-    // CRITICAL: Send init sequence before EVERY measurement
-    // This sensor requires re-initialization each time
-    uint8_t init_cmds[] = {0x00, 0x01};
-    for (int i = 0; i < sizeof(init_cmds); i++) {
-        i2c_master_transmit(dev_handle, &init_cmds[i], 1, 500);
-        vTaskDelay(pdMS_TO_TICKS(10));
-    }
-
-    // Send measurement command (0x50=cm, 0x51=inch, 0x52=us)
+    // Send command (0x50=cm, 0x51=inch, 0x52=us)
     esp_err_t ret = i2c_master_transmit(dev_handle, &command, 1, 500);
     if (ret != ESP_OK) {
         ESP_LOGE(TAG, "Command 0x%02X send failed: %s", command, esp_err_to_name(ret));
@@ -113,24 +105,32 @@ void app_main(void)
         ESP_LOGI(TAG, "─────────────────────────────────────────");
         ESP_LOGI(TAG, "Measurement #%d", measurement_count);
 
-        // Only test 0x50 (cm) since that's what works
-        uint16_t distance = measure_distance(0x50);
+        // Try all three command types
+        ESP_LOGI(TAG, "Testing 0x50 (cm):");
+        uint16_t dist_cm = measure_distance(0x50);
 
-        if (distance == 0xFFFF) {
-            ESP_LOGE(TAG, "❌ Communication error!");
-        } else if (distance == 0) {
-            ESP_LOGW(TAG, "⚠️  No object detected (0 cm)");
-        } else if (distance < 2) {
-            ESP_LOGW(TAG, "⚠️  Object too close: %u cm", distance);
-        } else if (distance > 400) {
-            ESP_LOGW(TAG, "⚠️  Object detected at: %u cm (may be out of reliable range)", distance);
-        } else {
-            ESP_LOGI(TAG, "✅ Valid distance: %u cm", distance);
+        vTaskDelay(pdMS_TO_TICKS(200));
+
+        ESP_LOGI(TAG, "Testing 0x51 (inch):");
+        uint16_t dist_in = measure_distance(0x51);
+
+        vTaskDelay(pdMS_TO_TICKS(200));
+
+        ESP_LOGI(TAG, "Testing 0x52 (µs):");
+        uint16_t dist_us = measure_distance(0x52);
+
+        // Analysis
+        ESP_LOGI(TAG, "\nResults: CM=%u, INCH=%u, µS=%u", dist_cm, dist_in, dist_us);
+
+        if (dist_cm == 0 && dist_in == 0 && dist_us == 0) {
+            ESP_LOGW(TAG, "⚠️  All zeros - sensor may be defective or not detecting");
+        } else if (dist_cm > 0) {
+            ESP_LOGI(TAG, "✅ Got valid reading: %u cm", dist_cm);
         }
 
         ESP_LOGI(TAG, "");
 
-        // Wait 500ms between measurements
-        vTaskDelay(pdMS_TO_TICKS(500));
+        // Wait 1 second between measurement cycles
+        vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
