@@ -59,7 +59,7 @@ static float clampf(float val, float min, float max) {
 void joystick_mix(float x, float y, int *pwm_left, int *pwm_right)
 {
     // 1. Nonlinear steering curve
-    float x_shaped = x * x * x;   // soft near center, strong at edges
+    float x_shaped = x * x * x * x;   // soft near center, strong at edges
 
     // 2. Steering gain
     const float k = 1.0f;
