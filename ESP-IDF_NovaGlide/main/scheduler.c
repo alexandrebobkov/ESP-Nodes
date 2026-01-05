@@ -46,6 +46,6 @@ void scheduler_init(scheduler_t *sched) {
 }
 
 void scheduler_start(scheduler_t *sched) {
-    xTaskCreate(scheduler_task, "scheduler", 4096, sched, 10, NULL);
+    xTaskCreate(scheduler_task, "scheduler", 8192, sched, 10, NULL);
     ESP_LOGI(TAG, "Scheduler started");
 }
