@@ -28,7 +28,7 @@ static void ultrasonic_update_impl(ultrasonic_hal_t *self, TickType_t now)
         ESP_LOGE("ULTRA_HAL", "ENCODER IS NULL IN UPDATE, SKIPPING");
         return;
     }
-    ESP_LOGI("ULTRA_HAL", "update() called, now=%lu", (unsigned long) now);
+    ESP_LOGE("ULTRA_HAL", "update() called, now=%lu", (unsigned long) now);
 
     static TickType_t last = 0;
 
