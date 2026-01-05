@@ -85,7 +85,7 @@ void app_main(void)
     ESP_ERROR_CHECK(i2c_bus_init());
     i2c_bus_scan();
 
-    while (1) {
+    /*while (1) {
         uint8_t data[2] = {0};
         esp_err_t err = i2c_master_receive(ultra.dev, data, 2, pdMS_TO_TICKS(200));
 
@@ -98,7 +98,7 @@ void app_main(void)
         }
 
         vTaskDelay(pdMS_TO_TICKS(750));
-    }
+        }*/
 
     // Initialize all subsystems
     motor_system_init(&motors);
