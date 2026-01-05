@@ -17,5 +17,4 @@ idf_component_register(
         sensors
         controls
         ui
-        i2c_bus
-)
+        i2c_bus)
