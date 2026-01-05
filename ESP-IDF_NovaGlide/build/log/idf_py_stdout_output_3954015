@@ -1,0 +1,996 @@
+║ [1mJoystick Y          [0m : [32m0                       ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x403853f4
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f64
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jan  4 2026 20:56:49[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (25) boot: efuse block revision: v1.3[0m
+[0;32mI (28) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (44) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (53) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (66) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (76) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=20e70h (134768) map[0m
+[0;32mI (105) esp_image: segment 1: paddr=00030e98 vaddr=3fc94200 size=02e80h ( 11904) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=00033d20 vaddr=40380000 size=0c2f8h ( 49912) load[0m
+[0;32mI (117) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=b9c4ch (760908) map[0m
+[0;32mI (239) esp_image: segment 4: paddr=000f9c74 vaddr=4038c2f8 size=07e8ch ( 32396) load[0m
+[0;32mI (245) esp_image: segment 5: paddr=00101b08 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (252) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (252) boot: Disabling RNG early entropy source...[0m
+[0;32mI (264) cpu_start: Unicore app[0m
+[0;32mI (273) cpu_start: Pro cpu start user code[0m
+[0;32mI (273) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (273) app_init: Application information:[0m
+[0;32mI (273) app_init: Project name:     ESP-IDF_NovaGlide[0m
+[0;32mI (278) app_init: App version:      ESP32-Node_Switch-v2.7-12211-gc[0m
+[0;32mI (283) app_init: Compile time:     Jan  5 2026 05:47:55[0m
+[0;32mI (289) app_init: ELF file SHA256:  8fb55baaa...[0m
+[0;32mI (293) app_init: ESP-IDF:          v5.4.1[0m
+[0;32mI (297) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (301) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (305) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (308) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (315) heap_init: At 3FC9BB60 len 000244A0 (145 KiB): RAM[0m
+[0;32mI (320) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (326) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (332) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (338) spi_flash: detected chip: generic[0m
+[0;32mI (341) spi_flash: flash io: dio[0m
+[0;33mW (344) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (357) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (362) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (369) main_task: Started on CPU0[0m
+[0;32mI (369) main_task: Calling app_main()[0m
+[0;32mI (379) SYSTEM_INIT: System initialization complete[0m
+[1;31mE (3429) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3429) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3429) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3429) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3449) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3449) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3459) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3459) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3469) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3479) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3489) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3489) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3499) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3509) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3519) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3519) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3529) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3539) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3549) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3549) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3559) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3559) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3569) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3579) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3589) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3589) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3599) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3609) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3619) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3619) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3629) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3639) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3649) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3649) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3659) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3659) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3669) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3679) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3689) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3689) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3699) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3709) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3719) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3719) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3729) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3739) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3749) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3749) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3759) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3759) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3769) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3779) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3789) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3789) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3799) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3809) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3819) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3819) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3829) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3839) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3849) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3849) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3859) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3859) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3869) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3879) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3889) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3889) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3899) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3909) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3919) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3919) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3929) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3939) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3949) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3949) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3959) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3959) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3969) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3979) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3989) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (3989) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (3999) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4009) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4019) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4019) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4029) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4039) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4049) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4049) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4059) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4069) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4079) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4079) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4089) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4089) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4099) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4109) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4119) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4119) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4129) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4139) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4149) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4149) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4159) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4169) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4179) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4179) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4189) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4189) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4199) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4209) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4219) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4219) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4229) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4239) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4249) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4249) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4259) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4269) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4279) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4279) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4289) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4289) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4299) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4309) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4319) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4319) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4329) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4339) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4349) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4349) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4359) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4369) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4379) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4379) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4389) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4389) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4399) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4409) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4419) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4419) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4429) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4439) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4449) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4449) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4459) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4469) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4479) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4479) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4489) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4489) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4499) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4509) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4519) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4519) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4529) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4539) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4549) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4549) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4559) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4569) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4579) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4579) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4589) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4589) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4599) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4609) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4619) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4619) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4629) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4639) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4649) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4649) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4659) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4669) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4679) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4679) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4689) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4699) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4709) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4709) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4719) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4719) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4729) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4739) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4749) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4749) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4759) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4769) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4779) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4779) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4789) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4799) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4809) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4809) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4819) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4819) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4829) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4839) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4849) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4849) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4859) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4869) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4879) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4879) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4889) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4899) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4909) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4909) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4919) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4919) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4929) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4939) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4949) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4949) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4959) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4969) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4979) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4979) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (4989) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (4999) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5009) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5009) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5019) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5019) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5029) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5039) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5049) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5049) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5059) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5069) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5079) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5079) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5089) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5099) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5109) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5109) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5119) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5119) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5129) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5139) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5149) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5149) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5159) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5169) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5179) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5179) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5189) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5199) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5209) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5209) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5219) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5229) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5239) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5239) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5249) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5249) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5259) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5269) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5279) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5279) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5289) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5299) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5309) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5309) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5319) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5329) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5339) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5339) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5349) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5349) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5359) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5369) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5379) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5379) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5389) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5399) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5409) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5409) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5419) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5429) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5439) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5439) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5449) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5449) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5459) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5469) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5479) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5479) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5489) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5499) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5509) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5509) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5519) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5529) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5539) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5539) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5549) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5549) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5559) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5569) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5579) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5579) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5589) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5599) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5609) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5609) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5619) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5629) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5639) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5639) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5649) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5649) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5659) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5669) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5679) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5679) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5689) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5699) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5709) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5709) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5719) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5729) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5739) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5739) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5749) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5759) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5769) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5769) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5779) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5779) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5789) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5799) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5809) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5809) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5819) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5829) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5839) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5839) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5849) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5859) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5869) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5869) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5879) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5879) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5889) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5899) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5909) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5909) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5919) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5929) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5939) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5939) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5949) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5959) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5969) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5969) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5979) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5979) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (5989) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (5999) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6009) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6009) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6019) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6029) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6039) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6039) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6049) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6059) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6069) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6069) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6079) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6079) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6089) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6099) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6109) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6109) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6119) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6129) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6139) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6139) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6149) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6159) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6169) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6169) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6179) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6179) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6189) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6199) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6209) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6209) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6219) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6229) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6239) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6239) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6249) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6259) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6269) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6269) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6279) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6279) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6299) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6299) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6309) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6309) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6319) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6329) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6339) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6339) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6349) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6359) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6369) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6369) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6379) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6389) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6399) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6399) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6409) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6409) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6419) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6429) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6439) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6439) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6449) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6459) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6469) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6469) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6479) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6489) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6499) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6499) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6509) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6509) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6519) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6529) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6539) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6539) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6549) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6559) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6569) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6569) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6579) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6589) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6599) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6599) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6609) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (6609) i2c.master: probe device timeout. Please check if xfer_timeout_ms and pull-ups are correctly set up[0m
+[1;31mE (6629) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6629) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (6639) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[?25l
+[33mDashboard Mode: Press Ctrl+] to exit monitor[0m
+[0;32mI (6649) DASHBOARD: Dashboard display started[0m
+[1;31mE (6659) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6659) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (6669) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (6919) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (6919) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (6919) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m46.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.00 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-4.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.00 cm                          [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (9329) i2c.master: clear bus failed.[0m
+[1;31mE (9329) i2c.master: s_i2c_transaction_start(600): reset hardware failed[0m
+[1;31mE (9329) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (9329) i2c.master: i2c_master_transmit_receive(1220): I2C transaction failed[0m
+[1;31mE (9339) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (9339) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (9349) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (9609) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (9609) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (9609) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m46.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.00 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-4.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.00 cm                          [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m46.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.00 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-4.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.00 cm                          [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (12019) i2c.master: clear bus failed.[0m
+[1;31mE (12019) i2c.master: s_i2c_transaction_start(600): reset hardware failed[0m
+[1;31mE (12019) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (12019) i2c.master: i2c_master_transmit_receive(1220): I2C transaction failed[0m
+[1;31mE (12029) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (12029) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (12039) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[1;31mE (12299) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (12309) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (12319) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.00 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-5.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.00 cm                          [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.00 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-5.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.00 cm                          [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+[1;31mE (14739) i2c.master: clear bus failed.[0m
+[1;31mE (14739) i2c.master: s_i2c_transaction_start(600): reset hardware failed[0m
+[1;31mE (14739) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (14739) i2c.master: i2c_master_transmit_receive(1220): I2C transaction failed[0m
+╠════════════════════════════════════════════════════════════╣
+[1;31mE (14749) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (14769) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (14779) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.00 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-5.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.00 cm                          [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (15039) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (15039) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (15039) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (15289) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (15289) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (15289) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (15539) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (15539) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (15539) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (15789) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (15789) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (15789) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[1;31mE (16039) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (16049) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (16059) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.00 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-5.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.00 cm                          [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (16319) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (16319) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (16319) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (16569) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (16569) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (16569) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (16819) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (16819) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (16819) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (17069) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (17069) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (17069) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+[1;31mE (17319) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (17329) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (17329) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+║ [1mBattery Voltage     [0m : [31m0.00 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-3.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.00 cm                          [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (17589) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (17589) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (17589) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (17839) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (17839) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (17839) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (18089) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (18089) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (18089) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (18339) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (18339) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (18339) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.00 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-3.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.00 cm                          [0m   ║
+[1;31mE (18589) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (18589) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (18599) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (18859) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (18859) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (18859) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (19109) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (19109) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (19109) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (19359) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (19359) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (19359) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (19609) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (19609) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (19609) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.00 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-3.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.00 cm                          [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (19859) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (19859) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (19859) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (20119) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (20119) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (20119) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (20369) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (20369) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (20369) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (20619) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (20619) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (20619) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+[1;31mE (20869) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (20869) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (20879) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.00 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-5.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.00 cm                          [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (21139) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (21139) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (21139) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (21389) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (21389) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (21389) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (21639) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (21639) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (21639) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (21889) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (21889) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (21889) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[1;31mE (22139) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (22139) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (22149) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.00 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-5.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.00 cm                          [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (22409) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (22409) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (22409) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (22669) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (22669) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (22669) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (22919) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (22919) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (22919) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (23169) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (23169) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (23169) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.00 V                           [0m   ║
+[1;31mE (23419) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (23419) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (23429) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+║ [1mCurrent             [0m : [35m-3.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.00 cm                          [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (23689) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (23689) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (23689) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (23939) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (23939) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (23939) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (24189) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (24189) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (24189) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (24439) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (24439) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (24439) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.00 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-3.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.00 cm                          [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (24689) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (24699) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (24699) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (24959) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (24959) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (24959) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (25219) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (25219) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (25219) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (25469) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (25469) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (25469) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+[1;31mE (25719) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (25719) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (25729) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m49.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.00 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-4.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.00 cm                          [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[1;31mE (25989) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (25989) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (25989) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (26239) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (26239) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (26239) i2c.master: i2c_master_multi_buffer_transmit(1186): I2C transaction failed[0m
+[1;31mE (26489) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (26489) i2c.mas
