@@ -24,9 +24,9 @@ static void scheduler_task(void *arg) {
         if (sched->ina && sched->ina->update) {
             sched->ina->update(sched->ina, now);
         }
-        if (sched->ultra && sched->ultra->update) {
+        /*if (sched->ultra && sched->ultra->update) {
             sched->ultra->update(sched->ultra, now);
-        }
+            }*/
         if (sched->mqtt && sched->mqtt->update) {
             sched->mqtt->update(sched->mqtt, now);
         }
