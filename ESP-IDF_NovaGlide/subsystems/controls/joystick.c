@@ -72,7 +72,7 @@ void joystick_mix(float x, float y, int *pwm_left, int *pwm_right)
 
     // 4. Limit left/right difference to 75%
     float diff = fabsf(L0 - R0);
-        float max_diff = 1.8f;   // 75% of full 2.0 span // allow full spin but keep arcs smooth; had 1.2
+        float max_diff = 1.7f;   // 75% of full 2.0 span // allow full spin but keep arcs smooth; had 1.2
 
     if (diff > max_diff) {
         float scale = max_diff / diff;
