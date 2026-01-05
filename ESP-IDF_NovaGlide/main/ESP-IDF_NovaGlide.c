@@ -23,9 +23,7 @@
 typedef struct {
     temp_sensor_system_t *temp;
     ina219_system_t *ina;
-    motor_system_t *motors;
-    mqtt_system_t *mqtt;
-    //ultrasonic_system_t *ultrasonic;
+    ultrasonic_system_t *ultrasonic;
 } telemetry_context_t;
 
 // Task to bridge sensor data to MQTT
@@ -73,7 +71,8 @@ void app_main(void)
     static adc_system_t adc;
     static temp_sensor_system_t temp;
     static ina219_system_t ina;
-    //static ultrasonic_system_t ultra;
+    //static ultrasonic_system_t ultra; // I2C mode
+    static ultrasonic_hal_t ultra;      // GPIO mode
     static mqtt_system_t mqtt;
     static espnow_system_t espnow;
     static ui_system_t ui;
