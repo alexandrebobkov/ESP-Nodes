@@ -21,14 +21,22 @@
 #include "i2c_bus.h"
 
 // Telemetry bridge context
-static telemetry_context_t telem_ctx = {
+typedef struct {
+    temp_sensor_system_t *temp;
+    ina219_system_t *ina;
+    motor_system_t *motors;
+    mqtt_system_t *mqtt;
+    ultrasonic_system_t *ultrasonic;
+} telemetry_context_t;
+
+// Telemetry bridge context
+telemetry_context_t telem_ctx = {
     .temp = &temp,
     .ina = &ina,
     .motors = &motors,
-    .mqtt = &mqtt
-    //.ultrasonic = &ultra
+    .mqtt = &mqtt,
+    .ultrasonic = &ultra
 };
-
 
 // Task to bridge sensor data to MQTT
 static void telemetry_bridge_task(void *arg) {
