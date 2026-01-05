@@ -242,4 +242,115 @@ entry 0x403cc71a
 [1;31mE (25989) i2c.master: I2C transaction timeout detected[0m
 [1;31mE (25989) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
 [1;31mE (26049) i2c.master: clear bus failed.[0m
-[1;31mE (26049) i2c.master: i2c_mas
+[1;31mE (26049) i2c.master: i2c_master_receive(1240): I2C transaction failed[0m
+[0;33mW (26049) ULTRA_RAW: raw read failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (27049) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (27049) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (27109) i2c.master: clear bus failed.[0m
+[1;31mE (27109) i2c.master: i2c_master_receive(1240): I2C transaction failed[0m
+[0;33mW (27109) ULTRA_RAW: raw read failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (28109) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (28109) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (28169) i2c.master: clear bus failed.[0m
+[1;31mE (28169) i2c.master: i2c_master_receive(1240): I2C transaction failed[0m
+[0;33mW (28169) ULTRA_RAW: raw read failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (29169) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (29169) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (29229) i2c.master: clear bus failed.[0m
+[1;31mE (29229) i2c.master: i2c_master_receive(1240): I2C transaction failed[0m
+[0;33mW (29229) ULTRA_RAW: raw read failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (30229) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (30229) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (30289) i2c.master: clear bus failed.[0m
+[1;31mE (30289) i2c.master: i2c_master_receive(1240): I2C transaction failed[0m
+[0;33mW (30289) ULTRA_RAW: raw read failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (31289) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (31289) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (31349) i2c.master: clear bus failed.[0m
+[1;31mE (31349) i2c.master: i2c_master_receive(1240): I2C transaction failed[0m
+[0;33mW (31349) ULTRA_RAW: raw read failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (32349) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (32349) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (32409) i2c.master: clear bus failed.[0m
+[1;31mE (32409) i2c.master: i2c_master_receive(1240): I2C transaction failed[0m
+[0;33mW (32409) ULTRA_RAW: raw read failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (33409) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (33409) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (33469) i2c.master: clear bus failed.[0m
+[1;31mE (33469) i2c.master: i2c_master_receive(1240): I2C transaction failed[0m
+[0;33mW (33469) ULTRA_RAW: raw read failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (34469) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (34469) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (34529) i2c.master: clear bus failed.[0m
+[1;31mE (34529) i2c.master: i2c_master_receive(1240): I2C transaction failed[0m
+[0;33mW (34529) ULTRA_RAW: raw read failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (35529) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (35529) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (35589) i2c.master: clear bus failed.[0m
+[1;31mE (35589) i2c.master: i2c_master_receive(1240): I2C transaction failed[0m
+[0;33mW (35589) ULTRA_RAW: raw read failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (36589) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (36589) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (36649) i2c.master: clear bus failed.[0m
+[1;31mE (36649) i2c.master: i2c_master_receive(1240): I2C transaction failed[0m
+[0;33mW (36649) ULTRA_RAW: raw read failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (37649) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (37649) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (37709) i2c.master: clear bus failed.[0m
+[1;31mE (37709) i2c.master: i2c_master_receive(1240): I2C transaction failed[0m
+[0;33mW (37709) ULTRA_RAW: raw read failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (38709) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (38709) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (38769) i2c.master: clear bus failed.[0m
+[1;31mE (38769) i2c.master: i2c_master_receive(1240): I2C transaction failed[0m
+[0;33mW (38769) ULTRA_RAW: raw read failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (39769) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (39769) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (39829) i2c.master: clear bus failed.[0m
+[1;31mE (39829) i2c.master: i2c_master_receive(1240): I2C transaction failed[0m
+[0;33mW (39829) ULTRA_RAW: raw read failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (40829) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (40829) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (40889) i2c.master: clear bus failed.[0m
+[1;31mE (40889) i2c.master: i2c_master_receive(1240): I2C transaction failed[0m
+[0;33mW (40889) ULTRA_RAW: raw read failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (41889) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (41889) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (41949) i2c.master: clear bus failed.[0m
+[1;31mE (41949) i2c.master: i2c_master_receive(1240): I2C transaction failed[0m
+[0;33mW (41949) ULTRA_RAW: raw read failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (42949) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (42949) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (43009) i2c.master: clear bus failed.[0m
+[1;31mE (43009) i2c.master: i2c_master_receive(1240): I2C transaction failed[0m
+[0;33mW (43009) ULTRA_RAW: raw read failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (44009) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (44009) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (44069) i2c.master: clear bus failed.[0m
+[1;31mE (44069) i2c.master: i2c_master_receive(1240): I2C transaction failed[0m
+[0;33mW (44069) ULTRA_RAW: raw read failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (45069) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (45069) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (45129) i2c.master: clear bus failed.[0m
+[1;31mE (45129) i2c.master: i2c_master_receive(1240): I2C transaction failed[0m
+[0;33mW (45129) ULTRA_RAW: raw read failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (46129) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (46129) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (46189) i2c.master: clear bus failed.[0m
+[1;31mE (46189) i2c.master: i2c_master_receive(1240): I2C transaction failed[0m
+[0;33mW (46189) ULTRA_RAW: raw read failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (47189) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (47189) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (47249) i2c.master: clear bus failed.[0m
+[1;31mE (47249) i2c.master: i2c_master_receive(1240): I2C transaction failed[0m
+[0;33mW (47249) ULTRA_RAW: raw read failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (48249) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (48249) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (48309) i2c.master: clear bus failed.[0m
+[1;31mE (48309) i2c.master: i2c_master_receive(1240): I2C transaction failed[0m
+[0;33mW (48309) ULTRA_RAW: raw read failed: ESP_ERR_INVALID_STATE[0m
+[1;31mE (49309) i2c.master: I2C transaction timeout detected[0m
+[1;31mE (49309) i2c.master: s_i2c_synchronous_transaction(924): I2C transaction failed[0m
+[1;31mE (49369) i2c.master: clear bus failed.[0m
+[1;31mE (49369) i2c.master: i2c_master_receive(1240): I2C transaction failed[0m
+[0;33mW (49369) ULTRA_RAW: raw read failed: ESP_ERR_INVALID_STATE[0m
