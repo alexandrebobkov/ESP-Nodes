@@ -7,7 +7,7 @@
 #include "espnow_sys.h"
 #include "temp_sensor.h"
 #include "ina219_sensor.h"
-#include "ultrasonic.h"
+#include "ultrasonic_sensor.h"
 
 typedef struct {
     motor_system_t *motors;
