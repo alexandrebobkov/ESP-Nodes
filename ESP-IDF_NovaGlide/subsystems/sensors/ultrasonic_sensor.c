@@ -66,3 +66,17 @@ void ultrasonic_system_init(ultrasonic_system_t *sys) {
 
     ESP_LOGI(TAG, "HC-SR04 (I2C mode) initialized at 0x%02X", ULTRASONIC_I2C_ADDR);
 }
+
+void ultrasonic_probe_registers(ultrasonic_system_t *ultra)
+{
+    uint8_t buf[2];
+
+    for (uint8_t reg = 0; reg < 8; reg++) {
+        esp_err_t err = i2c_bus_read(ultra->dev, reg, buf, 2);
+        if (err == ESP_OK) {
+            ESP_LOGI("ULTRA_PROBE", "READ reg 0x%02X -> %02X %02X", reg, buf[0], buf[1]);
+        } else {
+            ESP_LOGI("ULTRA_PROBE", "READ reg 0x%02X failed: %s", reg, esp_err_to_name(err));
+        }
+    }
+}
