@@ -5,6 +5,12 @@
 #include <stdbool.h>
 #include <math.h>
 
+#define JS_CENTER_X  63668224.0f   // average of your two X centers
+#define JS_CENTER_Y  66912256.0f
+#define JS_RANGE_X   20000000.0f   // temp guess, we’ll refine
+#define JS_RANGE_Y   20000000.0f
+
+
 typedef struct joystick_hal_t joystick_hal_t;
 
 struct joystick_hal_t {
