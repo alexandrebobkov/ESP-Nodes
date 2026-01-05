@@ -129,4 +129,322 @@ entry 0x403cc71a
 [0;32mI (3641) ESPNOW_SYS: ESP-NOW initialized - waiting for data from transmitter...[0m
 [0;32mI (3651) ESPNOW_SYS: Expected data size: 24 bytes[0m
 [0;32mI (3661) MQTT_SYS: MQTT system initialized[0m
-[0;32mI (3661) gpio: GPIO[10]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pul
+[0;32mI (3661) gpio: GPIO[10]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (3671) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (3681) UI: UI system initialized[0m
+[0;32mI (3681) CONTROL: Control task started[0m
+[0;32mI (3681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3691) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (3691) CONTROL: Control task created[0m
+[?25l
+[33mDashboard Mode: Press Ctrl+] to exit monitor[0m
+[0;32mI (3701) DASHBOARD: Dashboard display started[0m
+[0;32mI (3701) MQTT_SYS: MQTT Connected[0m
+[0;32mI (3711) SCHEDULER: Scheduler initialized[0m
+[0;32mI (3711) SCHEDULER: Scheduler task started[0m
+[0;32mI (3711) SCHEDULER: Scheduler started[0m
+[0;32mI (3721) INA219: VBUS: 0.79V, I: -6.00mA, P: 0.00mW[0m
+[0;32mI (3721) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (3731) rmt: rmt_receive(383): invalid argument[0m
+[1;31mE (3731) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (3741) main_task: Returned from app_main()[0m
+[0;32mI (3791) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3791) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (3891) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3891) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (3991) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (3991) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (3991) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (3991) rmt: rmt_receive(383): invalid argument[0m
+[1;31mE (3991) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (4091) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4091) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (4191) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4191) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (4251) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (4251) rmt: rmt_receive(383): invalid argument[0m
+[1;31mE (4251) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (4291) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4291) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (4391) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4391) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (4491) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4491) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (4501) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (4501) rmt: rmt_receive(383): invalid argument[0m
+[1;31mE (4501) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (4591) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4591) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (4691) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4691) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (4751) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (4751) rmt: rmt_receive(383): invalid argument[0m
+[1;31mE (4751) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (4791) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4791) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (4891) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4891) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (4991) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (4991) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (5001) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (5001) rmt: rmt_receive(383): invalid argument[0m
+[1;31mE (5001) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (5091) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5091) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (5191) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5191) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (5251) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (5251) rmt: rmt_receive(383): invalid argument[0m
+[1;31mE (5251) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (5291) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5291) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (5391) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5391) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (5491) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5491) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (5501) TEMP_SENSOR: ==========================================[0m
+[0;32mI (5501) TEMP_SENSOR: ESP32-C3 Internal Temperature Sensor[0m
+[0;32mI (5501) TEMP_SENSOR: Current Temperature: 44.60°C[0m
+[0;32mI (5501) TEMP_SENSOR: ==========================================[0m
+[0;32mI (5511) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (5511) rmt: rmt_receive(383): invalid argument[0m
+[1;31mE (5521) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (5591) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5591) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (5691) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5691) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+[0;32mI (5771) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (5781) rmt: rmt_receive(383): invalid argument[0m
+[1;31mE (5781) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (5791) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5791) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m44.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.79 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-6.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (5901) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (5911) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+║ [1mDistance            [0m : [34m0.00 cm                          [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (6011) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6011) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (6051) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (6051) rmt: rmt_receive(383): invalid argument[0m
+[1;31mE (6051) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (6111) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6111) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (6211) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6211) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (6301) INA219: VBUS: 0.74V, I: -2.00mA, P: 0.00mW[0m
+[0;32mI (6301) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (6301) rmt: rmt_receive(383): invalid argument[0m
+[1;31mE (6301) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (6311) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6311) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (6421) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6421) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (6521) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6521) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (6571) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (6571) rmt: rmt_receive(383): invalid argument[0m
+[1;31mE (6571) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (6621) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6621) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (6721) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6721) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (6821) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6821) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (6821) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (6821) rmt: rmt_receive(383): invalid argument[0m
+[1;31mE (6821) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (6921) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (6921) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (7021) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7031) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (7081) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (7091) rmt: rmt_receive(383): invalid argument[0m
+[1;31mE (7091) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_ARG[0m
+║ [1mTemperature         [0m : [36m44.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.74 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-2.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (7141) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7151) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+║ [1mDistance            [0m : [34m0.00 cm                          [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (7251) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7251) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (7351) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7351) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (7351) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (7351) rmt: rmt_receive(383): invalid argument[0m
+[1;31mE (7351) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (7451) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7451) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (7551) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7551) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (7611) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (7611) rmt: rmt_receive(383): invalid argument[0m
+[1;31mE (7611) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (7651) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7651) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (7751) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7751) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (7851) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7851) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (7861) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (7861) rmt: rmt_receive(383): invalid argument[0m
+[1;31mE (7861) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (7951) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (7951) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (8051) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8051) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (8111) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (8111) rmt: rmt_receive(383): invalid argument[0m
+[1;31mE (8111) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (8151) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8151) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+[0;32mI (8251) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8251) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m44.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.74 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-2.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (8361) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8371) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (8381) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (8381) rmt: rmt_receive(383): invalid argument[0m
+[1;31mE (8391) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_ARG[0m
+║ [1mDistance            [0m : [34m0.00 cm                          [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (8481) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8481) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (8581) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8581) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (8641) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (8641) rmt: rmt_receive(383): invalid argument[0m
+[1;31mE (8641) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (8681) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8681) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (8781) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8781) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (8881) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8881) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (8891) INA219: VBUS: 0.79V, I: -2.00mA, P: 0.00mW[0m
+[0;32mI (8891) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (8891) rmt: rmt_receive(383): invalid argument[0m
+[1;31mE (8891) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (8981) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (8981) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (9081) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9081) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (9151) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (9151) rmt: rmt_receive(383): invalid argument[0m
+[1;31mE (9151) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (9181) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9181) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (9281) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9281) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (9381) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9381) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (9401) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (9401) rmt: rmt_receive(383): invalid argument[0m
+[1;31mE (9401) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_ARG[0m
+[2J[H╔════════════════════════════════════════════════════════════╗
+║ [36m[1mESP32-C3 ROBOT CONTROL DASHBOARD                          [0m ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mJoystick X          [0m : [32m0                                [0m   ║
+║ [1mJoystick Y          [0m : [32m0                                [0m   ║
+╠════════════════════════════════════════════════════════════╣
+[0;32mI (9481) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9481) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+║ [1mPWM Left            [0m : [33m-8190                            [0m   ║
+║ [1mPWM Right           [0m : [33m-2730                            [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mMotor 1 (L-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 2 (R-Fwd)     [0m : [0m0                                [0m   ║
+║ [1mMotor 3 (L-Rev)     [0m : [31m8190                             [0m   ║
+║ [1mMotor 4 (R-Rev)     [0m : [31m2730                             [0m   ║
+╠════════════════════════════════════════════════════════════╣
+║ [1mTemperature         [0m : [36m44.60 °C                        [0m   ║
+║ [1mBattery Voltage     [0m : [31m0.79 V                           [0m   ║
+║ [1mCurrent             [0m : [35m-2.00 mA                         [0m   ║
+║ [1mPower               [0m : [34m0.00 mW                          [0m   ║
+[0;32mI (9591) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9601) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+╠════════════════════════════════════════════════════════════╣
+║ [1mDistance            [0m : [34m0.00 cm                          [0m   ║
+╚════════════════════════════════════════════════════════════╝
+[0;32mI (9651) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (9651) rmt: rmt_receive(383): invalid argument[0m
+[1;31mE (9651) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (9701) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9701) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (9801) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9801) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (9901) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (9901) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (9911) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (9911) rmt: rmt_receive(383): invalid argument[0m
+[1;31mE (9911) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (10001) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10001) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (10101) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10101) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (10161) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (10161) rmt: rmt_receive(383): invalid argument[0m
+[1;31mE (10161) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (10201) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10201) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (10301) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10301) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (10401) MOTORS: M1: 0, M2: 0, M3: 8190, M4: 2730[0m
+[0;32mI (10401) CONTROL: RC(x,y): (0,0) -> PWM(L,R): (-8190,-2730)[0m
+[0;32mI (10411) ULTRA_HAL: UPDATE: self=0x3fc98ed4 encoder=0x3fcad850[0m
+[1;31mE (10411) rmt: rmt_receive(383): invalid argument[0m
+[1;31mE (10411) ULTRA_HAL: RMT receive failed: ESP_ERR_INVALID_ARG[0m
