@@ -1,98 +1,106 @@
-#include "ultrasonic.h"
-#include "i2c_bus.h"
+#include <stdio.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "driver/i2c_master.h"
 #include "esp_log.h"
-#include <string.h>
 
-static const char *TAG = "ULTRASONIC";
+static const char *TAG = "ULTRASONIC_TEST";
 
-// Command bytes for your sensor (based on test results)
-#define ULTRASONIC_CMD_MEASURE_CM    0x50  // Measure in centimeters
-#define ULTRASONIC_CMD_MEASURE_INCH  0x51  // Measure in inches
-#define ULTRASONIC_CMD_MEASURE_US    0x52  // Measure in microseconds
+#define I2C_MASTER_SCL_IO      2
+#define I2C_MASTER_SDA_IO      3
+#define I2C_MASTER_FREQ_HZ     100000
+#define DEVICE_ADDRESS         0x57
+#define CMD_MEASURE_CM         0x50
 
-static i2c_master_dev_handle_t ultrasonic_handle = NULL;
+i2c_master_dev_handle_t dev_handle;
 
-// Trigger measurement and read distance
-static esp_err_t ultrasonic_measure_distance(uint16_t *distance) {
-    // Send measurement command (0x50 = cm)
-    uint8_t cmd = ULTRASONIC_CMD_MEASURE_CM;
-    esp_err_t ret = i2c_master_transmit(ultrasonic_handle, &cmd, 1, 1000 / portTICK_PERIOD_MS);
+uint16_t measure_distance(void)
+{
+    // Send 0x50 command
+    uint8_t cmd = CMD_MEASURE_CM;
+    esp_err_t ret = i2c_master_transmit(dev_handle, &cmd, 1, 500);
     if (ret != ESP_OK) {
-        return ret;
+        ESP_LOGE(TAG, "Command send failed: %s", esp_err_to_name(ret));
+        return 0xFFFF;
     }
 
-    // Wait for measurement to complete (70ms typical)
+    // Wait for measurement
     vTaskDelay(pdMS_TO_TICKS(70));
 
-    // Read 4 bytes (distance is in first 2 bytes)
+    // Read 4 bytes
     uint8_t data[4];
-    ret = i2c_master_receive(ultrasonic_handle, data, 4, 1000 / portTICK_PERIOD_MS);
+    ret = i2c_master_receive(dev_handle, data, 4, 500);
     if (ret != ESP_OK) {
-        return ret;
+        ESP_LOGE(TAG, "Read failed: %s", esp_err_to_name(ret));
+        return 0xFFFF;
     }
 
-    // Extract 16-bit distance from first 2 bytes
-    *distance = (data[0] << 8) | data[1];
+    // Extract distance
+    uint16_t distance = (data[0] << 8) | data[1];
 
-    return ESP_OK;
+    // Log all bytes for debugging
+    ESP_LOGI(TAG, "Raw: [0x%02X 0x%02X 0x%02X 0x%02X] → Distance: %u cm",
+             data[0], data[1], data[2], data[3], distance);
+
+    return distance;
 }
 
-static void ultrasonic_update_impl(ultrasonic_system_t *self, TickType_t now) {
-    static TickType_t last_read = 0;
+void app_main(void)
+{
+    ESP_LOGI(TAG, "═══════════════════════════════════════════");
+    ESP_LOGI(TAG, "  Ultrasonic Sensor Live Test");
+    ESP_LOGI(TAG, "  Address: 0x%02X | Command: 0x%02X", DEVICE_ADDRESS, CMD_MEASURE_CM);
+    ESP_LOGI(TAG, "═══════════════════════════════════════════\n");
 
-    // Read every 100ms (adjust as needed)
-    if ((now - last_read) < pdMS_TO_TICKS(100)) {
-        return;
-    }
-    last_read = now;
+    // Initialize I2C
+    i2c_master_bus_config_t bus_cfg = {
+        .clk_source = I2C_CLK_SRC_DEFAULT,
+        .i2c_port = I2C_NUM_0,
+        .scl_io_num = I2C_MASTER_SCL_IO,
+        .sda_io_num = I2C_MASTER_SDA_IO,
+        .glitch_ignore_cnt = 7,
+        .flags.enable_internal_pullup = true,
+    };
 
-    // Measure distance
-    uint16_t raw_distance;
-    esp_err_t ret = ultrasonic_measure_distance(&raw_distance);
+    i2c_master_bus_handle_t bus_handle;
+    ESP_ERROR_CHECK(i2c_new_master_bus(&bus_cfg, &bus_handle));
 
-    if (ret == ESP_OK) {
-        // Distance is already in cm (command 0x50)
-        self->distance_cm = (float)raw_distance;
+    i2c_device_config_t dev_cfg = {
+        .dev_addr_length = I2C_ADDR_BIT_LEN_7,
+        .device_address = DEVICE_ADDRESS,
+        .scl_speed_hz = I2C_MASTER_FREQ_HZ,
+    };
 
-        // Check for valid range (0 means no detection, typical range 2-400cm)
-        if (raw_distance == 0) {
-            self->measurement_valid = false;
-            ESP_LOGW(TAG, "No object detected (distance = 0)");
-        } else if (self->distance_cm >= 2.0f && self->distance_cm <= 400.0f) {
-            self->measurement_valid = true;
-            ESP_LOGI(TAG, "Distance: %.2f cm (raw: %u)", self->distance_cm, raw_distance);
+    ESP_ERROR_CHECK(i2c_master_bus_add_device(bus_handle, &dev_cfg, &dev_handle));
+
+    ESP_LOGI(TAG, "I2C initialized. Starting continuous measurements...\n");
+    ESP_LOGI(TAG, ">>> PLACE AN OBJECT 10-30cm IN FRONT OF SENSOR <<<\n");
+
+    vTaskDelay(pdMS_TO_TICKS(1000));
+
+    int measurement_count = 0;
+
+    while (1) {
+        measurement_count++;
+
+        ESP_LOGI(TAG, "─────────────────────────────────────────");
+        ESP_LOGI(TAG, "Measurement #%d", measurement_count);
+
+        uint16_t distance = measure_distance();
+
+        if (distance == 0xFFFF) {
+            ESP_LOGE(TAG, "❌ Communication error!");
+        } else if (distance == 0) {
+            ESP_LOGW(TAG, "⚠️  No object detected (0 cm)");
+        } else if (distance < 2) {
+            ESP_LOGW(TAG, "⚠️  Object too close: %u cm", distance);
+        } else if (distance > 400) {
+            ESP_LOGW(TAG, "⚠️  Object too far: %u cm", distance);
         } else {
-            self->measurement_valid = false;
-            ESP_LOGW(TAG, "Distance out of range: %.2f cm", self->distance_cm);
+            ESP_LOGI(TAG, "✅ Valid distance: %u cm", distance);
         }
-    } else {
-        self->measurement_valid = false;
-        ESP_LOGW(TAG, "Failed to read distance: %s", esp_err_to_name(ret));
-    }
-}
 
-void ultrasonic_system_init(ultrasonic_system_t *sys) {
-    sys->distance_cm = 0.0f;
-    sys->measurement_valid = false;
-    sys->update = ultrasonic_update_impl;
-
-    // Add ultrasonic sensor to I2C bus
-    esp_err_t ret = i2c_bus_add_device(ULTRASONIC_I2C_ADDR, "ULTRASONIC", &ultrasonic_handle);
-    if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "Failed to add ultrasonic sensor to I2C bus: %s", esp_err_to_name(ret));
-        return;
-    }
-
-    ESP_LOGI(TAG, "I2C ultrasonic sensor initialized at address 0x%02X", ULTRASONIC_I2C_ADDR);
-    ESP_LOGI(TAG, "Protocol: Command-based (0x50=cm, 0x51=inch, 0x52=µs)");
-
-    // Test initial read
-    vTaskDelay(pdMS_TO_TICKS(100));
-    uint16_t test_distance;
-    ret = ultrasonic_measure_distance(&test_distance);
-    if (ret == ESP_OK) {
-        ESP_LOGI(TAG, "Initial test read: %u cm", test_distance);
-    } else {
-        ESP_LOGW(TAG, "Initial test read failed (this is normal on startup)");
+        // Wait 500ms between measurements
+        vTaskDelay(pdMS_TO_TICKS(500));
     }
 }
