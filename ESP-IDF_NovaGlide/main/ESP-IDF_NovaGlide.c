@@ -23,32 +23,7 @@ void scan_registers(i2c_master_dev_handle_t dev_handle)
 
     int readable_regs = 0;
 
-    // Method 1: Try reading each register (0x00 to 0xFF)
-    ESP_LOGI(TAG, "║  Method 1: Single register reads                       ║");
-    for (uint16_t reg = 0x00; reg <= 0xFF; reg++) {
-        uint8_t reg_addr = (uint8_t)reg;
-        uint8_t data;
 
-        esp_err_t ret = i2c_master_transmit_receive(
-            dev_handle,
-            &reg_addr, 1,      // Write register address
-            &data, 1,          // Read 1 byte
-            I2C_MASTER_TIMEOUT_MS
-        );
-
-        if (ret == ESP_OK) {
-            ESP_LOGI(TAG, "║  Reg 0x%02X = 0x%02X                                    ║", reg, data);
-            readable_regs++;
-        }
-
-        vTaskDelay(pdMS_TO_TICKS(10)); // Small delay between reads
-    }
-
-    ESP_LOGI(TAG, "╠════════════════════════════════════════════════════════╣");
-    ESP_LOGI(TAG, "║  Readable registers found: %d                          ║", readable_regs);
-    ESP_LOGI(TAG, "╚════════════════════════════════════════════════════════╝");
-
-    vTaskDelay(pdMS_TO_TICKS(1000));
 
     // Method 2: Try direct read (no register address, some sensors work this way)
     ESP_LOGI(TAG, "\n");
