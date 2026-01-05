@@ -16,7 +16,7 @@
 #define I2C_FREQ_HZ         100000
 #define ULTRASONIC_I2C_ADDR 0x57   // HC-SR04 I2C mode
 #define ULTRASONIC_I2C_SPEED_HZ 100000
-
+#define I2C_PORT 0
 
 
 // Forward declaration
