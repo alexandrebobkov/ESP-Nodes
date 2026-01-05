@@ -1,3 +1,4 @@
+#pragma once
 #include "i2c_bus.h"
 #include "esp_log.h"
 #include "freertos/FreeRTOS.h"
