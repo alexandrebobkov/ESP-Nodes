@@ -54,8 +54,8 @@ static esp_err_t ultrasonic_measure_distance(uint16_t *distance) {
     }
 
     // Extract distance from first 2 bytes (LITTLE-ENDIAN: low byte first)
-    *distance = data[0] | (data[1] << 8);
-    //*distance = (data[0] << 8) | (data[1];
+    //*distance = data[0] | (data[1] << 8);
+    *distance = (data[0] << 8) | data[1];
 
     return ESP_OK;
 }
