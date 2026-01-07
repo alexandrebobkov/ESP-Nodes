@@ -10,18 +10,18 @@ if(NOT EXISTS "/home/alex/esp/esp-idf/v5.4.1/components/bootloader/subproject")
   file(MAKE_DIRECTORY "/home/alex/esp/esp-idf/v5.4.1/components/bootloader/subproject")
 endif()
 file(MAKE_DIRECTORY
-  "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build/bootloader"
-  "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build/bootloader-prefix"
-  "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build/bootloader-prefix/tmp"
-  "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build/bootloader-prefix/src/bootloader-stamp"
-  "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build/bootloader-prefix/src"
-  "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build/bootloader-prefix/src/bootloader-stamp"
+  "/storage/github/ESP-Nodes/ESP-IDF_NovaGlide/build/bootloader"
+  "/storage/github/ESP-Nodes/ESP-IDF_NovaGlide/build/bootloader-prefix"
+  "/storage/github/ESP-Nodes/ESP-IDF_NovaGlide/build/bootloader-prefix/tmp"
+  "/storage/github/ESP-Nodes/ESP-IDF_NovaGlide/build/bootloader-prefix/src/bootloader-stamp"
+  "/storage/github/ESP-Nodes/ESP-IDF_NovaGlide/build/bootloader-prefix/src"
+  "/storage/github/ESP-Nodes/ESP-IDF_NovaGlide/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "/storage/github/ESP-Nodes/ESP-IDF_NovaGlide/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "/home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "/storage/github/ESP-Nodes/ESP-IDF_NovaGlide/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()

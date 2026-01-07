@@ -1,20 +1,16 @@
-idf_component_register(
-    SRCS "ESP-IDF_NovaGlide.c"
-         "system_init.c"
-         "scheduler.c"
-         "control_task.c"
-         "dashboard.c"
-    INCLUDE_DIRS "."
-    REQUIRES
-        esp_wifi
-        esp_netif
-        nvs_flash
-        motors
-        adc
-        wifi_sys
-        mqtt_sys
-        espnow_sys
-        sensors
-        controls
-        ui
-        i2c_bus)
+cmake_minimum_required(VERSION 3.16)
+
+# Add subsystems to component search path
+set(EXTRA_COMPONENT_DIRS
+    "subsystems/connectivity/wifi_sys"
+    "subsystems/connectivity/mqtt_sys"
+    "subsystems/connectivity/espnow_sys"
+    "subsystems/motors"
+    "subsystems/adc"
+    "subsystems/sensors"
+    "subsystems/controls"
+    "subsystems/ui"
+    "subsystems/i2c_bus")
+
+include($ENV{IDF_PATH}/tools/cmake/project.cmake)
+project(ESP-IDF_NovaGlide)

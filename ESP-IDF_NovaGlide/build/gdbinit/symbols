@@ -18,8 +18,8 @@ end
 
 # Load bootloader symbols
 set confirm off
-    add-symbol-file /home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build/bootloader/bootloader.elf
+    add-symbol-file /storage/github/ESP-Nodes/ESP-IDF_NovaGlide/build/bootloader/bootloader.elf
 set confirm on
 
 # Load application symbols
-file /home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/build/ESP-IDF_NovaGlide.elf
+file /storage/github/ESP-Nodes/ESP-IDF_NovaGlide/build/ESP-IDF_NovaGlide.elf

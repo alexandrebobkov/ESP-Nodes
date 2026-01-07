@@ -1,8 +1,64 @@
+/**
+* @file motors.c
+* @brief Differential Drive Motor Control System for ESP32-C3 Robot
+*
+* This module implements a 4-channel PWM motor control system using ESP32's LEDC peripheral.
+* It controls two DC motors (left and right) with bidirectional control (forward/reverse).
+*
+* Hardware Architecture:
+* - Each motor has 2 PWM channels: one for forward, one for reverse
+* - Motor 1 (M1): Left motor forward   - GPIO pin MTR_FRONT_LEFT_IO
+* - Motor 2 (M2): Right motor forward  - GPIO pin MTR_FRONT_RIGHT_IO
+* - Motor 3 (M3): Left motor reverse   - GPIO pin MTR_FRONT_LEFT_REV_IO
+* - Motor 4 (M4): Right motor reverse  - GPIO pin MTR_FRONT_RIGHT_REV_IO
+*
+* PWM Configuration:
+* - Resolution: 13-bit (0-8191 duty cycle range)
+* - Frequency: Typically 1-20 kHz (defined by MTR_FREQUENCY)
+* - Control: LEDC (LED Control) peripheral used for motor PWM generation
+*
+* Control Strategy:
+* Input: Signed PWM values for left/right motors (-8191 to +8191)
+* - Positive value = forward direction
+* - Negative value = reverse direction
+* - Magnitude = speed (0 = stop, 8191 = full speed)
+*
+* @author Alexander Bobkov
+* @date January 2026
+*/
+
 #include "motors.h"
 #include "esp_log.h"
 #include "esp_err.h"
 
 static const char *TAG = "MOTORS";
+
+/**
+ * @brief Initialize LEDC (LED Controller) for PWM motor control
+ *
+ * The ESP32 LEDC peripheral is designed for LED dimming but works perfectly for motor PWM.
+ * This function configures 4 independent PWM channels with 4 timers:
+ *
+ * Timer/Channel Architecture:
+ * - Timer 0 → Channel 0 → Motor 1 (Left Forward)
+ * - Timer 1 → Channel 1 → Motor 2 (Right Forward)
+ * - Timer 2 → Channel 2 → Motor 3 (Left Reverse)
+ * - Timer 3 → Channel 3 → Motor 4 (Right Reverse)
+ *
+ * Each timer operates independently, allowing:
+ * - Different frequencies per motor (if needed)
+ * - Phase-shifted PWM (reduces power supply noise)
+ * - Independent duty cycle control
+ *
+ * Configuration Details:
+ * - Speed Mode: Low-speed mode (sufficient for motor control)
+ * - Duty Resolution: 13-bit = 8192 steps (0-8191)
+ * - Clock Source: APB clock (80 MHz on ESP32-C3)
+ * - Interrupt: Disabled (motors don't need interrupt-driven updates)
+ * - H-Point: 0 (PWM starts at beginning of period)
+ *
+ * @note Initial duty cycle is 0 (motors stopped)
+ */
 
 // Initialize LEDC timers and channels
 static void ledc_init(void) {

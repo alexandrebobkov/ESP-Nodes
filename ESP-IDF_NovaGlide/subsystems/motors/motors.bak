@@ -1,0 +1,347 @@
+/**
+ * @file motors.c
+ * @brief Differential Drive Motor Control System for ESP32-C3 Robot
+ *
+ * This module implements a 4-channel PWM motor control system using ESP32's LEDC peripheral.
+ * It controls two DC motors (left and right) with bidirectional control (forward/reverse).
+ *
+ * Hardware Architecture:
+ * - Each motor has 2 PWM channels: one for forward, one for reverse
+ * - Motor 1 (M1): Left motor forward   - GPIO pin MTR_FRONT_LEFT_IO
+ * - Motor 2 (M2): Right motor forward  - GPIO pin MTR_FRONT_RIGHT_IO
+ * - Motor 3 (M3): Left motor reverse   - GPIO pin MTR_FRONT_LEFT_REV_IO
+ * - Motor 4 (M4): Right motor reverse  - GPIO pin MTR_FRONT_RIGHT_REV_IO
+ *
+ * PWM Configuration:
+ * - Resolution: 13-bit (0-8191 duty cycle range)
+ * - Frequency: Typically 1-20 kHz (defined by MTR_FREQUENCY)
+ * - Control: LEDC (LED Control) peripheral used for motor PWM generation
+ *
+ * Control Strategy:
+ * Input: Signed PWM values for left/right motors (-8191 to +8191)
+ * - Positive value = forward direction
+ * - Negative value = reverse direction
+ * - Magnitude = speed (0 = stop, 8191 = full speed)
+ *
+ * @author Alexander Bobkov
+ * @date January 2026
+ */
+
+#include "motors.h"
+#include "esp_log.h"
+#include "esp_err.h"
+
+static const char *TAG = "MOTORS";
+
+/**
+ * @brief Initialize LEDC (LED Controller) for PWM motor control
+ *
+ * The ESP32 LEDC peripheral is designed for LED dimming but works perfectly for motor PWM.
+ * This function configures 4 independent PWM channels with 4 timers:
+ *
+ * Timer/Channel Architecture:
+ * - Timer 0 → Channel 0 → Motor 1 (Left Forward)
+ * - Timer 1 → Channel 1 → Motor 2 (Right Forward)
+ * - Timer 2 → Channel 2 → Motor 3 (Left Reverse)
+ * - Timer 3 → Channel 3 → Motor 4 (Right Reverse)
+ *
+ * Each timer operates independently, allowing:
+ * - Different frequencies per motor (if needed)
+ * - Phase-shifted PWM (reduces power supply noise)
+ * - Independent duty cycle control
+ *
+ * Configuration Details:
+ * - Speed Mode: Low-speed mode (sufficient for motor control)
+ * - Duty Resolution: 13-bit = 8192 steps (0-8191)
+ * - Clock Source: APB clock (80 MHz on ESP32-C3)
+ * - Interrupt: Disabled (motors don't need interrupt-driven updates)
+ * - H-Point: 0 (PWM starts at beginning of period)
+ *
+ * @note Initial duty cycle is 0 (motors stopped)
+ */
+static void ledc_init(void) {
+    // ═══════════════════════════════════════════════════════════
+    // MOTOR 1: Left Forward (Primary left motor direction)
+    // ═══════════════════════════════════════════════════════════
+    ledc_timer_config_t timer1 = {
+        .speed_mode = MTR_MODE,              // Low-speed mode
+        .duty_resolution = MTR_DUTY_RES,     // 13-bit = 0-8191 range
+        .timer_num = MTR_FRONT_LEFT_TMR,     // Timer 0
+        .freq_hz = MTR_FREQUENCY,            // PWM frequency (e.g., 5000 Hz)
+        .clk_cfg = LEDC_APB_CLK              // Use APB clock (80 MHz)
+    };
+    ESP_ERROR_CHECK(ledc_timer_config(&timer1));
+
+    ledc_channel_config_t channel1 = {
+        .speed_mode = MTR_MODE,
+        .channel = MTR_FRONT_LEFT,           // Channel 0
+        .timer_sel = MTR_FRONT_LEFT_TMR,     // Connect to Timer 0
+        .intr_type = LEDC_INTR_DISABLE,      // No interrupts needed
+        .gpio_num = MTR_FRONT_LEFT_IO,       // Output GPIO pin
+        .duty = 0,                           // Start with 0% duty (motor off)
+        .hpoint = 0,                         // PWM high point at start of cycle
+    };
+    ESP_ERROR_CHECK(ledc_channel_config(&channel1));
+
+    // ═══════════════════════════════════════════════════════════
+    // MOTOR 2: Right Forward (Primary right motor direction)
+    // ═══════════════════════════════════════════════════════════
+    ledc_timer_config_t timer2 = {
+        .speed_mode = MTR_MODE,
+        .duty_resolution = MTR_DUTY_RES,
+        .timer_num = MTR_FRONT_RIGHT_TMR,    // Timer 1
+        .freq_hz = MTR_FREQUENCY,
+        .clk_cfg = LEDC_APB_CLK
+    };
+    ESP_ERROR_CHECK(ledc_timer_config(&timer2));
+
+    ledc_channel_config_t channel2 = {
+        .speed_mode = MTR_MODE,
+        .channel = MTR_FRONT_RIGHT,          // Channel 1
+        .timer_sel = MTR_FRONT_RIGHT_TMR,    // Connect to Timer 1
+        .intr_type = LEDC_INTR_DISABLE,
+        .gpio_num = MTR_FRONT_RIGHT_IO,
+        .duty = 0,
+        .hpoint = 0,
+    };
+    ESP_ERROR_CHECK(ledc_channel_config(&channel2));
+
+    // ═══════════════════════════════════════════════════════════
+    // MOTOR 3: Left Reverse (Opposite polarity for left motor)
+    // ═══════════════════════════════════════════════════════════
+    ledc_timer_config_t timer3 = {
+        .speed_mode = MTR_MODE,
+        .duty_resolution = MTR_DUTY_RES,
+        .timer_num = MTR_FRONT_LEFT_REV_TMR, // Timer 2
+        .freq_hz = MTR_FREQUENCY,
+        .clk_cfg = LEDC_APB_CLK
+    };
+    ESP_ERROR_CHECK(ledc_timer_config(&timer3));
+
+    ledc_channel_config_t channel3 = {
+        .speed_mode = MTR_MODE,
+        .channel = MTR_FRONT_LEFT_REV,       // Channel 2
+        .timer_sel = MTR_FRONT_LEFT_REV_TMR, // Connect to Timer 2
+        .intr_type = LEDC_INTR_DISABLE,
+        .gpio_num = MTR_FRONT_LEFT_REV_IO,
+        .duty = 0,
+        .hpoint = 0,
+    };
+    ESP_ERROR_CHECK(ledc_channel_config(&channel3));
+
+    // ═══════════════════════════════════════════════════════════
+    // MOTOR 4: Right Reverse (Opposite polarity for right motor)
+    // ═══════════════════════════════════════════════════════════
+    ledc_timer_config_t timer4 = {
+        .speed_mode = MTR_MODE,
+        .duty_resolution = MTR_DUTY_RES,
+        .timer_num = MTR_FRONT_RIGHT_REV_TMR, // Timer 3
+        .freq_hz = MTR_FREQUENCY,
+        .clk_cfg = LEDC_APB_CLK
+    };
+    ESP_ERROR_CHECK(ledc_timer_config(&timer4));
+
+    ledc_channel_config_t channel4 = {
+        .speed_mode = MTR_MODE,
+        .channel = MTR_FRONT_RIGHT_REV,       // Channel 3
+        .timer_sel = MTR_FRONT_RIGHT_REV_TMR, // Connect to Timer 3
+        .intr_type = LEDC_INTR_DISABLE,
+        .gpio_num = MTR_FRONT_RIGHT_REV_IO,
+        .duty = 0,
+        .hpoint = 0,
+    };
+    ESP_ERROR_CHECK(ledc_channel_config(&channel4));
+
+    ESP_LOGI(TAG, "LEDC initialized for all 4 motors");
+}
+
+/**
+ * @brief Update motor PWM values based on differential drive control
+ *
+ * This function implements a differential drive control system where:
+ * - Two motors (left/right) can independently move forward or reverse
+ * - Each motor has two PWM channels (forward and reverse)
+ * - Only ONE channel per motor is active at a time (prevents shoot-through)
+ *
+ * Control Logic (4 Quadrants):
+ *
+ * 1. BOTH POSITIVE (Forward motion):
+ *    - M1 (left forward) = pwm_motor_1
+ *    - M2 (right forward) = pwm_motor_2
+ *    - M3, M4 (reverse channels) = 0
+ *    Result: Robot moves forward, can turn if values differ
+ *
+ * 2. LEFT POSITIVE, RIGHT NEGATIVE (Right turn in place):
+ *    - M1 = 0 (left motor off for forward)
+ *    - M2 = pwm_motor_1 (right motor goes forward at left's speed)
+ *    - M3 = 0
+ *    - M4 = -pwm_motor_2 (right motor reverses)
+ *    Result: Right motor reverses, creates pivot turn
+ *
+ * 3. LEFT NEGATIVE, RIGHT POSITIVE (Left turn in place):
+ *    - M1 = -pwm_motor_1 (left motor reverses)
+ *    - M2 = 0 (right motor off for forward)
+ *    - M3 = pwm_motor_2 (left motor goes forward at right's speed)
+ *    - M4 = 0
+ *    Result: Left motor reverses, creates pivot turn
+ *
+ * 4. BOTH NEGATIVE (Reverse motion):
+ *    - M1, M2 (forward channels) = 0
+ *    - M3 = -pwm_motor_1 (left reverse)
+ *    - M4 = -pwm_motor_2 (right reverse)
+ *    Result: Robot moves backward, can turn if values differ
+ *
+ * Hardware Update Sequence:
+ * 1. Set duty cycle: ledc_set_duty()
+ * 2. Apply changes: ledc_update_duty()
+ *
+ * This two-step process ensures glitch-free PWM updates.
+ *
+ * @param sys Pointer to motor system state structure
+ * @param pwm_motor_1 Left motor speed: -8191 (full reverse) to +8191 (full forward)
+ * @param pwm_motor_2 Right motor speed: -8191 (full reverse) to +8191 (full forward)
+ *
+ * @note Negative values are converted to positive for reverse channels
+ * @note This prevents both forward and reverse channels being active simultaneously
+ */
+void update_motors_pwm(motor_system_t *sys, int pwm_motor_1, int pwm_motor_2) {
+    // ═══════════════════════════════════════════════════════════
+    // QUADRANT 1: Both motors forward (normal driving)
+    // ═══════════════════════════════════════════════════════════
+    if (pwm_motor_1 >= 0 && pwm_motor_2 >= 0) {
+        sys->motor1_rpm_pcm = pwm_motor_1;   // Left forward active
+        sys->motor2_rpm_pcm = pwm_motor_2;   // Right forward active
+        sys->motor3_rpm_pcm = 0;             // Left reverse OFF
+        sys->motor4_rpm_pcm = 0;             // Right reverse OFF
+    }
+
+    // ═══════════════════════════════════════════════════════════
+    // QUADRANT 2: Left forward, right reverse (pivot right)
+    // ═══════════════════════════════════════════════════════════
+    if (pwm_motor_1 > 0 && pwm_motor_2 < 0) {
+        sys->motor1_rpm_pcm = 0;             // Left forward OFF
+        sys->motor2_rpm_pcm = pwm_motor_1;   // Right takes left's forward speed
+        sys->motor3_rpm_pcm = 0;             // Left reverse OFF
+        sys->motor4_rpm_pcm = -pwm_motor_2;  // Right reverse active (negate for magnitude)
+    }
+
+    // ═══════════════════════════════════════════════════════════
+    // QUADRANT 3: Left reverse, right forward (pivot left)
+    // ═══════════════════════════════════════════════════════════
+    if (pwm_motor_1 < 0 && pwm_motor_2 > 0) {
+        sys->motor1_rpm_pcm = -pwm_motor_1;  // Left forward uses reverse magnitude
+        sys->motor2_rpm_pcm = 0;             // Right forward OFF
+        sys->motor3_rpm_pcm = pwm_motor_2;   // Left reverse active
+        sys->motor4_rpm_pcm = 0;             // Right reverse OFF
+    }
+
+    // ═══════════════════════════════════════════════════════════
+    // QUADRANT 4: Both motors reverse (backing up)
+    // ═══════════════════════════════════════════════════════════
+    if (pwm_motor_1 < 0 && pwm_motor_2 < 0) {
+        sys->motor1_rpm_pcm = 0;             // Left forward OFF
+        sys->motor2_rpm_pcm = 0;             // Right forward OFF
+        sys->motor3_rpm_pcm = -pwm_motor_1;  // Left reverse active (negate for magnitude)
+        sys->motor4_rpm_pcm = -pwm_motor_2;  // Right reverse active (negate for magnitude)
+    }
+
+    // Store the original signed input values for telemetry/logging
+    sys->left_pwm = pwm_motor_1;
+    sys->right_pwm = pwm_motor_2;
+
+    // ═══════════════════════════════════════════════════════════
+    // Apply PWM updates to hardware (LEDC peripheral)
+    // ═══════════════════════════════════════════════════════════
+    // Two-step process ensures glitch-free updates:
+    // 1. Stage the new duty cycle value
+    ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT, sys->motor1_rpm_pcm);
+    // 2. Apply it to the hardware
+    ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT);
+
+    ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT, sys->motor2_rpm_pcm);
+    ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT);
+
+    ledc_set_duty(MTR_MODE, MTR_FRONT_LEFT_REV, sys->motor3_rpm_pcm);
+    ledc_update_duty(MTR_MODE, MTR_FRONT_LEFT_REV);
+
+    ledc_set_duty(MTR_MODE, MTR_FRONT_RIGHT_REV, sys->motor4_rpm_pcm);
+    ledc_update_duty(MTR_MODE, MTR_FRONT_RIGHT_REV);
+
+    // Log the actual PWM values being sent to each motor
+    ESP_LOGI(TAG, "M1: %d, M2: %d, M3: %d, M4: %d",
+        sys->motor1_rpm_pcm,
+        sys->motor2_rpm_pcm,
+        sys->motor3_rpm_pcm,
+        sys->motor4_rpm_pcm);
+}
+
+/**
+ * @brief Scheduler callback for motor system (currently unused)
+ *
+ * This function is called periodically by the system scheduler.
+ * In this implementation, motors are updated directly via joystick input,
+ * so this callback is empty.
+ *
+ * Future enhancements could include:
+ * - Motor current monitoring
+ * - Temperature protection
+ * - Velocity ramping (smooth acceleration/deceleration)
+ * - Stall detection
+ *
+ * @param self Pointer to motor system structure
+ * @param now Current system tick count
+ */
+static void motor_update_impl(motor_system_t *self, TickType_t now) {
+    (void)self;  // Unused parameter
+    (void)now;   // Unused parameter
+
+    // Motors are updated directly via update_motors_pwm() when joystick input changes
+    // No periodic updates needed in current implementation
+}
+
+/**
+ * @brief Initialize the motor control system
+ *
+ * Initialization sequence:
+ * 1. Zero all PWM values (motors stopped)
+ * 2. Set update callback function pointer
+ * 3. Configure LEDC hardware timers and channels
+ *
+ * After this function completes:
+ * - All 4 PWM channels are configured and ready
+ * - Motors are stopped (0% duty cycle)
+ * - System is ready to accept motor commands
+ *
+ * @param sys Pointer to motor system structure to initialize
+ */
+void motor_system_init(motor_system_t *sys) {
+    // Initialize all motor PWM values to zero (stopped)
+    sys->left_pwm = 0;           // Signed left motor command
+    sys->right_pwm = 0;          // Signed right motor command
+    sys->motor1_rpm_pcm = 0;     // Left forward PWM
+    sys->motor2_rpm_pcm = 0;     // Right forward PWM
+    sys->motor3_rpm_pcm = 0;     // Left reverse PWM
+    sys->motor4_rpm_pcm = 0;     // Right reverse PWM
+
+    // Set the scheduler callback function
+    sys->update = motor_update_impl;
+
+    // Configure ESP32 LEDC hardware for PWM generation
+    ledc_init();
+
+    ESP_LOGI(TAG, "Motor system initialized");
+}
+
+/**
+ * @brief Convenience wrapper function for setting motor PWM
+ *
+ * This is a simple wrapper around update_motors_pwm() that matches
+ * the naming convention used elsewhere in the codebase.
+ *
+ * @param sys Pointer to motor system structure
+ * @param left_pwm Left motor speed (-8191 to +8191)
+ * @param right_pwm Right motor speed (-8191 to +8191)
+ */
+void motor_set_pwm(motor_system_t *sys, int left_pwm, int right_pwm) {
+    update_motors_pwm(sys, left_pwm, right_pwm);
+}

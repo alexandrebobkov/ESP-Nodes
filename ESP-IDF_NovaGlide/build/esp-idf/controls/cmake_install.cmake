@@ -1,4 +1,4 @@
-# Install script for directory: /home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/subsystems/controls
+# Install script for directory: /storage/github/ESP-Nodes/ESP-IDF_NovaGlide/subsystems/controls
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -1,4 +1,4 @@
-# Install script for directory: /home/alex/github/ESP-Nodes/ESP-IDF_NovaGlide/subsystems/connectivity/wifi_sys
+# Install script for directory: /storage/github/ESP-Nodes/ESP-IDF_NovaGlide/subsystems/connectivity/wifi_sys
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
