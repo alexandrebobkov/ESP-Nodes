@@ -1,0 +1,8 @@
+[0;33m--- esp-idf-monitor 1.8.0 on /dev/ttyACM0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x403853f4: [0;33mrv_utils_wait_for_intr[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/riscv/include/riscv/rv_utils.h[0m[0m:[1;31m62[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/alex/esp/esp-idf/v5.4.1/components/esp_hw_support/cpu.c[0m[0m:[1;31m62[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is 73abcf1f26c8b96ea34d9719adfddb70fceb365469ebed12bbfe889e4e582a7b[0m
+[0;33m--- Warning: Failed to decode multiple lines in a row. Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33m--- Warning: Failed to decode multiple lines in a row. Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0m
