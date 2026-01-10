@@ -388,7 +388,7 @@ void joystick_mix(float x, float y, int *pwm_left, int *pwm_right)
     // STEP 4: Arc Limiting (Differential Limiter)
     // ═══════════════════════════════════════════════════════════
     float diff = fabsf(L0 - R0);
-    float max_diff = 1.25f; //1.7
+    float max_diff = 1.35f; //1.7
 
     // Why Limit the Differential?
     //
