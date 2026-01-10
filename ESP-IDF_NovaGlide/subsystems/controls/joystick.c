@@ -353,7 +353,7 @@ void joystick_mix(float x, float y, int *pwm_left, int *pwm_right)
     // ═══════════════════════════════════════════════════════════
     // STEP 2: Steering Gain
     // ═══════════════════════════════════════════════════════════
-    const float k = 0.7f; //0.9
+    const float k = 0.73f; //0.9
 
     // Steering gain (k) controls turn aggressiveness:
     //
