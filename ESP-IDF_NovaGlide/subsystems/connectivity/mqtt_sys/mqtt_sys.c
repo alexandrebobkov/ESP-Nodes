@@ -24,6 +24,7 @@ static void mqtt_publish_task(void *arg) {
         esp_mqtt_client_publish(sys->client, "/bitrider/sys_power", pwr_str, 0, 1, 0);
         esp_mqtt_client_publish(sys->client, "/bitrider/pwm_left", pwm_l_str, 0, 1, 0);
         esp_mqtt_client_publish(sys->client, "/bitrider/pwm_right", pwm_r_str, 0, 1, 0);
+        esp_mqtt_client_publish(sys->client, "/bitrider/proximity", sys->proximity, 0, 1, 0);
 
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
