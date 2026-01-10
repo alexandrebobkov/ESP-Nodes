@@ -62,6 +62,7 @@ void mqtt_system_init(mqtt_system_t *sys) {
     sys->pwm_left = 0;
     sys->pwm_right = 0;
     sys->client = NULL;
+    sys->proximity = 0.0f;
     sys->update = mqtt_update_impl;
 
     esp_mqtt_client_config_t mqtt_cfg = {
@@ -94,4 +95,8 @@ void mqtt_update_power(mqtt_system_t *sys, float power) {
 void mqtt_update_pwm(mqtt_system_t *sys, int left, int right) {
     sys->pwm_left = left;
     sys->pwm_right = right;
+}
+
+void mqtt_update_proximity(mqtt_system_t *sys, float proximity) {
+    sys->proximity = proximity;
 }

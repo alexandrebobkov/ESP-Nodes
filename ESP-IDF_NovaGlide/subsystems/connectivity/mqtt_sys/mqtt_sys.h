@@ -19,6 +19,7 @@ struct mqtt_system_t {
     float sys_power;
     int pwm_left;
     int pwm_right;
+    float proximity;
 
     esp_mqtt_client_handle_t client;
 
@@ -31,5 +32,6 @@ void mqtt_update_battery(mqtt_system_t *sys, float voltage);
 void mqtt_update_current(mqtt_system_t *sys, float current);
 void mqtt_update_power(mqtt_system_t *sys, float power);
 void mqtt_update_pwm(mqtt_system_t *sys, int left, int right);
+void mqtt_update_proximity(mqtt_system_t *sys, float power);
 
 #endif  // <-- This was missing!

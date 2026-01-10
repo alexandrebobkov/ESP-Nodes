@@ -39,6 +39,7 @@ static void telemetry_bridge_task(void *arg) {
         mqtt_update_current(ctx->mqtt, ctx->ina->current * 1000.0f);
         mqtt_update_power(ctx->mqtt, ctx->ina->power);
         mqtt_update_pwm(ctx->mqtt, ctx->motors->left_pwm, ctx->motors->right_pwm);
+        mqtt_update_proximity(ctx->mqtt, ctx->ultrasonic->distance_cm / 10.0f);
 
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
@@ -51,7 +52,7 @@ static void display_joystick_task(void *arg) {
     while (1) {
         ESP_LOGI("DISPLAY", "╔════════════════════════════════════╗");
         ESP_LOGI("DISPLAY", "║   CURRENT JOYSTICK VALUES          ║");
-        ESP_LOGI("DISPLAY", "║   X-axis: %-8d                ║", espnow->last_data.x_axis);
+        ESP_LOGI("DISPLAY", "║   X-axis: %-8d                     ║", espnow->last_data.x_axis);
         ESP_LOGI("DISPLAY", "║   Y-axis: %-8d                ║", espnow->last_data.y_axis);
         ESP_LOGI("DISPLAY", "╚════════════════════════════════════╝");
 
