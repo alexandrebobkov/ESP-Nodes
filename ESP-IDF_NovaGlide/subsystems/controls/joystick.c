@@ -200,7 +200,7 @@ void joystick_hal_update(joystick_hal_t *js, int32_t x_raw, int32_t y_raw)
     // ═══════════════════════════════════════════════════════════
     // Different deadband thresholds for X and Y axes
 
-    const float deadband_x = 0.15f;  // 15% steering deadband (wide zone) 0.15
+    const float deadband_x = 0.10f;  // 15% steering deadband (wide zone) 0.15
     const float deadband_y = 0.08f;  // 8% throttle deadband (narrow zone) 0.08
 
     // Why 15% for X (steering)?
