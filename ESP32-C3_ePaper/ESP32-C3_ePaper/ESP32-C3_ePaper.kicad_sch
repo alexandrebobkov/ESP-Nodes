@@ -1741,6 +1741,131 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:+5VD"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "+5VD"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+5VD\""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "+5VD_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+5VD_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:GNDD"
 			(power)
 			(pin_numbers
@@ -1856,6 +1981,36 @@
 	)
 	(wire
 		(pts
+			(xy 102.87 123.19) (xy 106.68 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0c6526e6-0a7d-4a8b-b416-49cf0cfcb5f3")
+	)
+	(wire
+		(pts
+			(xy 59.69 127) (xy 66.04 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0d9b305d-6224-4af7-8786-7e28bdfebbc4")
+	)
+	(wire
+		(pts
+			(xy 102.87 115.57) (xy 106.68 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1aaffd5a-d0b5-4d6c-abc8-87dd0f9f9893")
+	)
+	(wire
+		(pts
 			(xy 62.23 144.78) (xy 62.23 142.24)
 		)
 		(stroke
@@ -1873,6 +2028,16 @@
 			(type default)
 		)
 		(uuid "2a28c0f4-1f39-407e-8f2d-1c0e64a433f8")
+	)
+	(wire
+		(pts
+			(xy 102.87 134.62) (xy 106.68 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3222047b-d957-4ae1-b174-13eac93e01a5")
 	)
 	(wire
 		(pts
@@ -1966,6 +2131,16 @@
 	)
 	(wire
 		(pts
+			(xy 59.69 130.81) (xy 66.04 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8217915a-5d63-44a7-97b4-ba61ae8ec815")
+	)
+	(wire
+		(pts
 			(xy 80.01 38.1) (xy 80.01 40.64)
 		)
 		(stroke
@@ -2003,6 +2178,26 @@
 			(type default)
 		)
 		(uuid "bee0abf4-7cfb-4d3f-bcac-3af3aba80599")
+	)
+	(wire
+		(pts
+			(xy 102.87 119.38) (xy 106.68 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bfa47309-b90b-4e51-a9ca-0d5ce2b7ebf6")
+	)
+	(wire
+		(pts
+			(xy 77.47 31.75) (xy 77.47 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c2e0055b-ee05-459b-a061-770fa8fe0e71")
 	)
 	(wire
 		(pts
@@ -2104,6 +2299,26 @@
 		)
 		(uuid "6b1ac714-8f5e-4b06-b010-9e4a280e1129")
 	)
+	(label "RST"
+		(at 106.68 119.38 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "73ebc7a1-c485-48e8-9c45-62c0d9e2d70b")
+	)
+	(label "CLK"
+		(at 106.68 134.62 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "873f569d-0ca5-4078-862f-1a82eab3b544")
+	)
 	(label "BUSY"
 		(at 97.79 57.15 0)
 		(effects
@@ -2125,6 +2340,16 @@
 		(uuid "97391706-983e-46b3-9a91-29dbf2a3ed93")
 	)
 	(label "CS"
+		(at 59.69 130.81 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a39206ee-9a6c-437e-8047-6ec88a1dc72d")
+	)
+	(label "CS"
 		(at 149.86 72.39 0)
 		(effects
 			(font
@@ -2133,6 +2358,16 @@
 			(justify left bottom)
 		)
 		(uuid "a8afabe3-8d36-4b72-b9bc-d24833e1459a")
+	)
+	(label "DC"
+		(at 106.68 115.57 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b4c43855-bfdf-47e8-82a8-fcc265f59df6")
 	)
 	(label "CLK"
 		(at 97.79 54.61 0)
@@ -2164,6 +2399,16 @@
 		)
 		(uuid "d17cddf6-e0ed-4c8a-a72d-0b079c8c2121")
 	)
+	(label "BUSY"
+		(at 106.68 123.19 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d5ecfae5-da5c-4adc-b8fe-ecb9edee9ba4")
+	)
 	(label "DC"
 		(at 149.86 77.47 0)
 		(effects
@@ -2183,6 +2428,16 @@
 			(justify left bottom)
 		)
 		(uuid "f0b09f99-6cda-48d5-bbbb-a8e8034f4d65")
+	)
+	(label "DIN"
+		(at 59.69 127 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f29b8da0-fd9f-496b-a47b-771452f12ada")
 	)
 	(label "CLK"
 		(at 149.86 80.01 0)
@@ -2655,6 +2910,72 @@
 			(project ""
 				(path "/95feff10-2965-4a71-88b6-e41b0fca8232"
 					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5VD")
+		(at 77.47 31.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bd483217-6642-4775-af69-5aaf846368f1")
+		(property "Reference" "#PWR07"
+			(at 77.47 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5VD"
+			(at 77.47 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 77.47 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 77.47 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5VD\""
+			(at 77.47 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0328f100-4a0d-40fe-ba46-09a97d0c2959")
+		)
+		(instances
+			(project ""
+				(path "/95feff10-2965-4a71-88b6-e41b0fca8232"
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
