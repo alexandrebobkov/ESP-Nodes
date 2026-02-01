@@ -1,4 +1,4 @@
-# Install script for directory: /home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_ePaper
+# Install script for directory: /storage/github/ESP-Nodes/ESP32-IDF_ePaper
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,12 +34,12 @@ endif()
 
 # Set path to fallback-tool for dependency-resolution.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/home/abobkov/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20241119/riscv32-esp-elf/bin/riscv32-esp-elf-objdump")
+  set(CMAKE_OBJDUMP "/home/alex/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20241119/riscv32-esp-elf/bin/riscv32-esp-elf-objdump")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_ePaper/build/esp-idf/cmake_install.cmake")
+  include("/storage/github/ESP-Nodes/ESP32-IDF_ePaper/build/esp-idf/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -57,6 +57,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-  file(WRITE "/home/abobkov/MyProjects/ESP-Nodes/ESP32-IDF_ePaper/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/storage/github/ESP-Nodes/ESP32-IDF_ePaper/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
