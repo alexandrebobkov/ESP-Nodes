@@ -123,10 +123,14 @@ void setup() {
 }
 
 void loop() {
-  Serial.println("LED ON");
-  digitalWrite(8, HIGH);
-  delay(250);
-  Serial.println("LED OFF");
-  digitalWrite(8, LOW);
-  delay(750);
+  for (int i = 0; i < 25; i++) {
+    Serial.println("LED ON");
+    digitalWrite(8, HIGH);
+    delay(250);
+    Serial.println("LED OFF");
+    digitalWrite(8, LOW);
+    delay(750);
+    Serial.println("Loop count: " + String(i));
+  }
+  ESP.restart();
 }
