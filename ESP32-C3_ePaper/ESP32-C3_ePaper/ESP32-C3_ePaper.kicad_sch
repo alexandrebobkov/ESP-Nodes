@@ -767,7 +767,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Alexander Symbols Library:ESP32C3_ZenBoard"
+		(symbol "ProjectLibrary:ESP32C3_ZenBoard"
 			(pin_names
 				(offset 0)
 				(hide yes)
@@ -1443,7 +1443,7 @@
 						)
 					)
 				)
-				(text "GPIO5"
+				(text "GPIO4"
 					(at -8.128 -13.97 0)
 					(effects
 						(font
@@ -2716,6 +2716,122 @@
 		)
 	)
 	(symbol
+		(lib_id "ProjectLibrary:ESP32C3_ZenBoard")
+		(at 83.82 105.41 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5155eda4-7d0a-4660-8bcf-5609d8ffd20f")
+		(property "Reference" "U3"
+			(at 84.455 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 84.455 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 83.82 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 83.82 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 83.82 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "8"
+			(uuid "a46202d6-c3d9-4387-a664-1639ae7d44e3")
+		)
+		(pin "9"
+			(uuid "f1880f7f-3c2a-4f98-bd17-f4ae532e0828")
+		)
+		(pin "7"
+			(uuid "a971b741-0b61-465e-b240-62acb145f047")
+		)
+		(pin "12"
+			(uuid "dfb0079b-27e1-4ed4-8b9b-4b897f10c413")
+		)
+		(pin "18"
+			(uuid "d07c6d8f-22e8-49ff-be59-c1be8611c622")
+		)
+		(pin "16"
+			(uuid "443ac72d-bf43-47ca-b4b2-39f58768758b")
+		)
+		(pin "13"
+			(uuid "cbf89a06-c76d-4032-a642-a4111ec9daae")
+		)
+		(pin "15"
+			(uuid "5121996d-42c6-4aee-a97d-e48b08effe17")
+		)
+		(pin "17"
+			(uuid "f78044fa-9911-493c-b9f5-0d33ee9e7b4b")
+		)
+		(pin "10"
+			(uuid "da8b50ee-0651-4d78-9f46-9389d183594e")
+		)
+		(pin "1"
+			(uuid "8ecf2147-10f3-4ade-966c-ad0b190bfdbb")
+		)
+		(pin "4"
+			(uuid "bcf2d6a5-78a6-4160-9dbf-f7a614d4ad30")
+		)
+		(pin "5"
+			(uuid "714ad653-afc5-4019-8996-b0ec4862cb29")
+		)
+		(pin "2"
+			(uuid "053eadaa-8658-4484-9d5e-d6cf6d3196b3")
+		)
+		(pin "11"
+			(uuid "745503da-0dec-4716-aafc-82876947b784")
+		)
+		(pin "6"
+			(uuid "d859b60b-1799-4619-bf63-38936bbb0105")
+		)
+		(pin "3"
+			(uuid "577e34ad-eab2-4997-ad5a-eb7c41ae4d14")
+		)
+		(pin "14"
+			(uuid "1dc7499b-ce7a-4c58-b1d6-28c056c23206")
+		)
+		(instances
+			(project ""
+				(path "/95feff10-2965-4a71-88b6-e41b0fca8232"
+					(reference "U3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Alexander Symbols Library:Conn_ePaper_01x08")
 		(at 161.29 74.93 0)
 		(mirror y)
@@ -2796,122 +2912,6 @@
 			(project ""
 				(path "/95feff10-2965-4a71-88b6-e41b0fca8232"
 					(reference "J1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Alexander Symbols Library:ESP32C3_ZenBoard")
-		(at 83.82 105.41 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8d02fdd4-b540-4abd-a1cf-79b3966ccddc")
-		(property "Reference" "U2"
-			(at 84.455 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "~"
-			(at 84.455 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 83.82 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 83.82 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 83.82 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "10a9a3ce-3f85-4fe0-8f55-6275cc0ac11f")
-		)
-		(pin "12"
-			(uuid "87403f49-47fc-4546-8e69-9ed266f45b7a")
-		)
-		(pin "11"
-			(uuid "2e0ce0c3-c91f-45cb-bcba-09e6e92acfb5")
-		)
-		(pin "13"
-			(uuid "2f9e2856-f62b-4c94-a3f8-3da7bad67d78")
-		)
-		(pin "18"
-			(uuid "f49e8214-7396-4567-a560-e914b2cf13c3")
-		)
-		(pin "10"
-			(uuid "7fdc0957-32f1-4f65-bd99-26251ea895be")
-		)
-		(pin "9"
-			(uuid "52ef8c6e-5741-4006-9ad7-2d21b609d305")
-		)
-		(pin "8"
-			(uuid "d15a597e-0d82-489e-8c33-7de8cb44b0d9")
-		)
-		(pin "7"
-			(uuid "3539a1b0-c109-4bf8-9a9d-55c97198f297")
-		)
-		(pin "6"
-			(uuid "a5e05b51-7b87-4e37-858c-fe36145d6749")
-		)
-		(pin "5"
-			(uuid "461f28fd-7f8e-438e-aef5-d559ef63c2e0")
-		)
-		(pin "4"
-			(uuid "3f1a2f93-5ade-431b-a464-989522a72ad9")
-		)
-		(pin "3"
-			(uuid "4ab1dbba-cc30-4493-b226-85155edbbe4d")
-		)
-		(pin "15"
-			(uuid "38b505a8-a9f4-44e4-9fde-bf775a3d41b5")
-		)
-		(pin "1"
-			(uuid "128dbeff-005a-4ebb-84b7-a2b1f01f822a")
-		)
-		(pin "16"
-			(uuid "4fc79765-53de-4eac-a67e-7e3bab313bd8")
-		)
-		(pin "17"
-			(uuid "cbe61c55-969a-4f7a-8f74-2b9ff2f52dd1")
-		)
-		(pin "14"
-			(uuid "c4634fa0-a193-4178-958e-3afa53e71ac6")
-		)
-		(instances
-			(project ""
-				(path "/95feff10-2965-4a71-88b6-e41b0fca8232"
-					(reference "U2")
 					(unit 1)
 				)
 			)
