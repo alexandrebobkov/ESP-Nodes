@@ -3,7 +3,7 @@
 	(generator "eeschema")
 	(generator_version "9.0")
 	(uuid "95feff10-2965-4a71-88b6-e41b0fca8232")
-	(paper "A4")
+	(paper "USLetter")
 	(lib_symbols
 		(symbol "Alexander Symbols Library:Conn_ePaper_01x08"
 			(pin_names
@@ -1981,7 +1981,7 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 123.19) (xy 106.68 123.19)
+			(xy 102.87 123.19) (xy 109.22 123.19)
 		)
 		(stroke
 			(width 0)
@@ -2001,7 +2001,7 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 115.57) (xy 106.68 115.57)
+			(xy 102.87 115.57) (xy 109.22 115.57)
 		)
 		(stroke
 			(width 0)
@@ -2104,8 +2104,9 @@
 			(xy 66.04 111.76) (xy 62.23 111.76)
 		)
 		(stroke
-			(width 0)
+			(width 0.508)
 			(type default)
+			(color 194 0 0 1)
 		)
 		(uuid "68993b36-0a3f-49f2-9695-e0c3095f577c")
 	)
@@ -2181,7 +2182,7 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 119.38) (xy 106.68 119.38)
+			(xy 102.87 119.38) (xy 109.22 119.38)
 		)
 		(stroke
 			(width 0)
@@ -2204,8 +2205,9 @@
 			(xy 62.23 111.76) (xy 62.23 107.95)
 		)
 		(stroke
-			(width 0)
+			(width 0.508)
 			(type default)
+			(color 194 0 0 1)
 		)
 		(uuid "c3c3cd8f-051e-43be-911c-1cf012cc1643")
 	)
@@ -2300,12 +2302,12 @@
 		(uuid "6b1ac714-8f5e-4b06-b010-9e4a280e1129")
 	)
 	(label "RST"
-		(at 106.68 119.38 0)
+		(at 109.22 119.38 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "73ebc7a1-c485-48e8-9c45-62c0d9e2d70b")
 	)
@@ -2360,12 +2362,12 @@
 		(uuid "a8afabe3-8d36-4b72-b9bc-d24833e1459a")
 	)
 	(label "DC"
-		(at 106.68 115.57 0)
+		(at 109.22 115.57 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "b4c43855-bfdf-47e8-82a8-fcc265f59df6")
 	)
@@ -2400,12 +2402,12 @@
 		(uuid "d17cddf6-e0ed-4c8a-a72d-0b079c8c2121")
 	)
 	(label "BUSY"
-		(at 106.68 123.19 0)
+		(at 109.22 123.19 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "d5ecfae5-da5c-4adc-b8fe-ecb9edee9ba4")
 	)
@@ -2636,7 +2638,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "10209e2b-8911-4d48-9982-ddb37aafd6a9")
+			(uuid "10209e2b-8911-4d48-9982-ddb37aafd6aa")
 		)
 		(instances
 			(project ""
@@ -2702,7 +2704,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "3a837f30-2259-40a6-a139-0db5a8137855")
+			(uuid "3a837f30-2259-40a6-a139-0db5a8137856")
 		)
 		(instances
 			(project ""
@@ -3148,7 +3150,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "3a837f30-2259-40a6-a139-0db5a8137855")
+			(uuid "3a837f30-2259-40a6-a139-0db5a8137857")
 		)
 		(instances
 			(project ""
@@ -3214,7 +3216,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "10209e2b-8911-4d48-9982-ddb37aafd6a9")
+			(uuid "10209e2b-8911-4d48-9982-ddb37aafd6ab")
 		)
 		(instances
 			(project ""
