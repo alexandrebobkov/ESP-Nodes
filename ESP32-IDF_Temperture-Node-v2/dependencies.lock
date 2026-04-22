@@ -54,11 +54,11 @@ dependencies:
   idf:
     source:
       type: idf
-    version: 5.4.1
+    version: 5.4.0
 direct_dependencies:
 - espressif/bme280
 - espressif/mqtt
 - idf
 manifest_hash: e6f276994a8055ca6c2c122162e637638b463824e703ffba4c57c1695ff8422a
-target: esp32
+target: esp32c3
 version: 2.0.0
